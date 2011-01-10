@@ -1,0 +1,22 @@
+<root type="npc">
+
+  <speed min="1.3" max="1.5" />
+  <strength min="5.0" max="10.0" />
+  <turnspeed min="90.0" max="120.0" />
+  <shadow-offset min="0.12" max="0.12" />
+
+  <maxhp min="10.0" max="15.0" />
+  <maxmana min="30.0" max="50.0" />
+  <xp min="5.0" max="9.0" />
+
+  <scale min="0.95" max="1.0" />
+  <radius min="0.425" max="0.5" />
+  <mass min="3.0" max="3.0" />
+  
+  <anim name="core/anim/timberman_4/default" type="default" />
+  <anim name="core/anim/timberman_4/move" type="move" />
+  <anim name="core/anim/timberman_4/attack" type="attack" />
+  <anim name="core/anim/timberman_4/death" type="death" />
+
+  <dialog file="data/plot/test-dialog.xml" />
+</root>

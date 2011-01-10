@@ -1,0 +1,82 @@
+<root type="ability" class="bullet">
+
+	<name>$ABI_FIRE_FIREARROW</name>
+	<trigger></trigger>
+	<icon>data/abilities/fire/flamingarrow-0.png</icon>
+	<unavailable-icon>data/abilities/fire/flamingarrow-1.png</unavailable-icon>
+	<description>$ABI_FIRE_FIREARROW_DESC</description>
+
+    <flight-effect type="list">
+
+        <effect type="graphical-effect">
+            <time calc="0.6 + 0.2 * lvl" />
+            <name value="firearrow-trail" />
+        </effect>
+
+		<effect type="recastable">
+			<time calc="0.6 + 0.2 * lvl" />
+            <recast value="0.09"/>
+            <effect type="list">
+    			<effect type="retarget">
+    	    		<target-chooser>
+    		    		<filter value="hostiles"/>
+    					<range calc="0.35 + (0.025 * spellrange)"/>
+    					<angle value="360.0"/>
+    				</target-chooser>
+    				<effect type="list">
+    					<effect type="damage">
+       						<amount calc="7.0 + 2.0 * lvl + wp*0.2" />
+	    					<damage-type value="fire"/>
+    					</effect>
+		    			<effect type="chance">
+			    			<chance calc="0.6"/>
+				    		<effect type="knockback">
+					    		<amount calc="0.5 + 0.3 * lvl"/>
+						    </effect>
+    					</effect>
+	    				<effect type="chance">
+		    				<chance calc="ignite*0.2"/>
+			    			<effect type="inject">
+				    			<tree value="fire"/>
+					    		<code value="k"/>
+						    	<name value="igniting-magic"/>
+    						</effect>
+	    				</effect>
+		    			<effect type="chance">
+			    			<chance calc="expl*0.025"/>
+				    		<effect type="inject">
+					    		<tree value="fire"/>
+						    	<code value="l"/>
+    							<name value="explosive-magic"/>
+	    					</effect>
+		    			</effect>
+			    	</effect>
+                </effect>
+			</effect>
+        </effect>
+    </flight-effect>
+    <explosion type="list">
+      <effect type="inject">
+        <tree value="fire"/>
+        <code value="a"/>
+        <name value="fireball-explosion-tag"/>
+      </effect>
+    </explosion>
+
+	<manacost calc="(5 + 2*lvl) + (3 * min(lvl, 3)) * (0.80^fm)" />
+	<range calc="7.0" />
+	<speed calc="6.0" />
+	<acceleration value="1.0" />
+	<explode-on-fade value="1" />
+	<count calc="min(lvl,3)" />
+	<width calc="0.5 + min(lvl-1,3)*12" />
+	<ttl calc="0.6 + 0.2 * lvl" />
+	<bullet value="data/physicals/flaming-arrow.xml" />
+	<casttime calc="0.03" />
+	<delay calc="0.02" />
+	<cooldown value="0.6 + (0.45 / (castspeed + 1.0))" />
+	<filter value="wall"/>
+	<!-- <max-level value="3" /> -->
+	<!-- <no-buy /> -->
+
+</root>

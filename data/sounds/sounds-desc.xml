@@ -1,0 +1,139 @@
+﻿<root>
+  
+  <!-- Opis grup -->
+
+  <group name="monster" playedSoundsLimit="5" />
+  <group name="player" playedSoundsLimit="5" />
+  <group name="spell" playedSoundsLimit="5" />
+  <group name="ambient" playedSoundsLimit="2" />
+  <group name="invocation" playedSoundsLimit="1" />
+  <group name="gui" playedSoundsLimit="1" />
+
+  <!-- Przynależność dźwięków do grup. Poszczególne grupy oddzielamy spacją. -->
+
+  <sound path="data/sounds/rat-attack1.wav" groups="monster" />
+  <sound path="data/sounds/wolfbeast-attack1.wav" groups="monster" />
+  <sound path="data/sounds/crawler-attack1.wav" groups="monster" />
+  <sound path="data/sounds/chityniak-attack1.wav" groups="monster" />
+  <sound path="data/sounds/mantis-attack1.wav" groups="monster" />
+  <sound path="data/sounds/bee-attack1.wav" groups="monster" />
+  <sound path="data/sounds/hornet-attack1.wav" groups="monster" />
+  <sound path="data/sounds/cockroach-attack1.wav" groups="monster" />
+  <sound path="data/sounds/early-attack1.wav" groups="monster" />
+  <sound path="data/sounds/ogre-attack1.wav" groups="monster" />
+  <sound path="data/sounds/shaggy-attack1.wav" groups="monster" />
+  <sound path="data/sounds/troll-attack1.wav" groups="monster" />
+
+  <!-- Dźwięki z Eternal Lands -->
+  <sound path="data/sounds/EL/rat01.ogg" groups="monster" />
+  <sound path="data/sounds/EL/wolf_attack01.ogg" groups="monster" />
+  <sound path="data/sounds/EL/wolf_attack02.ogg" groups="monster" />
+  <sound path="data/sounds/EL/wolf_attack03.ogg" groups="monster" />
+  <sound path="data/sounds/EL/wolf_yelp.ogg" groups="monster" />
+  <sound path="data/sounds/EL/whoosh-punch01.ogg" groups="monster" />
+  <sound path="data/sounds/EL/whoosh-punch02.ogg" groups="monster" />
+  <sound path="data/sounds/EL/whoosh-punch03.ogg" groups="monster" />
+  <sound path="data/sounds/EL/whoosh-punch04.ogg" groups="monster" />
+  <sound path="data/sounds/EL/whoosh-punch05.ogg" groups="monster" />
+  <sound path="data/sounds/EL/whoosh-punch06.ogg" groups="monster" />
+  <sound path="data/sounds/EL/monster01.ogg" groups="monster" />
+  <sound path="data/sounds/EL/monster02.ogg" groups="monster" />
+  <sound path="data/sounds/EL/monster03.ogg" groups="monster" />
+  <sound path="data/sounds/EL/monster04.ogg" groups="monster" />
+  <sound path="data/sounds/EL/monster05.ogg" groups="monster" />
+  <sound path="data/sounds/EL/monster06.ogg" groups="monster" />
+  <sound path="data/sounds/EL/imp01.ogg" groups="monster" />
+  <sound path="data/sounds/EL/imp02.ogg" groups="monster" />
+  <sound path="data/sounds/EL/imp03.ogg" groups="monster" />
+  <sound path="data/sounds/EL/imp04.ogg" groups="monster" />
+  <sound path="data/sounds/EL/dragon02.ogg" groups="monster" />
+  <sound path="data/sounds/EL/pig01.ogg" groups="monster" />
+  <sound path="data/sounds/EL/pig02.ogg" groups="monster" />
+  <sound path="data/sounds/EL/pig03.ogg" groups="monster" />
+  <sound path="data/sounds/EL/pig04.ogg" groups="monster" />
+  <sound path="data/sounds/EL/pain-male01.ogg" groups="monster" />
+  <sound path="data/sounds/EL/pain-male02.ogg" groups="monster" />
+  <sound path="data/sounds/EL/pain-male03.ogg" groups="monster" />
+  <sound path="data/sounds/EL/pain-male04.ogg" groups="monster" />
+  <sound path="data/sounds/EL/pain-male05.ogg" groups="monster" />
+  <sound path="data/sounds/EL/pain-male06.ogg" groups="monster" />
+  <sound path="data/sounds/EL/thunder1.ogg" groups="spell" />
+  <sound path="data/sounds/EL/thunder2.ogg" groups="spell" />
+  <sound path="data/sounds/EL/thunder3.ogg" groups="spell" />
+  <sound path="data/sounds/EL/thunder4.ogg" groups="spell" />
+  <sound path="data/sounds/EL/thunder5.ogg" groups="spell" />
+  <sound path="data/sounds/EL/thunder6.ogg" groups="spell" />
+  <sound path="data/sounds/EL/thunder7.ogg" groups="spell" />
+
+  <!-- Dźwięki z 0AD -->
+  <sound path="data/sounds/0AD/horse_11.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/pig_10.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/pig_11.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/pig_12.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/death_11.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/death_13.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/death_14.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/death_15.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/death_16.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/death_17.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/death_18.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/Pain1.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/Pain2.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/Pain3.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/Pain4.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/Pain5.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/Pain6.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/Pain7.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/Pain8.ogg" groups="monster" />
+  <sound path="data/sounds/0AD/Pain9.ogg" groups="monster" />
+  
+  <!-- Lugaro -->
+  <sound path="data/sounds/Lugaro/Bark.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Bark2.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Bark3.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Barkgrowl.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/growl.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/growl2.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/hawk.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/knifedraw.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/knifeslice.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/knifeswish.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Rabbitattack.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Rabbitattack2.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Rabbitattack3.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Rabbitattack4.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Rabbitchitter.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Rabbitchitter2.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Rabbitpain.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Rabbitpain2.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/skid.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/snarl.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/snarl2.ogg" groups="monster" />
+  
+  <sound path="data/sounds/Lugaro/jump.ogg" groups="spell" />
+  <sound path="data/sounds/Lugaro/splatter.ogg" groups="spell" />
+  <sound path="data/sounds/Lugaro/whoosh.ogg" groups="spell" />
+  <sound path="data/sounds/Lugaro/fire.ogg" groups="spell" />
+  <sound path="data/sounds/Lugaro/fireend.ogg" groups="spell" />
+  <sound path="data/sounds/Lugaro/firestart.ogg" groups="spell" />
+  <sound path="data/sounds/Lugaro/consolesuccess.ogg" groups="spell" />
+  <sound path="data/sounds/Lugaro/break.ogg" groups="spell" />
+  <sound path="data/sounds/Lugaro/bushrustle.ogg" groups="spell" />
+  
+  <sound path="data/sounds/Lugaro/wind.ogg" groups="ambient" />
+  <sound path="data/sounds/Lugaro/desertambient.ogg" groups="ambient" />
+
+  <sound path="data/sounds/levelup.wav" groups="player" />
+  <sound path="data/sounds/iamdeath.wav" groups="player" />
+  <sound path="data/sounds/q.wav" groups="invocation" />
+  <sound path="data/sounds/w.wav" groups="invocation" />
+  <sound path="data/sounds/e.wav" groups="invocation" />
+  <sound path="data/sounds/r.wav" groups="invocation" />
+  <sound path="data/sounds/a.wav" groups="invocation" />
+
+  <sound path="data/sounds/GUI_klik.ogg" groups="gui" />
+
+<!-- freesound, kuru23: http://www.freesound.org/usersViewSingle.php?id=680352 -->
+  <sound path="data/sounds/shotgun.wav" groups="spell" />
+
+</root>

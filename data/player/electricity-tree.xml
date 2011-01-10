@@ -1,0 +1,98 @@
+<root type="ability-tree">
+	<name>$ABITREE_ELECTRICITY</name>
+    <background>data/GUI/skills-bkg-ligh.jpg</background>
+
+	<ability code="a">
+		<name>data/abilities/electric/electron.xml</name>
+		<start-level>1</start-level>
+    <max-level>2</max-level>
+		<row>0</row>
+	</ability>
+	<ability code="b">
+		<name>data/abilities/electric/electrostatics.xml</name>
+		<row>1</row>
+    <req ability="a" level="1" />
+    <req-level>3</req-level>
+	</ability>
+	<ability code="c">
+		<name>data/abilities/electric/lightning-strike.xml</name>
+		<row>1</row>
+    <req-level>3</req-level>
+    <export/>
+	</ability>
+	<ability code="d">
+		<name>data/abilities/electric/ball-lightning.xml</name>
+		<row>2</row>
+    <req ability="b" level="1" />
+    <req-level>8</req-level>
+	</ability>
+	<ability code="e">
+		<name>data/abilities/electric/forked-lightning.xml</name>
+		<row>2</row>
+    <req ability="c" level="1" />
+    <req-level>8</req-level>
+	</ability>
+	<ability code="f">
+		<name>data/abilities/electric/chain-lightning.xml</name>
+		<row>2</row>
+    <req ability="c" level="1" />
+    <req-level>8</req-level>
+	</ability>
+	<ability code="g">
+		<name>data/abilities/electric/electricution.xml</name>
+		<row>3</row>
+    <req ability="d" level="1" />
+    <req-level>15</req-level>
+		<export>
+			<name>electricution</name>
+		</export>
+	</ability>
+	<ability code="h">
+		<name>data/abilities/electric/electric-snare.xml</name>
+		<row>3</row>
+    <req ability="d" level="1" />
+    <req-level>15</req-level>
+	</ability>
+	<ability code="j">
+		<name>data/abilities/electric/devolution.xml</name>
+		<row>3</row>
+    <req ability="e" level="1" />
+    <req-level>15</req-level>
+	</ability>
+	<ability code="i">
+		<name>data/abilities/electric/transfusion.xml</name>
+		<row>3</row>
+    <req ability="f" level="1" />
+    <req-level>15</req-level>
+	</ability>
+	<ability code="k">
+		<name>data/abilities/electric/electricity-mastery.xml</name>
+		<row>4</row>
+    <req ability="g" level="1" />
+    <req-level>24</req-level>
+		<export>
+			<name>elmstr</name>
+		</export>
+	</ability>
+	<ability code="m">
+		<name>data/abilities/electric/debuff-mastery.xml</name>
+		<row>4</row>
+    <req ability="h" level="1" />
+    <req-level>24</req-level>
+		<export>
+			<name>debuffmstr</name>
+		</export>
+	</ability>
+	<ability code="n">
+		<name>data/abilities/electric/magicstorm.xml</name>
+		<row>4</row>
+    <req ability="j" level="1" />
+    <req-level>24</req-level>
+	</ability>
+	<ability code="l">
+		<name>data/abilities/electric/laser.xml</name>
+		<row>4</row>
+    <req ability="i" level="1" />
+    <req-level>24</req-level>
+	</ability>
+</root>

@@ -1,0 +1,41 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="$BESTIARY_CRAWLER_KAMIKADZE_NAME" />
+    <desc value="$BESTIARY_CRAWLER_KAMIKADZE_DESC" />
+  </bestiary>
+  <genre>crawler-kamikadze</genre>
+
+  <speed min="1.8" max="2.0" />
+  <strength min="9.0" max="16.0" />
+  <turnspeed min="150.0" max="150.0" />
+
+  <maxhp min="20.0" max="30.0" />
+  <maxmana min="30.0" max="50.0" />
+
+  <xp min="6.0" max="9.0" />
+
+  <scale min="0.5" max="0.5" />
+  <radius min="0.2" max="0.2" />
+  <mass min="2.7" max="2.7" />
+  <color r="1.0" g="0.3" b="0.3" a="1.0" />
+
+  <anim name="test/anim/crawler/default" type="default" />
+  <anim name="test/anim/crawler/move" type="move" />
+  <anim name="test/anim/crawler/explode" type="attack" />
+  <anim name="test/anim/crawler/death" type="death" />
+
+  <ai name="melee-chaser" />
+
+  <ability name="data/abilities/monster/kamikadze.xml" default="1" />
+
+  <sound type="attack" filename="data/sounds/0AD/horse_11.ogg" />
+  <sound type="attack" filename="data/sounds/EL/monster03.ogg" />
+  <sound type="attack" filename="data/sounds/EL/monster04.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/monster01.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/monster02.ogg" />
+  <sound type="spawn" filename="data/sounds/EL/monster05.ogg" />
+  <sound type="spawn" filename="data/sounds/EL/dragon02.ogg" />
+  <sound type="death" filename="data/sounds/EL/monster06.ogg" />
+
+</root>

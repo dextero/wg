@@ -1,0 +1,39 @@
+<root type="ability" class="self">
+
+    <name>$ABI_NATURE_HEALSELF</name>
+    <icon>data/player/supp/health-0.png</icon>
+    <unavailable-icon>data/player/supp/health-1.png</unavailable-icon>
+    <description>$ABI_NATURE_HEALSELF</description>
+
+	<effect type="list">
+		<effect type="timed">
+			<time value="1.0"/>
+			<effect type="modify">
+				<aspect value="speed" />
+				<amount value="4.0" />
+			</effect>
+		</effect>
+		<effect type="timed">
+			<time value="1.0"/>
+			<effect type="modify">
+				<aspect value="turnspeed" />
+				<amount value="0.0" />
+			</effect>
+		</effect>
+	</effect>
+
+    <manacost value="0.0" />
+    <casttime value="0.20" />
+    <delay value="0.01" />
+    <cooldown value="4.0" />
+	
+	<cast-time-effect type="modify">
+		<aspect value="speed" />
+		<amount value="0.0" />
+	</cast-time-effect>
+	
+	<ai-hint>
+		<player-distance>3.0</player-distance>
+		<player-angle>10.0</player-angle>
+	</ai-hint>
+</root>

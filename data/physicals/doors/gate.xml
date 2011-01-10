@@ -1,0 +1,7 @@
+<root type="door">
+  <scale min="0.5" max="0.5" />
+  <radius min="0.5" max="0.5" />
+
+  <anim name="core/anim/gate/open" type="open" />
+  <anim name="core/anim/gate/closed" type="closed" />
+</root>

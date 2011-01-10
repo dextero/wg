@@ -1,0 +1,665 @@
+<map>
+	<version>3</version>
+	<width>31</width>
+	<height>44</height>
+<max-living-monsters>25</max-living-monsters>
+	<tiletype code="ssss" image="data/maps/themes/test/rsand_1.png"/>
+	<tiletype code="PPPP" image="data/maps/themes/test/rsand.png"/>
+	<tiletype code="gggg" image="data/maps/themes/test/rgrass.png"/>
+	<tiletype code="BBBB" image="data/maps/themes/test/rswamp.png"/>
+	<tiletype code="wwww" image="data/maps/themes/test/rgrass_1.png"/>
+	<tiletype code="rrrr" image="data/maps/themes/test/rrock.png"/>
+	<tiletype code="PPsP" image="data/maps/themes/test/rsand_sand_1_0.png"/>
+	<tiletype code="PPPs" image="data/maps/themes/test/rsand_sand_1_1.png"/>
+	<tiletype code="ssPs" image="data/maps/themes/test/rsand_sand_1_2.png"/>
+	<tiletype code="sssP" image="data/maps/themes/test/rsand_sand_1_3.png"/>
+	<tiletype code="PsPP" image="data/maps/themes/test/rsand_sand_1_4.png"/>
+	<tiletype code="sPPP" image="data/maps/themes/test/rsand_sand_1_5.png"/>
+	<tiletype code="sPss" image="data/maps/themes/test/rsand_sand_1_6.png"/>
+	<tiletype code="Psss" image="data/maps/themes/test/rsand_sand_1_7.png"/>
+	<tiletype code="PPss" image="data/maps/themes/test/rsand_sand_1_8.png"/>
+	<tiletype code="ssPP" image="data/maps/themes/test/rsand_sand_1_9.png"/>
+	<tiletype code="PssP" image="data/maps/themes/test/rsand_sand_1_10.png"/>
+	<tiletype code="sPPs" image="data/maps/themes/test/rsand_sand_1_11.png"/>
+	<tiletype code="BBPB" image="data/maps/themes/test/rswamp-sand_0.png"/>
+	<tiletype code="BBBP" image="data/maps/themes/test/rswamp-sand_1.png"/>
+	<tiletype code="PPsP" image="data/maps/themes/test/rswamp-sand_2.png"/>
+	<tiletype code="PPPB" image="data/maps/themes/test/rswamp-sand_3.png"/>
+	<tiletype code="BPBB" image="data/maps/themes/test/rswamp-sand_4.png"/>
+	<tiletype code="PBBB" image="data/maps/themes/test/rswamp-sand_5.png"/>
+	<tiletype code="PBPP" image="data/maps/themes/test/rswamp-sand_6.png"/>
+	<tiletype code="BPPP" image="data/maps/themes/test/rswamp-sand_7.png"/>
+	<tiletype code="BBPP" image="data/maps/themes/test/rswamp-sand_8.png"/>
+	<tiletype code="PPBB" image="data/maps/themes/test/rswamp-sand_9.png"/>
+	<tiletype code="BPPB" image="data/maps/themes/test/rswamp-sand_10.png"/>
+	<tiletype code="PBBP" image="data/maps/themes/test/rswamp-sand_11.png"/>
+	<tiletype code="PPgP" image="data/maps/themes/test/rsand-grass_0.png"/>
+	<tiletype code="PPPg" image="data/maps/themes/test/rsand-grass_1.png"/>
+	<tiletype code="ggPg" image="data/maps/themes/test/rsand-grass_2.png"/>
+	<tiletype code="gggP" image="data/maps/themes/test/rsand-grass_3.png"/>
+	<tiletype code="PgPP" image="data/maps/themes/test/rsand-grass_4.png"/>
+	<tiletype code="gPPP" image="data/maps/themes/test/rsand-grass_5.png"/>
+	<tiletype code="gPgg" image="data/maps/themes/test/rsand-grass_6.png"/>
+	<tiletype code="Pggg" image="data/maps/themes/test/rsand-grass_7.png"/>
+	<tiletype code="PPgg" image="data/maps/themes/test/rsand-grass_8.png"/>
+	<tiletype code="ggPP" image="data/maps/themes/test/rsand-grass_9.png"/>
+	<tiletype code="PggP" image="data/maps/themes/test/rsand-grass_10.png"/>
+	<tiletype code="gPPg" image="data/maps/themes/test/rsand-grass_11.png"/>
+	<tiletype code="BBgB" image="data/maps/themes/test/rswamp-grass_0.png"/>
+	<tiletype code="BBBg" image="data/maps/themes/test/rswamp-grass_1.png"/>
+	<tiletype code="ggBg" image="data/maps/themes/test/rswamp-grass_2.png"/>
+	<tiletype code="gggB" image="data/maps/themes/test/rswamp-grass_3.png"/>
+	<tiletype code="BgBB" image="data/maps/themes/test/rswamp-grass_4.png"/>
+	<tiletype code="gBBB" image="data/maps/themes/test/rswamp-grass_5.png"/>
+	<tiletype code="gBgg" image="data/maps/themes/test/rswamp-grass_6.png"/>
+	<tiletype code="Bggg" image="data/maps/themes/test/rswamp-grass_7.png"/>
+	<tiletype code="BBgg" image="data/maps/themes/test/rswamp-grass_8.png"/>
+	<tiletype code="ggBB" image="data/maps/themes/test/rswamp-grass_9.png"/>
+	<tiletype code="BggB" image="data/maps/themes/test/rswamp-grass_10.png"/>
+	<tiletype code="gBBg" image="data/maps/themes/test/rswamp-grass_11.png"/>
+	<tiletype code="wwgw" image="data/maps/themes/test/rgrass-grass_0.png"/>
+	<tiletype code="wwwg" image="data/maps/themes/test/rgrass-grass_1.png"/>
+	<tiletype code="ggwg" image="data/maps/themes/test/rgrass-grass_2.png"/>
+	<tiletype code="gggw" image="data/maps/themes/test/rgrass-grass_3.png"/>
+	<tiletype code="wgww" image="data/maps/themes/test/rgrass-grass_4.png"/>
+	<tiletype code="gwww" image="data/maps/themes/test/rgrass-grass_5.png"/>
+	<tiletype code="gwgg" image="data/maps/themes/test/rgrass-grass_6.png"/>
+	<tiletype code="wggg" image="data/maps/themes/test/rgrass-grass_7.png"/>
+	<tiletype code="wwgg" image="data/maps/themes/test/rgrass-grass_8.png"/>
+	<tiletype code="ggww" image="data/maps/themes/test/rgrass-grass_9.png"/>
+	<tiletype code="wggw" image="data/maps/themes/test/rgrass-grass_10.png"/>
+	<tiletype code="gwwg" image="data/maps/themes/test/rgrass-grass_11.png"/>
+	<tiletype code="wwrw" image="data/maps/themes/test/rgrass-rock_0.png"/>
+	<tiletype code="wwwr" image="data/maps/themes/test/rgrass-rock_1.png"/>
+	<tiletype code="rrwr" image="data/maps/themes/test/rgrass-rock_2.png"/>
+	<tiletype code="rrrw" image="data/maps/themes/test/rgrass-rock_3.png"/>
+	<tiletype code="wrww" image="data/maps/themes/test/rgrass-rock_4.png"/>
+	<tiletype code="rwww" image="data/maps/themes/test/rgrass-rock_5.png"/>
+	<tiletype code="rwrr" image="data/maps/themes/test/rgrass-rock_6.png"/>
+	<tiletype code="wrrr" image="data/maps/themes/test/rgrass-rock_7.png"/>
+	<tiletype code="wwrr" image="data/maps/themes/test/rgrass-rock_8.png"/>
+	<tiletype code="rrww" image="data/maps/themes/test/rgrass-rock_9.png"/>
+	<tiletype code="wrrw" image="data/maps/themes/test/rgrass-rock_10.png"/>
+	<tiletype code="rwwr" image="data/maps/themes/test/rgrass-rock_11.png"/>
+	<tiles>
+		wwww wwww wwgw wggg gggg gPPg PggP gggg gggg gggg gwwg wwww wwww wwww wwww wwww wggw gBBg BBBB BBBB BBBB BBBB BBBB BBBB BggB gwwg wwww wrww rrrw rrrr rrrr 
+		wwww wwgw wggg gggg gggg gPPg PggP gggg gggg gggg gwwg wwww wwww wwww wwww wwww wggw gBBg BBBB BBBB BBBB BBBB BBBB BBBB BggB gwwg wwww wwww wrww rrww rrrw 
+		wwgw wggg gggg gggg gggg gPPg PggP gggg gggg gggg gwgg wwwg wwww wwww wwww wwww wggw gBgg BBBg BBBB BBBB BBBB BBBB BBgB Bggg gwgg wwwg wwww wwww wwww wrww 
+		wggg gggg gggg gggg gggg gPPg PggP gggg gggg gggg gggg gwgg wwwg wwww wwww wwww wggw gggg gBgg BBgg BBgg BBgg BBgg Bggg gggg gggg gwgg wwgg wwwg wwww wwww 
+		gggg gggg gggg gggg gggg gPPg PggP gggg gggg gggg gggg ggwg gwww wwww wwww wwww wggw gggg gggg ggPg ggPP ggPP gggP gggg gggg gggg gggg gggg gwwg wwww wwww 
+		gggg ggBg ggBB gggB gggg gPPg PggP gggg gggg gggg gggg gwwg wwww wwww wwww wwww wggw gggg gggg gPPg PPgP PPgg Pggg gggg gggg gggg gggg gggg gwgg wwwg wwww 
+		gggg gBBg BBBB BggB gggg gPPg PggP gggg gggg gggg ggwg gwww wwww wwww wwww wwww wggw gggg gggg gPPg PggP gggg gggg gggg gggg gggg gggg gggg gggg gwwg wwww 
+		gggg gBgg BBgg Bggg gggg gPPg PggP gggg gggg gggg gwwg wwww wwww wwww wwgw wwgg wggg gggg gggg gPPg PggP gggg gggg gggg gggg gggg gggg gggg gggg gwgg wwgg 
+		gggg gggg gggg gggg gggg gPPg PggP gggg gggg gggg gwwg wwww wwww wwgw wggg gggg gggg gggg gggg gPPg PggP gggg gggg gggg ggwg ggww ggww gggw gggg gggg gggg 
+		ggww ggww gggw gggg gggg gPPg PggP gggg gggg gggg gwwg wwww wwww wggw gggg gggg gggg gggg gggg gPPg PggP gggg gggg ggwg gwww wwww wwww wggw gggg gggg gggg 
+		wwww wwww wggw gggg gggg gPPg PggP gggg gggg gggg gwgg wwgg wwgg wggg gggg gggg gggg gggg gggg gPPg PggP gggg gggg gwwg wwww wwww wwgw wggg gggg gggg gggg 
+		wwww wwww wggw gggg gggg gPPg PggP gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg gPPg PggP gggg gggg gwgg wwgg wwgg wggg gggg gggg gggg gggg 
+		wwww wwww wggw gggg ggPg gPPP PgPP gggP gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg gPPg PggP gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg 
+		wwww wwww wggw ggPg gPPP PPPP PPPP PggP gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg gPPg PggP gggg gggg gggg gggg gggg gggg ggPg ggPP gggP gggg 
+		wwww wwgw wggg gPPg PPPP PPPP PPPP PgPP gggP gggg gggg gggg gggg gggg ggPg ggPP ggPP ggPP ggPP gPPP PgPP ggPP ggPP ggPP ggPP ggPP ggPP gPPP PPPP PggP gggg 
+		wwww wgww gggw gPPg PPPP PPPP PPPP PPPP PgPP ggPP ggPP ggPP ggPP ggPP gPPP PPgP PPgg PPgg PPgg PPPg PPgP PPgg PPgg PPgg PPgg PPgg PPgg PPPg PPgP Pggg gggg 
+		wwww wwww wggw gPgg PPPg PPPP PPgP PPgg PPgg PPgg PPgg PPgg PPgg PPgg PPgg Pggg gggg gggg gggg gPPg PggP gggg gggg gggg gggg gggg gggg gPPg PggP gggg gggg 
+		wwww wwww wgww gggw gPgg PPgg Pggg gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg gPPg PggP gggg ggwg ggww ggww gggw gggg gPPg PggP gggg gggg 
+		wwww wwww wwww wgww wgww ggww ggww gggw gggg ggwg ggww ggww ggww ggww ggww gggw gggg gggg gggg gPPg PggP ggwg gwww wwww wwww wgww gggw gPPg PggP gggg gggg 
+		wwww wwww wwww wwww wwww wwww wwww wgww ggww gwww wwww wwww wwww wwww wwww wggw gggg gggg gggg gPPg PggP gwwg wwww wwww wwww wwww wggw gPPg PggP gggg gggg 
+		wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wggw gggg gggg gggg gPPg PggP gwwg wwww wwww wwww wwww wggw gPPg PggP gggg gggg 
+		wwww wwww wwww wwgw wwwg wwww wwww wwww wwww wwww wwww wwww wwgw wwgg wwgg wggg gggg gggg gggg gPPg PggP gwwg wwww wwww wwww wwww wggw gPPg PggP gggg gggg 
+		wwww wwww wwgw wggg gwwg wwww wwww wwww wwww wwww wwgw wwgg wggg gggg gggg gggg gggg gggg gggg gPPg PggP gwwg wwww wwww wwww wwww wggw gPPg PggP gggg gggg 
+		wwww wwgw wggg gggg gwwg wwww wwww wwww wwgw wwgg wggg gggg gggg ggBg ggBB gggB gggg gggg gggg gPPg PggP gwwg wwww wwww wwww wwww wggw gPPg PggP gggg gggg 
+		wwww wgww gggw gggg gwgg wwwg wwww wwgw wggg gggg gggg ggBg ggBB gBBB BBBB BggB gggg gggg gggg gPPg PggP gwwg wwww wwww wwww wwww wggw gPPg PggP gggg gggg 
+		wwww wwww wggw gggg gggg gwgg wwgg wggg gggg gggg gggg gBBg BBBB BBBB BBBB BggB gggg ggPg ggPP gPPP PggP gwwg wwww wwww wwww wwww wggw gPPg PggP gggg gggg 
+		wwww wwww wgww gggw gggg gggg gggg gggg gggg gggg gggg gBgg BBgg BBgg BBgg Bggg ggPg gPPP PPPP PPPP PggP gwwg wwww wwww wwww wwww wggw gPPg PggP gggg gggg 
+		wwww wwww wwww wggw gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg ggPg gPPP PPPP PPgP PPgg Pggg gwwg wwww wwww wwww wwww wggw gPPg PggP gggg gggg 
+		wwww wwww wwww wggw gggg gggg ggBg gggB ggPg ggPP ggPP ggPP ggPP ggPP ggPP gPPP PPPP PPgP Pggg gggg gggg gwwg wwww wwww wwww wwww wggw gPPg PggP ggBg ggBB 
+		wwww wwww wwww wggw gggg gggg gBgg Bggg gPPg PPgP PPgg PPgg PPgg PPgg PPgg PPgg PPgg Pggg gggg gggg gggg gwwg wwww wwww wwgw wwgg wggg gPPg PggP gBBg BBBB 
+		wwww wwww wwgw wggg gggg gggg gggg gggg gPPg PggP gggg gggg gggg gggg gggg gggg gggg gggg gggg gggg ggwg gwww wwww wwgw wggg gggg gggg gPgg Pggg gBBg BBBB 
+		wwww wwww wggw gggg gggg ggPg ggPP ggPP gPPP PggP gggg gggg gggg gggg gggg gggg gggg gggg gggg ggwg gwww wwww wwww wggw ggBg ggBB ggBB ggBB ggBB gBBB BBBB 
+		wwww wwww wggw gggg gggg gPPg PPgP PPgg PPgg Pggg gggg ggwg ggww ggww ggww ggww ggww ggww gggw gwgg wwwg wwww wwww wggw gBBg BBBB BBBB BBBB BBBB BBBB BBBB 
+		wwww wwww wgww gggw gggg gPPg PggP gggg gggg gggg gggg gwwg wwww wwww wwww wwww wwww wwww wgww gggw gwgg wwww wwww wggw gBgg BBBg BBBB BBBB BBBB BBgB BBgg 
+		wwww wwww wwww wggw gggg gPPg PggP gggg gggg gggg ggwg gwww wwww wwww wwww wwww wwww wwww wwww wgww gggw gwwg wwww wgww gggw gBgg BBBg BBBB BBBB BggB ggwg 
+		wwww wwww wwww wggw gggg gPPg PggP gggg gggg gggg gwwg wwww wwww wwww wwww wwww wwww wwww wwww wwww wggw gwwg wwww wwww wgww gggw gBgg BBgg BBgg Bggg gwwg 
+		wwww wwww wwww wggw gggg gPPg PggP gggg gggg ggwg gwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wggw gwwg wwww wwww wwww wgww ggww ggww ggww ggww gwww 
+		wwww wwww wwww wggw gggg gPPg PggP gggg gggg gwwg wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wggw gwwg wwww wwww wwww wwww wwww wwww wwww wwww wwww 
+		wwww wwww wwww wgww gggw gPPg PggP gggg ggwg gwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wggw gwgg wwwg wwww wwww wwww wwww wwww wwww wwww wwww 
+		wwww wwww wwww wwww wggw gPPg PggP gggg gwwg wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wgww gggw gwwg wwww wwww wwww wwww wwww wwww wwww wwww 
+		wwww wwww wwww wwww wggw gPPg PggP ggwg gwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wggw gwwg wwww wwww wwww wwww wwww wwww wwww wwww 
+		wwww wwww wwww wwww wggw gPPg PggP gwwg wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wgww gwww wwww wwww wwww wwww wwww wwww wwww wwww 
+		wwww wwww wwww wwww wggw gPPg PggP gwwg wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww 
+		wwww wwww wwww wwww wggw gPPg PggP gwwg wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww wwww 
+	</tiles>
+	<objtype code="collision" file="data/physicals/walls/invisible-wall.xml"/>
+	<objtype code="monster1" file="data/physicals/rat.xml"/>
+	<objtype code="monster2" file="data/physicals/rat.xml"/>
+	<objtype code="monster3" file="data/physicals/rat-green.xml"/>
+	<objtype code="monster4" file="data/physicals/rat-green.xml"/>
+	<objtype code="monster5" file="data/physicals/timberman-with-knife.xml"/>
+	<objtype code="monster6" file="data/physicals/timberman-with-knife.xml"/>
+	<objtype code="monster7" file="data/physicals/wolfbeast.xml"/>
+	<objtype code="monster8" file="data/physicals/rat-green.xml"/>
+	<objtype code="monster9" file="data/physicals/timberman-with-knife.xml"/>
+	<objtype code="monster0" file="data/physicals/chityniak.xml"/>
+	<objtype code="warlock" file="data/physicals/timberman-with-axe.xml"/>
+	<objtype code="monsterB" file="data/physicals/timberman-with-axe.xml"/>
+	<objtype code="monster-lair1" file="data/physicals/lairs/rat-lair.xml"/>
+	<objtype code="monster-lair2" file="data/physicals/lairs/rat-lair.xml"/>
+	<objtype code="monster-lair3" file="data/physicals/lairs/rat-lair.xml"/>
+	<objtype code="monster-lair4" file="data/physicals/lairs/rat-lair.xml"/>
+	<objtype code="monster-lair5" file="data/physicals/lairs/rat-lair.xml"/>
+	<objtype code="monster-lair6" file="data/physicals/lairs/rat-lair.xml"/>
+	<objtype code="monster-lair7" file="data/physicals/lairs/chit-lair.xml"/>
+	<objtype code="monster-lair8" file="data/physicals/lairs/chit-lair.xml"/>
+	<objtype code="monster-lair9" file="data/physicals/lairs/chit-lair.xml"/>
+	<objtype code="monster-lair0" file="data/physicals/lairs/mantis-lair.xml"/>
+	<objtype code="pacman1" file="data/items/25xp.xml"/>
+	<objtype code="pacman2" file="data/items/25xp.xml"/>
+	<objtype code="pacman3" file="data/items/64xp.xml"/>
+	<objtype code="pacman4" file="data/items/100xp.xml"/>
+	<objtype code="g" file="data/physicals/walls/test-barrier.xml"/>
+	<objtype code="barrel" file="data/physicals/obstacles/barrel.xml"/>
+	<obj code="collision" x="10.93" y="0.85"/>
+	<obj code="collision" x="11.88" y="1.76"/>
+	<obj code="collision" x="11.63" y="3.13"/>
+	<obj code="collision" x="11.74" y="4.11"/>
+	<obj code="collision" x="13.03" y="4.67"/>
+	<obj code="collision" x="12.9" y="5.39"/>
+	<obj code="collision" x="12.79" y="6.32"/>
+	<obj code="collision" x="11.71" y="7.42"/>
+	<obj code="collision" x="10.6" y="7.76"/>
+	<obj code="collision" x="10.48" y="8.86"/>
+	<obj code="collision" x="11.57" y="9.22"/>
+	<obj code="collision" x="12.67" y="8.86"/>
+	<obj code="collision" x="12.86" y="7.84"/>
+	<obj code="collision" x="13.7" y="7.09"/>
+	<obj code="collision" x="14.47" y="6.58"/>
+	<obj code="collision" x="15.57" y="6.33"/>
+	<obj code="collision" x="16.32" y="5.57"/>
+	<obj code="collision" x="15.38" y="4.65"/>
+	<obj code="collision" x="15.38" y="3.38"/>
+	<obj code="collision" x="15.47" y="2.26"/>
+	<obj code="collision" x="15.47" y="1.12"/>
+	<obj code="collision" x="15.77" y="0.45"/>
+	<obj code="collision" x="1.81" y="0.45"/>
+	<obj code="collision" x="1.19" y="1.53"/>
+	<obj code="collision" x="0.45" y="1.88"/>
+	<obj code="collision" x="2.55" y="6.45"/>
+	<obj code="collision" x="0.5" y="9.11"/>
+	<obj code="collision" x="1.5" y="9.11"/>
+	<obj code="collision" x="2.5" y="9.11"/>
+	<obj code="collision" x="3.5" y="9.11"/>
+	<obj code="collision" x="4.5" y="9.11"/>
+	<obj code="collision" x="4.5" y="10.11"/>
+	<obj code="collision" x="4.5" y="10.99"/>
+	<obj code="collision" x="3.5" y="10.99"/>
+	<obj code="collision" x="2.5" y="10.99"/>
+	<obj code="collision" x="1.5" y="10.99"/>
+	<obj code="collision" x="0.5" y="10.99"/>
+	<obj code="collision" x="4.05" y="11.29"/>
+	<obj code="collision" x="3.79" y="16.83"/>
+	<obj code="collision" x="0.2" y="11.65"/>
+	<obj code="collision" x="0.2" y="12.65"/>
+	<obj code="collision" x="0.5" y="13.6"/>
+	<obj code="collision" x="1.2" y="14.2"/>
+	<obj code="collision" x="1.3" y="15.2"/>
+	<obj code="collision" x="1.3" y="16.2"/>
+	<obj code="collision" x="1.2" y="17.2"/>
+	<obj code="collision" x="1.2" y="18.2"/>
+	<obj code="collision" x="2.2" y="18.8"/>
+	<obj code="collision" x="2.9" y="18.8"/>
+	<obj code="collision" x="3.65" y="18.8"/>
+	<obj code="collision" x="4.8" y="18.9"/>
+	<obj code="collision" x="5.8" y="19"/>
+	<obj code="collision" x="6.8" y="19.1"/>
+	<obj code="collision" x="7.8" y="19.2"/>
+	<obj code="collision" x="7.8" y="20.2"/>
+	<obj code="collision" x="8.8" y="20.2"/>
+	<obj code="collision" x="9.8" y="19.9"/>
+	<obj code="collision" x="10.8" y="19.8"/>
+	<obj code="collision" x="11.8" y="19.6"/>
+	<obj code="collision" x="12.8" y="19.6"/>
+	<obj code="collision" x="13.8" y="19.5"/>
+	<obj code="collision" x="13.8" y="20.5"/>
+	<obj code="collision" x="13.8" y="21"/>
+	<obj code="collision" x="14.6" y="20"/>
+	<obj code="collision" x="12.8" y="21"/>
+	<obj code="collision" x="11.8" y="21"/>
+	<obj code="collision" x="10.8" y="21.2"/>
+	<obj code="collision" x="9.8" y="21.3"/>
+	<obj code="collision" x="8.95" y="21.8"/>
+	<obj code="collision" x="8.8" y="22.8"/>
+	<obj code="collision" x="7.8" y="22.8"/>
+	<obj code="collision" x="7.6" y="23.7"/>
+	<obj code="collision" x="6.6" y="23.7"/>
+	<obj code="collision" x="5.6" y="22.8"/>
+	<obj code="collision" x="5.1" y="22.8"/>
+	<obj code="collision" x="5.1" y="21.8"/>
+	<obj code="collision" x="4.1" y="20.8"/>
+	<obj code="collision" x="3.1" y="20.8"/>
+	<obj code="collision" x="2.3" y="21.8"/>
+	<obj code="collision" x="2.3" y="22.8"/>
+	<obj code="collision" x="1.3" y="22.8"/>
+	<obj code="collision" x="1.4" y="23.8"/>
+	<obj code="collision" x="1.6" y="24.8"/>
+	<obj code="collision" x="1.8" y="25.8"/>
+	<obj code="collision" x="2.3" y="26.8"/>
+	<obj code="collision" x="2.55" y="27.8"/>
+	<obj code="collision" x="2.9" y="28.8"/>
+	<obj code="collision" x="2.5" y="29.8"/>
+	<obj code="collision" x="2.2" y="30.8"/>
+	<obj code="collision" x="2" y="31.8"/>
+	<obj code="collision" x="2.3" y="32.8"/>
+	<obj code="collision" x="2.4" y="33.8"/>
+	<obj code="collision" x="2.7" y="34.8"/>
+	<obj code="collision" x="2.9" y="35.8"/>
+	<obj code="collision" x="3.15" y="36.8"/>
+	<obj code="collision" x="3.4" y="37.8"/>
+	<obj code="collision" x="3.8" y="38.8"/>
+	<obj code="collision" x="3.9" y="39.8"/>
+	<obj code="collision" x="4" y="40.8"/>
+	<obj code="collision" x="4.1" y="41.8"/>
+	<obj code="collision" x="4" y="42.8"/>
+	<obj code="collision" x="4" y="43.8"/>
+	<obj code="collision" x="6.9" y="28.9"/>
+	<obj code="collision" x="8.3" y="43.5"/>
+	<obj code="collision" x="8.5" y="42.5"/>
+	<obj code="collision" x="8.5" y="41.5"/>
+	<obj code="collision" x="9.3" y="40.5"/>
+	<obj code="collision" x="9.45" y="39.5"/>
+	<obj code="collision" x="9.9" y="38.5"/>
+	<obj code="collision" x="10.7" y="37.5"/>
+	<obj code="collision" x="10.9" y="36.5"/>
+	<obj code="collision" x="11.1" y="35.5"/>
+	<obj code="collision" x="12.1" y="34.5"/>
+	<obj code="collision" x="12.8" y="33.5"/>
+	<obj code="collision" x="13.1" y="33.1"/>
+	<obj code="collision" x="14.1" y="33.2"/>
+	<obj code="collision" x="15.1" y="33.5"/>
+	<obj code="collision" x="16.1" y="33.35"/>
+	<obj code="collision" x="17.1" y="33.3"/>
+	<obj code="collision" x="18.1" y="33.6"/>
+	<obj code="collision" x="18.9" y="34.6"/>
+	<obj code="collision" x="19.3" y="35.6"/>
+	<obj code="collision" x="19.9" y="36.6"/>
+	<obj code="collision" x="20.1" y="37.6"/>
+	<obj code="collision" x="19.9" y="38.6"/>
+	<obj code="collision" x="20.1" y="39.6"/>
+	<obj code="collision" x="20.3" y="40.6"/>
+	<obj code="collision" x="20.3" y="41.6"/>
+	<obj code="collision" x="20.5" y="42.6"/>
+	<obj code="collision" x="21.5" y="42.8"/>
+	<obj code="collision" x="22.5" y="42.7"/>
+	<obj code="collision" x="23.1" y="42.1"/>
+	<obj code="collision" x="23.9" y="41.1"/>
+	<obj code="collision" x="23.9" y="40.1"/>
+	<obj code="collision" x="23.5" y="39.1"/>
+	<obj code="collision" x="22.7" y="38.1"/>
+	<obj code="collision" x="22.7" y="37.1"/>
+	<obj code="collision" x="22.7" y="36.1"/>
+	<obj code="collision" x="22" y="35.1"/>
+	<obj code="collision" x="21.9" y="34.1"/>
+	<obj code="collision" x="22" y="33.1"/>
+	<obj code="collision" x="21.75" y="32.1"/>
+	<obj code="collision" x="20.75" y="31.8"/>
+	<obj code="collision" x="20.75" y="31.4"/>
+	<obj code="collision" x="21.75" y="30.4"/>
+	<obj code="collision" x="21.8" y="29.4"/>
+	<obj code="collision" x="21.8" y="28.4"/>
+	<obj code="collision" x="21.85" y="27.4"/>
+	<obj code="collision" x="21.85" y="26.4"/>
+	<obj code="g" x="6" y="43.5"/>
+	<obj code="monsterB" x="6" y="41"/>
+	<obj code="collision" x="21.8449" y="25.3989"/>
+	<obj code="collision" x="21.8137" y="24.3989"/>
+	<obj code="collision" x="22.7043" y="24.0552"/>
+	<obj code="collision" x="22.4543" y="23.0708"/>
+	<obj code="collision" x="21.8762" y="22.6802"/>
+	<obj code="collision" x="22.0012" y="22.0396"/>
+	<obj code="collision" x="22.5169" y="21.6762"/>
+	<obj code="collision" x="23.0169" y="21.1605"/>
+	<obj code="collision" x="22.9544" y="20.3949"/>
+	<obj code="collision" x="22.0326" y="20.3168"/>
+	<obj code="collision" x="21.5482" y="19.8949"/>
+	<obj code="collision" x="21.9388" y="19.8793"/>
+	<obj code="collision" x="21.6263" y="20.2699"/>
+	<obj code="collision" x="23.5013" y="19.6762"/>
+	<obj code="collision" x="23.3763" y="18.8793"/>
+	<obj code="collision" x="23.2201" y="18.1762"/>
+	<obj code="collision" x="24.197" y="18.2076"/>
+	<obj code="collision" x="25.0564" y="18.4733"/>
+	<obj code="collision" x="25.3064" y="19.0826"/>
+	<obj code="collision" x="25.2595" y="20.1139"/>
+	<obj code="collision" x="25.8689" y="20.442"/>
+	<obj code="collision" x="26.1032" y="20.942"/>
+	<obj code="collision" x="25.6189" y="21.0826"/>
+	<obj code="collision" x="24.7126" y="21.7076"/>
+	<obj code="collision" x="25.1094" y="22.7953"/>
+	<obj code="collision" x="25.375" y="23.7328"/>
+	<obj code="collision" x="25.8906" y="24.6078"/>
+	<obj code="collision" x="26.0312" y="25.3266"/>
+	<obj code="collision" x="25.4688" y="26.1391"/>
+	<obj code="collision" x="25.3281" y="27.1056"/>
+	<obj code="collision" x="25.2031" y="28.09"/>
+	<obj code="collision" x="24.9844" y="28.965"/>
+	<obj code="collision" x="23.9375" y="28.8869"/>
+	<obj code="collision" x="23.2656" y="29.7462"/>
+	<obj code="collision" x="22.9844" y="30.6681"/>
+	<obj code="collision" x="23.0938" y="31.2303"/>
+	<obj code="collision" x="22.5156" y="32.0897"/>
+	<obj code="collision" x="22.9688" y="32.8084"/>
+	<obj code="collision" x="22.9219" y="33.6209"/>
+	<obj code="collision" x="22.9062" y="34.6053"/>
+	<obj code="collision" x="23.1406" y="35.5634"/>
+	<obj code="collision" x="23.8125" y="36.1259"/>
+	<obj code="collision" x="24.7031" y="36.4072"/>
+	<obj code="collision" x="25.6094" y="36.7197"/>
+	<obj code="collision" x="26.5781" y="36.6884"/>
+	<obj code="collision" x="27.5312" y="36.6415"/>
+	<obj code="collision" x="27.5312" y="35.6103"/>
+	<obj code="collision" x="27.5625" y="34.5322"/>
+	<obj code="collision" x="28.4688" y="34.5165"/>
+	<obj code="collision" x="29.3594" y="34.454"/>
+	<obj code="collision" x="30.375" y="34.5009"/>
+	<obj code="collision" x="30.9062" y="34.5322"/>
+	<obj code="collision" x="26.7969" y="8.75758"/>
+	<obj code="collision" x="26.6406" y="9.55446"/>
+	<obj code="collision" x="26.0156" y="10.3201"/>
+	<obj code="collision" x="25.5781" y="10.9138"/>
+	<obj code="collision" x="25.0312" y="11.1795"/>
+	<obj code="collision" x="24.25" y="10.6795"/>
+	<obj code="collision" x="23.9688" y="10.3045"/>
+	<obj code="collision" x="24.5" y="9.67946"/>
+	<obj code="collision" x="25.3125" y="9.28883"/>
+	<obj code="collision" x="26.0781" y="9.08571"/>
+	<obj code="collision" x="22.0156" y="2.54688"/>
+	<obj code="collision" x="30.9531" y="5.89062"/>
+	<obj code="collision" x="30.4531" y="5.17188"/>
+	<obj code="collision" x="29.8906" y="4.375"/>
+	<obj code="collision" x="29.3281" y="3.45312"/>
+	<obj code="collision" x="28.8594" y="2.42188"/>
+	<obj code="collision" x="28.3594" y="1.8125"/>
+	<obj code="collision" x="27.8438" y="1.15625"/>
+	<obj code="collision" x="27.1875" y="0.546875"/>
+	<obj code="collision" x="26.6562" y="0.015625"/>
+	<obj code="collision" x="15.7407" y="5.25"/>
+	<obj code="collision" x="15.2563" y="3.98438"/>
+	<obj code="collision" x="12.5244" y="7.10938"/>
+	<obj code="collision" x="12.54" y="4.04688"/>
+	<obj code="collision" x="12.29" y="2.45312"/>
+	<obj code="collision" x="11.3213" y="0.265625"/>
+	<obj code="collision" x="19.6723" y="0.5"/>
+	<obj code="collision" x="20.5942" y="0.453125"/>
+	<obj code="collision" x="21.4536" y="0.40625"/>
+	<obj code="collision" x="22.3598" y="0.21875"/>
+	<obj code="collision" x="18.9692" y="0.09375"/>
+	<obj code="collision" x="23.0473" y="0.015625"/>
+	<obj code="collision" x="6.05781" y="24.0593"/>
+	<obj code="pacman1" x="2.59375" y="18.0112"/>
+	<obj code="monster2" x="15.4003" y="16.6786" rot="90"/>
+	<obj code="monster2" x="15.4628" y="15.0536" rot="90"/>
+	<obj code="monster3" x="16.8988" y="15.8391" rot="90"/>
+	<obj code="monster-lair2" x="19.5985" y="2.31349" rot="180"/>
+	<obj code="monster2" x="18.2547" y="2.86036" rot="180"/>
+	<obj code="monster2" x="20.8016" y="3.45411" rot="180"/>
+	<obj code="pacman1" x="17.2029" y="0.53125" rot="180"/>
+	<obj code="monster4" x="24.3581" y="2.1813" rot="135"/>
+	<obj code="monster1" x="29.4844" y="7.25331" rot="90"/>
+	<obj code="monster1" x="30.1406" y="8.61269" rot="90"/>
+	<obj code="monster1" x="30.1406" y="20.2407" rot="45"/>
+	<obj code="monster1" x="29.3438" y="21.1626" rot="45"/>
+	<obj code="monster1" x="28.0156" y="21.4907"/>
+	<obj code="monster1" x="27.5781" y="26.7397"/>
+	<obj code="monster2" x="30.1562" y="27.349"/>
+	<obj code="monster-lair3" x="25.7031" y="34.6485" rot="315"/>
+	<obj code="monster3" x="24.8281" y="32.5703" rot="315"/>
+	<obj code="monster6" x="27.0781" y="32.6485"/>
+	<obj code="monster3" x="29.7812" y="32.836" rot="45"/>
+	<obj code="monster3" x="28.4688" y="32.8985"/>
+	<obj code="pacman3" x="26.4374" y="35.5477"/>
+	<obj code="monster2" x="25.0267" y="14.8718" rot="90"/>
+	<obj code="monster1" x="15.1831" y="26.3142" rot="270"/>
+	<obj code="monster1" x="14.0894" y="24.2517" rot="315"/>
+	<obj code="monster1" x="16.1206" y="26.7673" rot="315"/>
+	<obj code="monster3" x="13.5737" y="26.2829" rot="315"/>
+	<obj code="monster2" x="18.1266" y="30.8869"/>
+	<obj code="pacman4" x="21.6495" y="41.7592"/>
+	<obj code="monster0" x="25.9137" y="33.1952"/>
+	<obj code="barrel" x="30.4844" y="33.3952" rot="271"/>
+	<obj code="barrel" x="27.0156" y="33.4889" rot="247"/>
+	<obj code="monster6" x="3.76562" y="23.2785" rot="180"/>
+	<obj code="monster6" x="2.71875" y="24.1223" rot="225"/>
+	<obj code="pacman1" x="3.84375" y="22.1223" rot="180"/>
+	<obj code="monster1" x="5.37552" y="30.9574" rot="315"/>
+	<obj code="monster1" x="7.23489" y="32.4418" rot="315"/>
+	<obj code="monster1" x="9.32631" y="32.8537" rot="315"/>
+	<obj code="monster1" x="7.27944" y="30.7912" rot="315"/>
+	<obj code="monster6" x="6.40439" y="40.4289"/>
+	<obj code="monster-lair1" x="7.47" y="34.69" rot="315"/>
+	<obj code="monster1" x="4.98438" y="17.8594" rot="18"/>
+	<obj code="monster3" x="7.0625" y="17.7969" rot="-29"/>
+	<obj code="monster3" x="18.9063" y="24.625" rot="40"/>
+	<obj code="monster3" x="21.9219" y="40.8281" rot="24"/>
+	<obj code="monster3" x="22.5" y="40.1875" rot="24"/>
+	<obj code="monster3" x="21.125" y="39.5938" rot="-11"/>
+	<obj code="monster3" x="21.6719" y="39.7031" rot="-119"/>
+	<obj code="monster3" x="25.4844" y="35.2813" rot="-119"/>
+	<obj code="monster3" x="26.6875" y="3.57813" rot="-155"/>
+	<obj code="barrel" x="3.60938" y="13.3594"/>
+	<obj code="barrel" x="3" y="14.1094"/>
+	<obj code="barrel" x="2.89063" y="15.2969"/>
+	<obj code="barrel" x="21.5781" y="41.3125"/>
+	<obj code="barrel" x="22.0469" y="41.2969"/>
+	<region name="entry" x="6" y="3.5" rot="180" scale="1">
+	</region>
+	<region name="exit" x="6" y="43.5" rot="0" scale="1">
+		<next-map>data/maps/level02.xml</next-map>
+		<next-map-region>entry</next-map-region>
+	</region>
+	<sprite file="data/maps/doodahs/tree2.png" x="14.7" y="1.8" z="foreground" scale="1.6" rot="60"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="13.5" y="6.1" z="foreground" scale="1.6" rot="160"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="12.5" y="3.5" z="foreground" scale="1.7" rot="190"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="12.3" y="0.4" z="foreground" scale="1.7" rot="50"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="15.5" y="5.5" z="foreground" scale="1.5" rot="240"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="11.9" y="8.3" z="foreground" scale="1.6" rot="19"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="10.7" y="8.6" z="background" scale="1.5" rot="120"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="14.4" y="3.4" z="background" scale="1.6" rot="12"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="12" y="8.9" z="background" scale="1.6" rot="140"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="15" y="1.9" z="background" scale="1.1" rot="240"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="13.1" y="9.1" z="background" scale="1.3" rot="173"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="12.9" y="0.3" z="background" scale="1.7" rot="30"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="11.6" y="9.4" z="background" scale="1.3" rot="120"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="15" y="6.7" z="background" scale="1.5" rot="20"/>
+	<sprite file="data/maps/doodahs/foliage4.png" x="12.1" y="1.6" z="background" scale="1.5" rot="80"/>
+	<sprite file="data/maps/doodahs/foliage4.png" x="12" y="6.6" z="background" scale="1.3" rot="180"/>
+	<sprite file="data/maps/doodahs/foliage4.png" x="15.6" y="0.3" z="background" scale="1.6" rot="18"/>
+	<sprite file="data/maps/doodahs/foliage3.png" x="14.2" y="2" z="background" scale="1.2" rot="60"/>
+	<sprite file="data/maps/doodahs/foliage3.png" x="13.4" y="7.7" z="background" scale="1.1" rot="175"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="11.2" y="1.3" z="background" scale="1.3" rot="40"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="13.4" y="4.6" z="background" scale="1.8" rot="147"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="1" y="1" z="foreground" scale="1.5" rot="20"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="14.8" y="3.4" z="foreground" scale="1.4" rot="120"/>
+	<sprite file="data/maps/doodahs/tree-strange.png" x="2.5" y="6.5" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/cote_one.png" x="2.3" y="10.6" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/bonefire_five.png" x="4.5" y="15" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/wood_stack_big.png" x="0.4" y="14.9" z="background" scale="1.7" rot="270"/>
+	<sprite file="data/maps/doodahs/tree_bark_one.png" x="3.7" y="18.7" z="background" scale="1" rot="36"/>
+	<sprite file="data/maps/doodahs/tree_bark_two.png" x="2.2" y="19.1" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/wood_cutter_two.png" x="3.8" y="16.9" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="1.22" y="20.6" z="background" scale="1.7" rot="73"/>
+	<sprite file="data/maps/doodahs/foliage4.png" x="2.8" y="20.1" z="background" scale="1.8" rot="113"/>
+	<sprite file="data/maps/doodahs/foliage3.png" x="4.5" y="20.6" z="background" scale="2.1" rot="67"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="5.1" y="19.3" z="background" scale="1.9" rot="76"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="0.7" y="22.3" z="background" scale="1.7" rot="1"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="6" y="20.7" z="background" scale="1.9" rot="139"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="0.9" y="19.1" z="foreground" scale="1.7" rot="12"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="1.8" y="21.9" z="foreground" scale="1.6" rot="78"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="7.1" y="19.9" z="foreground" scale="1.5" rot="134"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="7.3" y="23.6" z="background" scale="1.9" rot="76"/>
+	<sprite file="data/maps/doodahs/foliage4.png" x="5.3" y="22.8" z="background" scale="1.6" rot="66"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="8.9" y="22.3" z="background" scale="1.7" rot="46"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="9.5" y="20.2" z="background" scale="1.8" rot="36"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="10.8" y="21.3" z="background" scale="1.6" rot="26"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="11.6" y="19.7" z="background" scale="1.8" rot="16"/>
+	<sprite file="data/maps/doodahs/tree_bark_two.png" x="14.5" y="20" z="background" scale="1.3" rot="160"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="12.9" y="20.6" z="foreground" scale="1.4" rot="40"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="13.4" y="19.3" z="background" scale="1.5" rot="60"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="10.5" y="20.3" z="foreground" scale="1.4" rot="140"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="7.71" y="22.5" z="foreground" scale="1.5" rot="210"/>
+	<sprite file="data/maps/doodahs/trunk_two.png" x="20.8" y="0.6" z="background" scale="1.4" rot="180"/>
+	<sprite file="data/maps/doodahs/tree-strange.png" x="22" y="2.55" z="background" scale="1" rot="50"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="29.5" y="1.2" z="background" scale="1.5" rot="60"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="30.5" y="3.1" z="foreground" scale="1.4" rot="20"/>
+	<sprite file="data/maps/doodahs/trunk_one.png" x="27.3" y="1.69" z="background" scale="1.5" rot="0"/>
+	<sprite file="data/maps/doodahs/trunk_three.png" x="30.1" y="4.76" z="background" scale="1.5" rot="310"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="26.4" y="9.1" z="background" scale="1.7" rot="80"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="24.1" y="10.3" z="background" scale="1.6" rot="90"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="25.8" y="10.8" z="background" scale="1.4" rot="260"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="25.4" y="10.1" z="foreground" scale="1.5" rot="120"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="23.5" y="18.4" z="background" scale="1.7" rot="90"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="24.9" y="18.9" z="background" scale="1.8" rot="120"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="21.8" y="20" z="background" scale="1.9" rot="20"/>
+	<sprite file="data/maps/doodahs/foliage3.png" x="23.4" y="20.4" z="background" scale="1.6" rot="50"/>
+	<sprite file="data/maps/doodahs/foliage4.png" x="25.8" y="20.7" z="background" scale="1.7" rot="190"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="24.2" y="21.5" z="background" scale="1.8" rot="250"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="22.2" y="22.5" z="background" scale="1.9" rot="135"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="25.1" y="22.8" z="background" scale="1.6" rot="35"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="23.5" y="18.4" z="background" scale="1.7" rot="10"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="23.6" y="23.4" z="background" scale="1.9" rot="170"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="22" y="24.7" z="background" scale="1.8" rot="180"/>
+	<sprite file="data/maps/doodahs/foliage4.png" x="25.9" y="25" z="background" scale="1.7" rot="190"/>
+	<sprite file="data/maps/doodahs/foliage3.png" x="23.9" y="25.9" z="background" scale="1.9" rot="120"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="25.3" y="26.3" z="background" scale="1.8" rot="110"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="22" y="26.9" z="background" scale="1.6" rot="100"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="23.7" y="27.5" z="background" scale="1.6" rot="90"/>
+	<sprite file="data/maps/doodahs/trunk_large.png" x="26.8" y="37" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/shed_crash_two.png" x="29.4" y="35.3" z="background" scale="1.7" rot="0"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="24.8" y="28.7" z="background" scale="1.9" rot="70"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="22" y="24.7" z="background" scale="1.8" rot="80"/>
+	<sprite file="data/maps/doodahs/foliage4.png" x="23.1" y="29.5" z="background" scale="1.7" rot="90"/>
+	<sprite file="data/maps/doodahs/foliage3.png" x="21.9" y="30" z="background" scale="1.9" rot="20"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="23" y="31.2" z="background" scale="1.8" rot="10"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="20.8" y="31.5" z="background" scale="1.6" rot="41"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="22" y="32.4" z="background" scale="1.6" rot="70"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="22.8" y="33.2" z="background" scale="1.9" rot="220"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="21.7" y="34.2" z="background" scale="1.8" rot="210"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="22.9" y="35.4" z="background" scale="1.6" rot="110"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="22.6" y="36.6" z="background" scale="1.6" rot="60"/>
+	<sprite file="data/maps/doodahs/foliage3.png" x="23.5" y="38.7" z="background" scale="1.9" rot="20"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="23.7" y="40.3" z="background" scale="1.9" rot="30"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="24" y="41.9" z="background" scale="1.8" rot="40"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="22.2" y="43.2" z="background" scale="1.7" rot="50"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="25.1" y="42.7" z="background" scale="1.8" rot="60"/>
+	<sprite file="data/maps/doodahs/foliage4.png" x="27" y="41.1" z="background" scale="1.9" rot="70"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="28.1" y="39.4" z="background" scale="1.8" rot="80"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="29.7" y="41.5" z="background" scale="1.7" rot="90"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="24.2" y="19.8" z="foreground" scale="1.5" rot="0"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="23.2" y="22.3" z="foreground" scale="1.5" rot="30"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="25.1" y="24.2" z="foreground" scale="1.4" rot="60"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="22.5" y="25.7" z="foreground" scale="1.3" rot="160"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="24.8" y="27.3" z="foreground" scale="1.5" rot="90"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="22.2" y="28.5" z="foreground" scale="1.5" rot="130"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="21.9" y="31.3" z="foreground" scale="1.4" rot="150"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="22.4" y="34.4" z="foreground" scale="1.5" rot="0"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="23.2" y="22.3" z="foreground" scale="1.5" rot="30"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="22.7" y="37.7" z="foreground" scale="1.4" rot="60"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="23" y="42.6" z="foreground" scale="1.4" rot="160"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="25.8" y="39.3" z="foreground" scale="1.6" rot="90"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="28.8" y="40.5" z="foreground" scale="1.5" rot="65"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="30.4" y="38.7" z="foreground" scale="1.4" rot="60"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="26.9" y="43.3" z="foreground" scale="1.6" rot="190"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="28.9" y="42.6" z="foreground" scale="1.6" rot="30"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="30.4" y="43.5" z="foreground" scale="1.5" rot="50"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="24.3" y="43.5" z="foreground" scale="1.5" rot="165"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="25.7" y="41.2" z="foreground" scale="1.4" rot="5"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="8.9" y="21.2" z="foreground" scale="1.5" rot="50"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="13.6" y="25.2" z="background" scale="1" rot="50"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="12" y="25.4" z="background" scale="1" rot="80"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="14.9" y="24.8" z="background" scale="1" rot="150"/>
+	<sprite file="data/maps/doodahs/tree-strange.png" x="6.9" y="28.9" z="background" scale="1" rot="70"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="20.5" y="42.6" z="background" scale="1.6" rot="70"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="18.9" y="41.2" z="background" scale="1.9" rot="220"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="19.7" y="39.7" z="background" scale="1.8" rot="210"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="19.8" y="38" z="background" scale="1.6" rot="110"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="18.7" y="36.7" z="background" scale="1.6" rot="60"/>
+	<sprite file="data/maps/doodahs/foliage3.png" x="23.5" y="38.7" z="background" scale="1.9" rot="20"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="19.7" y="35.6" z="background" scale="1.9" rot="30"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="18.7" y="34.4" z="background" scale="1.8" rot="40"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="17.7" y="33.5" z="background" scale="1.7" rot="50"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="17.7" y="33.5" z="background" scale="1.8" rot="60"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="8.48" y="43.2" z="background" scale="1.7" rot="170"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="8.75" y="41.8" z="background" scale="1.8" rot="120"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="9.47" y="40.2" z="background" scale="1.7" rot="110"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="10.2" y="38.8" z="background" scale="1.9" rot="210"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="11" y="37.3" z="background" scale="1.9" rot="260"/>
+	<sprite file="data/maps/doodahs/foliage3.png" x="11.3" y="35.7" z="background" scale="1.6" rot="220"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="12.2" y="34.6" z="background" scale="1.6" rot="230"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="13.1" y="33.4" z="background" scale="1.9" rot="140"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="14" y="33.2" z="background" scale="1.7" rot="150"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="15.1" y="33.9" z="background" scale="1.6" rot="80"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="16.3" y="33.3" z="background" scale="1.9" rot="260"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="18.8" y="42.6" z="background" scale="1.6" rot="120"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="18" y="38.7" z="background" scale="1.6" rot="40"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="17.3" y="35.3" z="background" scale="1.8" rot="80"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="14.1" y="35.2" z="background" scale="1.7" rot="175"/>
+	<sprite file="data/maps/doodahs/foliage3.png" x="12.3" y="38.3" z="background" scale="1.9" rot="110"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="10.3" y="41.2" z="background" scale="1.9" rot="300"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="15.4" y="38.2" z="background" scale="1.7" rot="70"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="12.5" y="41.8" z="background" scale="1.8" rot="50"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="17.7" y="40.2" z="background" scale="1.7" rot="10"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="15.2" y="41.8" z="background" scale="1.9" rot="310"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="15.3" y="35.7" z="background" scale="1.8" rot="60"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="14.1" y="35.2" z="background" scale="1.7" rot="175"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="9.61" y="42.7" z="foreground" scale="1.3" rot="160"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="10.9" y="39.8" z="foreground" scale="1.5" rot="90"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="12.5" y="36.7" z="foreground" scale="1.5" rot="130"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="13.1" y="34.5" z="foreground" scale="1.4" rot="150"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="16" y="34.2" z="foreground" scale="1.5" rot="10"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="18.1" y="35.9" z="foreground" scale="1.5" rot="330"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="19.6" y="37.2" z="foreground" scale="1.4" rot="60"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="18.6" y="39.6" z="foreground" scale="1.4" rot="260"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="20" y="41.3" z="foreground" scale="1.6" rot="70"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="20.4" y="43.8" z="foreground" scale="1.5" rot="265"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="16.9" y="41.9" z="foreground" scale="1.7" rot="260"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="16.2" y="39.6" z="foreground" scale="1.8" rot="19"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="13.2" y="39.6" z="foreground" scale="1.8" rot="59"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="13.6" y="43.5" z="foreground" scale="1.8" rot="230"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="11.2" y="43.5" z="foreground" scale="1.6" rot="90"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="15.8" y="36.8" z="foreground" scale="1.7" rot="16"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="13.7" y="36.7" z="foreground" scale="1.4" rot="35"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="17.7" y="43.5" z="foreground" scale="1.5" rot="130"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="0.81" y="24.1" z="background" scale="1.8" rot="40"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="1.63" y="25.3" z="background" scale="1.7" rot="50"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="2.4" y="27.1" z="background" scale="1.8" rot="60"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="2.87" y="28.4" z="background" scale="1.7" rot="170"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="2.18" y="29.7" z="background" scale="1.8" rot="120"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="1.6" y="31" z="background" scale="1.7" rot="110"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="1.69" y="32.5" z="background" scale="1.9" rot="210"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="2.2" y="33.7" z="background" scale="1.9" rot="260"/>
+	<sprite file="data/maps/doodahs/foliage3.png" x="2.65" y="35" z="background" scale="1.6" rot="220"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="2.88" y="36.3" z="background" scale="1.6" rot="230"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="3.21" y="37.6" z="background" scale="1.9" rot="140"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="3.65" y="38.9" z="background" scale="1.7" rot="150"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="3.99" y="40.2" z="background" scale="1.6" rot="80"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="3.99" y="41.9" z="background" scale="1.9" rot="260"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="3.64" y="43.4" z="background" scale="1.6" rot="120"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="2.02" y="41.7" z="background" scale="1.6" rot="40"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="1.35" y="39.5" z="background" scale="1.8" rot="80"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="1.54" y="37.3" z="background" scale="1.7" rot="175"/>
+	<sprite file="data/maps/doodahs/foliage3.png" x="1.14" y="35.5" z="background" scale="1.9" rot="110"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="0.6" y="34" z="background" scale="1.9" rot="300"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="0.84" y="32.1" z="background" scale="1.7" rot="70"/>
+	<sprite file="data/maps/doodahs/foliage1.png" x="0.61" y="30.2" z="background" scale="1.8" rot="50"/>
+	<sprite file="data/maps/doodahs/foliage2.png" x="1.14" y="28.3" z="background" scale="1.7" rot="10"/>
+	<sprite file="data/maps/doodahs/foliage6.png" x="0.74" y="26.4" z="background" scale="1.9" rot="310"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="2.19" y="43.2" z="foreground" scale="1.4" rot="260"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="2.57" y="40.6" z="foreground" scale="1.6" rot="70"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="2.29" y="38.3" z="foreground" scale="1.5" rot="265"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="0.45" y="36.4" z="foreground" scale="1.7" rot="260"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="0.12" y="33" z="foreground" scale="1.8" rot="19"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="1.14" y="29.1" z="foreground" scale="1.8" rot="59"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="1.47" y="27.1" z="foreground" scale="1.8" rot="230"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="0.2" y="25.1" z="foreground" scale="1.6" rot="90"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="0.41" y="42.9" z="foreground" scale="1.7" rot="16"/>
+	<sprite file="data/maps/doodahs/tree2.png" x="0.27" y="40.8" z="foreground" scale="1.4" rot="35"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="0.07" y="38.7" z="foreground" scale="1.5" rot="130"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="6.09" y="21.8" z="foreground" scale="1.4" rot="30"/>
+	<sprite file="data/maps/doodahs/tree_bark_two.png" x="6.13" y="24.2" z="background" scale="1.1" rot="190"/>
+</map>

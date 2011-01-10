@@ -1,0 +1,76 @@
+<root type="ability" class="self">
+
+  <name>$ABI_SPECIAL_BLIZZARD</name>
+  <trigger>dcdbac</trigger>
+  <icon>data/abilities/special/blizzard-0.png</icon>
+  <unavailable-icon>data/abilities/special/blizzard-1.png</unavailable-icon>
+  <description>$ABI_SPECIAL_BLIZZARD_DESC</description>
+
+  <effect type="list">
+  	<effect type="graphical-effect">
+  		<time value="0.8" />
+  		<name value="blue-explosion" />
+  	</effect>
+  	<effect type="graphical-effect">
+        <name value="ice-circle-shockwave" />
+        <time value="0.4" />
+    </effect>
+	<effect type="sound">
+		<name value="data/sounds/Lugaro/whoosh.ogg" />
+	</effect>
+  	<effect type="area">
+  		<area calc="1.0 + wp/10 + 0.1 * spellrange" />
+  		<filter value="hostiles" />
+  		<effect type="list">
+  			<effect type="damage">
+  				<amount calc="45.0 + wp / 5" />
+            	<damage-type value="ice"/>
+  			</effect>
+			<effect type="graphical-effect">
+				<time calc="0.7 + int / 30" />
+				<name value="frost" />
+			</effect>
+			<effect type="timed">
+				<time calc="1.0 + int / 30"  />
+				<effect type="stun" />
+			</effect>
+  		</effect>
+  	</effect>
+  	<effect type="area">
+  		<area calc="2.5 + wp/10 + 0.25 * spellrange" />
+  		<filter value="hostiles" />
+  		<effect type="list">
+  			<effect type="damage">
+  				<amount calc="30.0 + wp / 5" />
+            	<damage-type value="ice"/>
+  			</effect>
+			<effect type="graphical-effect">
+				<time calc="1.5 + int / 10" />
+				<name value="frost" />
+			</effect>
+            <effect type="non-cumulative">
+      			<effect type="timed">
+					<time calc="1.5 + int / 10" />
+  			    	<effect type="modify">
+						<aspect value="speed"/>
+						<amount value="0.5"/>
+  	    			</effect>
+      			</effect>
+            </effect>
+  		</effect>
+  	</effect>
+	<effect type="timed">
+		<time value="2.0"/>
+		<effect type="drain-mana">
+			<amount value="5.0"/>
+		</effect>
+	</effect>
+  </effect>
+
+  <manacost value="25.0" />
+  <casttime calc="0.04 + 0.16 / (castspeed + 1)" />
+  <delay calc="0.34 + 0.16 / (castspeed + 1)" />
+  <cooldown calc="0.88 + 0.32 / (castspeed + 1)" />
+  <no-buy />
+
+</root>

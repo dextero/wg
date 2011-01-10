@@ -1,0 +1,79 @@
+<root type="ability" class="self">
+
+  <name>$ABI_FIRE_BLAZING_FEET</name>
+  <trigger></trigger>
+  <icon>data/abilities/fire/ffeet-0.png</icon>
+  <unavailable-icon>data/abilities/fire/ffeet-1.png</unavailable-icon>
+  <description>$ABI_FIRE_BLAZING_FEET_DESC</description>
+
+  <effect type="recastable" >
+  	<recast value="0.4" />
+    <time value="6.0" />
+    <effect type="bullet">
+        <emitter>
+			<speed value="0.0" />
+			<acceleration value="0.0" />
+			<ttl value="8.0" />
+			<count value="2" />
+			<width value="0" />
+			<explode-on-fade value="1" />
+			<bullet value="data/physicals/invisible-bullet.xml" />
+			<filter value="none" />
+
+			<flight-effect type="list">
+				<effect type="graphical-effect">
+					<time value="5" />
+					<name value="flames" />
+				</effect>
+				<effect type="recastable">
+					<time value="15" />
+					<recast value="5"/>
+					<effect type="graphical-effect">
+						<time value="5" />
+						<name value="flames" />
+					</effect>
+				</effect>
+				<effect type="recastable">
+					<time value="15" />
+					<recast value="0.4"/>
+					<effect type="area">
+						<filter value="hostiles" />
+						<area calc="0.4 + 0.04 * spellrange" />
+						<effect type="list">
+							<effect type="damage">
+								<amount calc="2+lvl+0.1*wp"/>
+								<damage-type value="fire"/>
+							</effect>
+							<effect type="knockback">
+								<amount calc="0.8" />
+							</effect>
+							<effect type="chance">
+								<chance calc="ignite*0.1"/>
+								<effect type="inject">
+									<tree value="fire"/>
+									<code value="k"/>
+									<name value="igniting-magic"/>
+								</effect>
+							</effect>
+						</effect>
+					</effect>
+				</effect>
+			</flight-effect>
+		</emitter>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.8" />
+  </cast-time-effect>
+
+  <manacost calc="3.0 * (0.80^fm)" />
+  <casttime calc="0.02 + 0.08 / (1 + castspeed)" />
+  <delay calc="0.5 + 0.8 / (1 + castspeed)" />
+  <cooldown value="0.0" />
+
+  <focus-mana-cost calc="(20.0 + 2.0 * lvl) * (0.80^fm)" />
+  <focus-max-duration value="6.0" />
+
+</root>

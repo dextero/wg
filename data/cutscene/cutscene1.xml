@@ -1,0 +1,34 @@
+﻿<root type="cutscene">
+
+  <setImage time="0.0" path="data/cutscene/cutscene_1.png" />
+  <setCamera time="0.0" size="50.0" positionx="80.0" positiony="90.0" duration="0.0" />
+  <setCamera time="1.0" size="100.0" positionx="50.0" positiony="50.0" duration="7.0" />
+  <showText time="6.0" content="$CUTSCENE_INTRO_1" duration="4.0" />
+
+  <setImage time="11.0" path="data/cutscene/cutscene_2.png" />
+  <setCamera time="11.0" size="50.0" positionx="80.0" positiony="40.0" duration="0.0" />
+  <showText time="12.5" content="$CUTSCENE_INTRO_2" duration="6.0" /> 
+
+  <setCamera time="17.0" size="50.0" positionx="40.0" positiony="70.0" duration="4.5" />
+  <showText time="19.0" content="$CUTSCENE_INTRO_3" duration="3.0" />
+
+  <setCamera time="22.0" size="40.0" positionx="35.0" positiony="100.0" duration="6.0" />
+  <showText time="23.0" content="$CUTSCENE_INTRO_4" duration="6.0" />
+
+  <setCamera time="29.0" size="100.0" positionx="50.0" positiony="50.0" duration="20.0" />
+  <showText time="31.0" content="$CUTSCENE_INTRO_5" duration="2.0" />
+  <showText time="34.0" content="$CUTSCENE_INTRO_6" duration="8.0" />
+  <showText time="43.0" content="$CUTSCENE_INTRO_7" duration="4.0" />
+  <showText time="48.0" content="$CUTSCENE_INTRO_8" duration="7.0" />
+  <showText time="55.0" content="$CUTSCENE_INTRO_9" duration="5.0" />
+  
+  <setCamera time="59.0" size="70.0" positionx="55.0" positiony="50.0" duration="7.0" />
+  <showText time="62.0" content="$CUTSCENE_INTRO_10" duration="14.0" />
+  <showText time="77.0" content="$CUTSCENE_INTRO_11" duration="4.0" />
+  
+  <showText time="82.0" content="$CUTSCENE_INTRO_12" duration="7.0" />
+  <setCamera time="85.0" size="60.0" positionx="0.0" positiony="0.0" duration="4.0" />
+
+  <setCamera time="91.0" size="100.0" positionx="50.0" positiony="50.0" duration="10.0" />
+  <showText time="93.0" content="$CUTSCENE_INTRO_13" duration="4.0" />
+</root>

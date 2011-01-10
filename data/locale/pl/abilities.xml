@@ -1,0 +1,390 @@
+<root type="locale" name="Polski" code="pl">
+	<entry>
+		<key>ABI_ELECTRIC_CHAIN_LIGHTNING</key>
+		<value>Błyskawice seryjne</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_CHAIN_LIGHTNING_DESC</key>
+		<value>Błyskawice przeskakujące na kolejne potwory</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_DEBUFF_MASTERY</key>
+		<value>Mistrz osłabiania</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_DEBUFF_MASTERY_DESC</key>
+		<value>Czary osłabiające potwory mają większą skuteczność. Umiejętność bierna</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_DEVOLUTION</key>
+		<value>Dewolucja</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_DEVOLUTION_DESC</key>
+		<value>Straszliwe wiązki błyskawic rażące wiele celów naraz. Zadaje obrażenia na wybranym obszarze</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTRICITY_MASTERY</key>
+		<value>Mag elektryczności</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTRICITY_MASTERY_DESC</key>
+		<value>Umiejętność zwiększająca obrażenia zadawane przez czary elektryczności</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTRICUTION</key>
+		<value>Porażenie</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTRICUTION_DESC</key>
+		<value>Zwiększa szansę na ogłuszenie za sprawą czarów elektryczności.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTRON</key>
+		<value>Elektron swobodny</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTRON_DESC</key>
+		<value>Elektron swobodny - podstawowa umiejętność magów błyskawic, zadaje drobne obrażenia i ma szanse na ogłuszenie trafionego celu.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTROSTATICS</key>
+		<value>Elektrostatyka</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTROSTATICS_DESC</key>
+		<value>Bezpośrednie rozwinięcie czaru &quot;Elektron swobodny&quot;. Różnica potencjałów pomiędzy trafionym potworem a jego najbliższym otoczeniem wywołuje chwilowy przeskok iskier.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELETRICSNARE</key>
+		<value>Elektryczne sidła</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELETRICSNARE_DESC</key>
+		<value>Gracz wysyła bombę, która leci na określoną odległość, po czym przyciąga do siebie okoliczne potwory, zadając im przy tym obrażenia.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_FORKED_LIGHTNING</key>
+		<value>Wiązka błyskawic</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_FORKED_LIGHTNING_DESC</key>
+		<value>Kilka błyskawic wysyłanych równolegle w stronę niezależnych celów.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_LAZOR</key>
+		<value>Laser</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_LAZOR_DESC</key>
+		<value>Promień lasera o długim zasięgu i niezwykłej przenikliwości pali bezlitośnie wszystko na swojej drodze.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_LIGHTNING_STRIKE</key>
+		<value>Błyskawica</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_LIGHTNING_STRIKE_DESC</key>
+		<value>Pojedyncza błyskawica zadająca potężne obrażenia jednemu potworowi.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_MAGICSTORM</key>
+		<value>Zarzewie burzy</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_MAGICSTORM_DESC</key>
+		<value>Mag przywołuje magiczną burzę, powodując nieokiełzaną ferię błyskawic. Jeśli któryś z wrogów umknie piorunom, dościgną go złowrogie elektrony.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_TRANSFUSE</key>
+		<value>Transfuzja</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_TRANSFUSE_DESC</key>
+		<value>Łańcuch błyskawic wysysających esencję życiową z potworów.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_BLAZING_FEET</key>
+		<value>Płonące stopy</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_BLAZING_FEET_DESC</key>
+		<value>Nawet uciekając, mag ognia może stanowić zagrożenie dla wrogów. Póki gracz trzyma przycisk czaru, mag zostawia ślad z gorejących płomieni, raniących każdego potwora który w nie nieopatrznie wejdzie.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_ELEMENTAL_REVENGE</key>
+		<value>Zemsta żywiołu</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_ELEMENTAL_REVENGE_DESC</key>
+		<value>Ostateczna odpowiedź magów na częsty problem &quot;otoczenia przez hordę potworów&quot;.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_EXPLODING_CORPSE</key>
+		<value>Wybuchające zwłoki</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_EXPLODING_CORPSE_DESC</key>
+		<value>Choć wielu magów gardzi tym zaklęciem (z powodu jego pokrewieństwa z nekromancją), jest ono bardzo przydatne w niektórych sytuacjach - zwłoki ubitych niedawno potworów wybuchają, raniąc kolejnych. Im dłużej gracz przytrzyma przycisk czaru, tym więcej zwłok wybuchnie.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_EXPLOSION</key>
+		<value>Eksplozja</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_EXPLOSION_DESC</key>
+		<value>Każdy poziom tej umiejętności zwiększa szansę na wybuch pocisków szkoły ognia, umożliwiając zadawanie obrażeń na dodatkowym obszarze.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIRE_MASTERY</key>
+		<value>Mag ognia</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIRE_MASTERY_DESC</key>
+		<value>Ta umiejętność reprezentuje sztukę posługiwania się magią ognistego żywiołu - każdy poziom obniża koszt many czarów ognia o 20%.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREARROW</key>
+		<value>Ognista strzała</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREARROW_DESC</key>
+		<value>Prosta płonąca strzała, zadająca obrażenia i delikatnie odpychająca. Interesujące w tym czarze jest to, że pocisk przenika przez wrogów na wylot - jedną strzałą można trafić kilka potworów w rządku.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREBALL</key>
+		<value>Kula ognia</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREBALL_DESC</key>
+		<value>Ulubiona broń magów bojowych - pocisk z płynnego ognia, wybuchający przy kontakcie z wrogiem. Tylko pamiętaj, żeby się odsunąć na bezpieczną odległość...</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIRECIRCLE</key>
+		<value>Krąg ognia</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIRECIRCLE_DESC</key>
+		<value>Gdy jesteś otoczony, ta umiejętność jest jak znalazł. Wrogowie wokół Ciebie są odpychani rozgrzaną falą uderzeniową - dostaniesz chwilę oddechu aby uciec. Oby.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREPITS</key>
+		<value>Ogniste doły</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREPITS_DESC</key>
+		<value>Przed magiem pojawiają się dwa doły, wypełnione siarką i żarem. Potwór, który w nie wejdzie, otrzymuje obrażenia i nie może się wydostać dopóki doły nie znikną.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREWALL</key>
+		<value>Ściana ognia</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREWALL_DESC</key>
+		<value>Ten czar pozwala magowi odciąć się od hord wrogów - przywołuje barierę z płomienia, która rani i odpycha istoty próbujące się przez nią przedrzeć (zarówno stwory złą, jak i nieuważnych magów). Tylko najbardziej zdeterminowanym potworom uda się ją przebyć, choć słono to okupią.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FLAMING_HANDS</key>
+		<value>Płonące dłonie</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FLAMING_HANDS_DESC</key>
+		<value>Ogniowy atak wręcz, silnie odpychający wrogów w jego zasięgu. Skuteczny, gdy zaczynasz być otoczony...</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FLAMING_MANTLE</key>
+		<value>Płaszcz ognia</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FLAMING_MANTLE_DESC</key>
+		<value>Potężny czar defensywny, zwiększający odporności maga i atakujący potwory w jego pobliżu. Otacza rzucającego chmarą iskier, stanowiących dodatkową barierę dla agresorów.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_IGNITING_MAGIC</key>
+		<value>Podpalanie</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_IGNITING_MAGIC_DESC</key>
+		<value>Dzięki tej umiejętności mag doskonali się w podpalaniu wrogów - czary ognia mają szansę na spowodowanie, że cel stanie w płomieniach, otrzymując dodatkowe obrażenia. Płomienie mają szansę na przeskoczenie na sąsiednie cele.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_QUICKSHOT</key>
+		<value>Ognista seria</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_QUICKSHOT_DESC</key>
+		<value>Ciągły strumień malutkich, rozrzarzonych iskier. Skuteczny przeciwko gniazdom i pojedynczym wrogom, ale łatwo możesz zostać otoczony.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_SCHRAPNEL_MAGIC</key>
+		<value>Ogniste odłamki</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_SCHRAPNEL_MAGIC_DESC</key>
+		<value>Im wyższy poziom tej umiejętności, tym większa szansa, że wybuchy spowodowane umiejętnością &quot;Eksplozja&quot; będą rozsyłać dodatkowe pociski - krople czystego ognia.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_SPARKRAIN</key>
+		<value>Deszcz iskier</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_SPARKRAIN_DESC</key>
+		<value>Czar wyjątkowo niebezpieczny, mimo bardzo ograniczonego zasięgu - wysyła wachlarz iskier, przepalających się przez wrogów.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_SUPERSPEED</key>
+		<value>Przyspieszenie</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_SUPERSPEED_DESC</key>
+		<value>Chwilowy, acz potężny kop do prędkości.</value>
+	</entry>
+	<entry>
+		<key>ABI_NATURE_ACID_CIRCUS</key>
+		<value>Rozpylacz cotixa</value>
+	</entry>
+	<entry>
+		<key>ABI_NATURE_ACID_CIRCUS_DESC</key>
+		<value>Broń prawdziwie przerażająca - wirujący pocisk, rozrzujący wokół deszcz gryzących kropel.</value>
+	</entry>
+	<entry>
+		<key>ABI_NATURE_HEALSELF</key>
+		<value>Uzdrowienie</value>
+	</entry>
+	<entry>
+		<key>ABI_NATURE_HEALSELF_DESC</key>
+		<value>Silne zaklęcie uzdrawiające - ale chwilę trwa, zanim się wykona do końca.</value>
+	</entry>
+	<entry>
+		<key>ABI_NATURE_REGENERATION</key>
+		<value>Naturalna regeneracja</value>
+	</entry>
+	<entry>
+		<key>ABI_NATURE_REGENERATION_DESC</key>
+		<value>Twój organizm jest w stanie samodzielnie (choć powoli) leczyć swoje rany. Umiejętność bierna.</value>
+	</entry>
+	<entry>
+		<key>ABI_PASSIVE</key>
+		<value>Umiejętność pasywna</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_ARMOR</key>
+		<value>Zbroja Flo-kajwerca</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_ARMOR_DESC</key>
+		<value>Flo-kajwerc, przybysz z egzotycznych krain wschodu, znany był z dwóch rzeczy: zamiłowania do tabaki i magicznej runy ochronnej, zwiększającej szeroki wachlarz możliwości defensywnych rzucającego.</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_BASHER</key>
+		<value>Maczuga Kromada</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_BASHER_DESC</key>
+		<value>Gdy szaman trolli, Kromad Straszliwy, zgubił swoją kościaną maczugę w wirze walki, postanowił posługiwać się ciosem z czystej energii magicznej. Zaklęcie okazało się na tyle interesujące, że szybko skopiowali je ludzcy magowie.</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_BLADES</key>
+		<value>Ostrza d&apos;Apaca</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_BLADES_DESC</key>
+		<value>Rój ostrzy z czystego cienia krąży wokół celów, przekłuwając je na wylot (ignorując odporności). Mistrz d&apos;Apac nazwał je swoim największym osiągnięciem - zwłaszcza, że pierwsze eksperymenty okupił kilkoma dziurami w ścianie pracowni.</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_BLIZZARD</key>
+		<value>Zamieć Aruma</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_BLIZZARD_DESC</key>
+		<value>Magowie mrozu dysponują wieloma zaklęciami spowalniającymi i zamrażającymi wrogów, a to konkretne jest wyjątkowo skuteczne w przypadku otoczenia przez wrogie hordy.</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_CHANT</key>
+		<value>Pieśń Sothyra</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_CHANT_DESC</key>
+		<value>Gdy dwóch magów wspólnie podejmuje wyprawę przeciw złu, ich moce magiczne ulegają spleceniu. Mogą oni wykorzystać ten fakt, by się nawzajem wzmocnić - co właśnie czyni ten czar-pieśń autorstwa barda Sothyra.</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_CURSE</key>
+		<value>Klątwa starego Roxtede</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_CURSE_DESC</key>
+		<value>Niewiele czarów zachowało się z ksiąg wyklętego nekromanty Roxtede, ale jeden przetrwał do czasów współczesnych - jest to wyjątkowo zjadliwa klątwa, która na stałe zatruwa cele i obniża ich zdolności obronne.</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPP_SUMMON</key>
+		<value>Przywołanie medyków</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPP_SUMMON_DESC</key>
+		<value>Przywołanie przyjaznych duszków, które będą leczyć twoją postać przez jakiś czas. Nie mogą zostać zabite, ale są dość powolne</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_CASTING_SPEED</key>
+		<value>Przyspieszenie rzucania zaklęć</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_CASTING_SPEED_DESC</key>
+		<value>Specjalne ćwiczenia zwiększają szybkość rzucania zaklęć.</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_CHARGED_SPELL</key>
+		<value>Przeładowanie zaklęcia</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_CHARGED_SPELL_DESC</key>
+		<value>Wyjątkowo silne skupienie sprawiające, że kolejne zaklęcie będzie silniejsze niż zazwyczaj (jego poziom zostanie chwilowo zwiększony o poziom_przeładowania / 2).</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_MAGICAL_POWER</key>
+		<value>Zwiększenie mocy</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_MAGICAL_POWER_DESC</key>
+		<value>Długoletni trening sprawia, że twoje zaklęcia stają się potężniejsze.</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_RESONATOR</key>
+		<value>Rezonator Siolana</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_RESONATOR_DESC</key>
+		<value>Ten czar został odkryty przez Siolana, młodszego maga bojowego trzeciej kategorii, w czasie jego ucieczki przed hordami górskich trolli. Jego działanie jest proste - im więcej jest wrogów wokół maga, tym mocniej jest on odpychany w przeciwnym kierunku, dając mu jako-taką szansę na ucieczkę. Magowie bojowi gardzą tym zaklęciem - z drugiej strony, Siolan był jednym z nielicznych magów bojowych, którzy dożyli wieku emerytalnego...</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_SACRIFICE</key>
+		<value>Poświęcenie</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_SACRIFICE_DESC</key>
+		<value>Nie bacząc na własne rany, pozwalasz zaklęciom czerpać moc z własnego ciała.</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_SPELL_RANGE</key>
+		<value>Zwiększenie zasięgu</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_SPELL_RANGE_DESC</key>
+		<value>Twoje doświadczenie w ciskaniu rożnorodnymi pociskami sprawia, że możesz rzucać je dalej niż inni.</value>
+	</entry>
+	<entry>
+		<key>ABI_WATER_BALL_LIGHTNING</key>
+		<value>Piorun kulisty</value>
+	</entry>
+	<entry>
+		<key>ABI_WATER_BALL_LIGHTNING_DESC</key>
+		<value>Kula elektryczności, wysyłająca co chwilę pioruny. </value>
+	</entry>
+	<entry>
+		<key>ABI_WATER_ENERGY_CHANNELING</key>
+		<value>Pozyskiwanie energii</value>
+	</entry>
+	<entry>
+		<key>ABI_WATER_ENERGY_CHANNELING_DESC</key>
+		<value>Twoje wyszkolenie magiczne umożliwia Ci pozyskiwanie many z otoczenia.</value>
+	</entry>
+</root>

@@ -1,0 +1,57 @@
+<root type="player">
+
+  <speed min="2.5" max="2.5" />
+  <turnspeed min="360.0" max="360.0" />
+  <strength min="25.0" max="25.0" />
+  <willpower min="40.0" max="40.0" />
+  <intelligence min="10.0" max="10.0" />  
+
+  <maxhp min="100.0" max="100.0" />
+  <maxmana min="50.0" max="50.0" />
+
+  <sound type="level-up" filename="data/sounds/levelup.wav" />
+
+  <scale min="1.0" max="1.0" />
+  <radius min="0.45" max="0.45" />
+  <mass min="2.5" max="2.5" />
+  <shadow-offset min="0.12" max="0.12" />
+  
+  <anim name="core/anim/hero2/stand" type="default" />
+  <anim name="core/anim/hero2/cast" type="attack" />
+  <anim name="core/anim/hero2/cast-onehand" type="2" />
+  <anim name="core/anim/hero2/cast-forward" type="3" />
+  <anim name="core/anim/hero2/move" type="move" />
+  <anim name="test/anim/hero2/death" type="death" />
+  <anim name="core/anim/hero2/strafe" type="strafe" />
+  
+  <manaregen min="4.0" max="4.0" />
+  
+  <trigger-effects>data/player/trigger-effects0.xml</trigger-effects>
+  
+  <ability-tree code="fire">data/player/fire-tree.xml</ability-tree>
+  <ability-tree code="electricity">data/player/electricity-tree.xml</ability-tree>
+  <ability-tree code="support">data/player/support-tree.xml</ability-tree>
+  <ability-tree code="special">data/player/special-tree.xml</ability-tree>
+
+  <hud>
+    <bg path="data/GUI/hud_bkg.png" />
+    <fg path="data/GUI/hud_frg2.png" />
+    <fg-flared path="data/GUI/hud_frg_flared_f4.png" />
+    <circle1 path="data/GUI/circle-bkg2.png" />
+    <circle2 path="data/GUI/circle-i2.png" />
+    <circle3 path="data/GUI/circle-o2.png" />
+    <avatar0 path="data/GUI/mag20.png" />
+    <avatar1 path="data/GUI/mag21.png" />
+    <avatar2 path="data/GUI/mag22.png" />
+    <avatar3 path="data/GUI/mag23.png" />
+    <avatar4 path="data/GUI/mag24.png" />
+    <hp path="data/GUI/hud_hp.png" />
+    <mana path="data/GUI/hud_mana.png" />
+    <mana-flared path="data/GUI/hud_mana_flared.png" />
+    <xp path="data/GUI/hud_xp.png" />
+    <seq-q path="data/GUI/HUD-seq-Q.png" />
+    <seq-w path="data/GUI/HUD-seq-W.png" />
+    <seq-e path="data/GUI/HUD-seq-E.png" />
+    <seq-r path="data/GUI/HUD-seq-R.png" />
+  </hud>
+</root>

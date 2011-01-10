@@ -1,0 +1,68 @@
+<root type="achievements">
+	<achievement>
+		<name value="$ACH_EUTHANASIA" />
+		<desc value="$ACH_EUTHANASIA_DESC" />
+		<image value="data/GUI/fire.png" />
+		<completed value="0" />
+	</achievement>
+	<achievement>
+		<name value="$ACH_BEGINNER" />
+		<desc value="$ACH_BEGINNER_DESC" />
+		<image value="data/GUI/fire.png" />
+		<completed value="0" />
+	</achievement>
+	<achievement>
+		<name value="$ACH_DIE" />
+		<desc value="$ACH_DIE_DESC" />
+		<image value="data/GUI/fire.png" />
+		<completed value="0" />
+	</achievement>
+	<achievement>
+		<name value="$ACH_ZOMBIE" />
+		<desc value="$ACH_ZOMBIE_DESC" />
+		<image value="data/GUI/fire.png" />
+		<completed value="0" />
+	</achievement>
+	<achievement>
+		<name value="$ACH_FIRST_BOSS" />
+		<desc value="$ACH_FIRST_BOSS_DESC" />
+		<image value="data/GUI/fire.png" />
+		<completed value="0" />
+	</achievement>
+	<achievement>
+		<name value="$ACH_GLOBAL_WARMING" />
+		<desc value="$ACH_GLOBAL_WARMING_DESC" />
+		<image value="data/GUI/fire.png" />
+		<completed value="0" />
+	</achievement>
+	<achievement>
+		<name value="$ACH_PALADIN" />
+		<desc value="$ACH_PALADIN_DESC" />
+		<image value="data/GUI/fire.png" />
+		<completed value="0" />
+	</achievement>
+	<achievement>
+		<name value="$ACH_KILL250RATS" />
+		<desc value="$ACH_KILL250RATS_DESC" />
+		<image value="data/GUI/fire.png" />
+		<completed value="0" />
+	</achievement>
+	<achievement>
+		<name value="$ACH_ANCIENT_KNOWLEDGE" />
+		<desc value="$ACH_ANCIENT_KNOWLEDGE_DESC" />
+		<image value="data/GUI/fire.png" />
+		<completed value="0" />
+	</achievement>
+	<achievement>
+		<name value="$ACH_RETURN_OF_THE_KING" />
+		<desc value="$ACH_RETURN_OF_THE_KING_DESC" />
+		<image value="data/GUI/fire.png" />
+		<completed value="0" />
+	</achievement>
+	<achievement>
+		<name value="$ACH_CHEATER" />
+		<desc value="$ACH_CHEATER_DESC" />
+		<image value="data/GUI/fire.png" />
+		<completed value="0" />
+	</achievement>
+</root>

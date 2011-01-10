@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+        <h3>Map format (XML):</h3>
+        <code>&lt;map&gt;</code> - root node, no additional attributes.
+        <ul>
+          <br />
+          <li><code>&lt;version&gt;3&lt;/version&gt;</code> - map version, currently 3.</li>
+          <li><code>&lt;width&gt;16&lt;/width&gt;&lt;height&gt;16&lt;/height&gt;</code> - map size, in tiles.</li>
+          <li><code>&lt;max-living-monsters&gt;100&lt;/max-living-monsters&gt;</code> - maximum number of living monsters on the map. If there is more of them, lairs will halt spawning until some of them aren't dead.</li>
+          <br />
+          <li><code>&lt;tiletype code="a" image="data/maps/themes/test/rgrass1.png" [ index="0" ] /&gt;</code> - tile type declaration, used later in <code>&lt;tiles&gt;</code>. Attributes:
+          <ul>
+            <li><code>code</code> - string, required. Used in <code>&lt;tiles&gt;</code>. Should be as short as possible, but every tiletype <b>must</b> have unique one.
+            <li><code>image</code> - string, required. Descibes path to tile image.
+            <li><code>index</code> - integer, optional. Used to identify a tile in an .atlas file.</li>
+          </ul>
+          <li>
+            <code>&lt;tiles&gt;[...]&lt;/tiles&gt;</code> - [width * height] tile codes, describing the map's background. [height] rows, each one containing [width] tile codes (see: <code>&lt;tiletype ...&gt;</code>). Example:
+            <pre><code>  &lt;tiles&gt;
+    a a a b
+    a b b b
+    a a b b
+    c c a b
+  &lt;/tiles&gt;</code></pre>
+          </li>
+          <br />
+          <li><code>&lt;objtype code="a" file="data/physicals/rat.xml" /&gt;</code> - object type declaration, used in <code>&lt;obj ... /&gt;</code>. Attributes:</li>
+          <ul>
+            <li><code>code</code> - string, required. Used in <code>&lt;obj ... /&gt;</code>. Should be as short as possible, but every objtype <b>must</b> have unique one.</li>
+            <li><code>file</code> - string, required. Path to XML file describing given object.</li>
+          </ul>
+          <li><code>&lt;obj code="a" x="3" y="5" [ rot="120" name="lenny" ] /&gt;</code> - describes object placed on the map. Attributes:
+            <ul>
+              <li><code>code</code> - string, required. Same as <code>code</code> of the objtype you want to place.</li>
+              <li><code>x</code> - float, required. Object's X position on the map, where 1.0 = tile size.</li>
+              <li><code>y</code> - float, required. Object's Y position, as above.</li>
+              <li><code>rot</code> - float, optional. Object's rotation, in degrees.</li>
+              <li><code>name</code> - string, optional. Used to identify object from console.</li>
+            </ul>
+            In addition, &lt;obj ...&gt; may have additional child nodes:
+            <ul>
+              <li><code>&lt;cond&gt;[...]&lt;/cond&gt;</code> - <a href="Conditions.html">condition</a>. Object will be "activated" when the condition is fulfilled: monsters will start moving, lairs spawning enemies, doors will open etc.</li>
+              <li><code>&lt;monster-count&gt;100&lt;/monster-count&gt;</code> (<i>lairs only</i>) - maximum number of monsters, which this lair can spawn.</li>
+              <li><code>&lt;effect-on-open&gt;[...]&lt;effect-on-open&gt;</code> (<i>doors only</i>) - an <a href="Effects.html">effect</a> triggered when the door is being opened.</li>
+            </ul>
+          </li>
+          <br />
+          <li id="regions"><code>&lt;region name="exit" x="0.5" y="12.5" [ scale="1" ] &gt;[...]&lt;/region&gt;</code> - a square-shaped area with some name. They activate when the player steps on them. Mostly used to move between maps, but they also can be used to <a href="#region-effects">trigger some effect</a>. Attributes:
+            <ul>
+              <li><code>name</code> - string, required. Region name, used for identification.</li>
+              <li><code>x</code> - float, required. Region's X coordinate, 1.0 = tile size.</li>
+              <li><code>y</code> - float, required. Region's Y coordinate.</li>
+              <li><code>scale</code> - float, optional, default: 1.0. Describes the region's size, 1.0 = 1 tile.</li>
+            </ul>
+            Regions can also have following subnodes:
+            <ul>
+              <li><code>&lt;next-map&gt;data/maps/level01.xml&lt;/next-map&gt;</code> - path to map file, which should be loaded when the player steps on the region.</li>
+              <li><code>&lt;next-map-region&gt;entry&lt;/next-map-region&gt;</code> - the name of a region on a new map, where the player should be placed after loading.</li>
+              <li><code>&lt;cond&gt;[...]&lt;/cond&gt;</code> - optional. <a href="Conditions.html">Condition</a> activating the region. Inactive region doesn't trigger when someone steps on it.</li>
+            </ul>
+          </li>
+        </ul>
+        <br /><b id="region-effects">Regions and effects</b><br />
+        Regions itself can't trigger <a href="Effects.html">effects</a>. However, they can be used in a <a href="Conditions.html">condition</a> activating a door object, which has an <code>&lt;effect-on-open&gt;</code> node. To trigger an effect, you have to use this trick:
+        <pre><code>  &lt;!-- xml describing door without image nor animations, to make sure it's invisible --&gt;
+  &lt;objtype code="invisible-door" file="path/to/door-without-image.xml"&gt; 
+  
+  &lt;!-- door placed outside the map (x=-5, y=-5) --&gt;
+  &lt;obj code="invisible-door" x="-5" y="-5"&gt;
+    &lt;cond check="is"&gt;
+      &lt;type&gt;region-triggered&lt;/type&gt;
+      &lt;param&gt;REGIONNAME&lt;/param&gt;
+    &lt;/cond&gt;
+  &lt;/obj&gt;
+  
+  &lt;region name="REGIONNAME" x="10" y="10" scale="1" /&gt;</code></pre>
+        See <a href="Conditions.html">conditions page</a> for more info regarding the <code>&lt;cond&gt;</code> node.
+    </body>
+</html>

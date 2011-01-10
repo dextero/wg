@@ -1,0 +1,8 @@
+<root type="ability" class="export">
+	<name>$ABI_ELECTRIC_ELECTRICUTION</name>
+	<icon>data/abilities/electric/shock-0.png</icon>
+	<unavailable-icon>data/abilities/electric/shock-1.png</unavailable-icon>
+	<description>$ABI_ELECTRIC_ELECTRICUTION_DESC</description>
+
+	<effect type="noEffect"/>
+</root>

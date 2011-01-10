@@ -1,0 +1,38 @@
+﻿<root type="enemy">
+
+  <bestiary>
+    <name value="$BESTIARY_SCARAB_NAME" />
+    <desc value="$BESTIARY_SCARAB_DESC" />
+  </bestiary>
+  <genre>scarab</genre>
+
+  <speed min="1.5" max="2.2" />
+  <turnspeed min="240.0" max="240.0" />
+  <strength min="1.0" max="3.0" />
+  <!--  <fireresist min="10.0" max="10.0" />-->
+
+  <maxhp min="20.0" max="30.0" />
+  <maxmana min="10.0" max="30.0" />
+
+  <xp min="3.0" max="4.0" />
+
+  <scale min="0.5" max="0.8" />
+  <radius min="0.165" max="0.22" />
+  <mass min="0.6" max="1.0" />
+
+  <anim name="core/anim/scarab/default" type="default" />
+  <anim name="core/anim/scarab/move" type="move" />
+  <!-- no death anim! i tak ma zostac! -->
+  <anim name="core/anim/scarab/default" type="death" /> 
+  <anim name="core/anim/scarab/move" type="attack" />
+
+  <ai name="boid-chaser" />
+
+  <ability name="data/abilities/monster/scarab-combo-attack.xml" default="1" />
+
+  <sound type="attack" filename="data/sounds/EL/rat01.ogg" />
+  <sound type="death" filename="data/sounds/EL/rat01.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/rat01.ogg" />
+  <sound type="spawn" filename="data/sounds/EL/rat01.ogg" />
+
+</root>

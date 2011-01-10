@@ -1,0 +1,18 @@
+<root type="npc">
+
+  <speed min="0" max="0" />
+  <strength min="0" max="0" />
+  <turnspeed min="0" max="0" />
+  <shadow-offset min="0" max="0" />
+
+  <maxhp min="999999" max="999999" />
+  <maxmana min="0" max="0" />
+  <xp min="0" max="0" />
+
+  <scale min="0" max="0" />
+  <radius min="0" max="0" />
+  <mass min="0" max="0" />
+  
+
+  <dialog file="data/plot/tutorial-dialog1.xml" />
+</root>

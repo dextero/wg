@@ -1,0 +1,101 @@
+<root type="ability" class="self">
+
+  <name>$ABI_FIRE_ELEMENTAL_REVENGE</name>
+  <trigger></trigger>
+  <icon>data/abilities/fire/frevenge-0.png</icon>
+  <unavailable-icon>data/abilities/fire/frevenge-1.png</unavailable-icon>
+  <description>$ABI_FIRE_ELEMENTAL_REVENGE_DESC</description>
+
+	<effect type="list">
+		<effect type="graphical-effect">
+			<name value="fire-circle-shockwave" />
+			<time value="0.4" />
+		</effect>
+		<effect type="sound">
+			<name value="data/sounds/Lugaro/break.ogg" />
+		</effect>
+		<effect type="area">
+			<area calc="0.68 + 0.071 * spellrange"  />
+			<filter value="hostiles,obstacle" />
+			<effect type="list">
+				<effect type="damage">
+					<amount value="35.0" modifiers="willpower" linear-gain="15.0" />
+					<damage-type value="fire"/>
+				</effect>
+				<effect type="knockback">
+					<amount calc="2.0*lvl"/>
+				</effect>
+				<effect type="chance">
+					<chance calc="ignite*0.2"/>
+					<effect type="inject">
+						<tree value="fire"/>
+						<code value="k"/>
+						<name value="igniting-magic"/>
+					</effect>
+				</effect>
+				<effect type="graphical-effect">
+					<time value="1.5" />
+					<name value="flames" />
+				</effect>
+			</effect>
+		</effect>
+		<effect type="bullet">
+			<emitter>
+				<effect type="list">
+					<effect type="graphical-effect">
+						<time value="0.8" />
+						<name value="bullet-explosion" />
+					</effect>
+					<effect type="damage">
+						<amount calc="4 + 7*lvl + wp*0.1" />
+						<damage-type value="fire"/>
+					</effect>
+					<effect type="sound">
+						<name value="data/sounds/Lugaro/fireend.ogg" />
+					</effect>
+					<effect type="knockback">
+						<amount calc="5 "/>
+					</effect>
+					<effect type="chance">
+						<chance calc="expl*0.1"/>
+						<effect type="inject">
+							<tree value="fire"/>
+							<code value="l"/>
+							<name value="exploding-magic"/>
+						</effect>
+					</effect>
+				</effect>
+
+				<range calc="90.0 + (10.0 * spellrange)" />
+				<speed value="6.0" />
+				<ttl calc="12.0" />
+				<count calc="6+lvl*2+int/5" />
+				<width value="360" />
+				<acceleration value="1.0" />
+				<bullet value="data/physicals/flaming-arrow.xml" />
+				<time-for-tracking calc="12.0"/>
+				<turning-speed calc="720.0"/>
+				<target-chooser>
+		    		<filter value="hostiles"/>
+			    	<range calc="2.5 + (0.25 * spellrange)"/>
+				    <angle value="180.0"/>
+				</target-chooser>
+			</emitter>
+		</effect>
+	</effect>
+
+  <cast-time-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.1" />
+  </delay-effect>
+
+  <manacost value="(29.0 + (4 * lvl)) * (0.80^fm)" />
+  <casttime calc="0.02 + 0.08 / (castspeed + 1.0)" />
+  <delay calc="0.5 + 0.2 / (castspeed + 1.0)" />
+  <cooldown value="0.1" />
+</root>

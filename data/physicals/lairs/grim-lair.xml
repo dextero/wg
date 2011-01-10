@@ -1,0 +1,26 @@
+<root type="lair">
+  
+  <spawnLimit min="10" max="10" />
+  <spawnRate min="2.0" max="2.0" />
+  <grouping-hint>3</grouping-hint>
+  <genre>grim-lair</genre>
+  
+  <maxhp min="90.0" max="90.0" />
+  
+  <xp min="300.0" max="300.0" />
+
+  <spawnPosition x="0.0" y="1.0" />
+  
+  <spawnSound filename="data/physicals/lairs/lair-spawn.ogg" />
+
+  <scale min="2.0" max="2.0" />
+  <radius min="1.0" max="1.0" />
+
+  <anim name="core/anim/grim-lair/default" type="default" />
+  <anim name="core/anim/grim-lair/spawn" type="attack" />
+  <anim name="core/anim/grim-lair/death" type="death" />
+  
+  <monster filename="data/physicals/skeleton-warrior.xml" />
+  <monster filename="data/physicals/skeleton-warrior.xml" />
+  <monster filename="data/physicals/skeleton-mage.xml" />
+</root>

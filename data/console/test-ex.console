@@ -1,0 +1,4 @@
+load-map data/test.map
+spawn-exhibit
+set-exhibit-position 1 1
+set-exhibit-image data/physicals/pien.tga

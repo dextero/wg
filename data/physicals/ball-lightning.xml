@@ -1,0 +1,6 @@
+<root type="bullet">
+  <scale min="0.4" max="0.4" />
+  <radius min="0.2" max="0.2" />
+ 
+  <image filename="data/physicals/ball-lightning.png" />
+</root>

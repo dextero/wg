@@ -1,0 +1,40 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="$BESTIARY_CRAWLER_NAME" />
+    <desc value="$BESTIARY_CRAWLER_DESC" />
+  </bestiary>
+  <genre>crawler</genre>
+
+  <speed min="1.0" max="1.1" />
+  <strength min="4.0" max="6.0" />
+  <turnspeed min="90.0" max="90.0" />
+
+  <maxhp min="40.0" max="50.0" />
+  <maxmana min="30.0" max="50.0" />
+
+  <xp min="6.0" max="9.0" />
+
+  <scale min="1.0" max="1.25" />
+  <radius min="0.4" max="0.5" />
+  <mass min="2.7" max="2.7" />
+
+  <anim name="test/anim/crawler/default" type="default" />
+  <anim name="test/anim/crawler/move" type="move" />
+  <anim name="test/anim/crawler/attack" type="attack" />
+  <anim name="test/anim/crawler/death" type="death" />
+
+  <ai name="boid-chaser" />
+
+  <ability name="data/abilities/monster/weakbite.xml" default="1" />
+
+  <sound type="attack" filename="data/sounds/0AD/horse_11.ogg" />
+  <sound type="attack" filename="data/sounds/EL/monster03.ogg" />
+  <sound type="attack" filename="data/sounds/EL/monster04.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/monster01.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/monster02.ogg" />
+  <sound type="spawn" filename="data/sounds/EL/monster05.ogg" />
+  <sound type="spawn" filename="data/sounds/EL/dragon02.ogg" />
+  <sound type="death" filename="data/sounds/EL/monster06.ogg" />
+
+</root>

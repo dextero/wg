@@ -1,0 +1,135 @@
+<root type="ability" class="self">
+
+    <name>$ABI_ELECTRIC_DEVOLUTION</name>
+    <description>$ABI_ELECTRIC_DEVOLUTION_DESC</description>
+    <icon>data/abilities/electric/eweaken-0.png</icon>
+    <unavailable-icon>data/abilities/electric/eweaken-1.png</unavailable-icon>
+    <trigger></trigger>
+
+    <effect type="list">
+        <effect type="sound">
+            <name value="data/sounds/EL/thunder1.ogg" />
+            <name value="data/sounds/EL/thunder2.ogg" />
+            <name value="data/sounds/EL/thunder3.ogg" />
+            <name value="data/sounds/EL/thunder4.ogg" />
+            <name value="data/sounds/EL/thunder5.ogg" />
+            <name value="data/sounds/EL/thunder6.ogg" />
+            <name value="data/sounds/EL/thunder7.ogg" />
+        </effect>
+        <effect type="delayed">
+            <time value="0.13"/>
+            <effect type="recastable">
+                <recast value="0.26"/>
+                <time value="7.87"/>
+                <effect type="retarget">
+                    <target-chooser>
+                        <filter value="hostiles"/>
+                        <range calc="3.0 + 0.2 * lvl + 0.6 * spellrange" />
+                        <angle value="90.0"/>
+                        <aim-at-ground value="1"/>
+                        <count calc="3" />
+                    </target-chooser>
+                    <effect type="list">
+                        <effect type="linked-graphical-effect">
+                            <offset-x value="0.25"/>
+                            <offset-y value="0.25"/>
+                            <time value="0.14" />
+                            <name value="lightning" />
+                        </effect>
+                        <effect type="damage">
+                            <amount calc="11 + (5*lvl)" />
+                            <damage-type value="lightning"/>
+                        </effect>
+                        <effect type="knockback">
+                            <amount value="2.0" />
+                        </effect>
+                    </effect>
+                </effect>
+            </effect>
+        </effect>
+        <effect type="recastable">
+            <recast value="0.26"/>
+            <time value="8.0"/>
+            <effect type="retarget">
+                <target-chooser>
+                    <filter value="hostiles"/>
+                    <range calc="3.0 + 0.4 * lvl + 0.7 * spellrange" />
+                    <angle value="90.0"/>
+                    <aim-at-ground value="1"/>
+                    <count calc="3" />
+                </target-chooser>
+                <effect type="list">
+                    <effect type="linked-graphical-effect">
+                        <offset-x value="-0.25"/>
+                        <offset-y value="0.25"/>
+                        <time value="0.14" />
+                        <name value="lightning" />
+                    </effect>
+                    <effect type="damage">
+                        <amount calc="11 + (5*lvl)" />
+                        <damage-type value="lightning"/>
+                    </effect>
+                    <effect type="knockback">
+                        <amount value="2.0" />
+                    </effect>
+                </effect>
+            </effect>
+        </effect>
+        <effect type="recastable">
+            <recast value="0.40"/>
+            <time value="8.0"/>
+            <effect type="list">
+                <effect type="graphical-effect">
+                    <name value="magic-circle-5"/>
+                    <time value="0.41"/>
+                </effect>
+                <effect type="graphical-effect">
+                    <name value="magic-circle-3"/>
+                    <time value="0.25"/>
+                </effect>
+                <effect type="graphical-effect">
+                    <name value="magic-circle-1"/>
+                    <time value="0.7"/>
+                </effect>
+            </effect>
+            <effect type="modify">
+                <aspect type="speed"/>
+                <amount value="0.2"/>
+            </effect>
+        </effect>
+    </effect>
+
+    <cast-time-effect type="list" >
+        <effect type="modify">
+            <aspect value="speed" />
+            <amount value="0.2" />
+        </effect>
+        <effect type="graphical-effect">
+            <name value="magic-circle-3"/>
+            <time value="0.4"/>
+        </effect>
+        <effect type="graphical-effect">
+            <name value="magic-circle-2"/>
+            <time value="0.3"/>
+        </effect>
+        <effect type="graphical-effect">
+            <name value="magic-circle-1"/>
+            <time value="0.2"/>
+        </effect>
+    </cast-time-effect>
+    <delay-effect type="modify">
+        <aspect value="speed" />
+        <amount value="0.2" />
+    </delay-effect>
+
+    <manacost value="2.0 + (3 * lvl)" />
+<!--todo: castspeed, tutaj i w zwyklej blyskawicy, tox 7 lip -->
+    <casttime calc="0.6" />
+    <delay calc="0.7" />
+    <cooldown calc="0.28 + (0.32 / (castspeed + 1))" />
+
+    <focus-mana-cost calc="(32.0 + 3.0*lvl)" />
+    <focus-max-duration value="8.0" />
+
+
+</root>

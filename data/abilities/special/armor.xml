@@ -1,0 +1,72 @@
+<root type="ability" class="self">
+
+  <name>$ABI_SPECIAL_ARMOR</name>
+  <trigger>dcdbcb</trigger>
+  <icon>data/abilities/special/armor-0.png</icon>
+  <unavailable-icon>data/abilities/special/armor-1.png</unavailable-icon>
+  <description>$ABI_SPECIAL_ARMOR_DESC</description>
+
+  <effect type="list" >
+    <effect type="non-cumulative">
+      <effect type="timed">
+        <time calc="30.0 + int/2" />
+        <effect type="list">
+          <effect type="drain-mana">
+            <amount value="3.0" />
+          </effect>
+		  <effect type="modify">
+			<aspect value="fireresist"/>
+			<amount value="9.0"/>
+		  </effect>
+		  <effect type="modify">
+			<aspect value="physresist"/>
+			<amount value="15.0"/>
+		  </effect>
+		  <effect type="modify">
+			<aspect value="iceresist"/>
+			<amount value="9.0"/>
+		  </effect>
+		  <effect type="modify">
+			<aspect value="lightningresist"/>
+			<amount value="9.0"/>
+		  </effect>
+		  <effect type="modify">
+			<aspect value="poisonresist"/>
+			<amount value="20.0"/>
+		  </effect>
+		  <effect type="modify">
+			<aspect value="maxhp"/>
+			<amount value="2.1"/>
+		  </effect>
+		  <effect type="heal">
+			<amount value="6.0"/>
+		  </effect>
+        </effect>
+      </effect>
+    </effect>
+	<effect type="graphical-effect">
+		<time calc="30.0 + int/2" />
+		<name value="shield"/>
+	</effect>
+	<effect type="heal">
+		<amount value="50.0"/>
+	</effect>
+  </effect>
+
+  <cast-time-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.4" />
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.6" />
+  </delay-effect>
+
+  <manacost calc="33.0 * (1.0 - fm * 0.03)" />
+  <casttime calc="0.5 + 2.0 / (castspeed + 1)" />
+  <delay calc="0.08 + 0.32 / (castspeed + 1)" />
+  <cooldown calc="0.1 + 0.16 / (castspeed + 1)" />
+  <no-buy />
+
+</root>

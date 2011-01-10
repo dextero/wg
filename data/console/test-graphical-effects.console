@@ -1,0 +1,24 @@
+echo "przyklad uzycia efektu-grafiki"
+echo "wywolywac w trakcie gry"
+show-graphical-effect blood-splat 0 0
+show-graphical-effect blood-splat 1 1
+show-graphical-effect blood-splat 2 2
+show-graphical-effect blood-splat 3 3
+show-graphical-effect blood-splat 4 4
+show-graphical-effect blood-splat 5 5
+show-graphical-effect blood-splat 6 6
+show-graphical-effect test-animation 1 0
+show-graphical-effect test-animation 2 1
+show-graphical-effect test-animation 3 2
+show-graphical-effect test-animation 4 3
+show-graphical-effect test-animation 5 4
+show-graphical-effect test-animation 6 5
+show-graphical-effect test-animation 7 6
+show-graphical-effect bullet-explosion 2 0
+show-graphical-effect bullet-explosion 3 1
+show-graphical-effect bullet-explosion 4 2
+show-graphical-effect bullet-explosion 5 3
+show-graphical-effect bullet-explosion 6 4
+show-graphical-effect bullet-explosion 7 5
+show-graphical-effect bullet-explosion 8 6
+show-graphical-effect colorize-blue player0

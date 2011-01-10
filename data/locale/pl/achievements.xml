@@ -1,0 +1,50 @@
+<root type="locale" name="Polski" code="pl">
+	<entry>
+		<key>ACH_KILL250RATS</key>
+		<value>Szczurołap</value>
+	</entry>
+	<entry>
+		<key>ACH_COMPLETED</key>
+		<value>Odblokowano osiągnięcie: </value>
+	</entry>
+	<entry>
+		<key>ACH_DIE</key>
+		<value>Trup</value>
+	</entry>
+	<entry>
+		<key>ACH_CHEATER</key>
+		<value>Oszust</value>
+	</entry>
+	<entry>
+		<key>ACH_FIRST_BOSS</key>
+		<value>Pogromca ogrów</value>
+	</entry>
+	<entry>
+		<key>ACH_ZOMBIE</key>
+		<value>Żywy trup</value>
+	</entry>
+	<entry>
+		<key>ACH_RETURN_OF_THE_KING</key>
+		<value>Powrót króla</value>
+	</entry>
+	<entry>
+		<key>ACH_PALADIN</key>
+		<value>Paladyn</value>
+	</entry>
+	<entry>
+		<key>ACH_ANCIENT_KNOWLEDGE</key>
+		<value>Starożytna wiedza</value>
+	</entry>
+	<entry>
+		<key>ACH_GLOBAL_WARMING</key>
+		<value>Globalne ocieplenie</value>
+	</entry>
+	<entry>
+		<key>ACH_BEGINNER</key>
+		<value>Początkujący</value>
+	</entry>
+	<entry>
+		<key>ACH_EUTHANASIA</key>
+		<value>Eutanazja</value>
+	</entry>
+</root>

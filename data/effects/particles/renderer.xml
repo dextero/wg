@@ -1,0 +1,22 @@
+<root type="particle-renderer">
+	<spriterenderer images="data/effects/particles/particles.png">
+		<img x-offset="1" y-offset="1" w="32" h="32" /> <!-- smoke 0-->
+		<img x-offset="1" y-offset="33" w="32" h="32" /> <!-- magic -->
+		<img x-offset="33" y-offset="1" w="32" h="32" /> <!-- fire -->
+		<img x-offset="33" y-offset="33" w="32" h="32" /> <!-- blood -->
+		<img x-offset="65" y-offset="1" w="64" h="64" /> <!-- sphere -->
+		<img x-offset="65" y-offset="65" w="64" h="64" /> <!-- symbols 5-->
+		<img x-offset="1" y-offset="65" w="32" h="32" /> <!-- flare -->
+		<img x-offset="1" y-offset="97" w="32" h="32" /> <!-- acid -->
+		<img x-offset="129" y-offset="1" w="64" h="64" /> <!-- freeze -->
+		<img x-offset="36" y-offset="70" w="26" h="26" /> <!-- star -->
+		<img x-offset="143" y-offset="69" w="48" h="48" /> <!-- acid-cloud 10-->
+		<img x-offset="192" y-offset="1" w="64" h="64" /> <!-- lines -->
+		<img x-offset="192" y-offset="65" w="64" h="64" /> <!-- green lines -->
+		<img x-offset="36" y-offset="96" w="32" h="32" /> <!-- green fire -->
+		<img x-offset="1" y-offset="128" w="32" h="32" /> <!-- flame -->
+		<img x-offset="36" y-offset="128" w="32" h="32" /> <!-- storm-cloud 15 -->
+		<img x-offset="70" y-offset="127" w="19" h="19" /> <!-- armor -->
+		
+	</spriterenderer>
+</root>

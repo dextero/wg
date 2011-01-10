@@ -1,0 +1,13 @@
+﻿<root type="item">
+	<name name="$ITEM_XP" />
+  <genre>600xp</genre>
+	<level value="1" />
+	<image filename="data/items/star.png" />
+	<droprate value="0.0005" />
+	<effect type="console">
+		<text>[
+		msg $MSG_FOUND 600 $MSG_XP_POINTS
+		add-xp 600
+		]</text>
+	</effect>
+</root>

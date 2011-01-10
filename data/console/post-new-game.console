@@ -1,0 +1,3 @@
+load-items data/items/droplist.xml
+trail-players
+toggle-fx fade in

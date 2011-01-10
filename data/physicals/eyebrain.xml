@@ -1,0 +1,31 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="$BESTIARY_EYEBRAIN_NAME" />
+    <desc value="$BESTIARY_EYEBRAIN_DESC" />
+  </bestiary>
+  <genre>eyebrain</genre>
+
+  <speed min="2.0" max="2.0" />
+  <strength min="8.0" max="8.0" />
+  <turnspeed min="120.0" max="120.0" />
+  <shadow-offset min="0.12" max="0.12" />
+
+  <maxhp min="70.0" max="82.0" />
+  <maxmana min="30.0" max="50.0" />
+
+  <xp min="33.0" max="48.0" />
+
+  <scale min="1.0" max="1.0" />
+  <radius min="0.5" max="0.5" />
+  <mass min="5.0" max="5.0" />
+
+  <anim name="core/anim/eyebrain/default" type="default" />
+  <anim name="core/anim/eyebrain/move" type="move" />
+  <anim name="core/anim/eyebrain/attack" type="attack" />
+  <anim name="core/anim/eyebrain/default" type="death" />
+
+  <ai name="ranged-caster" />
+
+  <ability name="data/abilities/monster/eyebrain-laser.xml" default="1" />
+</root>

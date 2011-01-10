@@ -1,0 +1,56 @@
+BINARY_NAME = warsztat_game
+
+-include Makefile.sources
+
+CPPFLAGS = -m32 -I"build/includes/SFML-1.4/include" -I"build/includes" -I"/System/Library/Frameworks/OpenGL.framework/Headers/" -DPLATFORM_MACOSX -DPLATFORM_LINUX
+
+LDFLAGS = -m32 -L"/System/Library/Frameworks/OpenGL.framework/Libraries"
+
+LIBS =  osxlib/graphics.o osxlib/window.o osxlib/system.o osxlib/audio.o osxlib/SFML.o osxlib/OpenAL.o -lGL 
+
+#default:
+CXXFLAGS = -O2 -Wall
+
+release: CXXFLAGS = -O2
+
+CXX = g++
+
+BINARY = $(BINARY_NAME)$(BINARY_SUFFIX)
+
+########################
+
+Debug: all
+
+Release: all
+
+all: $(BINARY)
+
+$(BINARY): $(OBJECTS) platformOSX.o
+	$(CXX) -o $@ $(OBJECTS) platformOSX.o $(LDFLAGS) $(LIBS)  -lobjc -framework Foundation
+
+%.d: %.cpp
+	-$(CXX) -E $(CXXFLAGS)  $(CPPFLAGS) -MM -MP -MF $@ -MQ $(@:.d=.s) -MQ $(@:.d=.o) -MQ $@ $<
+
+platformOSX.o: src/PlatformOSX.m
+	gcc -m32 -c -o platformOSX.o src/PlatformOSX.m 
+
+zlo: $(BINARY)
+	rm -rf ~/Library/WarsztatGame/
+	./$(BINARY)
+
+clean:
+	@$(RM) $(BINARY)
+	@$(RM) $(BINARY).exe
+	@rm -f $(OBJECTS)
+	@rm -f $(SOURCES:.cpp=.d)
+
+
+osx: $(BINARY)
+	./$(BINARY)
+
+release: all
+
+ifeq ($(findstring clean,$(MAKECMDGOALS)),)
+-include $(SOURCES:.cpp=.d)
+endif
+

@@ -1,0 +1,208 @@
+<root type="locale" name="Polski" code="pl">
+	<entry>
+		<key>CTRL_ABI-0_DESC</key>
+		<value>Klawisz umiejętności 0</value>
+	</entry>
+	<entry>
+		<key>CTRL_ABI-1_DESC</key>
+		<value>Klawisz umiejętności 1</value>
+	</entry>
+	<entry>
+		<key>CTRL_ABI-2_DESC</key>
+		<value>Klawisz umiejętności 2</value>
+	</entry>
+	<entry>
+		<key>CTRL_ABI-3_DESC</key>
+		<value>Klawisz umiejętności 3</value>
+	</entry>
+	<entry>
+		<key>CTRL_ABILITIES_DESC</key>
+		<value>Ekran umiejętności</value>
+	</entry>
+	<entry>
+		<key>CTRL_ABIX-0_DESC</key>
+		<value>Klawisz kombinacji 0</value>
+	</entry>
+	<entry>
+		<key>CTRL_ABIX-1_DESC</key>
+		<value>Klawisz kombinacji 1</value>
+	</entry>
+	<entry>
+		<key>CTRL_ABIX-2_DESC</key>
+		<value>Klawisz kombinacji 2</value>
+	</entry>
+	<entry>
+		<key>CTRL_ABIX-3_DESC</key>
+		<value>Klawisz kombinacji 3</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_ABS</key>
+		<value>Absolutne</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_MOUSE_LOOK</key>
+		<value>Obrót myszą</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_MOUSECAST</key>
+		<value>Mousecast</value>
+	</entry>
+	<entry>
+		<key>CTRL_HELP_DESC</key>
+		<value>Ekran pomocy</value>
+	</entry>
+	<entry>
+		<key>CTRL_MOVEDOWN_DESC</key>
+		<value>Krok do tyłu</value>
+	</entry>
+	<entry>
+		<key>CTRL_MOVEDOWNABS_DESC</key>
+		<value>Krok w dół (absolutnie)</value>
+	</entry>
+	<entry>
+		<key>CTRL_MOVELEFT_DESC</key>
+		<value>Krok w lewo</value>
+	</entry>
+	<entry>
+		<key>CTRL_MOVELEFTABS_DESC</key>
+		<value>Krok w lewo (absolutnie)</value>
+	</entry>
+	<entry>
+		<key>CTRL_MOVERIGHT_DESC</key>
+		<value>Krok w prawo</value>
+	</entry>
+	<entry>
+		<key>CTRL_MOVERIGHTABS_DESC</key>
+		<value>Krok w prawo (absolutnie)</value>
+	</entry>
+	<entry>
+		<key>CTRL_MOVEUP_DESC</key>
+		<value>Krok do przodu</value>
+	</entry>
+	<entry>
+		<key>CTRL_MOVEUPABS_DESC</key>
+		<value>Krok w górę (absolutnie)</value>
+	</entry>
+	<entry>
+		<key>CTRL_QUICKATTACK_DESC</key>
+		<value>Szybki atak</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_8-K</key>
+		<value>8-k</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_8-K_DESC</key>
+		<value>Sterowanie: strzałki.
+Rzucanie czarów: QWER</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_8-K_MENU_DESC</key>
+		<value>Wzorowane na grze Gauntlet. Strzałki poruszają bohaterem rownolegle do krawędzi ekranu, zaś do rzucania czarów służą cztery klawisze z reguły obsługiwane drugą ręką.
+        </value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_ABSOLUTE</key>
+		<value>Bezwzględne</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_CLASSIC</key>
+		<value>Klasyczne</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_CLASSIC_DESC</key>
+		<value>Sterowanie: strzałki.
+Rzucanie czarów: QWER</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_CLASSIC_MENU_DESC</key>
+		<value>Klasyczne sterowanie wzorowane na pierwszym GTA. Klawisze góra-dół służą do poruszania się bohaterem w przód-tył, zaś klawisze lewo-prawo służą do obracania się. Do rzucania czarów służą cztery klawisze z reguły obsługiwane drugą rąką.
+        </value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_DAB</key>
+		<value>myszkozabojca</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_DAB_DESC</key>
+		<value>
+      Sterowanie: WSAD
+      Celowanie: myszka
+      Rzucanie czarów ze slotów: przyciski myszki
+      Kombinacje: 1234
+    </value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_DAB_MENU_DESC</key>
+		<value>
+Do sterowania bohaterem służą klawisze WSAD. Kursorem wskazujemy, w którym kierunku mag ma być zwrócony. Przyciskami myszy możemy rzucać zaklęcia ze slotów. Pozostałe kombinacje czarów możemy uaktywnić za pomocą 4 dodatkowych klawiszy.
+    </value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_MOUSE</key>
+		<value>myszkowe</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_MOUSE_DESC</key>
+		<value>Sterowanie: myszka + AD.
+Rzucanie czarów: QWER</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_MOUSE_MENU_DESC</key>
+		<value>Do sterowania bohaterem służy myszka. Kursorem wskazujemy, w którym kierunku mag ma być zwrócony, zaś przyciskami myszy poruszamy nim do przodu (lewy przycisk myszy) i do tyłu (prawy przycisk myszy). Do rzucania czarów służą cztery klawisze obsługiwane drugą ręką.
+        </value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_MOUSECAST</key>
+		<value>Mousecast</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_MOUSECAST_MENU_DESC</key>
+		<value>Sterowanie myszką podobne do Crimsonland. Klawisze kursory odpowiadają za ruch bohaterem (równoległy do krawędzi ekranu), zaś przyciski myszy służą do rzucania czarów. Przytrzymaj prawy przycisk, by rzucac kombinacje za pomocą gestów myszki.
+        </value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_USER</key>
+		<value>Gracza</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_USER_DESC</key>
+		<value>[zdefiniowane przez użytkownika]</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_USER_MENU_DESC</key>
+		<value>Zdefiniowane przez użytkownika.</value>
+	</entry>
+	<entry>
+		<key>CTRL_SLOT-0_DESC</key>
+		<value>Klawisz slotu #1</value>
+	</entry>
+	<entry>
+		<key>CTRL_SLOT-1_DESC</key>
+		<value>Klawisz slotu #2</value>
+	</entry>
+	<entry>
+		<key>CTRL_SLOT-2_DESC</key>
+		<value>Klawisz slotu #3</value>
+	</entry>
+	<entry>
+		<key>CTRL_SPECIALATTACK_DESC</key>
+		<value>Atak specjalny</value>
+	</entry>
+	<entry>
+		<key>CTRL_STEERING</key>
+		<value>Sterowanie</value>
+	</entry>
+	<entry>
+		<key>CTRL_TURNLEFT_DESC</key>
+		<value>Obrót w lewo</value>
+	</entry>
+	<entry>
+		<key>CTRL_TURNRIGHT_DESC</key>
+		<value>Obrót w prawo</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_SEPARATE_SEQUENCES</key>
+		<value>Oddzielne kombinacje</value>
+	</entry>
+</root>

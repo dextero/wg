@@ -1,0 +1,33 @@
+﻿<root type="dialog">
+
+  <startNode>0</startNode>
+
+  <node>
+    <id>0</id>
+    <type>npc</type>
+    <child>1</child>
+    <string>$DLG_TUTORIAL3_1</string>
+    <!-- zdublowane, jak nie bedzie jednego, to wpadnie nastepny. oby nikt nie ustawial jednych i drugich naraz :D -->
+    <param>PLAYER0_BIND_Abi-0</param>
+    <param>PLAYER0_BIND_AbiX-0</param>
+    <param>PLAYER0_BIND_Abi-1</param>
+    <param>PLAYER0_BIND_AbiX-1</param>
+    <param>PLAYER0_BIND_Abi-2</param>
+    <param>PLAYER0_BIND_AbiX-2</param>
+    <param>PLAYER0_BIND_Abi-3</param>
+    <param>PLAYER0_BIND_AbiX-3</param>
+    <param>PLAYER0_BIND_Help</param>
+    <param>PLAYER0_BIND_Abilities</param>
+  </node>
+
+  <node>
+    <id>1</id>
+    <type>npc</type>
+    <string>$DLG_TUTORIAL3_2</string>
+    <param>PLAYER0_BIND_Help</param>
+    <param>PLAYER1_BIND_Help</param>
+    <param>PLAYER0_BIND_Abilities</param>
+    <param>PLAYER1_BIND_Abilities</param>
+  </node>
+
+</root>

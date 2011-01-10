@@ -1,0 +1,10 @@
+load-map data/maps/1.map.xml
+new-enemy data/physicals/chityniak.xml
+set-physical-position physical-1 1.5 4.5
+new-player 0
+set-physical-position player0 2.0 0.5
+set-aspect player0 speed 1.0
+trail-physical player0
+spawn-lair data/physicals/test-lair.xml lair
+set-physical-position lair 5.5 5.5
+create-wall data/physicals/simple-wall.xml wall

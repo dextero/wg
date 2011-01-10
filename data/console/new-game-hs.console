@@ -1,0 +1,10 @@
+exec pre-new-game
+new-player 0
+set-slot-ability 0 0 fire a
+set-slot-ability 0 1 electricity a
+new-player 1
+set-slot-ability 1 0 fire a
+set-slot-ability 1 1 electricity a
+load-map data/maps/level01.xml entry
+#play-cutscene data/cutscene/cutscene1.xml
+exec post-new-game

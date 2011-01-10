@@ -1,0 +1,26 @@
+<root type="lair">
+  
+  <spawnLimit min="15" max="30" />
+  <spawnRate min="0.5" max="0.5" />
+  <genre>chityniak-lair</genre>
+  
+  <maxhp min="50.0" max="60.0" />
+  
+  <xp min="15.0" max="16.0" />
+
+  <spawnPosition x="0.0f" y="0.0f" />
+  
+  <spawnSound filename="data/physicals/lairs/lair-spawn.ogg" />
+
+  <scale min="0.4" max="0.5" />
+  <radius min="0.2" max="0.25" />
+
+  <anim name="test/anim/lair/default" type="default" />
+  <anim name="test/anim/lair/spawn" type="attack" />
+  <anim name="test/anim/lair/death" type="death" />
+  
+  <monster filename="data/physicals/chityniak.xml" />
+  
+  <grouping-hint>2</grouping-hint>
+
+</root>

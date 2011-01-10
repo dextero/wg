@@ -1,0 +1,110 @@
+﻿<root type="dialog">
+
+<startNode>0</startNode>
+
+<node>
+  <id>0</id>
+  <type>option</type>
+  <string>$DLG_TEST_1</string>
+  <child>10</child>
+</node>
+
+<node>
+  <id>1</id>
+  <child>3</child>
+  <child>2</child>
+  <child>9</child>
+</node>
+
+<node>
+  <id>2</id>
+  <type>option</type>
+  <string>$DLG_TEST_2</string>
+  <child>5</child>
+</node>
+
+<node>
+  <id>3</id>
+  <type>option</type>
+  <string>$DLG_TEST_3</string>
+  <child>4</child>
+</node>
+
+<node>
+  <id>4</id>
+  <type>npc</type>
+  <string>$DLG_TEST_4</string>
+  <child>11</child>
+</node>
+
+<node>
+  <id>5</id>
+  <type>npc</type>
+  <string>$DLG_TEST_5</string>
+  <child>6</child>
+</node>
+
+<node>
+  <id>6</id>
+  <type>player</type>
+  <string>$DLG_TEST_6</string>
+  <child>7</child>
+</node>
+
+<node>
+  <id>7</id>
+  <type>npc</type>
+  <string>$DLG_TEST_7</string>
+  <child>8</child>
+</node>
+
+<node>
+  <id>8</id>
+  <type>player</type>
+  <string>$DLG_TEST_8</string>
+  <child>1</child>
+</node>
+
+<node>
+  <id>9</id>
+  <type>option</type>
+  <string>$DLG_TEST_9</string>
+</node>
+
+<node>
+  <id>10</id>
+  <type>npc</type>
+  <string>$DLG_TEST_10</string>
+  <child>1</child>
+</node>
+
+<node>
+  <id>11</id>
+  <type>option</type>
+  <string>$DLG_TEST_11</string>
+  <child>12</child>
+</node>
+
+<node>
+  <id>12</id>
+  <type>npc</type>
+  <string>$DLG_TEST_12</string>
+  <child>13</child>
+</node>
+
+<node>
+  <id>13</id>
+  <uniqueId>IAgreeToKillRats</uniqueId>
+  <type>option</type>
+  <string>$DLG_TEST_13</string>
+  <child>14</child>
+</node>
+
+<node>
+  <id>14</id>
+  <type>npc</type>
+  <string>$DLG_TEST_14</string>
+  <child>1</child>
+</node>
+
+</root>

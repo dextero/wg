@@ -1,0 +1,141 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+      <h3>Effects</h3>
+      Versatile recursively-defined effects affecting the game world. They are defined as nested, parametrized blocks. Some of them affect children (meta-effets), other cause a direct effect, e.g. damage (base effects). For example:
+        <pre><code>  &lt;effect type="list"&gt;
+    &lt;effect type="timed"&gt;
+      &lt;time value="3.0" /&gt;
+      &lt;effect type="modify"&gt;
+        &lt;mod-aspect value="speed" /&gt;
+        &lt;amount value="2.0" /&gt;
+      &lt;/effect&gt;
+    &lt;/effect&gt;
+    &lt;effect type="graphical-effect"&gt;
+      &lt;time value="3.0" /&gt;
+      &lt;namevalue="trail" /&gt;
+    &lt;/effect&gt;
+    &lt;effect type="particle"&gt;
+      &lt;time value="0.8" /&gt;
+      &lt;particle value="shield" /&gt;
+    &lt;/effect&gt;
+    &lt;effect type="chance"&gt;
+   	  &lt;chance value="0.8" /&gt;
+   	  &lt;effect type="recastable"&gt;
+   	    &lt;recast value="1.0" /&gt;
+   	    &lt;time value="5.0" /&gt;
+        &lt;effect type="heal"&gt;
+          &lt;amount value="0.1" /&gt;
+        &lt;/effect&gt;
+      &lt;/effect&gt;
+    &lt;/effect&gt;
+  &lt;/effect&gt;</code></pre>
+      As you can see, there's one common effect format <code>&lt;effect type="[...]"&gt;[parameters]&lt;/effect&gt;</code>. The type is one of these listed below and parameters depend only on effect's type. The parameter's order doesn't matter. Parameters are mostly simple objects that look like <code>&lt;name value="[...]" /&gt;</code>, but in some cases there's one (when using a meta-effect), or more (only <code>list</code>) sub-effects.
+      <h4>Base effects</h4>
+      <ul>
+        <li><code>damage</code> - parameters: aspect (string), amount. Deals damage.</li>
+        <li><code>heal</code> - parameters: aspect (string), amount, [show-amount (empty)]. Heals self.</li>
+        <li><code>modify</code> - parameters: aspect (string), amount, mod-aspect (string). Modifies one target's aspect.</li>
+        <li><code>AIState</code> - parameters: TODO?</li>
+        <li><code>restore-mana</code> - parameters: aspect (string), amount. Restores caster's mana.</li>
+        <li><code>drain-mana</code> - parameters: aspect (string), amount. Drains target's mana.</li>
+        <li><code>console</code> - parameters: <a href="Effects.html#text">text</a> (string). Executes a console command.</li>
+        <li><code>bullet</code> - parameters: <a href="Abilities.html#bullet-emitter">bullet emitter</a></li>
+        <li><code>stun</code> - parameters: none. If not used under <code>timed</code> meta-effect, duration defaults to 1 second.</li>
+        <li><code>graphical-effect</code> - parameters: time, name (string). Displays a graphical effect.</li>
+        <li><code>noEffect</code> - parameters: none. Does nothing, I don't know what is it for.</li>
+        <li><code>linked-graphical-effect</code> - parameters: time, name (string). Displays a graphical effect from the source to the victim, only on which works is "lightning".</li>
+        <li><code>knockback</code> - parameters: amount. Depends on the mass of an actor being knockbacked, but usually the value less than 2 is enough :)</li>
+        <li><code>jump</code> - parameters: TODO?</li>
+        <li><code>summon</code> - parameters: <a href="Effects.html#summoner">summoner</a></li>
+        <li><code>inject</code> - parameters: TODO?</li>
+        <li><code>transfer-life</code> - parameters: amount. Hurts mosters, heals caster.</li>
+        <li><code>transfer-mana</code> - parameters: amount. Like above, affects mana instead of health.</li>
+        <li><code>annihilate</code> - parameters: TODO?</li>
+        <li><code>increase-next-ability-level</code> - parameters: amount. Increases the effective level of next used ability.</li>
+        <li><code>heal-target</code> - parameters: amount. Heals target.</li>
+      </ul>
+      <h4>Meta-effects</h4>
+      <ul>
+        <li>
+          <code>timed</code> - parameters: time (float), sub-effect.<br />
+          Effect stops after a given amount of time. Not all effects work with this, e.g. sub-effect <code>time</code> doesn't. There is something called "default recast" of an effect - for life/mana gain it's 0 (fluently), for state changes +INF (only once), for the rest 1s (for example, with effect <code>bullet</code> bullets are spawned every second).
+        </li>
+        <li>
+        <code>recastable</code> - parameters: time (float), recast (float), sub-effect.<br />
+        Works just like <code>timed</code>, but here you can change the "default recast time".
+        </li>
+        <li>
+          <code>area</code> - parameters: area (float), <a href="Filters.html">filter</a> (string), sub-effect.<br />
+          <code>area</code> is the area radius, and <code>filter</code> tells, which objects should be affected by sub-effect.
+        </li>
+        <li>
+          <code>chance</code> - parameters: chance (float, 0 to 1). Effect will be executed with given probability - 0 means "never" and 1 "always".
+        </li>
+        <li>
+          <code>list</code> - parameters: sub-effect, sub-effect2, [...].<br />
+          <b>The only way to join effects into a group</b>, two sub-effects won't work where there's only one expected.
+        </li>
+        <li>
+          <code>delayed</code> - parameters: time (float), sub-effect.<br />
+          Delays the sub-effect's execution.
+        </li>
+        <li>
+          <code>retarget</code> - parameters: <a href="Effects.html#target-chooser">target-chooser</a>, sub-effect.<br />
+          Auto-targets the sub-effect.
+        </li>
+        <li>
+          <code>non-cumulative</code> - parameters: sub-effect.<br />
+          Works only with <code>timed</code> or <code>recastable</code> effects, prevents the sub-effect from being cumulated.
+        </li>
+        <li>
+          <code>check-level</code> - parameters: amount, sub-effect.<br />
+          Checks if the ability level is high enough. If not, sub-effect won't be executed.
+        </li>
+      </ul>
+      <h4>Parameters</h4>
+      <ul>
+        <li><code>amount & all other float parameters</code> - can pass the exact value by <code>value</code> or calculate the formula from <code>calc</code>.</li>
+        <li>
+          <code id="text">text</code> - can be either <code>&lt;text&gt;command&lt;/text&gt;</code> for a single command or
+          <pre><code>&lt;text&gt;[
+  command1
+  command2
+  ...
+]&lt;/text&gt;</code></pre>for a block of commands. Notice the square brackets around the command block!
+        </li>
+        <li>
+          <code id="summoner">summoner</code> - defined as follows:
+          <pre><code>&lt;summoner&gt;
+  &lt;ttl value="20"/&gt;
+  &lt;min-radius value="1"/&gt;
+  &lt;count value="2"/&gt;
+  &lt;template value="data/physicals/healer-ghost.xml"/&gt;
+&lt;/summoner&gt;</code></pre><code>ttl, min-radius, count</code> are float parameters, so they can be also used with <code>calc</code> instead of <code>value</code>.
+          <ul>
+            <li><code>ttl</code> - the amount of time, after which the summons will die.</li>
+            <li><code>min-radius</code> - describes the circle around the summoner, in which summoned creatures shouldn't spawn.</li>
+            <li><code>count</code> - how many summons will be spawned?</li>
+            <li><code>template</code> - summon's template file.</li>
+          </ul>
+        </li>
+        <li>
+          <code id="target-chooser">target-chooser</code> - defined as follows:
+          <pre><code>&lt;target-chooser&gt;
+  &lt;filter value="hostiles"/&gt;
+  &lt;range value="5.0" /&gt;
+  &lt;angle value="90"/&gt;
+  &lt;aim-at-ground value="1"/&gt;
+&lt;/target-chooser&gt;</code></pre><code>range</code> can be also used with <code>calc</code> instead of <code>value</code>.
+          <ul>
+            <li><code>filter</code> - which type of targets should be choosed.</li>
+            <li><code>range</code> - the maximum distance from the chosen target and the caster.</li>
+            <li><code>angle</code> - cuts down the angle to prevent shooting back (degrees).</li>
+            <li><code>aim-at-ground</code> - TODO?</li>
+          </ul>
+        </li>
+      </ul>
+    </body>
+</html>

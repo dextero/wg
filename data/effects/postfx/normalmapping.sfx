@@ -1,0 +1,53 @@
+// NormalMapping by rAum [wersja pierwsza, testowa - jeden z pierwszych shaderów napisanych przeze mnie]
+texture image
+vec3 lpos
+vec4 lcolor
+vec2 tSize
+
+effect
+{
+    // obliczenie rozmiaru 1 texela
+    float tx = 1.0 / tSize.x;
+    float ty = 1.0 / tSize.y;
+    float normalStrength = 7.0;
+    
+	vec4 pixel = image(_in);
+	float grayscale = (pixel.r + pixel.g + pixel.b) * 0.333333333333 * 0.5;
+	
+    // Obliczenie filtra Sobel    
+    vec4 tl = image(_in + vec2(-tx, -ty)); // top left
+    vec4 l  = image(_in + vec2(-tx,0)); // left
+    vec4 bl = image(_in + vec2(-tx,ty)); // bottom left
+    vec4 t = image(_in + vec2(0,-ty)); // top center
+    vec4 b = image(_in + vec2(0,ty)); // bottom center
+    vec4 tr = image(_in + vec2(tx,-ty)); // top right
+    vec4 r  = image(_in + vec2(tx,0)); // right
+    vec4 br = image(_in + vec2(tx,ty)); // bottom right
+    
+    // Compute dx using Sobel:
+    //           -1 0 1 
+    //           -2 0 2
+    //           -1 0 1
+    vec4 dx = tr + 2.0*r + br -tl - 2.0*l - bl;
+    dx.r = (dx.r + dx.g + dx.b) * 0.33333333333333;
+    // Compute dy using Sobel:
+    //           -1 -2 -1 
+    //            0  0  0
+    //            1  2  1
+    vec4 dy = bl + 2.0*b + br -tl - 2.0*t - tr;
+    dy.r = (dy.r + dy.g + dy.b) * 0.33333333333333;
+    
+    // tworzenie normalnej:
+    vec3 norm = normalize( vec3(dx.r, 1.0 / normalStrength, dy.r)) ;       
+    norm = (norm-0.5) * 2.0;
+    
+    // normalizacja swiatla (hmm moze by to wywalic...)    
+    lpos = normalize(lpos);
+    
+    // obliczenie jak zmodyfikowac jasnosc (dotproduct zwykly ;p)
+    float dotproduct = max( dot(norm,lpos), 0.5 );
+    
+    // obliczenie wlasciwego koloru
+    vec3 diffuse = dotproduct * lcolor * pixel + grayscale * 0.35;
+    _out = vec4( diffuse, 1.0 );
+}

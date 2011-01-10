@@ -1,0 +1,69 @@
+<root type="ability" class="self">
+
+  <name>$ABI_NATURE_ENTANGLE</name>
+  <trigger>dbd</trigger>
+  <icon>data/player/entangle.png</icon>
+  <unavailable-icon>data/player/entangle-grey.png</unavailable-icon>
+  <description>$ABI_NATURE_ENTANGLE</description>
+
+  <effect type="retarget">
+    <target-chooser>
+      <filter value="hostiles"/>
+      <range value="8.0" modifiers="level" />
+      <angle value="60.0"/>
+    </target-chooser>
+
+    <!-- gdzies tutaj by sie przydal non-cumulative albo i ze dwa -->
+
+    <effect type="list">
+      <effect type="timed">
+        <time value="3.5" modifiers="level" />
+        <effect type="modify">
+          <aspect value="speed" />
+          <amount value="0.0" />
+        </effect>
+      </effect>
+      <effect type="graphical-effect">
+        <time value="3.5" modifiers="level" />
+        <name value="entangle" />  	
+      </effect>
+	  <effect type="sound">
+		<name value="data/sounds/Lugaro/bushrustle.ogg" />
+	</effect>
+
+      <effect type="check-level">
+        <amount value="3.0" />
+        <effect type="area">
+          <area value="-0.5" modifiers="level" linear-gain="0.275" />
+          <filter value="hostiles" />
+          <effect type="list">
+            <effect type="timed">
+            <time value="3.5" modifiers="level" />
+              <effect type="modify">
+                <aspect value="speed" />
+                <amount value="0.0" />
+              </effect>
+            </effect>
+            <effect type="graphical-effect">
+              <time value="3.5" modifiers="level" />
+              <name value="entangle" />
+            </effect>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <manacost value="17.0" />
+<!--  <range value="12.0" />
+  <speed value="11.0" />
+  <acceleration value="1.0" />
+  <explode-on-fade value="0" />
+  <ttl value="0.6" />
+  <bullet value="data/physicals/entangle.xml" />
+  <bullet-angular-speed value="-1440" /> -->
+  <casttime value="0.1" />
+  <delay value="0.28" />
+  <cooldown value="0.0" />
+  
+</root>

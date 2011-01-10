@@ -1,0 +1,40 @@
+﻿<root type="quest">
+
+<startNode>0</startNode>
+
+<node>
+  <id>0</id>
+
+  <action>define-quest-flag IHaveNotKilledRats</action>
+  <child>1</child>
+</node>
+
+<node>
+  <id>1</id>
+
+  <req>
+    <type>StatementDisplay</type>
+    <param>IAgreeToKillRats</param>
+  </req>
+  <action>undef-quest-flag IHaveNotKilledRats</action>
+  <action>msg $QUEST_TEST_MSG_1</action>
+  <note>
+    <page>$QUEST_TEST</page>
+    <content>$QUEST_TEST_DESC</content>
+  </note>
+  <child>2</child>
+</node>
+
+<node>
+  <id>2</id>
+
+  <req>
+    <type>PhysicalDeathByGenre</type>
+    <param>rat</param>
+    <param>5</param>
+  </req>
+  <action>define-quest-flag IHaveKilledRats</action>
+  <action>msg $QUEST_TEST_MSG_2</action>
+</node>
+
+</root>

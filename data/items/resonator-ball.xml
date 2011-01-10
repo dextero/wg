@@ -1,0 +1,15 @@
+<root type="item">
+	<name name="$ABI_SUPPORT_RESONATOR" />
+  <genre>resonator-ball</genre>
+	<level value="1" />
+	<image filename="data/items/yellow-ball.png" />
+	<droprate value="0.0005" />
+	<effect type="console">
+		<text>
+      [
+      msg $ITEM_ABI_SPECIAL_BALL_MSG
+      force-buy-ability $THIS special b
+      add-achievement $ACH_ANCIENT_KNOWLEDGE
+      ]</text>
+	</effect>
+</root>

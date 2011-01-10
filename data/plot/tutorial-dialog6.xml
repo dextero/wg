@@ -1,0 +1,11 @@
+﻿<root type="dialog">
+
+  <startNode>0</startNode>
+
+  <node>
+    <id>0</id>
+    <type>npc</type>
+    <string>$DLG_TUTORIAL6_1</string>
+  </node>
+  
+</root>

@@ -1,0 +1,105 @@
+<root type="trigger-effects"> 
+  <!--
+  	Opisy sekwencji klawiszy - a zasadzie specyfikacja tego,
+  	co powinno sie zdarzyc po wcisnieciu ostatniego klawisza
+  	z danej kombinacji. Obejmuje efekty graficzne, dzwieki itp.
+  	
+  	Jesli danej kombinacji nie da sie wykonac (gracz nie posiada tej umiejetnosci),
+  	to ponizsze informacje sa ignorowane.
+  	Jesli dla danej kombinacji nie ma tutaj wpisu, nic sie nie dzieje.
+  	
+  	Trzeba to synchronizowac z triggerowym drzewkiem umiejetnosci...
+  	
+  	Tak jak w umiejetnosciach - 'a' to pierwszy klawisz, 'b' to drugi, .. 'd' czwarty
+  -->
+  <sequence trigger="cd">
+	<anim>2</anim>
+  </sequence>
+  <sequence trigger="cdc">
+	<anim>2</anim>
+  </sequence>
+  <sequence trigger="cdca">
+	<anim>2</anim>
+  </sequence>
+  <sequence trigger="bd">
+	<anim>3</anim>
+  </sequence>
+  <sequence trigger="cdacad">
+	<effect type="graphical-effect"> 
+        <name value="magic-circle-1"/> 
+        <time value="1.0"/>
+    </effect>
+  </sequence>
+  <sequence trigger="cacadb">
+	<effect type="graphical-effect"> 
+		<name value="magic-circle-5"/> 
+        <time value="1.0"/>
+    </effect>
+  </sequence>
+  <sequence trigger="cacd">
+	<effect type="graphical-effect"> 
+		<name value="magic-circle-2"/> 
+        <time value="1.0"/>
+    </effect>
+  </sequence>
+  <sequence trigger="cdcbab">
+	<effect type="graphical-effect"> 
+		<name value="magic-circle-4"/> 
+        <time value="1.0"/>
+    </effect>
+  </sequence>
+  <sequence trigger="cabcab">
+	<effect type="graphical-effect"> 
+		<name value="magic-circle-4"/> 
+        <time value="1.0"/>
+    </effect>
+  </sequence>
+  <sequence trigger="cadcda">
+	<effect type="graphical-effect"> 
+		<name value="magic-circle-4"/> 
+        <time value="1.0"/>
+    </effect>
+  </sequence>
+  <sequence trigger="cbcbcb">
+	<effect type="graphical-effect"> 
+		<name value="magic-circle-5"/> 
+        <time value="1.0"/>
+    </effect>
+  </sequence>
+  <sequence trigger="bcdb">
+	<effect type="graphical-effect"> 
+		<name value="magic-circle-2"/> 
+        <time value="1.0"/>
+    </effect>
+  </sequence>
+  <sequence trigger="dbad">
+	<effect type="graphical-effect"> 
+		<name value="magic-circle-5"/> 
+        <time value="1.0"/>
+    </effect>
+  </sequence>
+  <sequence trigger="dcbdcb">
+	<effect type="graphical-effect"> 
+		<name value="magic-circle-4"/> 
+        <time value="1.0"/>
+    </effect>
+  </sequence>
+  <sequence trigger="bacb">
+	<effect type="graphical-effect"> 
+		<name value="magic-circle-3"/> 
+        <time value="1.0"/>
+    </effect>
+  </sequence>
+  <sequence trigger="babc">
+	<effect type="graphical-effect"> 
+		<name value="magic-circle-5"/> 
+        <time value="1.0"/>
+    </effect>
+  </sequence>
+  <sequence trigger="cdacda">
+	<effect type="graphical-effect"> 
+		<name value="magic-circle-5"/> 
+        <time value="1.0"/>
+    </effect>
+  </sequence>
+</root>

@@ -1,0 +1,38 @@
+<root type="ability" class="self">
+
+  <name>$ABI_WATER_MEDITATION</name>
+  <trigger>cacadb</trigger>
+  <icon>data/player/meditation.png</icon>
+  <unavailable-icon>data/player/meditation-grey.png</unavailable-icon>
+  <description>$ABI_WATER_MEDITATION_DESC</description>
+
+<!-- moze dorobic, ze na wyzszych poziomach gracz moze rzucac czary? -->
+
+  <effect type="list">
+  	<effect type="timed">
+  		<time value="5.0" /> <!-- jaki bedzie max poziom umiejetnosci? -->
+<!-- zastanowic sie, czy tutaj powyzej nie dac modifiers="level,inv" -->
+        <effect type="list">
+      		<effect type="restore-mana">
+  	    		<amount value="4.0" square-gain="0.027" modifiers="level,intelligence" />
+  		    </effect>
+            <effect type="stun" />
+        </effect>
+  	</effect>
+  	<effect type="graphical-effect">
+  		<time value="2.625" linear-gain="-0.125" />
+  		<name value="hibernate" />
+  	</effect>
+	<effect type="sound">
+		<name value="data/sounds/Lugaro/consolesuccess.ogg" />
+	</effect>
+  </effect>
+
+  <manacost value="0.0" />
+  <casttime value="0.3" />
+  <delay value="0.00" />
+  <cooldown value="5.0" />
+
+  <focus-mana-cost value="0.0" />
+  <focus-max-duration value="5.0" />
+</root>

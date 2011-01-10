@@ -1,0 +1,37 @@
+<root type="ability-tree">
+    <name>$ABITREE_SPECIAL</name>
+    <background>data/GUI/skills-bkg-anc.jpg</background>
+
+    <ability code="a">
+        <name>data/abilities/special/acidcircus.xml</name>
+        <row>0</row>
+    </ability>
+    <ability code="b">
+        <name>data/abilities/special/resonator.xml</name>
+        <row>0</row>
+    </ability>
+    <ability code="c">
+        <name>data/abilities/special/basher.xml</name>
+        <row>1</row>
+    </ability>
+    <ability code="d">
+        <name>data/abilities/special/blizzard.xml</name>
+        <row>1</row>
+    </ability>
+    <ability code="e">
+        <name>data/abilities/special/curse.xml</name>
+        <row>2</row>
+    </ability>
+    <ability code="f">
+        <name>data/abilities/special/chant.xml</name>
+        <row>2</row>
+    </ability>
+    <ability code="g">
+        <name>data/abilities/special/blades.xml</name>
+        <row>3</row>
+    </ability>
+    <ability code="h">
+        <name>data/abilities/special/armor.xml</name>
+        <row>3</row>
+    </ability>
+</root>

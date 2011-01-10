@@ -1,0 +1,2 @@
+#include "CTemplateParam.h"
+

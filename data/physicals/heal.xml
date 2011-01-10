@@ -1,0 +1,44 @@
+<root type="ability" class="self">
+
+  <name>$ABI_NATURE_HEALSELF</name>
+  <icon>data/player/healself.png</icon>
+  <unavailable-icon>data/player/healself-grey.png</unavailable-icon>
+  <description>$ABI_NATURE_HEALSELF</description>
+
+  <effect type="retarget">
+    <target-chooser>
+      <filter value="player"/>
+      <range value="4.0" />
+      <angle value="60.0"/>
+      <aim-at-ground value="0"/>
+    </target-chooser>
+    <effect type="list">
+      <effect type="heal-target">
+        <amount value="10" />
+      </effect>
+	  <effect type="timed">
+		<time amount="2.0"/>
+		<effect type="heal-target">
+			<amount value="10"/>
+		</effect>
+	  </effect>
+      <effect type="linked-graphical-effect">
+        <offset-x value="-0.25"/>
+        <offset-y value="0.5"/>
+        <time value="0.2" />
+        <name value="lightning-red" />
+      </effect>
+    </effect>
+  </effect>
+  
+  <manacost value="0.0" />
+  <casttime value="0.5" />
+  <delay value="1.0" />
+  <cooldown value="1.0" />
+
+  <ai-hint>
+    <player-distance>4.0</player-distance>
+    <player-angle>30.0</player-angle>
+  </ai-hint>
+  
+</root>

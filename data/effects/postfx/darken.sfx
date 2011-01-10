@@ -1,0 +1,9 @@
+texture framebuffer
+
+effect
+{
+	float len = distance(_in,vec2(0.5,0.5));
+	vec4 pixel = framebuffer(_in);
+    float mod = min(len*0.7, 0.3);
+	_out = vec4(pixel.r - mod,pixel.g - mod,pixel.b - mod,1.0);
+}

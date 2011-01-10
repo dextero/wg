@@ -1,0 +1,306 @@
+<root type="particles">
+<!-- EMITERY -->
+
+<emiter name="e-shield">
+	<speed value="0.005" />
+	<life min="0.3" max="0.45" />
+	<textures start="1" end="1" />
+	<rotation min="0" max="360" />
+	<size min="0.4" max="1" />
+	<circle radius-min="0.2" radius-max="0.3" ang-min="0" ang-max="360" />	
+	<mods>
+		<life min="0.2" max="0.4" />
+		<rotation min="-50" max="50" />
+		<size min="0.1" max="0.25" />
+	</mods>
+</emiter>
+
+<emiter name="e-armor">
+	<speed value="0.05" />
+	<life min="0.3" max="0.45" />
+	<textures start="16" end="16" />
+	<rotation min="0" max="360" />
+	<size min="0.4" max="1" />
+	<circle radius-min="0.2" radius-max="0.3" ang-min="0" ang-max="360" />	
+	<mods>
+		<life min="0.2" max="0.4" />
+		<rotation min="-50" max="50" />
+		<size min="0.1" max="0.25" />
+	</mods>
+</emiter>
+
+<emiter name="e-flare">
+	<speed value="0.005" />
+	<life min="0.3" max="0.45" />
+	<textures start="6" end="6" />
+	<rotation min="0" max="360" />
+	<size min="0.4" max="1" />
+	<circle radius-min="0.2" radius-max="0.3" ang-min="0" ang-max="360" />	
+	<mods>
+		<life min="0.2" max="0.4" />
+		<rotation min="-50" max="50" />
+		<size min="0.1" max="0.25" />
+	</mods>
+</emiter>
+
+<emiter name="e-fire-trail">
+	<speed value="0.0001" />
+	<life min="0.3" max="0.45" />
+	<textures start="6" end="6" />
+	<rotation min="0" max="360" />
+	<size min="0.4" max="1" />
+	<circle radius-min="0.2" radius-max="0.3" ang-min="0" ang-max="360" />	
+	<mods>
+		<life min="0.2" max="0.4" />
+		<rotation min="-50" max="50" />
+		<size min="0.1" max="0.25" />
+	</mods>
+</emiter>
+
+<emiter name="e-freeze">
+	<speed value="0.01" />
+	<life min="0.3" max="0.5" />
+	<textures start="8" end="8" />
+	<rotation min="0" max="360" />
+	<size min="0.8" max="1" />
+	<mods>
+		<life min="0.2" max="0.4" />
+		<rotation min="-50" max="50" />
+		<size min="0.5" max="0.5" />
+	</mods>
+</emiter>
+
+<emiter name="e-acid">
+	<speed value="0.0025" />
+	<life min="0.9" max="1" />
+	<textures start="7" end="7" />
+	<rotation min="0" max="360" />
+	<size min="0.55" max="1" />
+	<circle radius-min="0.05" radius-max="0.2" ang-min="0" ang-max="360" />	
+	<mods>
+		<life min="0.4" max="0.7" />
+		<rotation min="-50" max="50" />
+		<size min="0.7" max="0.8" />
+	</mods>
+</emiter>
+
+<emiter name="e-acid-cloud">
+	<speed value="0.0035" />
+	<life min="0.20" max="0.60" />
+	<textures start="10" end="10" />
+	<rotation min="0" max="360" />
+	<size min="1.35" max="1.6" />
+	<circle radius-min="0.00" radius-max="1.0" ang-min="0" ang-max="360" />	
+	<mods>
+		<life min="0.3" max="0.6" />
+		<rotation min="-180" max="180" />
+		<size min="0.8" max="1.5" />
+	</mods>
+</emiter>
+
+<emiter name="e-storm-cloud">
+	<speed value="0.0035" />
+	<life min="0.20" max="0.60" />
+	<textures start="15" end="15" />
+	<rotation min="0" max="360" />
+	<size min="1.35" max="1.6" />
+	<circle radius-min="0.00" radius-max="1.0" ang-min="0" ang-max="360" />	
+	<mods>
+		<life min="0.3" max="0.6" />
+		<rotation min="-180" max="180" />
+		<size min="0.8" max="1.5" />
+	</mods>
+</emiter>
+
+<emiter name="e-stars">
+	<speed value="0.1" />
+	<life min="0.9" max="1" />
+	<textures start="9" end="9" />
+	<rotation min="0" max="360" />
+	<size min="0.2" max="0.3" />
+	<circle radius-min="0.2" radius-max="0.3" ang-min="0" ang-max="360" />	
+	<mods>
+		<life min="0.9" max="1.0" />
+		<rotation min="-50" max="50" />
+		<size min="0.2" max="0.4" />
+	</mods>
+</emiter>
+
+<emiter name="e-smallfireball">
+	<speed value="0.001" />
+	<life min="0.5" max="0.85" />
+	<textures start="2" end="2" />
+	<rotation min="0" max="360" />
+	<size min="0.35" max="0.5" />
+	<mods>
+		<life min="0.5" max="0.5" />
+		<rotation min="10" max="50" />
+		<size min="0.9" max="1.0" />
+		<force x-min="-40" x-max="40" y-min="-40" y-max="40" />
+	</mods>
+</emiter>
+
+<emiter name="e-firearrow-trail">
+	<speed value="0.001" />
+	<life min="0.45" max="0.48" />
+	<textures start="2" end="2" />
+	<rotation min="0" max="360" />
+	<size min="0.25" max="0.35" />
+	<mods>
+		<life min="0.75" max="0.78" />
+		<rotation min="10" max="50" />
+		<size min="0.8" max="1.0" />
+		<force x-min="-10" x-max="10" y-min="-10" y-max="10" />
+	</mods>
+</emiter>
+
+<emiter name="e-smallgreenfireball">
+	<speed value="0.001" />
+	<life min="0.5" max="0.85" />
+	<textures start="13" end="13" />
+	<rotation min="0" max="360" />
+	<size min="0.35" max="1" />
+	<mods>
+		<life min="0.5" max="0.5" />
+		<rotation min="10" max="50" />
+		<size min="0.9" max="1.0" />
+		<force x-min="-40" x-max="40" y-min="-40" y-max="40" />
+	</mods>
+</emiter>
+
+<emiter name="e-blood">
+	<speed value="0.001" />
+	<life min="0.4" max="0.8" />
+	<textures start="3" end="3" />
+	<rotation min="0" max="360" />
+	<size min="0.2" max="0.35" />
+	<circle radius-min="0.01" radius-max="0.02" ang-min="0" ang-max="360" />	
+	<mods>
+		<life min="0.25" max="0.7" />
+		<rotation min="10" max="100" />
+		<size min="0.75" max="0.9" />
+		<force x-min="-20" x-max="20" y-min="-20" y-max="20" />
+	</mods>
+</emiter>
+
+<emiter name="e-smoke">
+	<speed value="0.001" />
+	<life min="0.1" max="0.4" />
+	<textures start="0" end="0" />
+	<rotation min="0" max="360" />
+	<size min="0.5" max="1.2" />
+	<mods>
+		<life min="0.1" max="0.4" />
+		<rotation min="5" max="10" />
+		<size min="0.5" max="1.2" />
+		<force x-min="-20" x-max="20" y-min="-20" y-max="20" />
+	</mods>
+</emiter>
+
+<emiter name="e-circles">
+	<speed value="0.01" />
+	<life min="0.5" max="1" />
+	<textures start="4" end="5" />
+	<size min="0.1" max="0.3" />
+	<mods>
+		<life min="0.4" max="0.65" />
+		<rotation min="1" max="25" />
+		<size min="0.1" max="0.6" />
+	</mods>
+</emiter>
+
+<emiter name="e-trail">
+	<speed value="0.05" />
+	<life min="0.2" max="0.3" />
+	<textures start="1" end="1" />
+	<size min="0.25" max="0.5" />
+	<color r="10" g="250" b="250" a="255" />
+	<circle radius-min="0.2" radius-max="0.2" ang-min="0" ang-max="360" />	
+	<mods>
+		<life min="0.1" max="0.25" />
+		<rotation min="10" max="50" />
+		<size min="0.8" max="1.2" />
+	</mods>
+</emiter>
+
+<emiter name="e-flames">
+	<speed value="0.005" />
+	<life min="0.7" max="1.0" />
+	<textures start="14" end="14" />
+	<size min="0.15" max="1.0" />
+	<circle radius-min="0.1" radius-max="0.4" ang-min="30" ang-max="150" />	
+	<mods>
+		<life min="0.6" max="0.8" />
+		<rotation min="-150" max="150" />
+		<size min="-0.3" max="0.3" />
+		<force x-min="-25" x-max="25" y-min="-70" y-max="-150" />
+	</mods>
+</emiter>
+
+<!-- AFEKTORY -->
+
+<affector type="random" name="a-smallfireball">
+	<velocity x-min="-2" x-max="2" y-min="-2" y-max="2" />
+	<rotation min="-1" max="1" />
+</affector>
+
+<affector type="random" name="a-tinyfireball">
+	<velocity x-min="-0.5" x-max="0.5" y-min="-0.5" y-max="0.5" />
+	<rotation min="-60" max="60" />
+</affector>
+
+<affector type="random" name="a-firearrow-trail">
+	<velocity x-min="-0.15" x-max="0.15" y-min="-0.15" y-max="0.15" />
+	<rotation min="-90" max="90" />
+</affector>
+
+<affector type="incremental" name="w_gore">
+	<velocity x="0" y="100" />
+	<size value="5" />
+	<life value="0.5" />
+</affector>
+
+<affector type="spray" name="a-spray">
+	<random value="0" />
+	<radius min-x="300" max-x="300" min-y="300" max-y="300" />
+</affector>
+
+<affector type="pointmass" name="pm">
+	<mass value="-120" />
+	<field min="1" max = "12" />
+</affector>
+
+<affector type="random" name="boczki">
+	<velocity x-min="-1" x-max="1" />
+	<rotation min="-10" max="10" />
+</affector>
+
+<affector type="random" name="rnd_move">
+	<velocity x-min="-2" x-max="2" y-min="-2" y-max="2" />
+</affector>
+
+<affector type="merge" name="a-smoke" a="w_gore" b="boczki" />
+
+<!-- SYSTEMY CZASTECZEK -->
+<particlesystem name="shield" affector="foo" emiter="e-shield" count="100" />
+<particlesystem name="armor" affector="foo" emiter="e-armor" count="50" />
+<particlesystem name="heal" affector="foo" emiter="e-flare" count="100" />
+<particlesystem name="fire-trail" affector="foo" emiter="e-fire-trail" count="100" />
+<particlesystem name="lightball" affector="pm" emiter="e-acid" count="15" blendmode="add" />
+<particlesystem name="acid" affector="foo" emiter="e-acid" count="20" />
+<particlesystem name="acid-spray" affector="a-smoke" emiter="e-acid" count="20" />
+<particlesystem name="smallfireball" affector="a-smallfireball" emiter="e-smallfireball" count="50" />
+<particlesystem name="tinyfireball" affector="a-tinyfireball" emiter="e-smallfireball" count="50" />
+<particlesystem name="firearrow-trail" affector="a-firearrow-trail" emiter="e-firearrow-trail" count="50" />
+<particlesystem name="bloodsplatter" affector="foo" emiter="e-blood" count="5" />
+<particlesystem name="smoke" affector="a-smallfireball" emiter="e-smoke" count="100" />
+<particlesystem name="circles" affector="boczki" emiter="e-circles" count="50" />
+<particlesystem name="trail" affector="rnd_move" emiter="e-trail" count="50" />
+<particlesystem name="frost" affector="foo" emiter="e-freeze" count="10" />
+<particlesystem name="stars" affector="foo" emiter="e-stars" count="50" />
+<particlesystem name="acid-cloud" emiter="e-acid-cloud" affector="a-smallfireball" count="25" />
+<particlesystem name="storm-cloud" emiter="e-storm-cloud" affector="a-smallfireball" count="25" />
+<particlesystem name="green-cloud" affector="a-smallfireball" emiter="e-smallgreenfireball" count="8" />
+<particlesystem name="flames" affector="boczki" emiter="e-flames" count="30" />
+
+</root>

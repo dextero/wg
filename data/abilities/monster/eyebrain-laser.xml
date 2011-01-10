@@ -1,0 +1,63 @@
+<root type="ability" class="self">
+
+	<name>$ABI_EYEBRAIN_LASER</name>
+	<trigger>a</trigger>
+	<icon>data/player/flaming-arrow.png</icon>
+	<unavailable-icon>data/player/flaming-arrow-grey.png</unavailable-icon>
+	<description>$ABI_EYEBRAIN_LASER_DESC</description>
+
+    <effect type="list">
+		<effect type="linked-graphical-effect">
+			<offset-x value="0"/>
+			<offset-y value="0.5"/>
+			<time value="1.5" />
+			<name value="laser" />
+		</effect>
+		<effect type="delayed">
+			<time value="0.3"/>
+			<effect type="ray">
+				<area calc="10.0" />
+				<filter value="player"/>
+				<offset-x value="0"/>
+				<offset-y value="0.5"/>
+				<effect type="list">
+					<effect type="graphical-effect">
+						<time value="0.5" />
+						<name value="smoke" />
+					</effect>
+					<effect type="damage">
+						<amount calc="5" />
+						<damage-type value="lightning" />
+					</effect>
+				</effect>
+			</effect>
+		</effect>
+	</effect>
+
+	<manacost calc="0" />
+	<casttime value="1.0" />
+	<delay value="1.0" />
+	<cooldown value="1.5" />
+  <ai-hint>
+	<player-distance>12.0</player-distance>
+	<player-angle>3.0</player-angle>
+  </ai-hint>
+ 
+	<cast-time-effect type="list">
+		<effect type="modify">
+			<aspect value="speed" />
+			<amount value="0.0" />
+		</effect>
+	</cast-time-effect>
+ 
+	<delay-effect type="list">
+		<effect type="modify">
+			<aspect value="speed" />
+			<amount value="0.0" />
+		</effect>
+		<effect type="modify">
+			<aspect value="turnspeed" />
+			<amount value="0.0" />
+		</effect>
+	</delay-effect>
+</root>

@@ -1,0 +1,100 @@
+<root type="locale" name="Polski" code="pl">
+	<entry>
+		<key>DLG_COW_LEVEL1_1</key>
+		<value>Spoglądasz naprzód i nie możesz dowierzyć własnym oczom - widzisz szeroką na kilkanaście metrów przerwę w lesie, rozciągającą się aż po sam horyzont. Zaczynasz zastanawiać się, kto i po co mógłby stworzyć taką.. drogę, ale z zamyślenia wyrywa Cię dziwny dźwięk. Wprawdzie podświadomie wiesz, że to coś dobrze Ci znanego, ale nie jesteś pewien, co.</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL1_2</key>
+		<value>Stoisz w bezruchu kilka minut z nadzieją, że usłyszysz go jeszcze raz, jednak nic takiego się nie dzieje. Decydujesz się ruszyć naprzód raźnym krokiem, pomimo nieuzasadnionego wrażenia, że ktoś robi Cię tu w konia.</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL2_1</key>
+		<value>Widząc przed sobą niezły kawał żywej jeszcze wołowiny, doznajesz olśnienia - dziwny dźwięk, który słyszałeś wcześniej, to.. muczenie krowy.
+
+W głowię kłębią Ci się coraz to nowe pytania: skąd ona się tu wzięła? Dlaczego patrzy na Ciebie tępym wzrokiem, i wreszcie, dlaczego ogarnia Cię strach przed spojrzeniem jej pięknych, czerwonych niczym świeżo wyciśnięta potworza krew, oczu?</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL2_2</key>
+		<value>Zanim dajesz radę odpowiedzieć sobie na choć jedno z tych pytań, zdajesz sobie sprawę, że poczciwa mućka momentalnie się zdematerializowała.
+
+Czyżbyś miał halucynacje?</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL3_1</key>
+		<value>Z jednej strony spodziewałeś się tego, z drugiej, potrafiąca się teleportować krowa nie jest czymś, co chciałbyś w tym momencie spotkać. Wpadasz jednak na genialny plan sprawdzenia, czy ona aby na pewno jest rzeczywista - donośnym głosem obwieszczasz jej &quot;Muuuuu!&quot;</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL3_2</key>
+		<value>Muuuu. [znika, pozostawiając Cię w stanie kompletnego osłupienia]</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL4_1</key>
+		<value>Dochodzisz do wniosku, że w tym miejscu już nic Cię nie zdziwi. Instynkt podpowiada Ci, że za Tobą dzieje się coś niedobrego, więc powoli, jakby od niechcenia, odwracasz głowę..</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL4_2</key>
+		<value>..spoglądając prosto w rozżarzone ślepia jednej z kilkudziesięciu, najwyraźniej mocno zirytowanych Twoją obecnością, krów. Zdajesz sobie sprawę, że to nie są zwykłe krowy, i że walka z nimi nie ma najmneijszego sensu. W akcie desperacji próbujesz dyplomacji, jednak Twoje &quot;Muu?&quot; przynosi odwrotny od oczekiwanego rezultat - całe stado jednocześnie rzuca się na Ciebie!</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL1_1</key>
+		<value>To, co widzisz, to okno dialogu. W ten sposób będziesz prowadzić dialogi z napotkanymi postaciami - na dole ukażą się dostępne opcje dialogowe.
+
+Naciśnij spację, aby kontynuować.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL1_2</key>
+		<value>Do poruszania postacią służą w klasycznym sterowaniu strzałki. Ustawienie klawiszy możesz w każdej chwili zmienić, używając opcji z menu pauzy [Esc].
+		Schemat sterowania, który wybrałeś przed rozpoczęciem gry, możesz w każdej chwili podejrzeć na ekranie %1 (drugi gracz: %2).
+
+Podnieś przedmiot przed sobą, nachodząc na niego.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL2_1</key>
+		<value>Informacje o aktualnym stanie twojej postaci widnieją w lewym górnym rogu ekranu. Czerwony pasek to życie bohatera, niebieski - mana, a zielony - doświadczenie.
+
+Po awansie na kolejny poziom podświetla się napis %1 (dla drugiego gracza: %2) nad awatarem.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL3_1</key>
+		<value>Jako, że twoja postać jest magiem, posiada pewne szczególne umiejętności. Możesz ich użyć, naciskając klawisze akcji. Domyślnie: %1, %2, %3, %4, możesz jednak to sprawdzić w opcjach lub po naciśnięciu [%5].
+		
+Czary przypisane do poszczególnych klawiszy możesz zmieniać na ekranie umiejętności [%6] - przeciągnij je do slotów na dole ekranu.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL3_2</key>
+		<value>Możesz podejrzeć listę dostępnych umiejętności, naciskając [%1] (drugi gracz - [%2]). Aby rozwijać umiejętności, zobacz, co kryje się pod [%3] ([%4]).
+
+Potrenuj rzucanie podstawowych czarów za pomocą przycisków QWER, 1234 lub myszki (w zależności od wybranego sterowania); później złap następną znajdźkę.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL4_1</key>
+		<value>Przejście przed tobą jest zablokowane - musisz je otworzyć, aby móć się przez nie przedostać. Na swojej drodze spotkasz wiele takich miejsc - niektóre mogą wymagać zabicia konkretnego potwora lub wyczyszczenia całej mapy, innym wystarczy postawienie stopy w określonym miejscu.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL4_2</key>
+		<value>Tego tu przejścia pilnuje stary szczur Zenek. Całe życie wiernie służył.. w sumie nie wiadomo komu (nikomu się nie przyznał - nie zna ludzkiego), ale wiek coraz bardziej daje mu się we znaki. Ulżyj jego cierpieniom, aby mógł trafić do szczurzego nieba (i pozwolić Tobie iść dalej).</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL4_3</key>
+		<value>Potwory po śmierci mogą wyrzucać różne przydatne rzeczy. Warto się im przyjrzeć, w niektórych sytuacjach potrafią uratować twój tyłek. 
+Ponadto, żółte kule ukryte na mapach, wzbogacą zasób Twoich zaklęć o Pradawne Umiejętności, zwane również specjalnymi.
+
+Na swojej drodze spotkasz również gniazda, z których będą wychodzić przeróżne stwory. Pozbywanie się ich w pierwszej kolejności zwykle bardzo upraszcza grę.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL5_1</key>
+		<value>Właśnie awansowałeś na kolejny poziom!
+
+Z każdym poziomem zyskujesz punkt umiejętności. Możesz go wykorzystać do ulepszenia swoich czarów, lub też do nauczenia się nowych za pomocą ekranu [%1] ([%2] w wersji dla drugiego gracza).</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL5_2</key>
+		<value>Na zakończenie powiem jeszcze, że czary dwóch ostatnich szkół - wsparcia i specjalne - możesz rzucać również spoza slotów, wstukując kombinację klawiszy wyświetloną w opisie umiejętności.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL6_1</key>
+		<value>To już wszystko co musisz wiedzieć. Wejdź w zielony portal, aby rozpocząć właściwą przygodę.
+
+Powodzenia!</value>
+	</entry>
+</root>

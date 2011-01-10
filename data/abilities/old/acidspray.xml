@@ -1,0 +1,79 @@
+﻿<root type="ability" class="self">
+
+  <name>$ABI_NATURE_ACID_SPRAY</name>
+  <trigger>dcd</trigger>
+  <icon>data/player/acidspray.png</icon>
+  <unavailable-icon>data/player/acidspray-grey.png</unavailable-icon>
+  <description>$ABI_NATURE_ACID_SPRAY_DESC</description>
+
+  <effect type="recastable">
+    <recast value="0.25" />
+    <time value="0.20" linear-gain="0.06" />
+    <effect type="bullet">
+      <emitter>
+
+        <effect type="list">
+          <effect type="non-cumulative" >
+            <effect type="timed">
+              <time value="2.0" linear-gain="0.5" />
+              <effect type="damage">
+                <amount value="7.5" />
+          		<damage-type value="poison"/>
+              </effect>
+            </effect>
+          </effect>
+          <effect type="graphical-effect">
+            <time value="1.5" linear-gain="0.5" />
+            <name value="acid" />
+          </effect>
+          <effect type="graphical-effect">
+            <time value="0.8" />
+            <name value="green-explosion-mini" />
+            </effect>
+        </effect>
+  
+        <explosion type="list">
+          <effect type="graphical-effect">
+            <time value="0.1" />
+            <name value="acid" />
+          </effect>
+			<effect type="sound">
+				<name value="data/sounds/Lugaro/splatter.ogg" />
+			</effect>
+          <effect type="area">
+            <area value="0.4" />
+            <filter value="hostiles,obstacle" />
+            <effect type="damage">
+              <amount value="4.0" modifiers="willpower" linear-gain="9.0" />
+          	  <damage-type value="poison"/>
+            </effect>
+          </effect>
+        </explosion>
+  
+        <bullet-angular-speed value="720" />
+        <range value="12.0" />
+        <speed value="3.0" />
+        <ttl value="0.8" />
+        <count value="6" />
+        <width value="60" />
+        <bullet value="data/physicals/acidball.xml" />
+      </emitter>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.4" />
+  </cast-time-effect>
+  
+  <delay-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.6" />
+  </delay-effect>
+  
+  <manacost value="10.0" />
+  <casttime value="0.0" />
+  <delay value="0.12" />
+  <cooldown value="0.12" />
+  
+</root>

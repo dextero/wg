@@ -1,0 +1,16 @@
+<root type="ability" class="self">
+
+	<name>$ABI_MAGIC_MISSILE</name>
+	<trigger>a</trigger>
+	<icon>data/player/flaming-arrow.png</icon>
+	<unavailable-icon>data/player/flaming-arrow-grey.png</unavailable-icon>
+
+	<effect type="list">
+	</effect>
+
+	<manacost calc="1" />
+	<casttime value="0.1" />
+	<delay value="0.1" />
+	<cooldown value="0.28" />
+
+</root>

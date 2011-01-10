@@ -1,0 +1,18 @@
+﻿<root type="dialog">
+
+  <startNode>0</startNode>
+
+  <node>
+    <id>0</id>
+    <type>npc</type>
+    <child>1</child>
+    <string>$DLG_COW_LEVEL1_1</string>
+  </node>
+  
+  <node>
+    <id>1</id>
+    <type>npc</type>
+    <string>$DLG_COW_LEVEL1_2</string>
+  </node>
+
+</root>

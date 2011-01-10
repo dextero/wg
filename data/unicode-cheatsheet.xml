@@ -1,0 +1,22 @@
+<root type="unicode">
+<!-- tabela translacji z UTF-8 na Unicode przy wczytywaniu z rapidxml -->
+<!-- na podstawie http://unicodelookup.com/ -->
+	<letter code="211">Ó</letter>
+	<letter code="243">ó</letter>
+	<letter code="262">Ć</letter>
+	<letter code="263">ć</letter>
+	<letter code="323">Ń</letter>
+	<letter code="324">ń</letter>
+	<letter code="346">Ś</letter>
+	<letter code="347">ś</letter>
+	<letter code="377">Ź</letter>
+	<letter code="378">ź</letter>
+	<letter code="379">Ż</letter>
+	<letter code="380">ż</letter>
+	<letter code="260">Ą</letter>
+	<letter code="261">ą</letter>
+	<letter code="280">Ę</letter>
+	<letter code="281">ę</letter>
+	<letter code="321">Ł</letter>
+	<letter code="322">ł</letter>
+</root>

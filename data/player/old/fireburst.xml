@@ -1,0 +1,65 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_FIRE_FIREBURST</name>
+  <trigger>dbca</trigger>
+  <icon>data/player/fireburst.png</icon>
+  <unavailable-icon>data/player/fireburst-grey.png</unavailable-icon>
+  <description>$ABI_FIRE_FIREBURST_DESC</description>
+
+  <effect type="list">
+    <effect type="knockback">
+      <amount value="4.0"/>
+    </effect>
+    <effect type="damage">
+      <amount value="19.0" modifiers="willpower" linear-gain="28.0" />
+      <damage-type value="fire"/>
+    </effect>
+
+    <!-- fajnie by bylo to przeniesc do explosion, ale z jakichs powodow to nie dziala tam -->
+    <effect type="check-level">
+      <amount value="2.0" />
+      <effect type="area">
+        <area calc="0.75 + 0.075 * (lv + spellrange)" />
+        <filter value="hostiles,obstacle" />
+        <effect type="damage">
+          <amount value="-17.0" modifiers="willpower" linear-gain="11.0" />
+          <damage-type value="fire"/>
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+
+  <explosion type="list">
+  	<effect type="graphical-effect">
+  	  <time value="0.02" />
+      <name value="smallfireball" />
+  	</effect>
+    <effect type="graphical-effect">
+      <time value="0.8" />
+      <name value="bullet-explosion" />
+    </effect>
+  </explosion>
+  
+
+  <manacost value="30.0" />
+  <count value="12" />
+  <width value="340" />
+  <range calc="12.0 + (1.2 * spellrange)" />
+  <ttl value="2.25" />
+  <speed value="6.0" />
+  <bullet value="data/physicals/flameball.xml" />
+  <flight-effect type="delayed">
+    <time value="0.10"/>
+    <effect type="graphical-effect">
+      <time value="2.25" />
+<!--      <name value="fire-trail" /> -->
+      <name value="tinyfireball" />
+    </effect>
+  </flight-effect>
+  
+  <casttime calc="0.3 + 0.9 / (castspeed + 1.0)" />
+  <delay calc="0.4 + 0.14 / (castspeed + 1.0)" />
+  <cooldown calc="0.12 + 0.55 / (castspeed + 1.0)" />
+  
+</root>

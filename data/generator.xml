@@ -1,0 +1,124 @@
+<root type="map-gen">
+  <lairs>
+    <lair file="data/physicals/rat-lair.xml" level="0" />
+    <lair file="data/physicals/bee-lair.xml" level="3" />
+    <lair file="data/physicals/shaggy-lair.xml" level="6" />
+  </lairs>
+  <monsters>
+    <monster file="data/physicals/rat.xml" level="0" />
+    <monster file="data/physicals/rat-green.xml" level="1" />
+    <monster file="data/physicals/timberman.xml" level="2" />
+    <monster file="data/physicals/bee.xml" level="3" />
+    <monster file="data/physicals/shaggy.xml" level="6" />
+  </monsters>
+  <items>
+    <!-- hp -->
+    <item file="data/items/small-hp.xml" level="0" />
+    <item file="data/items/medium-hp.xml" level="2" />
+    <item file="data/items/big-hp.xml" level="5" />
+    <item file="data/items/regeneration.xml" level="7" />
+    
+    <!-- xp -->
+    <item file="data/items/25xp.xml" level="0" />
+    <item file="data/items/64xp.xml" level="1" />
+    <item file="data/items/100xp.xml" level="2" />
+    <item file="data/items/200xp.xml" level="3" />
+    <item file="data/items/350xp.xml" level="4" />
+    <item file="data/items/600xp.xml" level="6" />
+    <item file="data/items/1k-xp.xml" level="10" />
+    
+    <!-- speciale - bez tych, ktorymi mozna tluc, bo wyskocza 3 takie na mapie i problem -->
+    <item file="data/items/resonator-ball.xml" level="3" />
+    <item file="data/items/armor-ball.xml" level="4" />
+    <item file="data/items/chant-ball.xml" level="5" />
+    
+    <!-- inne -->
+    <item file="data/items/superspeed.xml" level="5" />
+    <item file="data/items/medium-mana.xml" level="2" />
+  </items>
+  <tile-masks>
+    <tile-mask file="data/maps/tile_mask/mask1.png" />
+    <tile-mask file="data/maps/tile_mask/mask2.png" />
+    <tile-mask file="data/maps/tile_mask/mask3.png" />
+    <tile-mask file="data/maps/tile_mask/mask4.png" />
+    <tile-mask file="data/maps/tile_mask/mask5.png" />
+  </tile-masks>
+  
+  <set name="forest">
+    <tiles>
+      <tile image="data/maps/themes/test/rgrass.png" />
+      <tile image="data/maps/themes/test/rgrass_1.png" />
+      <tile image="data/maps/themes/test/rswamp.png" />
+    </tiles>
+    <doodahs>
+      <doodah file="data/maps/doodahs/tree1.png" z="foreground" />
+      <doodah file="data/maps/doodahs/tree2.png" z="foreground" />
+      <doodah file="data/maps/doodahs/foliage1.png" z="foreground" />
+      <doodah file="data/maps/doodahs/foliage2.png" z="foreground" />
+      <doodah file="data/maps/doodahs/foliage3.png" z="foreground" />
+      <doodah file="data/maps/doodahs/foliage4.png" z="foreground" />
+      <doodah file="data/maps/doodahs/foliage5.png" z="foreground" />
+      <doodah file="data/maps/doodahs/foliage6.png" z="foreground" />
+      <doodah file="data/maps/doodahs/tree1.png" z="foreground" />
+      <doodah file="data/maps/doodahs/tree2.png" z="foreground" />
+      <doodah file="data/maps/doodahs/tree3.png" z="foreground" />
+      <doodah file="data/maps/doodahs/tree4.png" z="foreground" />
+      <doodah file="data/maps/doodahs/tree5.png" z="foreground" />
+      <doodah file="data/maps/doodahs/tree6.png" z="foreground" />
+      <doodah file="data/maps/doodahs/tree7.png" z="foreground" />
+      <doodah file="data/maps/doodahs/tree8.png" z="foreground" />
+      <doodah file="data/maps/doodahs/tree9.png" z="foreground" />
+      <doodah file="data/maps/doodahs/tree-strange.png" z="foreground" />
+      <doodah file="data/maps/doodahs/ancientblocks.png" z="background" />
+    </doodahs>
+  </set>
+  <set name="desert">
+    <tiles>
+      <tile image="data/maps/themes/sand/tilesets_sand_a_12.png" />
+      <tile image="data/maps/themes/oblique_way/tileset_scheme_b_a7.png" />
+      <tile image="data/maps/themes/oblique_way/tileset_scheme_b_a14.png" />
+      <tile image="data/maps/themes/oblique_way/tileset_scheme_b_b14.png" />
+      <tile image="data/maps/themes/oblique_way/tileset_scheme_b_c4.png" />
+      <tile image="data/maps/themes/oblique_way/tileset_scheme_b_d4.png" />
+      <tile image="data/maps/themes/oblique_way/tileset_scheme_b_c14.png" />
+      <tile image="data/maps/themes/oblique_way/tileset_scheme_b_e7.png" />
+    </tiles>
+    <doodahs>
+      <doodah file="data/maps/doodahs/desert/desert_rock1.png" z="foreground" />
+      <doodah file="data/maps/doodahs/desert/desert_rock2.png" z="foreground" />
+      <doodah file="data/maps/doodahs/desert/desert_rock3.png" z="foreground" />
+      <doodah file="data/maps/doodahs/desert/desert_rock4.png" z="foreground" />
+      <doodah file="data/maps/doodahs/desert/desert_rock5.png" z="foreground" />
+      <doodah file="data/maps/doodahs/desert/desert_foliage1.png" z="foreground" />
+      <doodah file="data/maps/doodahs/desert/desert_foliage2.png" z="foreground" />
+      <doodah file="data/maps/doodahs/desert/desert_foliage3.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/boulder1.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/boulder2.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rock1.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rock2.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rock3.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rock4.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rock5.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rock6.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rock7.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rock8.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rocka1.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rocka2.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rocka3.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rocka4.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rocka5.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rocka6.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rocka7.png" z="foreground" />
+      <doodah file="data/maps/doodahs/boulders/rocka8.png" z="foreground" />
+      <doodah file="data/maps/doodahs/deadtree1.png" z="foreground" />
+      <doodah file="data/maps/doodahs/deadtree2.png" z="foreground" />
+      <doodah file="data/maps/doodahs/deadtree3.png" z="foreground" />
+      <doodah file="data/maps/doodahs/palmtree1.png" z="foreground" />
+      <doodah file="data/maps/doodahs/palmtree2.png" z="foreground" />
+      <doodah file="data/maps/doodahs/palmtree3.png" z="foreground" />
+      <doodah file="data/maps/doodahs/palmtree4.png" z="foreground" />
+      <doodah file="data/maps/doodahs/palmtree5.png" z="foreground" />
+      <doodah file="data/maps/doodahs/palmtree6.png" z="foreground" />
+    </doodahs>
+  </set>
+</root>

@@ -1,0 +1,66 @@
+<root type="ability" class="bullet">
+
+	<name>$ABI_FIRE_FIREPITS</name>
+	<trigger></trigger>
+	<icon>data/abilities/fire/gloryhole-0.png</icon>
+	<unavailable-icon>data/abilities/fire/gloryhole-1.png</unavailable-icon>
+	<description>$ABI_FIRE_FIREPITS_DESC</description>
+
+	<flight-effect type="delayed">
+		<time value="0.3"/>
+		<effect type="list">
+			<effect type="graphical-effect">
+				<time value="5" />
+				<name value="flames" />
+			</effect>
+			<effect type="recastable">
+				<time value="20" />
+				<recast value="5"/>
+				<effect type="graphical-effect">
+					<time value="5" />
+					<name value="flames" />
+				</effect>
+			</effect>
+			<effect type="recastable">
+				<time value="20" />
+				<recast value="0.5"/>
+				<effect type="area">
+					<filter value="hostiles" />
+					<area calc="0.4 + 0.04 * spellrange" />
+					<effect type="list">
+						<effect type="damage">
+							<amount calc="2+(8*lvl)"/>
+							<damage-type value="fire"/>
+                        </effect>
+                        <effect type="modify">
+                            <aspect value="speed" />
+                            <amount value="0.0" />
+                        </effect>
+						<effect type="chance">
+							<chance calc="ignite*0.1"/>
+							<effect type="inject">
+								<tree value="fire"/>
+								<code value="k"/>
+								<name value="igniting-magic"/>
+							</effect>
+						</effect>
+					</effect>
+				</effect>
+			</effect>
+		</effect>
+	</flight-effect>
+
+	<manacost calc="(20 + 6*lvl) * (0.80^fm)" />
+	<range calc="12.0 + (1.2 * spellrange)" />
+	<speed calc="10.0" />
+	<acceleration value="-30.0" />
+	<filter value="none"/>
+	<count value="2" />
+	<width calc="30.0" />
+	<ttl value="8.0" />
+	<bullet value="data/physicals/invisible-bullet.xml" />
+	<casttime calc="0.02 + 0.08 / (castspeed + 1.0)" />
+	<delay calc="0.38 + 0.32 / (castspeed + 1.0)" />
+	<cooldown calc="0.6 + 0.22 / (castspeed + 1.0)" />
+
+</root>

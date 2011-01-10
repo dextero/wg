@@ -1,0 +1,44 @@
+<root type="ability" class="melee">
+
+  <effect type="list">
+    <effect type="damage">
+      <amount value="5.0" modifiers="strength" />
+    </effect>
+    <effect type="non-cumulative">
+      <effect type="timed">
+        <time value="5.0" />
+        <effect type="damage">
+          <amount value="1.25" modifiers="strength" />
+        </effect>     
+      </effect>
+  </effect>
+  <!--
+  	<effect type="non-cumulative">
+  		<effect type="timed">
+  			<time value="2.0" />
+  			<effect type="modify">
+  				<aspect value="speed" />
+  				<amount value="0.6" />
+  			</effect>
+  		</effect>
+    </effect>-->
+  </effect>
+
+
+  	<cast-time-effect type="modify">
+  		<aspect value="speed" />
+  		<amount value="0.0" />
+  	</cast-time-effect>
+
+  	<delay-effect type="modify">
+  		<aspect value="speed" />
+  		<amount value="0.2" />
+  	</delay-effect>
+
+  	<cast-time value="0.45" />
+  	<range value="0.7" />
+  	<width value="60.0" />
+  	<delay value="0.45" />
+  	<cooldown value="0.5" />
+
+</root>

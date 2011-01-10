@@ -1,0 +1,32 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="$BESTIARY_FIRE_ELEMENTAL_NAME" />
+    <desc value="$BESTIARY_FIRE_ELEMENTAL_DESC" />
+  </bestiary>
+  <genre>fire-elemental</genre>
+
+  <speed min="1.1" max="1.3" />
+  <strength min="25.0" max="30.0" />
+  <turnspeed min="60.0" max="80.0" />
+  <shadow-offset min="0.12" max="0.12" />
+
+  <maxhp min="100.0" max="140.0" />
+  <maxmana min="30.0" max="50.0" />
+
+  <xp min="50.0" max="80.0" />
+
+  <scale min="0.7" max="0.9" />
+  <radius min="0.3" max="0.4" />
+  <mass min="3.0" max="3.0" />
+
+  	<anim name="core/anim/fire-elemental/default" type="default" />
+  	<anim name="core/anim/fire-elemental/default" type="move" />
+  	<anim name="core/anim/fire-elemental/default" type="attack" />
+  	<anim name="core/anim/fire-elemental/default" type="death" />
+
+  <ai name="ranged-caster" />
+  
+  <ability name="data/abilities/monster/elemental-blaze.xml" default="1" />
+  <ability name="data/abilities/monster/elemental-bullets.xml" />
+</root>

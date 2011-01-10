@@ -1,0 +1,55 @@
+<root type="ability" class="bullet">
+
+	<name>$ABI_ELECTRIC_BULLET</name>
+	<trigger>a</trigger>
+	<description>$ABI_ELECTRIC_BULLET_DESC</description>
+
+	<effect type="list">
+		<effect type="timed">
+			<time value="2.0" />
+			<effect type="modify">
+				<aspect value="speed" />
+				<amount value="0.0" />
+			</effect>
+		</effect>
+		<effect type="graphical-effect">
+			<time value="2.0" />
+			<name value="entangle" />  	
+		</effect>
+		<effect type="sound">
+			<name value="data/sounds/Lugaro/bushrustle.ogg" />
+		</effect>
+	</effect>
+
+	<flight-effect type="recastable">
+		<recast value="0.45"/>
+		<time value="5.0"/>
+		<effect type="bullet">
+			<emitter>
+				<speed value="0.0" />
+				<ttl value="1.5"/>
+				<filter value="none"/>
+				<bullet value="data/physicals/entangle-trail.xml" />
+			</emitter>
+		</effect>
+	</flight-effect>
+	
+	<manacost value="0" />
+	<ttl value="5.0"/>
+	<speed calc="1.0" />
+	<bullet value="data/physicals/invisible-bullet.xml" />
+	<casttime calc="0.25"/>
+	<delay calc="0.4" />
+	<cooldown calc="3.0"/>
+	<filter value="player,wall"/>
+	<target-chooser>
+		<filter value="player"/>
+		<range calc="5.0"/>
+		<angle value="360.0"/>
+	</target-chooser>
+	
+	<ai-hint>
+		<player-distance>5.0</player-distance>
+		<player-angle>10.0</player-angle>
+	</ai-hint>
+</root>

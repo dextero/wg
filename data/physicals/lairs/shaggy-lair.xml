@@ -1,0 +1,25 @@
+<root type="lair">
+  
+  <spawnLimit min="4" max="4" />
+  <spawnRate min="0.2" max="0.2" />
+  <grouping-hint>2</grouping-hint>
+  <genre>shaggy-lair</genre>
+
+  <maxhp min="250.0" max="250.0" />
+  
+  <xp min="280.0" max="280.0" />
+
+  <spawnPosition x="0.6f" y="0.6f" />
+  
+  <spawnSound filename="data/sounds/lair-spawn.ogg" />
+
+  <scale min="0.9" max="1.0" />
+  <radius min="0.45" max="0.5" />
+
+  <anim name="test/anim/lair/default" type="default" />
+  <anim name="test/anim/lair/spawn" type="attack" />
+  <anim name="test/anim/lair/death" type="death" />
+  
+  <monster filename="data/physicals/shaggy.xml" />
+  
+</root>

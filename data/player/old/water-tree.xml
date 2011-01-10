@@ -1,0 +1,75 @@
+<root type="ability-tree">
+  <name>$ABITREE_WATER</name>
+
+  <ability code="a">
+   <name>data/player/energy-channeling.xml</name>
+   <anim>attack</anim>
+   <start-level>1</start-level>
+   <row>0</row>
+  </ability>
+  <ability code="b">
+   <name>data/player/icearrow.xml</name>
+   <anim>attack</anim>
+   <row>0</row>
+  </ability>
+  <ability code="c">
+   <name>data/player/meditation.xml</name>
+   <req-level>4</req-level>
+   <preqs>a</preqs>
+   <row>1</row>
+  </ability>
+  <ability code="d">
+   <name>data/player/iceball.xml</name>
+   <req-level>4</req-level>
+   <preqs>b</preqs>
+   <row>1</row>
+  </ability>
+  <ability code="e">
+   <name>data/player/lightning-strike.xml</name>
+   <anim>2</anim>
+   <req-level>4</req-level>
+   <row>1</row>
+  </ability>
+  <!--<ability code="f">
+   <name></name>
+   <req-level>6</req-level>
+   <preqs></preqs>
+   <row>2</row>
+  </ability>-->
+<!--  <ability code="g">
+   <name>data/player/freezebomb.xml</name>
+   <req-level>8</req-level>
+   <preqs>d</preqs>
+   <row>2</row>
+  </ability> -->
+  <ability code="g">
+   <name>data/player/icecircle.xml</name>
+   <req-level>8</req-level>
+   <preqs>d</preqs>
+   <row>2</row>
+  </ability>
+  <ability code="h">
+   <name>data/player/ball-lightning.xml</name>
+   <req-level>8</req-level>
+   <preqs>e</preqs>
+   <row>2</row>
+  </ability>
+  <ability code="i">
+   <name>data/player/wizardry.xml</name>
+   <req-level>13</req-level>
+   <preqs>c</preqs>
+   <row>3</row>
+  </ability>
+  <ability code="j">
+   <name>data/player/frostnova.xml</name>
+   <req-level>13</req-level>
+   <preqs>g</preqs>
+   <row>3</row>
+  </ability>
+  <ability code="k">
+   <name>data/player/magicstorm.xml</name>
+   <req-level>13</req-level>
+   <preqs>h</preqs>
+   <row>3</row>
+  </ability>
+</root>

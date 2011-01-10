@@ -1,0 +1,13 @@
+<root type="ability" class="passive">
+
+  <name>$ABI_WATER_WIZARDRY</name>
+  <icon>data/player/wizardry.png</icon>
+  <unavailable-icon>data/player/wizardry-grey.png</unavailable-icon>
+  <description>$ABI_WATER_WIZARDRY_DESC</description>
+
+    <effect type="modify">
+      <aspect value="maxmana" />
+      <amount value="1.4" modifiers="intelligence" linear-gain="0.3" /> 
+    </effect>
+  
+</root>
