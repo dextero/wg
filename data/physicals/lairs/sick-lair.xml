@@ -1,0 +1,24 @@
+<root type="lair">
+  
+  <spawnLimit min="3" max="3" />
+  <spawnRate min="0.2" max="0.2" />
+  <grouping-hint>3</grouping-hint>
+  <genre>sick-lair</genre>
+  
+  <maxhp min="90.0" max="90.0" />
+  
+  <xp min="100.0" max="100.0" />
+
+  <spawnPosition x="0.0f" y="0.0f" />
+  
+  <spawnSound filename="data/physicals/lairs/lair-spawn.ogg" />
+
+  <scale min="0.7" max="0.7" />
+  <radius min="0.3" max="0.3" />
+
+  <anim name="core/anim/sick-lair/default" type="default" />
+  <anim name="core/anim/sick-lair/spawn" type="attack" />
+  <anim name="core/anim/sick-lair/death" type="death" />
+  
+  <monster filename="data/physicals/flying-fish.xml" />
+</root>

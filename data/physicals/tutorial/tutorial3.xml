@@ -1,0 +1,13 @@
+﻿<root type="item">
+  <genre>tutorial3</genre>
+  <name name="$ITEM_TUTORIAL3" />
+  <level value="1" />
+  <image filename="data/items/star.png" />
+  <droprate value="0.0" />
+  <effect type="console">
+    <text>[
+      start-dialog ryszard3
+      spawn-physical data/physicals/tutorial/tutorial4.xml 6 14
+      ]</text>
+  </effect>
+</root>

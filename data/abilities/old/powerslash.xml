@@ -1,0 +1,24 @@
+<root type="ability" class="melee">
+
+  <name>$ABI_NONE_POWERSLASH</name>
+  <trigger>b</trigger>
+  <!--  niepodpieta -->
+  
+  <effect type="list">
+    <effect type="damage">
+      <amount value="4.2" modifiers="strength" />
+      <aspect value="" />
+    </effect>
+    <effect type="knockback">
+      <amount value="2.5"/>
+    </effect>
+  </effect>
+  
+  <manacost value="0.0" />
+  <range value="1.0" />
+  <width value="90.0" />
+  <casttime value="0.05" />
+  <delay value="0.3" />
+  <cooldown value="0.2" />
+  
+</root>

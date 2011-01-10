@@ -1,0 +1,114 @@
+#!/bin/bash
+
+rm -rf WGame*.app
+rm warsztat_game
+echo "WarsztatGame MacOSX auto build system"
+echo ""
+echo "Downloading SVN update..."
+svn update
+XREVISION=`svn info 2> /dev/null | head -n 5 | tail -n 1 | cut -c11-14`
+XSTATUS="?"
+echo "Building..."
+rm -rf buildok
+make -f MakefileOSX clean > /dev/null
+make -f MakefileOSX > makelog.log 2> makelog.error
+XGAMELINK=""
+if [ $? = 0 ]
+then
+    XSTATUS="OK"
+    echo "."
+    echo "Will build revision $XREVISION"
+    echo "."
+    mkdir WGame$XREVISION.app
+    cd WGame$XREVISION.app
+    mkdir Contents
+    cd Contents
+    mkdir Resources
+    cd Resources
+    echo "Copying data..."
+    cp -r ../../../data .
+    cp -r ../../../data.vfs .
+    yes | rm -r `find . | grep svn` 2> /dev/null
+    cd ..
+    echo "Copying frameworks..."
+    cp ../../osxlib/Frameworks.zip .
+    unzip Frameworks.zip > /dev/null
+    rm Frameworks.zip
+    cd Frameworks
+    yes | rm -r `find . | grep svn` 2> /dev/null
+    cd ..
+    rm -r __MACOSX
+    echo "Creating .plist and icon..."
+    cp ../../osxlib/Info.plist .
+    sed "s/XVERSION/$XREVISION/g" Info.plist > TMPFILE && mv TMPFILE Info.plist
+    cd Resources
+	echo "Copy icon"
+    cp ../../../osxlib/Icon.png i512.png
+	echo "Scale icon"
+    /opt/local/bin/convert -scale 50% i512.png i256.png
+    /opt/local/bin/convert -scale 50% i256.png i128.png
+    /opt/local/bin/convert -scale 50% i128.png i64.png
+    /opt/local/bin/convert -scale 50% i64.png i32.png
+    /opt/local/bin/convert -scale 50% i32.png i16.png
+	echo "Delete 64x64"
+    rm -f -v i64.png
+	echo "png -> icns"
+    /opt/local/bin/png2icns wgame.icns i*.png
+    rm i*.png
+	echo "icon done (?)"
+    cd ..
+    mkdir MacOS
+    cd MacOS
+    echo "Copying executable..."
+    cp ../../../warsztat_game .
+    echo "Creating package -- done!"
+    cd ../../..
+	echo "Packing..."
+	ZIPFILENAME=wg_osx_r"$XREVISION"_$(date +%Y-%m-%d_%H-%M-%S).zip
+	zip -9 -r $ZIPFILENAME WGame$XREVISION.app > /dev/null
+	echo "Uploading..."
+	rm -f bladupload
+	scp -i "./hell.org.pl.rsa" $ZIPFILENAME toxic@hell.org.pl:public_html/all/warsztat/snapshots/mac 2> bladupload
+	XUPBLAD=""
+	BLADZLO=$(cat bladupload)
+	if [ "$BLADZLO" = "" ]
+    then
+	    echo "Link do pobrania http://hell.org.pl/~toxic/all/warsztat/snapshots/mac/$ZIPFILENAME" > xxlink
+    	XGAMELINK=`cat xxlink`
+	else
+	    XGAMELINK="Blad: upload sie nie powiodl! $(cat bladupload)"
+		XUPBLAD="(blad uploadu)"
+	fi
+else
+    XSTATUS="ERROR"
+    echo "Build failed!"
+	cat makelog.error
+fi
+
+echo "Sending mail..."
+
+rm -rf xmailbody
+echo "From: dabroz@gmail.com" >> xmailbody
+echo "To: gdpl+683@tickets.assembla.com" >> xmailbody
+echo "Subject: bleleble" >> xmailbody
+echo "" >> xmailbody
+if [ "$XSTATUS" = "OK" ]
+then
+    echo "Priority: 4" >> xmailbody
+	echo "Summary: MacOSX build status, r$XREVISION OK $XUPBLAD" >> xmailbody
+else
+    echo "Priority: 1" >> xmailbody
+    echo "Summary: MacOSX build status, r$XREVISION FAILED! $XUPBLAD" >> xmailbody
+fi
+echo "Comment:" >> xmailbody
+if [ "$XSTATUS" = "OK" ]
+then
+    echo "$XGAMELINK" >> xmailbody
+	echo "" >> xmailbody
+fi
+echo "Build log:" >> xmailbody
+cat makelog.error >> xmailbody
+echo "." >> xmailbody
+cat xmailbody | sendmail -t
+
+echo "Build system -- done."

@@ -1,0 +1,173 @@
+<root type="ability" class="self">
+
+    <name>$ABI_ELECTRIC_CHAIN_LIGHTNING</name>
+    <description>$ABI_ELECTRIC_CHAIN_LIGHTNING_DESC</description>
+    <icon>data/abilities/electric/chainlightning-0.png</icon>
+    <unavailable-icon>data/abilities/electric/chainlightning-1.png</unavailable-icon>
+    <trigger></trigger>
+
+    <effect type="list">
+        <!--        <effect type="inject">
+            <tree value="electricity"/>
+            <code value="c"/>
+            <name value="lightning-strike-tag"/>
+        </effect> -->
+
+        <effect type="recastable">
+            <recast value="0.17"/>
+            <time value="0.38"/>
+            <effect type="retarget">
+                <target-chooser>
+                    <filter value="hostiles"/>
+                    <range calc="5.0 + lv + 0.7 * spellrange" />
+                    <angle value="27.0"/>
+                    <aim-at-ground value="1"/>
+                </target-chooser>
+                <effect type="list">
+                    <effect type="linked-graphical-effect">
+                        <offset-x value="-0.25"/>
+                        <offset-y value="0.5"/>
+                        <time value="0.17" />
+                        <name value="lightning" />
+                    </effect>
+                    <effect type="damage">
+                        <amount calc="11 + (lvl*5)" />
+                        <damage-type value="lightning"/>
+                    </effect>
+                    <effect type="knockback">
+                        <amount value="2.0" />
+                    </effect>
+                    <effect type="sound">
+                        <name value="data/sounds/EL/thunder1.ogg" />
+                        <name value="data/sounds/EL/thunder2.ogg" />
+                        <name value="data/sounds/EL/thunder3.ogg" />
+                        <name value="data/sounds/EL/thunder4.ogg" />
+                        <name value="data/sounds/EL/thunder5.ogg" />
+                        <name value="data/sounds/EL/thunder6.ogg" />
+                        <name value="data/sounds/EL/thunder7.ogg" />
+                    </effect>
+
+                    <effect type="delayed">
+                        <time value="0.17" />
+                        <effect type="retarget">
+                            <target-chooser>
+                                <filter value="hostiles" />
+                                <range calc="3.0 + 0.5 * spellrange" />
+                                <angle value="360.0" />
+                                <aim-at-ground value="0"/>
+                            </target-chooser>
+                            <effect type="list">
+                                <effect type="linked-graphical-effect">
+                                    <time value="0.17" />
+                                    <name value="lightning" />
+                                </effect>
+                                <effect type="damage">
+                                    <amount calc="9 + (lvl*4)"/>
+                                    <damage-type value="lightning"/>
+                                </effect>
+                                <effect type="knockback">
+                                    <amount value="2.0" />
+                                </effect>
+
+                                <effect type="delayed">
+                                    <time value="0.17" />
+                                    <effect type="retarget">
+                                        <target-chooser>
+                                            <filter value="hostiles" />
+                                            <range calc="2.0 + 0.5 * spellrange"  />
+                                            <angle value="360.0" />
+                                            <aim-at-ground value="0"/>
+                                        </target-chooser>
+                                        <effect type="list">
+                                            <effect type="linked-graphical-effect">
+                                                <time value="0.17" />
+                                                <name value="lightning" />
+                                            </effect>
+                                            <effect type="damage">
+                                                <amount calc="7 + (lvl*4)" />
+                                                <damage-type value="lightning"/>
+                                            </effect>
+                                            <effect type="knockback">
+                                                <amount value="2.0" />
+                                            </effect>
+
+                                            <effect type="delayed">
+                                                <time value="0.17" />
+                                                <effect type="retarget">
+                                                    <target-chooser>
+                                                        <filter value="hostiles" />
+                                                        <range calc="3.0 + 0.5 * spellrange" />
+                                                        <angle value="360.0" />
+                                                        <aim-at-ground value="0"/>
+                                                    </target-chooser>
+                                                    <effect type="list">
+                                                        <effect type="linked-graphical-effect">
+                                                            <time value="0.17" />
+                                                            <name value="lightning" />
+                                                        </effect>
+                                                        <effect type="damage">
+                                                            <amount calc="5 + (lvl*4)" />
+                                                            <damage-type value="lightning"/>
+                                                        </effect>
+                                                        <effect type="knockback">
+                                                            <amount value="2.0" />
+                                                        </effect>
+
+                                                        <effect type="delayed">
+                                                            <time value="0.17" />
+                                                            <effect type="retarget">
+                                                                <target-chooser>
+                                                                    <filter value="hostiles" />
+                                                                    <range calc="2.0 + 0.5 * spellrange" />
+                                                                    <angle value="360.0" />
+                                                                    <aim-at-ground value="0"/>
+                                                                </target-chooser>
+                                                                <effect type="list">
+                                                                    <effect type="linked-graphical-effect">
+                                                                        <time value="0.17" />
+                                                                        <name value="lightning" />
+                                                                    </effect>
+                                                                    <effect type="damage">
+                                                                        <amount calc="3 + (lvl*4)" />
+                                                                        <damage-type value="lightning"/>
+                                                                    </effect>
+                                                                    <effect type="knockback">
+                                                                        <amount value="2.0" />
+                                                                    </effect>
+                                                                </effect>
+                                                            </effect>
+                                                        </effect>
+
+                                                    </effect>
+                                                </effect>
+                                            </effect>
+                                        </effect>
+                                    </effect>
+
+                                </effect>
+                            </effect>
+                        </effect>
+                    </effect>
+
+                </effect>
+            </effect>
+        </effect>
+    </effect>
+
+    <cast-time-effect type="list">
+        <effect type="modify">
+            <aspect value="speed" />
+            <amount value="0.2" />
+        </effect>
+        <effect type="graphical-effect">
+            <name value="magic-circle-4"/>
+            <time value="0.40"/>
+        </effect>
+    </cast-time-effect>
+
+    <manacost calc="22.0 + (lvl*3.5)" />
+    <casttime calc="0.02 + 0.38 / (castspeed + 1)" />
+    <delay calc="0.26 + 0.22 / (castspeed + 1)" />
+    <cooldown calc="0.08 + 0.52 / (castspeed + 1)" />
+
+</root>

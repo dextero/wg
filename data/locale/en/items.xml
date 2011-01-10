@@ -1,0 +1,42 @@
+<root type="locale" name="English" code="en">
+	<entry>
+		<key>ITEM_ABI_SPECIAL_BALL_MSG</key>
+		<value>You just found one of ancient spell</value>
+	</entry>
+	<entry>
+		<key>ITEM_HP_BIG</key>
+		<value>Big health elixir</value>
+	</entry>
+	<entry>
+		<key>ITEM_HP_MEDIUM</key>
+		<value>Medium health elixir</value>
+	</entry>
+	<entry>
+		<key>ITEM_HP_SMALL</key>
+		<value>Small health elixir</value>
+	</entry>
+	<entry>
+		<key>ITEM_MANA_MEDIUM</key>
+		<value>Managenerator</value>
+	</entry>
+	<entry>
+		<key>ITEM_REGENERATION</key>
+		<value>Troll regeneration</value>
+	</entry>
+	<entry>
+		<key>ITEM_SKILLPOINT</key>
+		<value>Skill globe</value>
+	</entry>
+	<entry>
+		<key>ITEM_SKILLPOINT_MSG</key>
+		<value>You have found bonus skill point!</value>
+	</entry>
+	<entry>
+		<key>ITEM_SUPERSPEED</key>
+		<value>Superspeed</value>
+	</entry>
+	<entry>
+		<key>ITEM_XP</key>
+		<value>Experience points</value>
+	</entry>
+</root>

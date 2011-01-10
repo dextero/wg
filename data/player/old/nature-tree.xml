@@ -1,0 +1,69 @@
+<root type="ability-tree">
+  <name>$ABITREE_NATURE</name>
+
+  <ability code="a">
+   <name>data/player/regeneration.xml</name>
+   <start-level>1</start-level>
+   <row>0</row>
+  </ability>
+  <ability code="b">
+   <name>data/player/sting.xml</name>
+   <anim>2</anim>
+   <row>0</row>
+  </ability>
+  <ability code="c">
+   <name>data/player/healself.xml</name>
+   <req-level>4</req-level>
+   <preqs>a</preqs>
+   <row>1</row>
+  </ability>
+  <ability code="d">
+   <name>data/player/pestilence.xml</name>
+   <req-level>4</req-level>
+   <preqs>a,b</preqs>
+   <row>1</row>
+  </ability>
+  <ability code="e">
+   <name>data/player/poison.xml</name>
+   <req-level>4</req-level>
+   <preqs>b</preqs>
+   <row>1</row>
+  </ability>
+  <ability code="f">
+   <name>data/player/hibernate.xml</name>
+   <req-level>8</req-level>
+   <preqs>c</preqs>
+   <row>2</row>
+  </ability>
+  <ability code="g">
+   <name>data/player/entangle.xml</name>
+   <req-level>8</req-level>
+   <preqs>a,e</preqs>
+   <row>2</row>
+  </ability>
+  <ability code="h">
+   <name>data/player/acidspray.xml</name>
+   <req-level>8</req-level>
+   <preqs>e</preqs>
+   <row>2</row>
+  </ability>
+  <ability code="i">
+   <name>data/player/agility.xml</name>
+   <req-level>13</req-level>
+   <preqs>f</preqs>
+   <row>3</row>
+  </ability>
+  <ability code="j">
+   <name>data/player/power-of-nature.xml</name>
+   <req-level>13</req-level>
+   <preqs>f,g</preqs>
+   <row>3</row>
+  </ability>
+  <ability code="k">
+   <name>data/player/acidcircus.xml</name>
+   <req-level>13</req-level>
+   <preqs>g,h</preqs>
+   <row>3</row>
+   <anim>2</anim>
+  </ability>
+</root>

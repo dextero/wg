@@ -1,0 +1,42 @@
+<root type="locale" name="Polski" code="pl">
+	<entry>
+		<key>ITEM_ABI_SPECIAL_BALL_MSG</key>
+		<value>Odnalazłeś jedno z pradawnych zaklęć.</value>
+	</entry>
+	<entry>
+		<key>ITEM_HP_BIG</key>
+		<value>Duże Piwo HP</value>
+	</entry>
+	<entry>
+		<key>ITEM_HP_MEDIUM</key>
+		<value>Średnie Piwo HP</value>
+	</entry>
+	<entry>
+		<key>ITEM_HP_SMALL</key>
+		<value>Małe Piwo HP</value>
+	</entry>
+	<entry>
+		<key>ITEM_MANA_MEDIUM</key>
+		<value>Managenerator</value>
+	</entry>
+	<entry>
+		<key>ITEM_REGENERATION</key>
+		<value>Trollska regeneracyja</value>
+	</entry>
+	<entry>
+		<key>ITEM_SKILLPOINT</key>
+		<value>Kula talentów</value>
+	</entry>
+	<entry>
+		<key>ITEM_SKILLPOINT_MSG</key>
+		<value>Znalazłeś dodatkowy punkt umiejętności!</value>
+	</entry>
+	<entry>
+		<key>ITEM_SUPERSPEED</key>
+		<value>Szybkie nóżki</value>
+	</entry>
+	<entry>
+		<key>ITEM_XP</key>
+		<value>Punkty doświadczenia</value>
+	</entry>
+</root>

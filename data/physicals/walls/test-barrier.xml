@@ -1,0 +1,6 @@
+<root type="door">
+
+  <anim name="test/barrier/open" type="open" />
+  <anim name="test/barrier/closed" type="closed" />
+
+</root>

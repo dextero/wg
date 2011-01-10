@@ -1,0 +1,11 @@
+﻿<root type="ability" class="export">
+
+  <name>$ABI_SUPPORT_SPELL_RANGE</name>
+  <icon>data/abilities/support/range-0.png</icon>
+  <unavailable-icon>data/abilities/support/range-1.png</unavailable-icon>
+  <description>$ABI_SUPPORT_SPELL_RANGE_DESC</description>
+
+  <export>
+    <name>spellrange</name>
+  </export>
+</root>

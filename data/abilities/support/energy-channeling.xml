@@ -1,0 +1,12 @@
+<root type="ability" class="passive">
+
+  <name>$ABI_WATER_ENERGY_CHANNELING</name>
+  <icon>data/abilities/support/mana-0.png</icon>
+  <unavailable-icon>data/abilities/support/mana-1.png</unavailable-icon>
+  <description>$ABI_WATER_ENERGY_CHANNELING_DESC</description>
+
+  <effect type="restore-mana">
+  	<amount calc="0.6 + (1.2 * (lvl^2) )"/>
+  </effect>
+
+</root>

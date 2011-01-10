@@ -1,0 +1,118 @@
+<root type="ability" class="self">
+
+  <name>$ABI_FIRE_FLAMING_MANTLE</name>
+  <trigger></trigger>
+  <icon>data/abilities/fire/fcoat-0.png</icon>
+  <unavailable-icon>data/abilities/fire/fcoat-1.png</unavailable-icon>
+  <description>$ABI_FIRE_FLAMING_MANTLE_DESC</description>
+
+  <effect type="list" >
+    <effect type="non-cumulative">
+      <effect type="timed">
+        <time calc="20.0 + 5*lvl + int/2" />
+        <effect type="list">
+          <effect type="drain-mana">
+            <amount value="3.0 * lvl" />
+          </effect>
+          <effect type="graphical-effect">
+			<time calc="20.0 + 5*lvl + int/2" />
+            <name value="shield"/>
+          </effect>
+		  <effect type="modify">
+			<aspect value="fireresist"/>
+			<amount value="10.0"/>
+		  </effect>
+		  <effect type="modify">
+			<aspect value="physresist"/>
+			<amount value="15.0"/>
+		  </effect>
+        </effect>
+      </effect>
+    </effect>
+	<effect type="non-cumulative">
+	  <effect type="recastable">
+          <time calc="20.0 + 5*lvl + int/2" />
+   		  <recast value="0.3" />
+		  <effect type="area">
+			<area calc="0.5 + 0.05 * spellrange" />
+			<filter value="hostiles,obstacle" />
+			<effect type="list">
+				<effect type="graphical-effect">
+					<time value="0.8" />
+					<name value="bullet-explosion" />
+				</effect>
+				<effect type="damage">
+					<amount calc="5.0+12*lvl" />
+					<damage-type value="fire"/>
+				</effect>
+				<effect type="knockback">
+					<amount calc="2.0 + lvl * 0.5"/>
+				</effect>
+				<effect type="chance">
+					<chance calc="ignite*0.1"/>
+					<effect type="inject">
+						<tree value="fire"/>
+						<code value="k"/>
+						<name value="igniting-magic"/>
+					</effect>
+				</effect>
+				<effect type="chance">
+					<chance calc="expl*0.1"/>
+					<effect type="inject">
+						<tree value="fire"/>
+						<code value="l"/>
+						<name value="exploding-magic"/>
+					</effect>
+				</effect>
+			</effect>
+		  </effect>
+		</effect>
+	</effect>
+	<effect type="non-cumulative">
+		<effect type="recastable" >
+			<recast value="0.5" />
+			<time calc="20.0 + 5*lvl + int/2" />
+			<effect type="bullet">
+				<emitter>
+					<speed value="7.5" />
+					<acceleration value="1.0" />
+					<ttl value="8.0" />
+					<count value="1" />
+					<width value="360" />
+					<explode-on-fade value="1" />
+					<bullet value="data/physicals/firespark.xml" />
+					<filter value="hostiles,wall,obstacle" />
+					<time-for-tracking calc="12.0"/>
+					<turning-speed calc="720.0"/>
+					<speed-fuzziness value="1.5"/>
+					<target-chooser>
+						<filter value="player"/>
+						<range calc="2.5 + (0.25 * spellrange)"/>
+						<angle value="180.0"/>
+					</target-chooser>
+					<effect type="damage">
+						<amount calc="5.0 + 2.0 * lvl + wp / 10.0"/>
+						<damage-type value="lightning"/>
+					</effect>
+				</emitter>
+			</effect>
+		</effect>
+  </effect>
+  </effect>
+
+  <cast-time-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.4" />
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.6" />
+  </delay-effect>
+
+  <manacost calc="(35.0 + (4 * lvl)) * (0.80^fm)" />
+  <casttime calc="0.5 + 2.0 / (castspeed + 1.0)" />
+  <delay calc="0.38 + 0.32 / (castspeed + 1.0)" />
+  <cooldown calc="0.04 + 0.16 / (castspeed + 1.0)" />
+
+</root>

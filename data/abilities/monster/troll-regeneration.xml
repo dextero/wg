@@ -1,0 +1,8 @@
+<root type="ability" class="passive">
+
+  <name>$ABI_NONE_REGENERATION</name>
+
+  <effect type="heal">
+    <amount value="2.0" />
+  </effect>
+</root>

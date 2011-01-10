@@ -1,0 +1,63 @@
+<root type="ability-tree">
+    <name>$ABITREE_SUPPORT</name>
+    <background>data/GUI/skills-bkg-supp.jpg</background>
+
+    <ability code="b">
+        <name>data/abilities/support/energy-channeling.xml</name>
+        <start-level>1</start-level>
+        <row>0</row>
+    </ability>
+    <ability code="a">
+        <name>data/abilities/support/regeneration.xml</name>
+        <start-level>1</start-level>
+        <row>0</row>
+    </ability>
+    <ability code="c">
+        <name>data/abilities/support/superspeed.xml</name>
+        <row>0</row>
+    </ability>
+    <ability code="d">
+        <name>data/abilities/support/healself.xml</name>
+        <row>1</row>
+        <req ability="a" level="1" />
+        <req-level>3</req-level>
+    </ability>
+    <ability code="e">
+        <name>data/abilities/support/magical-power.xml</name>
+        <row>2</row>
+        <req ability="b" level="1" />
+        <req-level>8</req-level>
+    </ability>
+    <ability code="j">
+        <name>data/abilities/support/summon-healer-ghost.xml</name>
+        <row>2</row>
+        <req ability="d" level="1" />
+        <req-level>8</req-level>
+    </ability>
+    <ability code="f">
+        <name>data/abilities/support/casting-speed.xml</name>
+        <row>2</row>
+        <req ability="c" level="1" />
+        <req-level>8</req-level>
+        <export/>
+    </ability>
+    <ability code="g">
+        <name>data/abilities/support/charged-spell.xml</name>
+        <row>3</row>
+        <req ability="e" level="1" />
+        <req-level>15</req-level>
+    </ability>
+    <ability code="h">
+        <name>data/abilities/support/spell-range.xml</name>
+        <row>3</row>
+        <req ability="e" level="1" />
+        <req-level>15</req-level>
+        <export/>
+    </ability>
+    <ability code="i">
+        <name>data/abilities/support/sacrifice.xml</name>
+        <row>3</row>
+        <req ability="e" level="1" />
+        <req-level>15</req-level>
+    </ability>
+</root>

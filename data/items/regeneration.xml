@@ -1,0 +1,24 @@
+<root type="item">
+    <name name="$ITEM_REGENERATION" />
+    <genre>regeneration</genre>
+    <level value="5" />
+    <image filename="data/items/art.png" />
+    <droprate value="0.000001" />
+    <effect type="list">
+        <effect type="console">
+            <text>[
+                msg $MSG_FOUND $ITEM_REGENERATION
+                ]</text>
+        </effect>
+        <effect type="timed">
+            <time value="10.0" />
+            <effect type="heal">
+                <amount value="7.0" />
+            </effect>
+        </effect>
+        <effect type="graphical-effect">
+            <time value="3.0" />
+            <name value="trail" />
+        </effect>
+    </effect>
+</root>

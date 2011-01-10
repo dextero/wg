@@ -1,0 +1,15 @@
+﻿<root type="quest">
+
+<startNode>0</startNode>
+
+<node>
+  <id>0</id>
+  <req>
+    <type>PhysicalDeathByGenre</type>
+    <param>rat</param>
+    <param>250</param>
+  </req>
+  <action>add-achievement $ACH_KILL250RATS</action>
+</node>
+
+</root>

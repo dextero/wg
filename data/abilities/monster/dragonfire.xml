@@ -1,0 +1,68 @@
+<root type="ability" class="self">
+
+  <name>$ABI_FIRE_QUICKSHOT</name>
+  <trigger></trigger>
+  <icon>data/abilities/fire/fquickshot-0.png</icon>
+  <unavailable-icon>data/abilities/fire/fquickshot-1.png</unavailable-icon>
+  <description>$ABI_FIRE_QUICKSHOT_DESC</description>
+
+  <effect type="recastable" >
+  	<recast value="0.05" />
+    <time value="0.5" />
+    <effect type="bullet">
+      <emitter>
+      	<effect type="knockback">
+      	  <amount value="0.3" />
+      	</effect>
+        <explosion type="list">
+          <effect type="sound">
+            <name value="data/sounds/Lugaro/firestart.ogg" />
+          </effect>
+          <effect type="area">
+            <area calc="0.4" />
+            <filter value="player,obstacle" />
+            <effect type="list">
+              <effect type="damage">
+                <amount calc="4.5" />
+            	<damage-type value="fire"/>
+			  </effect>
+			  <effect type="knockback">
+				<amount calc="0.1"/>
+              </effect>
+            </effect>
+          </effect>
+        </explosion>
+
+        <range calc="3.0" />
+        <speed value="3.0" />
+        <ttl value="1.0" />
+        <count value="1" />
+        <width value="12" />
+        <acceleration value="5.0" />
+		<speed-fuzziness value="1.0"/>
+		<filter value="player,wall,obstacle"/>
+        <bullet value="data/physicals/engulfing-flame.xml" />
+      </emitter>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.1" />
+  </delay-effect>
+
+  <manacost calc="2.0" />
+  <casttime calc="0.2" />
+  <delay calc="0.5" />
+  <cooldown value="1.2" />
+
+  <ai-hint>
+	<player-distance>6.0</player-distance>
+	<player-angle>30.0</player-angle>
+  </ai-hint>
+</root>

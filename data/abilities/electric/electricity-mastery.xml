@@ -1,0 +1,8 @@
+<root type="ability" class="export">
+	<name>$ABI_ELECTRIC_ELECTRICITY_MASTERY</name>
+	<icon>data/abilities/electric/mageofelectro-0.png</icon>
+	<unavailable-icon>data/abilities/electric/mageofelectro-1.png</unavailable-icon>
+	<description>$ABI_ELECTRIC_ELECTRICITY_MASTERY_DESC</description>
+
+	<effect type="noEffect"/>
+</root>

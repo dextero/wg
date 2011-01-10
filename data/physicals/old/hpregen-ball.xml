@@ -1,0 +1,14 @@
+<root type="item">
+  <genre>hpregen-ball</genre>
+  <name name="$ITEM_ABI_NATURE_REGENERATION" />
+	<level value="1" />
+  <image filename="data/items/red-ball.png" />
+	<droprate value="0.0005" />
+	<effect type="console">
+		<text>
+      [
+      msg $ITEM_ABI_NATURE_REGENERATION_MSG
+      force-buy-ability player0 nature a
+      ]</text>
+	</effect>
+</root>

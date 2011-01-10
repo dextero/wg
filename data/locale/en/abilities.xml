@@ -1,0 +1,390 @@
+<root type="locale" name="English" code="en">
+	<entry>
+		<key>ABI_ELECTRIC_CHAIN_LIGHTNING</key>
+		<value>Chain lightning</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_CHAIN_LIGHTNING_DESC</key>
+		<value>A lightning that jumps between enemies, dealing less damage with each jump.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_DEBUFF_MASTERY</key>
+		<value>Weakening mastery</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_DEBUFF_MASTERY_DESC</key>
+		<value>Weakening spells become more effective.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_DEVOLUTION</key>
+		<value>Devolution</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_DEVOLUTION_DESC</key>
+		<value>An intimidating set of lightning bolts targetting many enemies at once.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTRICITY_MASTERY</key>
+		<value>Electricity mastery</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTRICITY_MASTERY_DESC</key>
+		<value>Electricity spells deal more damage.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTRICUTION</key>
+		<value>Electricution</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTRICUTION_DESC</key>
+		<value>Increases chance that electricity spells will stun the target.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTRON</key>
+		<value>Wandering electron</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTRON_DESC</key>
+		<value>Basic electricity spell. Inflicts small damage and has a chance to stun the target.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTROSTATICS</key>
+		<value>Electrostatics</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELECTROSTATICS_DESC</key>
+		<value>A direct extension of the &quot;Wandering electron&quot; spell. The difference in the electric potentials between the target and it&apos;s nearest environment causes a temporary transition of electric charges.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELETRICSNARE</key>
+		<value>Electric snare</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_ELETRICSNARE_DESC</key>
+		<value>Sends a bomb that draws nearby enemies into a vortex of electricity, dealing damage and keeping them in check.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_FORKED_LIGHTNING</key>
+		<value>Forked lightning</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_FORKED_LIGHTNING_DESC</key>
+		<value>Multiple lightning bolts shot in the directions of several separate targets.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_LAZOR</key>
+		<value>Laser</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_LAZOR_DESC</key>
+		<value>Laser beam with very long range and superior penetration, burning everything on its way.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_LIGHTNING_STRIKE</key>
+		<value>Lightning strike</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_LIGHTNING_STRIKE_DESC</key>
+		<value>A single lightning bolt which deals massive damage to a single enemy.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_MAGICSTORM</key>
+		<value>Stormseed</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_MAGICSTORM_DESC</key>
+		<value>The battlemage summons a magical storm, creating an unstoppable mass of lightning bolts. Even if someone manages to dogde the storm, they will be catched by wandering electrons.</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_TRANSFUSE</key>
+		<value>Transfuse</value>
+	</entry>
+	<entry>
+		<key>ABI_ELECTRIC_TRANSFUSE_DESC</key>
+		<value>Chain of lightning bolts draining life from enemies.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_BLAZING_FEET</key>
+		<value>Blazing feet</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_BLAZING_FEET_DESC</key>
+		<value>Even while running away, a battlemage is dangerous to his foes. As long as the player&apos;s the spell holding key, the mage leaves a trail of blazing footprints which hurt all enemies who step on them.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_ELEMENTAL_REVENGE</key>
+		<value>Elemental revenge</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_ELEMENTAL_REVENGE_DESC</key>
+		<value>The ultimate solution for the &quot;being surrounded by a horde of ferocious mosters&quot; problem.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_EXPLODING_CORPSE</key>
+		<value>Exploding corpse</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_EXPLODING_CORPSE_DESC</key>
+		<value>Although a lot of mages despise this spell, because of it&apos;s close relationship to necromancy, it&apos;s very useful in some situations - corpses of recently killed monsters explode, damaging nearby enemies. The longer the player hold&apos;s the spell key, the more corpses explode.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_EXPLOSION</key>
+		<value>Explosion</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_EXPLOSION_DESC</key>
+		<value>Each level of this skill increases chance that fire bullets will explode, dealing additional damage within a wider area.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIRE_MASTERY</key>
+		<value>Fire mastery</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIRE_MASTERY_DESC</key>
+		<value>This skill represents the ability of using fire magic - each level decreases mana cost of fire spells by 20%.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREARROW</key>
+		<value>Fire arrow</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREARROW_DESC</key>
+		<value>A simple fire arrow, dealing damage and knocking enemies backward. This arrow can fly through enemies, so you can hit a few monsters in a row.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREBALL</key>
+		<value>Fire ball</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREBALL_DESC</key>
+		<value>Fire mages&apos; favourite weapon - a ball of liquid fire that explodes if it hits an enemy. Just remember - move away or you might be burnt...</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIRECIRCLE</key>
+		<value>Fire circle</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIRECIRCLE_DESC</key>
+		<value>When you get surrounded, this ability is what you need. Enemies around you are pushed away by a hot wave - you might get a moment to run.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREPITS</key>
+		<value>Fire pits</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREPITS_DESC</key>
+		<value>The mage summons two pits full of molten fire and sulphur. They appear in front of the mage, and any bypassing monster is captured and burned for a certain period of time.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREWALL</key>
+		<value>Fire wall</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FIREWALL_DESC</key>
+		<value>This spell creates a barrier of impenetrable flame, which hurts monsters (and careless battlemages), preventing them from passing through. Only the most desperated enemies can make it to the other side, but they will pay dearly for it.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FLAMING_HANDS</key>
+		<value>Flaming hands</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FLAMING_HANDS_DESC</key>
+		<value>A firey melee attack, strongly pushing nearby enemies away. Effective when they&apos;re starting to surround you...</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FLAMING_MANTLE</key>
+		<value>Flaming mantle</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_FLAMING_MANTLE_DESC</key>
+		<value>A powerful defensive spell, increasing elemental resistances and attacking any monsters trying to chew on the caster. Additionally, the mage is surrounded by a cloud of sparks, further separating the mage from his enemies.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_IGNITING_MAGIC</key>
+		<value>Magic ignition</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_IGNITING_MAGIC_DESC</key>
+		<value>Thanks to this skill, the mage improves his ability to set a monster on fire and deal additional damage. The flames can spread to the nearest monsters.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_QUICKSHOT</key>
+		<value>Quickshot</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_QUICKSHOT_DESC</key>
+		<value>A continuous stream of tiny sparks. Good against nests and single opponents, but you risk getting surrounded easily.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_SCHRAPNEL_MAGIC</key>
+		<value>Flaming fragments</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_SCHRAPNEL_MAGIC_DESC</key>
+		<value>The higher level of this abillity, the greater the chance that the &quot;Explosion&quot; spell will spead additional missiles of pure fire, damaging even more foes.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_SPARKRAIN</key>
+		<value>Spark rain</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_SPARKRAIN_DESC</key>
+		<value>Fire magic taken to the extreme - this spell spreads a wide fan of sparks, dealing damage to any monsters within it&apos;s limited range.</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_SUPERSPEED</key>
+		<value>Haste</value>
+	</entry>
+	<entry>
+		<key>ABI_FIRE_SUPERSPEED_DESC</key>
+		<value>Visibly increases the mage&apos;s speed for a short while.</value>
+	</entry>
+	<entry>
+		<key>ABI_NATURE_ACID_CIRCUS</key>
+		<value>Cotix&apos;s sprayer</value>
+	</entry>
+	<entry>
+		<key>ABI_NATURE_ACID_CIRCUS_DESC</key>
+		<value>A truly frightening weapon - a spinning disc of acid spreading poisonous rain.</value>
+	</entry>
+	<entry>
+		<key>ABI_NATURE_HEALSELF</key>
+		<value>Healing</value>
+	</entry>
+	<entry>
+		<key>ABI_NATURE_HEALSELF_DESC</key>
+		<value>A rather strong healing spell, but it takes a while before it&apos;s done.</value>
+	</entry>
+	<entry>
+		<key>ABI_NATURE_REGENERATION</key>
+		<value>Regeneration</value>
+	</entry>
+	<entry>
+		<key>ABI_NATURE_REGENERATION_DESC</key>
+		<value>Your wounds slowly regenerate by themselves.</value>
+	</entry>
+	<entry>
+		<key>ABI_PASSIVE</key>
+		<value>Passive ability</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_ARMOR</key>
+		<value>Flo-kajwerc&apos;s armor</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_ARMOR_DESC</key>
+		<value>Flo-kajwerc, a foreigner from the exotic East, was known for two things: a weakness for tabac and a magic rune which increases a wide variety of caster&apos;s defensive abilities.</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_BASHER</key>
+		<value>Kromad&apos;s club</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_BASHER_DESC</key>
+		<value>When the Troll shaman, Kromad the Terrifying, lost his bone club in the midst of a battle, he decided to smack enemies with pure magic energy. The spell became interesting enough for human mages to make a copy of it.</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_BLADES</key>
+		<value>Blades of d&apos;Apac</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_BLADES_DESC</key>
+		<value>Swarm of blades of pure shadow surrounds targets, hitting through them and ignoring all armor. Master d&apos;Apac called it &quot;his greatest achievement&quot; - especially since the first few tests blew several holes in the lab&apos;s wall.</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_BLIZZARD</key>
+		<value>Arum&apos;s Blizzard</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_BLIZZARD_DESC</key>
+		<value>Ice mages have many spells which slow down and freeze enemies. This particular spell is very effective when you get surrounded by enemy hordes.</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_CHANT</key>
+		<value>Sothyr&apos;s chant</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_CHANT_DESC</key>
+		<value>When two mages go together on an adventure, their magic powers become interwoven. They can use it to strengthen each other - and this spell-chant, made by the renowned bard Sothyr, takes advantage of this fact.</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_CURSE</key>
+		<value>Old Roxtede&apos;s Curse</value>
+	</entry>
+	<entry>
+		<key>ABI_SPECIAL_CURSE_DESC</key>
+		<value>Not many spells remained from the books of the cursed necromancer Roxtede, but one is still in use - this is a particularly vicious curse which permanently poisons enemies and reduces their defensive abilities.</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPP_SUMMON</key>
+		<value>Summon healing spirits</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPP_SUMMON_DESC</key>
+		<value>Summon a few friendly healing spirits.</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_CASTING_SPEED</key>
+		<value>Casting speed</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_CASTING_SPEED_DESC</key>
+		<value>Special training allows you to cast spells faster.</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_CHARGED_SPELL</key>
+		<value>Overcharging</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_CHARGED_SPELL_DESC</key>
+		<value>Mental focusing allows you to cast your next spell with increased power (level will be temporarily increase by &quot;Overcharging&quot; level / 2).</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_MAGICAL_POWER</key>
+		<value>Magic power</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_MAGICAL_POWER_DESC</key>
+		<value>Your spells now are stronger, thanks to years of training.</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_RESONATOR</key>
+		<value>Siolan&apos;s Resonator</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_RESONATOR_DESC</key>
+		<value>This spell was discovered by Siolan, a junior third class battlemage, while he was running away from hordes of mountain trolls. It&apos;s quite simple - the more monsters are near the caster, the stronger the caster is pushed away, giving him a fair chance to run away. Battlemages despise this spell, calling it a &quot;coward&apos;s trick&quot; - on the other hand, Siolan was one of the few battlemages who lived to the retirement age...</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_SACRIFICE</key>
+		<value>Sacrifice</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_SACRIFICE_DESC</key>
+		<value>A true mage learns to cast spells using his very life force, not caring for his wounds.</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_SPELL_RANGE</key>
+		<value>Spell range</value>
+	</entry>
+	<entry>
+		<key>ABI_SUPPORT_SPELL_RANGE_DESC</key>
+		<value>Your experience in magic increases range of your missiles.</value>
+	</entry>
+	<entry>
+		<key>ABI_WATER_BALL_LIGHTNING</key>
+		<value>Ball lightning</value>
+	</entry>
+	<entry>
+		<key>ABI_WATER_BALL_LIGHTNING_DESC</key>
+		<value>A sphere that throws lightning bolts at nearby victims.</value>
+	</entry>
+	<entry>
+		<key>ABI_WATER_ENERGY_CHANNELING</key>
+		<value>Energy channeling</value>
+	</entry>
+	<entry>
+		<key>ABI_WATER_ENERGY_CHANNELING_DESC</key>
+		<value>Your magic training allows you to obtain mana from environment at an increased rate.</value>
+	</entry>
+</root>

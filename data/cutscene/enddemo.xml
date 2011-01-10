@@ -1,0 +1,8 @@
+<root type="cutscene">
+
+  <setImage time="0.0" path="$CUTSCENE_ENDDEMO_BG" />
+  <setCamera time="0.0" size="100.0" positionx="50.0" positiony="50.0" duration="0.0" />
+  <setCamera time="0.0" size="100.0" positionx="50.0" positiony="50.0" duration="60.0" />
+  <showText time="0.0" content="$CUTSCENE_ENDDEMO" duration="60.0" />
+
+</root>

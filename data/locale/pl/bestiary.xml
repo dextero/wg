@@ -1,0 +1,378 @@
+<root type="locale" name="Polski" code="pl">
+	<entry>
+		<key>BESTIARY_BALDY_NAME</key>
+		<value>Łysol</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_BALDY_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_BEE_NAME</key>
+		<value>Pszczoła</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_BEE_DESC</key>
+		<value>Ogromna pszczoła, a może raczej osa? Jej ukąszenie spowalnia ruchy bohatera, więc rój tych pszczół to spore kłopoty. Często występuje w pobliżu Szerszeni.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_BLIND_PINCER_NAME</key>
+		<value>Ślepa szczypawka</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_BLIND_PINCER_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CHITYNIAK_NAME</key>
+		<value>Chityniak</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CHITYNIAK_DESC</key>
+		<value>Opancerzona postać hybrydy owada i gryzonia. Bardzo szybki. Gryzie i jest jadowity. W pojedynkę łatwo go pokonać utrzymując bezpieczny dystans. Gdy atakuje grupą, staje się niebezpiecznym przeciwnikiem.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CHITYNIAK_PLWACZ_NAME</key>
+		<value>Chityniak plwacz</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CHITYNIAK_PLWACZ_DESC</key>
+		<value>Obleśny robal, pogardliwie spluwający na bohatera toksyczną śliną.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_COCKROACH_NAME</key>
+		<value>Karaluch</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_COCKROACH_DESC</key>
+		<value>Karaluch – wojownik. Ten potwór doskonale posługuję się orężem, jest szybki i bardzo odporny na trafienia. Rozdeptać też nie da rady.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_COW_NAME</key>
+		<value>Mućka</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_COW_DESC</key>
+		<value>Niestety, zarażona chorobą wściekłych krów. Dojenie jej nie jest zbyt dobrym pomysłem. Posiada parę ogromnych, dobrze zaostrzonych rogów, które ostrzy na stalagmitach najciemniejszych jaskiń.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CRAWLER_NAME</key>
+		<value>Pełzacz</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CRAWLER_DESC</key>
+		<value>Majestatyczny, silnie opancerzony owad. Porusza się stosunkowo wolno, ale trudno jest go pokonać ze względu na dużą odporność na ciosy i spory ciężar.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CRAWLER_KAMIKADZE_NAME</key>
+		<value>Pełzacz - kamikadze</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CRAWLER_KAMIKADZE_DESC</key>
+		<value>Upośledzony umysłowo, ale za to wypchany po sam pancerz wybuchową substancją. Dostarcza rozrywki - dosłownie. Jest słaby, ale porusza się dość szybko.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_EARLY_NAME</key>
+		<value>Uszatek</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_EARLY_DESC</key>
+		<value>Niech nie zwiedzie Cię jego przyjazna nazwa. Jego ogromne uszy, a tym samym doskonały słuch, powodują, że wyczuwa Gracza na odległość. Doskonały szermierz, ale mało odporny na wszystkie czary ofensywne. Jego ataki niszczą manę.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_EARWIGLE_NAME</key>
+		<value>Skorek</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_EARWIGLE_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_ENTANGLER_NAME</key>
+		<value>Plątacz</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_ENTANGLER_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_EYEBRAIN_NAME</key>
+		<value>Gałomózg</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_EYEBRAIN_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_FIRE_ELEMENTAL_NAME</key>
+		<value>Żywiołak ognia</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_FIRE_ELEMENTAL_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_FLYING_FISH_NAME</key>
+		<value>Latająca ryba</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_FLYING_FISH_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_HEALER_GHOST_NAME</key>
+		<value>Leczący duszek</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_HEALER_GHOST_DESC</key>
+		<value>To jest potwór? Chyba nie, w każdym razie nic nam o tym nie wiadomo. Leczy gracza, nie próbuje go zabić... to chyba nie potwór. To co robi w bestiariuszu?</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_HORNET_NAME</key>
+		<value>Szerszeń</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_HORNET_DESC</key>
+		<value>Bardzo niebezpieczna hybryda szerszenia i gryzonia. Stado tych potworów jest bardzo trudne do pokonania, ze względu na ich sporą wytrzymałość i prędkość poruszania się. Ich bardzo silna trucizna powoduje długotrwały niedowład i spowolnienie.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_HORNY_NAME</key>
+		<value>Rogacz</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_HORNY_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_INSECT_NAME</key>
+		<value>Insekt</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_INSECT_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_MANTIS_NAME</key>
+		<value>Modliszka</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_MANTIS_DESC</key>
+		<value>Bardzo niebezpieczna w bezpośrednim kontakcie - jej długie kończyny dotkliwie ranią bohatera. Należy stosować zaklęcia odpychające lub spowalniające, by utrzymać ją na dystans.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_MINELAYER_NAME</key>
+		<value>Saper</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_MINELAYER_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_NAME</key>
+		<value>Ogr</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_DESC</key>
+		<value>Śmierdzący potwór. Atakuje w grupie, wtedy czuje się najpewniej; jego ciężkie pięści potrafią ogłuszyć przeciwnika.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_BOSS1_NAME</key>
+		<value>Czesław</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_BOSS1_DESC</key>
+		<value>Ogromna, silna niczym stado byków bestia. Na szczęście nie jest zbyt inteligentny, atakuje jedynie wręcz - jednak biada śmiałkowi, który odważy się przyjąć na klatę jego cios.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_BOSS2_NAME</key>
+		<value>Oziębła Krystyna</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_BOSS2_DESC</key>
+		<value>Ogrzyca, która posiadła zdolności magiczne. Doskonale włada magią lodu, spowalniając przeciwników i zasypując ich masą ostrych sopli.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_BOSS3_NAME</key>
+		<value>Zygmunt</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_BOSS3_DESC</key>
+		<value>Demon, pochodzący z bliżej nieokreślonego rejonu piekła. Posiada zdolność przyzywania swoich sług.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_RED_WIFE_NAME</key>
+		<value>Ogr - czerwona samica</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_RED_WIFE_DESC</key>
+		<value>Jako że stanowi elitę wśród ogrzyc, jest jeszcze silniejsza od zwykłej samicy.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_WIFE_NAME</key>
+		<value>Ogr - samica</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_WIFE_DESC</key>
+		<value>Ogrzyca, lub jak kto woli - żona ogra. Krzykliwa, wielka bestia. Wpaść w jej ręce – kłopoty; bardzo trudno ją pokonać.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_RAT_NAME</key>
+		<value>Szczur</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_RAT_DESC</key>
+		<value>Przerośnięty szczur. Wszędzie ich pełno, atakują stadami, wtedy czują się najbezpieczniej. Łatwo je pokonać, nawet w bezpośrednim starciu. Zaklęcia obszarowe powinny dać sobie z nimi radę.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_RAT_GREEN_NAME</key>
+		<value>Zielony szczur</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_RAT_GREEN_DESC</key>
+		<value>Podobny do zwykłego szczura, ale roznosi zarazę. Choć jego ataki są słabsze, zatruwają gracza.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_REDBALDY_NAME</key>
+		<value>Rudy łysol</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_REDBALDY_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_REDHORNY_NAME</key>
+		<value>Rudy rogacz</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_REDHORNY_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SACRED_COW_NAME</key>
+		<value>Święta krowa</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SACRED_COW_DESC</key>
+		<value>Nawet nie próbuj jej dotknąć, bo nie zostanie z Ciebie więcej niż kupka pyłu. Specjalnie na potrzeby gry sprowadzona z Indii.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SCARAB_NAME</key>
+		<value>Skarabeusz</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SCARAB_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SHAGGY_NAME</key>
+		<value>Kudłaty</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SHAGGY_DESC</key>
+		<value>Niebezpieczny szermierz, doskonale posługuje się wszelkim orężem. Miecz i maczuga – jego podstawowy oręż, czyni go mistrzem walki wręcz. Bardzo odporny i bardzo niebezpieczny przeciwnik, specjalizujący się w ogłuszaniu magów bojowych.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SURGER_NAME</key>
+		<value>Surger</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SURGER_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TIMBERMAN_NAME</key>
+		<value>Szalony drwal</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TIMBERMAN_DESC</key>
+		<value>Próbuje za wszelką cenę zabić gracza, bo zespół WG nie podpiął NPC do gry. Może kiedyś będzie skłonny nam pomóc.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TIMBERMAN_WITH_AXE_NAME</key>
+		<value>Szalony drwal (topór)</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TIMBERMAN_WITH_AXE_DESC</key>
+		<value>Drwal, który w swym szaleństwie nie zapomniał o narzędziu pracy.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TIMBERMAN_WITH_KNIFE_NAME</key>
+		<value>Szalony drwal (nóż)</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TIMBERMAN_WITH_KNIFE_DESC</key>
+		<value>Ten tutaj przerwał krojenie chleba, by za wszelką cenę dopaść bohatera. Nie ma to jak odrobina mięska...</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TROLL_NAME</key>
+		<value>Troll</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TROLL_DESC</key>
+		<value>Potwór występujący na moczarach i mokradłach. Dość szybko regeneruje rany, dlatego w przypadku starcia z grupą tych potworów najlepiej atakować konkretnego osobnika. Powolny, ale bardzo silny. </value>
+	</entry>
+	<entry>
+		<key>BESTIARY_WARLOCK_NAME</key>
+		<value>Czarnoksiężnik</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_WARLOCK_DESC</key>
+		<value>Czarny płaszcz powinien wszystko wyjaśnić - ten mag bojowy przeszedł na złą stronę mocy, i teraz razi swych kolegów po fachu mroczną magią. Pewnie za dużo się rtęci nawdychał.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_WINGED_PINCER_NAME</key>
+		<value>Skrzydlata szczypawka</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_WINGED_PINCER_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_WOLFBEAST_NAME</key>
+		<value>Wilkołak</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_WOLFBEAST_DESC</key>
+		<value>Pół-człowiek, pół-wilk. Atakuje bezbronnych. Zawsze głodny. W stadzie czuje się bezkarny. Bardzo szybki.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_NINJA_COW_NAME</key>
+		<value>Mućka - ninja</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_NINJA_COW_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SKELETON_MAGE_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SKELETON_MAGE_NAME</key>
+		<value>Szkielet mag</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SKELETON_WARRIOR_NAME</key>
+		<value>Szkielet wojownik</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SKELETON_WARRIOR_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TUTORIAL_RAT_NAME</key>
+		<value>Zenek</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TUTORIAL_RAT_DESC</key>
+		<value>Stary szczur, strażnik przejścia. Ze względu na swój wiek bardzo słaby.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CARROT_NAME</key>
+		<value>Marchewa</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CARROT_DESC</key>
+		<value>Toksyczna latająca marchewka, występuje w pęczkach.</value>
+	</entry>
+</root>

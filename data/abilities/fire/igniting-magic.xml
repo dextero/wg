@@ -1,0 +1,41 @@
+<root type="ability" class="export">
+
+  <name>$ABI_FIRE_IGNITING_MAGIC</name>
+  <icon>data/abilities/fire/ignite-0.png</icon>
+  <unavailable-icon>data/abilities/fire/ignite-1.png</unavailable-icon>
+  <description>$ABI_FIRE_IGNITING_MAGIC_DESC</description>
+
+	<effect type="list" tag="igniting-magic">
+		<effect type="damage">
+			<amount value="10.0" modifiers="level" level-gain="3"/>
+           	<damage-type value="fire"/>
+		</effect>
+		<effect type="non-cumulative">
+			<effect type="timed">
+				<time value="20.0"/>
+				<effect type="damage">
+					<amount value="20.0" modifiers="level" level-gain="7"/>
+           			<damage-type value="fire"/>
+				</effect>
+			</effect>
+		</effect>
+		<effect type="graphical-effect">
+			<time value="5" />
+			<name value="flames" />
+		</effect>
+		<effect type="sound">
+			<name value="data/sounds/Lugaro/fire.ogg" />
+		</effect>
+		<effect type="non-cumulative">
+			<effect type="recastable">
+				<time value="20" />
+				<recast value="5"/>
+				<effect type="graphical-effect">
+					<time value="5" />
+					<name value="flames" />
+				</effect>
+			</effect>
+		</effect>
+	</effect>
+
+</root>

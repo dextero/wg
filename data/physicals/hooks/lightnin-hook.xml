@@ -1,0 +1,27 @@
+<root type="hook">
+	<effect type="recastable">
+		<recast value="0.2" />
+		<time value="10000.0" />
+		
+		<effect type="retarget">
+			<target-chooser>
+				<filter value="player"/>
+				<range value="8.0"/>
+				<angle value="360.0"/>
+				<aim-at-ground value="1"/>
+			</target-chooser>
+			<effect type="list">
+				<effect type="linked-graphical-effect">
+					<offset-x value="0"/>
+					<offset-y value="0"/>
+					<time value="0.2" />
+					<name value="lightning" />
+				</effect>
+				<effect type="damage">
+					<amount value="15" />
+					<damage-type value="lightning"/>
+				</effect>
+			</effect>
+		</effect>
+	</effect>
+</root>

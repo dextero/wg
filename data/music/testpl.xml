@@ -1,0 +1,21 @@
+<!-- ponizej type musi miec wartosc playlist -->
+<root random="true" type="playlist" >
+	<!-- lista piosenek -->
+  <song name="data/music/wg_magicstream.ogg"/>
+  <song name="data/music/Alone2.ogg"/>
+  <song name="data/music/DreamI.ogg"/>
+  <!-- piosenki z Lugaro -->
+  <song name="data/music/Lugaro/music1desert.ogg" />
+  <song name="data/music/Lugaro/music1grass.ogg" />
+  <song name="data/music/Lugaro/music1snow.ogg" />
+  <song name="data/music/Lugaro/music2.ogg" />
+  <song name="data/music/Lugaro/music3.ogg" />
+  
+  <!-- Piosenki Louladna (wyciete aby paczka mniej zajmowala)   -->
+  <song name="data/music/DarkcaveI.ogg"/>
+  <song name="data/music/darkcaveII.ogg"/>
+  <song name="data/music/darkcaveIII.ogg"/>
+  <song name="data/music/DreamII.ogg"/>
+  <song name="data/music/WaterI.ogg"/>
+  <song name="data/music/WaterII.ogg"/> 
+</root>

@@ -1,0 +1,378 @@
+<root type="locale" name="English" code="en">
+	<entry>
+		<key>BESTIARY_BALDY_NAME</key>
+		<value>Baldy</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_BALDY_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_BEE_NAME</key>
+		<value>Bee</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_BEE_DESC</key>
+		<value>A gigantic bee, or maybe a wasp? The hero's movements are slowed down by her stings, so a large number of them could mean serious trouble. They're usually found near Hornets.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_BLIND_PINCER_NAME</key>
+		<value>Blind pincer</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_BLIND_PINCER_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CHITYNIAK_NAME</key>
+		<value>Chitin warrior</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CHITYNIAK_DESC</key>
+		<value>An armored rodent-insect hybrid. It's fast and poisonous. A single Chitin warrior should be easy to keep at a distance; a group, however, could easily corner and overwhelm the unsuspecting adventurer.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CHITYNIAK_PLWACZ_NAME</key>
+		<value>Chitin spitter</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CHITYNIAK_PLWACZ_DESC</key>
+		<value>A smaller, weaker version of the Chitin warrior, this critter spits balls of acid out of sheer contempt for the player.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_COCKROACH_NAME</key>
+		<value>Cockroach</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_COCKROACH_DESC</key>
+		<value>Cockroach - warrior. Armored, cunning, fast, master fencer - all this adds up to a formidable opponent. Don't even try to stomp on him.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_COW_NAME</key>
+		<value>Cow</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_COW_DESC</key>
+		<value>It's a cow. What'd you expect? It'll probably try to eat, which is kind of unusual, but this is a bestiary after all.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CRAWLER_NAME</key>
+		<value>Crawler</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CRAWLER_DESC</key>
+		<value>Majestic, heavily armored insectoid. It might be a bit slow, but it's mass and resistance to damage make it an opponent to be reckoned with.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CRAWLER_KAMIKADZE_NAME</key>
+		<value>Crawler - kamikadze</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CRAWLER_KAMIKADZE_DESC</key>
+		<value>The mentally handicapped but explosively packed younger brother of the Crawler. He's fast, but weak and less armored - be sure to aim well.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_EARLY_NAME</key>
+		<value>Early</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_EARLY_DESC</key>
+		<value>Don't be fooled by his cudly appearance - this monster will happily bash your head in whenever he hears you. He'll destroy your mana reserves, too.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_EARWIGLE_NAME</key>
+		<value>Earwigle</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_EARWIGLE_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_ENTANGLER_NAME</key>
+		<value>Entangler</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_ENTANGLER_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_EYEBRAIN_NAME</key>
+		<value>Eyebrain</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_EYEBRAIN_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_FIRE_ELEMENTAL_NAME</key>
+		<value>Fire elemental</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_FIRE_ELEMENTAL_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_FLYING_FISH_NAME</key>
+		<value>Flying fish</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_FLYING_FISH_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_HEALER_GHOST_NAME</key>
+		<value>Healer ghost</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_HEALER_GHOST_DESC</key>
+		<value>This is a monster? I don't think so. It heals the player, doesn't try to eat him... definitely not a monster. Then what's it doing in the bestiary, eh?</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_HORNET_NAME</key>
+		<value>Hornet</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_HORNET_DESC</key>
+		<value>An extremely dangerous hornet-rodent hybrid. A flock of these would be really hard to beat, since they're quite speedy and resistant. What's more, their venom cripples and slows down the victim.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_HORNY_NAME</key>
+		<value>Horny</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_HORNY_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_INSECT_NAME</key>
+		<value>Insect</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_INSECT_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_MANTIS_NAME</key>
+		<value>Mantis</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_MANTIS_DESC</key>
+		<value>A dangerous opponnent in melee combat - her long legs cut the player deeply. It is advised to keep her at a distance with slowing or knocking back spells.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_MINELAYER_NAME</key>
+		<value>Minelayer</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_MINELAYER_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_NAME</key>
+		<value>Ogre</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_DESC</key>
+		<value>A smelly, cowardly beast. Attacks in groups, since that makes feel safe and strong. His heavy fists can bash and stun the opponnent.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_BOSS1_NAME</key>
+		<value>Chester</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_BOSS1_DESC</key>
+		<value>A huge beast, as large (and strong) as a herd of bulls. Thankfully he isn't very smart, and only attacks in melee - but woe be to anyone caught in between his muscular arms.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_BOSS2_NAME</key>
+		<value>Brooke</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_BOSS2_DESC</key>
+		<value>A she-ogre adept at the magical arts is rare enough; but this particular beast specializes in frost magics, slowing down opponnents and piercing them with hundreds of small icicles.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_BOSS3_NAME</key>
+		<value>Walter</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_BOSS3_DESC</key>
+		<value>This demon comes from the deepest and least explored reaches of hell. He commands powerful magic that summons multiple minions.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_RED_WIFE_NAME</key>
+		<value>Ogre - red wife</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_RED_WIFE_DESC</key>
+		<value>The strongest of ogre females bathe in the blood of their slayed victims, which should supposedly give them protection.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_WIFE_NAME</key>
+		<value>Ogre - wife</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_OGRE_WIFE_DESC</key>
+		<value>The ogrette, as the eastern magi call her, is a strong, loud, hateful monster full of spite and malice. Not exactly smart, though. Just keep your distance and you'll be fine.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_RAT_NAME</key>
+		<value>Rat</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_RAT_DESC</key>
+		<value>The overgrown rat, or rather rats - it's rare to find only one of these - are weak, but many. Use area-of-effect spells to get rid of any pesky horde.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_RAT_GREEN_NAME</key>
+		<value>Green rat</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_RAT_GREEN_DESC</key>
+		<value>Similar to ye olde rat, this greenish-coloured vermin carries the plague. It's attacks are weaker, but they poison the victim.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_REDBALDY_NAME</key>
+		<value>Red baldy</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_REDBALDY_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_REDHORNY_NAME</key>
+		<value>Red horny</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_REDHORNY_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SACRED_COW_NAME</key>
+		<value>Sacred cow</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SACRED_COW_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SCARAB_NAME</key>
+		<value>Scarab</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SCARAB_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SHAGGY_NAME</key>
+		<value>Shaggy</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SHAGGY_DESC</key>
+		<value>This hairy fencer is a formidable threat. His two favorite weapons - the sword and the mace - allow him to stun and slice battle mages (his preffered snack) with speed and ease.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SURGER_NAME</key>
+		<value>Surger</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SURGER_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TIMBERMAN_NAME</key>
+		<value>Timberman</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TIMBERMAN_DESC</key>
+		<value>This timberman tries to chop the player to pieces, since the development team didn't code NPCs into the game. Maybe one day he'll be able to give us a quest?</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TIMBERMAN_WITH_AXE_NAME</key>
+		<value>Timberman (axe)</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TIMBERMAN_WITH_AXE_DESC</key>
+		<value>This self-proclaimed guardian of the forest is frothing-mad with the urge to kill.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TIMBERMAN_WITH_KNIFE_NAME</key>
+		<value>Timberman (knife)</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TIMBERMAN_WITH_KNIFE_DESC</key>
+		<value>This is what happens when you disturb someone while they're making breakfast - they run around trying to stab you in the eye with a bread knife. What a world.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TROLL_NAME</key>
+		<value>Troll</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TROLL_DESC</key>
+		<value>This large, hard-skinned swamp-dweller is recognised for his strength and quick regeneration. When facing a group, best take them out one at a time.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_WARLOCK_NAME</key>
+		<value>Warlock</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_WARLOCK_DESC</key>
+		<value>The black mantle is a giveaway - this battlemage went over to the wrong side of the force, and now flails bolts of dark energy at his former colleagues. Probably too much mercury fumes.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_WINGED_PINCER_NAME</key>
+		<value>Winged pincer</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_WINGED_PINCER_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_WOLFBEAST_NAME</key>
+		<value>Werewolf</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_WOLFBEAST_DESC</key>
+		<value>Half-man, half-wolf, all-hungry. Fast, strong, likes to  pray on the weak.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_NINJA_COW_NAME</key>
+		<value>Ninja cow</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_NINJA_COW_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SKELETON_MAGE_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SKELETON_MAGE_NAME</key>
+		<value>Skeleton mage</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SKELETON_WARRIOR_NAME</key>
+		<value>Skeleton warrior</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_SKELETON_WARRIOR_DESC</key>
+		<value>placeholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TUTORIAL_RAT_NAME</key>
+		<value>Zenek</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_TUTORIAL_RAT_DESC</key>
+		<value>An old rat, guardian of the arcane passage. Very weak due to his age.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CARROT_NAME</key>
+		<value>Carrot</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_CARROT_DESC</key>
+		<value>Toxic flying carrot, comes in batches.</value>
+	</entry>
+</root>

@@ -1,0 +1,4 @@
+#toggle-fx light on
+clear-logic
+toggle-fx fade out
+load-playlist data/music/testpl.xml

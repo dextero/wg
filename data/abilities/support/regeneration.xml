@@ -1,0 +1,11 @@
+<root type="ability" class="passive">
+
+  <name>$ABI_NATURE_REGENERATION</name>
+  <icon>data/abilities/support/regeneration-0.png</icon>
+  <unavailable-icon>data/abilities/support/regeneration-1.png</unavailable-icon>
+  <description>$ABI_NATURE_REGENERATION_DESC</description>
+
+  <effect type="heal">
+    <amount calc="2.0 + lvl * 1.0" />
+  </effect>
+</root>

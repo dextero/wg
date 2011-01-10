@@ -1,0 +1,7 @@
+add-effect-commands
+effects-init data/effects/effects-config.xml
+exec pre-new-game
+new-player 0
+set-slot-ability 0 0 fire a
+set-slot-ability 0 1 electricity a
+exec post-new-game

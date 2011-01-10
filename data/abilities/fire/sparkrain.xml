@@ -1,0 +1,58 @@
+<root type="ability" class="bullet">
+
+	<name>$ABI_FIRE_SPARKRAIN</name>
+	<trigger></trigger>
+	<icon>data/abilities/fire/frain-0.png</icon>
+	<unavailable-icon>data/abilities/fire/frain-1.png</unavailable-icon>
+	<description>$ABI_FIRE_SPARKRAIN_DESC</description>
+
+	<effect type="list">
+		<effect type="damage">
+			<amount calc="10.5 + 4 * lvl + wp*0.2" />
+			<damage-type value="fire"/>
+		</effect>
+		<effect type="knockback">
+			<amount calc="0.9 + 0.1 * lvl"/>
+		</effect>
+		<effect type="chance">
+			<chance calc="ignite*0.2"/>
+			<effect type="inject">
+				<tree value="fire"/>
+				<code value="k"/>
+				<name value="igniting-magic"/>
+			</effect>
+		</effect>
+	</effect>
+	<explosion type="chance">
+		<chance calc="expl*0.3"/>
+		<effect type="inject">
+			<tree value="fire"/>
+			<code value="l"/>
+			<name value="explosive-magic"/>
+		</effect>
+	</explosion>
+
+    <delay-effect type="list">
+		<effect type="sound">
+			<name value="data/sounds/shotgun.wav" />
+		</effect>
+	</delay-effect>
+
+	<manacost calc="min(49, (20 + 6*lvl) * (0.80^fm))" />
+	<range calc="4.0 + (1.2 * spellrange)" />
+	<speed calc="12.0" />
+	<acceleration value="1.0" />
+	<explode-on-fade value="1" />
+	<count calc="10+2*lvl" />
+	<width calc="30.0 + 10 * lvl" />
+	<bullet value="data/physicals/firespark.xml" />
+	<casttime calc="0.02 + 0.08 / (1 + castspeed)" />
+	<delay calc="0.02 + 0.38 / (1 + castspeed)" />
+	<cooldown calc="0.06 + 0.22 / (1 + castspeed)" />
+	<filter value="wall,hostiles"/>
+	<spread-type value="shotgun"/>
+	<speed-fuzziness value="1.0" />
+	<!-- <max-level value="3" /> -->
+	<!-- <no-buy /> -->
+
+</root>

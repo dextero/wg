@@ -1,0 +1,55 @@
+<root type="ability" class="self">
+
+<!-- glowna umiejetnosc, gdzie podpinane sa umiejki zrobione metod¹ "lio-" -->
+	<name>magic missile</name>
+	<trigger>a</trigger>
+	<icon>data/player/flaming-arrow.png</icon>
+	<unavailable-icon>data/player/flaming-arrow-grey.png</unavailable-icon>
+
+	<effect type="list">
+		<effect type="bullet">
+			<emitter>
+				<effect type="list">
+					<effect type="damage">
+						<amount calc="5.0 + wp / 10.0" />
+						<damage-type value="physical"/>
+					</effect>
+					<effect type="inject">
+						<tree value="fire"/>
+						<code value="a"/>
+						<name value="fire-missile-hit"/>
+					</effect>
+				</effect>
+				<explosion type="list">
+					<effect type="inject">
+						<tree value="fire"/>
+						<code value="b"/>
+						<name value="fireball-explosion"/>
+					</effect>
+				</explosion>
+				<flight-effect type="list">
+					<effect type="inject">
+						<tree value="fire"/>
+						<code value="a"/>
+						<name value="fire-missile-flight"/>
+					</effect>
+				</flight-effect>
+				<bullet value="data/physicals/magic-missile.xml" />
+				<range value="28.0 + int / 10" />
+				<acceleration value="1.0" />
+				<speed calc="6.0" />
+				<explode-on-fade value="1" />
+				<count value="1" />
+				<width calc="0.5" />
+				<ttl value="5.6 + * 0.5 int / 10" />
+			</emitter>
+		</effect>
+	</effect>
+
+	<manacost calc="1" />
+	<!--<count calc="1.0 + 0.5 * lvl" />-->
+	<casttime value="0.1" />
+	<delay value="0.1" />
+	<cooldown value="0.28" />
+
+</root>

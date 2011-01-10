@@ -1,0 +1,57 @@
+<root type="ability" class="self">
+
+	<!-- ogolny opis umiejetnosci -->
+	<name>$ABI_ELECTRIC_LAZOR</name>
+	<icon>data/abilities/electric/laser-0.png</icon>
+	<unavailable-icon>data/abilities/electric/laser-1.png</unavailable-icon>
+  <trigger></trigger>
+	<description>$ABI_ELECTRIC_LAZOR_DESC</description>
+
+	<!-- efekt, ktory zostanie wykonany na rzucajacym czar -->
+	<effect type="list">
+		<effect type="linked-graphical-effect">
+			<offset-x value="-0.25"/>
+			<offset-y value="0.6"/>
+			<time value="0.2" />
+			<name value="laser" />
+		</effect>
+		<effect type="ray">
+			<area calc="10.0 + 1.0 * spellrange" />
+			<filter value="hostiles" />
+			<offset-x value="-0.25"/>
+			<offset-y value="0.6"/>
+			<effect type="list">
+				<effect type="graphical-effect">
+					<time value="0.5" />
+					<name value="smoke" />
+				</effect>
+				<effect type="damage">
+					<amount calc="50 + 25*lvl + wp" />
+					<damage-type value="lightning" />
+				</effect>
+				<effect type="chance">
+					<chance calc="0.1 + lvl / 10" />
+					<effect type="timed">
+						<time value="0.5" />
+						<effect type="modify">
+							<aspect value="speed" />
+							<amount value="0.3" />
+						</effect>
+					</effect>
+				</effect>
+			</effect>
+		</effect>
+	</effect>
+
+	<cast-time-effect type="modify">
+		<aspect value="speed" />
+		<amount value="0.2" />
+	</cast-time-effect>
+
+	<!-- opis rzucania tego czaru -->
+	<manacost calc="6 + 3 * lvl" />
+	<casttime calc="0.02 + 0.08 / (castspeed + 1)" />
+	<delay calc="0.36 + 0.24 / (castspeed + 1)" />
+	<cooldown calc="0.02 + 0.28 / (castspeed + 1)" />
+</root>
+

@@ -1,0 +1,34 @@
+#ifndef __COBSTACLE_H_
+#define __COBSTACLE_H_
+
+#include <string>
+#include <vector>
+
+#include "../CPhysical.h"
+#include "../Stats/CStats.h"
+
+struct SAnimation;
+
+class CObstacle: public CPhysical {
+    friend class CPhysicalManager;
+private:
+    bool mDestroyed;
+    float mDyingTime;
+protected:
+    CStats mStats;
+
+    CObstacle(const std::wstring& uniqueId);
+    virtual ~CObstacle();
+    
+    SAnimation *mDeathAnim;
+public:
+    virtual CStats *GetStats();
+    virtual void Update( float dt );
+    virtual void Kill();
+
+	inline bool IsDestroyed(){ return mDestroyed; }
+
+    inline void SetDeathAnim(SAnimation *anim){ mDeathAnim = anim; }
+};
+
+#endif /*__COBSTACLE_H_*/

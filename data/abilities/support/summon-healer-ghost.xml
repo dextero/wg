@@ -1,0 +1,36 @@
+<root type="ability" class="self">
+
+  <name>$ABI_SUPP_SUMMON</name>
+  <trigger>dabca</trigger>
+  <icon>data/abilities/support/summon-0.png</icon>
+  <unavailable-icon>data/abilities/support/summon-1.png</unavailable-icon>
+  <description>$ABI_SUPP_SUMMON_DESC</description>
+  <max-level value="3"/>
+
+  <effect type="delayed">
+  	<time value="3.0f"/>
+    <effect type="summon">
+      <summoner>
+        <ttl value="20.0f"/>
+        <min-radius value="1.0f"/>
+        <count calc="lvl"/>
+        <template value="data/physicals/healer-ghost.xml"/>
+      </summoner>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+  </delay-effect>
+
+  <casttime value="1.1" />
+  <delay value="3.3f" />
+  <cooldown value="10.0f" />
+
+</root>

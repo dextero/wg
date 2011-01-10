@@ -1,0 +1,12 @@
+ifeq ($(findstring editor,$(MAKECMDGOALS)),)
+	SOURCES := $(wildcard src/*.cpp)\
+	   $(wildcard src/*/*.cpp)\
+	   $(wildcard src/*/*/*.cpp)\
+	   $(wildcard src/*/*/*/*.cpp)
+else
+	SOURCES := $(shell find src -name *.cpp | grep -v ^.*/main.cpp$)\
+		$(shell find ../tools/WGEdytor/src -name *.cpp)\
+		$(wildcard ../tools/WGEdytor/wxFormBuilder/*.cpp)
+endif
+ 
+OBJECTS := $(SOURCES:.cpp=.o)

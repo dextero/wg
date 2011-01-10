@@ -1,0 +1,51 @@
+<root type="ability" class="melee">
+
+  <name>$ABI_FIRE_FLAMING_HANDS</name>
+  <trigger></trigger>
+  <icon>data/abilities/fire/fhand-0.png</icon>
+  <unavailable-icon>data/abilities/fire/fhand-1.png</unavailable-icon>
+  <description>$ABI_FIRE_FLAMING_HANDS_DESC</description>
+
+	<effect type="list">
+		<effect type="knockback">
+			<amount calc="3.0 + 0.2 * lvl" />
+		</effect>
+		<effect type="damage">
+            <amount calc="5.0 + 4.0 * lvl " />
+			<damage-type value="fire"/>
+		</effect>
+		<effect type="graphical-effect">
+			<time value="0.8" />
+			<name value="bullet-explosion-mini" />
+		</effect>
+		<effect type="chance">
+			<chance calc="ignite*0.2"/>
+			<effect type="inject">
+				<tree value="fire"/>
+				<code value="k"/>
+				<name value="igniting-magic"/>
+			</effect>
+		</effect>
+		<effect type="chance">
+			<chance calc="expl*0.2"/>
+			<effect type="inject">
+				<tree value="fire"/>
+				<code value="l"/>
+				<name value="exploding-magic"/>
+			</effect>
+        </effect>
+
+	</effect>
+	<self-effect type="graphical-effect">
+        <name value="magic-circle-3"/>
+        <time value="0.35"/>
+	</self-effect>
+
+  <manacost calc="(11.0 + lvl) * (0.80^fm)" />
+  <range value="1.1" />
+  <width value="70.0" />
+  <casttime calc="0.05 + 0.04 / (castspeed + 1.0)" />
+  <delay calc="0.35 + 0.14 / (castspeed + 1.0)" />
+  <cooldown calc="0.05 + 0.25 / (castspeed + 1.0)" />
+
+</root>

@@ -1,0 +1,492 @@
+<root type="locale" name="English" code="en">
+	<entry>
+		<key>ABILITY_NOT_FOR_SALE</key>
+		<value>Find it on map first.</value>
+	</entry>
+	<entry>
+		<key>ABITREE_CLOSE</key>
+		<value>Close</value>
+	</entry>
+	<entry>
+		<key>ABITREE_ELECTRICITY</key>
+		<value>Electricity</value>
+	</entry>
+	<entry>
+		<key>ABITREE_FIRE</key>
+		<value>Fire</value>
+	</entry>
+	<entry>
+		<key>ABITREE_SPECIAL</key>
+		<value>Special</value>
+	</entry>
+	<entry>
+		<key>ABITREE_SUPPORT</key>
+		<value>Support</value>
+	</entry>
+	<entry>
+		<key>ARCADE_MODE</key>
+		<value>Arcade mode</value>
+	</entry>
+	<entry>
+		<key>ASPECT_FIRERESIST</key>
+		<value>Fire</value>
+	</entry>
+	<entry>
+		<key>ASPECT_ICERESIST</key>
+		<value>Ice</value>
+	</entry>
+	<entry>
+		<key>ASPECT_INTELLIGENCE</key>
+		<value>Intelligence</value>
+	</entry>
+	<entry>
+		<key>ASPECT_LEVEL</key>
+		<value>Level</value>
+	</entry>
+	<entry>
+		<key>ASPECT_LIGHTNINGRESIST</key>
+		<value>Lightning</value>
+	</entry>
+	<entry>
+		<key>ASPECT_MANAREGEN</key>
+		<value>Mana regen</value>
+	</entry>
+	<entry>
+		<key>ASPECT_MASS</key>
+		<value>Mass</value>
+	</entry>
+	<entry>
+		<key>ASPECT_MAXHP</key>
+		<value>Max HP</value>
+	</entry>
+	<entry>
+		<key>ASPECT_MAXMANA</key>
+		<value>Max mana</value>
+	</entry>
+	<entry>
+		<key>ASPECT_PHYSRESIST</key>
+		<value>Physical</value>
+	</entry>
+	<entry>
+		<key>ASPECT_POISONRESIST</key>
+		<value>Poison</value>
+	</entry>
+	<entry>
+		<key>ASPECT_RADIUS</key>
+		<value>Radius</value>
+	</entry>
+	<entry>
+		<key>ASPECT_RESISTS</key>
+		<value>Resists</value>
+	</entry>
+	<entry>
+		<key>ASPECT_SCALE</key>
+		<value>Scale</value>
+	</entry>
+	<entry>
+		<key>ASPECT_SPEED</key>
+		<value>Speed</value>
+	</entry>
+	<entry>
+		<key>ASPECT_STRENGTH</key>
+		<value>Strength</value>
+	</entry>
+	<entry>
+		<key>ASPECT_TURNSPEED</key>
+		<value>Turn speed</value>
+	</entry>
+	<entry>
+		<key>ASPECT_WILLPOWER</key>
+		<value>Willpower</value>
+	</entry>
+	<entry>
+		<key>BUY</key>
+		<value>Buy</value>
+	</entry>
+	<entry>
+		<key>CHOOSE_CONTROLS_SCHEME</key>
+		<value>Choose controls scheme</value>
+	</entry>
+	<entry>
+		<key>CLICK_TO_BUY</key>
+		<value>Press left mouse button to buy this ability</value>
+	</entry>
+	<entry>
+		<key>CLOSE_POPUP</key>
+		<value>Close</value>
+	</entry>
+	<entry>
+		<key>CONSOLE_WELCOME</key>
+		<value>F11: hide console; help: command list</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_ABS_TOOLTIP</key>
+		<value>Defines player movement. When switched on the movement is parallel to the screen edges, when switched off it is relative to the player&apos;s orientation.</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_MOUSE_LOOK_TOOLTIP</key>
+		<value>When turned on the player will look toward mouse cursor - a useful option when you play with the mouse.</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_MOUSECAST_TOOLTIP</key>
+		<value>Allows the player to cast known spells with mouse gestures. When special button is pressed, four runes appear on the screen - they are selectable by mouse and can be used to cast a sequence spell.</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_SEPARATE_SEQ_TOOLTIP</key>
+		<value>Allows the player to cast known spells with two separate sets of keys - one for sequences and one for slots.</value>
+	</entry>
+	<entry>
+		<key>CURR_LEVEL</key>
+		<value>Current level: </value>
+	</entry>
+	<entry>
+		<key>CUTSCENE_ENDDEMO</key>
+		<value>Congratulations!
+
+You have managed to slay the evil summoner and his demonic minions. You are victorious! That&apos;s all we have prepared for you in this release. We hope you enjoyed our game.
+
+Stay tuned!</value>
+	</entry>
+	<entry>
+		<key>CUTSCENE_ENDDEMO_BG</key>
+		<value>data/cutscene/end-screen-en.png</value>
+	</entry>
+	<entry>
+		<key>DIFFICULTY</key>
+		<value>Difficulty: </value>
+	</entry>
+	<entry>
+		<key>DIFFICULTY_1</key>
+		<value>Normal</value>
+	</entry>
+	<entry>
+		<key>DIFFICULTY_2</key>
+		<value>Hard</value>
+	</entry>
+	<entry>
+		<key>DIFFICULTY_3</key>
+		<value>Sparta</value>
+	</entry>
+	<entry>
+		<key>DIFFICULTY_4</key>
+		<value>Malbolge</value>
+	</entry>
+	<entry>
+		<key>DIFFICULTY_5</key>
+		<value>WTF</value>
+	</entry>
+	<entry>
+		<key>DRAG_TO_USE</key>
+		<value>Drag ability to a bar at the bottom to use it in combat.</value>
+	</entry>
+	<entry>
+		<key>ENABLE_ABILITY</key>
+		<value>Activate</value>
+	</entry>
+	<entry>
+		<key>ERR</key>
+		<value>Error</value>
+	</entry>
+	<entry>
+		<key>ERR_NO_CTRL_SCHEMES</key>
+		<value>File data/config.xml file doesn&apos;t contain any control schemes. Please update it, or make your own scheme.</value>
+	</entry>
+	<entry>
+		<key>FONT_CONSOLE</key>
+		<value>data/GUI/free_mono.ttf</value>
+	</entry>
+	<entry>
+		<key>FONT_DIALOG</key>
+		<value>data/GUI/verdana.ttf</value>
+	</entry>
+	<entry>
+		<key>FONT_MENU</key>
+		<value>data/GUI/argbrujs.ttf</value>
+	</entry>
+	<entry>
+		<key>FONT_MESSAGE</key>
+		<value>data/GUI/monotype-corsiva.ttf</value>
+	</entry>
+	<entry>
+		<key>FULLSCREEN_MESSAGE</key>
+		<value>Do you want to run Warlock&apos;s Gauntlet in fullscreen mode? If you select OK, game will start in fullscreen mode %dx%d. If you select Cancel, game will start in windowed mode 800x600. Remember, you can always change fullscreen mode and resolution in options menu.</value>
+	</entry>
+	<entry>
+		<key>FULLSCREEN_TITLE</key>
+		<value>First run</value>
+	</entry>
+	<entry>
+		<key>GUI_POSTMORTEM_BG</key>
+		<value>data/GUI/bg-postmortem-en.jpg</value>
+	</entry>
+	<entry>
+		<key>GAME_TITLE</key>
+		<value>Warlock&apos;s Gauntlet</value>
+	</entry>
+	<entry>
+		<key>HELP_ABILITIES</key>
+		<value>The ability screen on your left is used for learning and enhancing spells - click on the icons to view descriptions or to buy the next level.</value>
+	</entry>
+	<entry>
+		<key>HELP_SCREENS_CONTROLS</key>
+		<value>Help screen:
+- Player 1: %ls
+- Player 2: %ls
+Ability screen:
+- Player 1: %ls
+- Player 2: %ls
+F11 - console window</value>
+	</entry>
+	<entry>
+		<key>KEY_SEQUENCE</key>
+		<value>Sequence:</value>
+	</entry>
+	<entry>
+		<key>MAX_LEVEL_REACHED</key>
+		<value>Max level reached!</value>
+	</entry>
+	<entry>
+		<key>MENU_1_PLAYER</key>
+		<value>1 player</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_1_PLAYER_TUTORIAL</key>
+		<value>Tutorial</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_2_PLAYERS</key>
+		<value>2 players</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_ACHIEVEMENTS</key>
+		<value>Achievements</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_AUTOSAVE</key>
+		<value>Autosave</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_BESTIARY</key>
+		<value>Bestiary</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_CONTINUE</key>
+		<value>Continue</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_EDITOR</key>
+		<value>Editor</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_EMPTY_SAVE_SLOT</key>
+		<value>Empty slot</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_EXIT</key>
+		<value>Exit</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_LOAD</key>
+		<value>Load</value>
+	</entry>
+	<entry>
+		<key>MENU_LOAD_GAME</key>
+		<value>Load game</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_NEW_GAME</key>
+		<value>New game</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_OPTIONS</key>
+		<value>Options</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_README</key>
+		<value>Instruction</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_RETURN</key>
+		<value>Return</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_SAVE_GAME</key>
+		<value>Save game</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MSG_FOUND</key>
+		<value>You have found</value>
+	</entry>
+	<entry>
+		<key>MSG_GAME_SAVED</key>
+		<value>Game has been saved</value>
+	</entry>
+	<entry>
+		<key>MSG_ITEM_PICKUP</key>
+		<value>Player has picked up &quot;%ls&quot;!
+</value>
+	</entry>
+	<entry>
+		<key>MSG_LEVEL_UP</key>
+		<value>You have advanced to level %d!
+</value>
+	</entry>
+	<entry>
+		<key>MSG_SKILLPOINT_GET</key>
+		<value>You have earned a skill point!
+</value>
+	</entry>
+	<entry>
+		<key>MSG_XP_POINTS</key>
+		<value>experience points!</value>
+	</entry>
+	<entry>
+		<key>NEWGAME_HELLO_1</key>
+		<value>Welcome to Warlock&apos;s Gauntlet!</value>
+	</entry>
+	<entry>
+		<key>NEWGAME_HELLO_2</key>
+		<value>Press F1 for controls and spell list.</value>
+	</entry>
+	<entry>
+		<key>NEWGAME_HELLO_3</key>
+		<value>Press F2 to buy new spells.</value>
+	</entry>
+	<entry>
+		<key>NEWGAME_HELLO_4</key>
+		<value>... and don&apos;t get killed :)</value>
+	</entry>
+	<entry>
+		<key>NOT_ENOUGH_SP</key>
+		<value>Not enough skill points.</value>
+	</entry>
+	<entry>
+		<key>OPT_3D_SOUND</key>
+		<value>3D sound:</value>
+	</entry>
+	<entry>
+		<key>OPT_CANCEL</key>
+		<value>Cancel</value>
+		<size>38%</size>
+	</entry>
+	<entry>
+		<key>OPT_CONTROLS1</key>
+		<value>Player 1 controls:</value>
+	</entry>
+	<entry>
+		<key>OPT_CONTROLS2</key>
+		<value>Player 2 controls:</value>
+	</entry>
+	<entry>
+		<key>OPT_DEFINE</key>
+		<value>Configure</value>
+		<size>45%</size>
+	</entry>
+	<entry>
+		<key>OPT_FULLSCREEN</key>
+		<value>Fullscreen: </value>
+	</entry>
+	<entry>
+		<key>OPT_MUSIC_LEVEL</key>
+		<value>Music volume:</value>
+	</entry>
+	<entry>
+		<key>OPT_RESOLUTION</key>
+		<value>Resolution: </value>
+	</entry>
+	<entry>
+		<key>OPT_SAVE</key>
+		<value>Apply</value>
+		<size>38%</size>
+	</entry>
+	<entry>
+		<key>OPT_SOUND_LEVEL</key>
+		<value>Sound volume: </value>
+	</entry>
+	<entry>
+		<key>OPT_VSYNC</key>
+		<value>V-Sync: </value>
+	</entry>
+	<entry>
+		<key>PREQS_NOT_MET</key>
+		<value>Prerequisitives not met: </value>
+	</entry>
+	<entry>
+		<key>README_ASCII_LOGO</key>
+		<value>       __      __                                __          __
+      /  \    /  \_____ _______  _______________/  |______ _/  |_
+      \   \/\/   /\__  \\_  __ \/  ___/\___   /\   __\__  \\   __\
+       \        /  / __ \|  | \/\___ \  / ___/  |  |  / __ \|  |
+        \__/\  /  (____  /__|  /____  &gt;/_____ \ |__| (____  /__|
+             \/        \/           \/       \/           \/
+                     ________
+                    /  _____/_____    _____   ____
+                   /   \  ___\__  \  /     \_/ __ \
+                   \    \_\  \/ __ \|  Y Y  \  ___/
+                    \______  (____  /__|_|  /\___  &gt;
+                           \/     \/      \/     \/
+</value>
+		<size>14</size>
+	</entry>
+	<entry>
+		<key>README_TEXT</key>
+		<value>
+
+Have you ever played Gauntlet, Get Medieval, Diablo, GTA or Crimsonland?
+Conceptually Warlock&apos;s Gauntlet is a compilation of game mechanics used in those
+titles with a few original improvements.
+
+You are a battle mage. Not an ordinary one - you are the biggest daredevil
+among battle mages. On your way stand hordes of evil, demonic and
+completely stupid monsters. You have to kick their asses and show them who
+is the master. Don&apos;t worry about the saving the  world, or rescuing the
+princess - your only goal is to find the green gateway leading to the next
+level full of monsters (and remember to kick their asses too!).
+
+You will have at your disposal over 30 unique spells (that you can buy for
+your hard-earned experience points). From time to time a killed monster will
+drop a nice instant powerup, which you can grab and use it to kick even more
+asses. But beware - you may encounter evil bosses which smite you to pieces
+in a single punch! Be careful not to get killed, or else you will have to
+start current level from the beginning.
+
+</value>
+		<size>14</size>
+	</entry>
+	<entry>
+		<key>REQ_LEVEL</key>
+		<value>Level required: </value>
+	</entry>
+	<entry>
+		<key>TOO_LOW_PREQ_LEVEL</key>
+		<value>Prerequisitives not met</value>
+	</entry>
+	<entry>
+		<key>UI_LEVEL</key>
+		<value>Level: </value>
+	</entry>
+	<entry>
+		<key>UI_POINTS</key>
+		<value>Points: </value>
+	</entry>
+	<entry>
+		<key>UI_XP</key>
+		<value>XP: </value>
+	</entry>
+</root>

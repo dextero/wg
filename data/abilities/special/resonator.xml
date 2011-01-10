@@ -1,0 +1,32 @@
+﻿<root type="ability" class="self">
+
+  <name>$ABI_SUPPORT_RESONATOR</name>
+  <trigger>dcdbcd</trigger>
+  <icon>data/abilities/special/resonator-0.png</icon>
+  <unavailable-icon>data/abilities/special/resonator-1.png</unavailable-icon>
+  <description>$ABI_SUPPORT_RESONATOR_DESC</description>
+
+  <effect type="list">
+    <effect type="area">
+      <area calc="1.8 + 0.21 * spellrange"  />
+      <filter value="hostiles" />
+      <effect type="list">
+		<effect type="area">
+			<area calc="1.8 + 0.21 * spellrange"  />
+			<filter value="player" />
+			<effect type="knockback">
+				<amount calc="29.0"/>
+			</effect>
+		</effect>
+      </effect>
+    </effect>
+
+  </effect>
+
+  <manacost value="9.0 " />
+  <casttime calc="0.02 + 0.08 / (castspeed + 1)" />
+  <delay value="0.0" />
+  <cooldown calc="0.0002 + 0.0008 / (castspeed + 1)" />
+  <no-buy />
+
+</root>

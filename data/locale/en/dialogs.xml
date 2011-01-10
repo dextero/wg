@@ -1,0 +1,96 @@
+<root type="locale" name="English" code="en">
+	<entry>
+		<key>DLG_COW_LEVEL1_1</key>
+		<value>Banana banana banana.</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL1_2</key>
+		<value>Banana banana banana.</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL2_1</key>
+		<value>Banana banana banana.</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL2_2</key>
+		<value>Banana banana banana.</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL3_1</key>
+		<value>Banana banana banana.</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL3_2</key>
+		<value>Banana banana banana.</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL4_1</key>
+		<value>Banana banana banana.</value>
+	</entry>
+	<entry>
+		<key>DLG_COW_LEVEL4_2</key>
+		<value>Banana banana banana.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL1_1</key>
+		<value>This is a dialog window. Here you will talk with people you meet -  below you will see your available options.
+
+Hit space to continue.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL1_2</key>
+		<value>In the classic control scheme, arrows are used to move. You can change controls at any time using Options in the Pause menu [Esc].
+The control scheme you chose is listed under the information screen under %1 (for the second player - %2)
+		
+Pick up the item in front of you by moving on to it.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL2_1</key>
+		<value>Your character status is shown in top left corner of screen. The red bar is your character&apos;s life, the blue bar - mana, and the green one - experience.
+
+After advancing to next level &quot;%1&quot; (for the second player: &quot;%2&quot;) is shown over the picture.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL3_1</key>
+		<value>Because your character is a battlemage, he has several special skills. You can use it by pressing action keys. Default keys are: %1, %2, %3, %4, but you can view them under %5 or change them in the options.
+		
+Spells bound to each key can be changed by draging spell icons to appropriate icons in the spell screen [%6]</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL3_2</key>
+		<value>You can look at the list of avaible spells by pressing [%1] (for the second player - [%2]). If you want to improve spells, look under [%3] ([%4]).
+
+Train casting basic spells for a while using the keys QWER, 1234 or the mouse (depending on your chosen control scheme); then move on to the next star.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL4_1</key>
+		<value>The road in front of you is blocked - you must clear it to go past. In your journey you will find many places like this - some require to kill certain monster or clearing entire map, others only need to place the foot in the right place.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL4_2</key>
+		<value>This passage is guarded by the old rat Zenek. Faithfully did he spend his entire life in the service of... in fact, it is not known whom he served (he didn&apos;t say - he doesn&apos;t speak human), but his age is wearing upon him. Relieve him of his suffering, so he can go to rat heaven (and allow you to go past).</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL4_3</key>
+		<value>Monsters can drop many useful items after death. It is worth looking at; in some situations they can save your butt.
+Furthermore, throughout the maps there are powerful yellow orbs, holding the power of ancient spells.
+		
+During your travels you will also find lairs, which will spawn more monsters. Dealing with them early makes the game easier in overall.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL5_1</key>
+		<value>You have just advanced to the next level!
+
+With each level gained you earn a skill point. You can use it to upgrade your spells or to learn new ones using the screen opened with [%1] ([%2] for the second player).</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL5_2</key>
+		<value>One last thing - support and special spells can be cast without using slots, by quickly entering the combination displayed in the ability window.</value>
+	</entry>
+	<entry>
+		<key>DLG_TUTORIAL6_1</key>
+		<value>This is all you need to know. Step into the green portal to start your adventure.
+
+Good luck!</value>
+	</entry>
+</root>

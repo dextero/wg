@@ -1,0 +1,45 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_WATER_ICEARROW</name>
+  <trigger>bc</trigger>
+  <icon>data/player/icearrow.png</icon>
+  <unavailable-icon>data/player/icearrow-grey.png</unavailable-icon>
+  <description>$ABI_WATER_ICEARROW_DESC</description>
+
+  <effect type="list">
+    <effect type="non-cumulative">
+      <effect type="timed">
+        <time value="1.75" linear-gain="0.25" />
+        <effect type="modify">
+          <amount value="0.76" modifiers="level,inv" />
+          <aspect value="speed" />
+        </effect>
+      </effect>
+    </effect>
+    <effect type="graphical-effect">
+      <time value="1.75" linear-gain="0.25" />
+      <name value="colorize-blue" />
+    </effect>
+    <effect type="graphical-effect">
+  	  <time value="0.8" />
+      <name value="blue-explosion-mini" />
+  	</effect>
+	<effect type="sound">
+		<name value="data/sounds/Lugaro/whoosh.ogg" />
+	</effect>
+    <effect type="damage">
+      <amount value="5.0" modifiers="willpower" linear-gain="3.0" />
+      <damage-type value="ice"/>
+    </effect>
+  </effect>
+  
+  <manacost value="5.5" />
+  <range value="12.0" />
+  <speed value="10.0" />
+  <ttl value="0.8" />
+  <bullet value="data/physicals/icicle.xml" />
+  <casttime value="0.085" />
+  <delay value="0.1" />
+  <cooldown value="0.18" />
+  
+</root>

@@ -1,0 +1,7 @@
+<root type="wall">
+<!-- tox, 21 sierpnia - mozliwe, ze przypadkowo zakomituje wersje
+     linijke tak, aby w grze nie bylo widac barier - one maja byc niewidoczne 
+     z widocznymi barierami - nalezy wtedy tutaj zakomentowac odpowiednia 
+
+    <image filename="data/physicals/walls/invisible-wall.png" />-->
+</root>

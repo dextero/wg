@@ -1,0 +1,13 @@
+﻿<root type="ability" class="passive">
+
+  <name>$ABI_NATURE_AGILITY</name>
+  <icon>data/player/agility.png</icon>
+  <unavailable-icon>data/player/agility-grey.png</unavailable-icon>
+  <description>$ABI_NATURE_AGILITY_DESC</description>
+
+  <effect type="modify">
+  	<aspect value="speed" />
+  	<amount value="1.25" modifiers="log,intelligence" linear-gain="0.15"/>
+  </effect>
+
+</root>

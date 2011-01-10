@@ -1,0 +1,44 @@
+<root type="ability" class="melee">
+
+  <name>$ABI_WATER_ICEBALL</name>
+  <icon>data/player/iceball.png</icon>
+  <unavailable-icon>data/player/iceball-grey.png</unavailable-icon>
+  <trigger>cad</trigger>
+  <description>$ABI_WATER_ICEBALL_DESC</description>
+
+  <effect type="list">
+    <effect type="delayed">
+      <time value="0.17" />
+      <effect type="list">
+        <effect type="delayed">
+        <time value="0.05" />
+          <effect type="timed">
+          <time value="1.750" linear-gain="0.450" />
+            <effect type="stun" />
+          </effect>
+        </effect>
+        <effect type="graphical-effect">
+          <time value="1.250" linear-gain="0.450" />
+          <name value="frost" />
+        </effect>
+		<effect type="sound">
+				<name value="data/sounds/Lugaro/whoosh.ogg" />
+		</effect>
+      </effect>
+    </effect>
+  </effect>
+  
+  <delay-effect type="graphical-effect">
+    <name value="frost-wave" />
+    <time value="0.16" />
+  </delay-effect>
+  
+
+  <manacost value="20.0" />
+  <range value="3.0" />
+  <width value="90.0" />
+  <casttime value="0.02" />
+  <delay value="0.36" />
+  <cooldown value="0.0" />
+  
+</root>

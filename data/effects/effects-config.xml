@@ -1,0 +1,5 @@
+<root type="effects-system">
+<particles config="data/effects/particles/particles.xml" />
+<prenderer config="data/effects/particles/renderer.xml" />
+<postfx config="data/effects/postfx/postfx.xml" />
+</root>

@@ -1,0 +1,7 @@
+<root type="bullet">
+  <scale min="0.2" max="0.2" />
+  <radius min="0.1" max="0.1" />
+ 
+  <anim name="core/anim/bullet/mine" />
+  <image filename="data/physicals/mine.png" />
+</root>

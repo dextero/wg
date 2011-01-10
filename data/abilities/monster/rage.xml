@@ -1,0 +1,40 @@
+<root type="ability" class="self">
+
+    <name>$ABI_NATURE_HEALSELF</name>
+    <icon>data/player/supp/health-0.png</icon>
+    <unavailable-icon>data/player/supp/health-1.png</unavailable-icon>
+    <description>$ABI_NATURE_HEALSELF</description>
+
+    <effect type="list">
+      <effect type="modify">
+        <aspect value="speed" />
+        <amount value="1" />
+      </effect>
+      <effect type="modify">
+        <aspect value="strength" />
+        <amount value="5" />
+      </effect>
+      <effect type="modify">
+        <aspect value="intelligence" />
+        <amount value="2" />
+      </effect>
+      <effect type="modify">
+        <aspect value="willpower" />
+        <amount value="2" />
+      </effect>
+    </effect>
+
+    <cast-time-effect type="graphical-effect">
+        <name value="magic-circle-1"/>
+        <time value="0.40"/>
+    </cast-time-effect>
+
+    <manacost value="0.0" />
+    <casttime value="0.05" />
+    <delay value="0.1" />
+    <cooldown value="60" />
+
+  <ai-hint>
+    <hp-less>0.5</hp-less>
+  </ai-hint>
+</root>

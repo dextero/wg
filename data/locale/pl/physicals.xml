@@ -1,0 +1,14 @@
+<root type="locale" name="Polski" code="pl">
+	<entry>
+		<key>PHYSICAL_BOSS1</key>
+		<value>Czesław</value>
+	</entry>
+	<entry>
+		<key>PHYSICAL_BOSS2</key>
+		<value>Oziębła Krystyna</value>
+	</entry>
+	<entry>
+		<key>PHYSICAL_BOSS3</key>
+		<value>Zygmunt</value>
+	</entry>
+</root>

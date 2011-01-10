@@ -1,0 +1,39 @@
+<root type="ability" class="melee">
+
+  <name>$ABI_SPECIAL_BASHER</name>
+  <trigger>dcdbdb</trigger>
+  <icon>data/abilities/special/mace-0.png</icon>
+  <unavailable-icon>data/abilities/special/mace-1.png</unavailable-icon>
+  <description>$ABI_SPECIAL_BASHER_DESC</description>
+
+	<effect type="list">
+		<effect type="knockback">
+			<amount calc="9.2 + str / 2" />
+		</effect>
+		<effect type="damage">
+			<amount calc="21.0 + str / 2" />
+			<damage-type value="physical"/>
+		</effect>
+		<effect type="damage">
+			<amount calc="14.0 + str / 2" />
+			<damage-type value="vorpal"/>
+		</effect>
+		<effect type="timed">
+			<time calc="4.0 + str / 10"/>
+			<effect type="stun"/>
+		</effect>
+		<effect type="graphical-effect">
+			<time calc="2.0 + str / 10"/>
+			<name value="stars" />
+		</effect>
+	</effect>
+
+  <manacost calc="7.0 * (1.0 - fm * 0.03)" />
+  <range calc="1.1 + 0.11 * spellrange" />
+  <width value="90.0" />
+  <casttime calc="0.01 + 0.04 / (castspeed + 1)" />
+  <delay calc="0.06 + 0.24 / (castspeed + 1)" />
+  <cooldown calc="0.01 + 0.04 / (castspeed + 1)" />
+  <no-buy />
+
+</root>

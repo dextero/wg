@@ -1,0 +1,13 @@
+﻿<root type="dialog">
+
+  <startNode>0</startNode>
+
+  <node>
+    <id>0</id>
+    <type>npc</type>
+    <string>$DLG_TUTORIAL2_1</string>
+    <param>PLAYER0_BIND_Abilities</param>
+    <param>PLAYER1_BIND_Abilities</param>
+  </node>
+  
+</root>

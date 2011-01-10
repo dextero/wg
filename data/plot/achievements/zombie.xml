@@ -1,0 +1,15 @@
+﻿<root type="quest">
+
+<startNode>0</startNode>
+
+<node>
+  <id>0</id>
+  <req>
+    <type>PhysicalDeathById</type>
+    <param>player0</param>
+    <param>10</param>
+  </req>
+  <action>add-achievement $ACH_ZOMBIE</action>
+</node>
+
+</root>

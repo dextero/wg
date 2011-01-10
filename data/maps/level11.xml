@@ -1,0 +1,872 @@
+<map>
+<version>3</version>
+<width>45</width>
+<height>45</height>
+<tiletype code="aa" image="data/maps/themes/oblique_way/tileset_scheme_b_d7.png"/>
+<tiletype code="ba" image="data/maps/themes/oblique_way/tileset_scheme_b_e1.png"/>
+<tiletype code="ca" image="data/maps/themes/oblique_way/tileset_scheme_b_e10.png"/>
+<tiletype code="da" image="data/maps/themes/oblique_way/tileset_scheme_b_e11.png"/>
+<tiletype code="ea" image="data/maps/themes/oblique_way/tileset_scheme_b_e14.png"/>
+<tiletype code="fa" image="data/maps/themes/oblique_way/tileset_scheme_b_e12.png"/>
+<tiletype code="ga" image="data/maps/themes/oblique_way/tileset_scheme_b_e13.png"/>
+<tiletype code="ha" image="data/maps/themes/oblique_way/tileset_scheme_b_e2.png"/>
+<tiletype code="ia" image="data/maps/themes/oblique_way/tileset_scheme_b_e3.png"/>
+<tiletype code="ja" image="data/maps/themes/oblique_way/tileset_scheme_b_e4.png"/>
+<tiletype code="ka" image="data/maps/themes/oblique_way/tileset_scheme_b_e5.png"/>
+<tiletype code="la" image="data/maps/themes/oblique_way/tileset_scheme_b_e6.png"/>
+<tiletype code="ma" image="data/maps/themes/oblique_way/tileset_scheme_b_e7.png"/>
+<tiletype code="na" image="data/maps/themes/oblique_way/tileset_scheme_b_e8.png"/>
+<tiletype code="oa" image="data/maps/themes/oblique_way/tileset_scheme_b_e9.png"/>
+<tiletype code="pa" image="data/maps/themes/oblique_way/tileset_scheme_b_k1.png"/>
+<tiletype code="qa" image="data/maps/themes/oblique_way/tileset_scheme_b_k10.png"/>
+<tiletype code="ra" image="data/maps/themes/oblique_way/tileset_scheme_b_k11.png"/>
+<tiletype code="sa" image="data/maps/themes/oblique_way/tileset_scheme_b_k12.png"/>
+<tiletype code="ta" image="data/maps/themes/oblique_way/tileset_scheme_b_k13.png"/>
+<tiletype code="ua" image="data/maps/themes/oblique_way/tileset_scheme_b_k14.png"/>
+<tiletype code="va" image="data/maps/themes/oblique_way/tileset_scheme_b_k2.png"/>
+<tiletype code="wa" image="data/maps/themes/oblique_way/tileset_scheme_b_k3.png"/>
+<tiletype code="xa" image="data/maps/themes/oblique_way/tileset_scheme_b_k4.png"/>
+<tiletype code="ya" image="data/maps/themes/oblique_way/tileset_scheme_b_k5.png"/>
+<tiletype code="za" image="data/maps/themes/oblique_way/tileset_scheme_b_k6.png"/>
+<tiletype code="ab" image="data/maps/themes/oblique_way/tileset_scheme_b_k7.png"/>
+<tiletype code="bb" image="data/maps/themes/oblique_way/tileset_scheme_b_k8.png"/>
+<tiletype code="cb" image="data/maps/themes/oblique_way/tileset_scheme_b_k9.png"/>
+<tiletype code="db" image="data/maps/themes/oblique_way/tileset_scheme_b_y1.png"/>
+<tiletype code="eb" image="data/maps/themes/oblique_way/tileset_scheme_b_y10.png"/>
+<tiletype code="fb" image="data/maps/themes/oblique_way/tileset_scheme_b_y11.png"/>
+<tiletype code="gb" image="data/maps/themes/oblique_way/tileset_scheme_b_y2.png"/>
+<tiletype code="hb" image="data/maps/themes/oblique_way/tileset_scheme_b_y3.png"/>
+<tiletype code="ib" image="data/maps/themes/oblique_way/tileset_scheme_b_y4.png"/>
+<tiletype code="jb" image="data/maps/themes/oblique_way/tileset_scheme_b_y5.png"/>
+<tiletype code="kb" image="data/maps/themes/oblique_way/tileset_scheme_b_y6.png"/>
+<tiletype code="lb" image="data/maps/themes/oblique_way/tileset_scheme_b_y7.png"/>
+<tiletype code="mb" image="data/maps/themes/oblique_way/tileset_scheme_b_y8.png"/>
+<tiletype code="nb" image="data/maps/themes/oblique_way/tileset_scheme_b_y9.png"/>
+<tiletype code="ob" image="data/maps/themes/oblique_way/tileset_scheme_b_a1.png"/>
+<tiletype code="pb" image="data/maps/themes/oblique_way/tileset_scheme_b_a10.png"/>
+<tiletype code="qb" image="data/maps/themes/oblique_way/tileset_scheme_b_a11.png"/>
+<tiletype code="rb" image="data/maps/themes/oblique_way/tileset_scheme_b_a12.png"/>
+<tiletype code="sb" image="data/maps/themes/oblique_way/tileset_scheme_b_a13.png"/>
+<tiletype code="tb" image="data/maps/themes/oblique_way/tileset_scheme_b_a14.png"/>
+<tiletype code="ub" image="data/maps/themes/oblique_way/tileset_scheme_b_a15_extra.png"/>
+<tiletype code="vb" image="data/maps/themes/oblique_way/tileset_scheme_b_a3.png"/>
+<tiletype code="wb" image="data/maps/themes/oblique_way/tileset_scheme_b_a4.png"/>
+<tiletype code="xb" image="data/maps/themes/oblique_way/tileset_scheme_b_a5.png"/>
+<tiletype code="yb" image="data/maps/themes/oblique_way/tileset_scheme_b_a6.png"/>
+<tiletype code="zb" image="data/maps/themes/oblique_way/tileset_scheme_b_a8.png"/>
+<tiletype code="ac" image="data/maps/themes/oblique_way/tileset_scheme_b_a9.png"/>
+<tiletype code="bc" image="data/maps/themes/sand/tilesets_sand_a_12.png"/>
+<tiletype code="cc" image="data/maps/themes/oblique_way/tileset_scheme_b_t1.png"/>
+<tiletype code="dc" image="data/maps/themes/oblique_way/tileset_scheme_b_t6.png"/>
+<tiletype code="ec" image="data/maps/themes/oblique_way/tileset_scheme_b_t2.png"/>
+<tiletype code="fc" image="data/maps/themes/oblique_way/tileset_scheme_b_t3.png"/>
+<tiletype code="gc" image="data/maps/themes/oblique_way/tileset_scheme_b_t5.png"/>
+<tiletype code="hc" image="data/maps/themes/oblique_way/tileset_scheme_b_t7.png"/>
+<tiletype code="ic" image="data/maps/themes/oblique_way/tileset_scheme_b_t12.png"/>
+<tiletype code="jc" image="data/maps/themes/oblique_way/tileset_scheme_b_t11.png"/>
+<tiletype code="kc" image="data/maps/themes/oblique_way/tileset_scheme_b_u1.png"/>
+<tiletype code="lc" image="data/maps/themes/oblique_way/tileset_scheme_b_t10.png"/>
+<tiletype code="mc" image="data/maps/themes/oblique_way/tileset_scheme_b_t9.png"/>
+<tiletype code="nc" image="data/maps/themes/oblique_way/tileset_scheme_b_t4.png"/>
+<tiletype code="oc" image="data/maps/themes/oblique_way/tileset_scheme_b_t8.png"/>
+<tiletype code="pc" image="data/maps/themes/oblique_way/tileset_scheme_b_u11.png"/>
+<tiletype code="qc" image="data/maps/themes/bandy_way/tileset_scheme_c_d8.png"/>
+<tiletype code="rc" image="data/maps/themes/oblique_way/tileset_scheme_b_u3.png"/>
+<tiletype code="sc" image="data/maps/themes/oblique_way/tileset_scheme_b_u10.png"/>
+<tiletype code="tc" image="data/maps/themes/oblique_way/tileset_scheme_b_u6.png"/>
+<tiletype code="uc" image="data/maps/themes/oblique_way/tileset_scheme_b_u5.png"/>
+<tiletype code="vc" image="data/maps/themes/oblique_way/tileset_scheme_b_u2.png"/>
+<tiletype code="wc" image="data/maps/themes/oblique_way/tileset_scheme_b_u7.png"/>
+<tiles>
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa oc qc qc qc qc qc gc fc aa aa aa aa aa cc dc pc qc qc qc
+aa aa aa aa aa aa bc bc bc bc bc aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa mc nc qc qc qc qc qc gc fc aa aa cc ec pc qc qc qc qc qc
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa mc lc rc qc qc qc qc hc aa aa oc qc qc qc qc qc qc qc
+aa aa aa aa aa bc aa bc bc bc bc bc bc aa aa aa aa aa aa aa aa aa aa aa aa aa cc dc sc pc qc qc qc qc hc aa aa mc nc qc qc qc qc qc qc
+aa aa aa aa aa bc bc bc cc dc ec fc bc bc aa aa aa aa aa aa aa aa aa aa aa aa oc qc qc qc qc kc vc jc ic aa aa aa mc lc jc rc qc qc qc
+aa aa aa aa aa bc cc ec pc qc qc gc fc bc aa aa aa aa aa aa aa aa aa aa aa aa tc qc qc qc qc hc aa aa aa aa aa aa aa aa aa tc qc qc qc
+aa aa aa aa aa bc oc qc qc qc qc qc gc fc aa aa aa aa aa aa aa aa aa aa aa aa uc rc qc qc qc gc fc aa aa aa aa aa aa cc ec pc qc qc qc
+aa aa aa aa aa bc oc qc qc qc qc qc qc hc aa aa aa aa aa aa aa aa aa aa aa aa aa uc rc qc qc qc hc aa aa aa aa aa aa oc qc qc qc qc qc
+aa aa aa aa aa bc mc nc qc qc qc kc jc ic aa aa aa aa aa aa aa aa aa aa aa aa aa aa uc jc rc qc hc aa aa aa aa aa aa mc nc qc qc qc qc
+aa aa aa aa aa bc bc mc nc qc qc hc aa bc aa aa aa aa aa aa aa aa aa cc ec fc aa aa aa aa uc jc ic aa aa aa aa aa aa aa mc nc qc qc qc
+aa aa aa aa aa bc bc bc mc lc jc ic aa aa aa aa aa aa aa aa aa cc dc pc qc gc fc aa aa aa aa aa aa aa aa aa aa aa aa aa aa mc nc qc qc
+aa aa aa aa aa bc aa aa bc bc aa aa aa aa aa aa aa aa aa aa aa oc qc qc qc qc gc fc aa aa aa aa aa aa aa aa aa aa aa aa aa aa mc lc jc
+aa aa aa aa aa aa aa aa bc aa aa aa aa aa aa aa aa aa aa aa aa tc qc qc qc qc qc hc aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa uc rc qc kc jc lc ic aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa cc ec pc qc gc fc aa aa aa aa aa aa aa aa aa cc dc fc aa aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa oc qc qc qc qc gc fc aa aa aa aa aa aa aa aa oc qc gc fc aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa mc nc qc qc qc qc hc aa aa aa aa aa aa aa aa mc nc qc hc aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa mc lc jc lc lc ic aa aa aa aa aa aa aa aa aa mc lc ic aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+aa aa cc ec ec ec fc aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+aa aa oc qc qc qc gc fc aa aa aa aa aa aa aa cc ec ec fc aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+aa aa mc nc qc kc jc ic aa aa aa aa aa aa aa oc qc qc gc fc aa cc ec ec fc aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+aa aa aa mc lc ic aa aa aa aa aa aa aa aa aa mc nc qc qc gc sc pc qc qc hc aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa mc nc qc qc qc qc qc qc gc fc aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa mc lc rc qc qc qc qc qc gc fc aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa tc qc qc qc qc qc qc hc aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa cc dc pc qc qc qc qc qc qc hc aa aa aa aa aa cc ec dc fc aa aa cc ec fc aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa oc qc qc qc qc qc qc kc jc ic aa aa aa aa aa oc qc qc gc dc sc pc qc gc fc aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa mc lc lc jc rc qc qc gc fc aa aa aa aa aa aa mc nc qc qc qc qc qc qc qc gc fc aa cc
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa mc lc lc lc ic aa aa aa aa aa aa aa mc lc rc qc qc qc qc qc qc gc sc pc
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa tc qc qc qc qc qc qc qc qc qc
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa cc dc pc qc qc qc qc qc qc qc qc qc
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa oc qc qc qc qc qc qc qc qc qc qc qc
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa cc ec fc aa aa aa aa mc nc qc qc qc qc qc qc kc vc jc jc
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa cc ec pc qc hc aa aa aa aa aa mc nc qc qc kc vc jc ic aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa oc qc kc vc ic aa aa aa aa aa aa mc lc lc ic aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa mc lc ic aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa cc ec fc aa aa aa aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa oc qc gc fc aa aa aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa tc qc qc gc ec fc aa aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa cc ec pc qc qc qc qc gc fc aa aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa oc qc qc qc qc qc qc qc gc fc aa aa aa aa
+aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa mc nc qc qc qc qc qc qc qc hc aa aa aa aa </tiles><objtype code="aa" file="data/physicals/hooks/lightnin-hook.xml"/>
+<objtype code="ba" file="data/physicals/walls/invisible-wall.xml"/>
+<objtype code="ca" file="data/physicals/walls/invisible-wall-half.xml"/>
+<objtype code="monster1" file="data/physicals/hornet.xml"/>
+<objtype code="monster2" file="data/physicals/hornet.xml"/>
+<objtype code="monster3" file="data/physicals/cockroach.xml"/>
+<objtype code="monster4" file="data/physicals/cockroach.xml"/>
+<objtype code="monster5" file="data/physicals/early.xml"/>
+<objtype code="monster6" file="data/physicals/early.xml"/>
+<objtype code="monster7" file="data/physicals/warlock.xml"/>
+<objtype code="monster8" file="data/physicals/ogre-red-wife.xml"/>
+<objtype code="monster9" file="data/physicals/shaggy.xml"/>
+<objtype code="monster-lair1" file="data/physicals/lairs/bee-lair.xml"/>
+<objtype code="monster-lair2" file="data/physicals/lairs/ogre-lair.xml"/>
+<objtype code="monster-lair3" file="data/physicals/lairs/cockroach-lair.xml"/>
+<objtype code="monster-lair4" file="data/physicals/lairs/cockroach-lair.xml"/>
+<objtype code="monster-lair5" file="data/physicals/lairs/cockroach-lair.xml"/>
+<objtype code="monster-lair6" file="data/physicals/lairs/ogre-lair.xml"/>
+<objtype code="monster-lair7" file="data/physicals/lairs/early-lair.xml"/>
+<objtype code="monster-lair8" file="data/physicals/lairs/early-lair.xml"/>
+<objtype code="monster-lair9" file="data/physicals/lairs/shaggy-lair.xml"/>
+<objtype code="monster-lair0" file="data/physicals/lairs/shaggy-lair.xml"/>
+<objtype code="pacman1" file="data/items/1k-xp.xml"/>
+<objtype code="exit-door" file="data/physicals/walls/test-barrier.xml"/>
+<objtype code="da" file="data/items/blizzard-ball.xml"/>
+<obj code="aa" x="36.7656" y="15.125"/>
+<obj code="ba" x="5.35938" y="1.59375"/>
+<obj code="ca" x="5.96875" y="0.984375"/>
+<obj code="ca" x="4.59375" y="1.625"/>
+<obj code="ca" x="1.32813" y="6.96875"/>
+<obj code="ba" x="9.85938" y="5.40625"/>
+<obj code="ba" x="10.875" y="6"/>
+<obj code="ca" x="10.6094" y="5.28125"/>
+<obj code="ba" x="9.60938" y="6.40625"/>
+<obj code="ba" x="8.625" y="7.125"/>
+<obj code="ba" x="7.65625" y="6.9375"/>
+<obj code="ca" x="8.98438" y="6.5625"/>
+<obj code="ca" x="7.42188" y="6.17188"/>
+<obj code="ca" x="7.14063" y="7.29688"/>
+<obj code="ba" x="7.51563" y="8"/>
+<obj code="ba" x="7.75" y="9"/>
+<obj code="ba" x="8.73438" y="9.23438"/>
+<obj code="ca" x="7.84375" y="9.57813"/>
+<obj code="ba" x="9.75" y="9.09375"/>
+<obj code="ca" x="9.71875" y="9.8125"/>
+<obj code="ca" x="10.3125" y="8.92188"/>
+<obj code="ba" x="11.7656" y="8.76563"/>
+<obj code="ca" x="10.8281" y="8.73438"/>
+<obj code="ca" x="11.1875" y="9.10938"/>
+<obj code="ca" x="11.7969" y="8.125"/>
+<obj code="ba" x="11.3594" y="7.39063"/>
+<obj code="ca" x="12.0781" y="7.15625"/>
+<obj code="ca" x="12.4844" y="7.07813"/>
+<obj code="ca" x="11.8125" y="6.85938"/>
+<obj code="ca" x="11.4531" y="6.45313"/>
+<obj code="ca" x="11.6563" y="5.98438"/>
+<obj code="ca" x="11.8281" y="5.5625"/>
+<obj code="ca" x="18.7188" y="3.07813"/>
+<obj code="ca" x="22.2813" y="7.98438"/>
+<obj code="ca" x="5.125" y="13.9688"/>
+<obj code="ba" x="26.5938" y="0.484375"/>
+<obj code="ba" x="27.1875" y="1.17188"/>
+<obj code="ba" x="27.9219" y="2.15625"/>
+<obj code="ca" x="27.1719" y="1.90625"/>
+<obj code="ca" x="27.5" y="2.85938"/>
+<obj code="ca" x="27.3281" y="3.21875"/>
+<obj code="ba" x="28.0625" y="3.01563"/>
+<obj code="ba" x="28.8125" y="4.03125"/>
+<obj code="ba" x="29.6719" y="5"/>
+<obj code="ba" x="29.3906" y="6.01563"/>
+<obj code="ba" x="28.3906" y="5.96875"/>
+<obj code="ca" x="27.9063" y="6.03125"/>
+<obj code="ba" x="28.9688" y="7.9375"/>
+<obj code="ba" x="29.4063" y="7"/>
+<obj code="ba" x="27.9688" y="8.35938"/>
+<obj code="ba" x="27.2656" y="9.3125"/>
+<obj code="ca" x="27.2188" y="8.42188"/>
+<obj code="ba" x="25.7656" y="9.70313"/>
+<obj code="ca" x="26.5" y="9.6875"/>
+<obj code="ba" x="24.7656" y="10.3906"/>
+<obj code="ba" x="23.8594" y="11.375"/>
+<obj code="ba" x="23.4375" y="12.2969"/>
+<obj code="ca" x="22.9844" y="11.8594"/>
+<obj code="ca" x="23.2344" y="11.5469"/>
+<obj code="ca" x="24.1094" y="10.4375"/>
+<obj code="ba" x="22.8438" y="13.25"/>
+<obj code="ba" x="22.75" y="14.2188"/>
+<obj code="ba" x="21.75" y="14.6563"/>
+<obj code="ba" x="22.0156" y="15.6563"/>
+<obj code="ba" x="21.8125" y="16.6406"/>
+<obj code="ca" x="21.3281" y="15.4063"/>
+<obj code="ba" x="21.5156" y="17.6406"/>
+<obj code="ca" x="21.4688" y="18.3594"/>
+<obj code="ca" x="21.7656" y="18.7031"/>
+<obj code="ca" x="21.9844" y="18.2344"/>
+<obj code="ca" x="22.5" y="18.0469"/>
+<obj code="ca" x="22.8438" y="17.6563"/>
+<obj code="ba" x="23.3281" y="16.9375"/>
+<obj code="ba" x="24.3281" y="16.75"/>
+<obj code="ca" x="25.0156" y="17.3594"/>
+<obj code="ca" x="25.3438" y="17.7188"/>
+<obj code="ca" x="25.3438" y="16.9688"/>
+<obj code="ca" x="25.0781" y="16.5625"/>
+<obj code="ba" x="25.2969" y="14.75"/>
+<obj code="ba" x="24.4219" y="15.75"/>
+<obj code="ca" x="25.0938" y="15.4219"/>
+<obj code="ba" x="25.3438" y="13.75"/>
+<obj code="ba" x="25.4375" y="12.7656"/>
+<obj code="ba" x="26.4219" y="12.1875"/>
+<obj code="ca" x="27" y="12.2969"/>
+<obj code="ca" x="26.4063" y="12.7813"/>
+<obj code="ba" x="27.2031" y="10.3281"/>
+<obj code="ba" x="26.7188" y="11.2188"/>
+<obj code="ca" x="27.2813" y="11.0938"/>
+<obj code="ca" x="27.7031" y="10.2188"/>
+<obj code="ba" x="28.0625" y="9.29688"/>
+<obj code="ca" x="28.8906" y="8.60938"/>
+<obj code="ba" x="29.9844" y="8.3125"/>
+<obj code="ba" x="31" y="8.57813"/>
+<obj code="ba" x="31.5938" y="7.60938"/>
+<obj code="ba" x="33.9219" y="0.4375"/>
+<obj code="ba" x="33.9219" y="1.42188"/>
+<obj code="ba" x="33.9375" y="2.40625"/>
+<obj code="ba" x="33.875" y="3.42188"/>
+<obj code="ba" x="33.8125" y="4.4375"/>
+<obj code="ba" x="33.3438" y="5.42188"/>
+<obj code="ba" x="32.75" y="6.42188"/>
+<obj code="ca" x="33.8906" y="5.10938"/>
+<obj code="ca" x="33.4063" y="6.17188"/>
+<obj code="ca" x="32.75" y="7.125"/>
+<obj code="ca" x="32.3281" y="7.46875"/>
+<obj code="ba" x="38.2031" y="5.17188"/>
+<obj code="ba" x="34.7969" y="5.25"/>
+<obj code="ba" x="36.6719" y="15.5313"/>
+<obj code="ca" x="36.6875" y="16.2813"/>
+<obj code="ba" x="39.0781" y="0.5"/>
+<obj code="ba" x="39.1094" y="1.48438"/>
+<obj code="ba" x="39.0938" y="2.48438"/>
+<obj code="ba" x="39.1406" y="3.5"/>
+<obj code="ba" x="39.2344" y="4.5"/>
+<obj code="ba" x="39.7344" y="5.54688"/>
+<obj code="ca" x="39.2344" y="5.17188"/>
+<obj code="ca" x="39.7031" y="6.28125"/>
+<obj code="ca" x="40.0156" y="6.76563"/>
+<obj code="ca" x="40.2969" y="7.26563"/>
+<obj code="ca" x="40.6719" y="7.65625"/>
+<obj code="ba" x="41.4063" y="7.70313"/>
+<obj code="ba" x="42.3438" y="8.3125"/>
+<obj code="ba" x="43.3281" y="8.6875"/>
+<obj code="ba" x="44.3281" y="9.09375"/>
+<obj code="ca" x="44.6875" y="9.70313"/>
+<obj code="ca" x="43.7188" y="9.17188"/>
+<obj code="ca" x="42.75" y="8.84375"/>
+<obj code="ca" x="41.6406" y="8.3125"/>
+<obj code="ca" x="31.0781" y="21.3281"/>
+<obj code="ca" x="43.0469" y="23.1719"/>
+<obj code="ca" x="33.25" y="26.8594"/>
+<obj code="ca" x="17" y="15.9531"/>
+<obj code="ca" x="11.5938" y="19.5313"/>
+<obj code="ba" x="3.09375" y="20.7813"/>
+<obj code="ba" x="4.10938" y="20.9844"/>
+<obj code="ca" x="3.84375" y="20.0156"/>
+<obj code="ca" x="4.76563" y="20.8594"/>
+<obj code="ca" x="5.03125" y="20.4688"/>
+<obj code="ca" x="3.67188" y="21.5781"/>
+<obj code="ca" x="3.29688" y="21.5156"/>
+<obj code="ca" x="3.32813" y="20.0469"/>
+<obj code="ca" x="9.60938" y="28.125"/>
+<obj code="ca" x="3.3125" y="30.2813"/>
+<obj code="ca" x="4.375" y="35.5781"/>
+<obj code="ca" x="6" y="33.2031"/>
+<obj code="ca" x="11.8438" y="34.8906"/>
+<obj code="ca" x="9.53125" y="38.9063"/>
+<obj code="ba" x="16.7813" y="32.2188"/>
+<obj code="ba" x="3.53125" y="39.7656"/>
+<obj code="ca" x="16.0156" y="38.0313"/>
+<obj code="ca" x="12.7031" y="42.2344"/>
+<obj code="ca" x="6.0625" y="43.2344"/>
+<obj code="ca" x="17.1719" y="43.2656"/>
+<obj code="ca" x="21.1406" y="40.6406"/>
+<obj code="ca" x="22.9531" y="32.7969"/>
+<obj code="ba" x="7.5625" y="33.3438"/>
+<obj code="ba" x="8.53125" y="33.4844"/>
+<obj code="ba" x="8.53125" y="34.4844"/>
+<obj code="ba" x="7.59375" y="35.1094"/>
+<obj code="ca" x="8.46875" y="35.3125"/>
+<obj code="ca" x="9.3125" y="34.2813"/>
+<obj code="ca" x="9.26563" y="33.5781"/>
+<obj code="ca" x="6.82813" y="35.1406"/>
+<obj code="ca" x="7" y="34.6094"/>
+<obj code="ca" x="7.51563" y="34.125"/>
+<obj code="ca" x="44.7031" y="40.1406"/>
+<obj code="ca" x="25.6406" y="35.4688"/>
+<obj code="ca" x="25.875" y="35.0938"/>
+<obj code="ca" x="26.0781" y="34.7813"/>
+<obj code="ca" x="26.3125" y="34.4219"/>
+<obj code="ca" x="25.3438" y="34.7969"/>
+<obj code="ba" x="16.8438" y="22.0781"/>
+<obj code="ba" x="17.1719" y="21.125"/>
+<obj code="ba" x="17.8281" y="22.125"/>
+<obj code="ca" x="17.8594" y="21.375"/>
+<obj code="ca" x="18.1563" y="20.9063"/>
+<obj code="ba" x="16.9688" y="23.5938"/>
+<obj code="ba" x="17.5156" y="24.6094"/>
+<obj code="ca" x="17.0938" y="22.8281"/>
+<obj code="ba" x="18.8906" y="22.2344"/>
+<obj code="ba" x="19.9219" y="23.0625"/>
+<obj code="ba" x="20.9375" y="22.625"/>
+<obj code="ba" x="21.8125" y="23.6094"/>
+<obj code="ba" x="22.6094" y="24.6094"/>
+<obj code="ba" x="24" y="23.9531"/>
+<obj code="ca" x="21.5781" y="22.625"/>
+<obj code="ca" x="21.9688" y="22.9063"/>
+<obj code="ca" x="23.375" y="24.4063"/>
+<obj code="ca" x="23.9531" y="23.4688"/>
+<obj code="ba" x="18.8438" y="25.3594"/>
+<obj code="ca" x="18.2656" y="25.0781"/>
+<obj code="ba" x="18.875" y="26.375"/>
+<obj code="ba" x="18.875" y="27.4063"/>
+<obj code="ba" x="19.3906" y="28.2969"/>
+<obj code="ca" x="19.5" y="28.9844"/>
+<obj code="ca" x="20.1563" y="28.3438"/>
+<obj code="ca" x="20.3906" y="27.9063"/>
+<obj code="ca" x="20.8906" y="27.7344"/>
+<obj code="ca" x="21.2656" y="27.8906"/>
+<obj code="ba" x="21.7813" y="28.5313"/>
+<obj code="ba" x="22.7969" y="28.7031"/>
+<obj code="ba" x="23.6719" y="29.7188"/>
+<obj code="ba" x="25.0938" y="30.1719"/>
+<obj code="ca" x="24.4219" y="29.8438"/>
+<obj code="ca" x="25.7031" y="30.2813"/>
+<obj code="ca" x="25.6406" y="29.5938"/>
+<obj code="ca" x="25.5625" y="29.1094"/>
+<obj code="ba" x="24.9375" y="24.8906"/>
+<obj code="ca" x="25.0938" y="24.25"/>
+<obj code="ca" x="25.5313" y="23.9531"/>
+<obj code="ca" x="25.4844" y="24.3125"/>
+<obj code="ba" x="25.0938" y="25.8906"/>
+<obj code="ba" x="25.1094" y="26.9063"/>
+<obj code="ba" x="25.3438" y="27.9063"/>
+<obj code="ca" x="25.7344" y="27.1719"/>
+<obj code="ca" x="25.875" y="26.9531"/>
+<obj code="ca" x="26.0781" y="27.9375"/>
+<obj code="ba" x="25.7813" y="28.5469"/>
+<obj code="ca" x="26.4531" y="28.4688"/>
+<obj code="ba" x="33.9063" y="34.4531"/>
+<obj code="ba" x="34.1563" y="33.4844"/>
+<obj code="ba" x="34.4375" y="32.5"/>
+<obj code="ba" x="34.9219" y="31.5"/>
+<obj code="ca" x="34.375" y="31.9063"/>
+<obj code="ba" x="35.2188" y="30.75"/>
+<obj code="ba" x="35.9375" y="29.7656"/>
+<obj code="ba" x="36.9375" y="29.1563"/>
+<obj code="ba" x="37.75" y="28.0625"/>
+<obj code="ca" x="37.1406" y="28.4844"/>
+<obj code="ba" x="38.7344" y="27.8594"/>
+<obj code="ba" x="39.7813" y="27.4844"/>
+<obj code="ca" x="40.5469" y="27.1719"/>
+<obj code="ca" x="40.9219" y="26.9375"/>
+<obj code="ca" x="41.25" y="26.6406"/>
+<obj code="ca" x="41.7656" y="26.6875"/>
+<obj code="ba" x="42.4375" y="26.3594"/>
+<obj code="ba" x="43.4375" y="26.3281"/>
+<obj code="ba" x="44.3594" y="25.9375"/>
+<obj code="ca" x="44.4219" y="25.4063"/>
+<obj code="ca" x="35.2656" y="35.6406"/>
+<obj code="ba" x="35.9219" y="34.7031"/>
+<obj code="ba" x="34.9219" y="34.5313"/>
+<obj code="ca" x="35.1094" y="35.2344"/>
+<obj code="ca" x="35.5" y="35.4375"/>
+<obj code="ba" x="36.7969" y="33.6875"/>
+<obj code="ca" x="36.6875" y="34.3438"/>
+<obj code="ca" x="37.25" y="33.6406"/>
+<obj code="ca" x="36.9375" y="32.9375"/>
+<obj code="ba" x="37.7188" y="32.4063"/>
+<obj code="ba" x="38.7188" y="32.375"/>
+<obj code="ba" x="40.0625" y="31.2031"/>
+<obj code="ca" x="39.2969" y="31.6094"/>
+<obj code="ca" x="39.7813" y="31.9531"/>
+<obj code="ca" x="40.1875" y="31.9688"/>
+<obj code="ca" x="39.9375" y="32.3438"/>
+<obj code="ba" x="40.0781" y="29.8438"/>
+<obj code="ca" x="39.9844" y="30.5469"/>
+<obj code="ba" x="41.1094" y="29.4531"/>
+<obj code="ba" x="41.9844" y="29.8438"/>
+<obj code="ba" x="42.8594" y="30.8125"/>
+<obj code="ba" x="43.8906" y="30.9844"/>
+<obj code="ca" x="44.6406" y="31.4063"/>
+<obj code="ba" x="32.0625" y="44.5781"/>
+<obj code="ba" x="31.9844" y="43.1719"/>
+<obj code="ca" x="31.3125" y="43.2656"/>
+<obj code="ca" x="32.4844" y="43.9063"/>
+<obj code="ba" x="32.875" y="42.4063"/>
+<obj code="ba" x="33.4844" y="41.4688"/>
+<obj code="ca" x="32.9688" y="41.4531"/>
+<obj code="ba" x="34.5" y="41.6875"/>
+<obj code="ba" x="35.4688" y="41.2813"/>
+<obj code="ba" x="36.4375" y="40.5"/>
+<obj code="ba" x="37.0938" y="41.5156"/>
+<obj code="ca" x="37.1094" y="40.7188"/>
+<obj code="ca" x="37.1094" y="40.2344"/>
+<obj code="ca" x="36.9063" y="39.875"/>
+<obj code="ca" x="37.6719" y="41.5469"/>
+<obj code="ba" x="38.4219" y="41.9688"/>
+<obj code="ba" x="39.2969" y="41.0469"/>
+<obj code="ca" x="39.3906" y="40.4531"/>
+<obj code="ca" x="39.3594" y="41.7969"/>
+<obj code="ba" x="38.5938" y="42.9375"/>
+<obj code="ba" x="37.6406" y="43.7813"/>
+<obj code="ca" x="37.6406" y="44.375"/>
+<obj code="ca" x="37.2031" y="44.5938"/>
+<obj code="ca" x="38.5625" y="43.5313"/>
+<obj code="ca" x="39.0313" y="43.5313"/>
+<obj code="ca" x="28.1406" y="4.25"/>
+<obj code="ba" x="28.6563" y="5"/>
+<obj code="ca" x="38.9219" y="43.8281"/>
+<obj code="exit-door" x="36.5959" y="0.788294"/>
+<obj code="monster8" x="36.6361" y="3.78125" rot="180"/>
+<obj code="monster8" x="38.808" y="7.10938" rot="135"/>
+<obj code="monster8" x="34.7611" y="7.51562" rot="225"/>
+<obj code="monster5" x="43.0625" y="10.6349" rot="135"/>
+<obj code="monster-lair5" x="29.5312" y="10.3224" rot="225"/>
+<obj code="monster-lair7" x="39.3281" y="7.80674" rot="135"/>
+<obj code="monster-lair5" x="42.6406" y="24.6505" rot="45"/>
+<obj code="monster7" x="44.0312" y="23.2442" rot="137"/>
+<obj code="monster7" x="40.3281" y="25.5411" rot="127"/>
+<obj code="monster7" x="42.1094" y="22.4942" rot="119"/>
+<obj code="monster-lair8" x="36.5658" y="5.29375" rot="180"/>
+<obj code="monster5" x="36.0189" y="12.2625" rot="65"/>
+<obj code="monster5" x="32.9408" y="17.6062" rot="56"/>
+<obj code="monster5" x="40.2064" y="17.9969" rot="283"/>
+<obj code="monster5" x="36.5502" y="20.6531" rot="255"/>
+<obj code="monster-lair5" x="36.4564" y="18.8719" rot="261"/>
+<obj code="monster5" x="27.6439" y="15.5125" rot="166"/>
+<obj code="monster-lair7" x="33.7656" y="7.99687" rot="225"/>
+<obj code="monster-lair5" x="43.8594" y="12.1844" rot="131"/>
+<obj code="monster-lair5" x="27.2656" y="16.5594" rot="204"/>
+<obj code="monster6" x="32" y="13.5281" rot="153"/>
+<obj code="monster6" x="39.2812" y="13.7469" rot="274"/>
+<obj code="monster6" x="35.6562" y="26.8094" rot="187"/>
+<obj code="monster6" x="29.1719" y="21.1844" rot="36"/>
+<obj code="monster-lair1" x="7.0625" y="32.4062" rot="205"/>
+<obj code="monster-lair2" x="20.9531" y="41.7188" rot="181"/>
+<obj code="pacman1" x="38.6406" y="44.6719" rot="101"/>
+<obj code="monster-lair4" x="44.1406" y="44.2344" rot="182"/>
+<obj code="monster4" x="41.5781" y="43.6094" rot="117"/>
+<obj code="monster3" x="43.8906" y="41.2969" rot="95"/>
+<obj code="monster3" x="41.2188" y="40.4375" rot="310"/>
+<obj code="monster4" x="43.6562" y="37.375"/>
+<obj code="pacman1" x="41.25" y="30.8034" rot="52"/>
+<obj code="monster-lair4" x="39.4219" y="33.3346" rot="194"/>
+<obj code="monster3" x="43.7344" y="32.4127" rot="224"/>
+<obj code="monster4" x="38.3125" y="34.2721" rot="187"/>
+<obj code="monster6" x="34.5469" y="38.0534" rot="90"/>
+<obj code="monster-lair2" x="23.8125" y="31.1315" rot="30"/>
+<obj code="monster-lair1" x="23.125" y="22.7844" rot="284"/>
+<obj code="pacman1" x="27.8175" y="7.17188" rot="46"/>
+<obj code="monster-lair2" x="25.8331" y="8.28125" rot="93"/>
+<obj code="monster6" x="26.9425" y="4.1875" rot="260"/>
+<obj code="monster6" x="26.7081" y="6.84375" rot="295"/>
+<obj code="monster-lair2" x="7.6875" y="1.40625" rot="40"/>
+<obj code="monster-lair1" x="3.98438" y="13.9375" rot="126"/>
+<obj code="monster-lair3" x="16.875" y="26.3906" rot="117"/>
+<obj code="monster-lair4" x="30.5594" y="44.2031" rot="2"/>
+<obj code="monster6" x="29.3406" y="44.2031" rot="80"/>
+<obj code="monster-lair6" x="32.0906" y="26.9531" rot="175"/>
+<obj code="monster-lair2" x="15.8406" y="16.2031" rot="27"/>
+<obj code="monster-lair1" x="7.10938" y="22.1661" rot="307"/>
+<obj code="pacman1" x="4.6875" y="19.6817" rot="113"/>
+<obj code="monster1" x="6" y="22.4474" rot="244"/>
+<obj code="monster1" x="7.8125" y="20.9161" rot="208"/>
+<obj code="monster1" x="8.03125" y="23.1036" rot="317"/>
+<obj code="monster2" x="2.64062" y="30.1574" rot="355"/>
+<obj code="monster4" x="10.25" y="28.2512" rot="170"/>
+<obj code="monster1" x="18.0156" y="43.375" rot="196"/>
+<obj code="monster1" x="16.6562" y="42.25" rot="84"/>
+<obj code="monster1" x="16.6622" y="38.2344" rot="92"/>
+<obj code="monster2" x="17.9903" y="32.2344" rot="340"/>
+<obj code="monster2" x="16.0997" y="31.2656" rot="335"/>
+<obj code="monster8" x="26.6309" y="35.9062" rot="135"/>
+<obj code="monster5" x="33.0469" y="32.9031" rot="90"/>
+<obj code="monster5" x="32.7969" y="34.0281" rot="90"/>
+<obj code="monster3" x="26.7188" y="25.6062" rot="193"/>
+<obj code="monster2" x="18.6063" y="19.8094" rot="281"/>
+<obj code="monster4" x="20.3563" y="16.2312" rot="162"/>
+<obj code="monster3" x="21.067" y="1.71875" rot="37"/>
+<obj code="monster3" x="23.4732" y="3.39062" rot="73"/>
+<obj code="monster3" x="19.8014" y="5.45312" rot="81"/>
+<obj code="monster3" x="23.2389" y="6.89062" rot="66"/>
+<obj code="monster2" x="7.64062" y="5.01562" rot="125"/>
+<obj code="monster2" x="11.2031" y="4" rot="42"/>
+<obj code="pacman1" x="8.6875" y="5.40625" rot="143"/>
+<obj code="monster6" x="1.26562" y="4.8125" rot="117"/>
+<obj code="monster2" x="2.85938" y="7" rot="261"/>
+<obj code="monster1" x="1.40625" y="8.79688" rot="263"/>
+<obj code="monster6" x="11.5156" y="10.3906" rot="311"/>
+<obj code="monster6" x="8.89062" y="11.0938" rot="243"/>
+<obj code="monster1" x="11.1094" y="18.7344" rot="322"/>
+<obj code="monster1" x="13.0312" y="18.3906" rot="170"/>
+<obj code="monster1" x="13.0625" y="14.2031" rot="343"/>
+<obj code="monster1" x="21.5625" y="10.3281" rot="347"/>
+<obj code="monster1" x="17.7031" y="7.25" rot="34"/>
+<obj code="monster4" x="24.1094" y="18.5938" rot="303"/>
+<obj code="monster1" x="26.1406" y="40.125" rot="352"/>
+<obj code="monster1" x="27.0781" y="41.9219" rot="165"/>
+<obj code="monster1" x="28.1562" y="39.5" rot="148"/>
+<obj code="monster4" x="15.8438" y="22.9219" rot="152"/>
+<obj code="monster1" x="1.4375" y="19.8281" rot="12"/>
+<obj code="monster1" x="1.25" y="21.5469" rot="214"/>
+<obj code="monster1" x="3.57812" y="22.9375" rot="188"/>
+<obj code="monster2" x="5.51562" y="12.5938" rot="177"/>
+<obj code="monster2" x="4.125" y="15.5156" rot="53"/>
+<obj code="monster3" x="9.32712" y="0.765625" rot="110"/>
+<obj code="monster1" x="14.374" y="20.2656" rot="266"/>
+<obj code="monster4" x="32.8428" y="15.7344" rot="269"/>
+<obj code="monster3" x="31.3896" y="29.625" rot="126"/>
+<obj code="monster4" x="28.7177" y="28.625" rot="263"/>
+<obj code="monster4" x="25.5302" y="33.5781" rot="156"/>
+<obj code="monster1" x="21.7021" y="33.625" rot="226"/>
+<obj code="monster1" x="23.3584" y="33" rot="122"/>
+<obj code="da" x="30.8281" y="21.4219"/>
+<region name="entry" x="1.0488" y="44.1094" rot="315" scale="1">
+</region>
+<region name="exit" x="36.5959" y="0.788294" rot="0" scale="1">
+<next-map>data/maps/level12.xml</next-map>
+<next-map-region>entry</next-map-region>
+</region>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="8.40625" y="9.32813" z="background" scale="1" rot="8.93791"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="7.79688" y="8.46875" z="background" scale="1" rot="26.833"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="9.85938" y="9.09375" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka2.png" x="10.3906" y="7.4375" z="background" scale="1" rot="-5.70335"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="10.5469" y="8.53125" z="background" scale="1" rot="21.8437"/>
+<sprite file="data/maps/doodahs/boulders/rock6.png" x="8.89063" y="8.67188" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="11.5781" y="8.46875" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="11.7656" y="7" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="11.5781" y="5.98438" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka8.png" x="10.0625" y="5.76563" z="background" scale="1" rot="-53.4248"/>
+<sprite file="data/maps/doodahs/boulders/rock1.png" x="9.5" y="5.3125" z="background" scale="1" rot="9.01178"/>
+<sprite file="data/maps/doodahs/boulders/rocka8.png" x="9.25" y="7.1875" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka2.png" x="7.76563" y="7.01563" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock3.png" x="8.5" y="7.71875" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock8.png" x="8.46875" y="6.82813" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree3.png" x="10.5625" y="6.29688" z="foreground" scale="1" rot="21.7633"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="7.40625" y="5.96875" z="foreground" scale="1" rot="-118.976"/>
+<sprite file="data/maps/doodahs/skeleton.png" x="1.95313" y="9.45313" z="background" scale="1" rot="-9.89565"/>
+<sprite file="data/maps/doodahs/deadtree1.png" x="7.29688" y="9.1875" z="foreground" scale="1" rot="118.443"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="34.25" y="0.453125" z="background" scale="1" rot="10.0345"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="34.2344" y="1.375" z="background" scale="1" rot="10.0345"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="34.2344" y="2.28125" z="background" scale="1" rot="10.0345"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="34.2031" y="3.1875" z="background" scale="1" rot="10.0345"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="34.1719" y="4.125" z="background" scale="1" rot="10.0345"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="34.0313" y="5.0625" z="background" scale="1" rot="-4.49449"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="33.6563" y="5.95313" z="background" scale="1" rot="-10.1639"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="33.1719" y="6.76563" z="background" scale="1" rot="-22.8881"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="32.5313" y="7.45313" z="background" scale="1" rot="-39.1569"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="31.8125" y="8.0625" z="background" scale="1" rot="-39.1569"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="33.1406" y="0.65625" z="background" scale="1" rot="24.324"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="31.4531" y="0.859375" z="background" scale="1" rot="14.2752"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="31" y="2.10938" z="background" scale="1" rot="-20.4158"/>
+<sprite file="data/maps/doodahs/boulders/rocka5.png" x="33.2188" y="1.9375" z="background" scale="1" rot="-34.066"/>
+<sprite file="data/maps/doodahs/boulders/rocka2.png" x="33.1563" y="3.25" z="background" scale="1" rot="-3.27008"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="31.5" y="3.48438" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="32.3594" y="5.23438" z="background" scale="1.04539" rot="20.134"/>
+<sprite file="data/maps/doodahs/boulders/rocka8.png" x="31.6719" y="7.1875" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="31.0313" y="5.28125" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="29.8281" y="4.6875" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="29.9219" y="3.32813" z="background" scale="1" rot="45.0655"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="28.625" y="4.20313" z="background" scale="1" rot="-26.8238"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="27.9844" y="3.04688" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="29.0781" y="1.79688" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="28.6094" y="0.734375" z="background" scale="1" rot="9.87317"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="30.2656" y="6.1875" z="background" scale="1" rot="-5.46842"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="30.4375" y="7.53125" z="background" scale="1" rot="38.5181"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="27.4375" y="1.73438" z="background" scale="1" rot="27.0579"/>
+<sprite file="data/maps/doodahs/boulders/rocka5.png" x="28.5469" y="6.0625" z="background" scale="1" rot="-19.1672"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="30.0156" y="1.96875" z="foreground" scale="1" rot="-23.5798"/>
+<sprite file="data/maps/doodahs/palmtree6.png" x="29.1719" y="6.875" z="foreground" scale="1" rot="-95.5391"/>
+<sprite file="data/maps/doodahs/palmtree6.png" x="26.2969" y="0.625" z="foreground" scale="1" rot="-77.1933"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="38.7656" y="0.453125" z="background" scale="1" rot="8.74632"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="38.7813" y="1.32813" z="background" scale="1" rot="8.74632"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="38.7813" y="2.23438" z="background" scale="1" rot="8.74632"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="38.7813" y="3.15625" z="background" scale="1" rot="8.18727"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="38.8594" y="4.07813" z="background" scale="1" rot="17.4554"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="39.0781" y="5" z="background" scale="1" rot="26.3426"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="39.4063" y="5.84375" z="background" scale="1" rot="32.3015"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="39.8281" y="6.65625" z="background" scale="1" rot="40.1858"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="40.375" y="7.42188" z="background" scale="1" rot="49.2121"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="41.0938" y="8.01563" z="background" scale="1" rot="57.9862"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="41.875" y="8.53125" z="background" scale="1" rot="65.281"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="42.75" y="8.90625" z="background" scale="1" rot="74.6257"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="43.6563" y="9.23438" z="background" scale="1" rot="74.6257"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="44.5156" y="9.73438" z="background" scale="1" rot="65.5419"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="39.6875" y="0.84375" z="background" scale="1" rot="25.6759"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="39.5469" y="2.53125" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="41.2188" y="0.765625" z="background" scale="1" rot="-8.41793"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="40.9375" y="2.5625" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka5.png" x="39.9688" y="4.20313" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="42.8281" y="1.4375" z="background" scale="1" rot="-0.458983"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="43.5938" y="3.6875" z="background" scale="1" rot="-10.888"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="44.1875" y="6.03125" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="42.1563" y="5.40625" z="background" scale="1" rot="-28.6658"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="44.0156" y="8.35938" z="background" scale="1" rot="21.7639"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="42.4844" y="7.84375" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="40.4375" y="6.625" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka2.png" x="40.875" y="5.04688" z="background" scale="1" rot="74.8837"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="43" y="6.5625" z="background" scale="1" rot="32.1814"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="42.1094" y="3.90625" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="44.2188" y="2.29688" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/foliage9.png" x="42.0625" y="3.96875" z="foreground" scale="1" rot="-53.8802"/>
+<sprite file="data/maps/doodahs/foliage8.png" x="43.9375" y="8.28125" z="foreground" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree1.png" x="40.0156" y="5.3125" z="foreground" scale="1.1186" rot="28.8554"/>
+<sprite file="data/maps/doodahs/palmtree6.png" x="43.2656" y="2.10938" z="foreground" scale="1.06044" rot="-28.9386"/>
+<sprite file="data/maps/doodahs/palmtree4.png" x="39.2656" y="1.32813" z="foreground" scale="1" rot="34.2648"/>
+<sprite file="data/maps/doodahs/desert/desert_skeleton_002.png" x="30.75" y="8.67188" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/bones.png" x="35.3906" y="6.375" z="background" scale="0.530226" rot="37.6168"/>
+<sprite file="data/maps/doodahs/desert/sculpture4.png" x="36.6563" y="15.4219" z="foreground" scale="1" rot="0"/>
+<sprite animname="core/anim/doodahs/oasis" x="10.6094" y="36.9063" z="background" scale="8" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="9.40625" y="38.7969" z="foreground" scale="1.14084" rot="-28.821"/>
+<sprite file="data/maps/doodahs/palmtree1.png" x="11.7813" y="34.8438" z="foreground" scale="1.08112" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree6.png" x="12.75" y="42.1719" z="foreground" scale="1.05093" rot="27.2557"/>
+<sprite file="data/maps/doodahs/palmtree4.png" x="4.40625" y="35.5469" z="foreground" scale="1" rot="39.5625"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="3.45313" y="39.7344" z="foreground" scale="1.11041" rot="-23.0834"/>
+<sprite file="data/maps/doodahs/palmtree3.png" x="6.10938" y="43.1406" z="foreground" scale="1.09998" rot="-33.9817"/>
+<sprite file="data/maps/doodahs/palmtree1.png" x="17.1406" y="43.2813" z="foreground" scale="1.01914" rot="170.942"/>
+<sprite file="data/maps/doodahs/palmtree3.png" x="16.0469" y="37.9531" z="foreground" scale="1.071" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="16.8438" y="32.1875" z="foreground" scale="1.11156" rot="-163.988"/>
+<sprite file="data/maps/doodahs/palmtree4.png" x="9.51563" y="28.1094" z="foreground" scale="1" rot="-34.3432"/>
+<sprite file="data/maps/doodahs/palmtree6.png" x="3.34375" y="30.2969" z="foreground" scale="1" rot="21.597"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="4.67188" y="38.7813" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="7.54688" y="42.4063" z="background" scale="1" rot="12.7706"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="3.75" y="43.5" z="background" scale="1" rot="3.82818"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="7.0625" y="44.2969" z="background" scale="1" rot="3.82818"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="12.125" y="40.8281" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="11.125" y="43.4531" z="background" scale="1" rot="12.2324"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="15.25" y="36.4844" z="background" scale="1" rot="12.2324"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="18.3906" y="41.5781" z="background" scale="1" rot="12.2324"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="18.6094" y="44.4844" z="background" scale="1" rot="26.3911"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="15.7188" y="41.7813" z="background" scale="1" rot="26.3911"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="15.7969" y="44.3125" z="background" scale="1" rot="-19.9004"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="17.875" y="33.9844" z="background" scale="1" rot="-19.9004"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="19.4688" y="37.5" z="background" scale="1" rot="3.74787"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="18.7969" y="38.5" z="background" scale="1" rot="-8.61449"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="16.1094" y="30.2344" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="14.7969" y="33.0469" z="background" scale="1" rot="18.1702"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="10.6875" y="33.3594" z="background" scale="1" rot="2.06621"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="11.2188" y="27.8281" z="background" scale="1" rot="19.9524"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="11.1719" y="30.375" z="background" scale="1" rot="19.9524"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="7.67188" y="27.5" z="background" scale="1" rot="9.0287"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="8.4375" y="30.2188" z="background" scale="1" rot="-1.80823"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="3.1875" y="27.6563" z="background" scale="1" rot="-1.80823"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="1.3125" y="29.5" z="background" scale="1" rot="-10.4204"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="2.60938" y="31.7188" z="background" scale="1" rot="7.48636"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="4.96875" y="33.1875" z="background" scale="1" rot="14.0316"/>
+<sprite file="data/maps/doodahs/boulders/boulder1.png" x="8.10938" y="34.3438" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="7.46875" y="33.2344" z="foreground" scale="1.05991" rot="-48.3041"/>
+<sprite file="data/maps/doodahs/palmtree3.png" x="6.79688" y="34.6563" z="foreground" scale="1" rot="-94.0338"/>
+<sprite file="data/maps/doodahs/palmtree1.png" x="6.0625" y="33.1875" z="foreground" scale="1" rot="-75.1144"/>
+<sprite file="data/maps/doodahs/palmtree1.png" x="21.0781" y="40.7188" z="foreground" scale="1" rot="-197.481"/>
+<sprite file="data/maps/doodahs/beast_skull_small.png" x="39.875" y="8.125" z="background" scale="1" rot="-13.4843"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="28.8438" y="7.9375" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka5.png" x="27.6563" y="9.35938" z="background" scale="1" rot="-16.2895"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="27.5469" y="8.54688" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka8.png" x="27.4531" y="10.7344" z="background" scale="1" rot="-4.1579"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="26.3125" y="10.1094" z="background" scale="1" rot="27.4849"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="24.7188" y="10.3125" z="background" scale="1" rot="19.837"/>
+<sprite file="data/maps/doodahs/boulders/rocka8.png" x="25.4688" y="11.625" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="26.3906" y="12.0313" z="background" scale="1" rot="25.3395"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="24.9688" y="13.1719" z="background" scale="1" rot="25.0481"/>
+<sprite file="data/maps/doodahs/boulders/rocka2.png" x="23.6406" y="11.5469" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka2.png" x="23.8438" y="14.3438" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="23.6563" y="12.8438" z="background" scale="1" rot="15.2744"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="22.7656" y="13.5781" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka5.png" x="21.9531" y="15.25" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="21.875" y="16.5156" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="23.2656" y="15.7031" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="22.6406" y="17.3594" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="23.7344" y="17.0781" z="background" scale="1" rot="-32.2572"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="25.0625" y="17.0938" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="25.2969" y="14.875" z="background" scale="1" rot="-21.712"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="21.5469" y="18.0781" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="18.6875" y="3.0625" z="foreground" scale="1" rot="-133.522"/>
+<sprite file="data/maps/doodahs/palmtree4.png" x="25.5938" y="9.45313" z="foreground" scale="1" rot="89.659"/>
+<sprite file="data/maps/doodahs/palmtree3.png" x="22.2656" y="7.85938" z="foreground" scale="1" rot="20.2005"/>
+<sprite file="data/maps/doodahs/palmtree4.png" x="25.7656" y="13.6094" z="foreground" scale="1" rot="-120.432"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="24.25" y="15.8438" z="foreground" scale="1" rot="46.8317"/>
+<sprite file="data/maps/doodahs/palmtree4.png" x="21.4688" y="14.3281" z="foreground" scale="1" rot="46.9246"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="16.9219" y="15.8906" z="foreground" scale="1" rot="21.5708"/>
+<sprite file="data/maps/doodahs/foliage9.png" x="23.6875" y="13.0781" z="foreground" scale="1" rot="-23.7472"/>
+<sprite file="data/maps/doodahs/foliage8.png" x="22.1094" y="16.625" z="foreground" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/foliage8.png" x="11.5781" y="8.53125" z="foreground" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree1.png" x="5.82813" y="1.10938" z="foreground" scale="1" rot="55.862"/>
+<sprite file="data/maps/doodahs/bones1.png" x="5" y="1.70313" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="7.64063" y="0.640625" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="7.70313" y="2.6875" z="background" scale="1" rot="15.9134"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="5.85938" y="2.3125" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="4" y="0.484375" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="4.125" y="1.78125" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="4.32813" y="5.15625" z="background" scale="1" rot="-23.7456"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="1.42188" y="6.96875" z="foreground" scale="1.05918" rot="27.0611"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="5.04688" y="13.9063" z="foreground" scale="1.05918" rot="-21.7306"/>
+<sprite file="data/maps/doodahs/palmtree3.png" x="3.25" y="20.4531" z="foreground" scale="1" rot="64.0548"/>
+<sprite file="data/maps/doodahs/desert/sculpture1.png" x="4.1875" y="21.0313" z="background" scale="1" rot="121.848"/>
+<sprite file="data/maps/doodahs/boulders/rock1.png" x="3.82813" y="20.0938" z="background" scale="1" rot="12.1716"/>
+<sprite file="data/maps/doodahs/boulders/rock3.png" x="3.10938" y="20.7813" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="2.95313" y="20.1719" z="background" scale="1" rot="-1.92861"/>
+<sprite file="data/maps/doodahs/desert/skeleton2.png" x="6.34375" y="18.3438" z="background" scale="1.05951" rot="-3.18568"/>
+<sprite file="data/maps/doodahs/desert/skeleton.png" x="7.10938" y="22.6719" z="background" scale="0.839465" rot="-27.1561"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="17.4688" y="21.0469" z="background" scale="1" rot="12.4903"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="17.8281" y="22.2344" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock5.png" x="16.6719" y="22.0625" z="background" scale="1" rot="-29.5137"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="17.1406" y="23.25" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka8.png" x="19.1094" y="22.6094" z="background" scale="1" rot="15.1011"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="17.8906" y="24.6875" z="background" scale="1" rot="-5.14566"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="18.75" y="25.4375" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka5.png" x="19.5156" y="24.0625" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="20.6719" y="23.3906" z="background" scale="1" rot="-1.42379"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="19.875" y="25.0781" z="background" scale="1" rot="12.8674"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="21.0938" y="24.8125" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="22.4219" y="24.9688" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="23.5469" y="25.0938" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka8.png" x="23.0938" y="26.6094" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="21.3281" y="26.0781" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="22.0469" y="27.25" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="20.8906" y="27.5156" z="background" scale="1" rot="-23.1108"/>
+<sprite file="data/maps/doodahs/boulders/rocka5.png" x="19.2969" y="26.9063" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka8.png" x="19.6094" y="28.3281" z="background" scale="1" rot="9.76119"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="24.1094" y="24.125" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="24.7656" y="25.8594" z="background" scale="1" rot="16.3095"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="22.1719" y="28.6875" z="background" scale="1" rot="-9.26316"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="21.3906" y="22.7656" z="background" scale="1" rot="40.7759"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="25.3438" y="24.4219" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="25.4531" y="27.1406" z="background" scale="1" rot="-39.9603"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="25.8125" y="28.2344" z="background" scale="1" rot="30.5919"/>
+<sprite file="data/maps/doodahs/boulders/rocka5.png" x="23.7656" y="27.7344" z="background" scale="1" rot="37.3572"/>
+<sprite file="data/maps/doodahs/boulders/rocka8.png" x="23.5781" y="29.4375" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="24.4375" y="29.4531" z="background" scale="1" rot="-6.51854"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="25.2344" y="29.7969" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="18.2031" y="23.5938" z="foreground" scale="1.08091" rot="-29.0202"/>
+<sprite file="data/maps/doodahs/palmtree4.png" x="18.8281" y="28.0625" z="foreground" scale="1" rot="75.6382"/>
+<sprite file="data/maps/doodahs/palmtree3.png" x="25.1094" y="25.2031" z="foreground" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree4.png" x="25.0469" y="28" z="foreground" scale="1" rot="-73.8193"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="20.75" y="25.3438" z="foreground" scale="1" rot="-59.1311"/>
+<sprite file="data/maps/doodahs/foliage8.png" x="23.8281" y="29.1719" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/foliage9.png" x="23.7813" y="24.75" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock5.png" x="20.1875" y="28.125" z="background" scale="1" rot="-10.6571"/>
+<sprite file="data/maps/doodahs/boulders/rock3.png" x="21.9688" y="23.7969" z="background" scale="1" rot="-3.75968"/>
+<sprite file="data/maps/doodahs/boulders/rock6.png" x="21.1094" y="23.9531" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="25.4688" y="26.0313" z="background" scale="1" rot="7.3177"/>
+<sprite file="data/maps/doodahs/boulders/rock8.png" x="22.25" y="26.1719" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock8.png" x="23.7813" y="30.1563" z="background" scale="1" rot="-3.92304"/>
+<sprite file="data/maps/doodahs/boulders/rock8.png" x="18.5625" y="26.375" z="background" scale="1" rot="-48.8908"/>
+<sprite file="data/maps/doodahs/boulders/rock5.png" x="19.6719" y="22.9219" z="background" scale="1" rot="-10.5336"/>
+<sprite file="data/maps/doodahs/boulders/rock6.png" x="20.4531" y="26.4688" z="background" scale="1" rot="-7.46637"/>
+<sprite file="data/maps/doodahs/palmtree6.png" x="11.6094" y="19.5" z="foreground" scale="1" rot="-44.4871"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="44.3594" y="26.125" z="background" scale="1" rot="-3.89709"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="44.1875" y="27.8594" z="background" scale="1" rot="14.3291"/>
+<sprite file="data/maps/doodahs/boulders/rocka5.png" x="42.8281" y="26.375" z="background" scale="1" rot="-12.8841"/>
+<sprite file="data/maps/doodahs/boulders/rocka2.png" x="41.5625" y="27.1406" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="40.0781" y="27.7656" z="background" scale="1" rot="24.3755"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="39.0625" y="27.8281" z="background" scale="1" rot="12.5278"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="39.1563" y="29.1406" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="37.4531" y="28.4375" z="background" scale="1" rot="8.62093"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="41.8594" y="28.3281" z="background" scale="1" rot="-32.6635"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="43.2813" y="28.7656" z="background" scale="1" rot="21.4593"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="40.6563" y="29.4063" z="background" scale="1" rot="50.6264"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="38" y="30.2656" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="39.5625" y="30.3125" z="background" scale="1" rot="14.9485"/>
+<sprite file="data/maps/doodahs/boulders/rocka5.png" x="36.25" y="29.8438" z="background" scale="1" rot="-19.9603"/>
+<sprite file="data/maps/doodahs/boulders/rocka2.png" x="36.8438" y="31.0156" z="background" scale="1" rot="-16.1686"/>
+<sprite file="data/maps/doodahs/boulders/rocka8.png" x="35.4844" y="31.2031" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="38.4688" y="31.6719" z="background" scale="1" rot="60.4624"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="36.0156" y="32.2969" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="37.4688" y="32.3906" z="background" scale="1" rot="-10.6031"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="36.9531" y="33.625" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="34.6719" y="32.5469" z="background" scale="1" rot="10.8491"/>
+<sprite file="data/maps/doodahs/boulders/rocka5.png" x="35.3438" y="33.8125" z="background" scale="1" rot="-14.3283"/>
+<sprite file="data/maps/doodahs/boulders/rocka8.png" x="35.625" y="35.0938" z="background" scale="1" rot="-9.1868"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="39.9531" y="31.5938" z="background" scale="1" rot="12.8413"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="42.4063" y="29.9844" z="background" scale="1" rot="-10.5184"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="44.3281" y="29.7969" z="background" scale="1" rot="-40.8175"/>
+<sprite file="data/maps/doodahs/boulders/rocka1.png" x="34.2344" y="34.5469" z="background" scale="1" rot="-2.72566"/>
+<sprite file="data/maps/doodahs/boulders/rock1.png" x="34.7969" y="31.4844" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock6.png" x="36.2969" y="34.8281" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock3.png" x="34.1719" y="33.5313" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock8.png" x="34.9844" y="35.25" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock6.png" x="36.5313" y="29.0469" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock3.png" x="40.7969" y="26.875" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock2.png" x="42.5313" y="27.125" z="background" scale="1" rot="-6.70568"/>
+<sprite file="data/maps/doodahs/boulders/rock5.png" x="43.125" y="27.4063" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock7.png" x="40.4219" y="30.8438" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rock4.png" x="38.3594" y="29.2813" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="38.3125" y="28.4531" z="foreground" scale="1.0798" rot="-41.4285"/>
+<sprite file="data/maps/doodahs/foliage9.png" x="41.7188" y="28.3594" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="38.5313" y="32.375" z="foreground" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree4.png" x="34.6719" y="30.875" z="foreground" scale="1" rot="26.9262"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="33.25" y="26.8125" z="background" scale="1" rot="-164.399"/>
+<sprite file="data/maps/doodahs/desert/desert_skeleton_001.png" x="43.625" y="31.2031" z="background" scale="1" rot="-12.4793"/>
+<sprite file="data/maps/doodahs/tree-strange.png" x="44.4219" y="30.6094" z="foreground" scale="0.899149" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree3.png" x="22.9063" y="32.7656" z="foreground" scale="1" rot="41.9056"/>
+<sprite file="data/maps/doodahs/boulders/rock3.png" x="34.5" y="42" z="background" scale="1" rot="-5.52004"/>
+<sprite file="data/maps/doodahs/boulders/rock6.png" x="35.9688" y="40.4375" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="36.7969" y="40.5156" z="background" scale="1" rot="-26.2241"/>
+<sprite file="data/maps/doodahs/boulders/rocka2.png" x="37.5313" y="41.7188" z="background" scale="1" rot="20.1234"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="39.3438" y="41.1094" z="background" scale="1" rot="-10.6196"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="38.6875" y="43.2969" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka4.png" x="33.3281" y="41.8125" z="background" scale="1" rot="1.85446"/>
+<sprite file="data/maps/doodahs/boulders/rocka2.png" x="32.0625" y="43.1406" z="background" scale="1" rot="-14.4048"/>
+<sprite file="data/maps/doodahs/boulders/rocka3.png" x="33.7344" y="43.9844" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka6.png" x="35.2188" y="42.875" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/boulders/rocka7.png" x="37.3906" y="43.7969" z="background" scale="1" rot="21.8555"/>
+<sprite file="data/maps/doodahs/boulders/rocka8.png" x="36.3281" y="42.75" z="background" scale="1" rot="19.7812"/>
+<sprite file="data/maps/doodahs/boulders/rocka5.png" x="32.4688" y="44.4531" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="38.7813" y="42" z="foreground" scale="1" rot="-138.353"/>
+<sprite file="data/maps/doodahs/palmtree5.png" x="35.7969" y="43.1875" z="foreground" scale="1" rot="-95.4061"/>
+<sprite file="data/maps/doodahs/desert/sculpture3.png" x="25.9375" y="34.9844" z="background" scale="1" rot="147.347"/>
+<sprite file="data/maps/doodahs/bones2.png" x="35.4219" y="41.5781" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/skeleton.png" x="29.4844" y="42.2813" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/palmtree2.png" x="34.3594" y="41.6406" z="foreground" scale="1" rot="-111.614"/>
+<sprite file="data/maps/doodahs/desert/bucket.png" x="13.25" y="33.1094" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/broken_wheel_2.png" x="6.96875" y="39.8594" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/broken_wheel_1.png" x="6.8125" y="38.6875" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/bucket.png" x="10.3906" y="40.0938" z="background" scale="1" rot="-43.7787"/>
+<sprite file="data/maps/doodahs/desert/green_bottle.png" x="5.79688" y="37.5469" z="background" scale="1" rot="3.7697"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="17.5" y="13.8594" z="background" scale="1" rot="18.4032"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="18.1563" y="17.0156" z="background" scale="1" rot="11.3668"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="20.8281" y="7.98438" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="22.7344" y="9.79688" z="background" scale="1" rot="-17.8014"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="23.0625" y="5.75" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="6.20313" y="12.6875" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/grass2.png" x="23.6406" y="42.2188" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/desert/grass1.png" x="25.3125" y="39.0781" z="background" scale="1" rot="9.91232"/>
+<sprite file="data/maps/doodahs/desert/bones.png" x="31.9219" y="36.5313" z="background" scale="0.584489" rot="23.216"/>
+<sprite file="data/maps/doodahs/deadtree1.png" x="25.1094" y="34.7344" z="foreground" scale="1" rot="-4.4799"/>
+<sprite file="data/maps/doodahs/deadtree1.png" x="44.4375" y="40.1875" z="foreground" scale="1" rot="35.4564"/>
+<sprite file="data/maps/doodahs/deadtree3.png" x="33.7813" y="33.1563" z="foreground" scale="1" rot="-57.3877"/>
+<sprite file="data/maps/doodahs/desert/leaf.png" x="25.9375" y="34.7344" z="foreground" scale="1" rot="34.662"/>
+<sprite file="data/maps/doodahs/desert/leaf.png" x="24.2031" y="34.6406" z="foreground" scale="1" rot="34.662"/>
+<sprite file="data/maps/doodahs/desert/leaf.png" x="24.8438" y="35.5" z="foreground" scale="1" rot="88.3518"/>
+<sprite file="data/maps/doodahs/desert/leaf.png" x="44.4375" y="40.8906" z="foreground" scale="1" rot="52.8755"/>
+<sprite file="data/maps/doodahs/desert/leaf.png" x="44.2344" y="39.7344" z="foreground" scale="1" rot="52.8755"/>
+<sprite file="data/maps/doodahs/desert/leaf.png" x="43.7656" y="39.9219" z="foreground" scale="1" rot="-19.3488"/>
+<sprite file="data/maps/doodahs/deadtree1.png" x="30.9844" y="21.5" z="foreground" scale="1" rot="71.6603"/>
+<sprite file="data/maps/doodahs/deadtree2.png" x="42.9219" y="23.0781" z="foreground" scale="1" rot="34.1826"/>
+<sprite file="data/maps/doodahs/desert/sculpture2.png" x="34.5938" y="4.9375" z="foreground" scale="1" rot="36.4722"/>
+<sprite file="data/maps/doodahs/desert/sculpture2.png" x="38.4531" y="4.85938" z="foreground" scale="1" rot="-37.6664"/>
+<sprite file="data/maps/doodahs/boulders/rock2.png" x="32.5313" y="42.1406" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/deadtree1.png" x="28.4688" y="4.875" z="foreground" scale="1.05842" rot="-71.9038"/>
+</map>
