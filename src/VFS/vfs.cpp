@@ -21,7 +21,7 @@ VFSReader::~VFSReader()
 
 void VFSReader::OpenFileSystem(const char* filename)
 {
-    if(FileUtils::IsFileExists(filename)){
+    if(FileUtils::FileExists(filename)){
         file = new std::ifstream();
         file->open(filename, std::ios::binary);
         file->read((char*)&header, sizeof(header));
@@ -60,9 +60,9 @@ const VFSFile VFSReader::GetFile(const char* filename)
 {
 	std::string filepath = CGameOptions::GetModDir() + filename;
 	bool file_found;
-	if (FileUtils::IsFileExists(filepath.c_str()))
+	if (FileUtils::FileExists(filepath.c_str()))
 		file_found = true;
-	else if (FileUtils::IsFileExists(filename))
+	else if (FileUtils::FileExists(filename))
 	{
 		filepath = filename;
 		file_found = true;

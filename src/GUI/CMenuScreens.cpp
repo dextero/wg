@@ -1482,7 +1482,7 @@ void CMenuScreens::ChooseControls(const std::wstring& controls)
 
 void CMenuScreens::TryStartGame(const std::wstring& runMode)
 {
-    if (FileUtils::IsFileExists((gGameOptions.GetUserDir() + "/first_game").c_str()))
+    if (FileUtils::FileExists((gGameOptions.GetUserDir() + "/first_game").c_str()))
     {
         mNewGameMode = runMode;
         Show(L"choose-controls-menu");

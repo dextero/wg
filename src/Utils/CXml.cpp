@@ -12,7 +12,7 @@ CXml::CXml(std::string filename, std::string root)
 : mXmlRoot( NULL ), mFilename(filename), mFile( NULL )
 {
 	std::string filepath = CGameOptions::GetModDir() + filename;
-	if (!FileUtils::IsFileExists (filepath.c_str()))
+	if (!FileUtils::FileExists (filepath.c_str()))
 		filepath = filename;
     try{
         mFile = new file<>( filepath.c_str() );

@@ -684,7 +684,7 @@ void CommandVFSLoad(size_t argc, const std::vector<std::wstring> &argv)
 {
     if (argc > 1)
     {
-        if (!FileUtils::IsFileExists(StringUtils::ConvertToString(argv[1]).c_str()))
+        if (!FileUtils::FileExists(StringUtils::ConvertToString(argv[1]).c_str()))
         {
             gConsole.Printf(L"File %s doesn't exist.", argv[1].c_str());
             return;

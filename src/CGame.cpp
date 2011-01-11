@@ -8,6 +8,7 @@
 #include "Logic/CLogic.h"
 #include "Utils/CClock.h"
 #include "Utils/CRand.h"
+#include "Utils/FileUtils.h"
 #include "Utils/StringUtils.h"
 #include "Input/CInputHandler.h"
 #include "Input/CBindManager.h"
@@ -60,6 +61,11 @@ CGame::CGame():
 {
     fprintf( stderr, "CGame::CGame()\n" );
     fflush(stderr);
+
+    if (!FileUtils::FileExists(FileUtils::GetUserDir()))
+    {
+        FileUtils::InitializeUserDir();
+    }
 
 #ifndef __EDITOR__
 	

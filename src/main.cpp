@@ -25,7 +25,7 @@ int main( int argc, char* argv[] ){
 			}
 
 			std::string moddir (argv[i+1]);
-			if (FileUtils::IsFileExists ((moddir + "/mod-info.xml").c_str()) ){
+			if (FileUtils::FileExists ((moddir + "/mod-info.xml").c_str()) ){
 				CGameOptions::SetModDir (moddir + '/');
 				fprintf (stderr, "loading mod %s...\n", argv[i+1]);
 			}
