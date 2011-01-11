@@ -1,5 +1,6 @@
 #include "CGameOptions.h"
 #include "CGame.h"
+#include "Utils/FileUtils.h"
 #include "Utils/StringUtils.h"
 #include "Utils/CXml.h"
 
@@ -76,19 +77,12 @@ bool AskForFullscreen(unsigned int &maxw, unsigned int &maxh)
 
 template<> CGameOptions* CSingleton<CGameOptions>::msSingleton = 0;
 
-bool FileExists( const std::string& filename )
-{
-	std::ifstream f( filename.c_str(), std::ios::in );
-	f.close();
-	return ( !f.fail() );
-}
-
 bool CGameOptions::LoadOptions()
 {
 	unsigned int configVer = 0;
 	unsigned int userConfigVer = 0;
 
-	if ( FileExists( "data/config.xml" ) )
+	if ( FileUtils::FileExists( "data/config.xml" ) )
 	{
 		CXml xml( "data/config.xml", "root" );
 		configVer = xml.GetInt( NULL, "version" );
@@ -96,15 +90,15 @@ bool CGameOptions::LoadOptions()
 
 	bool is_first_game = false;
 	
-	if ( FileExists( GetUserDir() + "/config.xml" ) )
+	if ( FileUtils::FileExists( FileUtils::GetUserDir() + "/config.xml" ) )
 	{
-		CXml xml( GetUserDir() + "/config.xml", "root" );
+		CXml xml( FileUtils::GetUserDir() + "/config.xml", "root" );
 		userConfigVer = xml.GetInt( NULL, "version" );
 	}
     else
     {
         // nie ma user/config, stworz plik first_game, zeby gracz wybral sobie sterowanie..
-        std::ofstream first_game( (GetUserDir() + "/first_game").c_str() );
+        std::ofstream first_game( (FileUtils::GetUserDir() + "/first_game").c_str() );
         first_game.close();
 		is_first_game = true;
     }
@@ -115,7 +109,7 @@ bool CGameOptions::LoadOptions()
 		return false;
 	}
 
-	CXml xml( configVer > userConfigVer ? "data/config.xml" : gGameOptions.GetUserDir() + "/config.xml", "root" );
+	CXml xml( configVer > userConfigVer ? "data/config.xml" : FileUtils::GetUserDir() + "/config.xml", "root" );
 
     // poczatek ladowania locale
     mLocaleLang = xml.GetString("locale","lang");
@@ -155,8 +149,8 @@ bool CGameOptions::LoadOptions()
     // koniec ladowania locale
 
     // ladowanie achievementow
-    if (FileExists(GetUserDir() + "/achievements.xml"))
-        gAchievementManager.Load(GetUserDir() + "/achievements.xml");
+    if (FileUtils::FileExists(FileUtils::GetUserDir() + "/achievements.xml"))
+        gAchievementManager.Load(FileUtils::GetUserDir() + "/achievements.xml");
     else
         gAchievementManager.Load("data/achievements.xml");
 
@@ -349,29 +343,6 @@ void CGameOptions::UpdateWindow()
 	gCamera.Update( 0.0f );
 }
 
-#ifdef PLATFORM_MACOSX
-extern "C" const char * CreateDirectoryIfNotExists(const char *dname);
-#endif
-#if _WIN32
-std::wstring GetWindowsUserDir();
-#endif
-
-std::string GetUserDir()
-{
-#if _WIN32
-	// Windows
-	return CGameOptions::mModDir + "user";
-	//return StringUtils::ConvertToString(GetWindowsUserDir());
-#else
-#ifdef PLATFORM_MACOSX
-	// OSX
-	return CreateDirectoryIfNotExists((std::string("~/Library/WarsztatGame")+CGameOptions::mModDir).c_str());
-#else
-	// Linux
-	return CGameOptions::mModDir + "user";
-#endif
-#endif
-}
 
 CGameOptions::CGameOptions():
     mVersion(0),
@@ -384,7 +355,7 @@ CGameOptions::CGameOptions():
     mSoundVolume(100.f),
     mMusicVolume(100.f)
 {
-	mUserDir = ::GetUserDir();
+	mUserDir = FileUtils::GetUserDir();
 
     fprintf(stderr, "CGameOptions::CGameOptions(), userDir = %s\n", mUserDir.c_str());
 	gInputHandler; /* zapewniamy wykonanie konstruktora CInputHandlera przed zaladowaniem opcji */

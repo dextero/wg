@@ -220,7 +220,7 @@ unsigned int CRandomMapGenerator::DistanceDijkstra(sf::Vector2i start, sf::Vecto
 bool CRandomMapGenerator::GenerateIntermediateTile(const std::string& outFile, const std::string& topLeft, const std::string& topRight, const std::string& bottomLeft, const std::string& bottomRight, unsigned int tileMask)
 {
     // moze juz istnieje?
-    if (FileUtils::IsFileExists(outFile.c_str()))
+    if (FileUtils::FileExists(outFile.c_str()))
         return true;
 
     // nie ma prawa wystapic sytuacja, kiedy generujemy posrednie kafle z
