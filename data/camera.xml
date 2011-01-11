@@ -12,5 +12,5 @@
 	max(zmin, min(zmax, zoom1 + (zoom2-zoom1)/(width2-width1) * (resX-width1)))
 	*/
 	
-	<zoom>0.5</zoom>
+    <zoom>max(1.0, min(1.6, 1.0 + (1.4-1.0)/(1680-800)*(resX-800)))</zoom>
 </root>

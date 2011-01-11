@@ -1,0 +1,4 @@
+dopisac do .hg/hgrc:
+
+[extensions]
+describe = tools/hgdescribe/describe.py

@@ -1,11 +1,12 @@
-OLD_BINARY_NAME = warsztat_game
-BINARY_NAME = warlocks_gauntlet
+GAMENAME = WarlocksGauntlet
+
+BINARY = $(GAMENAME).bin32
 
 -include Makefile.sources
 
 CPPFLAGS = -I"build/includes/SFML-1.4/include" -I"build/includes" -DPLATFORM_LINUX
 
-LDFLAGS = -L"./lib"
+LDFLAGS = -L"./libs32"
 
 LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
@@ -17,9 +18,8 @@ CXXFLAGS = -g -Wall
 #powyzsze -O3 powodowalo:
 #http://img183.imageshack.us/img183/8780/gameplay.png
 
-release: CXXFLAGS = -O2
-
-iamtoxic: CXXFLAGS += -D__I_AM_TOXIC__
+release: CXXFLAGS = -O2 -static-libgcc
+release: OTHER_OBJECTS = /usr/lib/gcc/i486-linux-gnu/4.4.1/libstdc++.a
 
 #edytor
 ifneq ($(findstring editor,$(MAKECMDGOALS)),)
@@ -34,21 +34,6 @@ endif
 
 CXX = g++
 
-
-
-
-
-#cross kompilacja
-ifneq ($(findstring cross-compile,$(MAKECMDGOALS)),)
-  BINARY_SUFFIX = .exe
-  CPPFLAGS = -I"../SFML-1.4-cross/include" 
-  LDFLAGS = -L"../SFML-1.4-cross/lib/mingw"
-  CXX = i686-pc-mingw32-g++
-endif
-
-OLD_BINARY = $(OLD_BINARY_NAME)$(BINARY_SUFFIX)
-BINARY = $(BINARY_NAME)$(BINARY_SUFFIX)
-
 ########################
 
 Debug: all
@@ -58,7 +43,7 @@ Release: all
 all: $(BINARY)
 
 $(BINARY): $(OBJECTS)
-	$(CXX) -o $@ $(OBJECTS) $(LDFLAGS) $(LIBS)
+	$(CXX) -o $@ $(OBJECTS) $(CPPFLAGS) $(LDFLAGS) $(LIBS) $(OTHER_OBJECTS)
 
 %.d: %.cpp
 	-$(CXX) -E $(CXXFLAGS)  $(CPPFLAGS) -MM -MP -MF $@ -MQ $(@:.d=.s) -MQ $(@:.d=.o) -MQ $@ $<
@@ -76,30 +61,7 @@ clean:
 #czyszczenie plikow edytora
 clean-editor: clean
 
-deploy:
-	rm -rf deploy
-	rm -rf wg-r*
-	mkdir deploy
-	svn export data deploy/data
-	svn export user deploy/user
-	cp *.dll $(BINARY).exe deploy
-	mv deploy wg-r`svn info | grep Revision | cut -d" " -f2`-`date +%F_%H-%M-%S`
-	zip -9 -r `ls | grep wg-r`.zip wg-r*
-	scp wg-*.zip zodiac:public_html/wg
-	rm -rf wg-*
-
-test:	$(BINARY)
-ifneq ($(findstring cross-compile,$(MAKECMDGOALS)),)
-	wine $(BINARY)
-else
-	./$(BINARY)
-endif
-
-cross-compile: all
-
 release: all
-
-iamtoxic: all
 
 editor: all
 
