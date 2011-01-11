@@ -1,0 +1,16 @@
+Package: WarlocksGauntlet
+Architecture: all
+Version: 1.0.0
+Maintainer: Piotr Stefaniak <sultan.programistow@gmail.com>
+Section: games
+Priority: extra
+Homepage: http://musztardasarepska.pl/wgdown
+Depends: libc6, libstdc++6, libgl1
+Installed-Size: 87428
+Description: A top-down shooter arcade game
+ It's a dynamic, top-down shooter (well, spell-caster) game, 
+ placing you - the player - in the role of a battlemage.
+ The hero travels through maps filled with monsters, 
+ gaining experience and learning new spells. 
+ 
+ The game is similar to titles like Gauntlet or Diablo.
