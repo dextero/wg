@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Version=1.0.0
+Name=Warlocks Gauntlet
+Comment=A top-down shooter arcade game
+Icon=WarlocksGauntlet
+Exec=/opt/WarlocksGauntlet/WarlocksGauntlet
+Categories=Game;Arcade

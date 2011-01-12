@@ -10,9 +10,8 @@ else
     package_name="WarlocksGauntlet-"$revision"_"$DATE
 fi
 
-rm -rf debian
-mkdir debian
-mkdir debian/opt
+rm -rf deb
+cp -r tools/deb_image deb
 
 rm -rf deploy
 mkdir deploy
@@ -34,16 +33,9 @@ g++ tools/linux/launcher/main.cpp -o deploy/launcher -static-libgcc -O2 /usr/lib
 sed -e "s@<locale lang=\"pl\"/>@<locale lang=\"en\"/>@" "deploy/data/config.xml" > "deploy/data/config-en.xml" && mv "deploy/data/config-en.xml" "deploy/data/config.xml"
 mv "deploy/launcher" "deploy/WarlocksGauntlet"
 
-mv deploy debian/opt/WarlocksGauntlet
+mv deploy deb/opt/WarlocksGauntlet
 
-mkdir debian/DEBIAN
-cp debian.control debian/DEBIAN/control
-
-#todo: ikonki itepe, do debian/usr, ikonka na desktopie itd -> patrz WorldOfGoo.deb, 
-#aha, i skrot w /usr/local/costam, bo inaczej komenda "WarlocksGauntlet" nie jest rozpoznawana
-
-
-mv "debian" "$package_name"
+mv deb "$package_name"
 
 dpkg-deb -b "$package_name"
 
