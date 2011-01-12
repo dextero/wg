@@ -29,11 +29,14 @@ mkdir deploy/bin
 cp "WarlocksGauntlet.bin32" deploy/bin
 
 g++ tools/linux/check_fullscreen/main.cpp -o deploy/bin/check_fullscreen -static-libgcc -O2 /usr/lib/gcc/i486-linux-gnu/4.4.1/libstdc++.a -I"build/includes/SFML-1.4/include" -L"./libs32" -lsfml-graphics -lsfml-window -lsfml-system || exit
-g++ tools/linux/launcher/main.cpp -o deploy/launcher -static-libgcc -O2 /usr/lib/gcc/i486-linux-gnu/4.4.1/libstdc++.a || exit
+#g++ tools/linux/launcher/main.cpp -o deploy/launcher -static-libgcc -O2 /usr/lib/gcc/i486-linux-gnu/4.4.1/libstdc++.a || exit
 sed -e "s@<locale lang=\"pl\"/>@<locale lang=\"en\"/>@" "deploy/data/config.xml" > "deploy/data/config-en.xml" && mv "deploy/data/config-en.xml" "deploy/data/config.xml"
-mv "deploy/launcher" "deploy/WarlocksGauntlet"
+#mv "deploy/launcher" "deploy/WarlocksGauntlet"
 
+mv deb/opt/WarlocksGauntlet deb/opt/WarlocksGauntlet1
 mv deploy deb/opt/WarlocksGauntlet
+cp -r deb/opt/WarlocksGauntlet1/* deb/opt/WarlocksGauntlet
+rm -rf deb/opt/WarlocksGauntlet1
 
 mv deb "$package_name"
 
