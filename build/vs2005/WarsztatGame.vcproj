@@ -42,7 +42,7 @@
 				AdditionalOptions="/wd4996"
 				Optimization="0"
 				AdditionalIncludeDirectories="..\includes;..\includes\Audiere;&quot;..\includes\SFML-1.4\include&quot;"
-				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS"
+				PreprocessorDefinitions="WIN32;_DEBUG;_WINDOWS;PLATFORM_WINDOWS"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
 				RuntimeLibrary="3"
@@ -123,7 +123,7 @@
 				AdditionalOptions="/wd4996"
 				Optimization="2"
 				AdditionalIncludeDirectories="..\includes;..\includes\Audiere;&quot;..\includes\SFML-1.4\include&quot;"
-				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS"
+				PreprocessorDefinitions="WIN32;NDEBUG;_WINDOWS;PLATFORM_WINDOWS"
 				RuntimeLibrary="2"
 				UsePrecompiledHeader="0"
 				WarningLevel="3"
@@ -2450,6 +2450,18 @@
 		</File>
 		<File
 			RelativePath="..\..\src\main.cpp"
+			>
+		</File>
+		<File
+			RelativePath=".\resource.h"
+			>
+		</File>
+		<File
+			RelativePath=".\WarsztatGame.rc"
+			>
+		</File>
+		<File
+			RelativePath="..\wg128.ico"
 			>
 		</File>
 	</Files>

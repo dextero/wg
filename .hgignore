@@ -2,5 +2,13 @@
 .*\.o$
 .*\.pyc$
 .*\.swp$
+.*\.obj$
+.*\.pdb$
+.*\.suo$
+.*\.ncb$
+build/vs2005/Debug/.*
+build/vs2005/Release/.*
+build/vs2005/.*\.user$
 ^user.*
 WarlocksGauntlet.bin32
+.*\.dll$
