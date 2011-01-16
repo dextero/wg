@@ -65,6 +65,15 @@ const std::string & FileUtils::GetUserDir()
     }
     return gUserDir;
 }
+
+void FileUtils::InitializeUserDir()
+{
+    fprintf(stderr, "Initializing user dir...\n");
+    mkdir(GetUserDir().c_str(), 0700);
+    //i tutaj reszta inicjalizacji - kopiowanie 'first_game', 'config.xml' itepe itede
+    // mozna tez pomyslec o tym, aby przy uruchamianu WarlocksGauntlet.exe --clean-user-dir 
+    // skasowac ten katalog i na nowo go tworzyc
+}
 #endif    
 
 #ifdef PLATFORM_MACOSX
@@ -76,21 +85,36 @@ const std::string & FileUtils::GetUserDir()
 #endif
 
 #ifdef PLATFORM_WINDOWS
+#include <windows.h>
+#include <shlobj.h>
+static std::string gUserDir = "%APPDATA%\\WarlocksGauntlet\\";
+static bool gInitialized = false;
 const std::string & FileUtils::GetUserDir()
 {
-    return "user/"
+    if (!gInitialized) {
+		char path[ MAX_PATH ];
+		if (SHGetFolderPathA( NULL, CSIDL_APPDATA, NULL, 0, path ) != S_OK) {
+			fprintf(stderr, "I could not retrieve the user's application data directory!\n");
+			exit(-1);
+		}
+		gUserDir = std::string(path) + "\\WarlocksGauntlet";
+        fprintf(stderr, "Detected userDir as `%s'\n", gUserDir.c_str());
+
+        gInitialized = true;
+    }
+    return gUserDir;
 }
-#endif
-
-
 void FileUtils::InitializeUserDir()
 {
     fprintf(stderr, "Initializing user dir...\n");
-    mkdir(GetUserDir().c_str(), 0700);
+	CreateDirectoryA(GetUserDir().c_str(), NULL);
     //i tutaj reszta inicjalizacji - kopiowanie 'first_game', 'config.xml' itepe itede
     // mozna tez pomyslec o tym, aby przy uruchamianu WarlocksGauntlet.exe --clean-user-dir 
     // skasowac ten katalog i na nowo go tworzyc
 }
+#endif
+
+
 
 /*
 * A function to list all contents of a given directory
