@@ -79,6 +79,16 @@ CCommands::SCommandPair MiscCommands [] =
     {0,0,0}
 };
 
+std::wstring MergeArguments(const std::vector<std::wstring> &argv)
+{
+	if (argv.size() < 2) return L"";
+	std::wstring result = argv[1];
+	for (size_t i = 2; i < argv.size(); i++) {
+		result += L" " + argv[i];
+	}
+	return result;
+}
+
 void CommandExec(size_t argc, const std::vector<std::wstring> &argv)
 {
     if ( argc < 2 )
@@ -87,7 +97,7 @@ void CommandExec(size_t argc, const std::vector<std::wstring> &argv)
         return;
     }
 
-    std::string fullPath = StringUtils::ConvertToString( argv[1] );
+    std::string fullPath = StringUtils::ConvertToString( MergeArguments(argv) );
     std::ifstream infile( fullPath.c_str() );
     if ( infile.fail() || !infile.good() )
     {
@@ -99,7 +109,7 @@ void CommandExec(size_t argc, const std::vector<std::wstring> &argv)
         {
             if ( argc > 2 && argv[2] == L"ignore_warnings" )
                 return;
-            gConsole.Printf( L"File not found. (%ls)", argv[1].c_str() );
+            gConsole.Printf( L"File not found. (%ls)", fullPath.c_str() );
             return;
         }
     }
