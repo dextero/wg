@@ -34,20 +34,20 @@ void CAchievementManager::Load(const std::string& file)
 
 void CAchievementManager::Save(const std::string& file) const
 {
-    std::ofstream f(file.c_str(), std::ios_base::trunc);
-    if (f.is_open())
+	FILE *f = fopen(file.c_str(), "w");
+    if (f)
     {
-        f << "<root type=\"achievements\">\n";
-        for (std::vector<SAchievement>::const_iterator i = mData.begin(); i != mData.end(); ++i)
-            f << "\t<achievement>\n"
-                << "\t\t<name value=\"" << i->name.c_str() << "\" />\n"
-                << "\t\t<desc value=\"" << i->desc.c_str() << "\" />\n"
-                << "\t\t<image value=\"" << i->image.c_str() << "\" />\n"
-                << "\t\t<completed value=\"" << (int)i->completed << "\" />\n"
-              << "\t</achievement>\n";
-        f << "</root>";
-
-        f.close();
+        fprintf(f, "<root type=\"achievements\">\n");
+		for (std::vector<SAchievement>::const_iterator i = mData.begin(); i != mData.end(); ++i) {
+            fprintf(f, "\t<achievement>\n");
+            fprintf(f, "\t\t<name value=\"%s\" />\n", i->name.c_str()); 
+            fprintf(f, "\t\t<desc value=\"%s\" />\n", i->desc.c_str());
+			fprintf(f, "\t\t<image value=\"%s\" />\n", i->image.c_str());
+			fprintf(f, "\t\t<completed value=\"%d\" />\n", (int)i->completed);
+            fprintf(f, "\t</achievement>\n");
+		}
+        fprintf(f, "</root>");
+        fclose(f);
     }
     else
 	{

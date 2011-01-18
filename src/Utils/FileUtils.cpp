@@ -9,26 +9,26 @@
 
 int FileUtils::GetFileSize(const char* filename)
 {
-	std::ifstream f;
-	f.open(filename, std::ios_base::binary | std::ios_base::in);
-	if (!f.good() || f.eof() || !f.is_open()) { return 0; }
-	f.seekg(0, std::ios_base::beg);
-	std::ifstream::pos_type begin_pos = f.tellg();
-	f.seekg(0, std::ios_base::end);
-	return static_cast<int>(f.tellg() - begin_pos);
+    FILE * pFile;
+    long size;
+
+    pFile = fopen(filename,"rb");
+    if (!pFile)
+		return 0;
+  
+    fseek(pFile, 0, SEEK_END);
+    size = ftell(pFile);
+    fclose(pFile);
+  
+    return size;
 }
 
 bool FileUtils::FileExists(const char* filename)
 {
-	std::ifstream file;
-	file.open(filename);
-	if(file.is_open())
-	{
-		file.close();
-		return true;
-	}
-	file.close();
-	return false;
+	FILE *f = fopen(filename, "r");
+	if (!f) return false;
+	fclose(f);
+	return true;
 }
 
 bool FileUtils::FileExists(const std::string & filename)

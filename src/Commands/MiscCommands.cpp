@@ -98,26 +98,25 @@ void CommandExec(size_t argc, const std::vector<std::wstring> &argv)
     }
 
     std::string fullPath = StringUtils::ConvertToString( MergeArguments(argv) );
-    std::ifstream infile( fullPath.c_str() );
-    if ( infile.fail() || !infile.good() )
+	FILE *f = fopen(fullPath.c_str(), "r");
+    if ( !f )
     {
-        infile.clear();
         std::string alternativePath = "data/console/" + fullPath + ".console";
-        infile.open( alternativePath.c_str() );
+		f = fopen(alternativePath.c_str(), "r");
 
-        if ( infile.fail() || !infile.good() )
+        if ( !f )
         {
             if ( argc > 2 && argv[2] == L"ignore_warnings" )
                 return;
-            gConsole.Printf( L"File not found. (%ls)", fullPath.c_str() );
+            gConsole.Printf( L"File not found. (%s)", fullPath.c_str() );
             return;
         }
     }
 
-    std::string line;
-    while ( !infile.eof() )
+    char line[1024];
+    while ( !feof(f) )
     {
-        getline (infile, line);
+		fgets(line, 1024, f); 
         gCommands.ParseCommand( StringUtils::ReinterpretFromUTF8( line ) );
     }
 }
