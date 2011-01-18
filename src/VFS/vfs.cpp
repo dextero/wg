@@ -73,21 +73,17 @@ const VFSFile VFSReader::GetFile(const char* filename)
 	if (file_found)
 	{
 		int size = FileUtils::GetFileSize(filepath.c_str());
-		std::ifstream file;
-		file.open(filepath.c_str(), std::ios::binary);
-
-		if(!file.is_open())
-		{
-			file.close();
+		FILE *file = fopen(filepath.c_str(), "rb");
+		if(!file)
 			return VFSFile(NULL, 0);
-		}
 
 		char* data = new char[size+1];
-		file.read(data, size);
+		size_t result = fread(data,1,size,file);
+		if (result != size) // error while loading file
+			return VFSFile(NULL, 0); 
+
 		data[size] = 0;
-
-		file.close();
-
+		fclose(file);
 		return VFSFile(data, size);
 	}
     else

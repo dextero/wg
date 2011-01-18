@@ -13,6 +13,7 @@
 #include "../Map/CMapManager.h"
 #include "../Utils/MathsFunc.h"
 #include "../Utils/StringUtils.h"
+#include "../Utils/FileUtils.h"
 #include "../Utils/CClock.h"
 #include "../Input/CBindManager.h"
 #include "../Input/CPlayerController.h"
@@ -446,11 +447,11 @@ void CLogic::SaveGame(const std::string & name, bool thumbnail, bool savePlayerP
     PrepareToSaveGame(savePlayerPos);
 
 	remove(name.c_str());
-    std::ofstream outfile(name.c_str());
-    if ( outfile.fail() || !outfile.good() )
+	FILE *outfile = fopen(name.c_str(), "w");
+    if ( !outfile )
 		return;
-	outfile << mSaveGameStr;
-	outfile.close();
+	fprintf(outfile, "%s", mSaveGameStr.c_str()); 
+	fclose(outfile);
 
     if (thumbnail)
     {
@@ -491,14 +492,7 @@ void CLogic::LoadGame(const std::string & name)
 }
 
 bool CLogic::CanLoadGame(const std::string & name){
-	bool result;
-    std::ifstream infile( name.c_str() );
-    if ( infile.fail() || !infile.good() )
-		result = false;
-	else
-		result = true;
-	infile.close();
-	return result;
+	return FileUtils::FileExists(name);
 }
 
 std::wstring CLogic::GetGameInfo( const std::string & name )
