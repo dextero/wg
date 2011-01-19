@@ -11,6 +11,7 @@
 #include "../Rendering/ZIndexVals.h"
 #include "../Console/CConsole.h"
 #include "../Utils/StringUtils.h"
+#include "../Utils/FileUtils.h"
 #include "../Utils/CXml.h"
 #include "../Logic/Factory/CPhysicalTemplate.h"
 #include "SceneManager/CSceneNode.h"
@@ -502,14 +503,10 @@ namespace Map{
 
     bool CMap::Save(const std::string &filename){
         // plik tymczasowy
-        std::ofstream file( (filename + ".tmp").c_str() );
-
-        if(!file.is_open())
-            return false;
-
-        Serialize(file);
-
-        file.close();
+		std::stringstream ss;
+        Serialize(ss);
+		if (!FileUtils::WriteToFile(filename + ".tmp", ss.str().c_str()))
+			return false;
 
         // przenoszenie z .tmp do wlasciwego pliku
         if (boost::filesystem::exists(filename + ".tmp"))
@@ -524,7 +521,7 @@ namespace Map{
         return true;
     }
 
-    void CMap::Serialize(std::ostream &out)
+    void CMap::Serialize(std::stringstream &out)
     {
         out << "<map>\n";
         out << "\t<version>" << GetVersion() << "</version>\n";

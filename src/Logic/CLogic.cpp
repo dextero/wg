@@ -450,7 +450,7 @@ void CLogic::SaveGame(const std::string & name, bool thumbnail, bool savePlayerP
 	FILE *outfile = fopen(name.c_str(), "w");
     if ( !outfile )
 		return;
-	fprintf(outfile, "%s", mSaveGameStr.c_str()); 
+	fputs(mSaveGameStr.c_str(), outfile); 
 	fclose(outfile);
 
     if (thumbnail)
@@ -497,12 +497,12 @@ bool CLogic::CanLoadGame(const std::string & name){
 
 std::wstring CLogic::GetGameInfo( const std::string & name )
 {
-    std::ifstream infile( name.c_str() );
-    if ( infile.fail() || !infile.good() )
+    FILE *infile = fopen(name.c_str(), "rb");
+    if (!infile)
         return StringUtils::ConvertToWString(name);
 
-    std::string info;
-    std::getline(infile, info);
+    char buf[4096];
+	std::string info(fgets(buf, 4096, infile) != NULL ? buf : "");
 
     if (info.length() >= 13)
     {

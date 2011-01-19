@@ -84,18 +84,17 @@ CConsole::CConsole() :
     float halfWindowHeight = (float)gGame.GetRenderWindow()->GetHeight() * 0.5f;
     mHudSprite->GetSFSprite()->SetPosition( 0.0, -halfWindowHeight );
 
-    std::ifstream infile( (gGameOptions.GetUserDir() + "/last_commands.console").c_str() );
-    if ( infile.fail() || !infile.good() || infile.bad() )
-    {
-        fprintf( stderr, "CConsole: unable to load m_LastCommands from file `%s'", (gGameOptions.GetUserDir() + "/last_commands.console").c_str() );
+    std::string lastCommandsFile = gGameOptions.GetUserDir() + "/last_commands.console";
+    FILE *infile = fopen(lastCommandsFile.c_str(), "r");
+    if (!infile) {
+        fprintf(stderr, "CConsole: unable to load m_LastCommands from file `%s'", lastCommandsFile.c_str());
     }
     else
     {
-        std::string line;
-
-        while ( !infile.eof() )
+        char buf[4096];
+        while (!feof(infile))
         {
-            getline (infile, line);
+          	std::string line(fgets(buf, 4096, infile) != NULL ? buf : "");
             if ( line.empty() )
                 continue;
             AddCommandToHistory( StringUtils::ConvertToWString( line ) );
@@ -122,19 +121,19 @@ void CConsole::Cleanup()
 
     if ( mCommandHistory.size() > 0 )
     {
-        std::ofstream of( (gGameOptions.GetUserDir() + "/last_commands.console").c_str() );
-        if ( of.fail() || !of.good() || of.bad() )
-        {
-            fprintf( stderr, "Console: unable to save m_LastCommands to file `%s'", (gGameOptions.GetUserDir() + "/last_commands.console").c_str() );
+		std::string lastCommandsFile = gGameOptions.GetUserDir() + "/last_commands.console";
+        FILE *of = fopen(lastCommandsFile.c_str(), "w");
+        if (!of) {
+            fprintf(stderr, "Console: unable to save m_LastCommands to file `%s'", lastCommandsFile.c_str());
         }
         else
         {
             for ( CommandsList::iterator it = mCommandHistory.begin() ; it != mCommandHistory.end() ; it++ )
             {
-                of << StringUtils::ConvertToString( *it ) << "\n";
+                fputs((StringUtils::ConvertToString( *it ) + "\n").c_str(), of);
             }
         }
-        of.close();
+        fclose(of);
     }
 }
 

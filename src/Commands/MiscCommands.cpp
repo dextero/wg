@@ -634,6 +634,7 @@ void CommandVFSAdd(size_t argc, const std::vector<std::wstring> &argv)
         size_t added = 0;
         for (std::vector<std::string>::iterator it = files.begin(); it != files.end(); ++it)
         {
+			//todo: do przerobienia na FILE* (jesli ma sie ladowac spoza workdir)
             std::ifstream file(it->c_str(), std::ios::in | std::ios::binary);
             if (!file.is_open())
             {
@@ -698,7 +699,7 @@ void CommandVFSLoad(size_t argc, const std::vector<std::wstring> &argv)
             gConsole.Printf(L"File %s doesn't exist.", argv[1].c_str());
             return;
         }
-
+		//todo: do przerobienia na FILE* jesli ma sie ladowac spoza workdir
         std::ifstream file(StringUtils::ConvertToString(argv[1]).c_str(), std::ios::in | std::ios::binary);
         if (!file.is_open())
         {
