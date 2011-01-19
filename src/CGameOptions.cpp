@@ -98,8 +98,8 @@ bool CGameOptions::LoadOptions()
     else
     {
         // nie ma user/config, stworz plik first_game, zeby gracz wybral sobie sterowanie..
-        std::ofstream first_game( (FileUtils::GetUserDir() + "/first_game").c_str() );
-        first_game.close();
+        FILE *first_game = fopen((FileUtils::GetUserDir() + "/first_game").c_str(), "w");
+        fclose(first_game);
 		is_first_game = true;
     }
 
@@ -370,29 +370,29 @@ CGameOptions::~CGameOptions()
 
 void CGameOptions::SaveOptions()
 {
-    std::ofstream file( (gGameOptions.GetUserDir() + "/config.xml").c_str() );
+    FILE *file = fopen((gGameOptions.GetUserDir() + "/config.xml").c_str(), "w");
 
-	if(!file.is_open()){
+	if(!file){
 		fprintf(stderr,"Error opening %s/config.xml for writing, options not saved!\n", gGameOptions.GetUserDir().c_str());
         return;
 	}
 
     // TODO: dopisac inne opcje ponizej:
-    file << "<root type=\"config\" version=\"" << mVersion << "\">\n"
-         << "\t<!-- VideoMode Config -->\n"
-         << "\t<video width=\""<< mWidth <<"\" height=\""<< mHeight << "\" fs=\"" <<mFullscreen<<"\" bpp=\""<<mBPP<<"\" vsync=\"" <<mVSync<<"\" />\n"
-         << "\t<audio sound=\"" << mSoundVolume << "\" music=\"" << mMusicVolume << "\" stereo=\"" << m3DSound << "\" />\n"
-		 << "\t<locale lang=\"" << mLocaleLang << "\" />\n\n";
+    fprintf(file, "<root type=\"config\" version=\"%d\">\n", mVersion);
+	fprintf(file, "\t<!-- VideoMode Config -->\n");
+	fprintf(file, "\t<video width=\"%d\" height=\"%d\" fs=\"%d\" bpp=\"%d\" vsync=\"%d\" />\n", mWidth, mHeight, mFullscreen, mBPP, mVSync);
+    fprintf(file, "\t<audio sound=\"%f\" music=\"%f\" stereo=\"%d\" />\n", mSoundVolume, mMusicVolume, m3DSound);
+	fprintf(file, "\t<locale lang=\"%s\" />\n\n", mLocaleLang.c_str());
 
     for ( unsigned p = 0; p < PLAYERS_CNT; ++p )
         for ( unsigned c = 0; c < mDefControlSchemes[p].size(); ++c )
-            file << mDefControlSchemes[p][c].Serialize();
+            fprintf(file, "%s", mDefControlSchemes[p][c].Serialize().c_str());
 
 	for ( unsigned p = 0; p < PLAYERS_CNT; p++ )
-        file << "\t<controls controls=\"" << System::Input::CBindManager::GetBindId(mControls[p], p) << "\" player=\"" << p << "\" />\n";
+        fprintf(file, "\t<controls controls=\"%d\" player=\"%d\" />\n", System::Input::CBindManager::GetBindId(mControls[p], p), p);
 
-	file << "</root>" << std::endl;
-    file.close();
+	fprintf(file, "</root>\n");
+    fclose(file);
 }
 
 void CGameOptions::SetVSync(bool vsync)
@@ -438,7 +438,7 @@ void CGameOptions::SetUserControlsFlags(int player, int flags)
 {
     // znajdz schemat..
     // szukaj od konca, bo gracza powinno byc ostatnie
-    for (int i = mDefControlSchemes[player].size() - 1; i >= 0; --i)
+    for (int i = (int)mDefControlSchemes[player].size() - 1; i >= 0; --i)
         if (mDefControlSchemes[player][i].name == "$CTRL_SET_USER")
         {
             // zastosuj flagi
@@ -472,7 +472,7 @@ void CGameOptions::SetKeyBinding(const std::string &controls, const std::string 
 
         // znajdz schemat..
         // szukaj od konca, bo gracza powinno byc ostatnie
-        for (int i = mDefControlSchemes[player].size() - 1; i >= 0; --i)
+        for (int i = (int)mDefControlSchemes[player].size() - 1; i >= 0; --i)
             if (StringUtils::ConvertToString(gLocalizator.Localize(mDefControlSchemes[player][i].name.c_str())) == controls)
             {
                 // ..i binding

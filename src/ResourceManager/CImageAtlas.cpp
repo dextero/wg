@@ -13,13 +13,11 @@ std::string CImageAtlas::GetType()
 
 bool CImageAtlas::Load(std::map<std::string,std::string>& argv)
 {
-	std::ifstream infile ( ( gGameOptions.GetModDir() + argv["name"] ).c_str() );
-    if (!infile.good())
+	FILE *infile = fopen((gGameOptions.GetModDir() + argv["name"]).c_str(), "rb");
+    if (!infile)
 	{
-		if ( infile.is_open() )
-			infile.close();
-		infile.open ( argv["name"].c_str() );
-		if ( !infile.good() )
+		infile = fopen(argv["name"].c_str(), "rb");
+		if (!infile)
 		{
 			if (argv.count("verbose") == 0)
 				fprintf( stderr, "error: CImageAtlas - unable to open file %s\n", argv["name"].c_str() );
@@ -31,9 +29,10 @@ bool CImageAtlas::Load(std::map<std::string,std::string>& argv)
 
     sf::IntRect rect;
 
-    while ( !infile.eof() )
+	char buf[4096];
+    while (!feof(infile))
     {
-        getline (infile, line);
+       	std::string line(fgets(buf, 4096, infile) != NULL ? buf : "");
         line = StringUtils::TrimWhiteSpaces( line );
 
         if ( line.empty() ) continue;
@@ -46,6 +45,7 @@ bool CImageAtlas::Load(std::map<std::string,std::string>& argv)
         rect.Bottom += rect.Top;
         mOffsets.push_back(rect);
     }
+	fclose(infile);
 
     return true;
 }

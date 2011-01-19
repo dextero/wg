@@ -15,6 +15,7 @@
 #include "../Commands/CCommands.h"
 #include "../CGameOptions.h"
 #include "../Utils/HRTimer.h"
+#include "../Utils/FileUtils.h"
 
 template<> Map::CMapManager* CSingleton<Map::CMapManager>::msSingleton = 0;
 
@@ -192,24 +193,22 @@ namespace Map{
 
 	void CMapManager::SaveEmptyMap(const std::string& filename, const sf::Vector2i& size){
 
-		std::ofstream file( filename.c_str() );
+		std::stringstream ss;
+		ss << "<map>\n";
+		ss << "<version>" << Map::CURRENT_MAP_VERSION << "</version>\n";
+		ss << "<width>" << size.x << "</width>\n";
+		ss << "<height>" << size.y << "</height>\n";
 
-        if (file.is_open())
-		{
-			file << "<map>\n";
-			file << "<version>" << Map::CURRENT_MAP_VERSION << "</version>\n";
-			file << "<width>" << size.x << "</width>\n";
-			file << "<height>" << size.y << "</height>\n";
+		ss << "<tiletype code=\"aa\" image=\"data/maps/themes/test/rgrass.png\"/>\n";
 
-			file << "<tiletype code=\"aa\" image=\"data/maps/themes/test/rgrass.png\"/>\n";
+		// kafle
+		ss << "<tiles>";
+		for (int i = 0; i < size.x*size.y; i++)
+			ss << "aa ";
+		ss << "</tiles>\n";
 
-			// kafle
-			file << "<tiles>";
-			for (int i = 0; i < size.x*size.y; i++)
-				file << "aa ";
-			file << "</tiles>\n";
-
-			file << "</map>\n";
-		}
+		ss << "</map>\n";
+		
+		FileUtils::WriteToFile(filename, ss.str().c_str());
 	}
 }
