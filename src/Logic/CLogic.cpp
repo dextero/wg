@@ -13,6 +13,7 @@
 #include "../Map/CMapManager.h"
 #include "../Utils/MathsFunc.h"
 #include "../Utils/StringUtils.h"
+#include "../Utils/FileUtils.h"
 #include "../Utils/CClock.h"
 #include "../Input/CBindManager.h"
 #include "../Input/CPlayerController.h"
@@ -446,11 +447,11 @@ void CLogic::SaveGame(const std::string & name, bool thumbnail, bool savePlayerP
     PrepareToSaveGame(savePlayerPos);
 
 	remove(name.c_str());
-    std::ofstream outfile(name.c_str());
-    if ( outfile.fail() || !outfile.good() )
+	FILE *outfile = fopen(name.c_str(), "w");
+    if ( !outfile )
 		return;
-	outfile << mSaveGameStr;
-	outfile.close();
+	fputs(mSaveGameStr.c_str(), outfile); 
+	fclose(outfile);
 
     if (thumbnail)
     {
@@ -491,24 +492,17 @@ void CLogic::LoadGame(const std::string & name)
 }
 
 bool CLogic::CanLoadGame(const std::string & name){
-	bool result;
-    std::ifstream infile( name.c_str() );
-    if ( infile.fail() || !infile.good() )
-		result = false;
-	else
-		result = true;
-	infile.close();
-	return result;
+	return FileUtils::FileExists(name);
 }
 
 std::wstring CLogic::GetGameInfo( const std::string & name )
 {
-    std::ifstream infile( name.c_str() );
-    if ( infile.fail() || !infile.good() )
+    FILE *infile = fopen(name.c_str(), "rb");
+    if (!infile)
         return StringUtils::ConvertToWString(name);
 
-    std::string info;
-    std::getline(infile, info);
+    char buf[4096];
+	std::string info(fgets(buf, 4096, infile) != NULL ? buf : "");
 
     if (info.length() >= 13)
     {

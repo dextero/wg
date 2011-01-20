@@ -9,6 +9,7 @@
 #include "Localization/CLocalizator.h"
 #include "../Logic/CLogic.h"
 #include "../Utils/StringUtils.h"
+#include "../Utils/FileUtils.h"
 #include "../CGameOptions.h"
 #include "../ResourceManager/CResourceManager.h"
 #include <string>
@@ -104,24 +105,10 @@ void GUI::CSaveScreen::SlotPressed( const std::wstring & params )
     }
     else
     {
-        std::string str;
-        std::ifstream file(StringUtils::ConvertToString(params).c_str());
-        if (file.is_open())
+		std::string filename = StringUtils::ConvertToString(params);
+		if (FileUtils::FileExists(filename))
         {
-            // rozmiar pliku
-            file.seekg(0, std::ios::end);
-            size_t size = file.tellg();
-            file.seekg(0);
-
-            // wczytanie zawartosci
-            char* buf = new char[size + 1];
-            buf[size] = '\0';
-            file.read(buf, size);
-            file.close();
-
-            // przepisanie zawartosci do stringa
-            str = buf;
-            delete[] buf;
+			std::string str = FileUtils::ReadFromFile(filename);
 
             // szukanie poziomu trudnosci
             std::string name = "set-difficulty-factor ";
@@ -135,10 +122,7 @@ void GUI::CSaveScreen::SlotPressed( const std::wstring & params )
             {
                 // tak, podmien w save
                 str.replace(at, end - at, StringUtils::ToString(gLogic.GetDifficultyFactor()));
-
-                std::ofstream file(StringUtils::ConvertToString(params).c_str(), std::ios::trunc);
-                file.write(str.c_str(), str.size());
-                file.close();
+				FileUtils::WriteToFile(filename, str);
             }
         }
 
@@ -205,24 +189,9 @@ void GUI::CSaveScreen::UpdateDifficultyBar(void* hoveredBtnNum)
 
     if (gLogic.CanLoadGame(saveName))
     {
-		std::ifstream file(saveName.c_str(), std::ios_base::in | std::ios_base::binary);
-        if (!file.is_open()) return;
-        
-        // rozmiar pliku
-        file.seekg(0, std::ios::end);
-        size_t size = file.tellg();
-        file.seekg(0);
+		std::string str = FileUtils::ReadFromFile(saveName);
 
-        // wczytanie zawartosci
-        char* buf = new char[size + 1];
-        buf[size] = '\0';
-        file.read(buf, size);
-
-        // przepisanie zawartosci do stringa
-		std::string str = buf;
-        delete[] buf;
-
-        // szukanie poziomu trudnosci
+		// szukanie poziomu trudnosci
         std::string name = "set-difficulty-factor ";
         size_t at = str.find(name);
         
@@ -241,9 +210,6 @@ void GUI::CSaveScreen::UpdateDifficultyBar(void* hoveredBtnNum)
 
         // zamiana factora na indeks
 		unsigned level = gLogic.DifficultyFactorToLevel(factor);
-
-        file.close();
-        
 
         CScrollBar* scroll = dynamic_cast<CScrollBar*>(mSaveScreen->FindObject("difficulty-bar"));
         if (!scroll)

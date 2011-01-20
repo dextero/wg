@@ -21,6 +21,7 @@ VFSReader::~VFSReader()
 
 void VFSReader::OpenFileSystem(const char* filename)
 {
+	//todo: do przerobienia na FILE* jesli ma sie ladowac spoza workdir
     if(FileUtils::FileExists(filename)){
         file = new std::ifstream();
         file->open(filename, std::ios::binary);
@@ -73,21 +74,17 @@ const VFSFile VFSReader::GetFile(const char* filename)
 	if (file_found)
 	{
 		int size = FileUtils::GetFileSize(filepath.c_str());
-		std::ifstream file;
-		file.open(filepath.c_str(), std::ios::binary);
-
-		if(!file.is_open())
-		{
-			file.close();
+		FILE *file = fopen(filepath.c_str(), "rb");
+		if(!file)
 			return VFSFile(NULL, 0);
-		}
 
 		char* data = new char[size+1];
-		file.read(data, size);
+		size_t result = fread(data,1,size,file);
+		if (result != size) // error while loading file
+			return VFSFile(NULL, 0); 
+
 		data[size] = 0;
-
-		file.close();
-
+		fclose(file);
 		return VFSFile(data, size);
 	}
     else
@@ -160,20 +157,13 @@ void VFSReader::ExtractFiles( const std::string &dir )
 		if ( buffer )
 		{
 			filepath = dir + "/" + filepath;
-			//src/VFS/vfs.cpp:139: warning: comparison between signed and unsigned integer expressions
             size_t at = -1;
             while ((at = filepath.find("/", at + 1)) != std::string::npos)
                 if (!boost::filesystem::exists(filepath.substr(0, at)))
                     boost::filesystem::create_directory(filepath.substr(0, at));
             
 			boost::filesystem::create_directory( filepath.c_str() );
-			std::ofstream out( (filepath + "/" + filename).c_str(), std::ios::binary );
-			
-			if ( out.is_open() )
-			{
-				out.write( buffer, size );
-				out.close();
-			}
+			FileUtils::WriteToFile((filepath + "/" + filename), std::string(buffer));
 		}
 	}
 }
@@ -199,7 +189,7 @@ void VFSReader::SaveToFile(const char* filename)
 {
     VFSFileTableEntry* file_table = new VFSFileTableEntry[mFilenames.size()];
 
-    std::ofstream out(filename, std::ios::out | std::ios::binary | std::ios::trunc);
+    FILE *out = fopen(filename, "wb");
 
     // rekord $$filenames$$
         std::stringstream ss;
@@ -216,7 +206,7 @@ void VFSReader::SaveToFile(const char* filename)
     // koniec $$filenames$$
 
     int headerSize = sizeof(VFSHeader) + sizeof(VFSFileTableEntry) * mFilenames.size();
-    out.seekp(headerSize);
+    fseek(out, headerSize, SEEK_CUR);
 
     // pliki
     for (size_t i = 0; i < mFilenames.size(); ++i)
@@ -233,17 +223,17 @@ void VFSReader::SaveToFile(const char* filename)
         flags = 0x1; // skompresowane
 
         // tu sie tworzy file_table
-        VFSFileTableEntry entry = { StringUtils::GetStringHash(mFilenames[i]), flags, bufSize, f.GetSize(), (int)(out.tellp()) - headerSize };
+        VFSFileTableEntry entry = { StringUtils::GetStringHash(mFilenames[i]), flags, bufSize, f.GetSize(), (int)(ftell(out)) - headerSize };
         file_table[i] = entry;
 
-        out.write(buffer, bufSize);
+        fwrite(buffer, 1, bufSize, out);
         
         if (flags) // flags == 0 dla nieskompresowanych rekordow, ktorych nie wolno usuwac
             delete[] buffer;
     }
 
     // naglowek i file_table
-    out.seekp(0, std::ios::beg);
+    fseek(out, 0, SEEK_SET);
 
     VFSHeader header = {
         "VFS",                      // sygnatura
@@ -255,11 +245,11 @@ void VFSReader::SaveToFile(const char* filename)
         sizeof(VFSFileTableEntry) * mFilenames.size() + sizeof(VFSHeader)    // offset danych (od poczatku pliku)
     };
 
-    out.write((char*)&header, sizeof(VFSHeader));
-    out.write((char*)file_table, sizeof(VFSFileTableEntry) * mFilenames.size());
+    fwrite((char*)&header, 1, sizeof(VFSHeader), out);
+    fwrite((char*)file_table, 1, sizeof(VFSFileTableEntry) * mFilenames.size(), out);
     delete[] file_table;
 
-    out.close();
+	fclose(out);
 }
 
 bool VFSReader::IsInVFS(const char* filename)
