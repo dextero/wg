@@ -79,6 +79,16 @@ CCommands::SCommandPair MiscCommands [] =
     {0,0,0}
 };
 
+std::wstring MergeArguments(const std::vector<std::wstring> &argv)
+{
+	if (argv.size() < 2) return L"";
+	std::wstring result = argv[1];
+	for (size_t i = 2; i < argv.size(); i++) {
+		result += L" " + argv[i];
+	}
+	return result;
+}
+
 void CommandExec(size_t argc, const std::vector<std::wstring> &argv)
 {
     if ( argc < 2 )
@@ -87,27 +97,26 @@ void CommandExec(size_t argc, const std::vector<std::wstring> &argv)
         return;
     }
 
-    std::string fullPath = StringUtils::ConvertToString( argv[1] );
-    std::ifstream infile( fullPath.c_str() );
-    if ( infile.fail() || !infile.good() )
+    std::string fullPath = StringUtils::ConvertToString( MergeArguments(argv) );
+	FILE *f = fopen(fullPath.c_str(), "r");
+    if ( !f )
     {
-        infile.clear();
         std::string alternativePath = "data/console/" + fullPath + ".console";
-        infile.open( alternativePath.c_str() );
+		f = fopen(alternativePath.c_str(), "r");
 
-        if ( infile.fail() || !infile.good() )
+        if ( !f )
         {
             if ( argc > 2 && argv[2] == L"ignore_warnings" )
                 return;
-            gConsole.Printf( L"File not found. (%ls)", argv[1].c_str() );
+            gConsole.Printf( L"File not found. (%s)", fullPath.c_str() );
             return;
         }
     }
 
-    std::string line;
-    while ( !infile.eof() )
+    char line[1024];
+    while ( !feof(f) )
     {
-        getline (infile, line);
+		fgets(line, 1024, f); 
         gCommands.ParseCommand( StringUtils::ReinterpretFromUTF8( line ) );
     }
 }
@@ -625,6 +634,7 @@ void CommandVFSAdd(size_t argc, const std::vector<std::wstring> &argv)
         size_t added = 0;
         for (std::vector<std::string>::iterator it = files.begin(); it != files.end(); ++it)
         {
+			//todo: do przerobienia na FILE* (jesli ma sie ladowac spoza workdir)
             std::ifstream file(it->c_str(), std::ios::in | std::ios::binary);
             if (!file.is_open())
             {
@@ -689,7 +699,7 @@ void CommandVFSLoad(size_t argc, const std::vector<std::wstring> &argv)
             gConsole.Printf(L"File %s doesn't exist.", argv[1].c_str());
             return;
         }
-
+		//todo: do przerobienia na FILE* jesli ma sie ladowac spoza workdir
         std::ifstream file(StringUtils::ConvertToString(argv[1]).c_str(), std::ios::in | std::ios::binary);
         if (!file.is_open())
         {

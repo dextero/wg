@@ -67,7 +67,8 @@ CAnimationManager::CAnimationManager(){
 //    mAnimations[ "baron/attack/down.anim1" ] = animation2;
 
 
-
+    //todo: jesli ktos probowalby zaladowac inne all.anims spoza workdir to niech pamieta
+	//o zmianie na FILE* (unikod!)
     std::ifstream infile( "data/physicals/all.anims" );
     if ( infile.fail() || !infile.good() || infile.bad() )
     {

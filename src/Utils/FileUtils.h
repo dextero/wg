@@ -5,9 +5,13 @@
 
 namespace FileUtils
 {
-	int GetFileSize(const char* filename);
+	size_t GetFileSize(const char* filename);
+	size_t GetFileSize(const std::string & filename);
 	bool FileExists(const char* filename);
     bool FileExists(const std::string & filename);
+
+	std::string ReadFromFile(const std::string & filename);
+	bool WriteToFile(const std::string & filename, const std::string & contents);
 
     // zwraca katalog uzytkownika - zaleznie od platformy to moze byc 
     // ~/.WarlocksGauntlet albo %APPDATA/costamcostam itepe

@@ -20,11 +20,11 @@ void CBestiary::Save()
     for (std::set<std::string>::iterator it = mEnabledMonsters.begin(); it != mEnabledMonsters.end(); ++it)
         ss << "bestiary-add " << it->c_str() << "\n";
 
-    std::ofstream file(mFilePath.c_str(), std::ios::out | std::ios::trunc);
-    if (file.is_open())
+    FILE *file = fopen(mFilePath.c_str(), "w");
+    if (file)
     {
-        file << ss.str().c_str();
-        file.close();
+        fputs(ss.str().c_str(), file);
+        fclose(file);
     }
 }
 

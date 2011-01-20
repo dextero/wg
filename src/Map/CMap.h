@@ -49,7 +49,7 @@ namespace Map{
 		std::string GetType();
 		bool Load(std::map<std::string,std::string>& argv);
         bool Save(const std::string &filename);
-        void Serialize(std::ostream &out);
+        void Serialize(std::stringstream &out);
 		void Drop();
 
         void RespawnMapObjects(bool loadCompleteMap);
