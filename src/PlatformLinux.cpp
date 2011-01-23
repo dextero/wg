@@ -1,5 +1,6 @@
 #ifdef PLATFORM_LINUX
 #include <wordexp.h>
+#include <string>
 
 static std::string gUserDir = "~/.WarlocksGauntlet";
 const std::string & FileUtils::GetUserDir()
