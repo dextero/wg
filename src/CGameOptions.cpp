@@ -20,59 +20,32 @@
 #include "Logic/CLogic.h"
 #include "GUI/Localization/CLocalizator.h"
 
-#ifdef PLATFORM_MACOSX
-/* OSX */ extern "C" int AskForFullscreen_OSX(const wchar_t * title, const wchar_t * message, int maxw, int maxh);
-#else
-#ifdef PLATFORM_LINUX
-/* GNU */
-#else
-/* Win */ bool AskForFullscreen_Win32(const wchar_t * title, const wchar_t * message, int maxw, int maxh)
-#ifndef __EDITOR__
-    ;
-#else // ifdef __EDITOR__
-    { return false; }
-#endif
-#endif
-#endif
-									 
-bool AskForFullscreen(unsigned int &maxw, unsigned int &maxh)
+extern bool AskForFullscreen(const wchar_t * title, const wchar_t * message, int maxw, int maxh);
+
+bool UserWantToPlayInFullscreen(unsigned int *width, unsigned int *height)
 {
+#ifdef __EDITOR__
+    return false;
+#endif
 	sf::VideoMode videoMode;
 	
-	maxw = 800;
-	maxh = 600;
+	unsigned int maxw = *width;
+	unsigned int maxh = *height;
 
-    //tox, 10 sie 2010: na niektorych sprzetach GetModesCount zwracal mi zero
 	for ( size_t i = 0; i < sf::VideoMode::GetModesCount(); i++ )
 	{
-		videoMode = sf::VideoMode::GetMode( i );
-		
+		videoMode = sf::VideoMode::GetMode( i );		
 		if (videoMode.Width > maxw) { maxw = videoMode.Width; maxh = videoMode.Height; }
 	}
 
-	
-#ifdef PLATFORM_MACOSX
-	
-	// OSX	
 	const std::wstring titleStr = gLocalizator.GetText("FULLSCREEN_TITLE");
 	const std::wstring messageStr = gLocalizator.GetText("FULLSCREEN_MESSAGE");
-	return (bool)AskForFullscreen_OSX(titleStr.c_str(), messageStr.c_str(), maxw, maxh);
-	
-#else
-#ifdef PLATFORM_LINUX
-
-	// Linux
-	return true;
-
-#else
-	
-	// Windows
-	const std::wstring titleStr = gLocalizator.GetText("FULLSCREEN_TITLE");
-	const std::wstring messageStr = gLocalizator.GetText("FULLSCREEN_MESSAGE");
-	return AskForFullscreen_Win32(titleStr.c_str(), messageStr.c_str(), maxw, maxh);
-
-#endif
-#endif
+	bool userAcceptedFullscreen = AskForFullscreen(titleStr.c_str(), messageStr.c_str(), maxw, maxh);
+	if (userAcceptedFullscreen) {
+		*width = maxw;
+		*height = maxh;
+	}
+	return userAcceptedFullscreen;
 }
 
 template<> CGameOptions* CSingleton<CGameOptions>::msSingleton = 0;
@@ -184,19 +157,13 @@ bool CGameOptions::LoadOptions()
 	mHeight = xml.GetInt( "video", "height" );
 	mBPP = xml.GetInt( "video", "bpp" );
 	
-	bool fullscreenFlag = ( xml.GetInt("video","fs") != 0 );
+	mFullscreen = xml.GetInt("video", "fs") != 0;
 	
-	if (is_first_game)
-	{
-		fullscreenFlag = AskForFullscreen(mWidth, mHeight);
-		if (!fullscreenFlag)
-		{
-			mWidth = 800;
-			mHeight = 600;
-		}
+	if (is_first_game) {
+		mWidth = 800; 
+		mHeight = 600;
+		mFullscreen = UserWantToPlayInFullscreen(&mWidth, &mHeight);
 	}
-	
-	mFullscreen = fullscreenFlag;
 
 	SetVSync( xml.GetInt("video","vsync") != 0 );
     SetSoundVolume( xml.GetFloat("audio","sound",1.0f) );
@@ -266,50 +233,14 @@ bool CGameOptions::LoadOptions()
     return true;
 }
 
-#ifdef PLATFORM_MACOSX
-
-/* MacOSX */
 bool CanCreateWindowInFullScreen()
 {
-    return true;
-}
-
-#else
-
 #ifdef PLATFORM_LINUX
-
-/* Linux */
-#include <sys/wait.h>
-char APP[] = "./bin/check_fullscreen";
-bool CanCreateWindowInFullScreen()
-{
-    int pid,status;
-        
-    if (!(pid=fork())) {
-        fprintf(stderr, "pid=%d\n", pid);
-        fprintf(stderr, "pid=%d finish\n", pid);
-        int i = execlp(APP, 0);
-        fprintf(stderr, "Failed to launch %s, code=%d, aborting\n", APP, i);
-        _exit(-1);
-    }
-    while (pid!=wait(&status)) {
-        // do nothing
-    }
-    fprintf(stderr, "status=%d\n", status);
-
-    return (status == 0);
-}
-
-#else // PLATFORM_LINUX
-
-/* Windows */
-bool CanCreateWindowInFullScreen()
-{
+	return CanCreateWindowInFullScreenOnLinux();
+#else
     return true;
+#endif
 }
-
-#endif //PLATFORM_LINUX
-#endif //PLATFORM_MACOSX
 
 void CGameOptions::UpdateWindow()
 {

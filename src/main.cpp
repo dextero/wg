@@ -79,23 +79,3 @@ int main( int argc, char* argv[] ){
 
     return 0;
 }
-
-#ifndef PLATFORM_MACOSX
-#ifndef PLATFORM_LINUX
-
-/*
-uwaga -- to by by³o najlepiej przenieœæ do osobnego pliku (PlatformWin32.cpp ?), przy czym nie chcê wam popsuæ
-plików z projektami. Swoj¹ drog¹ PLATFORM_WINDOWS te¿ by by³o ciekawe.
-*/
-
-#include <windows.h>
-
-bool AskForFullscreen_Win32(const wchar_t * title, const wchar_t * message, int maxw, int maxh)
-{
-	wchar_t message2[4096];
-	wsprintf(message2, message, maxw, maxh);
-	return IDOK == MessageBoxW(0, message2, title, MB_OKCANCEL | MB_ICONQUESTION);
-}
-
-#endif
-#endif
