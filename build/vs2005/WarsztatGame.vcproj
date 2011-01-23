@@ -2453,6 +2453,22 @@
 			>
 		</File>
 		<File
+			RelativePath="..\..\src\PlatformLinux.cpp"
+			>
+		</File>
+		<File
+			RelativePath="..\..\src\PlatformOSX.cpp"
+			>
+		</File>
+		<File
+			RelativePath="..\..\src\PlatformOSX.m"
+			>
+		</File>
+		<File
+			RelativePath="..\..\src\PlatformWin32.cpp"
+			>
+		</File>
+		<File
 			RelativePath=".\resource.h"
 			>
 		</File>

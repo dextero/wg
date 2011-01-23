@@ -1,18 +1,17 @@
 #include <stdio.h>
 #import <Foundation/Foundation.h>
 
-const char * CreateDirectoryIfNotExists(const char *dname)
+const char * GetUserDir_OSX()
 {
-	id path = [[NSString stringWithUTF8String:dname] stringByReplacingOccurrencesOfString:@"~/" withString:@""];
-	path = [NSHomeDirectory() stringByAppendingPathComponent:path];
-	NSFileManager *fileManager = [NSFileManager defaultManager];
-	NSLog(@"OSX: User preferences directory: %@\n", path);
-	if (![fileManager fileExistsAtPath:path])
-	{
-		NSLog(@"OSX: Creating user preferences directory...\n");
-		[fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:0];
-	}
+	id path = [NSHomeDirectory()];
 	return [path UTF8String];
+} 
+
+void CreateDir_OSX(const char * path)
+{
+	NSFileManager *fileManager = [NSFileManager defaultManager];
+	NSLog(@"OSX: Creating directory `%@'...\n", path);
+	[fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:0];
 } 
 
 int AskForFullscreen_OSX(const wchar_t * title, const wchar_t * message, int maxw, int maxh)

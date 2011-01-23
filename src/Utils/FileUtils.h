@@ -14,11 +14,14 @@ namespace FileUtils
 	bool WriteToFile(const std::string & filename, const std::string & contents);
 
     // zwraca katalog uzytkownika - zaleznie od platformy to moze byc 
-    // ~/.WarlocksGauntlet albo %APPDATA/costamcostam itepe
+    //   ~/.WarlocksGauntlet pod linuksem
+	//   %APPDATA%/WarlocksGauntlet pod windowsem
+	//   ~/Library/WarlocksGauntlet pod macOSem
     const std::string & GetUserDir();
 
-    // stwarza i wypelnia katalog usera domyslnymi plikami
-    void InitializeUserDir();
+	// nie moze byc CreateDirectory bo sie gryzie z windows.h
+	void CreateDir(const char* filename);
+	void CreateDir(const std::string & filename);
 }
 
 #endif//__FILEUTILS_H__

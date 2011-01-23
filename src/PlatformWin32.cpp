@@ -1,51 +1,46 @@
-#if _WIN32
+#ifndef PLATFORM_WINDOWS
+#ifdef _WIN32
+#define PLATFORM_WINDOWS
+#endif
+#endif
+#ifdef PLATFORM_WINDOWS
 
 #include <windows.h>
-#include <Knownfolders.h>
-#include <Shlobj.h>
+#include <shlobj.h>
 #include <string>
-using namespace std;
+#include "Utils/FileUtils.h"
 
-void _xxx_die(const char * reason)
+static std::string gUserDir = "%APPDATA%\\WarlocksGauntlet";
+const std::string & FileUtils::GetUserDir()
 {
-	MessageBoxA(0, reason, "wg", MB_ICONEXCLAMATION | MB_OK);
-	ExitProcess(1);
+	static bool gInitialized = false;
+    if (!gInitialized) {
+		char path[ MAX_PATH ];
+		if (SHGetFolderPathA( NULL, CSIDL_APPDATA | CSIDL_FLAG_CREATE, NULL, 0, path ) != S_OK) {
+			char * reason = "I could not create the user application data directory!\n";
+			fprintf(stderr, "%s\n", reason);
+			MessageBoxA(0, reason, "wg", MB_ICONEXCLAMATION | MB_OK);
+			ExitProcess(1);
+		}
+		gUserDir = std::string(path) + "\\WarlocksGauntlet";
+        fprintf(stderr, "Detected userDir as `%s'\n", gUserDir.c_str());
+
+        gInitialized = true;
+    }
+    return gUserDir;
 }
 
-#ifndef VISTA_SUX
-wstring GetWindowsUserDir_Vista()
+void FileUtils::CreateDir(const char* filename)
 {
-	PWSTR path = 0;
-	if (S_OK != SHGetKnownFolderPath(FOLDERID_SavedGames, KF_FLAG_CREATE, 0, &path)) _xxx_die("SHGetKnownFolderPath failed");
-	wstring ret = path;
-	CoTaskMemFree(path);
-	return ret;
-}
-#endif
-
-wstring GetWindowsUserDir_XP()
-{
-	WCHAR svgmpath[MAX_PATH];
-	SHGetFolderPath(NULL, CSIDL_PERSONAL | CSIDL_FLAG_CREATE, NULL, SHGFP_TYPE_CURRENT, svgmpath); 
-	wcscat_s(svgmpath, MAX_PATH, TEXT("\\My Saved Games"));
-	return svgmpath; 
+    fprintf(stderr, "Creating directory `%s'...\n", filename);
+	CreateDirectoryA(filename, NULL);
 }
 
-wstring GetWindowsUserDir()
+bool AskForFullscreen(const wchar_t * title, const wchar_t * message, int maxw, int maxh)
 {
-	wstring ret;
-#ifndef VISTA_SUX
-	DWORD winver = GetVersion();
-
-	if ((DWORD)(LOBYTE(LOWORD(winver))) >= 6) 
-		ret = GetWindowsUserDir_Vista();
-	else
-		ret = GetWindowsUserDir_XP();
-#else
-	ret = GetWindowsUserDir_XP();
-#endif
-	ret += L"\\Warlock's Gauntlet";
-	return ret;
+	wchar_t message2[4096];
+	wsprintf(message2, message, maxw, maxh);
+	return IDOK == MessageBoxW(0, message2, title, MB_OKCANCEL | MB_ICONQUESTION);
 }
 
-#endif // _WIN32
+#endif //PLATFORM_WINDOWS
