@@ -235,7 +235,7 @@ bool CGameOptions::LoadOptions()
 
 #ifdef PLATFORM_LINUX
 extern bool CanCreateWindowInFullScreenOnLinux()
-bool CanCreateWindowInFullScreen() { return CanCreateWindowInFullScreenOnLinux; }
+bool CanCreateWindowInFullScreen() { return CanCreateWindowInFullScreenOnLinux(); }
 #else
 bool CanCreateWindowInFullScreen() { return true; }
 #endif
