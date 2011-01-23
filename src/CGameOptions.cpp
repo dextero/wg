@@ -233,14 +233,12 @@ bool CGameOptions::LoadOptions()
     return true;
 }
 
-bool CanCreateWindowInFullScreen()
-{
 #ifdef PLATFORM_LINUX
-	return CanCreateWindowInFullScreenOnLinux();
+extern bool CanCreateWindowInFullScreenOnLinux()
+bool CanCreateWindowInFullScreen() { return CanCreateWindowInFullScreenOnLinux; }
 #else
-    return true;
+bool CanCreateWindowInFullScreen() { return true; }
 #endif
-}
 
 void CGameOptions::UpdateWindow()
 {
