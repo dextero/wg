@@ -1,4 +1,5 @@
 #ifdef PLATFORM_LINUX
+#ifndef PLATFORM_MACOSX
 #include <wordexp.h>
 #include <string>
 #include "Utils/FileUtils.h"
@@ -50,4 +51,5 @@ bool CanCreateWindowInFullScreenOnLinux()
     return (status == 0);
 }
 
+#endif // !PLATFORM_OSX
 #endif //PLATFORM_LINUX

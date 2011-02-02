@@ -1,0 +1,68 @@
+BINARY_NAME = warsztat_game_ios
+
+-include Makefile.sources
+
+CPPFLAGS =-I"src" -I"build/includes" -DPLATFORM_IPHONE -DPLATFORM_MACOSX -DPLATFORM_LINUX -I"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/ES2/"  -I"/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS4.2.sdk/System/Library/Frameworks/OpenAL.framework/Headers/"
+
+LDFLAGS = 
+
+LIBS =  
+
+#osxlib/graphics.o osxlib/window.o osxlib/system.o osxlib/audio.o osxlib/SFML.o osxlib/OpenAL.o -lGL 
+
+#default:
+#CXXFLAGS = -O2 -Wall
+
+release: CXXFLAGS = -O2
+
+#CXX = g++
+
+BINARY = $(BINARY_NAME)$(BINARY_SUFFIX)
+
+SDKVER = 4.2
+DEVROOT = /Developer/Platforms/iPhoneOS.platform/Developer
+SDKROOT = $(DEVROOT)/SDKs/iPhoneOS$(SDKVER).sdk
+#SDKROOT = /Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS$(SDKVER).sdk
+CXX = /Developer/Platforms/iPhoneOS.platform/Developer/usr/bin/g++-4.2
+CXXFLAGS = -O2 -arch armv6 -pipe -no-cpp-precomp --sysroot='$(SDKROOT)' -isystem $SDKROOT/usr/lib/gcc/arm-apple-darwin10/4.2.1/include/ -isystem $(SDKROOT)/usr/include -isystem $DEVROOT/usr/include -isystem /opt/iphone-$(SDKVER)/include -isystem /usr/local/iphone-$(SDKVER)/include
+
+########################
+
+Debug: all
+
+Release: all
+
+all: $(BINARY)
+
+#$(BINARY): $(OBJECTS) platformOSX.o
+#$(CXX) -o $@ $(OBJECTS) platformOSX.o $(LDFLAGS) $(LIBS)  -lobjc -framework Foundation
+
+$(BINARY): $(OBJECTS) 
+	$(CXX) -o $@ $(OBJECTS) $(LDFLAGS) $(LIBS)  -lobjc -framework Foundation
+
+%.d: %.cpp
+	-$(CXX) -E $(CXXFLAGS)  $(CPPFLAGS) -MM -MP -MF $@ -MQ $(@:.d=.s) -MQ $(@:.d=.o) -MQ $@ $<
+
+#platformOSX.o: src/PlatformOSX.m
+#	gcc -m32 -c -o platformOSX.o src/PlatformOSX.m 
+
+zlo: $(BINARY)
+	rm -rf ~/Library/WarsztatGame/
+	./$(BINARY)
+
+clean:
+	@$(RM) $(BINARY)
+	@$(RM) $(BINARY).exe
+	@rm -f $(OBJECTS)
+	@rm -f $(SOURCES:.cpp=.d)
+
+
+osx: $(BINARY)
+	./$(BINARY)
+
+release: all
+
+ifeq ($(findstring clean,$(MAKECMDGOALS)),)
+-include $(SOURCES:.cpp=.d)
+endif
+

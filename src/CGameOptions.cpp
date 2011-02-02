@@ -318,7 +318,7 @@ void CGameOptions::SaveOptions()
             fprintf(file, "%s", mDefControlSchemes[p][c].Serialize().c_str());
 
 	for ( unsigned p = 0; p < PLAYERS_CNT; p++ )
-        fprintf(file, "\t<controls controls=\"%d\" player=\"%d\" />\n", System::Input::CBindManager::GetBindId(mControls[p], p), p);
+        fprintf(file, "\t<controls controls=\"%d\" player=\"%d\" />\n", System::Input::CBindManager::GetBindId(mControls[p], p), (int)p);
 
 	fprintf(file, "</root>\n");
     fclose(file);
