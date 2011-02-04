@@ -58,6 +58,7 @@ void CAbiSlotsBar::Init(unsigned playerNumber)
     }
 
     UpdateKeyStrings();
+    UpdatePlayerData();
 
     mBar->SetVisible(false);
 }

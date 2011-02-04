@@ -158,6 +158,51 @@ void CGameScreens::HideAll()
     ShowCursor(false);
 }
 
+void CGameScreens::ResetGuiControls()
+{
+    delete mHud[0];
+    delete mHud[1];
+	mHud[0] = mHud[1] = NULL;
+
+    delete mCompass;
+	mCompass = NULL;
+
+    delete mBossHud;
+    mBossHud = NULL;
+
+    delete mAbiSlotsBar[0];
+    delete mAbiSlotsBar[1];
+    mAbiSlotsBar[0] = mAbiSlotsBar[1] = NULL;
+
+	mAbilities[0] = mAbilities[1] = NULL;
+	mAbiHelp[0] = mAbiHelp[1] = NULL;
+	mControls[0] = mControls[1] = NULL;
+    mGameOver = NULL;
+    mEditorScreens = NULL;
+
+    delete mSaveScreen;
+    mSaveScreen = NULL;
+    delete mEditorScreens;
+    mEditorScreens = NULL;
+
+    gNotepad.ResetGuiControls();
+}
+
+void CGameScreens::InitAll()
+{
+    InitHud();
+	InitAbilities(0);
+	InitAbilities(1);
+	InitControlListing(0);
+	InitControlListing(1);
+	InitGameOver();
+
+    mSaveScreen = new CSaveScreen(this);
+    mEditorScreens = new CEditorScreens();
+
+    gNotepad.Init();
+}
+
 void CGameScreens::InitHud()
 {
 	mHud[0] = new CHud();
@@ -180,10 +225,8 @@ void CGameScreens::UpdateHud(float dt)
 
 void CGameScreens::InitAbilities(unsigned playerNumber)
 {
-    mAbiSlotsBar[0] = new CAbiSlotsBar();
-    mAbiSlotsBar[0]->Init(0);
-    mAbiSlotsBar[1] = new CAbiSlotsBar();
-    mAbiSlotsBar[1]->Init(1);
+    mAbiSlotsBar[playerNumber] = new CAbiSlotsBar();
+    mAbiSlotsBar[playerNumber]->Init(playerNumber);
 
     if (!mAbilities[playerNumber])
     {
@@ -625,14 +668,7 @@ CGameScreens::CGameScreens()
 	mAbiHelp[0] = mAbiHelp[1] = NULL;
 	mControls[0] = mControls[1] = NULL;
 
-	InitHud();
-	InitAbilities(0);
-	InitAbilities(1);
-	InitControlListing(0);
-	InitControlListing(1);
-	InitGameOver();
-    mSaveScreen = new CSaveScreen(this);
-    mEditorScreens = new CEditorScreens();
+	InitAll();
 	HideAll();
 }
 

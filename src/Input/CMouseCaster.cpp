@@ -21,6 +21,15 @@ CMouseCaster::~CMouseCaster()
 {
 }
 
+std::vector<std::wstring> CMouseCaster::GetAbiKeys()
+{
+    std::vector<std::wstring> keys;
+    for (size_t i = 0; i < mKeys.size(); ++i)
+        keys.push_back(mKeys[i]->GetText());
+
+    return keys;
+}
+
 void CMouseCaster::Initialize(std::vector<std::wstring> &abiKeys, float radius)
 {
 	for ( unsigned i = 0; i < abiKeys.size(); i++ )

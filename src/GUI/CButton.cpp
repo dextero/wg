@@ -126,8 +126,15 @@ bool CButton::OnMouseEvent( float x, float y, mouseEvent e )
         if (mMousePressed)
         {
             gGUI.SetActiveObject( NULL );
-		    if ( !mClickCallback.empty() )		mClickCallback();
+
+            // dex: callbacki w takiej kolejnosci, bo sie wykrzaczy przy zmienianiu locale
+            // chyba, ze w opcjach zrobi sie ParamCallbacka po nacisnieciu 'zastosuj'
+            // dlaczego? zapisanie opcji jest w ClickCallbacku, a zmiana jezyka powoduje
+            // przeladowanie gui = skasowanie wszystkich kontrolek. to z kolei
+            // oznacza, ze this sie #$%^&i i w zmiennych skladowych sa smieci.
+            // nienawidze takich kombinacji, ale w taki sposob przynajmniej dziala.
 		    if ( !mClickParamCallback.empty() ) mClickParamCallback( mClickCallbackParams );
+		    if ( !mClickCallback.empty() )		mClickCallback();
         }
         mMousePressed = false;
         break;
@@ -141,6 +148,9 @@ bool CButton::OnMouseEvent( float x, float y, mouseEvent e )
     default:
         break;
 	}
+
+    // dex: nie uzywac za tym switchem zadnych zmiennych z CButton,
+    // bo sie posypie, patrz dlugi komentarz wyzej.
 
 	return false;
 }

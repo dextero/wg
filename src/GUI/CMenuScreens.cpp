@@ -120,6 +120,23 @@ void CMenuScreens::HideAll()
     gGUI.ShowCursor(false);
 }
 
+
+void CMenuScreens::ResetGuiControls()
+{
+    mMainMenu = NULL;
+    mPauseMenu = NULL;
+	mNewGameOptions = NULL;
+    mChooseControlsMenu = NULL;
+	mOptions = NULL;
+	mBindingOptions[0] = NULL;
+	mBindingOptions[1] = NULL;
+    mReadmeScreen = NULL;
+    mSaveScreen = NULL;
+	mLoadingScreen = NULL;
+    mAchievementsScreen = NULL;
+    mBestiaryScreen = NULL;
+}
+
 void CMenuScreens::InitAll()
 {
 	InitMainMenu();
@@ -435,10 +452,31 @@ void CMenuScreens::InitOptions()
 		options->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
 		options->SetBackgroundImage( "data/GUI/bg-options.jpg" );
 
+        /* jezyki */
+		CTextArea * languageTxt = options->CreateTextArea( "language-txt" );
+		languageTxt->SetFont( "data/GUI/argor.ttf", 55.f, UNIT_PERCENT );
+		languageTxt->SetText( gLocalizator.GetText("OPT_LANGUAGE") );
+		languageTxt->SetPosition( 19.0f, 15.0f, 30.0f, 5.0f );
+
+        CDropList * language = options->CreateDropList( "language" );
+		language->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 45.0f, UNIT_PERCENT );
+		language->SetImage( "data/GUI/droplist.png", "data/GUI/droplistd.png" );
+		language->SetCenter( true );
+		language->SetOptionFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 45.0f, UNIT_PERCENT );
+		language->SetOptionImage( "data/GUI/droplist-option.png", "data/GUI/droplist-optiond.png" );
+		language->SetOptionCenter( true );
+		language->SetPosition( 51.0f, 15.0f, 20.0f, 4.0f );
+
+        /* dostepne jezyki = nazwy folderow w data/locale */
+        std::vector<std::wstring> availableLanguages = gGameOptions.GetAvailableLanguages();
+        for (size_t i = 0; i < availableLanguages.size(); ++i)
+            language->AddOption(availableLanguages[i]);
+
+
 		CTextArea * resolutionTxt = options->CreateTextArea( "resolution-txt" );
 		resolutionTxt->SetFont( "data/GUI/argor.ttf", 55.f, UNIT_PERCENT );
 		resolutionTxt->SetText( gLocalizator.GetText("OPT_RESOLUTION") );
-		resolutionTxt->SetPosition( 19.0f, 15.0f, 30.0f, 5.0f );
+		resolutionTxt->SetPosition( 19.0f, 22.0f, 30.0f, 5.0f );
 
 		CDropList * resolution = options->CreateDropList( "resolution" );
 		resolution->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 45.0f, UNIT_PERCENT );
@@ -447,7 +485,7 @@ void CMenuScreens::InitOptions()
 		resolution->SetOptionFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 45.0f, UNIT_PERCENT );
 		resolution->SetOptionImage( "data/GUI/droplist-option.png", "data/GUI/droplist-optiond.png" );
 		resolution->SetOptionCenter( true );
-		resolution->SetPosition( 51.0f, 15.0f, 20.0f, 4.0f );
+		resolution->SetPosition( 51.0f, 22.0f, 20.0f, 4.0f );
 
 		/* listowanie rozdzielczosci */
 
@@ -467,56 +505,56 @@ void CMenuScreens::InitOptions()
 		CTextArea * fullscreenTxt = options->CreateTextArea( "fullscreen-txt" );
 		fullscreenTxt->SetFont( "data/GUI/argor.ttf", 55.f, UNIT_PERCENT );
         fullscreenTxt->SetText( gLocalizator.GetText("OPT_FULLSCREEN"));
-		fullscreenTxt->SetPosition( 19.0f, 23.0f, 30.0f, 5.0f );
+		fullscreenTxt->SetPosition( 19.0f, 28.0f, 30.0f, 5.0f );
 
 		CCheckBox * fullscreen = options->CreateCheckBox( "fullscreen" );
 		fullscreen->SetImage( "data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png" );
-		fullscreen->SetPosition( 51.0f, 23.0f, 3.25f, 4.0f );
+		fullscreen->SetPosition( 51.0f, 28.0f, 3.25f, 4.0f );
 
 		CTextArea * vsyncTxt = options->CreateTextArea( "vsync-txt" );
 		vsyncTxt->SetFont( "data/GUI/argor.ttf", 55.f, UNIT_PERCENT );
 		vsyncTxt->SetText( gLocalizator.GetText("OPT_VSYNC") );
-		vsyncTxt->SetPosition( 19.0f, 31.0f, 30.0f, 5.0f );
+		vsyncTxt->SetPosition( 19.0f, 34.0f, 30.0f, 5.0f );
 
 		CCheckBox * vsync = options->CreateCheckBox( "vsync" );
 		vsync->SetImage( "data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png" );
-		vsync->SetPosition( 51.0f, 31.0f, 3.25f, 4.0f );
+		vsync->SetPosition( 51.0f, 34.0f, 3.25f, 4.0f );
 
 		CTextArea * soundTxt = options->CreateTextArea( "sound-txt" );
 		soundTxt->SetFont( "data/GUI/argor.ttf", 55.f, UNIT_PERCENT );
 		soundTxt->SetText(  gLocalizator.GetText("OPT_SOUND_LEVEL") );
-		soundTxt->SetPosition( 19.0f, 41.0f, 30.0f, 5.0f );
+		soundTxt->SetPosition( 19.0f, 40.0f, 30.0f, 5.0f );
 
         CScrollBar *sound = options->CreateScrollBar( "sound-volume" );
         sound->SetHandleImage("data/GUI/scrollbar-handle.png");
         sound->SetBackgroundImage("data/GUI/scrollbar.png" );
-        sound->SetPosition( 51.0f, 41.0f, 20.0f, 4.0f);
+        sound->SetPosition( 51.0f, 40.0f, 20.0f, 4.0f);
         sound->SetHandleSize(16.0f);
 
 		CTextArea * musicTxt = options->CreateTextArea( "music-txt" );
 		musicTxt->SetFont( "data/GUI/argor.ttf", 55.f, UNIT_PERCENT );
 		musicTxt->SetText(  gLocalizator.GetText("OPT_MUSIC_LEVEL") );
-		musicTxt->SetPosition( 19.0f, 49.0f, 30.0f, 5.0f );
+		musicTxt->SetPosition( 19.0f, 46.0f, 30.0f, 5.0f );
 
         CScrollBar * music = options->CreateScrollBar( "music-volume" );
         music->SetHandleImage("data/GUI/scrollbar-handle.png");
         music->SetBackgroundImage("data/GUI/scrollbar.png" );
-        music->SetPosition( 51.0f, 50.0f, 20.0f, 4.0f);
+        music->SetPosition( 51.0f, 47.0f, 20.0f, 4.0f);
         music->SetHandleSize(16.0f);
         
 		CTextArea * stereoTxt = options->CreateTextArea( "3d-sound-txt" );
 		stereoTxt->SetFont( "data/GUI/argor.ttf", 55.f, UNIT_PERCENT );
         stereoTxt->SetText( gLocalizator.GetText("OPT_3D_SOUND"));
-		stereoTxt->SetPosition( 19.0f, 57.0f, 30.0f, 5.0f );
+		stereoTxt->SetPosition( 19.0f, 53.0f, 30.0f, 5.0f );
 
 		CCheckBox * stereo = options->CreateCheckBox( "3d-sound" );
 		stereo->SetImage( "data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png" );
-		stereo->SetPosition( 51.0f, 57.0f, 3.25f, 4.0f );
+		stereo->SetPosition( 51.0f, 53.0f, 3.25f, 4.0f );
 
         CTextArea * controlsTxt0 = options->CreateTextArea( "controls-txt0" );
         controlsTxt0->SetFont( "data/GUI/argor.ttf", 55.f, UNIT_PERCENT );
         controlsTxt0->SetText(  gLocalizator.GetText("OPT_CONTROLS1") );
-        controlsTxt0->SetPosition( 19.0f, 64.0f, 30.0f, 5.0f );
+        controlsTxt0->SetPosition( 19.0f, 60.0f, 30.0f, 5.0f );
 
 		CDropList * controls0 = options->CreateDropList( "controls0" );
 		controls0->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 45.0f, UNIT_PERCENT );
@@ -525,7 +563,7 @@ void CMenuScreens::InitOptions()
 		controls0->SetOptionFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 45.0f, UNIT_PERCENT );
 		controls0->SetOptionImage( "data/GUI/droplist-option.png", "data/GUI/droplist-optiond.png" );
 		controls0->SetOptionCenter( true );
-		controls0->SetPosition( 51.0f, 64.0f, 20.0f, 4.0f );
+		controls0->SetPosition( 51.0f, 60.0f, 20.0f, 4.0f );
         size_t count = System::Input::CBindManager::GetBindManagersCount(0);
         for ( size_t i = 0 ; i < count ; i++ )
         {
@@ -553,7 +591,7 @@ void CMenuScreens::InitOptions()
         }
 
 		CButton * binding0 = options->CreateButton( "binding-btn0" );
-		binding0->SetPosition( 75.0f, 64.0f, 10.0f, 4.0f );
+		binding0->SetPosition( 75.0f, 60.0f, 10.0f, 4.0f );
 		binding0->SetCenter( true );
 		binding0->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
 		binding0->SetText( gLocalizator.Get("OPT_DEFINE"), gLocalizator.GetFont(GUI::FONT_DIALOG) );
@@ -563,7 +601,7 @@ void CMenuScreens::InitOptions()
 		CTextArea * controlsTxt1 = options->CreateTextArea( "controls-txt1" );
         controlsTxt1->SetFont( "data/GUI/argor.ttf", 55.f, UNIT_PERCENT );
         controlsTxt1->SetText(  gLocalizator.GetText("OPT_CONTROLS2") );
-        controlsTxt1->SetPosition( 19.0f, 71.0f, 30.0f, 5.0f );
+        controlsTxt1->SetPosition( 19.0f, 67.0f, 30.0f, 5.0f );
 
 		CDropList * controls1 = options->CreateDropList( "controls1" );
 		controls1->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 45.0f, UNIT_PERCENT );
@@ -572,7 +610,7 @@ void CMenuScreens::InitOptions()
 		controls1->SetOptionFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 45.0f, UNIT_PERCENT );
 		controls1->SetOptionImage( "data/GUI/droplist-option.png", "data/GUI/droplist-optiond.png" );
 		controls1->SetOptionCenter( true );
-		controls1->SetPosition( 51.0f, 71.0f, 20.0f, 4.0f );
+		controls1->SetPosition( 51.0f, 67.0f, 20.0f, 4.0f );
         count = System::Input::CBindManager::GetBindManagersCount(1);
         for ( size_t i = 0 ; i < count ; i++ )
         {
@@ -600,7 +638,7 @@ void CMenuScreens::InitOptions()
         }
 
 		CButton * binding1 = options->CreateButton( "binding-btn1" );
-		binding1->SetPosition( 75.0f, 71.0f, 10.0f, 4.0f );
+		binding1->SetPosition( 75.0f, 67.0f, 10.0f, 4.0f );
 		binding1->SetCenter( true );
 		binding1->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
 		binding1->SetText( gLocalizator.Get("OPT_DEFINE"), gLocalizator.GetFont(GUI::FONT_DIALOG) );
@@ -634,6 +672,9 @@ void CMenuScreens::UpdateOptions()
 {
 	if ( mOptions )
 	{
+        CDropList * language = (CDropList*) mOptions->FindObject( "language" );
+        language->SetSelectedOption( StringUtils::ConvertToWString( gGameOptions.GetLocaleLang() ) );
+
 		CDropList * resolution = (CDropList*) mOptions->FindObject( "resolution" );
 		resolution->SetSelectedOption( GenVideoMode( gGameOptions.GetWidth(), gGameOptions.GetHeight(), gGameOptions.GetBitsPerPixel() ) );
 
@@ -672,6 +713,9 @@ void CMenuScreens::RestoreOptions()
     if (!mOptions)
         return;
 
+	CDropList * language = (CDropList*) mOptions->FindObject( "language" );
+	language->SetSelectedOption( tmpLanguage );
+
 //    CDropList * resolution = (CDropList*) mOptions->FindObject( "resolution" );
 //    resolution->SetSelectedOption( GenVideoMode( tmpWidth, tmpHeight, tmpBitsPerPixel ) );
 
@@ -702,6 +746,9 @@ void CMenuScreens::StoreOptions()
 {
 	if ( !mOptions )
         return;
+
+    CDropList * language = (CDropList*) mOptions->FindObject( "language" );
+	tmpLanguage = language->GetSelectedOption();
 
 //    CDropList * resolution = (CDropList*) mOptions->FindObject( "resolution" );
 
@@ -752,6 +799,7 @@ void CMenuScreens::SaveOptions()
 {
 	if ( mOptions )
 	{
+        CDropList * language = (CDropList*) mOptions->FindObject( "language" );
 		CDropList * resolution = (CDropList*) mOptions->FindObject( "resolution" );
 		CCheckBox * fullscreen = (CCheckBox*) mOptions->FindObject( "fullscreen" );
 		CCheckBox * vsync = (CCheckBox*) mOptions->FindObject( "vsync" );
@@ -761,6 +809,7 @@ void CMenuScreens::SaveOptions()
 		CDropList * controls0 = (CDropList*) mOptions->FindObject( "controls0" );
 		CDropList * controls1 = (CDropList*) mOptions->FindObject( "controls1" );
 
+        // dex: zmiana jezyka musi byc ostatnia, bo resetuje cale GUI ;f
 
         gGameOptions.SetMusicVolume( music->GetState() );
         gGameOptions.SetSoundVolume( sound->GetState() );
@@ -801,6 +850,9 @@ void CMenuScreens::SaveOptions()
 
         StoreOptions();
         ShowPrevious();
+
+        if ( language->GetSelectedOption() != StringUtils::ConvertToWString(gGameOptions.GetLocaleLang()) )
+            gGameOptions.LoadLocale( language->GetSelectedOption() );
 	}
 }
 
