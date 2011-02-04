@@ -2,9 +2,10 @@
 #ifndef PLATFORM_MACOSX
 #include <wordexp.h>
 #include <string>
-#include "Utils/FileUtils.h"
-
+#include <stdio.h>
 #include <sys/stat.h>
+
+#include "Utils/FileUtils.h"
 
 static std::string gUserDir = "~/.WarlocksGauntlet";
 const std::string & FileUtils::GetUserDir()
