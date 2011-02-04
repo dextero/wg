@@ -10,7 +10,7 @@ LDFLAGS = -L"./libs32"
 
 LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
-LIBS += ./lib/libXrandr.so.2 ./lib/libsndfile.so.1 ./lib/libFLAC.so.8 ./lib/libXrender.so.1 ./lib/libogg.so.0
+LIBS += ./tools/linux/ci/libs/libXrandr.so.2 ./tools/linux/ci/libs/libsndfile.so.1 ./tools/linux/ci/libs/libFLAC.so.8 ./tools/linux/ci/libs/libXrender.so.1 ./tools/linux/ci/libs/libogg.so.0
 
 #default:
 CXXFLAGS = -g -Wall
