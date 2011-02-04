@@ -27,8 +27,10 @@ namespace GUI
         void ShowPrevious();
         bool IsShowing() { return mPrevMenus.size() > 0; };
         void ClearPreviousMenusList() { while (!mPrevMenus.empty()) mPrevMenus.pop(); };
+        const std::wstring GetCurrentMenu() { if (!mPrevMenus.empty()) return mPrevMenus.top(); else return L"main-menu"; }
 		void HideAll();
 
+        void ResetGuiControls();
         void InitAll();
 
 		void InitMainMenu();
@@ -117,6 +119,7 @@ namespace GUI
         void UpdateArcadeMode();    // sprawdza checkboxa i ew. przyspiesza gre
 
         //ustawienia 'dirty', czyli jeszcze nie zapisane, ale juz ruszane przez usera
+        std::wstring tmpLanguage;
         int tmpWidth;
         int tmpHeight;
         int tmpBitsPerPixel;

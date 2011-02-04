@@ -14,7 +14,7 @@ private:
 	CLocale	*mCurrent;
 public:
 	void Load(const std::string &filename);
-    void Unload() { if (mCurrent) delete mCurrent; }
+    void Unload();
 
     const SLocalizedText Get(hash_t id);
     const SLocalizedText Get(const char* id);

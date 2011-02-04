@@ -33,6 +33,7 @@ namespace GUI
         virtual void MouseWheelMoved( const sf::Event::MouseWheelEvent& e );
 
 		virtual void Cleanup();
+        void Reset(); // dex: workaround na czyszczenie kontrolek GUI przy zmianie locale
 
 		void RegisterObject( CGUIObject* object );
 		void UnregisterObject( CGUIObject* object );
@@ -44,6 +45,7 @@ namespace GUI
 		inline CGUIObject* GetFocusedObject() { return mFocusedObject; }
         inline CGUIObject* GetLastDraggedObject() { return mDraggedObject; }
 
+        void InitCursor();
         void ShowCursor(bool show=true);
 	private:
 
@@ -53,6 +55,8 @@ namespace GUI
         CImageBox* mCursor;
         CGUIObject* mDraggedObject;
         CImageBox* mDraggedImg;
+        
+        bool mJustResetted;
 
 		friend class CGUIObject;
 	};

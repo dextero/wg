@@ -612,4 +612,8 @@ Specjalne podziękowania dla:
 		<key>UI_XP</key>
 		<value>XP: </value>
 	</entry>
+	<entry>
+		<key>OPT_LANGUAGE</key>
+		<value>Język:</value>
+	</entry>
 </root>

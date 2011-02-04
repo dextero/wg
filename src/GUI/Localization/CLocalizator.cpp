@@ -15,6 +15,13 @@ void CLocalizator::Load(const std::string &filename){
 	mCurrent->Load(filename);
 }
 
+void CLocalizator::Unload()
+{
+    if (mCurrent)
+        delete mCurrent;
+    mCurrent = NULL;
+}
+
 const SLocalizedText CLocalizator::Get(hash_t id){
     if (mCurrent)
         return mCurrent->Get(id);

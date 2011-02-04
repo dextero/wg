@@ -272,6 +272,8 @@ void CGUIObject::RemoveChilds()
 		mChilds[i]->RemoveChilds();
 		delete mChilds[i];
 	}
+
+    mChilds.clear();
 }
 
 bool CGUIObject::OnMouseEvent( float x, float y, mouseEvent e )
