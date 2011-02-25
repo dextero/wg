@@ -43,7 +43,7 @@ Release: all
 all: $(BINARY)
 
 $(BINARY): $(OBJECTS)
-	$(CXX) -o $@ $(OBJECTS) $(CPPFLAGS) $(LDFLAGS) $(LIBS) $(OTHER_OBJECTS)
+	$(CXX) -o $@ $(OBJECTS) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(LIBS) $(OTHER_OBJECTS)
 
 %.d: %.cpp
 	-$(CXX) -E $(CXXFLAGS)  $(CPPFLAGS) -MM -MP -MF $@ -MQ $(@:.d=.s) -MQ $(@:.d=.o) -MQ $@ $<
