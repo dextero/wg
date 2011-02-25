@@ -285,6 +285,8 @@ bool CGUIObject::OnMouseEvent( float x, float y, mouseEvent e )
         mEventWStringCallback[e](mEventWStringParam[e]);
     if (!mEventVoidPtrCallback[e].empty())
         mEventVoidPtrCallback[e](mEventVoidPtrParam[e]);
+    if (!mEventIntCallback[e].empty())
+        mEventIntCallback[e](mEventIntParam[e]);
 
     if (mTooltip)
     {
