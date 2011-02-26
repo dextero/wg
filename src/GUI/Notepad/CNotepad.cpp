@@ -15,10 +15,42 @@ const float CAPTION_BTN_HEIGHT = 20.0f;
 
 template<> CNotepad* CSingleton<CNotepad>::msSingleton = 0;
 
-CNotepad::CNotepad():
-    mNotepadWnd(NULL)
+CNotepad::CNotepad()
 {
-    Init();
+	mNotepadWnd = gGUI.CreateWindow( "notepad", true, Z_GUI3 );
+	mNotepadWnd->SetPosition( 50.0f,50.0f,0.0f,0.0f,UNIT_PERCENT );
+	mNotepadWnd->SetPosition(-350.0f, -300.0f, 700.0f, 600.0f,UNIT_PIXEL );
+	mNotepadWnd->SetBackgroundImage( "data/GUI/abilities-holder.png" );
+
+	mCaptionsScrollBar = mNotepadWnd->CreateScrollBar( "np-caption-sb" );
+	mCaptionsScrollBar->SetPosition( 35.0f, 5.0f, 2.0f, 90.0f );
+	mCaptionsScrollBar->SetBackgroundImage( "data/GUI/scrollbar-v.png" );
+	mCaptionsScrollBar->SetHandleImage( "data/GUI/scrollbar-handle.png" );
+	mCaptionsScrollBar->SetOrientation( ORIENTATION_Y );
+	mCaptionsScrollBar->SetHandleSize( 5.0f );
+
+	mCaptionsPanel = mNotepadWnd->CreateScrollPanel( "np-caption-panel" );
+	mCaptionsPanel->SetPosition( 3.0f, 3.0f, 30.0f, 94.0f );
+	mCaptionsPanel->SetScrollBarY( mCaptionsScrollBar );
+
+	mPageScrollBar = mNotepadWnd->CreateScrollBar( "np-page-sb" );
+	mPageScrollBar->SetPosition( 95.0f, 5.0f, 2.0f, 90.0f );
+	mPageScrollBar->SetBackgroundImage( "data/GUI/scrollbar-v.png" );
+	mPageScrollBar->SetHandleImage( "data/GUI/scrollbar-handle.png" );
+	mPageScrollBar->SetOrientation( ORIENTATION_Y );
+	mPageScrollBar->SetHandleSize( 5.0f );
+
+	CScrollPanel* pagePanel = mNotepadWnd->CreateScrollPanel( "np-page-panel" );
+	pagePanel->SetPosition( 40.0f, 3.0f, 53.0f, 94.0f );
+	pagePanel->SetScrollBarY( mPageScrollBar );
+
+	mPageContent = pagePanel->CreateTextArea( "np-page-content" );
+	mPageContent->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
+	mPageContent->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 14.0f );
+	mPageContent->SetColor( sf::Color::White );
+	mPageContent->SetAutoHeight( true );
+
+	Hide();
 }
 
 CNotepad::~CNotepad()
@@ -63,56 +95,6 @@ void CNotepad::AddNote(const std::wstring &page, const std::wstring &note)
 		pg = AddPage( page );
 		pg->notes.push_back( note );
 	}
-}
-
-void CNotepad::ResetGuiControls()
-{
-    mNotepadWnd = NULL;
-    mCaptionsScrollBar = NULL;
-    mCaptionsPanel = NULL;
-    mPageScrollBar = NULL;
-    mPageContent = NULL;
-}
-
-void CNotepad::Init()
-{
-    if (!mNotepadWnd)
-    {
-	    mNotepadWnd = gGUI.CreateWindow( "notepad", true, Z_GUI3 );
-	    mNotepadWnd->SetPosition( 50.0f,50.0f,0.0f,0.0f,UNIT_PERCENT );
-	    mNotepadWnd->SetPosition(-350.0f, -300.0f, 700.0f, 600.0f,UNIT_PIXEL );
-	    mNotepadWnd->SetBackgroundImage( "data/GUI/abilities-holder.png" );
-
-	    mCaptionsScrollBar = mNotepadWnd->CreateScrollBar( "np-caption-sb" );
-	    mCaptionsScrollBar->SetPosition( 35.0f, 5.0f, 2.0f, 90.0f );
-	    mCaptionsScrollBar->SetBackgroundImage( "data/GUI/scrollbar-v.png" );
-	    mCaptionsScrollBar->SetHandleImage( "data/GUI/scrollbar-handle.png" );
-	    mCaptionsScrollBar->SetOrientation( ORIENTATION_Y );
-	    mCaptionsScrollBar->SetHandleSize( 5.0f );
-
-	    mCaptionsPanel = mNotepadWnd->CreateScrollPanel( "np-caption-panel" );
-	    mCaptionsPanel->SetPosition( 3.0f, 3.0f, 30.0f, 94.0f );
-	    mCaptionsPanel->SetScrollBarY( mCaptionsScrollBar );
-
-	    mPageScrollBar = mNotepadWnd->CreateScrollBar( "np-page-sb" );
-	    mPageScrollBar->SetPosition( 95.0f, 5.0f, 2.0f, 90.0f );
-	    mPageScrollBar->SetBackgroundImage( "data/GUI/scrollbar-v.png" );
-	    mPageScrollBar->SetHandleImage( "data/GUI/scrollbar-handle.png" );
-	    mPageScrollBar->SetOrientation( ORIENTATION_Y );
-	    mPageScrollBar->SetHandleSize( 5.0f );
-
-	    CScrollPanel* pagePanel = mNotepadWnd->CreateScrollPanel( "np-page-panel" );
-	    pagePanel->SetPosition( 40.0f, 3.0f, 53.0f, 94.0f );
-	    pagePanel->SetScrollBarY( mPageScrollBar );
-
-	    mPageContent = pagePanel->CreateTextArea( "np-page-content" );
-	    mPageContent->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
-	    mPageContent->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 14.0f );
-	    mPageContent->SetColor( sf::Color::White );
-	    mPageContent->SetAutoHeight( true );
-    }
-
-	Hide();
 }
 
 /* ================== PRIVATE METHODS ===================== */

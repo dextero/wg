@@ -4,13 +4,11 @@
 #include <string>
 #include "Utils/FileUtils.h"
 
-#include <sys/stat.h>
-
 static std::string gUserDir = "~/.WarlocksGauntlet";
 const std::string & FileUtils::GetUserDir()
 {
-	static bool sInitialized = false;
-    if (!sInitialized) {
+	static bool sInitalized = false;
+    if (!gInitialized) {
         wordexp_t exp_result;
         wordexp("~/.WarlocksGauntlet", &exp_result, 0);
         gUserDir = exp_result.we_wordv[0];
@@ -20,7 +18,7 @@ const std::string & FileUtils::GetUserDir()
 
         fprintf(stderr, "Detected userDir as `%s'\n", gUserDir.c_str());
 
-        sInitialized = true;
+        gInitialized = true;
     }
     return gUserDir;
 }

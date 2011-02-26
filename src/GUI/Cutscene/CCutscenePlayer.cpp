@@ -21,14 +21,22 @@ template<> CCutscenePlayer* CSingleton<CCutscenePlayer>::msSingleton = 0;
 
 CCutscenePlayer::CCutscenePlayer()
 :	mTime( 0.0f ),
-	mState( CUTSCENE_EMPTY ),
-    mImageBox( NULL ),
-    mTextArea( NULL )
+	mState( CUTSCENE_EMPTY )
 {
 	gGame.AddFrameListener( this );
 	gGame.AddKeyListener( this );
 
-    InitGuiControls();
+	mImageBox = gGUI.CreateImageBox( "cutscene-image", true, Z_GUI2 );
+	mImageBox->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
+	mImageBox->SetVisible( false );
+
+	mTextArea = mImageBox->CreateTextArea( "cutscene-text" );
+	mTextArea->SetPosition( 5.0f, 80.0f, 90.0f, 18.0f );
+	mTextArea->SetPadding( 2.0f, 2.0f, 2.0f, 2.0f );
+	mTextArea->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
+	mTextArea->SetBackgroundImage( "data/cutscene/bg.png" );
+	mTextArea->SetColor( sf::Color::White );
+	mTextArea->SetVisible( false );
 }
 
 CCutscenePlayer::~CCutscenePlayer()
@@ -110,35 +118,6 @@ void CCutscenePlayer::StopCutscene()
 	mTextArea->SetVisible( false );
 	gGame.SetFreezed( false );
 }
-
-
-void CCutscenePlayer::ResetGuiControls()
-{
-    mImageBox = NULL;
-    mTextArea = NULL;
-}
-
-void CCutscenePlayer::InitGuiControls()
-{
-    if (!mImageBox)
-    {
-	    mImageBox = gGUI.CreateImageBox( "cutscene-image", true, Z_GUI2 );
-	    mImageBox->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
-	    mImageBox->SetVisible( false );
-    }
-
-    if (!mTextArea)
-    {
-        mTextArea = mImageBox->CreateTextArea( "cutscene-text" );
-        mTextArea->SetPosition( 5.0f, 80.0f, 90.0f, 18.0f );
-        mTextArea->SetPadding( 2.0f, 2.0f, 2.0f, 2.0f );
-        mTextArea->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
-        mTextArea->SetBackgroundImage( "data/cutscene/bg.png" );
-        mTextArea->SetColor( sf::Color::White );
-        mTextArea->SetVisible( false );
-    }
-}
-
 
 void CCutscenePlayer::FrameStarted(float secondsPassed)
 {

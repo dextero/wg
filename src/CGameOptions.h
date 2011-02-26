@@ -31,7 +31,6 @@ private:
     float mSoundVolume;
     float mMusicVolume;
 	std::string mLocaleLang;
-    const std::string mLocaleDir;
 	std::string mControls[PLAYERS_CNT];
 	std::vector<keyBinding> mKeyBindings[PLAYERS_CNT];
 
@@ -106,10 +105,6 @@ public:
     bool LoadOptions();
     void UpdateWindow();
     void SaveOptions();
-
-    void LoadLocale(const std::wstring& lang);
-    std::vector<std::wstring> GetAvailableLanguages();
-    const std::string& GetLocaleLang() { return mLocaleLang; }
 
     // getters & setters:
     unsigned int GetWidth() { return mWidth; };
