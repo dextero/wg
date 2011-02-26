@@ -21,12 +21,12 @@ namespace GUI
         void SlotPressed(const std::wstring & params);
 
     private:
-        void UpdateDifficultyBar(void* hoveredBtnNum);
+        void UpdateDifficultyBar(int hoveredBtnNum);
 
         void UpdateSlot(int slot, const std::wstring & caption,
                         const std::string & gameName,
                         const std::string & thumbnail);
-        void SelectSlot(void* slotNum);
+        void SelectSlot(int slotNum);
 
         CGUIObject * mSaveScreen;
         std::vector< CWindow * > mSlots;

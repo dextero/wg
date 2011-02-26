@@ -2,12 +2,15 @@
 #ifndef PLATFORM_MACOSX
 #include <wordexp.h>
 #include <string>
+#include <stdio.h>
+#include <sys/stat.h>
+
 #include "Utils/FileUtils.h"
 
 static std::string gUserDir = "~/.WarlocksGauntlet";
 const std::string & FileUtils::GetUserDir()
 {
-	static bool sInitalized = false;
+	static bool sInitialized = false;
     if (!gInitialized) {
         wordexp_t exp_result;
         wordexp("~/.WarlocksGauntlet", &exp_result, 0);

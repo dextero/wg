@@ -10,6 +10,8 @@ LDFLAGS = -L"./libs32"
 
 LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
+LIBS += ./tools/linux/ci/libs/libXrandr.so.2 ./tools/linux/ci/libs/libsndfile.so.1 ./tools/linux/ci/libs/libFLAC.so.8 ./tools/linux/ci/libs/libXrender.so.1 ./tools/linux/ci/libs/libogg.so.0
+
 #default:
 CXXFLAGS = -g -Wall
 
@@ -43,7 +45,7 @@ Release: all
 all: $(BINARY)
 
 $(BINARY): $(OBJECTS)
-	$(CXX) -o $@ $(OBJECTS) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(LIBS) $(OTHER_OBJECTS)
+	$(CXX) -o $@ $(OBJECTS) $(CPPFLAGS) $(LDFLAGS) $(LIBS) $(OTHER_OBJECTS)
 
 %.d: %.cpp
 	-$(CXX) -E $(CXXFLAGS)  $(CPPFLAGS) -MM -MP -MF $@ -MQ $(@:.d=.s) -MQ $(@:.d=.o) -MQ $@ $<

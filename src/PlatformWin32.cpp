@@ -13,8 +13,8 @@
 static std::string gUserDir = "%APPDATA%\\WarlocksGauntlet";
 const std::string & FileUtils::GetUserDir()
 {
-	static bool gInitialized = false;
-    if (!gInitialized) {
+	static bool sInitialized = false;
+    if (!sInitialized) {
 		char path[ MAX_PATH ];
 		if (SHGetFolderPathA( NULL, CSIDL_APPDATA | CSIDL_FLAG_CREATE, NULL, 0, path ) != S_OK) {
 			char * reason = "I could not create the user application data directory!\n";
@@ -25,7 +25,7 @@ const std::string & FileUtils::GetUserDir()
 		gUserDir = std::string(path) + "\\WarlocksGauntlet";
         fprintf(stderr, "Detected userDir as `%s'\n", gUserDir.c_str());
 
-        gInitialized = true;
+        sInitialized = true;
     }
     return gUserDir;
 }
