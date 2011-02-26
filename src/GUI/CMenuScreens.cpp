@@ -76,8 +76,8 @@ void CMenuScreens::Show(const std::wstring &menu)
     mBestiaryScreen->SetVisible( menu == L"bestiary" );
 	gGUI.ShowCursor( menu != L"" );
 
-    if ( menu == L"binding-options0" )	UpdateBindingOptions((void*)0);
-	else if ( menu == L"binding-options1" )	UpdateBindingOptions((void*)1);
+    if ( menu == L"binding-options0" )	UpdateBindingOptions(0);
+	else if ( menu == L"binding-options1" )	UpdateBindingOptions(1);
     else if ( menu == L"save-screen" || menu == L"load-screen" )
         UpdateSaveScreen( menu == L"save-screen" );
     else if ( menu == L"achievements" ) UpdateAchievementsScreen();
@@ -839,8 +839,8 @@ void CMenuScreens::InitBindingOptions()
             CCheckBox* absolute = w->CreateCheckBox("absolute");
 		    absolute->SetImage("data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png");
             absolute->SetPosition(10.f, 13.f, 4.f, 5.f);
-            absolute->GetEventVoidPtrCallback(MOUSE_RELEASED_LEFT)->bind(this, &CMenuScreens::UpdateBindingOptions);
-            absolute->SetEventVoidPtrParam(MOUSE_RELEASED_LEFT, (void*)i);
+            absolute->GetEventIntCallback(MOUSE_RELEASED_LEFT)->bind(this, &CMenuScreens::UpdateBindingOptions);
+            absolute->SetEventIntParam(MOUSE_RELEASED_LEFT, i);
 
             CTextArea* absoluteTxt = w->CreateTextArea("absolute-txt");
             absoluteTxt->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
@@ -862,8 +862,8 @@ void CMenuScreens::InitBindingOptions()
             CCheckBox* mouseLook = w->CreateCheckBox("mouse-look");
             mouseLook->SetImage("data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png");
             mouseLook->SetPosition(30.f, 13.f, 4.f, 5.f);
-            mouseLook->GetEventVoidPtrCallback(MOUSE_RELEASED_LEFT)->bind(this, &CMenuScreens::UpdateBindingOptions);
-            mouseLook->SetEventVoidPtrParam(MOUSE_RELEASED_LEFT, (void*)i);
+            mouseLook->GetEventIntCallback(MOUSE_RELEASED_LEFT)->bind(this, &CMenuScreens::UpdateBindingOptions);
+            mouseLook->SetEventIntParam(MOUSE_RELEASED_LEFT, i);
 
             CTextArea* mouseLookTxt = w->CreateTextArea("mouse-look-txt");
             mouseLookTxt->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
@@ -885,8 +885,8 @@ void CMenuScreens::InitBindingOptions()
             CCheckBox* mouseCast = w->CreateCheckBox("mouse-cast");
             mouseCast->SetImage("data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png");
             mouseCast->SetPosition(50.f, 13.f, 4.f, 5.f);
-            mouseCast->GetEventVoidPtrCallback(MOUSE_RELEASED_LEFT)->bind(this, &CMenuScreens::UpdateBindingOptions);
-            mouseCast->SetEventVoidPtrParam(MOUSE_RELEASED_LEFT, (void*)i);
+            mouseCast->GetEventIntCallback(MOUSE_RELEASED_LEFT)->bind(this, &CMenuScreens::UpdateBindingOptions);
+            mouseCast->SetEventIntParam(MOUSE_RELEASED_LEFT, i);
 
             CTextArea* mouseCastTxt = w->CreateTextArea("mouse-cast-txt");
             mouseCastTxt->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
@@ -908,8 +908,8 @@ void CMenuScreens::InitBindingOptions()
             CCheckBox* separateSeq = w->CreateCheckBox("separate-seq");
             separateSeq->SetImage("data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png");
             separateSeq->SetPosition(70.f, 13.f, 4.f, 5.f);
-            separateSeq->GetEventVoidPtrCallback(MOUSE_RELEASED_LEFT)->bind(this, &CMenuScreens::UpdateBindingOptions);
-            separateSeq->SetEventVoidPtrParam(MOUSE_RELEASED_LEFT, (void*)i);
+            separateSeq->GetEventIntCallback(MOUSE_RELEASED_LEFT)->bind(this, &CMenuScreens::UpdateBindingOptions);
+            separateSeq->SetEventIntParam(MOUSE_RELEASED_LEFT, i);
 
             CTextArea* separateSeqTxt = w->CreateTextArea("separate-seq-txt");
             separateSeqTxt->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
@@ -933,10 +933,8 @@ void CMenuScreens::InitBindingOptions()
 	}
 }
 
-void CMenuScreens::UpdateBindingOptions(void* playerNum)
+void CMenuScreens::UpdateBindingOptions(int playerNumber)
 {
-    unsigned playerNumber = (unsigned)playerNum;
-
     RestoreOptions();
 
 	std::string playerStr = StringUtils::ToString( playerNumber );
