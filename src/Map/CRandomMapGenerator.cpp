@@ -914,7 +914,7 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
     mXmlText << "</map>";
 
     // skoro doszlismy tutaj, to znaczy, ze mozna zapisywac!
-	if (!FileUtils::WriteToFile(filename, mXmlText.str()))
+	if (!FileUtils::WriteToFile(filename, mXmlText.str()));
     {
         fprintf(stderr, "CRandomMapGenerator::GenerateRandomMap: couldn't write file \"%s\"!\n", filename.c_str());
         return false;

@@ -19,10 +19,6 @@
 #include "Logic/CPlayerManager.h"
 #include "Logic/CLogic.h"
 #include "GUI/Localization/CLocalizator.h"
-#include "GUI/CRoot.h"
-#include "GUI/Cutscene/CCutscenePlayer.h"
-#include "GUI/Messages/CMessageSystem.h"
-#include "GUI/CAbiSlotsBar.h"
 
 extern bool AskForFullscreen(const wchar_t * title, const wchar_t * message, int maxw, int maxh);
 
@@ -53,149 +49,6 @@ bool UserWantToPlayInFullscreen(unsigned int *width, unsigned int *height)
 }
 
 template<> CGameOptions* CSingleton<CGameOptions>::msSingleton = 0;
-
-
-void CGameOptions::LoadLocale(const std::wstring& lang)
-{
-    unsigned int loadedFiles = 0;
-    boost::filesystem::directory_iterator di(mLocaleDir), di_end;
-
-    gLocalizator.Unload();
-
-    // wszystko z data/locale
-    for (; di != di_end; ++di)
-    {
-		if (di->leaf() == ".svn")
-			continue;
-
-        std::string file = mLocaleDir + di->leaf();
-        if (!boost::filesystem::is_directory(file))
-        {
-            gLocalizator.Load(file);
-            ++loadedFiles;
-        }
-    }
-
-    // wszystko z data/locale/[jezyk], rekurencyjnie
-    std::vector<std::string> dirs;
-    dirs.push_back(mLocaleDir + StringUtils::ConvertToString(lang));
-	while (dirs.size() > 0)
-    {
-		std::string dir = dirs[dirs.size()-1];
-		dirs.pop_back();
-
-		boost::filesystem::directory_iterator di(dir),dir_end;
-		for (; di != dir_end; di++){
-			if (di->leaf() == ".svn")
-				continue;
-			std::string file = dir + "/" + di->leaf();
-			if (boost::filesystem::is_directory(file))
-				dirs.push_back(file);
-			else
-            {
-				gLocalizator.Load(file);
-                ++loadedFiles;
-            }
-		}
-	}
-    
-    if (loadedFiles)
-    {
-        mLocaleLang = StringUtils::ConvertToString(lang);
-
-        if (CSingleton<CLogic>::GetSingletonPtr() && CSingleton<GUI::CRoot>::GetSingletonPtr())
-        {
-            // singletony istnieja, czyli gra juz dziala, trzeba resetowac...
-            // trzeba zapisac umiejetnosci z paskow
-            CAbility* barAbilities[2][3];
-            for (unsigned int i = 0; i < 2; ++i)
-            {
-                if (GUI::CAbiSlotsBar* bar = gLogic.GetGameScreens()->GetAbiBar(i))
-                {
-                    for (unsigned int abi = 0; abi < 3; ++abi)
-                        barAbilities[i][abi] = bar->GetSelectedAbility(abi);
-                }
-            }
-
-            // i juz mozna pucowac
-            // najpierw wyczyscic wszystkie wskazniki na kontrolki
-            gMessageSystem.Clear();
-            gLogic.GetGameScreens()->ResetGuiControls();
-            gLogic.GetMenuScreens()->ResetGuiControls();
-            gCutscenePlayer.ResetGuiControls();
-            
-            // mousecastery
-            std::vector<std::vector<std::wstring> > mcKeys[2];
-            std::vector<CMouseCaster*> mousecaster[2];
-            for (unsigned int i = 0; i < 2; ++i)
-            {
-                for (unsigned int j = 0; j < System::Input::CBindManager::GetBindManagersCount(i); ++j)
-                {
-                    mousecaster[i].push_back(System::Input::CBindManager::GetBindManagerAt(j, i)->GetMouseCaster());
-
-                    mcKeys[i].push_back(std::vector<std::wstring>());
-                    if (mousecaster[i][j])
-                    {
-                        mcKeys[i][j] = mousecaster[i][j]->GetAbiKeys();
-                        mousecaster[i][j]->ResetGuiControls();
-                    }
-                }
-            }
-
-            // potem czyszczenie calego GUI
-            gGUI.Reset();
-
-            // i ponowne inicjalizowanie
-            gLogic.GetGameScreens()->InitAll();
-            gLogic.GetGameScreens()->HideAll();
-            gLogic.GetMenuScreens()->InitAll();
-            gLogic.GetMenuScreens()->HideAll();
-            gLogic.GetMenuScreens()->Show(gLogic.GetMenuScreens()->GetCurrentMenu());
-            gLogic.GetMenuScreens()->ShowPrevious(); // bo po powyzszym sa dwa na stosie
-
-            gCutscenePlayer.InitGuiControls();
-            
-            // mousecastery
-            for (unsigned int i = 0; i < 2; ++i)
-            {
-                for (unsigned int j = 0; j < System::Input::CBindManager::GetBindManagersCount(i); ++j)
-                    if (mousecaster[i][j])
-                        mousecaster[i][j]->Initialize(mcKeys[i][j], mousecaster[i][j]->GetRadius());
-            }
-
-            // paski z umiejkami - trzeba przywrocic ustawienie
-            for (unsigned int i = 0; i < 2; ++i)
-            {
-                for (unsigned int abi = 0; abi < 3; ++abi)
-                    gLogic.GetGameScreens()->SetSlotAbility(i, abi, barAbilities[i][abi]);
-            }
-
-            gGUI.ShowCursor();
-        }
-    }
-    else
-        fprintf(stderr, "ERROR while trying to load locale: %ls\n", lang.c_str());
-}
-
-std::vector<std::wstring> CGameOptions::GetAvailableLanguages()
-{
-    std::vector<std::wstring> out;
-    boost::filesystem::directory_iterator di(mLocaleDir), di_end;
-
-    // wszystko z data/locale
-    for (; di != di_end; ++di)
-    {
-		if (di->leaf() == ".svn")
-			continue;
-
-        std::string file = mLocaleDir + di->leaf();
-        if (boost::filesystem::is_directory(file))
-            out.push_back(StringUtils::ConvertToWString(di->leaf()));
-    }
-
-    return out;
-}
-
 
 bool CGameOptions::LoadOptions()
 {
@@ -232,7 +85,40 @@ bool CGameOptions::LoadOptions()
 	CXml xml( configVer > userConfigVer ? "data/config.xml" : FileUtils::GetUserDir() + "/config.xml", "root" );
 
     // poczatek ladowania locale
-    LoadLocale(StringUtils::ConvertToWString(xml.GetString("locale","lang")));
+    mLocaleLang = xml.GetString("locale","lang");
+    std::string localeDir = "data/locale/";
+    boost::filesystem::directory_iterator di(localeDir), di_end;
+
+    // wszystko z data/locale
+    for (; di != di_end; ++di)
+    {
+		if (di->leaf() == ".svn")
+			continue;
+
+        std::string file = localeDir + di->leaf();
+        if (!boost::filesystem::is_directory(file))
+            gLocalizator.Load(file);
+    }
+
+    // wszystko z data/locale/[jezyk], rekurencyjnie
+    std::vector<std::string> dirs;
+	dirs.push_back(localeDir + mLocaleLang);
+	while (dirs.size() > 0)
+    {
+		std::string dir = dirs[dirs.size()-1];
+		dirs.pop_back();
+
+		boost::filesystem::directory_iterator di(dir),dir_end;
+		for (; di != dir_end; di++){
+			if (di->leaf() == ".svn")
+				continue;
+			std::string file = dir + "/" + di->leaf();
+			if (boost::filesystem::is_directory(file))
+				dirs.push_back(file);
+			else
+				gLocalizator.Load(file);
+		}
+	}
     // koniec ladowania locale
 
     // ladowanie achievementow
@@ -242,7 +128,7 @@ bool CGameOptions::LoadOptions()
         gAchievementManager.Load("data/achievements.xml");
 
     // achievementy - questy
-    std::vector<std::string> dirs;
+    dirs.clear();
     dirs.push_back("data/plot/achievements");
 	while (dirs.size() > 0)
     {
@@ -396,8 +282,7 @@ CGameOptions::CGameOptions():
     mVSync(true),
     m3DSound(true),
     mSoundVolume(100.f),
-    mMusicVolume(100.f),
-    mLocaleDir("data/locale/")
+    mMusicVolume(100.f)
 {
 	mUserDir = FileUtils::GetUserDir();
 

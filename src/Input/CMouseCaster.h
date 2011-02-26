@@ -23,10 +23,6 @@ public:
 	CMouseCaster();
 	~CMouseCaster();
 
-    std::vector<std::wstring> GetAbiKeys();
-    float GetRadius() { return mRadius; }
-    void ResetGuiControls() { mKeys.clear(); }
-
 	void Initialize( std::vector<std::wstring>& abiKeys, float radius );
 	void SetKeySize( const sf::Vector2f& size, GUI::guiUnit u = GUI::UNIT_PIXEL );
 	void SetKeyImage( const std::string& normal, const std::string& mouseOver="" );

@@ -29,9 +29,6 @@ namespace GUI
 		void Hide( const std::wstring& menu );
 		void HideAll();
 
-        void ResetGuiControls();
-        void InitAll();
-
 		void InitHud();
 		void UpdateHud(float dt);
 

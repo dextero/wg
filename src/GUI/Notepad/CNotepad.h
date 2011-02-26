@@ -22,9 +22,6 @@ namespace GUI
 		void Hide();
 		void AddNote( const std::wstring& page, const std::wstring& note );
 
-        void ResetGuiControls();
-        void Init();
-
 	private:
 
 		struct SPage

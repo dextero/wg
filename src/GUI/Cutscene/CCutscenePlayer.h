@@ -35,9 +35,6 @@ namespace GUI
 		void StopCutscene();
 		inline cutsceneState GetState()	{ return mState; }
 
-        void ResetGuiControls();
-        void InitGuiControls();
-
 		virtual void FrameStarted( float secondsPassed );
 		virtual bool FramesDuringPause(EPauseVariant pv) { return true; };
 

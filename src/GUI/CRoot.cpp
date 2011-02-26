@@ -37,8 +37,7 @@ CRoot::CRoot()
 	mFocusedObject(NULL),
     mCursor(NULL),
     mDraggedObject(NULL),
-    mDraggedImg(NULL),
-    mJustResetted(false)
+    mDraggedImg(NULL)
 {
 	fprintf( stderr, "GUI::CRoot::CRoot()\n" );
 
@@ -51,8 +50,19 @@ CRoot::CRoot()
 	gfps->SetPosition(2.0f,2.0f,20.0f,10.0f);
 	gfps->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
 	gfps->SetVisible(false);
-    
-    InitCursor();
+
+    mCursor = CreateImageBox("cursor", true, Z_CURSOR);
+    mCursor->SetVisible(true);
+    mCursor->AddImageToSequence("data/GUI/cur-0.png");
+    mCursor->SetSequenceState(0);
+    mCursor->SetPosition(0.f, 0.f, 32.f, 32.f, UNIT_PIXEL);
+
+    mDraggedImg = CreateImageBox("dragged-image", true, Z_DRAGGED_IMG);
+    mDraggedImg->SetVisible(false);
+
+    // dex: zeby kursor nie bral udzialu w sprawdzaniu z-index (mouse-events)
+    UnregisterObject(mCursor);
+    UnregisterObject(mDraggedImg);
 }
 
 CRoot::~CRoot()
@@ -178,17 +188,6 @@ void CRoot::MouseWheelMoved( const sf::Event::MouseWheelEvent& e )
 void CRoot::Cleanup()
 {
 	Remove();
-}
-
-void CRoot::Reset()
-{
-    // kursora sie nie usuwa, bo jest w mChilds, trzeba tylko wynullowac ten wskaznik
-    mCursor = NULL;
-
-    RemoveChilds();
-    mSortedObjects.clear();
-
-    mJustResetted = true;
 }
 
 void CRoot::RegisterObject(CGUIObject* object)
@@ -322,13 +321,6 @@ void CRoot::SendMouseEvent(float x, float y, mouseEvent e)
 					continue;
 			}
 
-            // zapobiega dereferencji zepsutego iteratora po resecie
-            if (mJustResetted)
-            {
-                mJustResetted = false;
-                break;
-            }
-
 			SetFocusedObject( *it );
 			return;
 		}
@@ -363,33 +355,10 @@ void CRoot::SetFocusedObject(CGUIObject* focused)
 	}
 }
 
-
-void CRoot::InitCursor()
-{
-    if (!mCursor)
-    {
-        mCursor = CreateImageBox("cursor", true, Z_CURSOR);
-        mCursor->SetVisible(true);
-        mCursor->AddImageToSequence("data/GUI/cur-0.png");
-        mCursor->SetSequenceState(0);
-        mCursor->SetPosition(0.f, 0.f, 32.f, 32.f, UNIT_PIXEL);
-
-        mDraggedImg = CreateImageBox("dragged-image", true, Z_DRAGGED_IMG);
-        mDraggedImg->SetVisible(false);
-
-        // dex: zeby kursor nie bral udzialu w sprawdzaniu z-index (mouse-events)
-        UnregisterObject(mCursor);
-        UnregisterObject(mDraggedImg);
-    }
-}
-
 void CRoot::ShowCursor(bool show)
 {
 #ifndef __EDITOR__
     //gGame.GetRenderWindow()->ShowMouseCursor(show);
-    if (!mCursor)
-        InitCursor();
-
     if (show)								mCursor->SetVisible(true);
     else
     {
