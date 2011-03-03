@@ -38,14 +38,16 @@ bool AskForFullscreen(const wchar_t * title, const wchar_t * message, int maxw, 
 }
 
 #include <sys/wait.h>
-char APP[] = "./bin/check_fullscreen";
+char APP32[] = "./bin/check_fullscreen.bin32";
+char APP64[] = "./bin/check_fullscreen.bin64";
 bool CanCreateWindowInFullScreenOnLinux()
 {
     int pid,status;
         
     if (!(pid=fork())) {
-        int i = execlp(APP, 0);
-        fprintf(stderr, "Failed to launch %s, code=%d, aborting\n", APP, i);
+        int ret32 = execlp(APP32, 0);
+        int ret64 = execlp(APP64, 0);
+        fprintf(stderr, "Failed to check fullscreen, codes=%d,%d, aborting\n", ret32, ret64);
         _exit(-1);
     }
     while (pid!=wait(&status)) {

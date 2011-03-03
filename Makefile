@@ -51,10 +51,6 @@ $(BINARY): $(OBJECTS)
 
 clean:
 	$(warning Cleaning...)
-	@$(RM) $(BINARY)
-	@$(RM) $(BINARY).exe
-	@$(RM) $(OLD_BINARY)
-	@$(RM) $(OLD_BINARY).exe
 	@rm -f $(OBJECTS)
 	@rm -f $(SOURCES:.cpp=.d)
 

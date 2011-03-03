@@ -8,8 +8,6 @@ if [ "$MACHINE" = x86_64 ]
 then
     LIBS=./libs64
     BIN=./bin/WarlocksGauntlet.bin64
-    echo "Warlocks Gauntlet on 64bit Linux unsupported!"
-    exit 1
 else
     LIBS=./libs32
     BIN=./bin/WarlocksGauntlet.bin32
