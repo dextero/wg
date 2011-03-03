@@ -29,7 +29,8 @@ do
     TARFILE=$DIR".tar.gz"
     tar -czf "$TARFILE" "$DIR"
     chmod 644 "$TARFILE"
-    scp "$TARFILE" "hell:public_html/all/warsztat/snapshots/linux/$lang"
+#    scp "$TARFILE" "hell:public_html/all/warsztat/snapshots/linux/$lang"
+    scp "$TARFILE" "zodiac:public_html/wg/snapshots/linux/$lang"
     rm "$TARFILE"
     rm -rf "$DIR"
 done

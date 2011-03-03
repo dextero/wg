@@ -3,46 +3,25 @@ GAMENAME = WarlocksGauntlet
 ARCH = "x86_64"
 
 BINARY = $(GAMENAME).bin64
-ifeq ($(ARCH), "x86_64")
-	BINARY = $(GAMENAME).bin64
-endif
 
 -include Makefile.sources
 
 CPPFLAGS = -I"build/includes/SFML-1.6/include" -I"build/includes" -DPLATFORM_LINUX
 
-LDFLAGS = -L"./libs32"
-ifeq ($(ARCH), "x86_64")
-	LDFLAGS = "-L./libs64"
-endif	
+LDFLAGS = -L"./libs64"
 
 LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
 
 #default:
-CXXFLAGS = -g -Wall
+CXXFLAGS = -g -Wall -m64
 
 #release:
 #release: CXXFLAGS = -O3 -ffast-math
 #powyzsze -O3 powodowalo:
 #http://img183.imageshack.us/img183/8780/gameplay.png
 
-release: CXXFLAGS = -O2 -static-libgcc
-release: OTHER_OBJECTS = /usr/lib/gcc/i486-linux-gnu/4.4.1/libstdc++.a
-
-ifeq ($(ARCH), "x86_64")
-	CXXFLAGS += -m64
-endif
-
-#edytor
-ifneq ($(findstring editor,$(MAKECMDGOALS)),)
-	BINARY_NAME = WGEditor
-	CPPFLAGS += -D__EDITOR__ -I"../tools/WGEdytor/wx/include" -I"src" -I "../tools/WGEdytor" -I"../tools/WGEdytor/build/wx-setup"\
-		$(shell pkg-config --cflags --libs gtk+-2.0)
-	CXXFLAGS += -DUNICODE\
-		$(shell wx-config --cppflags)
-	LDFLAGS += -L"../tools/WGEdytor/build/lib"
-	LIBS += -lwx_baseu-2.8 -lwx_gtk2u_core-2.8 -lwx_gtk2u_stc-2.8 -lwx_gtk2u_html-2.8
-endif
+release: CXXFLAGS = -O2 -static-libgcc -m64
+#release: OTHER_OBJECTS = /usr/lib/gcc/i486-linux-gnu/4.4.1/libstdc++.a
 
 CXX = g++
 
@@ -60,22 +39,12 @@ $(BINARY): $(OBJECTS)
 %.d: %.cpp
 	-$(CXX) -E $(CXXFLAGS)  $(CPPFLAGS) -MM -MP -MF $@ -MQ $(@:.d=.s) -MQ $(@:.d=.o) -MQ $@ $<
 
-
 clean:
 	$(warning Cleaning...)
-	@$(RM) $(BINARY)
-	@$(RM) $(BINARY).exe
-	@$(RM) $(OLD_BINARY)
-	@$(RM) $(OLD_BINARY).exe
 	@rm -f $(OBJECTS)
 	@rm -f $(SOURCES:.cpp=.d)
 
-#czyszczenie plikow edytora
-clean-editor: clean
-
 release: all
-
-editor: all
 
 ifeq ($(findstring clean,$(MAKECMDGOALS)),)
 -include $(SOURCES:.cpp=.d)
