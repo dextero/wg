@@ -1,8 +1,8 @@
 #!/bin/bash
 
-if [ -n "$package_name" ]
+if [ -n "$1" ]
 then
-    package_name="$package_name"
+    package_name="$1"
 else
     revision=`hg describe`
     DATE=`date +%F_%H-%M-%S`
