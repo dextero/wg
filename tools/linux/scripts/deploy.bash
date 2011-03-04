@@ -53,4 +53,6 @@ cp libs64/libsfml-graphics.so.1.6 deploy/libs64
 cp libs64/libsfml-window.so.1.6 deploy/libs64
 cp libs64/libsfml-system.so.1.6 deploy/libs64
 cp libs64/libsfml-audio.so.1.6 deploy/libs64
+cp libs64/libopenal.so.1 deploy/libs64
+cp libs64/libsndfile.so.1 deploy/libs64
 cp $binary64 deploy/bin
