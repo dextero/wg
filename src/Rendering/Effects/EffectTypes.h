@@ -3,7 +3,7 @@
 
 #include "../../Utils/StringUtils.h"
 
-typedef boost::uint64_t EffectHandle;
+typedef unsigned long long EffectHandle;
 #define CreateEffectHandle( name ) StringUtils::GetStringHash( name  )
 
 #endif //__CEFFECTTYPES_H__//

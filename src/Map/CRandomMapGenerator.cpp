@@ -436,7 +436,7 @@ bool CRandomMapGenerator::PlaceTiles()
                 boost::filesystem::create_directory("data/maps/generated_tiles");
             
             // nazwa przejsciowego kafla
-            boost::uint64_t hash = StringUtils::GetStringHash(nameTopLeft + nameTopRight + nameBottomLeft + nameBottomRight);
+            unsigned long long hash = StringUtils::GetStringHash(nameTopLeft + nameTopRight + nameBottomLeft + nameBottomRight);
             std::string imgName = "data/maps/generated_tiles/" +
                 StringUtils::ToString(hash) + "_" +
                 StringUtils::ToString(tileMask) + ".png";
@@ -914,7 +914,7 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
     mXmlText << "</map>";
 
     // skoro doszlismy tutaj, to znaczy, ze mozna zapisywac!
-	if (!FileUtils::WriteToFile(filename, mXmlText.str()))
+	if (!FileUtils::WriteToFile(filename, mXmlText.str()));
     {
         fprintf(stderr, "CRandomMapGenerator::GenerateRandomMap: couldn't write file \"%s\"!\n", filename.c_str());
         return false;
