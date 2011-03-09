@@ -43,11 +43,24 @@ bool CPlayerTemplate::Load(CXml &xml)
     }
 
     xml_node<>* hud = xml.GetChild(xml.GetRootNode(), "hud");
+
     if (!hud)
     {
         fprintf(stderr, "ERROR: didn't find <hud> in player xml");
         return false;
     }
+
+	mHudDesc.hudType = xml.GetString(hud, "type");
+	
+	for (xml_node<>* node = xml.GetChild(hud,"position"); node; node=xml.GetSibl(node,"position"))
+	{
+		GUI::guiUnit u = (xml.GetString(node,"unit") == "pixel" ? GUI::UNIT_PIXEL : GUI::UNIT_PERCENT);
+		mHudDesc.position[u].x = xml.GetFloat(node,"x");
+		mHudDesc.position[u].y = xml.GetFloat(node,"y");
+		mHudDesc.size[u].x = xml.GetFloat(node,"width");
+		mHudDesc.size[u].y = xml.GetFloat(node,"height");
+	}
+
     for (xml_node<>* node = hud->first_node(); node; node = node->next_sibling())
     {
         if (!node->first_attribute())
@@ -73,12 +86,18 @@ bool CPlayerTemplate::Load(CXml &xml)
             mHudDesc.path[HUDDESC_CIRCLE3] = node->first_attribute("path")->value();
         else if (std::string(node->name()) == "hp")
             mHudDesc.path[HUDDESC_HP] = node->first_attribute("path")->value();
+		else if (std::string(node->name()) == "hp-bg")
+            mHudDesc.path[HUDDESC_HP_BG] = node->first_attribute("path")->value();
         else if (std::string(node->name()) == "mana")
             mHudDesc.path[HUDDESC_MANA] = node->first_attribute("path")->value();
+		else if (std::string(node->name()) == "mana-bg")
+            mHudDesc.path[HUDDESC_MANA_BG] = node->first_attribute("path")->value();
         else if (std::string(node->name()) == "mana-flared")
             mHudDesc.path[HUDDESC_MANA_FLARED] = node->first_attribute("path")->value();
         else if (std::string(node->name()) == "xp")
             mHudDesc.path[HUDDESC_XP] = node->first_attribute("path")->value();
+		else if (std::string(node->name()) == "xp-bg")
+            mHudDesc.path[HUDDESC_XP_BG] = node->first_attribute("path")->value();
         else if (std::string(node->name()) == "fg")
             mHudDesc.path[HUDDESC_FG] = node->first_attribute("path")->value();
         else if (std::string(node->name()) == "fg-flared")

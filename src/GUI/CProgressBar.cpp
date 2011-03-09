@@ -3,6 +3,7 @@
 #include "../Rendering/CDrawableManager.h"
 #include "../Rendering/CHudSprite.h"
 #include "../Rendering/CCamera.h"
+#include "../Rendering/CClippedSprite.h"
 #include "../ResourceManager/CResourceManager.h"
 #include "../ResourceManager/CImage.h"
 
@@ -96,13 +97,12 @@ void CProgressBar::UpdateSprites( float secondsPassed )
 
 			float normalAngle =	Maths::Lerp( mMinCPNormalAngle, mMaxCPNormalAngle, mProgress ) * 3.14f / 180.0f;
 			sf::Vector2f normal = Maths::VectorOf( sinf( normalAngle ), -cosf( normalAngle ) );
-			sf::Vector2f point = progressPosition +
-								 Maths::Lerp( sf::Vector2f( mMinCPPoint.x * mGlobalSize.x, mMinCPPoint.y * mGlobalSize.y ),
-											  sf::Vector2f( mMaxCPPoint.x * mGlobalSize.x, mMaxCPPoint.y * mGlobalSize.y ), mProgress );
+			sf::Vector2f point = Maths::Lerp( mMinCPPoint, mMaxCPPoint, mProgress );
 			
 			mProgressSprite->GetSFSprite()->SetPosition( progressPosition );
 			mProgressSprite->GetSFSprite()->Resize( progressSize );
-			mProgressSprite->SetClipPlane( normal.x, normal.y, 0.0f, -Maths::Dot(normal, point) );
+			mProgressSprite->GetClippedSprite()->EnableClipPlane();
+			mProgressSprite->GetClippedSprite()->SetClipPlane( normal.x, normal.y, -Maths::Dot(normal, point) );
 			mProgressSprite->SetClipRect( mClippingRect );
 			sf::Color color = mProgressSprite->GetSFSprite()->GetColor();
             mProgressSprite->GetSFSprite()->SetColor(sf::Color(color.r,color.g,color.b,(sf::Uint8)(mAlpha * 255)));

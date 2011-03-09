@@ -1,5 +1,6 @@
 #include "CHudSprite.h"
 #include "CCamera.h"
+#include "CClippedSprite.h"
 #include "../CGame.h"
 #include "../CGameOptions.h"
 
@@ -15,18 +16,16 @@
 
 CHudSprite::CHudSprite() :
     IDrawable(), 
-	mSFSprite(NULL), 
-	mClipPlaneEnabled(false),
+	mSprite(NULL), 
 	mClipRectEnabled( false )
 {
-    memset(mClipPlane, 0, 4 * sizeof(double));
     memset(mClipRect, 0, 4 * sizeof(int));
-    mSFSprite = new sf::Sprite();
+    mSprite = new CClippedSprite;
 }
 
 CHudSprite::~CHudSprite()
 {
-    delete mSFSprite;
+    delete mSprite;
 }
 
 void CHudSprite::Draw( sf::RenderWindow* renderWindow )
@@ -36,12 +35,6 @@ void CHudSprite::Draw( sf::RenderWindow* renderWindow )
 
 	sf::Vector2f cameraPosition = gGame.GetRenderWindow()->GetDefaultView().GetCenter();
 	gGame.GetRenderWindow()->GetDefaultView().SetCenter( gGame.GetRenderWindow()->GetDefaultView().GetHalfSize() );   
-    
-	if ( mClipPlaneEnabled )
-	{
-		glEnable( GL_CLIP_PLANE0 );
-		glClipPlane( GL_CLIP_PLANE0, mClipPlane );
-	}
 
 	if ( mClipRectEnabled )
 	{
@@ -49,26 +42,21 @@ void CHudSprite::Draw( sf::RenderWindow* renderWindow )
 		glScissor( mClipRect[0], mClipRect[1], mClipRect[2], mClipRect[3] );
 	}
 	
-	renderWindow->Draw( *mSFSprite );
+	renderWindow->Draw( *mSprite );
 		
-	glDisable( GL_CLIP_PLANE0 );
 	glDisable( GL_SCISSOR_TEST );
 	gCamera.SetZoom( zoom );
 	gGame.GetRenderWindow()->GetDefaultView().SetCenter( cameraPosition );
 }
 
-sf::Sprite* CHudSprite::GetSFSprite()
-{
-    return mSFSprite;
-}
+sf::Sprite* CHudSprite::GetSFSprite() 
+{ 
+	return mSprite; 
+} 
 
-void CHudSprite::SetClipPlane( double a, double b, double c, double d )
-{
-	mClipPlaneEnabled = true;
-	mClipPlane[0] = a;
-	mClipPlane[1] = b;
-	mClipPlane[2] = c;
-	mClipPlane[3] = d;
+CClippedSprite* CHudSprite::GetClippedSprite() 
+{ 
+	return mSprite; 
 }
 
 void CHudSprite::SetClipRect(int left, int top, int right, int bottom)

@@ -2,10 +2,9 @@
 #ifndef PLATFORM_MACOSX
 #include <wordexp.h>
 #include <string>
-#include <stdio.h>
-#include <sys/stat.h>
-
 #include "Utils/FileUtils.h"
+
+#include <sys/stat.h>
 
 static std::string gUserDir = "~/.WarlocksGauntlet";
 const std::string & FileUtils::GetUserDir()
@@ -38,16 +37,14 @@ bool AskForFullscreen(const wchar_t * title, const wchar_t * message, int maxw, 
 }
 
 #include <sys/wait.h>
-char APP32[] = "./bin/check_fullscreen.bin32";
-char APP64[] = "./bin/check_fullscreen.bin64";
+char APP[] = "./bin/check_fullscreen";
 bool CanCreateWindowInFullScreenOnLinux()
 {
     int pid,status;
         
     if (!(pid=fork())) {
-        int ret32 = execlp(APP32, 0);
-        int ret64 = execlp(APP64, 0);
-        fprintf(stderr, "Failed to check fullscreen, codes=%d,%d, aborting\n", ret32, ret64);
+        int i = execlp(APP, 0);
+        fprintf(stderr, "Failed to launch %s, code=%d, aborting\n", APP, i);
         _exit(-1);
     }
     while (pid!=wait(&status)) {

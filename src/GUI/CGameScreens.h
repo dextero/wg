@@ -29,13 +29,18 @@ namespace GUI
 		void Hide( const std::wstring& menu );
 		void HideAll();
 
-		void InitHud();
-		void UpdateHud(float dt);
+		void ReturnToGame();
+        void ResetCompass();
+
+		void InitHud( unsigned playerNumber );
+		void InitHuds();
+		void UpdateHuds(float dt);
 
 		void InitAbilities( unsigned playerNumber );
 		void UpdateAbilities( unsigned playerNumber );
 		void UpdateAbilitiesTextboxes( unsigned playerNumber );
         void SetActiveAbilityScreen( const std::wstring& name );
+		void SetSlotAbility(unsigned int player, unsigned int slot, CAbility* abi);
 
         void InitControlListing( unsigned playerNumber );
         void UpdateControlListing( unsigned playerNumber );
@@ -44,13 +49,7 @@ namespace GUI
 
         CHud* GetHud(unsigned int player);
         CAbiSlotsBar* GetAbiBar(unsigned int player);
-        CGUIObject* GetAbilities(unsigned int player);
-
-        void ReturnToGame();
-
-        void ResetCompass();
-
-        void SetSlotAbility(unsigned int player, unsigned int slot, CAbility* abi);
+        CGUIObject* GetAbilities(unsigned int player);        
 
 		CGameScreens();
 		~CGameScreens();

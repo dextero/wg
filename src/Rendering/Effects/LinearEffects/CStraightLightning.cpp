@@ -54,7 +54,7 @@ void CStraightLightning::Draw(sf::RenderWindow *renderWindow)
 	sf::Vector2f forward = to - from;
 	sf::Vector2f right = Maths::VectorRightOf( Maths::Normalize(forward) ) * mWidth / 2.0f;
 
-	glBegin(GL_QUADS);
+	glBegin(GL_TRIANGLE_FAN);
         glTexCoord2f(1,0); glVertex3f(from.x + forward.x + right.x, from.y + forward.y + right.y, 0.0f);
         glTexCoord2f(0,0); glVertex3f(from.x + right.x, from.y + right.y, 0.0f);
         glTexCoord2f(0,1); glVertex3f(from.x - right.x, from.y - right.y, 0.0f);

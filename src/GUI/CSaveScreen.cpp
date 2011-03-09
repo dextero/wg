@@ -180,7 +180,7 @@ void GUI::CSaveScreen::SetVisible( bool visible /*= true*/ )
     mSaveScreen->SetVisible(visible);
 }
 
-void GUI::CSaveScreen::UpdateDifficultyBar(int hoveredBtnNum)
+void GUI::CSaveScreen::UpdateDifficultyBar(void* hoveredBtnNum)
 {
     std::string saveName = gGameOptions.GetUserDir() + std::string("/game") + (((unsigned)hoveredBtnNum > 0) ? StringUtils::ToString((unsigned)hoveredBtnNum - 1) : "") + ".save";
 
@@ -250,8 +250,8 @@ void GUI::CSaveScreen::UpdateSlot(int slot, const std::wstring & caption,
         button->SetEventWStringParam(MOUSE_DBL_CLICK, StringUtils::ConvertToWString(gameName));
 
         // click: zaznacz i odswiez suwak
-        button->GetEventIntCallback(MOUSE_PRESSED_LEFT)->bind( this, &CSaveScreen::SelectSlot );
-        button->SetEventIntParam(MOUSE_PRESSED_LEFT, slot);
+        button->GetEventVoidPtrCallback(MOUSE_PRESSED_LEFT)->bind( this, &CSaveScreen::SelectSlot );
+        button->SetEventVoidPtrParam(MOUSE_PRESSED_LEFT, (void*)slot);
     }
 
     CImageBox * image = (CImageBox *) mSaveScreen->FindObject(slotName + "-thumb");
@@ -262,9 +262,9 @@ void GUI::CSaveScreen::UpdateSlot(int slot, const std::wstring & caption,
     mSlots.at(slot)->SetVisible(true);
 }
 
-void GUI::CSaveScreen::SelectSlot(int slotNum)
+void GUI::CSaveScreen::SelectSlot(void* slotNum)
 {
-    int num = slotNum;
+    int num = (int)slotNum;
 
     for (int i = 0; i < (int)mSlots.size(); ++i)
     {

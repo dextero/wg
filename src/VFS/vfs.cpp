@@ -35,7 +35,7 @@ void VFSReader::OpenFileSystem(const char* filename)
             char* buffer = new char[filenames.GetSize()];
             memcpy(buffer, filenames.GetData(), filenames.GetSize());
 
-            unsigned int len = strlen(buffer), idx = 0;
+            boost::uint32_t len = filenames.GetSize(), idx = 0;
             char *reader = buffer;
 
             for (unsigned int i = 0; i < len; i++){
@@ -89,17 +89,17 @@ const VFSFile VFSReader::GetFile(const char* filename)
 	}
     else
     {
-        unsigned long long hash = StringUtils::GetStringHash(filename);
+        boost::uint64_t hash = StringUtils::GetStringHash(filename);
 
         if (mFiles.find(hash) == mFiles.end() && ready)
         {
-            for(unsigned int i=0; i<header.mFileCount; i++)
+            for(boost::uint32_t i=0; i<header.mFileCount; i++)
             {
                 if(hash == file_table[i].mHash)
                 {
                     // dane do VFSFile
                     char* buffer = 0;
-                    int data_size;
+                    boost::int32_t data_size;
 
                     data_size = file_table[i].mCompressedSize;
                     char* data = new char[file_table[i].mCompressedSize+1];
@@ -112,7 +112,7 @@ const VFSFile VFSReader::GetFile(const char* filename)
                     if(file_table[i].mFlags & 0x01)//compressed file
                     {
                         char* uncompressed_data = new char[file_table[i].mUnCompressedSize+1];
-                        long long int uncompressed_size = file_table[i].mUnCompressedSize;
+                        boost::int64_t uncompressed_size = file_table[i].mUnCompressedSize;
                         uncompress((Bytef*)uncompressed_data, (uLongf*)&uncompressed_size, (Bytef*)data, (uLongf)file_table[i].mCompressedSize);
                         uncompressed_data[file_table[i].mUnCompressedSize] = 0;
 
@@ -146,10 +146,10 @@ void VFSReader::ExtractFiles( const std::string &dir )
 
 		const VFSFile& file = gVFS.GetFile( filepath.c_str() );
 		const char*	buffer = file.GetData();
-		int			size = file.GetSize();
+		boost::int32_t		size = file.GetSize();
 
 		filepath = filepath.substr(0, filepath.find_last_of("\\/"));
-		//src/VFS/vfs.cpp:132: warning: comparison between signed and unsigned integer expressions
+		//src/VFS/vfs.cpp:132: warning: comparison between signed and UInteger expressions
         size_t at = -1;
         while ((at = filepath.find("\\", at + 1)) != std::string::npos)
             filepath.replace(at, 1, "/");
@@ -262,7 +262,7 @@ bool VFSReader::IsInVFS(const char* filename)
 }
 
 
-bool VFSReader::AddFile(const char* filename, char* buffer, int size)
+bool VFSReader::AddFile(const char* filename, char* buffer, boost::int32_t size)
 {
     for (std::vector<std::string>::iterator it = mFilenames.begin(); it != mFilenames.end(); ++it)
         if (*it == filename)

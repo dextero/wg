@@ -8,7 +8,7 @@
 #include "../ResourceManager/CResourceManager.h"
 #include "Factory/CPlayerTemplate.h"
 #include "CLogic.h"
-#include "../GUI/CHud.h"
+#include "../GUI/CGameScreens.h"
 #include "CActorController.h"
 using namespace StringUtils;
 
@@ -30,7 +30,7 @@ void CPlayerManager::LoadPlayer(unsigned int number)
 	std::wstring name = std::wstring(L"player") + ToWString(number);
     CPlayer* player = (CPlayer*) gResourceManager.GetPhysicalTemplate(templ)->Create(name);
 	RegisterPlayer(player, number);
-    gLogic.GetHud(number)->Init(number);
+	gLogic.GetGameScreens()->InitHud(number);
 }
 
 void CPlayerManager::RegisterPlayer(CPlayer *player, unsigned int number)
