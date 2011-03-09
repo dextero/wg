@@ -3,6 +3,8 @@
 
 #include "CActor.h"
 #include "../Utils/Directions.h"
+#include "../GUI/Localization/CLocale.h"
+#include <SFML/Graphics/Rect.hpp>
 
 class CPlayerController;
 class CAbilityTree;
@@ -18,30 +20,36 @@ enum EAbilityBuyingResult{
 
 enum EHudDesc {
     HUDDESC_CIRCLE1 = 0,
-    HUDDESC_BG      = 1,
-    HUDDESC_AVATAR0 = 2,
-    HUDDESC_AVATAR1 = 3,
-    HUDDESC_AVATAR2 = 4,
-    HUDDESC_AVATAR3 = 5,
-    HUDDESC_AVATAR4 = 6,
-    HUDDESC_CIRCLE2 = 7,
-    HUDDESC_CIRCLE3 = 8,
-    HUDDESC_HP      = 9,
-    HUDDESC_MANA    = 10,
-    HUDDESC_MANA_FLARED = 11,
-    HUDDESC_XP      = 12,
-    HUDDESC_FG      = 13,
-    HUDDESC_FG_FLARED   = 14,
-    HUDDESC_SEQ_Q   = 15,
-    HUDDESC_SEQ_W   = 16,
-    HUDDESC_SEQ_E   = 17,
-    HUDDESC_SEQ_R   = 18,
+    HUDDESC_BG,
+    HUDDESC_AVATAR0,
+    HUDDESC_AVATAR1,
+    HUDDESC_AVATAR2,
+    HUDDESC_AVATAR3,
+    HUDDESC_AVATAR4,
+    HUDDESC_CIRCLE2,
+    HUDDESC_CIRCLE3,
+    HUDDESC_HP,
+	HUDDESC_HP_BG,
+    HUDDESC_MANA,
+	HUDDESC_MANA_BG,
+    HUDDESC_MANA_FLARED,
+    HUDDESC_XP,
+	HUDDESC_XP_BG,
+    HUDDESC_FG,
+    HUDDESC_FG_FLARED,
+    HUDDESC_SEQ_Q,
+    HUDDESC_SEQ_W,
+    HUDDESC_SEQ_E,
+    HUDDESC_SEQ_R,
 
-    HUDDESC_COUNT   = 19
+    HUDDESC_COUNT
 };
 
 struct SHudDesc {
+	std::string hudType;
     std::string path[HUDDESC_COUNT];
+	sf::Vector2f position[GUI::UNIT_COUNT];
+	sf::Vector2f size[GUI::UNIT_COUNT];
 };
 
 class CPlayer : public CActor

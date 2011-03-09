@@ -92,7 +92,7 @@ void CLogic::FrameStarted( float secondsPassed )
 
 	if ( mState == L"playing" )
 	{
-		mGameScreens.UpdateHud(secondsPassed);
+		mGameScreens.UpdateHuds(secondsPassed);
 
 		if ( mCurrentScreen == L"abilities0" )		mGameScreens.UpdateAbilitiesTextboxes(0);
 		else if ( mCurrentScreen == L"abilities1" )	mGameScreens.UpdateAbilitiesTextboxes(1);
@@ -263,10 +263,6 @@ void CLogic::StartNewGame( const std::wstring& startFile )
 	mMenuScreens.HideAll();
     mMenuScreens.ClearPreviousMenusList();
 	mGameScreens.Show( L"hud" );
-
-	//for (unsigned int i = 0; i < gPlayerManager.GetPlayerCount(); ++i){
-	//	this->GetHud(i)->ResetSequences();
-	//}
 }
 
 void CLogic::CheckRestart()

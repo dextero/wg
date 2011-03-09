@@ -47,7 +47,7 @@ namespace GUI
 		void CancelOptions();
 
 		void InitBindingOptions();
-		void UpdateBindingOptions( int playerNumber ); // tox, 25 luty: powinien byc unsigned, ale mi sie nie chce tego refaktorowac
+		void UpdateBindingOptions( void* playerNum );
 		void SaveBindingOptions( const std::wstring& playerWStr );
 
         void InitReadmeScreen();

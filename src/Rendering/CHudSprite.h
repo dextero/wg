@@ -8,6 +8,7 @@
 #include "IDrawable.h"
 #include <SFML/Graphics/Rect.hpp>
 
+class CClippedSprite;
 namespace sf{
     class Sprite;
     class RenderWindow;
@@ -19,18 +20,16 @@ public:
     CHudSprite();
     virtual ~CHudSprite();
 
-	sf::Sprite* GetSFSprite();
-	void SetClipPlane( double a, double b, double c, double d );	/* rownanie plaszczyzny wzgledem sprite'a */
+	sf::Sprite* GetSFSprite();  // damork: wersja dla zachowania zgodnosci, nie chcialo mi sie headerow dodawac do polowy projektu :)
+	CClippedSprite* GetClippedSprite();
 	void SetClipRect( int left, int top, int right, int bottom );	/* wspolrzedne bezwzgledne */
 	void SetClipRect( const sf::FloatRect& rect ); 
 
     virtual void Draw( sf::RenderWindow* renderWindow );
 
 private:
-    sf::Sprite* mSFSprite;
-	bool mClipPlaneEnabled;
+	CClippedSprite* mSprite;
 	bool mClipRectEnabled;
-	double mClipPlane[4];
 	int mClipRect[4];
 };
 

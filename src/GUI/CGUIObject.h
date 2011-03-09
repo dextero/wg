@@ -81,7 +81,6 @@ namespace GUI
 
     typedef fastdelegate::FastDelegate0<void>                       EventCallback;
     typedef fastdelegate::FastDelegate1<const std::wstring&, void>  EventWStringCallback;
-    typedef fastdelegate::FastDelegate1<int, void>                  EventIntCallback;
     typedef fastdelegate::FastDelegate1<void*, void>                EventVoidPtrCallback;
 
 	/* klasa bazowa wszystkich elementow GUI */
@@ -134,12 +133,10 @@ namespace GUI
         inline EventCallback*           GetEventCallback(mouseEvent event) { return &mEventCallback[event]; }
         inline EventWStringCallback*    GetEventWStringCallback(mouseEvent event) { return &mEventWStringCallback[event]; }
         inline EventVoidPtrCallback*    GetEventVoidPtrCallback(mouseEvent event) { return &mEventVoidPtrCallback[event]; }
-        inline EventIntCallback*     GetEventIntCallback(mouseEvent event) { return &mEventIntCallback[event]; }
 
         // parametry callbackow
         inline void SetEventWStringParam(mouseEvent event, const std::wstring& param) { mEventWStringParam[event] = param; }
         inline void SetEventVoidPtrParam(mouseEvent event, void* param) { mEventVoidPtrParam[event] = param; }
-        inline void SetEventIntParam(mouseEvent event, int param) { mEventIntParam[event] = param; }
 
 	protected:
 		CGUIObject( const std::string& name, guiType type, CGUIObject* parent, unsigned zindex );
@@ -179,12 +176,10 @@ namespace GUI
         EventCallback           mEventCallback[MOUSE_EVENT_TYPES];
         EventWStringCallback    mEventWStringCallback[MOUSE_EVENT_TYPES];
         EventVoidPtrCallback    mEventVoidPtrCallback[MOUSE_EVENT_TYPES];
-        EventIntCallback        mEventIntCallback[MOUSE_EVENT_TYPES];
 
         // parametry callbackow
         std::wstring            mEventWStringParam[MOUSE_EVENT_TYPES];
         void*                   mEventVoidPtrParam[MOUSE_EVENT_TYPES];
-        int                     mEventIntParam[MOUSE_EVENT_TYPES];
 
 		friend class CRoot;
 		friend class CScrollPanel;

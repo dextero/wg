@@ -48,8 +48,8 @@ void CGameScreens::Show(const std::wstring &menu)
 {
 	if ( menu == L"hud" )
 	{
-		mHud[0]->Show();
-		mHud[1]->Show();
+		if (mHud[0]) mHud[0]->Show();
+		if (mHud[1]) mHud[1]->Show();
 		mCompass->Show();
         mBossHud->Show();
 		ShowCursor(false);
@@ -58,7 +58,6 @@ void CGameScreens::Show(const std::wstring &menu)
 	{
         mAbiSlotsBar[0]->Show();
 		mAbilities[0]->SetVisible( true );
-		//mAbiHelp[0]->SetVisible( true );
 		UpdateAbilities( 0 );
         ShowCursor();
         SetActiveAbilityScreen(mActiveAbilitiesTab[0]);
@@ -67,7 +66,6 @@ void CGameScreens::Show(const std::wstring &menu)
 	{
         mAbiSlotsBar[1]->Show();
 		mAbilities[1]->SetVisible( true );
-		//mAbiHelp[1]->SetVisible( true );
 		UpdateAbilities( 1 );
         ShowCursor();
         SetActiveAbilityScreen(mActiveAbilitiesTab[1]);
@@ -86,12 +84,11 @@ void CGameScreens::Show(const std::wstring &menu)
 	}
     else if ( menu == L"load-game" )    { mSaveScreen->UpdateSlots(false); ShowCursor(); }
     else if ( menu == L"game-over" )	{ mGameOver->SetVisible( true ); ShowCursor(); }
+	else if ( menu == L"notepad" )		{ gNotepad.Show(); ShowCursor(); }
 
 #ifndef __EDITOR__
 	else if ( menu == L"editor" )       { mEditorScreens->Show(); ShowCursor(); }
 #endif
-
-	else if ( menu == L"notepad" )		{ gNotepad.Show(); ShowCursor(); }
 
     mSaveScreen->SetVisible(menu == L"load-game");
     mGameOver->SetVisible(menu == L"game-over");
@@ -106,8 +103,8 @@ void CGameScreens::Hide(const std::wstring &menu)
 {
     if ( menu == L"hud" )
 	{
-		mHud[0]->Hide();
-		mHud[1]->Hide();
+		if (mHud[0]) mHud[0]->Hide();
+		if (mHud[1]) mHud[1]->Hide();
 		mCompass->Hide();
         mBossHud->Hide();
 	}
@@ -119,8 +116,6 @@ void CGameScreens::Hide(const std::wstring &menu)
         mAbiSlotsBar[1]->UpdatePlayerData();
 		mAbilities[0]->SetVisible( false );
 		mAbilities[1]->SetVisible( false );
-		//mAbiHelp[0]->SetVisible( false );
-		//mAbiHelp[1]->SetVisible( false );
 		ShowCursor(false);
 
 		this->Show(L"hud");
@@ -139,8 +134,8 @@ void CGameScreens::Hide(const std::wstring &menu)
 
 void CGameScreens::HideAll()
 {
-	mHud[0]->Hide();
-	mHud[1]->Hide();
+	if (mHud[0]) mHud[0]->Hide();
+	if (mHud[1]) mHud[1]->Hide();
     mAbiSlotsBar[0]->Hide();
     mAbiSlotsBar[0]->UpdatePlayerData();
     mAbiSlotsBar[1]->Hide();
@@ -158,22 +153,27 @@ void CGameScreens::HideAll()
     ShowCursor(false);
 }
 
-void CGameScreens::InitHud()
+void CGameScreens::InitHud(unsigned playerNumber)
 {
-	mHud[0] = new CHud();
-	mHud[0]->Init(0);
-	mHud[1] = new CHud();
-	mHud[1]->Init(1);
+	if (mHud[playerNumber])
+		mHud[playerNumber]->Release();
+
+	if (CPlayer* player = gPlayerManager.GetPlayerByNumber(playerNumber))
+		mHud[playerNumber] = CHud::CreateHud(playerNumber,player->GetHudDesc());
+}
+
+void CGameScreens::InitHuds()
+{
 	mCompass = new CCompass();
 	mCompass->Init();
     mBossHud = new CBossHud();
     mBossHud->Init();
 }
 
-void CGameScreens::UpdateHud(float dt)
+void CGameScreens::UpdateHuds(float dt)
 {
-	mHud[0]->Update(dt);
-	mHud[1]->Update(dt);
+	if (mHud[0])	mHud[0]->Update(dt);
+	if (mHud[1])	mHud[1]->Update(dt);
 	mCompass->Update(dt);
     mBossHud->Update(dt);
 }
@@ -625,7 +625,7 @@ CGameScreens::CGameScreens()
 	mAbiHelp[0] = mAbiHelp[1] = NULL;
 	mControls[0] = mControls[1] = NULL;
 
-	InitHud();
+	InitHuds();
 	InitAbilities(0);
 	InitAbilities(1);
 	InitControlListing(0);

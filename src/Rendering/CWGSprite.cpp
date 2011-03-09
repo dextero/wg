@@ -140,7 +140,7 @@ void CWGSprite::Render(RenderTarget&) const
 		glEnableClientState( GL_TEXTURE_COORD_ARRAY );
 		glTexCoordPointer( 2, GL_FLOAT, 0, Coords );
 		// draw arrays
-		glDrawArrays( GL_QUADS, 0, 4 );
+		glDrawArrays( GL_TRIANGLE_FAN, 0, 4 );
 		// this is an option, maybe will be faster without disabling if rest of drawable units will use vertex array
 		glDisableClientState( GL_VERTEX_ARRAY );
 		glDisableClientState( GL_TEXTURE_COORD_ARRAY );
@@ -162,7 +162,7 @@ void CWGSprite::Render(RenderTarget&) const
 		glEnableClientState( GL_VERTEX_ARRAY );
 		glVertexPointer( 2, GL_FLOAT, 0, Vertices );
 		// draw arrays
-		glDrawArrays( GL_QUADS, 0, 4 );
+		glDrawArrays( GL_TRIANGLE_FAN, 0, 4 );
 		// this is an option, maybe will be faster without disabling if rest of drawable units will use vertex array
 		glDisableClientState( GL_VERTEX_ARRAY );
 	}

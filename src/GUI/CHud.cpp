@@ -25,10 +25,104 @@
 #undef CreateWindow
 
 using namespace GUI;
+using namespace std;
 
-CHud::CHud()
-:	mPlayerNumber( 0 ),
-	mHud	( NULL ),
+/* ================ CHud ================= */
+
+CHud::CHud(unsigned playerNumber, SHudDesc& hudDesc)
+{
+	mPlayerNumber = playerNumber;
+	mGuiNamePrefix = std::string("pl") + StringUtils::ToString(playerNumber) + "-";
+	mHud = gGUI.CreateWindow( mGuiNamePrefix + "hud" );
+
+	mHud->SetPosition(
+		hudDesc.position[GUI::UNIT_PERCENT].x,
+		hudDesc.position[GUI::UNIT_PERCENT].y,
+		hudDesc.size[GUI::UNIT_PERCENT].x,
+		hudDesc.size[GUI::UNIT_PERCENT].y,
+		GUI::UNIT_PERCENT
+	);
+
+	mHud->SetPosition(
+		hudDesc.position[GUI::UNIT_PIXEL].x,
+		hudDesc.position[GUI::UNIT_PIXEL].y,
+		hudDesc.size[GUI::UNIT_PIXEL].x,
+		hudDesc.size[GUI::UNIT_PIXEL].y,
+		GUI::UNIT_PIXEL
+	);
+}
+
+CHud::~CHud()
+{
+}
+
+void CHud::Show()
+{
+	mHud->SetVisible(true);
+}
+
+void CHud::Hide()
+{
+	mHud->SetVisible(false);
+}
+
+void CHud::Release()
+{
+	mHud->Remove();
+	delete this;
+}
+
+CHud* CHud::CreateHud(unsigned playerNumber, SHudDesc& hudDesc)
+{
+	if (hudDesc.hudType == "classic") return new CClassicHud(playerNumber, hudDesc);
+	else return new CModernHud(playerNumber, hudDesc);
+}
+
+/* ================ CClassicHud ================= */
+
+CClassicHud::CClassicHud(unsigned playerNumber, SHudDesc& hudDesc)
+:	CHud(playerNumber, hudDesc)
+{
+	mHP = mHud->CreateProgressBar( mGuiNamePrefix + "hp" );
+	mHP->SetBorderImage( hudDesc.path[HUDDESC_HP_BG] );
+	mHP->SetProgressImage( hudDesc.path[HUDDESC_HP] );
+	mHP->SetPosition( 0.0f, 0.0f, 100.0f, 25.0f );
+	mHP->SetMinClippingPlane( 270.0f, sf::Vector2f(0.0f,0.0f) );
+	mHP->SetMaxClippingPlane( 270.0f, sf::Vector2f(100.0f,0.0f) );
+
+	mMana = mHud->CreateProgressBar( mGuiNamePrefix + "mana" );
+	mMana->SetBorderImage( hudDesc.path[HUDDESC_MANA_BG] );
+	mMana->SetProgressImage( hudDesc.path[HUDDESC_MANA] );
+	mMana->SetPosition( 0.0f, 37.5f, 100.0f, 25.0f );
+	mMana->SetMinClippingPlane( 270.0f, sf::Vector2f(0.0f,0.0f) );
+	mMana->SetMaxClippingPlane( 270.0f, sf::Vector2f(100.0f,0.0f) );
+
+	mXP = mHud->CreateProgressBar( mGuiNamePrefix + "xp" );
+	mXP->SetBorderImage( hudDesc.path[HUDDESC_XP_BG] );
+	mXP->SetProgressImage( hudDesc.path[HUDDESC_XP] );
+	mXP->SetPosition( 0.0f, 75.0f, 100.0f, 25.0f );
+	mXP->SetMinClippingPlane( 270.0f, sf::Vector2f(0.0f,0.0f) );
+	mXP->SetMaxClippingPlane( 270.0f, sf::Vector2f(100.0f,0.0f) );
+}
+
+CClassicHud::~CClassicHud()
+{
+}
+
+void CClassicHud::Update(float dt)
+{
+	if (CPlayer* player = gPlayerManager.GetPlayerByNumber(mPlayerNumber))
+	{
+		mHP->SetProgress( player->GetHP() / player->GetStats()->GetCurrAspect(aMaxHP) );
+		mMana->SetProgress( player->GetStats()->GetMana() / player->GetStats()->GetCurrAspect(aMaxMana) );
+		mXP->SetProgress( (player->GetTotalXP() - player->XPPreviouslyRequired()) / (player->XPRequired() - player->XPPreviouslyRequired()) );
+	}
+}
+
+/* ================ CModernHud ================= */
+
+CModernHud::CModernHud(unsigned playerNumber, SHudDesc& hudDesc)
+:	CHud(playerNumber, hudDesc),
 	mHP		( NULL ),
 	mMana	( NULL ),
 	mManaFlr( NULL ),
@@ -37,42 +131,16 @@ CHud::CHud()
 	mHudFg	( NULL ),
 	mManaFlaringTime( 0.0f )
 {
-}
-
-CHud::~CHud()
-{
-}
-
-void CHud::Init(unsigned int playerNumber)
-{
-	std::string prefix = std::string("pl") + StringUtils::ToString(playerNumber) + "-";
-
-	mPlayerNumber = playerNumber;
-
-	mHud = gGUI.CreateWindow( prefix + "hud" );
-
-    UpdatePosition();
-
-    SHudDesc hudDesc;
-    CPlayer* player = gPlayerManager.GetPlayerByNumber(playerNumber);
-    if (!player)
-    {
-        //fprintf(stderr, "WARNING: CHud::Init: invalid player number: %i (not yet initialized?)\n", playerNumber);
-        return;
-    }
-    else
-        hudDesc = player->GetHudDesc();
-
-	CImageBox * circle1 = mHud->CreateImageBox( prefix + "hud-circle1" );
+	CImageBox * circle1 = mHud->CreateImageBox( mGuiNamePrefix + "hud-circle1" );
 	circle1->AddImageToSequence( hudDesc.path[HUDDESC_CIRCLE1] );
 	circle1->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
 	circle1->SetRotationSpeed( 200.0f );
 
-    CImageBox * hudBg = mHud->CreateImageBox( prefix + "hud-bg" );
+    CImageBox * hudBg = mHud->CreateImageBox( mGuiNamePrefix + "hud-bg" );
 	hudBg->AddImageToSequence( hudDesc.path[HUDDESC_BG] );
 	hudBg->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
 
-    mAvatar = hudBg->CreateImageBox("avatar");
+    mAvatar = hudBg->CreateImageBox( mGuiNamePrefix + "avatar" );
     mAvatar->AddImageToSequence( hudDesc.path[HUDDESC_AVATAR0] );
     mAvatar->AddImageToSequence( hudDesc.path[HUDDESC_AVATAR1] );
     mAvatar->AddImageToSequence( hudDesc.path[HUDDESC_AVATAR2] );
@@ -80,46 +148,46 @@ void CHud::Init(unsigned int playerNumber)
     mAvatar->AddImageToSequence( hudDesc.path[HUDDESC_AVATAR4] );
     mAvatar->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
 
-	CImageBox * circle2 = mHud->CreateImageBox( prefix +  "hud-circle2" );
+	CImageBox * circle2 = mHud->CreateImageBox( mGuiNamePrefix +  "hud-circle2" );
 	circle2->AddImageToSequence( hudDesc.path[HUDDESC_CIRCLE2] );
 	circle2->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
 	circle2->SetRotationSpeed( -100.0f );
 
-	CImageBox * circle3 = mHud->CreateImageBox( prefix + "hud-circle3" );
+	CImageBox * circle3 = mHud->CreateImageBox( mGuiNamePrefix + "hud-circle3" );
 	circle3->AddImageToSequence( hudDesc.path[HUDDESC_CIRCLE3] );
 	circle3->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
 	circle3->SetRotationSpeed( 100.0f );		
 	
-	mHP = hudBg->CreateProgressBar( prefix + "hp" );
+	mHP = hudBg->CreateProgressBar( mGuiNamePrefix + "hp" );
 	mHP->SetProgressImage( hudDesc.path[HUDDESC_HP] );
 	mHP->SetMaxClippingPlane( 240.0f, sf::Vector2f( 55.0f, 45.0f ) );
 	mHP->SetMinClippingPlane( 60.0f, sf::Vector2f( 55.0f, 45.0f ) );
 	mHP->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
 
-	mMana = hudBg->CreateProgressBar( prefix + "mana" );
+	mMana = hudBg->CreateProgressBar( mGuiNamePrefix + "mana" );
 	mMana->SetProgressImage( hudDesc.path[HUDDESC_MANA] );
 	mMana->SetMaxClippingPlane( 240.0f, sf::Vector2f( 55.0f, 45.0f ) );
 	mMana->SetMinClippingPlane( 60.0f, sf::Vector2f( 55.0f, 45.0f ) );
 	mMana->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
 
-	mManaFlr = hudBg->CreateProgressBar( prefix + "mana-flared" );
+	mManaFlr = hudBg->CreateProgressBar( mGuiNamePrefix + "mana-flared" );
 	mManaFlr->SetProgressImage(hudDesc.path[HUDDESC_MANA_FLARED] );
 	mManaFlr->SetMaxClippingPlane( 240.0f, sf::Vector2f( 55.0f, 45.0f ) );
 	mManaFlr->SetMinClippingPlane( 60.0f, sf::Vector2f( 55.0f, 45.0f ) );
 	mManaFlr->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
 
-	mXP = hudBg->CreateProgressBar( prefix +  "xp" );
+	mXP = hudBg->CreateProgressBar( mGuiNamePrefix + "xp" );
 	mXP->SetProgressImage( hudDesc.path[HUDDESC_XP] );
 	mXP->SetMaxClippingPlane( 85.0f, sf::Vector2f( 50.0f, 50.0f ) );
 	mXP->SetMinClippingPlane( 225.0f, sf::Vector2f( 50.0f, 50.0f ) );
 	mXP->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
 
-	mHudFg = mHP->CreateImageBox( prefix + "hud-fg" );
+	mHudFg = mHP->CreateImageBox( mGuiNamePrefix + "hud-fg" );
 	mHudFg->AddImageToSequence( hudDesc.path[HUDDESC_FG] );
 	mHudFg->AddImageToSequence( hudDesc.path[HUDDESC_FG_FLARED] );
 	mHudFg->SetPosition(0.0f, 0.0f, 100.0f, 100.0f);
 
-	mHudFGText = mHP->CreateTextArea( prefix + "hud-fg-text");
+	mHudFGText = mHP->CreateTextArea( mGuiNamePrefix + "hud-fg-text");
 	mHudFGText->SetPosition( 0.0f, 0.0f, 100.0f, 30.0f );
 	mHudFGText->SetCenter(true);
 	mHudFGText->SetFont(gLocalizator.GetFont(GUI::FONT_MESSAGE),20);
@@ -128,7 +196,7 @@ void CHud::Init(unsigned int playerNumber)
 
 	for ( unsigned i = 0; i < 10; i++ )
 	{
-		CImageBox* img = mHud->CreateImageBox( prefix + "seq-" + StringUtils::ToString(i) );
+		CImageBox* img = mHud->CreateImageBox( mGuiNamePrefix + "seq-" + StringUtils::ToString(i) );
 		img->SetVisible( false );
 
 		img->AddImageToSequence( hudDesc.path[HUDDESC_SEQ_Q] );
@@ -140,18 +208,23 @@ void CHud::Init(unsigned int playerNumber)
 	}
 }
 
-void CHud::Update(float dt)
+CModernHud::~CModernHud()
+{
+}
+
+void CModernHud::Update(float dt)
 {
 	if ( CPlayer * player = gPlayerManager.GetPlayerByNumber(mPlayerNumber) )
 	{
-		float manaAlpha;
+		const float maxManaFlaringTime = 0.3f;
 		float halfMaxManaFlaringTime = maxManaFlaringTime * 0.5f;
+		float manaAlpha;
 
 		if (mManaFlaringTime > 0.0f)
 		{
 			mManaFlaringTime -= dt;
 			manaAlpha = fabs(mManaFlaringTime - halfMaxManaFlaringTime) / halfMaxManaFlaringTime;
-			if ( manaAlpha > 1.0f )
+			if (manaAlpha > 1.0f)
 				manaAlpha = 1.0f;
 		} 
 		else 
@@ -248,22 +321,8 @@ void CHud::Update(float dt)
 		Hide();
 }
 
-void CHud::Show()
+void CModernHud::Show()
 {
-    UpdatePosition();
 	mHud->SetVisible( true );
-	ResetSequences();
-}
-
-void CHud::Hide()
-{
-	mHud->SetVisible( false );
-}
-
-void CHud::UpdatePosition()
-{
-	if ( mPlayerNumber == 0 )
-        mHud->SetPosition( 0.0f, 0.0f, 180.0f, 180.0f, UNIT_PIXEL, false );
-	else
-        mHud->SetPosition( gGameOptions.GetWidth() - 160.0f, 0.0f, 180.0f, 180.0f, UNIT_PIXEL, false );
+	mSeq.clear();
 }

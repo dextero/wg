@@ -149,7 +149,7 @@ void CLightning::Draw(sf::RenderWindow *renderWindow)
         c = k.b-perp;
         d = k.b+perp;
 
-        glBegin(GL_QUADS);
+        glBegin(GL_TRIANGLE_FAN);
             glTexCoord2f(1,1); glVertex3f(a.x, a.y,0);
             glTexCoord2f(1,0); glVertex3f(b.x, b.y,0);
             glTexCoord2f(0,0); glVertex3f(c.x, c.y,0);
@@ -186,7 +186,7 @@ void CLightning::Draw(sf::RenderWindow *renderWindow)
         c = k.b-perp;
         d = k.b+perp;
 
-        glBegin(GL_QUADS);
+        glBegin(GL_TRIANGLE_FAN);
             glTexCoord2f(1,1); glVertex3f(a.x, a.y,0);
             glTexCoord2f(1,0); glVertex3f(b.x, b.y,0);
             glTexCoord2f(0,0); glVertex3f(c.x, c.y,0);
