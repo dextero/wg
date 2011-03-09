@@ -8,6 +8,8 @@
 #include <map>
 #include <string.h>
 
+#include <boost/cstdint.hpp>
+
 #define gVFS System::IO::VFSReader::GetSingleton()
 
 namespace System
@@ -20,22 +22,22 @@ namespace System
 		struct VFSHeader
 		{
 			char mSig[4];
-			unsigned int mVersion;
-			unsigned int mHeaderSize;
-			unsigned int mFileTableEntrySize;
-			unsigned int mFileCount;
-			unsigned int mFileTableOffset;
-			unsigned int mDataOffset;
+			boost::uint32_t mVersion;
+			boost::uint32_t mHeaderSize;
+			boost::uint32_t mFileTableEntrySize;
+			boost::uint32_t mFileCount;
+			boost::uint32_t mFileTableOffset;
+			boost::uint32_t mDataOffset;
 		};
 
 
 		struct VFSFileTableEntry
 		{
-			unsigned long long mHash;
-			unsigned int mFlags;
-			unsigned int mCompressedSize;
-			unsigned int mUnCompressedSize;
-			unsigned int mOffset;
+			boost::uint64_t mHash;
+			boost::uint32_t mFlags;
+			boost::uint32_t mCompressedSize;
+			boost::uint32_t mUnCompressedSize;
+			boost::uint32_t mOffset;
 		};
 
         #pragma pack()
@@ -44,7 +46,7 @@ namespace System
 		{
 		private:
 			char* mData;
-			int mSize;
+			boost::int32_t mSize;
 		public:
 			VFSFile(): mData(NULL), mSize(0) {};
             VFSFile(const VFSFile& f): mSize(f.mSize)
@@ -69,7 +71,7 @@ namespace System
 			VFSFileTableEntry* file_table;
 			std::ifstream* file;
             std::vector<std::string> mFilenames;
-            std::map<unsigned long long, VFSFile*> mFiles;
+            std::map<boost::uint64_t, VFSFile*> mFiles;
 		public:
             VFSReader(): ready(false) {OpenFileSystem("data.vfs");};
             ~VFSReader();
@@ -85,7 +87,7 @@ namespace System
             
             // po dodaniu/usunieciu plikow trzeba zapisac, bo zmiany zostana w pamieci
             // kopiuje buffer - zadbaj o jego usuniecie po wywolaniu; nadpisuje istniejacy plik.
-            bool AddFile(const char* filename, char* buffer, int data_size);
+            bool AddFile(const char* filename, char* buffer, boost::int32_t data_size);
             bool RemoveFile(const char* filename);
 		};
 	}
