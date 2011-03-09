@@ -5,8 +5,6 @@
 #include <sstream>
 #include <vector>
 
-#include <boost/cstdint.hpp>
-
 // przyspieszenie porównywania 8-znakowych ci¹gów - rozpatrzyæ u¿ycie
 //union StringKey
 //{    
@@ -28,7 +26,7 @@ extern std::wstring ValidChars;
 std::string TrimWhiteSpaces( const std::string &toTrim );
 std::wstring TrimWhiteSpacesW( const std::wstring &toTrim );
 //http://www.azillionmonkeys.com/qed/hash.html
-boost::uint64_t GetStringHash( const std::string &str );
+unsigned long long GetStringHash( const std::string &str );
 
 inline std::string ConvertToString( std::wstring ws )
 {

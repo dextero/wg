@@ -108,12 +108,12 @@ std::wstring TrimWhiteSpacesW( const std::wstring &toTrim )
     return toTrim.substr(start, end - start);
 }
 
-boost::uint64_t GetStringHash( const std::string & str )
+unsigned long long GetStringHash( const std::string & str )
 {
 	const char * data = str.c_str();
 	unsigned int len = (unsigned int)str.length();
 
-	boost::uint64_t hash = len, tmp;
+	unsigned long long hash = len, tmp;
 	int rem;
 
 	if (len <= 0 || data == NULL) return 0;
