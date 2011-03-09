@@ -112,7 +112,7 @@ const VFSFile VFSReader::GetFile(const char* filename)
                     if(file_table[i].mFlags & 0x01)//compressed file
                     {
                         char* uncompressed_data = new char[file_table[i].mUnCompressedSize+1];
-                        int uncompressed_size = file_table[i].mUnCompressedSize;
+                        long long int uncompressed_size = file_table[i].mUnCompressedSize;
                         uncompress((Bytef*)uncompressed_data, (uLongf*)&uncompressed_size, (Bytef*)data, (uLongf)file_table[i].mCompressedSize);
                         uncompressed_data[file_table[i].mUnCompressedSize] = 0;
 
