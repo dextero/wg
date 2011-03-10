@@ -42,6 +42,9 @@ namespace System
 
         #pragma pack()
 
+        class VFSFile;
+        typedef std::map<boost::uint64_t, VFSFile*> VFSFilesMap;
+
 		class VFSFile
 		{
 		private:
@@ -71,7 +74,7 @@ namespace System
 			VFSFileTableEntry* file_table;
 			std::ifstream* file;
             std::vector<std::string> mFilenames;
-            std::map<boost::uint64_t, VFSFile*> mFiles;
+            VFSFilesMap mFiles;
 		public:
             VFSReader(): ready(false) {OpenFileSystem("data.vfs");};
             ~VFSReader();
