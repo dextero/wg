@@ -15,7 +15,7 @@ template<> VFSReader* CSingleton<VFSReader>::msSingleton = 0;
 
 VFSReader::~VFSReader()
 {
-    for (std::map<unsigned long long, VFSFile*>::iterator it = mFiles.begin(); it != mFiles.end(); ++it)
+    for (VFSFilesMap::iterator it = mFiles.begin(); it != mFiles.end(); ++it)
         delete it->second;
 }
 
@@ -289,7 +289,7 @@ bool VFSReader::RemoveFile(const char* filename)
         if (*it == filename)
         {
             mFilenames.erase(it);
-            std::map<unsigned long long, VFSFile*>::iterator it;
+            VFSFilesMap::iterator it;
             if ((it = mFiles.find(StringUtils::GetStringHash(filename))) != mFiles.end())
             {
                 delete it->second;
