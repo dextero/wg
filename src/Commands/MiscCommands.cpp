@@ -34,6 +34,7 @@ void CommandClearLogic(size_t argc, const std::vector<std::wstring> &argv)
 void CommandSetLogicState(size_t argc, const std::vector<std::wstring> &argv);
 void CommandStartNewGame(size_t argc, const std::vector<std::wstring> &argv);
 void CommandExitToMainMenu(size_t argc, const std::vector<std::wstring> &argv);
+void CommandGuiCreateChooser(size_t argc, const std::vector<std::wstring> &argv);
 
 // na koncu musi byc {0,0,0}, bo sie wszystko ***
 CCommands::SCommandPair MiscCommands [] =
@@ -76,6 +77,7 @@ CCommands::SCommandPair MiscCommands [] =
     {L"vfs-contains"                , "$MAN_VFS_CONTAINS"           , CommandVFSContains             },
     {L"vfs-clear"                   , "$MAN_VFS_CLEAR"              , CommandVFSClear                },
     {L"gui-show-menu"               , "$MAN_GUI_SHOW_MENU"          , CommandGuiShowMenu             },
+    {L"gui-create-chooser"          , "$MAN_GUI_CREATE_CHOOSER"     , CommandGuiCreateChooser        },
     {0,0,0}
 };
 
@@ -758,3 +760,31 @@ void CommandGuiShowMenu(size_t argc, const std::vector<std::wstring> &argv)
     else
         gLogic.GetMenuScreens()->Show(argv[1]);
 }
+
+
+
+#include "../GUI/CInGameOptionChooser.h"
+void CommandGuiCreateChooser(size_t argc, const std::vector<std::wstring> &argv)
+{  
+    static CInGameOptionChooser* oc = NULL;
+    if (!oc) {
+        oc = new CInGameOptionChooser();
+        oc->SetOptionImages("data/GUI/btn-up.png", "data/GUI/btn-hover.png");
+        oc->SetOptionFont("data/GUI/verdana.ttf", 16.0f);
+        oc->SetOptionColor(sf::Color::White);
+        oc->SetOptionSize(sf::Vector2f(60.0f,60.0f));
+        oc->SetRadius(80.0f);
+    }
+    oc->Hide();
+    if (argc < 2) return;
+
+    std::vector<std::wstring> options;
+    for (size_t i = 1 ; i < argv.size() ; i++) {
+        options.push_back(argv[i]);
+    }
+
+    oc->SetOptions(options);
+    oc->Show();
+}
+
+
