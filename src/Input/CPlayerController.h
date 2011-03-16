@@ -15,6 +15,7 @@ struct SAbilityInstance;
 class CTriggerEffects;
 
 class CAbilityKeyMap; // definicja w CPlayerController.cpp
+class CInGameOptionChooser;
 
 namespace KeyActionTypes
 {
@@ -68,6 +69,8 @@ private:
 
     // sloty na czary
     int mSelectedAbilities[ABI_SLOTS_COUNT];
+
+    CInGameOptionChooser * mOptionChooser;
 public:
 	CPlayerController(CPlayer *player);
 	virtual ~CPlayerController();
@@ -100,6 +103,8 @@ public:
     inline int* GetSelectedAbilities() { return mSelectedAbilities; }
  
     bool AllowKeyHold();
+
+    CInGameOptionChooser * GetOptionChooser();
 };
 
 #endif /*__CPLAYERCONTROLLER_H__*/

@@ -764,17 +764,19 @@ void CommandGuiShowMenu(size_t argc, const std::vector<std::wstring> &argv)
 
 
 #include "../GUI/CInGameOptionChooser.h"
+#include "../Logic/CPlayerManager.h"
+#include "../Logic/CPlayer.h"
+#include "../Input/CPlayerController.h"
+#include "../Logic/OptionChooser/CSimpleOptionHandler.h"
+
 void CommandGuiCreateChooser(size_t argc, const std::vector<std::wstring> &argv)
 {  
-    static CInGameOptionChooser* oc = NULL;
-    if (!oc) {
-        oc = new CInGameOptionChooser();
-        oc->SetOptionImages("data/GUI/btn-up.png", "data/GUI/btn-hover.png");
-        oc->SetOptionFont("data/GUI/verdana.ttf", 16.0f);
-        oc->SetOptionColor(sf::Color::White);
-        oc->SetOptionSize(sf::Vector2f(60.0f,60.0f));
-        oc->SetRadius(80.0f);
-    }
+    CInGameOptionChooser* oc = NULL;
+    CPlayer * p = gPlayerManager.GetPlayerByNumber(0);
+    CPlayerController * pc = p != NULL ? p->GetController() : NULL;
+    if (!pc) return;
+
+    oc = pc->GetOptionChooser();
     oc->Hide();
     if (argc < 2) return;
 
@@ -784,6 +786,8 @@ void CommandGuiCreateChooser(size_t argc, const std::vector<std::wstring> &argv)
     }
 
     oc->SetOptions(options);
+    oc->SetOptionHandler(new CSimpleOptionHandler());
+
     oc->Show();
 }
 

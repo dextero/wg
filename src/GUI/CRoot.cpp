@@ -23,6 +23,7 @@
 #include "../Logic/CPlayerManager.h"
 #include "../Rendering/CHudSprite.h"
 #include "../Rendering/CDrawableManager.h"
+#include "CInGameOptionChooser.h"
 
 #undef CreateWindow
 #undef MOUSE_MOVED
@@ -85,6 +86,7 @@ void CRoot::FrameStarted(float secondsPassed)
 	mClippingRect.Bottom =	mGlobalSize.y;
 
 	UpdateChilds( secondsPassed );
+    CInGameOptionChooser::UpdateAll();
 }
 
 void CRoot::KeyPressed(const sf::Event::KeyEvent &e)

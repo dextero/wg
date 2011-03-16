@@ -3,8 +3,8 @@
 #include "CRoot.h"
 #include "../Utils/StringUtils.h"
 #include "../Logic/CLogic.h"
-#include "../Logic/CPlayerManager.h"
-#include "../Logic/CPlayer.h"
+#include "../Logic/CActor.h"
+#include "../Logic/OptionChooser/IOptionChooserHandler.h"
 #include "../Rendering/CCamera.h"
 #include "../CGame.h"
 #include "../CGameOptions.h"
@@ -12,24 +12,46 @@
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
+InGameOptionChooserVector CInGameOptionChooser::msActiveChoosers;
+
+CInGameOptionChooser * CInGameOptionChooser::CreateChooser() {
+    CInGameOptionChooser * chooser = new CInGameOptionChooser();
+    msActiveChoosers.push_back(chooser);
+    return chooser;
+}
+
 CInGameOptionChooser::CInGameOptionChooser()
 :	mIsVisible(false),
-    mRadius(0.f)
+    mRadius(0.f),
+    mOptionHandler(NULL)
 {
-    gGame.AddFrameListener(this);
 }
 
 CInGameOptionChooser::~CInGameOptionChooser()
 {
-    //todo: remove mButtons
+    while (mButtons.size() > 0) {
+        mButtons.back()->Remove();
+        mButtons.pop_back();
+    }
+    if (mOptionHandler) {
+        delete mOptionHandler;
+    }
+
+    for (InGameOptionChooserVector::iterator it = msActiveChoosers.begin() ; it != msActiveChoosers.end() ; it++) {
+        if (*it == this) {
+            *it = msActiveChoosers.back();
+            msActiveChoosers.pop_back();
+            break;
+        }
+    }
 }
 
-
-void CInGameOptionChooser::FrameStarted(float secondsPassed)
+void CInGameOptionChooser::UpdateAll()
 {
-    Update();
+    for (InGameOptionChooserVector::iterator it = msActiveChoosers.begin() ; it != msActiveChoosers.end() ; it++) {
+        (*it)->Update();
+    }
 }
-
 
 void CInGameOptionChooser::SetRadius(float radius)
 {
@@ -86,11 +108,25 @@ void CInGameOptionChooser::SetOptions(const std::vector<std::wstring> & options)
     }
 }
 
+void CInGameOptionChooser::SetOptionHandler(IOptionChooserHandler * handler)
+{
+    if (mOptionHandler != NULL) {
+        delete mOptionHandler;
+    }
+    mOptionHandler = handler;
+}
+
+void CInGameOptionChooser::SetActor(CActor * actor)
+{
+    mActor = actor;
+}
+
 void CInGameOptionChooser::Show()
 {
 	SaveCursorPosition();
 	UpdatePosition();
     mIsVisible = true;
+    Update();
 }
 
 void CInGameOptionChooser::Hide()
@@ -98,6 +134,21 @@ void CInGameOptionChooser::Hide()
 	if (mIsVisible)
 		RestoreCursorPosition();
 	mIsVisible = false;
+}
+
+bool CInGameOptionChooser::IsVisible()
+{
+    return mIsVisible;
+}
+
+void CInGameOptionChooser::OptionSelected(size_t selected)
+{
+    if (mOptionHandler) {
+        mOptionHandler->OptionSelected(selected);
+        delete mOptionHandler;
+        mOptionHandler = NULL;
+    }
+    Hide();
 }
 
 void CInGameOptionChooser::Update()
@@ -108,22 +159,18 @@ void CInGameOptionChooser::Update()
 	for (size_t i = 0; i < mButtons.size(); i++)
 		mButtons[i]->SetVisible(mIsVisible);
 
-	if (mIsVisible) {
+	if (mIsVisible && mActor) {
 	    for (unsigned i = 0; i < mButtons.size(); i++) {
+            sf::Vector2f center = gGUI.ConvertToGlobalPosition(0.01f * gCamera.TileToGui(mActor->GetPosition()));
+            center.x += sinf(float(i)/float(mButtons.size())*2*3.1415926f) * mRadius;
+            center.y -= cosf(float(i)/float(mButtons.size())*2*3.1415926f) * mRadius;
 
-            CPlayer * player = gPlayerManager.GetPlayerByNumber(0);
-            if (player) {
-                sf::Vector2f center = gGUI.ConvertToGlobalPosition(0.01f * gCamera.TileToGui(player->GetPosition()));
-		        center.x += sinf(float(i)/float(mButtons.size())*2*3.1415926f) * mRadius;
-                center.y -= cosf(float(i)/float(mButtons.size())*2*3.1415926f) * mRadius;
-
-		        mButtons[i]->SetPosition(-0.5f*mOptionSize.x + center.x, 
-    			        -0.5f*mOptionSize.y + center.y, 
-                        mOptionSize.x, 
-		                mOptionSize.y,
-                        GUI::UNIT_PIXEL
-                );
-            }
+            mButtons[i]->SetPosition(-0.5f*mOptionSize.x + center.x, 
+                    -0.5f*mOptionSize.y + center.y, 
+                    mOptionSize.x, 
+                    mOptionSize.y,
+                    GUI::UNIT_PIXEL
+            );
         }
 		/* ograniczamy kursor do okregu przyciskow, zeby bylo latwiej rzucac czar 
 		DamorK: bez wlasnego kursora i ukrycia systemowego trudno o stabilnosc wiec komentuje
@@ -180,7 +227,6 @@ void CInGameOptionChooser::UpdatePosition()
 
 	/* na podstawie pozycji srodka i promienia obliczamy pozycje poszczegolnych klawiszy */
 
-    Update();
 }
 
 void CInGameOptionChooser::SaveCursorPosition()
