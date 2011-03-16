@@ -60,10 +60,10 @@ include("header.php");
 	}
 	?>
 	<iframe 
-	    src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FWarlocks-Gauntlet%2F145175012210074&amp;width=215&amp;colorscheme=dark&amp;show_faces=true&amp;stream=false&amp;header=true&amp;height=370"
+	    src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FWarlocks-Gauntlet%2F111441615600307&amp;width=215&amp;colorscheme=dark&amp;show_faces=true&amp;stream=false&amp;header=true&amp;height=390"
 		scrolling="no"
 		frameborder="0"
-		style="float:right; border:none; overflow:hidden; width:217px; height:372px;"
+		style="float:right; border:none; overflow:hidden; width:217px; height:392px;"
 		allowTransparency="true">
 	</iframe>
 	<?php
