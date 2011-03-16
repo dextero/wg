@@ -11,6 +11,8 @@ $newestLookup = array(
 	"win_en" => "http://students.mimuw.edu.pl/~sk236086/WG/paczki/newest.php",
 	"lin_pl" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/pl/latest.php",
 	"lin_en" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/latest.php",
+#	"lin_pl" => "http://students.mimuw.edu.pl/~ps209499/wg/snapshots/linux/pl/latest.php",
+#	"lin_en" => "http://students.mimuw.edu.pl/~ps209499/wg/snapshots/linux/en/latest.php",
 	"mac_pl" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/mac/latest.php",
 	"mac_en" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/mac/latest.php"
 );	
@@ -24,6 +26,8 @@ $newestStorage = array(
 	"win_en" => "http://students.mimuw.edu.pl/~sk236086/WG/paczki/",
 	"lin_pl" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/pl/",
 	"lin_en" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/",
+#	"lin_pl" => "http://students.mimuw.edu.pl/~ps209499/wg/snapshots/linux/pl/",
+#	"lin_en" => "http://students.mimuw.edu.pl/~ps209499/wg/snapshots/linux/en/",
 	"mac_pl" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/mac/",
 	"mac_en" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/mac/"
 );
