@@ -11,16 +11,20 @@
 #include <vector>
 #include <SFML/Graphics/Color.hpp>
 
+class IOptionChooserHandler;
+class CActor;
+
 namespace GUI { class CButton; }
 
-class CInGameOptionChooser : public IFrameListener
+class CInGameOptionChooser;
+typedef std::vector<CInGameOptionChooser *> InGameOptionChooserVector;
+
+class CInGameOptionChooser
 {
 public:
-	CInGameOptionChooser();
 	~CInGameOptionChooser();
 
-    virtual void FrameStarted(float secondsPassed);
-    virtual bool FramesDuringPause(EPauseVariant pv) { return true; };
+    static CInGameOptionChooser * CreateChooser();
 
     void SetRadius(float radius);
 	void SetOptions(const std::vector<std::wstring> & options);
@@ -33,10 +37,17 @@ public:
 	void Hide();
 
 	void Update();
+    static void UpdateAll();
 
-	inline const sf::Vector2i& GetSavedCursorPosition() { return mCursorPos; }    
+	inline const sf::Vector2i& GetSavedCursorPosition() {return mCursorPos;}
+
+    void OptionSelected(size_t selected);
+    void SetOptionHandler(IOptionChooserHandler * handler);
+    void SetActor(CActor * actor); // w domysle: setPlayer
+    bool IsVisible();
 
 private:
+	CInGameOptionChooser();
     bool mIsVisible;
 	sf::Vector2i mCursorPos;
     std::vector<GUI::CButton*> mButtons;
@@ -49,10 +60,14 @@ private:
     std::string mOptionFont;
     float mOptionFontSize;
 
+    IOptionChooserHandler * mOptionHandler;
+    CActor * mActor; // ja to tak moge sobie przechowywac? Co jak ktos mi zabije tego gracza, wskaznik umrze?
 
 	void UpdatePosition();
 	void SaveCursorPosition();
 	void RestoreCursorPosition();
+
+    static InGameOptionChooserVector msActiveChoosers;
 };
 
 #endif

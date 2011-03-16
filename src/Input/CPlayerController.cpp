@@ -1,6 +1,7 @@
 #include <cstdio>
 #include "CPlayerController.h"
 #include "../GUI/CHud.h"
+#include "../GUI/CInGameOptionChooser.h"
 #include "../Logic/CLogic.h"
 #include "../Logic/CPlayer.h"
 #include "../Logic/CDetector.h"
@@ -104,7 +105,8 @@ CPlayerController::CPlayerController(CPlayer *player) :
     mAbsoluteMoveX(0.0f),
     mAbsoluteMoveY(0.0f),
     mIsInAbsoluteMovement(false),
-	mMouseLook(false)
+	mMouseLook(false),
+    mOptionChooser(NULL)
 {
     fprintf(stderr,"CPlayerController::CPlayerController()\n");
     mKeyMap = new CAbilityKeyMap();
@@ -116,6 +118,9 @@ CPlayerController::CPlayerController(CPlayer *player) :
 
 CPlayerController::~CPlayerController(){
     fprintf(stderr,"CPlayerController::~CPlayerController()\n");
+    if (mOptionChooser) {
+        delete mOptionChooser;
+    }
 }
 
 void CPlayerController::SetTurning(bool right, bool left){
@@ -405,4 +410,19 @@ void CPlayerController::SwitchControls(){
 bool CPlayerController::AllowKeyHold(){
     return (((mKeySequence.size() == 0)&&(mLastKeySequence.size()==1)) || (mFocusAbility != NULL));
 }
+
+CInGameOptionChooser * CPlayerController::GetOptionChooser() {
+    if (mOptionChooser == NULL) {
+        fprintf(stderr, "Creating new chooser\n");
+        mOptionChooser = CInGameOptionChooser::CreateChooser();
+        mOptionChooser->SetActor(mActor);
+        mOptionChooser->SetOptionImages("data/GUI/btn-up.png", "data/GUI/btn-hover.png");
+        mOptionChooser->SetOptionFont("data/GUI/verdana.ttf", 16.0f);
+        mOptionChooser->SetOptionColor(sf::Color::White);
+        mOptionChooser->SetOptionSize(sf::Vector2f(60.0f,60.0f));
+        mOptionChooser->SetRadius(80.0f);
+    }
+    return mOptionChooser;
+}
+
 
