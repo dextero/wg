@@ -3,9 +3,10 @@
 
 class IOptionChooserHandler
 {
-public:
-    virtual ~IOptionChooserHandler() {};
-	virtual void OptionSelected(size_t option) = 0;
+    public:
+        size_t mReferenceCounter;
+        virtual ~IOptionChooserHandler() {}
+    	virtual void OptionSelected(size_t option) = 0;
 };
 
 

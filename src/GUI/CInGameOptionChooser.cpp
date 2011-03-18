@@ -12,6 +12,8 @@
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
+#include <stdarg.h>
+
 InGameOptionChooserVector CInGameOptionChooser::msActiveChoosers;
 
 CInGameOptionChooser * CInGameOptionChooser::CreateChooser() {
@@ -34,7 +36,10 @@ CInGameOptionChooser::~CInGameOptionChooser()
         mButtons.pop_back();
     }
     if (mOptionHandler) {
-        delete mOptionHandler;
+        mOptionHandler->mReferenceCounter--;
+        if (mOptionHandler->mReferenceCounter == 0) {
+            delete mOptionHandler;
+        }
     }
 
     for (InGameOptionChooserVector::iterator it = msActiveChoosers.begin() ; it != msActiveChoosers.end() ; it++) {
@@ -90,7 +95,7 @@ void CInGameOptionChooser::SetOptionColor(const sf::Color color)
     }
 }
 
-void CInGameOptionChooser::SetOptions(const std::vector<std::wstring> & options)
+void CInGameOptionChooser::SetOptions(const std::vector<std::string> & options)
 {
     for (size_t i = 0 ; i < options.size() ; i++) {
         if (mButtons.size() <= i) {
@@ -100,7 +105,7 @@ void CInGameOptionChooser::SetOptions(const std::vector<std::wstring> & options)
             mButtons[i]->SetFont(mOptionFont, mOptionFontSize, GUI::UNIT_PIXEL);
             mButtons[i]->SetColor(mOptionColor);
         }
-        mButtons[i]->SetText(options[i]);
+        mButtons[i]->SetText(StringUtils::ConvertToWString(options[i]));
     }
     while (mButtons.size() > options.size()) {
         mButtons.back()->Remove();
@@ -108,12 +113,47 @@ void CInGameOptionChooser::SetOptions(const std::vector<std::wstring> & options)
     }
 }
 
+void CInGameOptionChooser::SetOptions(const char * first, ...) {
+    std::vector<std::string> options;
+    const char * str;
+    va_list vl;
+
+    str = first;
+
+    va_start(vl, first);
+
+    do {
+        options.push_back(str);
+        str = va_arg(vl, const char*);
+    } while (str != NULL);
+
+    va_end(vl);
+    SetOptions(options);
+}
+
+void CInGameOptionChooser::SetOptions(const char * first) {
+    SetOptions(first, NULL);
+}
+void CInGameOptionChooser::SetOptions(const char * first, const char * second) {
+    SetOptions(first, second, NULL);
+}
+void CInGameOptionChooser::SetOptions(const char * first, const char * second, const char * third) {
+    SetOptions(first, second, third, NULL);
+}
+void CInGameOptionChooser::SetOptions(const char * first, const char * second, const char * third, const char * fourth) {
+    SetOptions(first, second, third, fourth, NULL);
+}
+
 void CInGameOptionChooser::SetOptionHandler(IOptionChooserHandler * handler)
 {
     if (mOptionHandler != NULL) {
-        delete mOptionHandler;
+        mOptionHandler->mReferenceCounter--;
+        if (mOptionHandler->mReferenceCounter == 0) {
+            delete mOptionHandler;
+        }
     }
     mOptionHandler = handler;
+    mOptionHandler->mReferenceCounter++;
 }
 
 void CInGameOptionChooser::SetActor(CActor * actor)
@@ -145,7 +185,10 @@ void CInGameOptionChooser::OptionSelected(size_t selected)
 {
     if (mOptionHandler) {
         mOptionHandler->OptionSelected(selected);
-        delete mOptionHandler;
+        mOptionHandler->mReferenceCounter--;
+        if (mOptionHandler->mReferenceCounter == 0) {
+            delete mOptionHandler;
+        }
         mOptionHandler = NULL;
     }
     Hide();

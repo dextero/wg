@@ -27,7 +27,12 @@ public:
     static CInGameOptionChooser * CreateChooser();
 
     void SetRadius(float radius);
-	void SetOptions(const std::vector<std::wstring> & options);
+	void SetOptions(const std::vector<std::string> & options);
+	void SetOptions(const char * first, ...);
+	void SetOptions(const char * first);
+	void SetOptions(const char * first, const char * second);
+	void SetOptions(const char * first, const char * second, const char * third);
+	void SetOptions(const char * first, const char * second, const char * third, const char * fourth);
 	void SetOptionSize(const sf::Vector2f & size);
 	void SetOptionImages(const std::string & normal, const std::string & mouseOver = "");
 	void SetOptionFont(const std::string& name, float size);

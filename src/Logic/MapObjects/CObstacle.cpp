@@ -4,18 +4,28 @@
 #include "../../Rendering/Animations/SAnimationState.h"
 #include "../../Rendering/CDisplayable.h"
 #include "../CPlayer.h"
+#include "../../Input/CPlayerController.h"
+#include "../../GUI/CInGameOptionChooser.h"
+#include "../OptionChooser/IOptionChooserHandler.h"
 
 CObstacle::CObstacle(const std::wstring &uniqueId):
     CPhysical(uniqueId),
     mDestroyed(false),
     mDyingTime(0.0f),
     mStats(this),
-    mDeathAnim(NULL)
+    mDeathAnim(NULL),
+    mOptionHandler(NULL)
 {
     SetZIndex(Z_OBSTACLE);
 }
 
 CObstacle::~CObstacle(){
+    if (mOptionHandler) {
+        mOptionHandler->mReferenceCounter--;
+        if (mOptionHandler->mReferenceCounter == 0) {
+            delete mOptionHandler;
+        }
+    }
 }
 
 CStats *CObstacle::GetStats(){
@@ -41,7 +51,10 @@ void CObstacle::Kill(){
 }
 
 void CObstacle::HandleCollisionWithPlayer(CPlayer * player) {
-    if (mGenre == L"chest") {
-        fprintf(stderr, "here!\n");
+    if (mOptionHandler != NULL) {
+        CInGameOptionChooser * oc = player->GetController()->GetOptionChooser();
+        oc->SetOptions("open", "do-nothing");
+        oc->SetOptionHandler(mOptionHandler);
+        oc->Show();
     }
 }
