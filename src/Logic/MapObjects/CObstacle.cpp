@@ -3,6 +3,7 @@
 #include "../../Rendering/ZIndexVals.h"
 #include "../../Rendering/Animations/SAnimationState.h"
 #include "../../Rendering/CDisplayable.h"
+#include "../CPlayer.h"
 
 CObstacle::CObstacle(const std::wstring &uniqueId):
     CPhysical(uniqueId),
@@ -39,3 +40,8 @@ void CObstacle::Kill(){
     }
 }
 
+void CObstacle::HandleCollisionWithPlayer(CPlayer * player) {
+    if (mGenre == L"chest") {
+        fprintf(stderr, "here!\n");
+    }
+}
