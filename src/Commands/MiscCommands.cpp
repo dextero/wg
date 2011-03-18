@@ -778,9 +778,9 @@ void CommandGuiCreateChooser(size_t argc, const std::vector<std::wstring> &argv)
     oc->Hide();
     if (argc < 2) return;
 
-    std::vector<std::wstring> options;
+    std::vector<std::string> options;
     for (size_t i = 1 ; i < argv.size() ; i++) {
-        options.push_back(argv[i]);
+        options.push_back(StringUtils::ConvertToString(argv[i]));
     }
 
     oc->SetOptions(options);

@@ -11,6 +11,8 @@ class CPlayer;
 
 struct SAnimation;
 
+class IOptionChooserHandler;
+
 class CObstacle: public CPhysical {
     friend class CPhysicalManager;
 private:
@@ -23,6 +25,8 @@ protected:
     virtual ~CObstacle();
     
     SAnimation *mDeathAnim;
+
+    IOptionChooserHandler * mOptionHandler;
 public:
     virtual CStats *GetStats();
     virtual void Update( float dt );
@@ -33,6 +37,8 @@ public:
 	inline bool IsDestroyed(){ return mDestroyed; }
 
     inline void SetDeathAnim(SAnimation *anim){ mDeathAnim = anim; }
+
+    inline void SetOptionHandler(IOptionChooserHandler * handler){ mOptionHandler = handler; }
 };
 
 #endif /*__COBSTACLE_H_*/
