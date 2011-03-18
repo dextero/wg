@@ -35,6 +35,7 @@ public:
 private:
     SAnimation *mDefaultAnim,*mDeathAnim;
 	CStats *mMinStats,*mMaxStats;
+    std::string mImage;
 };
 
 #endif

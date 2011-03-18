@@ -33,6 +33,8 @@ bool CObstacleTemplate::Load(CXml &xml)
     mDefaultAnim = gAnimationManager.GetAnimation(xml.GetString("def-anim"));
     mDeathAnim = gAnimationManager.GetAnimation(xml.GetString("die-anim"));
 
+    mImage = xml.GetString("image");
+
     mColorRed = xml.GetFloat( "color", "r" , 1.0 );
     mColorGreen = xml.GetFloat( "color", "g", 1.0 );
     mColorBlue = xml.GetFloat( "color", "b", 1.0 );
@@ -57,7 +59,11 @@ CObstacle *CObstacleTemplate::Create(std::wstring id)
 	
 	obstacle->SetTemplate(this);
     obstacle->SetCategory(PHYSICAL_OBSTACLE);
-    obstacle->SetAnimation(mDefaultAnim);
+    if (!mImage.empty()) {
+        obstacle->SetImage(mImage);
+    } else {
+        obstacle->SetAnimation(mDefaultAnim);
+    }
     obstacle->SetDeathAnim(mDeathAnim);
     obstacle->SetGenre(mGenre);
 

@@ -761,8 +761,6 @@ void CommandGuiShowMenu(size_t argc, const std::vector<std::wstring> &argv)
         gLogic.GetMenuScreens()->Show(argv[1]);
 }
 
-
-
 #include "../GUI/CInGameOptionChooser.h"
 #include "../Logic/CPlayerManager.h"
 #include "../Logic/CPlayer.h"
