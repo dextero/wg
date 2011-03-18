@@ -466,6 +466,41 @@ asses. But beware - you may encounter evil bosses which smite you to pieces
 in a single punch! Be careful not to get killed, or else you will have to
 start current level from the beginning.
 
+
+Links
+---------------------------------------------
+Download: http://www.musztardasarepska.pl/wgdown/
+Project page: http://www.warsztat.gd/projects.php?x=view&amp;id=658
+Current project state: http://www.assembla.com/spaces/gdpl
+
+
+WG Team
+---------------------------------------------
+Changes all the time :) The up-to-date list can be found at: 
+http://www.assembla.com/spaces/gdpl/team
+
+Core team:
+DamorK - programmer
+Liosan - programmer
+rAum - programmer, graphic designer
+jackflower - graphic designer
+toxic - programmer
+
+Programmers:
+bemon, borys94, BrutalComputer, DarkJarek, dextero, Fiolek, freakapp, Kenji-dev, mt-z, pawlaks1, PsichiX, raver, rm-f, rzuf, Solgar, Syriusz, thyros, yunior, zule
+Music:, Leuland Deshaim, calderon(intro)
+Storyline (lol):, Nauthiz, sorge
+Sounds:, 0 A.D. Team, Eternal Lands Team - el@erdie.de
+Testing: too many to name everyone :)
+
+
+Special thanks:
+---------------------------------------------
+Anonim, borys94, BrutalComputer, ciVis, Fiolek, Kenji-dev, mt-z, pawlaks1, rzuf, Solgar
+
+- Marcel Vijfwinkel - cgtextures.com
+- creators of an open-source game 0 A.D. - http://www.wildfiregames.com/0ad/
+- Eternal Lands&apos; team - http://www.eternal-lands.com/ - for allowing us to use sounds from their game.
 </value>
 		<size>14</size>
 	</entry>
@@ -488,5 +523,9 @@ start current level from the beginning.
 	<entry>
 		<key>UI_XP</key>
 		<value>XP: </value>
+	</entry>
+	<entry>
+		<key>OPT_LANGUAGE</key>
+		<value>Language:</value>
 	</entry>
 </root>
