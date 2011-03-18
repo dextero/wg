@@ -8,7 +8,7 @@
 #include "../Stats/CStats.h"
 #include "../../Rendering/CDisplayable.h"
 #include "../../Rendering/Animations/CAnimationManager.h"
-#include "../OptionChooser/CSimpleOptionHandler.h"
+#include "../OptionChooser/CChestOptionHandler.h"
 
 using namespace rapidxml;
 using namespace StringUtils;
@@ -68,7 +68,7 @@ CObstacle *CObstacleTemplate::Create(std::wstring id)
     obstacle->SetDeathAnim(mDeathAnim);
     obstacle->SetGenre(mGenre);
     if (mGenre == L"chest") {
-        IOptionChooserHandler * handler = new CSimpleOptionHandler();
+        IOptionChooserHandler * handler = new CChestOptionHandler(obstacle);
         obstacle->SetOptionHandler(handler);
         handler->mReferenceCounter++;
     }

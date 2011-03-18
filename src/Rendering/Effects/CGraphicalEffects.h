@@ -23,6 +23,11 @@ public:
     SEffectParamSet Prepare( const std::string & templateName );
 
     SDisplayableEffect * ShowEffect(
+            const std::string & templateName,
+            const sf::Vector2f & position = sf::Vector2f(0.0f, 0.0f)
+    );
+
+    SDisplayableEffect * ShowEffect(
             SEffectParamSet & eps,
             CPhysical * from = NULL,
             CPhysical * to = NULL

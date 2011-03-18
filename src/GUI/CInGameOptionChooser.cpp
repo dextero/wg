@@ -154,6 +154,7 @@ void CInGameOptionChooser::SetOptionHandler(IOptionChooserHandler * handler)
     }
     mOptionHandler = handler;
     mOptionHandler->mReferenceCounter++;
+    mOptionHandler->SetChooser(this);
 }
 
 void CInGameOptionChooser::SetActor(CActor * actor)
@@ -183,6 +184,8 @@ bool CInGameOptionChooser::IsVisible()
 
 void CInGameOptionChooser::OptionSelected(size_t selected)
 {
+    if (selected >= mButtons.size()) // cos tu nie gra 
+        return;
     if (mOptionHandler) {
         mOptionHandler->OptionSelected(selected);
         mOptionHandler->mReferenceCounter--;

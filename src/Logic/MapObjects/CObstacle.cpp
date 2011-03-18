@@ -21,6 +21,7 @@ CObstacle::CObstacle(const std::wstring &uniqueId):
 
 CObstacle::~CObstacle(){
     if (mOptionHandler) {
+        mOptionHandler->Hide();
         mOptionHandler->mReferenceCounter--;
         if (mOptionHandler->mReferenceCounter == 0) {
             delete mOptionHandler;
@@ -53,7 +54,7 @@ void CObstacle::Kill(){
 void CObstacle::HandleCollisionWithPlayer(CPlayer * player) {
     if (mOptionHandler != NULL) {
         CInGameOptionChooser * oc = player->GetController()->GetOptionChooser();
-        oc->SetOptions("open", "do-nothing");
+        oc->SetOptions("open", "close", "explode");
         oc->SetOptionHandler(mOptionHandler);
         oc->Show();
     }
