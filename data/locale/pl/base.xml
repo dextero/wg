@@ -546,7 +546,7 @@ Tak swoją drogą, edytowanie map bez edytora to zadanie tylko dla prawdziwych h
 
 Gdybyś chciał pomóc w rozwoju projektu, zgłosić błąd lub po prostu zobaczyć jak idą prace to możesz to zrobić odwiedzając poniższe linki:
 
-Strona projektu:................... http://www.gamedev.pl/projects.php?x=view&amp;id=658
+Strona projektu:................... http://www.warsztat.gd/projects.php?x=view&amp;id=658
 Strona rozwojowa projektu:......... http://www.assembla.com/spaces/gdpl
 Forum rozwojowe projektu:.......... http://gb.iql.pl/gdplforum/
 
@@ -611,5 +611,9 @@ Specjalne podziękowania dla:
 	<entry>
 		<key>UI_XP</key>
 		<value>XP: </value>
+	</entry>
+	<entry>
+		<key>OPT_LANGUAGE</key>
+		<value>Język:</value>
 	</entry>
 </root>
