@@ -156,6 +156,7 @@
 	<objtype code="pacman4" file="data/items/100xp.xml"/>
 	<objtype code="g" file="data/physicals/walls/test-barrier.xml"/>
 	<objtype code="barrel" file="data/physicals/obstacles/barrel.xml"/>
+	<objtype code="chest" file="data/physicals/obstacles/chest.xml"/>
 	<obj code="collision" x="10.93" y="0.85"/>
 	<obj code="collision" x="11.88" y="1.76"/>
 	<obj code="collision" x="11.63" y="3.13"/>
@@ -422,6 +423,7 @@
 	<obj code="monster2" x="18.1266" y="30.8869"/>
 	<obj code="pacman4" x="21.6495" y="41.7592"/>
 	<obj code="monster0" x="25.9137" y="33.1952"/>
+	<obj code="chest" x="6.4844" y="1.3952" rot="0"/>
 	<obj code="barrel" x="30.4844" y="33.3952" rot="271"/>
 	<obj code="barrel" x="27.0156" y="33.4889" rot="247"/>
 	<obj code="monster6" x="3.76562" y="23.2785" rot="180"/>

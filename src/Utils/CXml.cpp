@@ -127,29 +127,37 @@ EAspect CXml::GetAspect(xml_node<> *parent, const std::string &attrName)
 
 float CXml::GetFloat(const std::string &nodeName, const std::string &attrName, float def)
 {
-	if (mXmlRoot)
-		return GetFloat( mXmlRoot->first_node( nodeName.c_str() ), attrName, def );
-	return def;
+	if (!mXmlRoot) return def;
+    xml_node<> * parent = mXmlRoot->first_node(nodeName.c_str());
+    if (!parent) return def;
+
+    return GetFloat(parent, attrName, def);
 }
 
 int CXml::GetInt(const std::string &nodeName, const std::string &attrName, int def)
 {
-	if (mXmlRoot)
-		return GetInt( mXmlRoot->first_node( nodeName.c_str() ), attrName, def );
-	return def;
+	if (!mXmlRoot) return def;
+    xml_node<> * parent = mXmlRoot->first_node(nodeName.c_str());
+    if (!parent) return def;
+
+	return GetInt(parent, attrName, def );
 }
 
 std::string CXml::GetString(const std::string &nodeName, const std::string &attrName)
 {
-	if (mXmlRoot)
-		return GetString( mXmlRoot->first_node( nodeName.c_str() ), attrName );
-	return "";
+	if (!mXmlRoot) return "";
+    xml_node<> * parent = mXmlRoot->first_node(nodeName.c_str());
+    if (!parent) return "";
+
+    return GetString(parent, attrName);
 }
 
 EAspect CXml::GetAspect(const std::string &nodeName, const std::string &attrName)
 {
-	if (mXmlRoot)
-		return GetAspect( mXmlRoot->first_node( nodeName.c_str() ), attrName );
-	return aNoAspect;
+	if (!mXmlRoot) return aNoAspect;
+    xml_node<> * parent = mXmlRoot->first_node(nodeName.c_str());
+    if (!parent) return aNoAspect;
+
+    return GetAspect(parent, attrName);
 }
 
