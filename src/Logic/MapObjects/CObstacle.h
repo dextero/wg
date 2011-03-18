@@ -7,6 +7,8 @@
 #include "../CPhysical.h"
 #include "../Stats/CStats.h"
 
+class CPlayer;
+
 struct SAnimation;
 
 class CObstacle: public CPhysical {
@@ -25,6 +27,8 @@ public:
     virtual CStats *GetStats();
     virtual void Update( float dt );
     virtual void Kill();
+
+    void HandleCollisionWithPlayer(CPlayer * player);
 
 	inline bool IsDestroyed(){ return mDestroyed; }
 

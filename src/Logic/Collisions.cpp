@@ -95,6 +95,11 @@ void Collisions::LogicalResponse( CPhysical* physicalA, CPhysical* physicalB, bo
             dynamic_cast<CBullet*>(physicalA)->HandleCollision(physicalB);
 		makePhysicalResponse = false;
 	}
+    else if ( catA == PHYSICAL_PLAYER && catB == PHYSICAL_OBSTACLE )
+    {
+        CObstacle * obstacle = dynamic_cast<CObstacle*>(physicalB);
+        obstacle->HandleCollisionWithPlayer(dynamic_cast<CPlayer*>(physicalA));
+    }
     else if ( catA == PHYSICAL_PLAYER && catB == PHYSICAL_ITEM )
     {
         CItem *item = dynamic_cast<CItem*>(physicalB);
