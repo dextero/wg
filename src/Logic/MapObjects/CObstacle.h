@@ -37,8 +37,6 @@ public:
 	inline bool IsDestroyed(){ return mDestroyed; }
 
     inline void SetDeathAnim(SAnimation *anim){ mDeathAnim = anim; }
-
-    inline void SetOptionHandler(IOptionChooserHandler * handler){ mOptionHandler = handler; }
 };
 
 #endif /*__COBSTACLE_H_*/

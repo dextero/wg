@@ -41,14 +41,16 @@ public:
 	void Show();
 	void Hide();
 
-	void Update();
-    static void UpdateAll();
+    void UpdateButtons();
+	void Update(float secondsPassed);
+    static void UpdateAll(float secondsPassed);
 
 	inline const sf::Vector2i& GetSavedCursorPosition() {return mCursorPos;}
 
     void OptionSelected(size_t selected);
     void SetOptionHandler(IOptionChooserHandler * handler);
-    void SetActor(CActor * actor); // w domysle: setPlayer
+    void SetPlayer(CPlayer * player);
+    CPlayer * GetPlayer();
     bool IsVisible();
 
 private:
@@ -66,7 +68,7 @@ private:
     float mOptionFontSize;
 
     IOptionChooserHandler * mOptionHandler;
-    CActor * mActor; // ja to tak moge sobie przechowywac? Co jak ktos mi zabije tego gracza, wskaznik umrze?
+    CPlayer * mPlayer; // ja to tak moge sobie przechowywac? Co jak ktos mi zabije tego gracza, wskaznik umrze?
 
 	void UpdatePosition();
 	void SaveCursorPosition();

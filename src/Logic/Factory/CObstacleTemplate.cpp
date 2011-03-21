@@ -8,7 +8,6 @@
 #include "../Stats/CStats.h"
 #include "../../Rendering/CDisplayable.h"
 #include "../../Rendering/Animations/CAnimationManager.h"
-#include "../OptionChooser/CChestOptionHandler.h"
 
 using namespace rapidxml;
 using namespace StringUtils;
@@ -67,11 +66,6 @@ CObstacle *CObstacleTemplate::Create(std::wstring id)
     }
     obstacle->SetDeathAnim(mDeathAnim);
     obstacle->SetGenre(mGenre);
-    if (mGenre == L"chest") {
-        IOptionChooserHandler * handler = new CChestOptionHandler(obstacle);
-        obstacle->SetOptionHandler(handler);
-        handler->mReferenceCounter++;
-    }
 
     float f = gRand.Rndf( 0.0f, 1.0f );
     obstacle->GetStats()->LerpContent(mMinStats,mMaxStats,f);

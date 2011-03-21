@@ -6,7 +6,7 @@
 #include "../CPlayer.h"
 #include "../../Input/CPlayerController.h"
 #include "../../GUI/CInGameOptionChooser.h"
-#include "../OptionChooser/IOptionChooserHandler.h"
+#include "../OptionChooser/CChestOptionHandler.h"
 
 CObstacle::CObstacle(const std::wstring &uniqueId):
     CPhysical(uniqueId),
@@ -52,10 +52,14 @@ void CObstacle::Kill(){
 }
 
 void CObstacle::HandleCollisionWithPlayer(CPlayer * player) {
-    if (mOptionHandler != NULL) {
-        CInGameOptionChooser * oc = player->GetController()->GetOptionChooser();
-        oc->SetOptions("open", "close", "explode");
-        oc->SetOptionHandler(mOptionHandler);
-        oc->Show();
+    if (mOptionHandler == NULL) {
+        if (mGenre.compare(L"chest")) return;
+
+        mOptionHandler = new CChestOptionHandler(this);
+        mOptionHandler->mReferenceCounter++;
     }
+    CInGameOptionChooser * oc = player->GetController()->GetOptionChooser();
+    oc->SetOptions("open", "close", "explode");
+    oc->SetOptionHandler(mOptionHandler);
+    oc->Show();
 }
