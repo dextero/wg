@@ -415,7 +415,7 @@ CInGameOptionChooser * CPlayerController::GetOptionChooser() {
     if (mOptionChooser == NULL) {
         fprintf(stderr, "Creating new chooser\n");
         mOptionChooser = CInGameOptionChooser::CreateChooser();
-        mOptionChooser->SetActor(mActor);
+        mOptionChooser->SetPlayer((CPlayer *)mActor);
         mOptionChooser->SetOptionImages("data/GUI/btn-up.png", "data/GUI/btn-hover.png");
         mOptionChooser->SetOptionFont("data/GUI/verdana.ttf", 16.0f);
         mOptionChooser->SetOptionColor(sf::Color::White);

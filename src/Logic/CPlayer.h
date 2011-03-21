@@ -58,7 +58,6 @@ protected:
 
     int mSkillPoints, mAttrPoints;
 
-    void NextLevel( bool ignoreSkillPoints, bool muteSound = false );
 
     std::vector<CAbilityTree*> *mAbilityTrees;
     std::vector<std::string> *mAbiCodes;
@@ -75,6 +74,7 @@ public:
 
     inline CPlayerController *GetController() { return (CPlayerController*)mController; }
 
+    void NextLevel( bool ignoreSkillPoints = false, bool muteSound = false );
     void XPGained(float xp, bool ignoreSkillPoints = false, bool muteSound = false);
     float XPRequired();
     float XPPreviouslyRequired();

@@ -2,18 +2,29 @@
 #define __IOPTION_CHOOSER_HANDLER_H__
 
 #include "../../GUI/CInGameOptionChooser.h"
+#include "../CPlayer.h"
 
 class IOptionChooserHandler
 {
-    private:
+    protected:
         CInGameOptionChooser * mChooser;
+        CPlayer * mPlayer;
     public:        
         size_t mReferenceCounter;
-        IOptionChooserHandler() : mChooser(NULL), mReferenceCounter(0) {};
+        IOptionChooserHandler() : mChooser(NULL), mPlayer(NULL), mReferenceCounter(0) {};
         virtual ~IOptionChooserHandler() {}
         virtual void OptionSelected(size_t option) = 0;
+        virtual void Update(float secondsPassed) {}
         void SetChooser(CInGameOptionChooser * chooser) {
+            if (mChooser) {
+                mChooser->Hide();
+            }
             mChooser = chooser;
+            if (chooser) {
+                mPlayer = chooser->GetPlayer();
+            } else {
+                mPlayer = NULL;
+            }
         }
         void Hide() {
             if (mChooser) mChooser->Hide();

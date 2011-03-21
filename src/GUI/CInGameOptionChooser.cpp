@@ -27,15 +27,18 @@ CInGameOptionChooser::CInGameOptionChooser()
     mRadius(0.f),
     mOptionHandler(NULL)
 {
+    fprintf(stderr, "CInGameOptionChooser()");
 }
 
 CInGameOptionChooser::~CInGameOptionChooser()
 {
+    fprintf(stderr, "~CInGameOptionChooser()");
     while (mButtons.size() > 0) {
         mButtons.back()->Remove();
         mButtons.pop_back();
     }
     if (mOptionHandler) {
+        mOptionHandler->SetChooser(NULL);
         mOptionHandler->mReferenceCounter--;
         if (mOptionHandler->mReferenceCounter == 0) {
             delete mOptionHandler;
@@ -51,10 +54,10 @@ CInGameOptionChooser::~CInGameOptionChooser()
     }
 }
 
-void CInGameOptionChooser::UpdateAll()
+void CInGameOptionChooser::UpdateAll(float secondsPassed)
 {
     for (InGameOptionChooserVector::iterator it = msActiveChoosers.begin() ; it != msActiveChoosers.end() ; it++) {
-        (*it)->Update();
+        (*it)->Update(secondsPassed);
     }
 }
 
@@ -147,6 +150,7 @@ void CInGameOptionChooser::SetOptions(const char * first, const char * second, c
 void CInGameOptionChooser::SetOptionHandler(IOptionChooserHandler * handler)
 {
     if (mOptionHandler != NULL) {
+        mOptionHandler->SetChooser(NULL);
         mOptionHandler->mReferenceCounter--;
         if (mOptionHandler->mReferenceCounter == 0) {
             delete mOptionHandler;
@@ -157,9 +161,14 @@ void CInGameOptionChooser::SetOptionHandler(IOptionChooserHandler * handler)
     mOptionHandler->SetChooser(this);
 }
 
-void CInGameOptionChooser::SetActor(CActor * actor)
+CPlayer * CInGameOptionChooser::GetPlayer()
 {
-    mActor = actor;
+    return mPlayer;
+}
+
+void CInGameOptionChooser::SetPlayer(CPlayer * player)
+{
+    mPlayer = player;
 }
 
 void CInGameOptionChooser::Show()
@@ -167,14 +176,15 @@ void CInGameOptionChooser::Show()
 	SaveCursorPosition();
 	UpdatePosition();
     mIsVisible = true;
-    Update();
+    UpdateButtons();
 }
 
 void CInGameOptionChooser::Hide()
 {
-	if (mIsVisible)
-		RestoreCursorPosition();
-	mIsVisible = false;
+    if (mIsVisible)
+        RestoreCursorPosition();
+    mIsVisible = false;
+    UpdateButtons();
 }
 
 bool CInGameOptionChooser::IsVisible()
@@ -188,6 +198,7 @@ void CInGameOptionChooser::OptionSelected(size_t selected)
         return;
     if (mOptionHandler) {
         mOptionHandler->OptionSelected(selected);
+        mOptionHandler->SetChooser(NULL);
         mOptionHandler->mReferenceCounter--;
         if (mOptionHandler->mReferenceCounter == 0) {
             delete mOptionHandler;
@@ -197,17 +208,13 @@ void CInGameOptionChooser::OptionSelected(size_t selected)
     Hide();
 }
 
-void CInGameOptionChooser::Update()
+void CInGameOptionChooser::UpdateButtons()
 {
-	if (gLogic.GetState() != L"playing")
-		Hide();
-
-	for (size_t i = 0; i < mButtons.size(); i++)
+    for (size_t i = 0; i < mButtons.size(); i++)
 		mButtons[i]->SetVisible(mIsVisible);
-
-	if (mIsVisible && mActor) {
+	if (mIsVisible && mPlayer) { // w sumie czy moze byc !mActor?
 	    for (unsigned i = 0; i < mButtons.size(); i++) {
-            sf::Vector2f center = gGUI.ConvertToGlobalPosition(0.01f * gCamera.TileToGui(mActor->GetPosition()));
+            sf::Vector2f center = gGUI.ConvertToGlobalPosition(0.01f * gCamera.TileToGui(mPlayer->GetPosition()));
             center.x += sinf(float(i)/float(mButtons.size())*2*3.1415926f) * mRadius;
             center.y -= cosf(float(i)/float(mButtons.size())*2*3.1415926f) * mRadius;
 
@@ -218,25 +225,6 @@ void CInGameOptionChooser::Update()
                     GUI::UNIT_PIXEL
             );
         }
-		/* ograniczamy kursor do okregu przyciskow, zeby bylo latwiej rzucac czar 
-		DamorK: bez wlasnego kursora i ukrycia systemowego trudno o stabilnosc wiec komentuje
-
-		const sf::Input& in = gGame.GetRenderWindow()->GetInput();
-		float radius = mRadius;
-		if ( mKeys.size() > 0 )
-			radius += Maths::Length( mKeys[0]->ConvertToGlobalPosition(sf::Vector2f(0.5f,0.5f)) - 
-									 mKeys[0]->ConvertToGlobalPosition(sf::Vector2f(0.0f,0.0f)) );
-		sf::Vector2f relativeCursorPos;
-		relativeCursorPos.x = (float) in.GetMouseX() - mCenter.x;
-		relativeCursorPos.y = (float) in.GetMouseY() - mCenter.y;
-		if ( Maths::Length(relativeCursorPos) > radius )
-		{
-			relativeCursorPos = Maths::Normalize(relativeCursorPos) * radius * 0.95f;
-			relativeCursorPos += mCenter;
-			gGame.GetRenderWindow()->SetCursorPosition( (unsigned) relativeCursorPos.x, (unsigned) relativeCursorPos.y );
-		}
-		*/
-
 		for (size_t i = 0; i < mButtons.size(); i++) {
     		if (mIsVisible && (gGUI.GetFocusedObject() == (GUI::CGUIObject*) mButtons[i]) )
             {
@@ -244,6 +232,20 @@ void CInGameOptionChooser::Update()
             }
         }
 	}
+}
+
+void CInGameOptionChooser::Update(float secondsPassed)
+{
+	if (gLogic.GetState() != L"playing")
+		Hide();
+
+    if (mIsVisible && mOptionHandler) {
+        mOptionHandler->Update(secondsPassed);
+    }
+
+    if (mIsVisible) {
+        UpdateButtons();
+    }
 }
 
 /* ================= PRIVATE ===================== */

@@ -5,6 +5,7 @@
 #include "../../GUI/Messages/CMessageSystem.h"
 #include "../../Rendering/Effects/CGraphicalEffects.h"
 #include "../../Audio/CAudioManager.h"
+#include "../../Utils/MathsFunc.h"
 
 class CChestOptionHandler : public IOptionChooserHandler
 {
@@ -14,10 +15,16 @@ class CChestOptionHandler : public IOptionChooserHandler
         CObstacle * mChest;
 
     public:
-        CChestOptionHandler(CObstacle * chest) : IOptionChooserHandler() {
+        CChestOptionHandler(CObstacle * chest): IOptionChooserHandler() {
             mIsOpened = false;
             mHasLoot = true;
             mChest = chest;
+        }
+
+        virtual void Update(float secondsPassed) {
+            if (Maths::Length(mPlayer->GetPosition() - mChest->GetPosition()) > 1.5f) {
+                mChooser->Hide();
+            }
         }
 
     	virtual void OptionSelected(size_t option) {
@@ -28,6 +35,7 @@ class CChestOptionHandler : public IOptionChooserHandler
                     } else {
                         if (mHasLoot) {
                             gMessageSystem.AddMessage(L"Found some gold!");
+                            mPlayer->NextLevel();
                             mHasLoot = false;
                         } else {
                             gMessageSystem.AddMessage(L"You open the chest...");

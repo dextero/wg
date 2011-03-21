@@ -86,7 +86,7 @@ void CRoot::FrameStarted(float secondsPassed)
 	mClippingRect.Bottom =	mGlobalSize.y;
 
 	UpdateChilds( secondsPassed );
-    CInGameOptionChooser::UpdateAll();
+    CInGameOptionChooser::UpdateAll(secondsPassed);
 }
 
 void CRoot::KeyPressed(const sf::Event::KeyEvent &e)
