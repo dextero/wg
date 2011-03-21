@@ -1,5 +1,5 @@
 #include "CRand.h"
-#include "MathsFunc.h"
+#include "Maths.h"
 using namespace Maths;
 
 template<> CRand * CSingleton<CRand>::msSingleton = 0;

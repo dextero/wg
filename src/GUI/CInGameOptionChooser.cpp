@@ -8,7 +8,7 @@
 #include "../Rendering/CCamera.h"
 #include "../CGame.h"
 #include "../CGameOptions.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 
 #include <SFML/Graphics/RenderWindow.hpp>
 

@@ -1,5 +1,5 @@
 #include "CTimeManipulator.h"
-#include "Utils/MathsFunc.h"
+#include "Utils/Maths.h"
 #include <cstdio>
 
 template<> CTimeManipulator *CSingleton<CTimeManipulator>::msSingleton = NULL;

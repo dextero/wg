@@ -13,7 +13,7 @@
 #include "../Audio/CAudioManager.h"
 #include "../ResourceManager/CResourceManager.h"
 #include "../Logic/Abilities/CTriggerEffects.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "CBindManager.h"
 
 const int CPlayerController::AbilityKeyCount = 4; // iloma klawiszami sie wybiera animacje

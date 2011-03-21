@@ -4,7 +4,7 @@
 #include "CActorAI.h"
 #include "../CEnemy.h"
 #include "../../Utils/CRand.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../CPlayerManager.h"
 #include "../CPhysical.h"
 #include "../CEnemy.h"

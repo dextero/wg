@@ -2,7 +2,7 @@
 
 #include "CStats.h"
 #include "../CPhysical.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../Effects/CEffectManager.h"
 #include "../../Rendering/CDisplayable.h"
 

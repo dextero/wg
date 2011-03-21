@@ -11,7 +11,7 @@
 #include "../Commands/CameraCommands.h"
 #include "../Commands/CCommands.h"
 
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../Utils/StringUtils.h"
 #include "../Utils/CXml.h"
 #include "../CGame.h"

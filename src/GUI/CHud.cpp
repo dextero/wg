@@ -7,7 +7,7 @@
 #include "CTextArea.h"
 #include "CRoot.h"
 #include "../Utils/StringUtils.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../Utils/KeyStrings.h"
 
 #include "../Logic/CPlayerManager.h"

@@ -1,7 +1,7 @@
 #include "../../Utils/CXml.h"
 #include "CAIAbilityHint.h"
 #include "../Abilities/CAbility.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../../Utils/Directions.h"
 #include "../CActor.h"
 #include <cassert>

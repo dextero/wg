@@ -3,7 +3,7 @@
 #include "../CGameOptions.h"
 #include "../Utils/CXml.h"
 #include "../Utils/StringUtils.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../Rendering/CCamera.h"
 
 namespace Audio

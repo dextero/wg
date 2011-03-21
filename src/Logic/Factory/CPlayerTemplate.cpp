@@ -2,7 +2,7 @@
 #include "../../Utils/CXml.h"
 #include "../../Utils/StringUtils.h"
 #include "../../Utils/CRand.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../CPhysicalManager.h"
 #include "../../ResourceManager/CResourceManager.h"
 #include "../Abilities/SAbilityInstance.h"

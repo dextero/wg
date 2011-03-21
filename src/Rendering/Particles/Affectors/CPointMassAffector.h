@@ -3,7 +3,7 @@
 
 #include "../IAffector.h"
 #include "../../../Logic/CPhysical.h"
-#include "../../../Utils/MathsFunc.h"
+#include "../../../Utils/Maths.h"
 #include <list>
 
 namespace part

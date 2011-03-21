@@ -2,7 +2,7 @@
 #include "CWaypointCell.h"
 #include "../CMapManager.h"
 #include "../CCollisionMap.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include <cassert>
 
 CTravelAgentCell::CTravelAgentCell(int movementCost) :

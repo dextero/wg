@@ -2,7 +2,7 @@
 #define __PART_CPARTICLE_H_
 
 #include <SFML/Graphics.hpp>
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 
 namespace part
 {

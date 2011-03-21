@@ -1,6 +1,6 @@
 #include "CStraightLightning.h"
 
-#include "../../../Utils/MathsFunc.h"
+#include "../../../Utils/Maths.h"
 #include "../../CDrawableManager.h"
 #include "../../../ResourceManager/CImage.h"
 #include "../../../ResourceManager/CResourceManager.h"

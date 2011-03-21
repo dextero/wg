@@ -16,7 +16,7 @@
 #include "../Rendering/CCamera.h"
 #include "../Rendering/CDrawableManager.h"
 #include "../Rendering/CDisplayable.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../GUI/Editor/CEditorScreens.h"
 #include "../Logic/Factory/CPhysicalTemplate.h"
 #include "../Logic/MapObjects/CRegion.h"

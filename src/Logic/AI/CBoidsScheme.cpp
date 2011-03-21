@@ -1,5 +1,5 @@
 #include "CBoidsScheme.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "CActorAI.h"
 
 #define PI      3.1415926f

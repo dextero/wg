@@ -2,7 +2,7 @@
 #include <cmath>
 
 #include "CBullet.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../Utils/Directions.h"
 #include "CActor.h"
 #include "Effects/CEffectHandle.h"

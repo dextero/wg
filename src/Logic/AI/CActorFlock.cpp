@@ -1,6 +1,6 @@
 #include "CActorFlock.h"
 #include "../CActor.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 
 CActorFlock::CActorFlock():
 mData(NULL),

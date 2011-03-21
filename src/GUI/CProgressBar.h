@@ -4,7 +4,7 @@
 #define _PROGRESS_BAR_
 
 #include "CGUIObject.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include <string>
 
 class CHudSprite;

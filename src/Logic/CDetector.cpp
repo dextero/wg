@@ -2,7 +2,7 @@
 #include "CPhysical.h"
 #include "Effects/CEffectManager.h"
 #include "CActor.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../Rendering/Animations/CAnimSet.h"
 #include "../Utils/CRand.h"
 #include "Abilities/CTargetChooser.h"

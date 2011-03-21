@@ -5,7 +5,7 @@
 #include "../../Utils/Directions.h"
 #include "../Effects/CEffectManager.h"
 #include "../../ResourceManager/CResourceManager.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../Effects/CEffectHandle.h"
 #include "../Factory/CBulletTemplate.h"
 #include "../../Utils/CXml.h"

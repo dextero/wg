@@ -10,7 +10,7 @@
 #include "../ResourceManager/CImage.h"
 #include "../Utils/StringUtils.h"
 #include "../Utils/KeyStrings.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../Logic/Abilities/CAbilityTree.h"
 #include "../Logic/Abilities/CAbility.h"
 #include "../Logic/CPlayer.h"

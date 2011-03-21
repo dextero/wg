@@ -2,7 +2,7 @@
 
 #include "CAppliedEffectContainer.h"
 #include "../CPhysical.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../Effects/CEffectManager.h"
 #include "../Effects/CFocusObject.h"
 #include "../Stats/CBleeder.h"

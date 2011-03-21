@@ -1,7 +1,7 @@
 #include "CTravelAgentRegion.h"
 #include "CWaypointRegion.h"
 #include "../CDynamicRegion.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include <cassert>
 
 int CTravelAgentRegion::GetTravelCost(const CWaypoint * a, const CWaypoint * b) const

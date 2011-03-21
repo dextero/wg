@@ -1,7 +1,7 @@
 #include "CScrollPanel.h"
 #include "CScrollBar.h"
 #include "CRoot.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include <queue>
 
 using namespace GUI;

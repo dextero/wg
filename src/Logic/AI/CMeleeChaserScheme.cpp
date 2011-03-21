@@ -6,7 +6,7 @@
 #include "../CEnemy.h"
 #include "../../Utils/CRand.h"
 #include "CActorAI.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "CAISchemeManager.h"
 #include <SFML/System/Vector2.hpp>
 

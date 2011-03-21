@@ -5,7 +5,7 @@
 #include "../../GUI/Messages/CMessageSystem.h"
 #include "../../Rendering/Effects/CGraphicalEffects.h"
 #include "../../Audio/CAudioManager.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 
 class CChestOptionHandler : public IOptionChooserHandler
 {

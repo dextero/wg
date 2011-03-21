@@ -1,7 +1,7 @@
 #include "CActorController.h"
 #include "CActor.h"
 #include "../Utils/Directions.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "CPlayerManager.h"
 #include <cmath>
 

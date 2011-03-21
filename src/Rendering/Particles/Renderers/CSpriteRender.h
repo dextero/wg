@@ -6,7 +6,7 @@
 #include <SFML/Graphics.hpp>
 #include "../CParticle.h"
 #include <SFML/Graphics/Rect.hpp>
-#include "../../../Utils/MathsFunc.h"
+#include "../../../Utils/Maths.h"
 
 #define gSpriteRenderer CSpriteRenderer::GetSingleton()
 

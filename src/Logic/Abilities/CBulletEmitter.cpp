@@ -4,7 +4,7 @@
 #include "../CBullet.h"
 #include "../Effects/CEffectManager.h"
 #include "../../ResourceManager/CResourceManager.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../../Utils/Directions.h"
 #include "../../Utils/CRand.h"
 #include <cstdio>

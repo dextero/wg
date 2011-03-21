@@ -1,6 +1,6 @@
 #include "CEmiter.h"
 #include "SEmiterTemplate.h"
-#include "../../../Utils/MathsFunc.h"
+#include "../../../Utils/Maths.h"
 #include "../../../Utils/CRand.h"
 #include "../../../Logic/CPhysical.h"
 #include "../../../Map/CMap.h"

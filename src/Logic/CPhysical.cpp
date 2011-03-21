@@ -10,7 +10,7 @@
 #include "../Rendering/Animations/SAnimationState.h"
 #include "../Rendering/Particles/CParticleManager.h"
 #include "../Rendering/Effects/CGraphicalEffects.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 
 const float shadowAlpha = 0.25f;
 

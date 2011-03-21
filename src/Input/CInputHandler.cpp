@@ -3,7 +3,7 @@
 #include "CInputHandler.h"
 #include "CPlayerController.h"
 #include "CMouseCaster.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../CGame.h"
 #include "../Logic/CPlayerManager.h"
 #include "../Logic/CPhysicalManager.h"

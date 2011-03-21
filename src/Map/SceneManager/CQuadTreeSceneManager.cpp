@@ -1,6 +1,6 @@
 #include"CQuadTreeSceneManager.h"
 #include"../../Utils/SafeFunctions.h"
-#include"../../Utils/MathsFunc.h"
+#include"../../Utils/Maths.h"
 #include"../../Logic/CPhysical.h"
 #include"../../Logic/CPhysicalManager.h"
 #include"../CMap.h"
