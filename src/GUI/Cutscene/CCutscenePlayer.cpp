@@ -5,7 +5,7 @@
 #include "../../ResourceManager/CSound.h"
 #include "../../Utils/CXml.h"
 #include "../../Utils/StringUtils.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../CRoot.h"
 #include "../CImageBox.h"
 #include "../CTextArea.h"

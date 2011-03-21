@@ -1,7 +1,7 @@
 #include <math.h>
 #include <cstdio>
 
-#include "MathsFunc.h"
+#include "Maths.h"
 #include "Directions.h"
 
 int RotationFromVector(sf::Vector2f v){

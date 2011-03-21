@@ -6,7 +6,7 @@
 #include "../ResourceManager/CResourceManager.h"
 #include "../CGameOptions.h"
 #include "../ResourceManager/CImage.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/Graphics/Sprite.hpp>

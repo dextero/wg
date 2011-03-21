@@ -1,7 +1,7 @@
 #include "CActor.h"
 #include "CPhysicalManager.h"
 #include "../Console/CConsole.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "Effects/CEffectManager.h"
 #include "Effects/CEffectHandle.h"
 #include "Abilities/CAbility.h"

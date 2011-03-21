@@ -1,7 +1,7 @@
 #include "CShortestPaths.h"
 #include "../../CGame.h"
 #include "../../Utils/CRand.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../../Logic/CPhysicalManager.h"
 #include "../../Logic/CPhysical.h"
 #include "CActorAI.h"

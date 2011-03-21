@@ -15,7 +15,7 @@
 #include "CKeyReader.h"
 #include "CAbilitySlot.h"
 #include "CAnimatedImage.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../Rendering/ZIndexVals.h"
 #include <iostream>
 #include "../CGameOptions.h"

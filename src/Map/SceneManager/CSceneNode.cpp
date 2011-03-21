@@ -4,7 +4,7 @@
 #include "../../Logic/CPhysicalManager.h"
 #include "../../Rendering/CDisplayable.h"
 #include "../../Rendering/CDrawableManager.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../../Utils/StringUtils.h"
 #include "../CMap.h"
 #include <SFML/Graphics/Image.hpp>

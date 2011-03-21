@@ -1,5 +1,5 @@
 #include "PhysicalCategories.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../Utils/StringUtils.h"
 #include <string>
 #include <cstdio>

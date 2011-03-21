@@ -5,7 +5,7 @@
 #include "CPlayerManager.h"
 #include "CPhysicalManager.h"
 #include "../ResourceManager/CResourceManager.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../Map/SceneManager/CSceneNode.h"
 #include "../Rendering/CDisplayable.h"
 #include "../Rendering/ZIndexVals.h"

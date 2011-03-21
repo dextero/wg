@@ -13,7 +13,7 @@
 #include "../Abilities/CAbility.h"
 #include "../../Audio/CAudioManager.h"
 
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../../Utils/CRand.h"
 #include "../../Utils/Directions.h"
 #include "../../Utils/HRTimer.h"

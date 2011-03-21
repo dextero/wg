@@ -7,7 +7,7 @@
 #include "CGUIObject.h"
 #include <string>
 #include <FastDelegate.h>
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 
 class CHudSprite;
 typedef fastdelegate::FastDelegate0<void> slide_callback;

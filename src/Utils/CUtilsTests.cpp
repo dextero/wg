@@ -1,5 +1,5 @@
 #include "CUtilsTests.h"
-#include "MathsFunc.h"
+#include "Maths.h"
 #include <cassert>
 #include <cstdio>
 

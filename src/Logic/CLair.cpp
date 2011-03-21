@@ -6,7 +6,7 @@
 #include "AI/CActorAI.h"
 #include "AI/CAISchemeManager.h"
 #include "../Utils/CRand.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../ResourceManager/CResourceManager.h"
 #include "../Rendering/Animations/SAnimationState.h"
 #include "../Rendering/Animations/SAnimation.h"

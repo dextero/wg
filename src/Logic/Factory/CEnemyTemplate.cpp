@@ -2,7 +2,7 @@
 #include "../../Utils/CXml.h"
 #include "../../Utils/StringUtils.h"
 #include "../../Utils/CRand.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../../Rendering/CDisplayable.h"
 #include "../AI/CAISchemeManager.h"
 #include "../AI/CActorAI.h"

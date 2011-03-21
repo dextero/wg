@@ -6,7 +6,7 @@
 #include "../ResourceManager/CImage.h"
 
 #include "../Utils/CXml.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../Utils/StringUtils.h"
 #include "../Utils/FileUtils.h"
 

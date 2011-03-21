@@ -7,7 +7,7 @@
 #include "../../Map/CMapManager.h"
 #include "../../ResourceManager/CResourceManager.h"
 #include "../Factory/CActorTemplate.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include <vector>
 #include <algorithm>
 

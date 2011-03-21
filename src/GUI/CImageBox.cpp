@@ -4,7 +4,7 @@
 #include "../Rendering/CHudSprite.h"
 #include "../ResourceManager/CResourceManager.h"
 #include "../ResourceManager/CImage.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include <iostream>
 
 #include <SFML/Graphics/Image.hpp>

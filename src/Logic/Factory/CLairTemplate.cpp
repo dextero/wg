@@ -2,7 +2,7 @@
 #include "CLairTemplate.h"
 #include "../../Utils/StringUtils.h"
 #include "../../Utils/CRand.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../../Rendering/CDisplayable.h"
 #include "../CPhysicalManager.h"
 #include "CTemplateParam.h"

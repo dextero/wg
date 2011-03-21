@@ -1,6 +1,6 @@
 #include "CAspectBatch.h"
 #include <cassert>
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 
 CAspectBatch::CAspectBatch():timestamp(0){
     for (int i = 0; i < Aspects::aspectCount; i++)

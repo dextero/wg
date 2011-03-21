@@ -11,7 +11,7 @@
 #include "../../IFrameListener.h"
 #include "../../Map/CMapManager.h"
 #include "../../Map/CCollisionMap.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include <SFML/System/Vector2.hpp>
 #include <string>
 #include <vector>

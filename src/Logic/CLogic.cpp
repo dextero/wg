@@ -11,7 +11,7 @@
 #include "../Commands/LogicCommands.h"
 #include "../Commands/CCommands.h"
 #include "../Map/CMapManager.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "../Utils/StringUtils.h"
 #include "../Utils/FileUtils.h"
 #include "../Utils/CClock.h"

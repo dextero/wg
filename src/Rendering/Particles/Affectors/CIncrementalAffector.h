@@ -2,7 +2,7 @@
 #define __PART_CINCREMETNALAFFECTOR_H__
 
 #include "../IAffector.h"
-#include "../../../Utils/MathsFunc.h"
+#include "../../../Utils/Maths.h"
 
 namespace part
 {

@@ -1,4 +1,4 @@
-#include "MathsFunc.h"
+#include "Maths.h"
 #include "iostream"
 
 

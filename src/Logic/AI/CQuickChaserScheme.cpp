@@ -5,7 +5,7 @@
 #include "../CEnemy.h"
 #include "../CLair.h"
 #include "../../Utils/CRand.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "CActorFlock.h"
 #include "CAISchemeManager.h"
 #include <SFML/System/Vector2.hpp>

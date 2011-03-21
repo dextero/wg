@@ -4,7 +4,7 @@
 #include "../CPlayer.h"
 #include "../CPhysicalManager.h"
 #include "../CPlayerManager.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../../Commands/CCommands.h"
 #include "../../Utils/StringUtils.h"
 

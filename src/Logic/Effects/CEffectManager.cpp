@@ -8,7 +8,7 @@
 #include "../CActor.h"
 #include "../CDetector.h"
 #include "../../Utils/CRand.h"
-#include "../../Utils/MathsFunc.h"
+#include "../../Utils/Maths.h"
 #include "../../Utils/StringUtils.h"
 #include "../../Utils/Directions.h"
 #include "../../Rendering/Primitives/CPrimitivesDrawer.h"

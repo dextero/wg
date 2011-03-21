@@ -1,5 +1,5 @@
 // #include "CTravelAgent.h"
-// #include "../../Utils/MathsFunc.h"
+// #include "../../Utils/Maths.h"
 // 
 // CTravelAgent::CTravelAgent(int movementCost) :
 //     mMovementCost(movementCost)

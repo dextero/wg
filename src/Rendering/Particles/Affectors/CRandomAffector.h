@@ -2,7 +2,7 @@
 #define __PART_CRANDOMAFFECTOR_H__
 
 #include "../IAffector.h"
-#include "../../../Utils/MathsFunc.h"
+#include "../../../Utils/Maths.h"
 #include "../../../Utils/CRand.h"
 
 namespace part

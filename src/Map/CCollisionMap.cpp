@@ -6,7 +6,7 @@
 #include "SearchTools/CPathFinder.h"
 #include "../Logic/CPhysicalManager.h"
 #include "../Logic/CPhysical.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include <climits>
 #include <iostream>
 

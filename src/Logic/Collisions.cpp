@@ -5,7 +5,7 @@
 #include "CLair.h"
 #include "CBullet.h"
 #include "../Map/CMapManager.h"
-#include "../Utils/MathsFunc.h"
+#include "../Utils/Maths.h"
 #include "Collisions.h"
 #include "Effects/CEffectHandle.h"
 #include "../Map/SceneManager/CQuadTreeNode.h"
