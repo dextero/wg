@@ -712,29 +712,29 @@ bool CRandomMapGenerator::PlaceMonsters()
     return true;
 }
 
-bool CRandomMapGenerator::PlaceItems()
+bool CRandomMapGenerator::PlaceLoots()
 {
-    CTimer timer("- items: ");
+    CTimer timer("- loots: ");
 
-    if (mItems.size() && mDesc.items && mPassableLeft)
+    if (mLoots.size() && mDesc.loots && mPassableLeft)
     {
         // najlepsze przedmioty, ale o levelu nie wiekszym od podanego
-        std::vector<size_t> mItemsToPlace;
+        std::vector<size_t> mLootsToPlace;
 
-        for (size_t i = mItems.size() - 1; i != (size_t)-1; --i)
-            if (mItems[i].level <= mDesc.level)
+        for (size_t i = mLoots.size() - 1; i != (size_t)-1; --i)
+            if (mLoots[i].level <= mDesc.level)
             {
-                mItemsToPlace.push_back(i);
+                mLootsToPlace.push_back(i);
 
-                // max powiedzmy... 10 rodzajow itemow
-                if (mItemsToPlace.size() > 9)
+                // max powiedzmy... 10 rodzajow znajdek
+                if (mLootsToPlace.size() > 9)
                     break;
             }
 
-        for (size_t i = 0; i < mItemsToPlace.size(); ++i)
-            mXmlText << "\t<objtype code=\"item" << i << "\" file=\"" << mItems[mItemsToPlace[i]].file << "\" />\n";
+        for (size_t i = 0; i < mLootsToPlace.size(); ++i)
+            mXmlText << "\t<objtype code=\"loot" << i << "\" file=\"" << mLoots[mLootsToPlace[i]].file << "\" />\n";
 
-        for (unsigned int i = 0; i < std::min(mPassableLeft, mDesc.items); ++i)
+        for (unsigned int i = 0; i < std::min(mPassableLeft, mDesc.loots); ++i)
         {
             // znalezienie wolnego pola
             sf::Vector2i tile;
@@ -742,20 +742,20 @@ bool CRandomMapGenerator::PlaceItems()
                 tile = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
             while (!mCurrent[tile.x][tile.y]);
 
-            // zaklepanie pola, zeby sie 2 itemy nie zespawnowaly na jednym
-            mCurrent[tile.x][tile.y] = ITEM;
+            // zaklepanie pola, zeby sie 2 znajdki nie zespawnowaly na jednym
+            mCurrent[tile.x][tile.y] = LOOT;
 
             // i teraz pasowaloby cos tu postawic..
             float offsetX = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // offsety, zeby nie staly tak bardzo jednolicie
             float offsetY = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // + 0.5, zeby wycentrowac na kaflach
             // obrot w przypadku przedmiotow nie ma sensu, skala zadeklarowana w xmlu
 
-            size_t what = rand() % mItemsToPlace.size();
-            mXmlText << "\t<obj code=\"item" << what << "\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" />\n";
+            size_t what = rand() % mLootsToPlace.size();
+            mXmlText << "\t<obj code=\"loot" << what << "\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" />\n";
         }
 
         // odejmujemy, ile dodalismy...
-        mPassableLeft -= std::min(mPassableLeft, mDesc.items);
+        mPassableLeft -= std::min(mPassableLeft, mDesc.loots);
     }
 
     return true;
@@ -852,9 +852,9 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
             mMonsters.push_back(SPhysical(xml.GetString(n, "file"), xml.GetInt(n, "level")));
 
     // przedmioty
-    if (xml.GetChild(xml.GetRootNode(), "items"))
-        for (rapidxml::xml_node<>* n = xml.GetChild(xml.GetChild(xml.GetRootNode(), "items"), "item"); n; n = xml.GetSibl(n, "item"))
-            mItems.push_back(SPhysical(xml.GetString(n, "file"), xml.GetInt(n, "level")));
+    if (xml.GetChild(xml.GetRootNode(), "loots"))
+        for (rapidxml::xml_node<>* n = xml.GetChild(xml.GetChild(xml.GetRootNode(), "loots"), "loot"); n; n = xml.GetSibl(n, "loot"))
+            mLoots.push_back(SPhysical(xml.GetString(n, "file"), xml.GetInt(n, "level")));
 
     // maski do kafli
     if (xml.GetChild(xml.GetRootNode(), "tile-masks"))
@@ -864,7 +864,7 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
     // sortowanie gniazd, potworow i przedmiotow po levelu, zeby potem bylo latwiej dobierac
     std::sort(mLairs.begin(), mLairs.end(), VectorCompareFunc);
     std::sort(mMonsters.begin(), mMonsters.end(), VectorCompareFunc);
-    std::sort(mItems.begin(), mItems.end(), VectorCompareFunc);
+    std::sort(mLoots.begin(), mLoots.end(), VectorCompareFunc);
 
     return true;
 }
@@ -908,7 +908,7 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
 //    if (!PlaceRegions())    return false;
 //    if (!PlaceMonsters())   return false;
 //    if (!PlaceLairs())      return false;
-//    if (!PlaceItems())      return false;
+//    if (!PlaceLoots())      return false;
 
     // koniec
     mXmlText << "</map>";

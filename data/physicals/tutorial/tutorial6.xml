@@ -1,8 +1,8 @@
-﻿<root type="item">
+﻿<root type="loot">
   <genre>tutorial6</genre>
 	<name name="$ITEM_TUTORIAL6" />
 	<level value="1" />
-	<image filename="data/items/star.png" />
+	<image filename="data/loots/star.png" />
 	<droprate value="0.0" />
 	<effect type="console">
 		<text>[

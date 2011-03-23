@@ -112,19 +112,19 @@
 	<objtype code="ja" file="data/physicals/skeleton-warrior.xml"/>
 	<objtype code="ka" file="data/physicals/skeleton-mage.xml"/>
 	<objtype code="la" file="data/physicals/chityniak-plwacz.xml"/>
-	<objtype code="ma" file="data/items/skillpoint-ball.xml"/>
+	<objtype code="ma" file="data/loots/skillpoint-ball.xml"/>
 	<objtype code="na" file="data/physicals/lairs/rat-lair.xml"/>
-	<objtype code="oa" file="data/items/big-hp.xml"/>
-	<objtype code="pa" file="data/items/100xp.xml"/>
+	<objtype code="oa" file="data/loots/big-hp.xml"/>
+	<objtype code="pa" file="data/loots/100xp.xml"/>
 	<objtype code="qa" file="data/physicals/lion-turret.xml"/>
 	<objtype code="ra" file="data/physicals/surger.xml"/>
 	<objtype code="sa" file="data/physicals/obstacles/barrel.xml"/>
-	<objtype code="ta" file="data/items/350xp.xml"/>
-	<objtype code="ua" file="data/items/superspeed.xml"/>
+	<objtype code="ta" file="data/loots/350xp.xml"/>
+	<objtype code="ua" file="data/loots/superspeed.xml"/>
 	<objtype code="va" file="data/physicals/walls/invisible-wall.xml"/>
-	<objtype code="xa" file="data/items/acid-circle-ball.xml"/>
+	<objtype code="xa" file="data/loots/acid-circle-ball.xml"/>
 	<objtype code="wa" file="data/physicals/walls/test-barrier.xml"/>
-	<objtype code="ya" file="data/items/200xp.xml"/>
+	<objtype code="ya" file="data/loots/200xp.xml"/>
 	<objtype code="za" file="data/physicals/lairs/bee-lair.xml"/>
 	<obj code="aa" x="5.59375" y="2.34375"/>
 	<obj code="ca" x="4.96875" y="12.875" rot="-204"/>

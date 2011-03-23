@@ -144,9 +144,9 @@ aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
 <objtype code="monster-lair8" file="data/physicals/lairs/early-lair.xml"/>
 <objtype code="monster-lair9" file="data/physicals/lairs/shaggy-lair.xml"/>
 <objtype code="monster-lair0" file="data/physicals/lairs/shaggy-lair.xml"/>
-<objtype code="pacman1" file="data/items/1k-xp.xml"/>
+<objtype code="pacman1" file="data/loots/1k-xp.xml"/>
 <objtype code="exit-door" file="data/physicals/walls/test-barrier.xml"/>
-<objtype code="da" file="data/items/blizzard-ball.xml"/>
+<objtype code="da" file="data/loots/blizzard-ball.xml"/>
 <obj code="aa" x="36.7656" y="15.125"/>
 <obj code="ba" x="5.35938" y="1.59375"/>
 <obj code="ca" x="5.96875" y="0.984375"/>

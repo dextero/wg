@@ -112,10 +112,10 @@ wa ga aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
 <objtype code="monster-lair8" file="data/physicals/lairs/wolfbeast-lair.xml"/>
 <objtype code="monster-lair9" file="data/physicals/lairs/wolfbeast-lair.xml"/>
 <objtype code="monster-lair0" file="data/physicals/lairs/ogre-lair.xml"/>
-<objtype code="pacman1" file="data/items/600xp.xml"/>
+<objtype code="pacman1" file="data/loots/600xp.xml"/>
 <objtype code="door" file="data/physicals/doors/invisible-door.xml"/>
 <objtype code="exit-door" file="data/physicals/walls/test-barrier.xml"/>
-<objtype code="da" file="data/items/chant-ball.xml"/>
+<objtype code="da" file="data/loots/chant-ball.xml"/>
 <obj code="aa" x="5.125" y="0.4375"/>
 <obj code="aa" x="5.64063" y="1.45313"/>
 <obj code="aa" x="6.28125" y="1.95313"/>

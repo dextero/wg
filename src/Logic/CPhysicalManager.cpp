@@ -12,7 +12,7 @@
 #include "MapObjects/CDoor.h"
 #include "MapObjects/CRegion.h"
 #include "MapObjects/CObstacle.h"
-#include "Items/CItem.h"
+#include "Loots/CLoot.h"
 #include "../Utils/StringUtils.h"
 #include "../CGame.h"
 #include <sstream>
@@ -111,8 +111,8 @@ CHook *CPhysicalManager::CreateHook( const std::wstring &uniqueId){
     return Create<CHook>(uniqueId);
 }
 
-CItem *CPhysicalManager::CreateItem( const std::wstring &uniqueId) {
-    return Create<CItem>(uniqueId);
+CLoot *CPhysicalManager::CreateLoot( const std::wstring &uniqueId) {
+    return Create<CLoot>(uniqueId);
 }
 
 CDoor *CPhysicalManager::CreateDoor(const std::wstring &uniqueId){

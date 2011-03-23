@@ -3,20 +3,22 @@
 #include "../Console/CConsole.h"
 #include "../Utils/StringUtils.h"
 #include "../Rendering/Effects/CGraphicalEffects.h"
+#include "../Logic/Effects/CEffectSource.h"
 #include "../Logic/Effects/CAppliedEffect.h"
 #include "../Logic/CPhysicalManager.h"
 #include "../GUI/Localization/CLocalizator.h"
 
 void CommandShowGraphicalEffect(size_t argc, const std::vector<std::wstring> &argv);
-void CommandClearItemManager(size_t argc, const std::vector<std::wstring> &argv);
+void CommandClearLootManager(size_t argc, const std::vector<std::wstring> &argv);
+void CommandInitLootManager(size_t argc, const std::vector<std::wstring> &argv);
 
  // na koncu musi byc {0,0,0}, bo sie wszystko ***
 CCommands::SCommandPair EffectsCommands [] =
 {
     {L"effects-init"                  , "$MAN_EFFECTS_INIT"             , CommandInitialize },
     {L"show-graphical-effect"         , "$MAN_SHOW_GRAPHICAL_EFFECT"    , CommandShowGraphicalEffect },
-    {L"load-items"                    , "$MAN_LOAD_ITEMS"               , CommandInitializeDrop },
-    {L"clear-items"                   , "$MAN_CLEAR_ITEMS"              , CommandClearItemManager },
+    {L"load-loots"                    , "$MAN_LOAD_LOOTS"               , CommandInitLootManager },
+    {L"clear-loots"                   , "$MAN_CLEAR_LOOTS"              , CommandClearLootManager },
     {L"add-to-pm"                     , "$MAN_ADD_TO_PM"                , CommandAddPhysicalToPM },
     {L"msg"                           , "$MAN_MSG"                      , CommandMessage },
     {0,0,0}
@@ -116,25 +118,25 @@ void CommandAddPhysicalToPM(size_t argc, const std::vector<std::wstring> &argv)
     } while(false);        
 }
 
-#include "../Logic/Items/CDropManager.h"
-#include "../Logic/Items/CItem.h"
-void CommandInitializeDrop(size_t argc, const std::vector<std::wstring> &argv)
+#include "../Logic/Loots/CLootManager.h"
+#include "../Logic/Loots/CLoot.h"
+void CommandInitLootManager(size_t argc, const std::vector<std::wstring> &argv)
 {
     if (argc < 2) {
-        gConsole.Print(L"Usage: load-items <filename.xml>");
+        gConsole.Print(L"Usage: load-loots <filename.xml>");
         return;
     }
     else
     {
         std::string filename = StringUtils::ConvertToString(argv[1]);
-        if (!gDropManager.LoadItems(filename)) {
-            gConsole.Printf(L"Failed to load items configuration from %s file", argv[1].c_str());
+        if (!gLootManager.LoadLoots(filename)) {
+            gConsole.Printf(L"Failed to load loots configuration from %s file", argv[1].c_str());
             return;
         }
     }
 }
 
-void CommandClearItemManager(size_t argc, const std::vector<std::wstring> &argv)
+void CommandClearLootManager(size_t argc, const std::vector<std::wstring> &argv)
 {
-    gDropManager.Clear();
+    gLootManager.Clear();
 }

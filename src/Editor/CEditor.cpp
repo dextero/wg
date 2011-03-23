@@ -416,7 +416,7 @@ void CEditor::SetSelected( IEditorResource *res){
             else
                 res = mDoodahs->Get(path);
         }
-        else if (path.find("data/physicals/") != std::string::npos || path.find("data/items/") != std::string::npos)
+        else if (path.find("data/physicals/") != std::string::npos || path.find("data/loots/") != std::string::npos)
         {
             if (!mPhysicals)
                 mPhysicals = new CEditorResourceSet();

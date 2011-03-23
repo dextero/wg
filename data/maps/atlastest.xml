@@ -63,7 +63,7 @@ n h h o h j x s t u v x x q x x
   
   <objtype code="g" file="data/physicals/walls/test-barrier.xml" />
   
-  <objtype code="h" file="data/items/1k-xp.xml" />
+  <objtype code="h" file="data/loots/1k-xp.xml" />
   <objtype code="j" file="data/physicals/lairs/bee-lair.xml" />
   
   <obj code="I" x="3" y="15" />

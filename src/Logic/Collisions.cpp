@@ -12,7 +12,7 @@
 #include "../Map/SceneManager/CSceneNode.h"
 #include <iostream>
 #include <sstream>
-#include "../Logic/Items/CItem.h"
+#include "../Logic/Loots/CLoot.h"
 #include "MapObjects/CDoor.h"
 #include "MapObjects/CHook.h"
 #include "MapObjects/CRegion.h"
@@ -36,7 +36,7 @@ bool Collisions::NeedToCheckCollision( CPhysical* physicalA, CPhysical* physical
 	if (( catA & PHYSICAL_MOVING ) &&
 		//( !(catA == PHYSICAL_PLAYER && catB == PHYSICAL_BULLET) ) &&
 		( !(catA == PHYSICAL_BULLET && catB == PHYSICAL_BULLET) ) &&
-		( !(catA == PHYSICAL_BULLET && catB == PHYSICAL_ITEM) ) && 
+		( !(catA == PHYSICAL_BULLET && catB == PHYSICAL_LOOT) ) && 
 		( !(catB == PHYSICAL_HOOK) )) 
 		return true;
 	return false;
@@ -74,7 +74,7 @@ void Collisions::LogicalResponse( CPhysical* physicalA, CPhysical* physicalB, bo
 	{
 		makePhysicalResponse = false;
     }
-	else if ( catA == PHYSICAL_MONSTER && catB == PHYSICAL_ITEM ) 
+	else if ( catA == PHYSICAL_MONSTER && catB == PHYSICAL_LOOT ) 
 	{
 		makePhysicalResponse = false;
     }
@@ -100,13 +100,11 @@ void Collisions::LogicalResponse( CPhysical* physicalA, CPhysical* physicalB, bo
         CObstacle * obstacle = dynamic_cast<CObstacle*>(physicalB);
         obstacle->HandleCollisionWithPlayer(dynamic_cast<CPlayer*>(physicalA));
     }
-    else if ( catA == PHYSICAL_PLAYER && catB == PHYSICAL_ITEM )
+    else if ( catA == PHYSICAL_PLAYER && catB == PHYSICAL_LOOT )
     {
-        CItem *item = dynamic_cast<CItem*>(physicalB);
-        item->Perform( dynamic_cast<CActor*>(physicalA) );
-        item->MarkForDelete();
-
-//        gMessageSystem.AddMessagef(gLocalizator.GetText("MSG_ITEM_PICKUP").c_str(), item->GetItemName().c_str() );
+        CLoot *loot = dynamic_cast<CLoot*>(physicalB);
+        loot->Perform( dynamic_cast<CActor*>(physicalA) );
+        loot->MarkForDelete();
         makePhysicalResponse = false;
     } else if ( ((catA & PHYSICAL_MOVING) != 0) && catB == PHYSICAL_DOOR)
     {

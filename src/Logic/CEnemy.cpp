@@ -3,7 +3,7 @@
 #include "../Logic/Boss/CBossManager.h"
 #include "../Logic/CBestiary.h"
 #include "../ResourceManager/CResourceManager.h"
-#include "Items/CDropManager.h"
+#include "Loots/CLootManager.h"
 
 CEnemy::CEnemy(const std::wstring &uniqueId) 
 :	CActor(uniqueId)	
@@ -24,7 +24,7 @@ void CEnemy::Update(float dt)
 void CEnemy::Kill() 
 {
     if ( mSpawnState != ssDying )
-        gDropManager.DropItemAt( mPosition );
+        gLootManager.DropLootAt( mPosition );
 
     gBossManager.EnemyDied(this);
     gBestiary.EnableMonster(this);

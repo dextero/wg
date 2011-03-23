@@ -150,10 +150,10 @@
 	<objtype code="monster-lair8" file="data/physicals/lairs/chit-lair.xml"/>
 	<objtype code="monster-lair9" file="data/physicals/lairs/chit-lair.xml"/>
 	<objtype code="monster-lair0" file="data/physicals/lairs/mantis-lair.xml"/>
-	<objtype code="pacman1" file="data/items/25xp.xml"/>
-	<objtype code="pacman2" file="data/items/25xp.xml"/>
-	<objtype code="pacman3" file="data/items/64xp.xml"/>
-	<objtype code="pacman4" file="data/items/100xp.xml"/>
+	<objtype code="pacman1" file="data/loots/25xp.xml"/>
+	<objtype code="pacman2" file="data/loots/25xp.xml"/>
+	<objtype code="pacman3" file="data/loots/64xp.xml"/>
+	<objtype code="pacman4" file="data/loots/100xp.xml"/>
 	<objtype code="g" file="data/physicals/walls/test-barrier.xml"/>
 	<objtype code="barrel" file="data/physicals/obstacles/barrel.xml"/>
 	<objtype code="chest" file="data/physicals/obstacles/chest.xml"/>

@@ -411,7 +411,7 @@ void CLogic::PrepareToSaveGame(bool savePlayerPos)
         if ((*it)->GetCategory() == PHYSICAL_MONSTER ||
             (*it)->GetCategory() == PHYSICAL_LAIR ||
             (*it)->GetCategory() == PHYSICAL_OBSTACLE ||
-			(*it)->GetCategory() == PHYSICAL_ITEM)
+			(*it)->GetCategory() == PHYSICAL_LOOT)
         {
             filename = (*it)->GetTemplate()->GetFilename();
         }

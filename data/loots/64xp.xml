@@ -1,0 +1,13 @@
+﻿<root type="loot">
+	<name name="$ITEM_XP" />
+  <genre>64xp</genre>
+	<level value="1" />
+	<image filename="data/loots/star.png" />
+	<droprate value="0.0005" />
+	<effect type="console">
+		<text>[
+		msg $MSG_FOUND 64 $MSG_XP_POINTS
+		add-xp 64
+		]</text>
+	</effect>
+</root>

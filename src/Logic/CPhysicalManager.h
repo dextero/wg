@@ -19,7 +19,7 @@ class CPlayer;
 class CBullet;
 class CLair;
 class CWall;
-class CItem;
+class CLoot;
 class CDoor;
 class CDynamicRegion;
 class CHook;
@@ -46,7 +46,7 @@ public:
 	CLair *CreateLair( const std::wstring &uniqueId = L"");
 	CWall *CreateWall( const std::wstring &uniqueId = L"");
 	CHook *CreateHook( const std::wstring &uniqueId = L"");
-    CItem *CreateItem( const std::wstring &uniqueId = L"");
+    CLoot *CreateLoot( const std::wstring &uniqueId = L"");
     CDoor *CreateDoor( const std::wstring &uniqueId = L"");
     CDynamicRegion *CreateRegion( const std::wstring &uniqueId = L"");
     CObstacle *CreateObstacle( const std::wstring &uniqueId = L"");

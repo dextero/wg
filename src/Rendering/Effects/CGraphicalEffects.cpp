@@ -223,7 +223,7 @@ bool CGraphicalEffects::Initialize(const std::string & configFile)
     animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 90.0f ) );
     animation.push_back( SDisplayableEffectFrame( 1.000f, 0.600f, 0.900f, 180.0f ) );
     animation.push_back( SDisplayableEffectFrame( 1.000f, 0.200f, 0.500f, 270.0f ) );
-    gsAnimations[ "item-circle" ] = animation;
+    gsAnimations[ "loot-circle" ] = animation;
 
 
     return true;
@@ -462,11 +462,11 @@ SEffectParamSet CGraphicalEffects::Prepare( const std::string & templateName )
         eps.effectAnimation = "magic-circle";
         eps.scale = 2.5f;
     }
-    else if ( templateName == "item-circle" )
+    else if ( templateName == "loot-circle" )
     {
-        eps.image = "data/effects/item-circle.png";
+        eps.image = "data/effects/loot-circle.png";
         eps.zIndex = Z_BLOOD_SPLATS - 1; // minus jeden, zeby koleczko bylo widoczne
-        eps.effectAnimation = "item-circle"; //wsrod kaluz krwi
+        eps.effectAnimation = "loot-circle"; //wsrod kaluz krwi
         eps.scale = 1.0f;
         eps.duration = 20.0f;
         eps.removeTogetherWithTraced = true;

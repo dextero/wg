@@ -22,7 +22,7 @@ const int Z_WALL         = 70;
 const int Z_DOOR         = 68;
 
 const int Z_LAIR         = 60;
-const int Z_ITEM         = 55;
+const int Z_LOOT         = 55;
 const int Z_MAPSPRITE_BG = 52;
 const int Z_PHYSICAL     = 50;
 const int Z_OBSTACLE     = 49;

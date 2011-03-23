@@ -125,9 +125,9 @@ ba ba ba ba ba ba ba ba ba ba qb ba ba ba ba ba ba ib jb lb hb ba ba ba ba ba ba
 <objtype code="monster-lair8" file="data/physicals/lairs/chit-lair.xml"/>
 <objtype code="monster-lair9" file="data/physicals/lairs/chit-lair.xml"/>
 <objtype code="monster-lair0" file="data/physicals/lairs/wolfbeast-lair.xml"/>
-<objtype code="pacman1" file="data/items/64xp.xml"/>
+<objtype code="pacman1" file="data/loots/64xp.xml"/>
 <objtype code="exit-door" file="data/physicals/walls/test-barrier.xml"/>
-<objtype code="da" file="data/items/resonator-ball.xml"/>
+<objtype code="da" file="data/loots/resonator-ball.xml"/>
 <obj code="aa" x="6.95313" y="0.53125"/>
 <obj code="aa" x="6.64063" y="1.53125"/>
 <obj code="aa" x="6.4375" y="2.57813"/>

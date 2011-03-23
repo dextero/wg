@@ -66,9 +66,9 @@ Czyści okno konsoli.
 (brak)</value>
 	</entry>
 	<entry>
-		<key>MAN_CLEAR_ITEMS</key>
+		<key>MAN_CLEAR_LOOTS</key>
 		<value>[[ składnia ]]
-clear-items
+clear-loots
 
 [[ opis ]]
 Usuwa z pamięci informacje o przedmiotach.
@@ -356,9 +356,9 @@ Wyświetla listę plików przechowywanych w VFSie.
 (brak)</value>
 	</entry>
 	<entry>
-		<key>MAN_LOAD_ITEMS</key>
+		<key>MAN_LOAD_LOOTS</key>
 		<value>[[ składnia ]]
-load-items plik
+load-loots plik
 
 [[ opis ]]
 Wczytuje z pliku listę przedmiotów.

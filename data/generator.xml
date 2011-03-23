@@ -11,31 +11,31 @@
     <monster file="data/physicals/bee.xml" level="3" />
     <monster file="data/physicals/shaggy.xml" level="6" />
   </monsters>
-  <items>
+  <loots>
     <!-- hp -->
-    <item file="data/items/small-hp.xml" level="0" />
-    <item file="data/items/medium-hp.xml" level="2" />
-    <item file="data/items/big-hp.xml" level="5" />
-    <item file="data/items/regeneration.xml" level="7" />
+    <loot file="data/loots/small-hp.xml" level="0" />
+    <loot file="data/loots/medium-hp.xml" level="2" />
+    <loot file="data/loots/big-hp.xml" level="5" />
+    <loot file="data/loots/regeneration.xml" level="7" />
     
     <!-- xp -->
-    <item file="data/items/25xp.xml" level="0" />
-    <item file="data/items/64xp.xml" level="1" />
-    <item file="data/items/100xp.xml" level="2" />
-    <item file="data/items/200xp.xml" level="3" />
-    <item file="data/items/350xp.xml" level="4" />
-    <item file="data/items/600xp.xml" level="6" />
-    <item file="data/items/1k-xp.xml" level="10" />
+    <loot file="data/loots/25xp.xml" level="0" />
+    <loot file="data/loots/64xp.xml" level="1" />
+    <loot file="data/loots/100xp.xml" level="2" />
+    <loot file="data/loots/200xp.xml" level="3" />
+    <loot file="data/loots/350xp.xml" level="4" />
+    <loot file="data/loots/600xp.xml" level="6" />
+    <loot file="data/loots/1k-xp.xml" level="10" />
     
     <!-- speciale - bez tych, ktorymi mozna tluc, bo wyskocza 3 takie na mapie i problem -->
-    <item file="data/items/resonator-ball.xml" level="3" />
-    <item file="data/items/armor-ball.xml" level="4" />
-    <item file="data/items/chant-ball.xml" level="5" />
+    <loot file="data/loots/resonator-ball.xml" level="3" />
+    <loot file="data/loots/armor-ball.xml" level="4" />
+    <loot file="data/loots/chant-ball.xml" level="5" />
     
     <!-- inne -->
-    <item file="data/items/superspeed.xml" level="5" />
-    <item file="data/items/medium-mana.xml" level="2" />
-  </items>
+    <loot file="data/loots/superspeed.xml" level="5" />
+    <loot file="data/loots/medium-mana.xml" level="2" />
+  </loots>
   <tile-masks>
     <tile-mask file="data/maps/tile_mask/mask1.png" />
     <tile-mask file="data/maps/tile_mask/mask2.png" />

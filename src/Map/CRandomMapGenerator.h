@@ -15,10 +15,10 @@ struct SRandomMapDesc
     std::string set;
     unsigned int sizeX, sizeY;
     float obstaclesAreaPercent;
-    unsigned int lairs, monsters, items;
+    unsigned int lairs, monsters, loots;
     unsigned int maxLivingMonsters, maxMonsters, level;
 
-    SRandomMapDesc(): sizeX(0), sizeY(0), obstaclesAreaPercent(0.f), lairs(0), monsters(0), items(0), maxLivingMonsters(0), maxMonsters(0), level(0) {}
+    SRandomMapDesc(): sizeX(0), sizeY(0), obstaclesAreaPercent(0.f), lairs(0), monsters(0), loots(0), maxLivingMonsters(0), maxMonsters(0), level(0) {}
 };
 
 
@@ -30,7 +30,7 @@ private:
     static const unsigned int FREE    = 1;
     static const unsigned int REGION  = 1 << 1;
     static const unsigned int LAIR    = 1 << 2;
-    static const unsigned int ITEM    = 1 << 3;
+    static const unsigned int LOOT    = 1 << 3;
 
     struct SPartSet
     {
@@ -57,7 +57,7 @@ private:
     std::map<std::string, SPartSet> mPartSets;
     std::vector<SPhysical> mLairs;
     std::vector<SPhysical> mMonsters;
-    std::vector<SPhysical> mItems;
+    std::vector<SPhysical> mLoots;
     std::vector<std::string> mTileMasks;
 
     unsigned int** mCurrent;
@@ -85,7 +85,7 @@ private:
     bool PlaceDoodahs();
     bool PlaceLairs();
     bool PlaceMonsters();
-    bool PlaceItems();
+    bool PlaceLoots();
 
     void ReleaseCurrent();
 
