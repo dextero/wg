@@ -15,6 +15,7 @@
 #include "../Logic/Abilities/CTriggerEffects.h"
 #include "../Utils/Maths.h"
 #include "CBindManager.h"
+#include "../Logic/Items/CItem.h"
 
 const int CPlayerController::AbilityKeyCount = 4; // iloma klawiszami sie wybiera animacje
 const float CPlayerController::TurningTimeThreshold = 0.15f; // zeby dodac odrobine precyzji do obrotu
@@ -286,6 +287,17 @@ void CPlayerController::Update(float dt){
     }
 
 	mAbilityActivatedJustNow = false;
+
+    if (true) // testy toxica
+    {
+        if (mSequenceIdleTime == 0.0f && mKeySequence.size() == 1) { //nacisnieto nowy klawisz
+            CItem * item = ((CPlayer*)mActor)->GetItem(mKeySequence[0]);
+            if (item) {
+                fprintf(stderr, "item->%s\n", item->GetAbility().c_str());
+            }
+        }
+    }
+
 
     // umiejetnosci za pomoca sekwencji
     if (mSequenceIdleTime == 0.0f)

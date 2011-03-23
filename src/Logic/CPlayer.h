@@ -4,6 +4,7 @@
 #include "CActor.h"
 #include "../Utils/Directions.h"
 
+class CItem;
 class CPlayerController;
 class CAbilityTree;
 
@@ -58,7 +59,7 @@ protected:
 
     int mSkillPoints, mAttrPoints;
 
-
+    std::vector<CItem*> mItems; 
     std::vector<CAbilityTree*> *mAbilityTrees;
     std::vector<std::string> *mAbiCodes;
 
@@ -81,6 +82,10 @@ public:
 	inline float GetTotalXP(){ return mTotalXP; }
     int GetLevel();
 	inline int GetSkillPoints() { return mSkillPoints; }
+
+    CItem * GetItem(size_t index);
+    void AddItem(CItem * item);
+    void RemoveItem(CItem * item);
 
 private:
     void AddAbilityFromTree(const SAbilityNode *an);
