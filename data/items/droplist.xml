@@ -1,8 +1,0 @@
-<root type="droplist">
-	<item filename="data/items/small-hp.xml" />
-	<item filename="data/items/medium-hp.xml" />
-	<item filename="data/items/big-hp.xml" />
-	<item filename="data/items/regeneration.xml" />
-	<item filename="data/items/superspeed.xml" />
-	<item filename="data/items/medium-mana.xml" />
-</root>

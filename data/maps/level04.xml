@@ -102,9 +102,9 @@ eb ua kb ka aa aa aa aa aa aa aa ga ca ca ca la aa aa aa aa aa db ua ua ab ta aa
 <objtype code="monster-lair8" file="data/physicals/lairs/bee-lair.xml"/>
 <objtype code="monster-lair9" file="data/physicals/lairs/bee-lair.xml"/>
 <objtype code="monster-lair0" file="data/physicals/lairs/bee-lair.xml"/>
-<objtype code="pacman1" file="data/items/200xp.xml"/>
+<objtype code="pacman1" file="data/loots/200xp.xml"/>
 <objtype code="exit-door" file="data/physicals/walls/test-barrier.xml"/>
-<objtype code="ba" file="data/items/armor-ball.xml"/>
+<objtype code="ba" file="data/loots/armor-ball.xml"/>
 <obj code="aa" x="23.0313" y="0.546875"/>
 <obj code="ea" x="26.4219" y="6.90625"/>
 <obj code="aa" x="28.9063" y="6.67188"/>

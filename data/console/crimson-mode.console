@@ -1,2 +1,2 @@
-clear-items
-load-items data/items/droplist-crimson.xml
+clear-loots
+load-loots data/loots/droplist-crimson.xml

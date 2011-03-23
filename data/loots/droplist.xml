@@ -1,0 +1,8 @@
+<root type="droplist">
+    <loot filename="data/loots/small-hp.xml" />
+	<loot filename="data/loots/medium-hp.xml" />
+	<loot filename="data/loots/big-hp.xml" />
+	<loot filename="data/loots/regeneration.xml" />
+	<loot filename="data/loots/superspeed.xml" />
+	<loot filename="data/loots/medium-mana.xml" />
+</root>

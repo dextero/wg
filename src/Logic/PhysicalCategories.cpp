@@ -8,7 +8,7 @@ const int Categories[] = {
     PHYSICAL_DETECTOR, PHYSICAL_PLAYER,
     PHYSICAL_MONSTER, PHYSICAL_NPC, PHYSICAL_BULLET,
     PHYSICAL_LAIR, PHYSICAL_WALL,
-    PHYSICAL_ITEM, PHYSICAL_DOOR,
+    PHYSICAL_LOOT, PHYSICAL_DOOR,
     PHYSICAL_TRAP, PHYSICAL_REGION, PHYSICAL_OBSTACLE, PHYSICAL_HOOK
 };
 
@@ -16,7 +16,7 @@ const int CategoryCount = sizeof(Categories)/sizeof(int);
 
 const std::string CategoryNames[] = {
     "detector", "player", "monster", "npc", "bullet", "lair",
-    "wall", "item", "door", "trap", "region", "obstacle", "hook"
+    "wall", "loot", "door", "trap", "region", "obstacle", "hook"
 };
 
 const int Filters[] = {

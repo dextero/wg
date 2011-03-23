@@ -129,8 +129,8 @@ rrrr la oa fa fa oa gggg gggg gggg gggg gggg gggg gggg gggg ha ga lb rrrr rrrr r
   <objtype code="monster-lair9" file="data/physicals/lairs/troll-lair.xml" />
   <objtype code="monster-lair0" file="data/physicals/lairs/ogre-lair.xml" />
 
-  <objtype code="pacman1" file="data/items/1k-xp.xml" />
-  <objtype code="pacman2" file="data/items/skillpoint-ball.xml" />
+  <objtype code="pacman1" file="data/loots/1k-xp.xml" />
+  <objtype code="pacman2" file="data/loots/skillpoint-ball.xml" />
 
   <objtype code="barrel" file="data/physicals/obstacles/barrel.xml" />
 

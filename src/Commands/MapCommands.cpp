@@ -207,7 +207,7 @@ void CommandGenerateRandomMap(size_t argc, const std::vector<std::wstring> &argv
 {
     if (argc < 6)
     {
-        gConsole.Printf(L"usage: %ls filename partsSet sizeX sizeY obstaclesPercent [mapLevel monstersCount lairsCount itemsCount maxMonsters maxLivingMonsters]", argv[0].c_str());
+        gConsole.Printf(L"usage: %ls filename partsSet sizeX sizeY obstaclesPercent [mapLevel monstersCount lairsCount lootsCount maxMonsters maxLivingMonsters]", argv[0].c_str());
         return;
     }
 
@@ -225,7 +225,7 @@ void CommandGenerateRandomMap(size_t argc, const std::vector<std::wstring> &argv
     case 11:
         desc.maxMonsters = StringUtils::Parse<unsigned int>(argv[10]);
     case 10:
-        desc.items = StringUtils::Parse<unsigned int>(argv[9]);
+        desc.loots = StringUtils::Parse<unsigned int>(argv[9]);
     case 9:
         desc.lairs = StringUtils::Parse<unsigned short>(argv[8]);
     case 8:

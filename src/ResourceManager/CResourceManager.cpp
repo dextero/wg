@@ -15,7 +15,7 @@
 #include "../Logic/Factory/CLairTemplate.h"
 #include "../Logic/Factory/CWallTemplate.h"
 #include "../Logic/Factory/CPlayerTemplate.h"
-#include "../Logic/Factory/CItemTemplate.h"
+#include "../Logic/Factory/CLootTemplate.h"
 #include "../Logic/Factory/CDoorTemplate.h"
 #include "../Logic/Factory/CHookTemplate.h"
 #include "../Logic/Factory/CObstacleTemplate.h"
@@ -128,8 +128,8 @@ template <> ResourceHandle CResourceManager::LoadResource<CPhysicalTemplate>(std
         res = new CWallTemplate();
     else if (type == "player")
         res = new CPlayerTemplate();
-    else if (type == "item")
-        res = new CItemTemplate();
+    else if (type == "loot")
+        res = new CLootTemplate();
     else if (type == "door")
         res = new CDoorTemplate();
     else if (type == "obstacle")
@@ -266,7 +266,7 @@ void CResourceManager::ForceLoadAll(bool fullDebug){
                 if (f.find("data/maps/")==std::string::npos){
                     if ((f.find("data/physicals") != std::string::npos) ||
                         (f.find("data/player") != std::string::npos) ||
-                        (f.find("data/items") != std::string::npos)){
+                        (f.find("data/loots") != std::string::npos)){
                         fprintf(stderr,"Template: %s\n",f.c_str());
                         LoadResource<CPhysicalTemplate>(f);
 					} else if (f.find("data/abilities") != std::string::npos){

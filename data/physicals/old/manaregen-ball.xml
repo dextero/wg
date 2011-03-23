@@ -1,8 +1,8 @@
-<root type="item">
+<root type="loot">
   <genre>manaregen-ball</genre>
   <name name="$ITEM_ABI_WATER_ENERGY_CHANNELING" />
 	<level value="1" />
-	<image filename="data/items/blue-ball.png" />
+	<image filename="data/loots/blue-ball.png" />
 	<droprate value="0.0005" />
 	<effect type="console">
 		<text>

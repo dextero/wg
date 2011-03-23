@@ -576,7 +576,7 @@ aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa
 <objtype code="monster-lair9" file="data/physicals/lairs/early-lair.xml" />
 <objtype code="monster-lair0" file="data/physicals/lairs/troll-lair.xml" />
 
-<objtype code="pacman1" file="data/items/600xp.xml" />
+<objtype code="pacman1" file="data/loots/600xp.xml" />
 
 <max-living-monsters>75</max-living-monsters>
 <region name="entry" x="1.3166" y="43.4587" rot="315" />

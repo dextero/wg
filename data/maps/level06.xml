@@ -165,10 +165,10 @@ BBBB BBBB BgBB ggBB gBBB BBBB BBBB BBBB BgBB ggBB ggBB ggBB ggBB ggBB ggBB ggBB 
   <objtype code="monster-lair9" file="data/physicals/lairs/troll-lair.xml" />
   <objtype code="monster-lair0" file="data/physicals/lairs/troll-lair.xml" />
 
-  <objtype code="pacman1" file="data/items/100xp.xml" />
-  <objtype code="pacman2" file="data/items/200xp.xml" />
-  <objtype code="pacman3" file="data/items/350xp.xml" />
-  <objtype code="pacman4" file="data/items/600xp.xml" />
+  <objtype code="pacman1" file="data/loots/100xp.xml" />
+  <objtype code="pacman2" file="data/loots/200xp.xml" />
+  <objtype code="pacman3" file="data/loots/350xp.xml" />
+  <objtype code="pacman4" file="data/loots/600xp.xml" />
 
   <objtype code="barrel" file="data/physicals/obstacles/barrel.xml" />
 

@@ -1,0 +1,14 @@
+<root type="loot">
+	<name name="$ABI_SPECIAL_BASHER" />
+  <genre>basher-ball</genre>
+	<level value="1" />
+	<image filename="data/loots/yellow-ball.png" />
+	<droprate value="0.0005" />
+	<effect type="console">
+		<text>
+      [
+      msg $ITEM_ABI_SPECIAL_BALL_MSG
+      force-buy-ability $THIS special c
+      ]</text>
+	</effect>
+</root>

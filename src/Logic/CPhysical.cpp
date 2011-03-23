@@ -112,8 +112,8 @@ void CPhysical::SetCategory( const std::wstring& newValue ) {
         mCategory = PHYSICAL_BULLET;
     else if ( newValue == L"lair" )
         mCategory = PHYSICAL_LAIR;
-    else if ( newValue == L"item" )
-        mCategory = PHYSICAL_ITEM;
+    else if ( newValue == L"loot" )
+        mCategory = PHYSICAL_LOOT;
     else 
         fprintf(stderr,"unrecognised physical category: %ls for physical %ls\n",newValue.c_str(),GetUniqueId().c_str());
 }

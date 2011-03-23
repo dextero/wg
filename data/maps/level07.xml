@@ -160,9 +160,9 @@ vc vc vc vc vc vc vc mc rb ha ha ha ha ha ka ja ja ja ja ja ja ja ja ja ja ja ja
 <objtype code="monster-lair8" file="data/physicals/lairs/troll-lair.xml"/>
 <objtype code="monster-lair9" file="data/physicals/lairs/ogre-lair.xml"/>
 <objtype code="monster-lair0" file="data/physicals/lairs/ogre-lair.xml"/>
-<objtype code="pacman1" file="data/items/350xp.xml"/>
+<objtype code="pacman1" file="data/loots/350xp.xml"/>
 <objtype code="exit-door" file="data/physicals/walls/test-barrier.xml"/>
-<objtype code="fa" file="data/items/basher-ball.xml"/>
+<objtype code="fa" file="data/loots/basher-ball.xml"/>
 <obj code="ba" x="0.53125" y="5.60938"/>
 <obj code="ba" x="1.01563" y="4.625"/>
 <obj code="ba" x="2.01563" y="4.95313"/>

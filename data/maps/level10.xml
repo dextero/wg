@@ -107,7 +107,7 @@ aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa pa gb
 <objtype code="ca" file="data/physicals/hooks/poison-hook.xml"/>
 <objtype code="da" file="data/physicals/warlock.xml"/>
 <objtype code="ea" file="data/physicals/ogre.xml"/>
-<objtype code="fa" file="data/items/1k-xp.xml"/>
+<objtype code="fa" file="data/loots/1k-xp.xml"/>
 <objtype code="ga" file="data/physicals/ogre-wife.xml"/>
 <objtype code="ha" file="data/physicals/crawler.xml"/>
 <objtype code="ia" file="data/physicals/cockroach.xml"/>
@@ -121,7 +121,7 @@ aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa aa pa gb
 <objtype code="qa" file="data/physicals/chityniak.xml"/>
 <objtype code="ra" file="data/physicals/bee.xml"/>
 <objtype code="exit-door" file="data/physicals/walls/test-barrier.xml"/>
-<objtype code="sa" file="data/items/curse-ball.xml"/>
+<objtype code="sa" file="data/loots/curse-ball.xml"/>
 <obj code="aa" x="6.10938" y="6.84375"/>
 <obj code="aa" x="14.2813" y="1.73438"/>
 <obj code="aa" x="12.8281" y="2"/>
