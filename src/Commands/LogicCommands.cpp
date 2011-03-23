@@ -481,8 +481,8 @@ void CommandDisplayAbilities(size_t argc, const std::vector<std::wstring> &argv)
 }
 
 
-//crimson mode:
 #include "../GUI/Messages/CMessageSystem.h"
+#include "../Logic/Items/CItem.h"
 
 void CommandSetAbility(size_t argc, const std::vector<std::wstring> &argv){
     if (argc < 4){
@@ -492,23 +492,38 @@ void CommandSetAbility(size_t argc, const std::vector<std::wstring> &argv){
 
     CPlayer* player= dynamic_cast<CPlayer*>(gPhysicalManager.GetPhysicalById( argv[1] ));
 
-    if ( !player){
+    if (!player){
         gConsole.Printf(L"player %ls not found",argv[1].c_str());
         return;
     }
 
     std::string abilityName = StringUtils::ConvertToString(argv[2]).c_str();
-    CAbility * ability = gResourceManager.GetAbility( abilityName );
-    if ( !ability ) {
-        gConsole.Printf(L"ability %s not found", abilityName.c_str());
+
+    size_t index = StringUtils::Parse<int>(StringUtils::ConvertToString(argv[3]));
+    if (index > 3) index = 3;
+
+    CItem * item = player->GetItem(index);
+    if (item != NULL) {
+        item->SetAbility(abilityName);
         return;
     }
 
-    ability->trigger = StringUtils::ConvertToString(argv[3]).c_str();
-    SAbilityInstance ai(ability,1);
-    int animCode = 1;
-    player->GetAbilityPerformer().AddOrSwapAbilityWithTrigger(ai, ability->trigger, animCode);
-    gMessageSystem.AddMessage(StringUtils::ConvertToWString(ability->trigger + " " + abilityName).c_str());
+    item = new CItem();
+    item->SetAbility(abilityName);
+    player->AddItem(item);
+
+
+//    CAbility * ability = gResourceManager.GetAbility( abilityName );
+//    if ( !ability ) {
+//        gConsole.Printf(L"ability %s not found", abilityName.c_str());
+//        return;
+//    }
+//
+//    ability->trigger = StringUtils::ConvertToString(argv[3]).c_str();
+//    SAbilityInstance ai(ability,1);
+//    int animCode = 1;
+//    player->GetAbilityPerformer().AddOrSwapAbilityWithTrigger(ai, ability->trigger, animCode);
+//    gMessageSystem.AddMessage(StringUtils::ConvertToWString(ability->trigger + " " + abilityName).c_str());
 
 //    player->GetAbilityPerformer().AddAbility(ai, animCode);
 

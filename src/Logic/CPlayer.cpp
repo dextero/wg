@@ -27,6 +27,7 @@
 #include "../Utils/ToxicUtils.h"
 #include "../CGameOptions.h"
 #include "../Commands/CCommands.h"
+#include "Items/CItem.h"
 #include <sstream>
 #include <cassert>
 
@@ -277,3 +278,26 @@ std::wstring CPlayer::GetUnboughtPrequisitivesString(int treeIdx, int abiIdx){
 CPinnedAbilityBatch *CPlayer::GetPinnedAbilityBatch(){
 	return mPinned;
 }
+
+CItem * CPlayer::GetItem(size_t index) {
+    if (index < mItems.size()) {
+        return mItems[index];
+    } else {
+        return NULL;
+    }
+}
+
+void CPlayer::AddItem(CItem * item) {
+    mItems.push_back(item);
+}
+
+void CPlayer::RemoveItem(CItem * item) {
+    for (size_t i = 0 ; i < mItems.size() ; i++) {
+        if (mItems[i] == item) {
+            mItems[i] = mItems.back();
+            mItems.pop_back();
+            break;
+        }
+    }
+}
+
