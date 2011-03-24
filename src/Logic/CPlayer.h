@@ -83,8 +83,8 @@ public:
     int GetLevel();
 	inline int GetSkillPoints() { return mSkillPoints; }
 
-    CItem * GetItem(size_t index);
-    void AddItem(CItem * item);
+    CItem * GetItem(size_t invPos);
+    void AddItem(CItem * item, size_t invPos);
     void RemoveItem(CItem * item);
 
 private:

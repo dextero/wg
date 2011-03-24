@@ -294,6 +294,12 @@ void CPlayerController::Update(float dt){
             CItem * item = ((CPlayer*)mActor)->GetItem(mKeySequence[0]);
             if (item) {
                 fprintf(stderr, "item->%s\n", item->GetAbility().c_str());
+
+//                mActor->GetAbilityPerformer().SetReadyingAnim(NULL);
+			    //if (mKeySequence.size() == 1) mCastingTime = 0.0f;
+  //              CAbility * ability = gResourceManager.GetAbility(item->GetAbility());
+    //            SAbilityInstance ai(ability,1);
+      //          EAbilityResult result = mActor->GetAbilityPerformer().PerformAbility(ai);
             }
         }
     }
