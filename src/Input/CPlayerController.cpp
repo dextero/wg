@@ -288,23 +288,6 @@ void CPlayerController::Update(float dt){
 
 	mAbilityActivatedJustNow = false;
 
-    if (true) // testy toxica
-    {
-        if (mSequenceIdleTime == 0.0f && mKeySequence.size() == 1) { //nacisnieto nowy klawisz
-            CItem * item = ((CPlayer*)mActor)->GetItem(mKeySequence[0]);
-            if (item) {
-                fprintf(stderr, "item->%s\n", item->GetAbility().c_str());
-
-//                mActor->GetAbilityPerformer().SetReadyingAnim(NULL);
-			    //if (mKeySequence.size() == 1) mCastingTime = 0.0f;
-  //              CAbility * ability = gResourceManager.GetAbility(item->GetAbility());
-    //            SAbilityInstance ai(ability,1);
-      //          EAbilityResult result = mActor->GetAbilityPerformer().PerformAbility(ai);
-            }
-        }
-    }
-
-
     // umiejetnosci za pomoca sekwencji
     if (mSequenceIdleTime == 0.0f)
 	{
@@ -312,9 +295,15 @@ void CPlayerController::Update(float dt){
         
 		int res = -1;
 
-        // czy uzyc umiejek ze slotow?
-        if (mKeySequence.size() == 1 && mKeySequence[0] >= 0 && mKeySequence[0] < (int)ABI_SLOTS_COUNT)
-		{
+        if (true) { // testy toxica
+            if (mKeySequence.size() == 1) { // nowy klawisz nacisnieto
+                CItem * item = ((CPlayer*)mActor)->GetItem(mKeySequence[0]);
+                if (item) {
+                    fprintf(stderr, "item->%s\n", item->GetAbility().c_str());
+                    res = mActor->GetAbilityPerformer().FindAbilityIndexByInvPos(item->mInvPos);
+                }
+            }
+        } else if (mKeySequence.size() == 1 && mKeySequence[0] >= 0 && mKeySequence[0] < (int)ABI_SLOTS_COUNT) { // czy uzyc umiejek ze slotow?
 			//fprintf(stderr, "slot!\n");
 
 			if (currentActionType != KeyActionTypes::OnlyAbi)

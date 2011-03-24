@@ -502,13 +502,13 @@ void CommandSetAbility(size_t argc, const std::vector<std::wstring> &argv){
     size_t index = StringUtils::Parse<int>(StringUtils::ConvertToString(argv[3]));
     if (index > 3) index = 3;
 
-    CItem * item = player->GetItem(index);
-    if (item != NULL) {
-        item->SetAbility(abilityName);
-        return;
-    }
+//    CItem * item = player->GetItem(index);
+//    if (item != NULL) {
+//        item->SetAbility(abilityName);
+//        return;
+//    }
 
-    item = new CItem();
+    CItem * item = new CItem();
     item->SetAbility(abilityName);
     player->AddItem(item, index);
 
