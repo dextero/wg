@@ -3,7 +3,7 @@
 #include "../CPlayer.h"
 #include "../Effects/CEffectHandle.h"
 #include "../OptionChooser/CLootItemOptionHandler.h"
-#include "../OptionChooser/CSimpleOptionHandler.h"
+//#include "../OptionChooser/CSimpleOptionHandler.h"
 #include "../../Input/CPlayerController.h"
 
 CLoot::CLoot(const std::wstring& uniqueId) : CPhysical(uniqueId), obj(NULL), mOptionHandler(NULL)
@@ -27,7 +27,8 @@ void CLoot::HandleCollision(CPlayer * player)
 {
     if (mItem != NULL) {
         if (!mOptionHandler) {
-            mOptionHandler = new CSimpleOptionHandler();
+//            mOptionHandler = new CSimpleOptionHandler();
+            mOptionHandler = new CLootItemOptionHandler(this);
             mOptionHandler->mReferenceCounter++;
         }
         CInGameOptionChooser * oc = player->GetController()->GetOptionChooser();
