@@ -29,10 +29,11 @@ CAbilityPerformer::CAbilityPerformer(CActor *attached) :
 
 CAbilityPerformer::~CAbilityPerformer(){}
 
-int CAbilityPerformer::AddAbility(SAbilityInstance &abi, int anim){
+int CAbilityPerformer::AddAbility(SAbilityInstance &abi, int anim, size_t invPos){
     if (!abi.ability) return -1;
     mAbilities->push_back(abi);
     SAbilityData ad;
+    ad.invPos = invPos;
     ad.context = CExecutionContext::Alloc(mAttached->GetSafePointer(),mAttached,&abi,mAttached->GetPinnedAbilityBatch());
 	ad.source = new CEffectSource(abi.ability);
     ad.source->SetSecondary(mAttached);
@@ -49,12 +50,22 @@ int CAbilityPerformer::AddAbility(SAbilityInstance &abi, int anim){
     return (int)(mAbilities->size()-1);
 }
 
-int CAbilityPerformer::FindAbilityIndex(CAbility *abi){
-	for (unsigned int i = 0; i < mAbilities->size(); i++){
+int CAbilityPerformer::FindAbilityIndex(CAbility *abi) {
+	for (unsigned int i = 0; i < mAbilities->size(); i++) {
 		if (mAbilities->at(i).ability == abi)
 			return i;
 	}
 	return -1;
+}
+
+int CAbilityPerformer::FindAbilityIndexByInvPos(size_t invPos) {
+    size_t i = mAbilityData.size() - 1;
+    while (i > 0) {
+        if (mAbilityData[i].invPos == invPos) { // przegladamy od tylu, bo nowo dodawane abilities beda ladowac na koncu listy i 'przykrywac' poprzednie
+            return i;                           // ... do czasu az ktos dopisze usuwanie umiejetnosci :P
+        }
+        i--;
+    }
 }
 
 void CAbilityPerformer::AddOrSwapAbilityWithTrigger(SAbilityInstance &abi, const std::string & trigger, int anim){

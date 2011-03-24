@@ -71,11 +71,15 @@ public:
         return tmp;
     }
     // dodaje umiejetnosc, zwraca indeks
-    int AddAbility(SAbilityInstance &abi, int anim = -1);
+    int AddAbility(SAbilityInstance &abi, int anim = -1, size_t invPos = -1);
 	// zwraca indeks umiejki w performerze
 	int FindAbilityIndex(CAbility *abi);
-    // todo:
+    // zwraca indeks umiejki-wstawionej-ostatnio-z-invPos w performerze
+    int FindAbilityIndexByInvPos(size_t invPos);
+
+    // todo: //wywalic to, deprecated
     void AddOrSwapAbilityWithTrigger(SAbilityInstance &abi, const std::string & trigger, int anim = -1);
+    
     // wykonuje umiejetnosc, niezaleznie czy jest dodana; nie wplywa na cooldown, tylko na delay
     EAbilityResult PerformAbility(SAbilityInstance &abi, bool ignoreMana = false, int data = -1,float extraCastingTime = 0.0f);
     // wykonuje umiejetnosc sposrod dodanych; dodatkowo mozna dodac juz wykorzystany casting time (wprowadzanie kombinacje)
@@ -120,7 +124,9 @@ protected:
         ExecutionContextPtr context;
 		EffectSourcePtr source;
 
-        SAbilityData(): manacost(0.f), cooldown(0.f), delay(0.f), casttime(0.f), cooldownLeft(0.0f), context(NULL), source(NULL) {}
+        size_t invPos;
+
+        SAbilityData(): manacost(0.f), cooldown(0.f), delay(0.f), casttime(0.f), cooldownLeft(0.0f), context(NULL), source(NULL), invPos(0) {}
     };
     std::vector<SAbilityData> mAbilityData;
     std::vector<int> *mAbilityAnims;
