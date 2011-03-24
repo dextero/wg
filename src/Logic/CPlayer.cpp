@@ -279,16 +279,26 @@ CPinnedAbilityBatch *CPlayer::GetPinnedAbilityBatch(){
 	return mPinned;
 }
 
-CItem * CPlayer::GetItem(size_t index) {
-    if (index < mItems.size()) {
-        return mItems[index];
-    } else {
-        return NULL;
+CItem * CPlayer::GetItem(size_t invPos) {
+    for (size_t i = 0; i < mItems.size() ; i++) {
+        if (mItems[i]->mInvPos == invPos) {
+            return mItems[i];
+        }
     }
+    return NULL;
 }
 
-void CPlayer::AddItem(CItem * item) {
+void CPlayer::AddItem(CItem * item, size_t invPos) {
+    CItem * prevItem = GetItem(invPos);
+    if (!prevItem) {
+        RemoveItem(prevItem);
+    }
     mItems.push_back(item);
+    item->mInvPos = invPos;
+
+//    SAbilityInstance ai(item->GetAbility(), 1);
+//    GetAbilityPerformer().RemoveAbilityAt(invPos);
+//    GetAbilityPerformer().AddAbility(ai, 1);
 }
 
 void CPlayer::RemoveItem(CItem * item) {

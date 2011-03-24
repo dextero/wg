@@ -510,7 +510,7 @@ void CommandSetAbility(size_t argc, const std::vector<std::wstring> &argv){
 
     item = new CItem();
     item->SetAbility(abilityName);
-    player->AddItem(item);
+    player->AddItem(item, index);
 
 
 //    CAbility * ability = gResourceManager.GetAbility( abilityName );
