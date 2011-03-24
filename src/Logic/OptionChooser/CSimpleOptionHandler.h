@@ -6,6 +6,7 @@
 class CSimpleOptionHandler : public IOptionChooserHandler
 {
 public:
+    CSimpleOptionHandler() : IOptionChooserHandler() {} ;
 	virtual void OptionSelected(size_t option) {
         fprintf(stderr, "OptionChosen: %d\n", option);
     };

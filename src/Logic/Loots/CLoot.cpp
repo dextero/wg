@@ -1,23 +1,47 @@
 #include "CLoot.h"
 #include "../../Rendering/ZIndexVals.h"
-#include "../CActor.h"
+#include "../CPlayer.h"
 #include "../Effects/CEffectHandle.h"
-//#include "../../Utils/ToxicUtils.h"
-//#include "../../Commands/CCommands.h"
+#include "../OptionChooser/CLootItemOptionHandler.h"
+#include "../OptionChooser/CSimpleOptionHandler.h"
+#include "../../Input/CPlayerController.h"
 
-CLoot::CLoot(const std::wstring& uniqueId) : CPhysical(uniqueId), obj(NULL)
+CLoot::CLoot(const std::wstring& uniqueId) : CPhysical(uniqueId), obj(NULL), mOptionHandler(NULL)
 {
     SetZIndex(Z_LOOT);
     SetCategory(PHYSICAL_LOOT);
 }
+
+CLoot::~CLoot() {
+    if (mOptionHandler) {
+        mOptionHandler->Hide();
+        mOptionHandler->mReferenceCounter--;
+        if (mOptionHandler->mReferenceCounter == 0) {
+            delete mOptionHandler;
+        }
+    }
+}
+
 //-----------------
-void CLoot::Perform(CActor *actor) const
+void CLoot::HandleCollision(CPlayer * player)
 {
+    if (mItem != NULL) {
+        if (!mOptionHandler) {
+            mOptionHandler = new CSimpleOptionHandler();
+            mOptionHandler->mReferenceCounter++;
+        }
+        CInGameOptionChooser * oc = player->GetController()->GetOptionChooser();
+        oc->SetOptions("open", "close", "explode");
+        oc->SetOptionHandler(mOptionHandler);
+        oc->Show();
+        return;
+    }
     //crimson-mode:
 //    if (ToxicUtils::isGameInCrimsonMode && !commandOnTake.empty()) {
 //        gCommands.ParseCommand(commandOnTake);
 //    }
     if (obj->effect) {
-        obj->effect->Apply(actor);
+        obj->effect->Apply(player);
     }
+    MarkForDelete();
 }

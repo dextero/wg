@@ -7,7 +7,7 @@
 #include "../CPhysicalManager.h"
 #include "../Factory/CLootTemplate.h"
 #include "../../Rendering/Effects/CGraphicalEffects.h"
-//#include "../../Utils/ToxicUtils.h"
+#include "../Items/CItem.h"
 #include "../../Utils/StringUtils.h"
 
 template<> CLootManager* CSingleton<CLootManager>::msSingleton = 0;
@@ -59,58 +59,38 @@ bool CLootManager::LoadLoots(const std::string &filename)
 CLoot * DropCrimsonModeLoot(const sf::Vector2f & pos, unsigned maxLvlLoot, const std::vector<CLootTemplate *> & lootTemplates) {
     // krotko i brutalnie:
 
-    if (lootTemplates.size() == 0)
-        return NULL;
+//    if (lootTemplates.size() == 0)
+//        return NULL;
 
-    if (gRand.Rndf(0, 1) > 0.06f)
-        return NULL;
+//    if (gRand.Rndf(0, 1) > 0.06f)
+//        return NULL;
 
     CLoot * tmp = lootTemplates.back()->Create();
     tmp->SetPosition(pos);
 
-    //znow brutalnie, byleby miec co potestowac:
-    std::string trigger = "a";
-    switch (gRand.Rnd(0, 4)) {
-        default:
-        case 0 : break;
-        case 1 : trigger = "b"; break;
-        case 2 : trigger = "c"; break;
-        case 3 : trigger = "d"; break;
-    }
     std::string prefix = "data/player/";
-    std::string ability = "firearrow.xml";
-    switch (gRand.Rnd(0, 25)) {
+    std::string ability;
+    switch (gRand.Rnd(0, 13)) {
         default:
-        case 0 : ability = "acidcircus.xml"; break;
-        case 1 : ability = "acidspray.xml"; break;
-        case 2 : ability = "ball-lightning.xml"; break;
-        case 3 : ability = "entangle.xml"; break;
-        case 4 : ability = "firearrow.xml"; break;
-        case 5 : ability = "fireball.xml"; break;
-        case 6 : ability = "fireburst.xml"; break;
-        case 7 : ability = "firecircle.xml"; break;
-        case 8 : ability = "flaming-hands.xml"; break;
-        case 9 : ability = "freezebomb.xml"; break;
-        case 10 : ability = "frostnova.xml"; break;
-        case 11 : ability = "healself.xml"; break;
-        case 12 : ability = "hibernate.xml"; break;
-        case 13 : ability = "icearrow.xml"; break;
-        case 14 : ability = "iceball.xml"; break;
-        case 15 : ability = "icecircle.xml"; break;
-        case 16 : ability = "ignite.xml"; break;
-        case 17 : ability = "invisibility.xml"; break;
-        case 18 : ability = "lightning-strike.xml"; break;
-        case 19 : ability = "magicstorm.xml"; break;
-        case 20 : ability = "meditation.xml"; break;
-        case 21 : ability = "poison.xml"; break;
-        case 22 : ability = "powerslash.xml"; break;
-        case 23 : ability = "pushback.xml"; break;
-        case 24 : ability = "quickshot.xml"; break;
-        case 25 : ability = "sting.xml"; break;
-        case 26 : ability = "superspeed.xml"; break;
-        case 27 : ability = "wrath.xml"; break;
+        case 0 : ability = "electric/ball-lightning.xml"; break;
+        case 1 : ability = "electric/chain-lightning.xml"; break;
+        case 2 : ability = "electric/debuff-mastery.xml"; break;
+        case 3 : ability = "electric/devolution.xml"; break;
+        case 4 : ability = "electric/electricity-mastery.xml"; break;
+        case 5 : ability = "electric/electric-snare.xml"; break;
+        case 6 : ability = "electric/electricution.xml"; break;
+        case 7 : ability = "electric/electron.xml"; break;
+        case 8 : ability = "electric/electrostatics.xml"; break;
+        case 9 : ability = "electric/forked-lightning.xml"; break;
+        case 10 : ability = "electric/laser.xml"; break;
+        case 11 : ability = "electric/lightning-strike.xml"; break;
+        case 12 : ability = "electric/magicstorm.xml"; break;
+        case 13 : ability = "electric/transfusion.xml"; break;
     }
-    tmp->SetCommandOnTake(StringUtils::ConvertToWString("set-ability player0 " + (prefix+ability) + " " + trigger));
+    ability = prefix + ability;
+    CItem * item = new CItem();
+    item->SetAbility(ability);
+    tmp->SetItem(item);
 
     SEffectParamSet eps = gGraphicalEffects.Prepare("loot-circle");
     gGraphicalEffects.ShowEffect(eps,tmp);
@@ -120,9 +100,7 @@ CLoot * DropCrimsonModeLoot(const sf::Vector2f & pos, unsigned maxLvlLoot, const
 //--------------------
 CLoot * CLootManager::DropLootAt(const sf::Vector2f & pos, unsigned maxLvlLoot)
 {
-//    if (ToxicUtils::isGameInCrimsonMode) {
-//        return DropCrimsonModeItem(pos, maxLvlLoot, mLootTemplates);
-//    }
+    return DropCrimsonModeLoot(pos, maxLvlLoot, mLootTemplates);
 
     static float dropMod(0.f);
 
