@@ -103,8 +103,7 @@ void Collisions::LogicalResponse( CPhysical* physicalA, CPhysical* physicalB, bo
     else if ( catA == PHYSICAL_PLAYER && catB == PHYSICAL_LOOT )
     {
         CLoot *loot = dynamic_cast<CLoot*>(physicalB);
-        loot->Perform( dynamic_cast<CActor*>(physicalA) );
-        loot->MarkForDelete();
+        loot->HandleCollision( dynamic_cast<CPlayer*>(physicalA) );
         makePhysicalResponse = false;
     } else if ( ((catA & PHYSICAL_MOVING) != 0) && catB == PHYSICAL_DOOR)
     {
