@@ -28,6 +28,12 @@ public:
     );
 
     SDisplayableEffect * ShowEffect(
+            const std::string & templateName,
+            CPhysical * from = NULL,
+            CPhysical * to = NULL
+    );
+
+    SDisplayableEffect * ShowEffect(
             SEffectParamSet & eps,
             CPhysical * from = NULL,
             CPhysical * to = NULL

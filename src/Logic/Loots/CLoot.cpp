@@ -32,15 +32,12 @@ void CLoot::HandleCollision(CPlayer * player)
             mOptionHandler->mReferenceCounter++;
         }
         CInGameOptionChooser * oc = player->GetController()->GetOptionChooser();
-        oc->SetOptions("open", "close", "explode");
+        oc->SetOptions("A", "B", "C", "D");
         oc->SetOptionHandler(mOptionHandler);
         oc->Show();
         return;
     }
-    //crimson-mode:
-//    if (ToxicUtils::isGameInCrimsonMode && !commandOnTake.empty()) {
-//        gCommands.ParseCommand(commandOnTake);
-//    }
+
     if (obj->effect) {
         obj->effect->Apply(player);
     }
