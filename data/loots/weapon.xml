@@ -1,0 +1,7 @@
+<root type="loot">
+    <name name="$ITEM_WEAPON" />
+    <genre>weapon</genre>
+    <level value="1" />
+    <image filename="data/loots/book.png" />
+    <droprate value="0.04" />
+</root>
