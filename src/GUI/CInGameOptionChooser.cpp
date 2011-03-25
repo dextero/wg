@@ -22,16 +22,15 @@ CInGameOptionChooser * CInGameOptionChooser::CreateChooser() {
     return chooser;
 }
 
-CInGameOptionChooser::CInGameOptionChooser()
-:	mIsVisible(false),
-    mRadius(0.f),
-    mOptionHandler(NULL)
-{
+CInGameOptionChooser::CInGameOptionChooser() :
+        mIsVisible(false),
+        mTitle(NULL),
+        mRadius(0.f),
+        mOptionHandler(NULL) {
     fprintf(stderr, "CInGameOptionChooser()");
 }
 
-CInGameOptionChooser::~CInGameOptionChooser()
-{
+CInGameOptionChooser::~CInGameOptionChooser() {
     fprintf(stderr, "~CInGameOptionChooser()");
     while (mButtons.size() > 0) {
         mButtons.back()->Remove();
@@ -54,48 +53,64 @@ CInGameOptionChooser::~CInGameOptionChooser()
     }
 }
 
-void CInGameOptionChooser::UpdateAll(float secondsPassed)
-{
+void CInGameOptionChooser::UpdateAll(float secondsPassed) {
     for (InGameOptionChooserVector::iterator it = msActiveChoosers.begin() ; it != msActiveChoosers.end() ; it++) {
         (*it)->Update(secondsPassed);
     }
 }
 
-void CInGameOptionChooser::SetRadius(float radius)
-{
+void CInGameOptionChooser::SetRadius(float radius) {
     mRadius = radius;
 }
 
-void CInGameOptionChooser::SetOptionSize(const sf::Vector2f &size)
-{
+void CInGameOptionChooser::SetOptionSize(const sf::Vector2f &size) {
     mOptionSize = size;
 }
 
-
-void CInGameOptionChooser::SetOptionImages(const std::string & normal, const std::string & mouseOver)
-{
+void CInGameOptionChooser::SetOptionImages(const std::string & normal, const std::string & mouseOver) {
     mOptionImageNormal = normal;
     mOptionImageMouseOver = mouseOver;
 	for (size_t i = 0; i < mButtons.size(); i++) {
-		mButtons[i]->SetImage(normal,mouseOver);
+		mButtons[i]->SetImage(normal, mouseOver);
+    }
+    if (mTitle) {
+        mTitle->SetImage(normal, mouseOver);
     }
 }
 
-void CInGameOptionChooser::SetOptionFont(const std::string & name, float size)
-{
+void CInGameOptionChooser::SetOptionFont(const std::string & name, float size) {
     mOptionFont = name;
     mOptionFontSize = size;
     for (size_t i = 0; i < mButtons.size(); i++) {
         mButtons[i]->SetFont(name, size, GUI::UNIT_PIXEL);
     }
+    if (mTitle) {
+        mTitle->SetFont(name, size + 2.0f, GUI::UNIT_PIXEL);
+    }
 }
 
-void CInGameOptionChooser::SetOptionColor(const sf::Color color)
-{
+void CInGameOptionChooser::SetOptionColor(const sf::Color color) {
     mOptionColor = color;
     for (size_t i = 0; i < mButtons.size(); i++) {
         mButtons[i]->SetColor(color);
     }
+    if (mTitle) {
+        mTitle->SetColor(color);
+    }
+}
+
+void CInGameOptionChooser::SetTitle(const std::string & title) {
+    if (mTitle == NULL) {
+        mTitle = gGUI.CreateButton(std::string("igoc-title", true, Z_GUI1));
+        mTitle->SetPadding(40.f, 0.f, 0.f, 0.f);
+        // te tutaj to trzeba chyba jednak na sztywno ustalic czy w inny sposob uzyskiwac
+        // - a na razie tak na lapu-capu zostawiam:
+        mTitle->SetImage(mOptionImageNormal, mOptionImageMouseOver);
+        mTitle->SetFont(mOptionFont, mOptionFontSize + 2.0f, GUI::UNIT_PIXEL);
+        mTitle->SetColor(mOptionColor);
+        mTitle->SetCenter(true);
+    }
+    mTitle->SetText(StringUtils::ConvertToWString(title));
 }
 
 void CInGameOptionChooser::SetOptions(const std::vector<std::string> & options)
@@ -210,16 +225,31 @@ void CInGameOptionChooser::OptionSelected(size_t selected)
 
 void CInGameOptionChooser::UpdateButtons()
 {
-    for (size_t i = 0; i < mButtons.size(); i++)
+    for (size_t i = 0; i < mButtons.size(); i++) {
 		mButtons[i]->SetVisible(mIsVisible);
+    }
+    if (mTitle) {
+        mTitle->SetVisible(mIsVisible);
+    }
 	if (mIsVisible && mPlayer) { // w sumie czy moze byc !mActor?
-	    for (unsigned i = 0; i < mButtons.size(); i++) {
-            sf::Vector2f center = gGUI.ConvertToGlobalPosition(0.01f * gCamera.TileToGui(mPlayer->GetPosition()));
-            center.x += sinf(float(i)/float(mButtons.size())*2*3.1415926f) * mRadius;
-            center.y -= cosf(float(i)/float(mButtons.size())*2*3.1415926f) * mRadius;
+        sf::Vector2f center = gGUI.ConvertToGlobalPosition(0.01f * gCamera.TileToGui(mPlayer->GetPosition()));
+        if (mTitle) {
+            mTitle->SetPosition(
+                    -4.0f * mOptionSize.x + center.x,
+                    -0.5f * mOptionSize.y + center.y - (mRadius * 1.6f),
+                    mOptionSize.x * 8,
+                    mOptionSize.y,
+                    GUI::UNIT_PIXEL
+            );
+        }
 
-            mButtons[i]->SetPosition(-0.5f*mOptionSize.x + center.x, 
-                    -0.5f*mOptionSize.y + center.y, 
+	    for (unsigned i = 0; i < mButtons.size(); i++) {
+            sf::Vector2f pos = center;
+            pos.x = center.x + sinf(float(i)/float(mButtons.size())*2*3.1415926f) * mRadius;
+            pos.y = center.y - cosf(float(i)/float(mButtons.size())*2*3.1415926f) * mRadius;
+
+            mButtons[i]->SetPosition(-0.5f * mOptionSize.x + pos.x, 
+                    -0.5f * mOptionSize.y + pos.y, 
                     mOptionSize.x, 
                     mOptionSize.y,
                     GUI::UNIT_PIXEL

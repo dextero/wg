@@ -15,6 +15,7 @@ class IOptionChooserHandler
         virtual ~IOptionChooserHandler() {}
         virtual void OptionSelected(size_t option) = 0;
         virtual void Update(float secondsPassed) {}
+
         void SetChooser(CInGameOptionChooser * chooser) {
             if (mChooser) {
                 mChooser->Hide();

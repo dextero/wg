@@ -6,7 +6,7 @@
 //#include "../OptionChooser/CSimpleOptionHandler.h"
 #include "../../Input/CPlayerController.h"
 
-CLoot::CLoot(const std::wstring& uniqueId) : CPhysical(uniqueId), obj(NULL), mOptionHandler(NULL)
+CLoot::CLoot(const std::wstring& uniqueId) : CPhysical(uniqueId), obj(NULL), mOptionHandler(NULL), mItem(NULL)
 {
     SetZIndex(Z_LOOT);
     SetCategory(PHYSICAL_LOOT);
@@ -32,7 +32,6 @@ void CLoot::HandleCollision(CPlayer * player)
             mOptionHandler->mReferenceCounter++;
         }
         CInGameOptionChooser * oc = player->GetController()->GetOptionChooser();
-        oc->SetOptions("A", "B", "C", "D");
         oc->SetOptionHandler(mOptionHandler);
         oc->Show();
         return;
