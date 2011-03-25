@@ -28,37 +28,14 @@ class CLootItemOptionHandler : public IOptionChooserHandler
         }
 
     	virtual void OptionSelected(size_t option) {
-            switch(option) {
-                case 0:
-                    if (mIsOpened) {
-                        gMessageSystem.AddMessage(L"Already opened!");
-                    } else {
-                        if (mHasLoot) {
-                            gMessageSystem.AddMessage(L"Found some gold!");
-                            mPlayer->NextLevel();
-                            mHasLoot = false;
-                        } else {
-                            gMessageSystem.AddMessage(L"You open the chest...");
-                        }
-                        mIsOpened = true;
-                    }
-                    break;
-                case 1:
-                    if (!mIsOpened) {
-                        gMessageSystem.AddMessage(L"Already closed!");
-                    } else {
-                        gMessageSystem.AddMessage(L"You close the chest...");
-                        mIsOpened = false;
-                    }
-                    break;
-                case 2:
-                    gGraphicalEffects.ShowEffect("bullet-explosion", mLoot->GetPosition());
-                    gAudioManager.PlaySound("data/sounds/Lugaro/break.ogg", mLoot->GetPosition());
-                    mLoot->Kill();
-                    break;
-                default:
-                    break;
-            }
+            if (option > 3) return;
+
+            size_t invPos = option;
+
+            mPlayer->AddItem(mLoot->GetItem(), invPos);
+            gGraphicalEffects.ShowEffect("magic-circle-4", mPlayer);
+            gAudioManager.PlaySound("data/sounds/reload.wav", mPlayer->GetPosition());
+            mLoot->Kill();
         };
 };
 #endif//__CLOOT_ITEM_OPTION_HANDLER_H__

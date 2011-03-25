@@ -68,7 +68,7 @@ CLoot * DropCrimsonModeLoot(const sf::Vector2f & pos, unsigned maxLvlLoot, const
     CLoot * tmp = lootTemplates.back()->Create();
     tmp->SetPosition(pos);
 
-    std::string prefix = "data/player/";
+    std::string prefix = "data/abilities/";
     std::string ability;
     switch (gRand.Rnd(0, 13)) {
         default:

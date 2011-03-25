@@ -562,6 +562,11 @@ SDisplayableEffect * CGraphicalEffects::ShowEffect(const std::string & templateN
     return ShowEffect(eps, position, NULL, NULL);
 }
 
+SDisplayableEffect * CGraphicalEffects::ShowEffect(const std::string & templateName, CPhysical * from, CPhysical * to) {
+    SEffectParamSet eps = Prepare(templateName);
+    return ShowEffect(eps, from, to);
+}
+
 SDisplayableEffect * CGraphicalEffects::ShowEffect(
         SEffectParamSet & eps,
         CPhysical * from,
