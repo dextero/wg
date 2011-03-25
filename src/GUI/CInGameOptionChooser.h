@@ -37,6 +37,7 @@ public:
 	void SetOptionImages(const std::string & normal, const std::string & mouseOver = "");
 	void SetOptionFont(const std::string& name, float size);
 	void SetOptionColor(const sf::Color color);
+    void SetTitle(const std::string & title);
 
 	void Show();
 	void Hide();
@@ -58,6 +59,7 @@ private:
     bool mIsVisible;
 	sf::Vector2i mCursorPos;
     std::vector<GUI::CButton*> mButtons;
+    GUI::CButton* mTitle;
 
 	float mRadius;
     sf::Vector2f mOptionSize;

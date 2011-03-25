@@ -56,6 +56,11 @@ CPlayer::~CPlayer()
 
     if (mDied)
         gLogic.SetState(L"death");
+
+    while (!mItems.empty()) {
+        delete mItems.back();
+        mItems.pop_back();
+    }
 }
 
 void CPlayer::Update(float dt){
@@ -280,10 +285,12 @@ CPinnedAbilityBatch *CPlayer::GetPinnedAbilityBatch(){
 }
 
 CItem * CPlayer::GetItem(size_t invPos) {
-    for (size_t i = 0; i < mItems.size() ; i++) {
-        if (mItems[i]->mInvPos == invPos) {
-            return mItems[i];
+    size_t i = mItems.size();
+    while (i > 0) { // od tylu przeszukujemy, bo pozniejsze przedmioty moga przykryc poprzednie... chociaz w sumie nie powinny, wtf
+        if (mItems[i-1]->mInvPos == invPos) {
+            return mItems[i-1];
         }
+        i--;
     }
     return NULL;
 }
