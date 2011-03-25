@@ -5,4 +5,5 @@
 	<loot filename="data/loots/regeneration.xml" />
 	<loot filename="data/loots/superspeed.xml" />
 	<loot filename="data/loots/medium-mana.xml" />
+	<loot filename="data/loots/weapon.xml" />
 </root>
