@@ -222,17 +222,17 @@ void CBindManager::KeyReleased( const sf::Event::KeyEvent &e )
 
 void CBindManager::JoyButtonPressed( const sf::Event::JoyButtonEvent &e )
 {
-	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + GetJoystickButtonId(e.Button,e.JoystickId)].OnKeyPress();
+	mKeyboard[sf::Key::Count + sf::Mouse::Count + GetJoystickButtonId(e.Button,e.JoystickId)].OnKeyPress();
 }
 
 void CBindManager::JoyButtonReleased( const sf::Event::JoyButtonEvent &e )
 {
-	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + GetJoystickButtonId(e.Button,e.JoystickId)].OnKeyRelease();
+	mKeyboard[sf::Key::Count + sf::Mouse::Count + GetJoystickButtonId(e.Button,e.JoystickId)].OnKeyRelease();
 }
 
 void CBindManager::JoyMoved( const sf::Event::JoyMoveEvent &e )
 {
-	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + GetJoystickAxisId(e.Axis, e.JoystickId, e.Position)].OnKeyPress();
+	mKeyboard[sf::Key::Count + sf::Mouse::Count + GetJoystickAxisId(e.Axis, e.JoystickId, e.Position)].OnKeyPress();
 }
 
 void CBindManager::UpdateKeySyncGroups()
@@ -332,7 +332,7 @@ void CBindManager::Add(std::string name, int key, float lockTime, bool repeatabl
 
 void CBindManager::AddJoystickButton(std::string name, int button, int joyid, float lockTime, bool repeatable)
 {
-	int key = sf::Key::Count + sf::Mouse::ButtonCount + GetJoystickButtonId(button,joyid);
+	int key = sf::Key::Count + sf::Mouse::Count + GetJoystickButtonId(button,joyid);
 	mKeys[name] = key;
 	mKeyboard[key].SetLockTime(lockTime);
 	mKeyboard[key].SetIsRepeatable(repeatable);
@@ -341,7 +341,7 @@ void CBindManager::AddJoystickButton(std::string name, int button, int joyid, fl
 
 void CBindManager::AddJoystickAxis(std::string name, int axis, int joyid, float lockTime, float position)
 {
-	int key = sf::Key::Count + sf::Mouse::ButtonCount + GetJoystickAxisId(axis, joyid, position);
+	int key = sf::Key::Count + sf::Mouse::Count + GetJoystickAxisId(axis, joyid, position);
 	mKeys[name] = key;
 	mKeyboard[key].SetIsRepeatable(false);
 	mUpdateKeySyncGroups = true;
