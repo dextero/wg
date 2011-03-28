@@ -101,6 +101,6 @@ public:
     friend bool VectorCompareFunc(const SPhysical& first, const SPhysical& last);
 };
 
-#define gMapGen CRandomMapGenerator::GetSingleton()
+#define gRandomMapGenerator CRandomMapGenerator::GetSingleton()
 
 #endif // __CRANDOMMAPGENERATOR_H__

@@ -16,6 +16,8 @@
 #include "../CGameOptions.h"
 #include "../Utils/HRTimer.h"
 #include "../Utils/FileUtils.h"
+#include "../Utils/CRand.h"
+#include "CRandomMapGenerator.h"
 
 template<> Map::CMapManager* CSingleton<Map::CMapManager>::msSingleton = 0;
 
@@ -24,7 +26,7 @@ namespace Map{
 
 	void CMapManager::SetMapFromData(const void *data){
 		CMapManager::NextMapData *d = (CMapManager::NextMapData*)data;
-		gMapManager.SetMap(*(d->mNextMap), d->mLoadCompleteMap, *(d->mNextMapRegion));
+		gMapManager.SetMap(d->mNextMap, d->mLoadCompleteMap, d->mNextMapRegion);
 	}
 
 	CMapManager::CMapManager() :
@@ -52,10 +54,10 @@ namespace Map{
 		m_visitedMaps.clear();
 	}
 
-	void CMapManager::ScheduleSetMap( const std::string *mapFile, bool loadCompleteMap, const std::string *region)
+	void CMapManager::ScheduleSetMap( const std::string & mapFile, bool loadCompleteMap, const std::string & region)
     {
-#ifndef __EDITOR__
-	    NextMapData *data = new NextMapData();
+        fprintf(stderr, "ScheduleSetMap(%s, %d, %s)\n", mapFile.c_str(), (int)loadCompleteMap, region.c_str());
+	    NextMapData *data = new NextMapData(); //tox: kto kasuje potem data? dupa, nikt nie kasuje, dobrze widze?
 	    data->mNextMap = mapFile;
 	    data->mNextMapRegion = region;
         data->mLoadCompleteMap = loadCompleteMap;
@@ -63,9 +65,6 @@ namespace Map{
 	    CGame::loadingRoutine setMap;
 	    setMap.bind(this, &CMapManager::SetMapFromData);
         gGame.ScheduleLoadingRoutine(setMap, data, mHideLoadingScreen);
-#else
-        SetMap(*mapFile, true, *region);
-#endif
     }
 
 	void CMapManager::SetCurrentMapAsVisited()
@@ -95,7 +94,6 @@ namespace Map{
         sf::Clock timer;
         timer.Reset();
 
-#ifndef __I_AM_TOXIC__
 		if ( m_map != NULL && m_map->GetFilename() == mapFile ){
 			if ( region != "" )
 			{
@@ -103,13 +101,9 @@ namespace Map{
             }
 			return true;
 		}
-#endif
 
 		SetCurrentMapAsVisited();
 
-#ifdef __I_AM_TOXIC__
-		gResourceManager.LoadMap( mapFile );
-#endif
         // bo segfault przy ominieciu bossa..
         gBossManager.ClearData();
 
@@ -211,4 +205,26 @@ namespace Map{
 		
 		FileUtils::WriteToFile(filename, ss.str().c_str());
 	}
+
+    void CMapManager::NextMap() {
+        fprintf(stderr, "NextMap()\n");
+        int r = gRand.Rnd(0, 100);
+        // todo: robic w katalogu usera:
+        std::string filename = "data/maps/rnd" + StringUtils::ToString(r) + ".xml";
+        SRandomMapDesc desc;
+        desc.set = "forest";
+        desc.sizeX = 32;
+        desc.sizeY = 32;
+        desc.obstaclesAreaPercent = 50.0f;
+//        desc.maxLivingMonsters = 0;
+//        desc.maxMonsters = 0;
+//        desc.monsters = 0;
+//        desc.lairs = 0;
+//        desc.loots = 5;
+        desc.level = 1; // todo: inkrementowac
+        bool result = gRandomMapGenerator.GenerateRandomMap(filename, desc);
+        fprintf(stderr, "Generating map %s: %s", filename.c_str(), (result ? "OK!" : "FAILED!"));
+
+        ScheduleSetMap(filename, true, "entry");
+    }
 }

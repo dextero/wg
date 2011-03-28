@@ -39,8 +39,8 @@ namespace Map{
 		void SetMapFromData(const void *data);
 
 		struct NextMapData{
-			const std::string *mNextMap;
-			const std::string *mNextMapRegion;
+			std::string mNextMap;
+			std::string mNextMapRegion;
             bool mLoadCompleteMap;
 		};
 
@@ -52,10 +52,11 @@ namespace Map{
 		inline CCollisionMap * GetCollisionMap()		{ return m_collisionMap; }
 		inline float GetCurrentMapTimeElapsed()			{ return mCurrentMapTimeElapsed; }
 
-		void ScheduleSetMap( const std::string *mapFile, bool loadCompleteMap, const std::string *region = NULL );
+		void ScheduleSetMap( const std::string & mapFile, bool loadCompleteMap, const std::string & region = "" );
 
 		void SetCurrentMapAsVisited();
         bool SetMap( const std::string &mapFile, bool loadCompleteMap, const std::string &region = "");
+        void NextMap();
 
 		virtual void FrameStarted(float secondsPassed);
         virtual bool FramesDuringPause(EPauseVariant pv) { return pv == pvLogicOnly || pv == pvPauseMenu || pv == pvLoading; };

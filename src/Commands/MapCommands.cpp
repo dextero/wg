@@ -14,10 +14,13 @@ class CPhysical;
 
 using namespace Map;
 
+void CommandNextMap(size_t argc, const std::vector<std::wstring> &argv);
+
  // na koncu musi byc {0,0,0}, bo sie wszystko ***
 CCommands::SCommandPair MapCommands [] =
 {
     {L"load-map"                        , "$MAN_LOAD_MAP"           , CommandLoadMap },
+    {L"next-map"                        , "$MAN_NEXT_MAP"           , CommandNextMap },
     {L"preload-map"                     , "$MAN_PRELOAD_MAP"        , CommandPreloadMap },
 	{L"unload-map"                      , "$MAN_UNLOAD_MAP"         , CommandUnloadMap },
 	{L"print-scene-stats"				, "$MAN_PRINT_SCENE_STATS"  , CommandPrintSceneStats},
@@ -64,9 +67,9 @@ void CommandLoadMap(size_t argc, const std::vector<std::wstring> &argv)
 
     const bool loadCompleteMap = true;
     if (argc == 2) // zapisz
-        gMapManager.ScheduleSetMap(new std::string(StringUtils::ConvertToString(mapName)), loadCompleteMap, new std::string());
+        gMapManager.ScheduleSetMap(StringUtils::ConvertToString(mapName), loadCompleteMap);
     else if (argc == 3) // zapisz
-        gMapManager.ScheduleSetMap(new std::string(StringUtils::ConvertToString(mapName)),loadCompleteMap, new std::string(StringUtils::ConvertToString(argv[2])));
+        gMapManager.ScheduleSetMap(StringUtils::ConvertToString(mapName),loadCompleteMap, StringUtils::ConvertToString(argv[2]));
     else // nie zapisuj
         gMapManager.SetMap(StringUtils::ConvertToString(mapName), loadCompleteMap, StringUtils::ConvertToString(argv[2]));
 }
@@ -88,9 +91,9 @@ void CommandPreloadMap(size_t argc, const std::vector<std::wstring> &argv)
 
     const bool loadCompleteMap = false;
     if (argc == 2) // zapisz
-        gMapManager.ScheduleSetMap(new std::string(StringUtils::ConvertToString(mapName)), loadCompleteMap, new std::string());
+        gMapManager.ScheduleSetMap(StringUtils::ConvertToString(mapName), loadCompleteMap);
     else if (argc == 3) // zapisz
-        gMapManager.ScheduleSetMap(new std::string(StringUtils::ConvertToString(mapName)),loadCompleteMap, new std::string(StringUtils::ConvertToString(argv[2])));
+        gMapManager.ScheduleSetMap(StringUtils::ConvertToString(mapName),loadCompleteMap, StringUtils::ConvertToString(argv[2]));
     else // nie zapisuj
         gMapManager.SetMap(StringUtils::ConvertToString(mapName), loadCompleteMap, StringUtils::ConvertToString(argv[2]));
 }
@@ -202,7 +205,6 @@ void CommandDeleteRegion(size_t argc, const std::vector<std::wstring> &argv)
     gPhysicalManager.DestroyPhysical(r);
 }
 
-
 void CommandGenerateRandomMap(size_t argc, const std::vector<std::wstring> &argv)
 {
     if (argc < 6)
@@ -217,7 +219,7 @@ void CommandGenerateRandomMap(size_t argc, const std::vector<std::wstring> &argv
     desc.sizeY = StringUtils::Parse<unsigned short>(argv[4]);
     desc.obstaclesAreaPercent = StringUtils::Parse<float>(argv[5]);
 
-    // dex: tak, *bez* break;-ow
+    // dex: tak, *bez* break;-ow // tox: o Ty brzydalu, tak bez breakow?
     switch (argc)
     {
     case 12:
@@ -236,6 +238,11 @@ void CommandGenerateRandomMap(size_t argc, const std::vector<std::wstring> &argv
         break;
     }
 
-    bool result = gMapGen.GenerateRandomMap(StringUtils::ConvertToString(argv[1]), desc);
+    bool result = gRandomMapGenerator.GenerateRandomMap(StringUtils::ConvertToString(argv[1]), desc);
     gConsole.Printf(L"Generating map %ls: %ls", argv[1].c_str(), (result ? L"OK!" : L"FAILED!"));
+}
+
+void CommandNextMap(size_t argc, const std::vector<std::wstring> &argv)
+{
+    gMapManager.NextMap();
 }
