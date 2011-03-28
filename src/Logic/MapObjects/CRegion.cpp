@@ -65,6 +65,7 @@ void CDynamicRegion::Update(float dt){
     }
 }
 
+
 void CDynamicRegion::Trigger(CPlayer *player){
     // najpierw sprawdzamy warunek...
     if (mCond != NULL){
@@ -75,8 +76,12 @@ void CDynamicRegion::Trigger(CPlayer *player){
     mTriggerTime = 0.5f;
     // moze zmieniamy mape?
     if (mNextMap != NULL && !mNextMap->empty() ){
+        if (mNextMap->compare("@RANDOM") == 0) {
+            gMapManager.NextMap();
+            return;
+        }
         fprintf(stderr,"scheduled set map for %s from region %ls\n",mNextMap->c_str(),mUniqueId.c_str());
-        gMapManager.ScheduleSetMap(mNextMap,true,mNextMapRegion);
+        gMapManager.ScheduleSetMap(*mNextMap,true,*mNextMapRegion);
         return;
     }
     // a moze... ? :)

@@ -25,7 +25,7 @@ class CTimer
     sf::Clock clock;
     std::string msg;
 public:
-    CTimer(const std::string& msg): msg(msg) { clock.Reset(); }
+    CTimer(const std::string& msg): msg(msg) { fprintf(stderr, "%s started\n", msg.c_str()); clock.Reset(); }
     ~CTimer() { fprintf(stderr, "%s %fs\n", msg.c_str(), clock.GetElapsedTime()); }
 };
 
@@ -503,7 +503,7 @@ bool CRandomMapGenerator::PlaceWalls()
     CTimer timer("- walls: ");
 
     // invisible-walls
-    mXmlText << "\t<objtype code=\"iw\" file=\"data/physicals/invisible-wall.xml\" />\n";
+    mXmlText << "\t<objtype code=\"iw\" file=\"data/physicals/walls/invisible-wall.xml\" />\n";
 
     for (unsigned int y = 0; y < mDesc.sizeY; ++y)
         for (unsigned int x = 0; x < mDesc.sizeX; ++x)
@@ -554,8 +554,9 @@ bool CRandomMapGenerator::PlaceRegions()
         }
         mXmlText << "\t<region name=\"entry\" x=\"" << entry.x + 0.5f << "\" y=\"" << entry.y + 0.5f << "\" rot=\"0\" scale=\"1\"></region>\n"
             << "\t<region name=\"exit\" x=\"" << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" rot=\"0\" scale=\"1\">\n"
-            << "\t\t<next-map>data/maps/level01.xml</next-map>\n"
-            << "\t\t<next-map-region>entry</next-map-region>\n"
+            << "\t\t<next-map>@RANDOM</next-map>\n"
+//            << "\t\t<next-map>data/maps/level01.xml</next-map>\n"
+//            << "\t\t<next-map-region>entry</next-map-region>\n"
             << "\t</region>\n"
             // tlo pod wyjscie - portal
             << "\t<objtype code=\"exit-portal\" file=\"data/physicals/walls/test-barrier.xml\" />\n"
@@ -905,7 +906,7 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
     if (!PlaceTiles())      return false;
     if (!PlaceWalls())      return false;
     if (!PlaceDoodahs())    return false;
-//    if (!PlaceRegions())    return false;
+    if (!PlaceRegions())    return false;
 //    if (!PlaceMonsters())   return false;
 //    if (!PlaceLairs())      return false;
 //    if (!PlaceLoots())      return false;
