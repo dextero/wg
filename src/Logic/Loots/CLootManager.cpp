@@ -77,7 +77,7 @@ void CLootManager::BindRandomWeaponToLoot(CLoot * loot) {
         case 13 : ability = "fire/exploding-corpse.xml"; break;
         case 14 : ability = "fire/firearrow.xml"; break;
         case 15 : ability = "fire/fireball.xml"; break;
-        case 16 : ability = "fire/fire-circle.xml"; break;
+        case 16 : ability = "fire/firecircle.xml"; break;
         case 17 : ability = "fire/firepits.xml"; break;
         case 18 : ability = "fire/firewall.xml"; break;
         case 19 : ability = "fire/flaming-hands.xml"; break;
