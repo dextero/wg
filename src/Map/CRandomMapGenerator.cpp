@@ -907,9 +907,9 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
     if (!PlaceWalls())      return false;
     if (!PlaceDoodahs())    return false;
     if (!PlaceRegions())    return false;
-//    if (!PlaceMonsters())   return false;
-//    if (!PlaceLairs())      return false;
-//    if (!PlaceLoots())      return false;
+    if (!PlaceLoots())      return false;
+    if (!PlaceMonsters())   return false;
+    if (!PlaceLairs())      return false;
 
     // koniec
     mXmlText << "</map>";

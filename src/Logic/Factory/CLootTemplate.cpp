@@ -1,10 +1,12 @@
 #include "CLootTemplate.h"
 #include "../CPhysicalManager.h"
 #include "../Loots/CLoot.h"
+#include "../Loots/CLootManager.h"
 #include "../../Utils/CXml.h"
 #include "../Effects/CEffectManager.h"
 #include "../../Rendering/CDisplayable.h"
 #include "../../GUI/Localization/CLocalizator.h"
+#include "../../Rendering/Effects/CGraphicalEffects.h"
 
 std::string CLootTemplate::GetType()
 {
@@ -52,6 +54,14 @@ CLoot* CLootTemplate::Create(std::wstring id)
     loot->GetDisplayable()->SetScale(0.25f,0.25f);
     loot->BindTemplate(&mLoot);
     loot->SetGenre(mGenre);
+
+    gGraphicalEffects.ShowEffect("loot-circle-perpetual", loot); //todo: przeniesc do xml'a, zeby rozne
+                                                                 //przedmioty mogly miec rozne effekty przypiete
+
+    if (mGenre == L"weapon") { //a moze "random_weapon" ?
+        gLootManager.BindRandomWeaponToLoot(loot);
+    }
+
     return loot;
 }
 

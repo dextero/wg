@@ -30,11 +30,12 @@
     <!-- speciale - bez tych, ktorymi mozna tluc, bo wyskocza 3 takie na mapie i problem -->
     <loot file="data/loots/resonator-ball.xml" level="3" />
     <loot file="data/loots/armor-ball.xml" level="4" />
-    <loot file="data/loots/chant-ball.xml" level="5" />
     
     <!-- inne -->
     <loot file="data/loots/superspeed.xml" level="5" />
     <loot file="data/loots/medium-mana.xml" level="2" />
+
+    <loot file="data/loots/weapon.xml" level="1" />
   </loots>
   <tile-masks>
     <tile-mask file="data/maps/tile_mask/mask1.png" />
