@@ -55,6 +55,7 @@ struct SDisplayableEffect {
     ILinearEffect * linearEffect;
     CPhysical * tracedPhysical;
     float timeToLive;
+    bool isPerpetual;
 
     SDisplayableEffect( 
             const SEffectParamSet & _eps,
@@ -64,7 +65,8 @@ struct SDisplayableEffect {
             eps( _eps ),
             displayable( _displayable ),
             linearEffect( _linearEffect ),
-            tracedPhysical( NULL )
+            tracedPhysical( NULL ),
+            isPerpetual(false)
     {
         if ( eps.effectAnimation.empty() )
             timeToLive = eps.duration;
@@ -203,26 +205,16 @@ bool CGraphicalEffects::Initialize(const std::string & configFile)
     gsAnimations[ "magic-circle" ] = animation;
 
     animation.clear();
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.750f, 0.000f, 0.000f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 0.750f, 90.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 180.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 270.0f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.000f, 0.000f, 0.000f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 90.0f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 270.0f ) );
+    animation.push_back( SDisplayableEffectFrame( 0.000f, 1.000f, 1.000f, 360.0f ) );
     animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 0.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 90.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 180.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 270.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 0.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 90.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 180.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 270.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 0.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 90.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 180.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 270.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 0.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 90.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.600f, 0.900f, 180.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.200f, 0.500f, 270.0f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 90.0f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 270.0f ) );
+    animation.push_back( SDisplayableEffectFrame( 0.000f, 0.000f, 0.000f, 360.0f ) );
     gsAnimations[ "loot-circle" ] = animation;
 
 
@@ -293,8 +285,11 @@ void CGraphicalEffects::FrameStarted( float secondsPassed )
         }
         
         effect.timeToLive -= secondsPassed;
+        if (effect.isPerpetual && effect.timeToLive <= 0.0f) {
+            effect.timeToLive += effect.eps.duration;
+        }
 
-        if ( effect.timeToLive <= 0.0 )
+        if (effect.timeToLive <= 0.0f)
         {
             if ( effect.eps.name == "colorize" )
             {
@@ -462,13 +457,13 @@ SEffectParamSet CGraphicalEffects::Prepare( const std::string & templateName )
         eps.effectAnimation = "magic-circle";
         eps.scale = 2.5f;
     }
-    else if ( templateName == "loot-circle" )
+    else if ((templateName == "loot-circle" ) || (templateName == "loot-circle-perpetual"))
     {
         eps.image = "data/effects/loot-circle.png";
-        eps.zIndex = Z_BLOOD_SPLATS - 1; // minus jeden, zeby koleczko bylo widoczne
-        eps.effectAnimation = "loot-circle"; //wsrod kaluz krwi
+        eps.zIndex = Z_BLOOD_SPLATS - 1; // minus jeden, zeby koleczko bylo widoczne wsrod kaluz krwi
+        eps.effectAnimation = "loot-circle";
         eps.scale = 1.0f;
-        eps.duration = 20.0f;
+        eps.duration = 2.0f;
         eps.removeTogetherWithTraced = true;
     }
     else if ( templateName == "entangle" )
@@ -582,24 +577,6 @@ SDisplayableEffect * CGraphicalEffects::ShowEffect(
         CPhysical * from,
         CPhysical * to )
 {
-    // tox, 10 czerwca: tu powinna byc chyba jakas hierarchia klas-podklas Effect, tak zeby rozne
-    // efekty mialy virtualne metody Show
-    // np ParticleEffect : Effect -> Show by wygladalo tak:
-    //    part::gParticleManager.AddParticleSystem(effect, position, time );
-    // a np AnimationEffect : Effect -> Show by wygladalo inaczej
-    //
-    // a na razie zrobie brutalne if/else, bez optymalizacji
-    
-    // todo? (utracona funkcjonalnosc?)
-    //
-    // if (!part::gParticleManager.AddParticleSystem(effect, time))
-    // {
-    //    pfx::CPostFX * t = gPostProcessing.GetEffect(effect);
-    //    if (t != NULL)
-    //        t->Enable(true);
-    // }
-
-
     if ( !eps.image.empty() || !eps.animation.empty() )
     {
         CDisplayable * displayable = gDrawableManager.CreateDisplayable( eps.zIndex );
@@ -664,10 +641,10 @@ SDisplayableEffect * CGraphicalEffects::ShowEffect(
         SDisplayableEffect * effect = new SDisplayableEffect( eps, displayable, NULL);
         if ( from && eps.name != "frost-wave" )
             effect->tracedPhysical = from;
+        if (eps.name == "loot-circle-perpetual")
+            effect->isPerpetual = true;
         gsEffects.push_back( effect );
     
-        //gConsole.Printf(L"creating effect %p, %s", effect, eps.name.c_str());
-
         return effect;
     }
     else if ( !eps.particle.empty() )
@@ -781,8 +758,6 @@ SDisplayableEffect * CGraphicalEffects::ShowEffect(
         SDisplayableEffect * effect = new SDisplayableEffect( eps, NULL, linearEffect );
         gsEffects.push_back( effect );
         
-        //gConsole.Printf(L"creating effect %p, %s", effect, eps.name.c_str());
-
         return effect;
     }
     return NULL;
@@ -798,8 +773,10 @@ void CGraphicalEffects::NoticePhysicalDestroyed( CPhysical * physical )
 
         if ( effect.tracedPhysical == physical ){
             effect.tracedPhysical = NULL;
-            if ( effect.eps.removeTogetherWithTraced )
+            if ( effect.eps.removeTogetherWithTraced ) {
                 effect.timeToLive = 0.0f;
+                effect.isPerpetual = false;
+            }
         }
     }
 }
@@ -813,6 +790,7 @@ void CGraphicalEffects::RemoveEffect( SDisplayableEffect * handle ){
         if ( effect == handle )
         {
             effect->timeToLive = 0.0f;
+            effect->isPerpetual = false;
             return;
         }
     }

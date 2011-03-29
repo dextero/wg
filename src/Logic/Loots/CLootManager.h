@@ -24,6 +24,10 @@ public:
     
     /// zwraca przedmiot-znajdzke lub NULL jesli nic nie ma "wypasc"
     CLoot* DropLootAt(const sf::Vector2f & position, unsigned maxLvlLoot=10);
+
+    // 'generuje' i przypina losowa bron dla danego CLoota.
+    static void BindRandomWeaponToLoot(CLoot * loot);
+
 private:
     std::vector<CLootTemplate *> mLootTemplates;
 };

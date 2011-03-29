@@ -56,7 +56,7 @@ bool CLootManager::LoadLoots(const std::string &filename)
     return true;
 }
 
-void BindRandomWeaponToLoot(CLoot * loot) {
+void CLootManager::BindRandomWeaponToLoot(CLoot * loot) {
     std::string prefix = "data/abilities/";
     std::string ability;
     switch (gRand.Rnd(0, 40)) {
@@ -130,14 +130,8 @@ CLoot * CLootManager::DropLootAt(const sf::Vector2f & pos, unsigned maxLvlLoot)
     // algorytm losowy + zwiekszanie prawdopodobienstwa ze graczowi cos jednak wypadnie ;)
     if ( (t->mLoot.dropRate + dropMod) > gRand.Rndf(0.f,1.1f) ) {
         dropMod = 0.f;
-        CLoot * loot = t->Create();
-        if (loot->GetGenre() == L"weapon") {
-            // pozniej przeniesc do .xml'a, a na razie na sztywno:
-            BindRandomWeaponToLoot(loot);
-        }
+        CLoot * loot = t->Create(); //wewnatrz zostanie zawolany BindRandomWeaponToLoot(loot)
         loot->SetPosition(pos);
-        SEffectParamSet eps = gGraphicalEffects.Prepare("loot-circle");
-        gGraphicalEffects.ShowEffect(eps, loot);
         fprintf (stderr, "Loot drop - %ls\n", loot->GetLootName().c_str() );
         return loot;
     }

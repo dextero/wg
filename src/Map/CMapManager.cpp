@@ -216,11 +216,11 @@ namespace Map{
         desc.sizeX = 32;
         desc.sizeY = 32;
         desc.obstaclesAreaPercent = 50.0f;
-//        desc.maxLivingMonsters = 0;
-//        desc.maxMonsters = 0;
-//        desc.monsters = 0;
-//        desc.lairs = 0;
-//        desc.loots = 5;
+        desc.maxLivingMonsters = 0;
+        desc.maxMonsters = 0;
+        desc.monsters = 0;
+        desc.lairs = 0;
+        desc.loots = 5;
         desc.level = 1; // todo: inkrementowac
         bool result = gRandomMapGenerator.GenerateRandomMap(filename, desc);
         fprintf(stderr, "Generating map %s: %s", filename.c_str(), (result ? "OK!" : "FAILED!"));
