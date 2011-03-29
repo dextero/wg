@@ -41,7 +41,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\includes;&quot;..\includes\SFML-1.4\include&quot;;..\includes\Audiere\"
+				AdditionalIncludeDirectories="..\includes;&quot;..\includes\SFML-1.6\include&quot;;..\includes\Audiere\"
 				PreprocessorDefinitions="_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1;_CRT_SECURE_NO_WARNINGS=1;PLATFORM_WINDOWS"
 				StringPooling="false"
 				MinimalRebuild="true"
@@ -127,7 +127,7 @@
 				Optimization="3"
 				InlineFunctionExpansion="2"
 				FavorSizeOrSpeed="1"
-				AdditionalIncludeDirectories="&quot;..\includes\SFML-1.4\include&quot;;..\includes;..\includes\Audiere\"
+				AdditionalIncludeDirectories="&quot;..\includes\SFML-1.6\include&quot;;..\includes;..\includes\Audiere\"
 				PreprocessorDefinitions="_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1;_CRT_SECURE_NO_WARNINGS=1;PLATFORM_WINDOWS"
 				BasicRuntimeChecks="0"
 				RuntimeLibrary="2"
@@ -209,7 +209,7 @@
 			<Tool
 				Name="VCCLCompilerTool"
 				Optimization="0"
-				AdditionalIncludeDirectories="..\includes;&quot;..\includes\SFML-1.4\include&quot;;..\includes\Audiere\"
+				AdditionalIncludeDirectories="..\includes;&quot;..\includes\SFML-1.6\include&quot;;..\includes\Audiere\"
 				PreprocessorDefinitions="_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1;_CRT_SECURE_NO_WARNINGS=1;VISTA_SUX"
 				StringPooling="false"
 				MinimalRebuild="true"
