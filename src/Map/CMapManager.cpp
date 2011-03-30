@@ -221,7 +221,7 @@ namespace Map{
         desc.monsters = gRand.Rnd(15, 30);
         desc.lairs = gRand.Rnd(0, 2);
         desc.loots = gRand.Rnd(3, 5);
-        desc.level = 1; // todo: inkrementowac
+        desc.level = 0; // todo: inkrementowac
         bool result = gRandomMapGenerator.GenerateRandomMap(filename, desc);
         fprintf(stderr, "Generating map %s: %s", filename.c_str(), (result ? "OK!" : "FAILED!"));
 

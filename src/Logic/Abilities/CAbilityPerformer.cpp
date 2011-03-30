@@ -66,6 +66,7 @@ int CAbilityPerformer::FindAbilityIndexByInvPos(size_t invPos) {
         }
         i--;
     }
+    return -1;
 }
 
 void CAbilityPerformer::AddOrSwapAbilityWithTrigger(SAbilityInstance &abi, const std::string & trigger, int anim){
