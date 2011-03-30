@@ -7,6 +7,7 @@
 
 #include "../Utils/CXml.h"
 #include "../Utils/Maths.h"
+#include "../Utils/CRand.h"
 #include "../Utils/StringUtils.h"
 #include "../Utils/FileUtils.h"
 
@@ -42,7 +43,7 @@ template<> CRandomMapGenerator* CSingleton<CRandomMapGenerator>::msSingleton = N
 // to chyba bylo do std::sort, albo czegos takiego...
 bool VectorCompareFunc(const CRandomMapGenerator::SPhysical& first, const CRandomMapGenerator::SPhysical& last)
 {
-    return (first.level < last.level);
+    return (first.minLevel < last.minLevel);
 }
 
 // -----------------------------------
@@ -554,7 +555,7 @@ bool CRandomMapGenerator::PlaceRegions()
         }
         mXmlText << "\t<region name=\"entry\" x=\"" << entry.x + 0.5f << "\" y=\"" << entry.y + 0.5f << "\" rot=\"0\" scale=\"1\"></region>\n"
             << "\t<region name=\"exit\" x=\"" << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" rot=\"0\" scale=\"1\">\n"
-            << "\t\t<next-map>@RANDOM</next-map>\n"
+            << "\t\t<next-map>" << mDesc.nextMap << "</next-map>\n"
 //            << "\t\t<next-map>data/maps/level01.xml</next-map>\n"
 //            << "\t\t<next-map-region>entry</next-map-region>\n"
             << "\t</region>\n"
@@ -625,7 +626,7 @@ bool CRandomMapGenerator::PlaceLairs()
         size_t at = 0;
 
         // przesuniecie 'wskaznika'
-        for (; at < mLairs.size() - 1 && mLairs[at + 1].level <= mDesc.level; ++at);
+        for (; at < mLairs.size() - 1 && mLairs[at + 1].minLevel <= mDesc.level; ++at);
 
         if (at < mLairs.size())
         {
@@ -680,9 +681,17 @@ bool CRandomMapGenerator::PlaceMonsters()
 {
     CTimer timer("- monsters: ");
 
-    // potwory
-    for (size_t i = 0; i < mMonsters.size(); ++i)
-        mXmlText << "\t<objtype code=\"monster" << StringUtils::ToString(i) << "\" file=\"" << mMonsters[i].file << "\" />\n";
+    std::vector<size_t> filteredOut;
+    for (size_t i = 0; i < mMonsters.size(); ++i) {
+        fprintf(stderr, "monster: %s, %d, %d\n", mMonsters[i].file.c_str(), mMonsters[i].minLevel, mMonsters[i].maxLevel);
+        if (mMonsters[i].minLevel >= mDesc.level && mMonsters[i].maxLevel <= mDesc.level) {
+            mXmlText << "\t<objtype code=\"monster" << StringUtils::ToString(i) << "\" file=\"" << mMonsters[i].file << "\" />\n";
+            filteredOut.push_back(i);
+        }
+    }
+    if (filteredOut.empty()) {
+        return true;
+    }
 
     for (unsigned int i = 0; i < mDesc.monsters; ++i)
     {
@@ -698,16 +707,11 @@ bool CRandomMapGenerator::PlaceMonsters()
         int rot = rand() % 360;                                     // jeszcze obrot do tego
         // skala zadeklarowana w xmlu
 
-        size_t what = rand() % mDesc.monsters;
-        for (unsigned int j = 0; j < mMonsters.size(); ++j)
-        {
-            // zeby te mocniejsze jakos czesciej 'wypadaly', ciekawe, czy bedzie dzialac...
-            if (j * j > what || mMonsters[j].level >= mDesc.level)
-            {
-                mXmlText << "\t<obj code=\"monster" << StringUtils::ToString(j) << "\" x=\"" << pos.x + offsetX << "\" y=\"" << pos.y + offsetY << "\" rot=\"" << rot << "\" />\n";
-                break;
-            }
-        }
+        
+
+        size_t what = filteredOut[gRand.Rnd(filteredOut.size())];
+        if (what >= filteredOut.size()) fprintf(stderr, "gRand.Rnd(max) zwraca z 0..max, a nie z 0..max-1\n");
+        mXmlText << "\t<obj code=\"monster" << StringUtils::ToString(what) << "\" x=\"" << pos.x + offsetX << "\" y=\"" << pos.y + offsetY << "\" rot=\"" << rot << "\" />\n";
     }
 
     return true;
@@ -723,7 +727,7 @@ bool CRandomMapGenerator::PlaceLoots()
         std::vector<size_t> mLootsToPlace;
 
         for (size_t i = mLoots.size() - 1; i != (size_t)-1; --i)
-            if (mLoots[i].level <= mDesc.level)
+            if (mLoots[i].minLevel <= mDesc.level)
             {
                 mLootsToPlace.push_back(i);
 
@@ -849,8 +853,15 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
 
     // potwory
     if (xml.GetChild(xml.GetRootNode(), "monsters"))
-        for (rapidxml::xml_node<>* n = xml.GetChild(xml.GetChild(xml.GetRootNode(), "monsters"), "monster"); n; n = xml.GetSibl(n, "monster"))
-            mMonsters.push_back(SPhysical(xml.GetString(n, "file"), xml.GetInt(n, "level")));
+        for (rapidxml::xml_node<>* n = xml.GetChild(xml.GetChild(xml.GetRootNode(), "monsters"), "monster"); n; n = xml.GetSibl(n, "monster")) {
+            int level = xml.GetInt(n, "level");
+            int minLevel = xml.GetInt(n, "minLevel");
+            int maxLevel = xml.GetInt(n, "maxLevel");
+            if (level != 0) {
+                minLevel = maxLevel = level;
+            }
+            mMonsters.push_back(SPhysical(xml.GetString(n, "file"), minLevel, maxLevel));
+        }
 
     // przedmioty
     if (xml.GetChild(xml.GetRootNode(), "loots"))

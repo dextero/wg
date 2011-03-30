@@ -17,8 +17,9 @@ struct SRandomMapDesc
     float obstaclesAreaPercent;
     unsigned int lairs, monsters, loots;
     unsigned int maxLivingMonsters, maxMonsters, level;
+    std::string nextMap;
 
-    SRandomMapDesc(): sizeX(0), sizeY(0), obstaclesAreaPercent(0.f), lairs(0), monsters(0), loots(0), maxLivingMonsters(0), maxMonsters(0), level(0) {}
+    SRandomMapDesc(): sizeX(0), sizeY(0), obstaclesAreaPercent(0.f), lairs(0), monsters(0), loots(0), maxLivingMonsters(0), maxMonsters(0), level(0), nextMap("@RANDOM") {}
 };
 
 
@@ -49,9 +50,13 @@ private:
     struct SPhysical
     {
         std::string file;
-        unsigned int level;
+        unsigned int minLevel;
+        unsigned int maxLevel;
 
-        SPhysical(std::string file, unsigned int level): file(file), level(level) {}
+        SPhysical(std::string file, unsigned int minLevel, unsigned int maxLevel): 
+            file(file), minLevel(minLevel), maxLevel(maxLevel) {}
+        SPhysical(std::string file, unsigned int level):
+            file(file), minLevel(level), maxLevel(level) {}
     };
 
     std::map<std::string, SPartSet> mPartSets;
