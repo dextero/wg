@@ -684,8 +684,9 @@ bool CRandomMapGenerator::PlaceMonsters()
     std::vector<size_t> filteredOut;
     for (size_t i = 0; i < mMonsters.size(); ++i) {
         fprintf(stderr, "monster: %s, %d, %d\n", mMonsters[i].file.c_str(), mMonsters[i].minLevel, mMonsters[i].maxLevel);
-        if (mMonsters[i].minLevel >= mDesc.level && mMonsters[i].maxLevel <= mDesc.level) {
+        if (mDesc.level >= mMonsters[i].minLevel && mDesc.level <= mMonsters[i].maxLevel) {
             mXmlText << "\t<objtype code=\"monster" << StringUtils::ToString(i) << "\" file=\"" << mMonsters[i].file << "\" />\n";
+            fprintf(stderr, "monster: %s, included\n", mMonsters[i].file.c_str());
             filteredOut.push_back(i);
         }
     }
@@ -707,11 +708,10 @@ bool CRandomMapGenerator::PlaceMonsters()
         int rot = rand() % 360;                                     // jeszcze obrot do tego
         // skala zadeklarowana w xmlu
 
-        
-
-        size_t what = filteredOut[gRand.Rnd(filteredOut.size())];
-        if (what >= filteredOut.size()) fprintf(stderr, "gRand.Rnd(max) zwraca z 0..max, a nie z 0..max-1\n");
+        size_t what = filteredOut[gRand.Rnd(filteredOut.size() - 1)];
         mXmlText << "\t<obj code=\"monster" << StringUtils::ToString(what) << "\" x=\"" << pos.x + offsetX << "\" y=\"" << pos.y + offsetY << "\" rot=\"" << rot << "\" />\n";
+        
+        fprintf(stderr, "spawned monster %s\n", mMonsters[what].file.c_str());
     }
 
     return true;

@@ -35,6 +35,9 @@ namespace Map{
         float mCurrentMapTimeElapsed;
 
         bool mHideLoadingScreen;
+
+        int mLevel; // ktora to juz plansza?
+
 	public:
 		void SetMapFromData(const void *data);
 
@@ -57,6 +60,8 @@ namespace Map{
 		void SetCurrentMapAsVisited();
         bool SetMap( const std::string &mapFile, bool loadCompleteMap, const std::string &region = "");
         void NextMap();
+        void SetLevel(int newLevel) { mLevel = newLevel; }
+        int GetLevel() { return mLevel; }
 
 		virtual void FrameStarted(float secondsPassed);
         virtual bool FramesDuringPause(EPauseVariant pv) { return pv == pvLogicOnly || pv == pvPauseMenu || pv == pvLoading; };

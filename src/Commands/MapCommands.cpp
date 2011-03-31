@@ -15,12 +15,14 @@ class CPhysical;
 using namespace Map;
 
 void CommandNextMap(size_t argc, const std::vector<std::wstring> &argv);
+void CommandSetMapLevel(size_t argc, const std::vector<std::wstring> &argv);
 
  // na koncu musi byc {0,0,0}, bo sie wszystko ***
 CCommands::SCommandPair MapCommands [] =
 {
     {L"load-map"                        , "$MAN_LOAD_MAP"           , CommandLoadMap },
     {L"next-map"                        , "$MAN_NEXT_MAP"           , CommandNextMap },
+    {L"set-map-level"                   , "$MAN_SET_MAP_LEVEL"      , CommandSetMapLevel },
     {L"preload-map"                     , "$MAN_PRELOAD_MAP"        , CommandPreloadMap },
 	{L"unload-map"                      , "$MAN_UNLOAD_MAP"         , CommandUnloadMap },
 	{L"print-scene-stats"				, "$MAN_PRINT_SCENE_STATS"  , CommandPrintSceneStats},
@@ -246,3 +248,15 @@ void CommandNextMap(size_t argc, const std::vector<std::wstring> &argv)
 {
     gMapManager.NextMap();
 }
+
+void CommandSetMapLevel(size_t argc, const std::vector<std::wstring> &argv)
+{
+    if (argc < 2) {
+        gConsole.Printf(L"usage: %ls newLevel", argv[0].c_str());
+        return;
+    }
+    int newLevel = StringUtils::Parse<int>(argv[1]);
+
+    gMapManager.SetLevel(newLevel);
+}
+
