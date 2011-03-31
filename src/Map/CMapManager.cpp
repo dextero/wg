@@ -208,6 +208,7 @@ namespace Map{
 
     void CMapManager::NextMap() {
         fprintf(stderr, "NextMap()\n");
+        mLevel++;
         int r = gRand.Rnd(0, 100);
         // todo: robic w katalogu usera:
         std::string filename = "data/maps/rnd" + StringUtils::ToString(r) + ".xml";
@@ -221,7 +222,7 @@ namespace Map{
         desc.monsters = gRand.Rnd(15, 30);
         desc.lairs = gRand.Rnd(0, 2);
         desc.loots = gRand.Rnd(3, 5);
-        desc.level = 0; // todo: inkrementowac
+        desc.level = mLevel; // todo: inkrementowac
         bool result = gRandomMapGenerator.GenerateRandomMap(filename, desc);
         fprintf(stderr, "Generating map %s: %s", filename.c_str(), (result ? "OK!" : "FAILED!"));
 

@@ -76,7 +76,7 @@ public:
     int Rnd() { return rand(); }
     /// Zwraca wartosci min..max
     int Rnd(unsigned min, unsigned max) { return min != max? (Rnd() % (max - min) + min) : max; }
-    /// Zwraca wartosc 0..max - tylko nie wiem czy wlacznie, czy wylacznie
+    /// Zwraca wartosc 0..max (wlacznie!)
     int Rnd(unsigned max) { return Rnd(0, max); }
 };
 #endif // not defined FAST_RAND
