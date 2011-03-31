@@ -26,7 +26,7 @@
 	<acceleration value="1.0" />
 	<count calc="1" />
 	<width calc="0.0" />
-	<bullet value="data/physicals/flameball.xml" />
+    <bullet value="data/physicals/bullets/flameball.xml" />
 	<casttime calc="0.05"/>
 	<delay calc="0.4" />
 	<cooldown calc="0.6"/>

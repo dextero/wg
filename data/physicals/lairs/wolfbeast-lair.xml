@@ -20,6 +20,6 @@
   <anim name="core/anim/flower-lair/spawn" type="attack" />
   <anim name="core/anim/flower-lair/death" type="death" />
   
-  <monster filename="data/physicals/wolfbeast.xml" />
+  <monster filename="data/physicals/monsters/wolfbeast.xml" />
 
 </root>

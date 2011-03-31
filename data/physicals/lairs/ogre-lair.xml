@@ -21,10 +21,8 @@
   <anim name="test/anim/lair/death" type="death" />
   
   <!-- to specjalnie, zeby zmienic rozklad losowan -->
-  <monster filename="data/physicals/ogre.xml" />
-  <monster filename="data/physicals/ogre.xml" />
-  <monster filename="data/physicals/ogre.xml" />
-  <monster filename="data/physicals/ogre-wife.xml" /> 
-  <monster filename="data/physicals/ogre-wife.xml" /> 
+  <monster filename="data/physicals/monsters/ogre.xml" />
+  <monster filename="data/physicals/monsters/ogre.xml" />
+  <monster filename="data/physicals/monsters/ogre-wife.xml" /> 
   
 </root>

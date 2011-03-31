@@ -15,7 +15,7 @@
 				<count value="2" />
 				<width value="30" />
 				<explode-on-fade value="1" />
-				<bullet value="data/physicals/black-blade.xml" />
+                <bullet value="data/physicals/bullets/black-blade.xml" />
 				<filter value="player,obstacle,wall" />
 				<target-chooser>
 					<filter value="player"/>
@@ -55,7 +55,7 @@
 					<time value="0.35"/>
 				</effect>
 				<effect type="console">
-					<text>spawn-physical data/physicals/scarab.xml $X $Y</text>
+                    <text>spawn-physical data/physicals/monsters/scarab.xml $X $Y</text>
 				</effect>
 			</effect>
 		</effect>

@@ -20,6 +20,6 @@
   <anim name="test/anim/lair/spawn" type="attack" />
   <anim name="test/anim/lair/death" type="death" />
   
-  <monster filename="data/physicals/shaggy.xml" />
+  <monster filename="data/physicals/monsters/shaggy.xml" />
   
 </root>

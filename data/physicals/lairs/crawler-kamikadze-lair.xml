@@ -20,5 +20,5 @@
   <anim name="core/anim/carapace-lair-red/spawn" type="attack" />
   <anim name="core/anim/carapace-lair-red/death" type="death" />
   
-  <monster filename="data/physicals/crawler-kamikadze.xml" />
+  <monster filename="data/physicals/monsters/crawler-kamikadze.xml" />
 </root>

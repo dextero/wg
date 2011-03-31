@@ -20,7 +20,7 @@
   <anim name="core/anim/grim-lair/spawn" type="attack" />
   <anim name="core/anim/grim-lair/death" type="death" />
   
-  <monster filename="data/physicals/skeleton-warrior.xml" />
-  <monster filename="data/physicals/skeleton-warrior.xml" />
-  <monster filename="data/physicals/skeleton-mage.xml" />
+  <monster filename="data/physicals/monsters/skeleton-warrior.xml" />
+  <monster filename="data/physicals/monsters/skeleton-warrior.xml" />
+  <monster filename="data/physicals/monsters/skeleton-mage.xml" />
 </root>

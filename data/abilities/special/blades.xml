@@ -32,7 +32,7 @@
 	<count calc="3 + int / 10" />
 	<width calc="30.0 + int / 10" />
 	<ttl calc="4 + int/10 + lvl" />
-	<bullet value="data/physicals/firespark.xml" />
+    <bullet value="data/physicals/bullets/firespark.xml" />
 	<casttime calc="0.02 + 0.08 / (castspeed + 1)" />
 	<delay calc="0.02 + 0.08 / (castspeed + 1)" />
 	<cooldown calc="0.5 + 0.22 / (castspeed + 1)" />

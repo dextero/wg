@@ -20,5 +20,5 @@
   <anim name="core/anim/flower-lair/spawn" type="attack" />
   <anim name="core/anim/flower-lair/death" type="death" />
   
-  <monster filename="data/physicals/cockroach.xml" />
+  <monster filename="data/physicals/monsters/cockroach.xml" />
 </root>

@@ -55,7 +55,7 @@
         <ttl value="0.8" />
         <count value="3" />
         <width value="360" />
-        <bullet value="data/physicals/acid-drop.xml" />
+        <bullet value="data/physicals/bullets/acid-drop.xml" />
       </emitter>
     </effect>
   </flight-effect>
@@ -79,7 +79,7 @@
   <range calc="12.0" />
   <speed value="3.0" />
   <ttl value="3.0" />
-  <bullet value="data/physicals/acidball.xml" />
+  <bullet value="data/physicals/bullets/acidball.xml" />
   <filter value="wall" />
   <casttime calc="0.04 + 0.16 / (castspeed + 1)" />
   <delay calc="0.06 + 0.24 / (castspeed + 1)" />

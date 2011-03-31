@@ -29,7 +29,7 @@
 	<count value="1" />
 	<width calc="0.5 " />
 	<ttl value="1.0" />
-	<bullet value="data/physicals/acid-drop.xml" />
+    <bullet value="data/physicals/bullets/acid-drop.xml" />
 	<casttime value="0.5" />
 	<delay value="0.1" />
 	<filter value="player,wall,door"/>

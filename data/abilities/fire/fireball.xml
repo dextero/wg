@@ -100,7 +100,7 @@
   <acceleration value="1.0" />
   <explode-on-fade value="1" />
   <ttl value="0.6" />
-  <bullet value="data/physicals/fireball.xml" />
+  <bullet value="data/physicals/bullets/fireball.xml" />
   <!--<bullet-angular-speed value="-1440" />-->
   <casttime calc="0.02 + 0.07 / (castspeed + 1.0)" />
   <delay calc="0.15 + 0.40 / (castspeed + 1.0)" />

@@ -18,10 +18,10 @@
 
   <anim name="core/anim/hard-lair/default" type="default" />
   <anim name="core/anim/hard-lair/spawn" type="attack" />
-  <anim name="core/anim/hard-lair/death" type="death" />
+  <anim name="core/anim/hard-lair/default" type="death" /> <!-- nie ma animacji smierci -->
   
-  <monster filename="data/physicals/redbaldy.xml" />
-  <monster filename="data/physicals/redhorny.xml" />
-  <monster filename="data/physicals/horny.xml" />
-  <monster filename="data/physicals/baldy.xml" />
+  <monster filename="data/physicals/monsters/redbaldy.xml" />
+  <monster filename="data/physicals/monsters/redhorny.xml" />
+  <monster filename="data/physicals/monsters/horny.xml" />
+  <monster filename="data/physicals/monsters/baldy.xml" />
 </root>

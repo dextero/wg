@@ -19,7 +19,7 @@
 			<count value="2" />
 			<width value="0" />
 			<explode-on-fade value="1" />
-			<bullet value="data/physicals/invisible-bullet.xml" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
 			<filter value="none" />
 
 			<flight-effect type="list" tag="firewall-blaze">
@@ -72,7 +72,7 @@
 			<count value="2" />
 			<width value="180" />
 			<explode-on-fade value="1" />
-			<bullet value="data/physicals/invisible-bullet.xml" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
 			<filter value="none" />
 
 			<flight-effect type="non-cumulative">
@@ -91,7 +91,7 @@
 			<count value="2" />
 			<width value="180" />
 			<explode-on-fade value="1" />
-			<bullet value="data/physicals/invisible-bullet.xml" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
 			<filter value="none" />
 
 			<flight-effect type="jump">
@@ -108,7 +108,7 @@
 			<count value="2" />
 			<width value="180" />
 			<explode-on-fade value="1" />
-			<bullet value="data/physicals/invisible-bullet.xml" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
 			<filter value="none" />
 
 			<flight-effect type="jump">
@@ -131,7 +131,7 @@
 	<count value="1" />
 	<width calc="0.0" />
 	<ttl value="0.5" />
-	<bullet value="data/physicals/invisible-bullet.xml" />
+    <bullet value="data/physicals/bullets/invisible-bullet.xml" />
 	<casttime calc="0.22 + 0.38 / (castspeed + 1.0)" />
 	<delay calc="0.02 + 0.38 / (castspeed + 1.0)" />
 	<cooldown calc="0.6 + 0.72 / (castspeed + 1.0)" />

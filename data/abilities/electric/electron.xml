@@ -42,7 +42,7 @@
 			<width calc="0*10*(lvl-1.0)" />
 			<ttl calc="1.0 + 0.2 * lvl" />
 			<explode-on-fade value="1" />
-			<bullet value="data/physicals/electron.xml" />
+            <bullet value="data/physicals/bullets/electron.xml" />
 			<extra-offset value="0.2"/>
 			<bullet-angular-speed value="180"/>
 		</emitter>

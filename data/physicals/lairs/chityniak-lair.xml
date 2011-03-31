@@ -19,7 +19,7 @@
   <anim name="test/anim/lair/spawn" type="attack" />
   <anim name="test/anim/lair/death" type="death" />
   
-  <monster filename="data/physicals/chityniak.xml" />
+  <monster filename="data/physicals/monsters/chityniak.xml" />
   
   <grouping-hint>2</grouping-hint>
 

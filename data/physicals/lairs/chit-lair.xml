@@ -20,7 +20,7 @@
   <anim name="core/anim/huge-lair/spawn" type="attack" />
   <anim name="core/anim/huge-lair/death" type="death" />
   
-  <monster filename="data/physicals/chityniak.xml" />
-  <monster filename="data/physicals/crawler.xml" />
+  <monster filename="data/physicals/monsters/chityniak.xml" />
+  <monster filename="data/physicals/monsters/crawler.xml" />
 
 </root>

@@ -41,7 +41,7 @@
         <acceleration value="5.0" />
 		<speed-fuzziness value="1.0"/>
 		<filter value="player,wall,obstacle"/>
-        <bullet value="data/physicals/engulfing-flame.xml" />
+        <bullet value="data/physicals/bullets/engulfing-flame.xml" />
       </emitter>
     </effect>
   </effect>

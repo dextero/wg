@@ -20,8 +20,8 @@
   <anim name="test/anim/lair/spawn" type="attack" />
   <anim name="test/anim/lair/death" type="death" />
   
-  <monster filename="data/physicals/rat.xml" />
-  <monster filename="data/physicals/rat.xml" />
-  <monster filename="data/physicals/rat-green.xml" />
+  <monster filename="data/physicals/monsters/rat.xml" />
+  <monster filename="data/physicals/monsters/rat.xml" />
+  <monster filename="data/physicals/monsters/rat-green.xml" />
 
 </root>

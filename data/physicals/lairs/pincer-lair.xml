@@ -20,6 +20,6 @@
   <anim name="core/anim/carapace-lair/spawn" type="attack" />
   <anim name="core/anim/carapace-lair/death" type="death" />
   
-  <monster filename="data/physicals/winged-pincer.xml" />
-  <monster filename="data/physicals/blind-pincer.xml" />
+  <monster filename="data/physicals/monsters/winged-pincer.xml" />
+  <monster filename="data/physicals/monsters/blind-pincer.xml" />
 </root>

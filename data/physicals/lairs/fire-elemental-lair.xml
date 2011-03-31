@@ -20,5 +20,5 @@
   <anim name="core/anim/hard-lair-red/spawn" type="attack" />
   <anim name="core/anim/hard-lair-red/death" type="death" />
   
-  <monster filename="data/physicals/fire-elemental.xml" />
+  <monster filename="data/physicals/monsters/fire-elemental.xml" />
 </root>

@@ -56,7 +56,7 @@
         <ttl value="0.8" />
         <count value="6" />
         <width value="60" />
-        <bullet value="data/physicals/acidball.xml" />
+        <bullet value="data/physicals/bullets/acidball.xml" />
       </emitter>
     </effect>
   </effect>

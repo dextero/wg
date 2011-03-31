@@ -12,7 +12,7 @@
         <ttl value="20.0f"/>
         <min-radius value="1.0f"/>
         <count value="2"/>
-        <template value="data/physicals/warlock.xml"/>
+        <template value="data/physicals/monsters/warlock.xml"/>
       </summoner>
     </effect>
   </effect>

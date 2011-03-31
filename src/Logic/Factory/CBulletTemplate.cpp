@@ -64,12 +64,13 @@ CBullet* CBulletTemplate::Create(std::wstring id)
 	{
 		int imageNo = gRand.Rnd( 0, static_cast<unsigned>(mImages.size()) );
 		bullet->SetImage( mImages[imageNo] );
-	} else {
+	} else if (!mAnimation) {
 		bullet->SetUseDisplayable(false);
 	}
 
-	if (mAnimation)
+	if (mAnimation) {
 		bullet->SetAnimation(mAnimation);
+    }
 
 	if ( bullet->GetDisplayable() )
 		bullet->GetDisplayable()->SetScale( scale, scale );

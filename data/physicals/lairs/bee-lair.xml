@@ -20,8 +20,8 @@
   <anim name="core/anim/well/default" type="attack" />
   <!-- <anim name="core/anim/well/default" type="death" /> tox, 9jul - bo chce, zeby znikaly po smierci-->
   
-  <monster filename="data/physicals/bee.xml" />
-  <monster filename="data/physicals/hornet.xml" />
+  <monster filename="data/physicals/monsters/bee.xml" />
+  <monster filename="data/physicals/monsters/hornet.xml" />
   
 
 </root>

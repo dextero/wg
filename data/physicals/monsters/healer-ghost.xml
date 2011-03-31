@@ -1,0 +1,63 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="$BESTIARY_HEALER_GHOST_NAME" />
+    <desc value="$BESTIARY_HEALER_GHOST_DESC" />
+  </bestiary>
+  <genre>healer-ghost</genre>
+
+  <speed min="1.2" max="1.2" />
+  <strength min="5.0" max="10.0" />
+  <turnspeed min="90.0" max="120.0" />
+  <shadow-offset min="0.12" max="0.12" />
+
+  <maxhp min="20.0" max="20.0" />
+  <maxmana min="50.0" max="50.0" />
+  
+  <physresist min="100.0" max="100.0"/>
+  <fireresist min="100.0" max="100.0"/>
+  <iceresist min="100.0" max="100.0"/>
+  <lightningresist min="100.0" max="100.0"/>
+  <poisonresist min="100.0" max="100.0"/>
+  
+  <xp min="0.0" max="0.0" />
+
+  <scale min="0.85" max="0.9" />
+  <radius min="0.425" max="0.5" />
+  <mass min="3.0" max="3.0" />  
+  <color r="0.5" g="0.8" b="1.0" a="0.5" />
+  
+  <anim name="core/anim/warlock/stand" type="default" />
+  <anim name="core/anim/warlock/move" type="move" />
+  <anim name="core/anim/warlock/cast-foreward" type="attack" />
+  <anim name="core/anim/warlock/death" type="death" />
+  <anim name="core/anim/warlock/cast-onehand" type="2" />
+
+  <ai name="ranged-caster" />
+
+  <ability name="data/abilities/monster/healer-ghost-attack.xml" default="1" />
+
+  <sound type="damaged" filename="data/sounds/EL/pain-male01.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/pain-male02.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/pain-male04.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/pain-male05.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/pain-male06.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain1.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain2.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain3.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain4.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain5.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain6.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain7.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain8.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain9.ogg" />
+  <sound type="death" filename="data/sounds/EL/pain-male03.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_11.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_13.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_14.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_15.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_16.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_17.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_18.ogg" />
+  
+</root>

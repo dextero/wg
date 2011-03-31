@@ -1,6 +1,0 @@
-<root type="bullet">
-  <scale min="0.25" max="0.25" />
-  <radius min="0.01" max="0.01" />
- 
-  <image filename="data/physicals/freezebomb-unarmed.png" />
-</root>

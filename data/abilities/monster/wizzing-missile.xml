@@ -17,7 +17,7 @@
 	<manacost value="0" />
 	<range calc="4.0 " />
 	<speed calc="5.0" />
-	<bullet value="data/physicals/wizzing-missile.xml" />
+    <bullet value="data/physicals/bullets/wizzing-missile.xml" />
 	<casttime calc="0.3"/>
 	<delay calc="0.3" />
 	<cooldown calc="0.6"/>

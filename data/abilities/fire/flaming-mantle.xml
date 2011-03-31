@@ -80,7 +80,7 @@
 					<count value="1" />
 					<width value="360" />
 					<explode-on-fade value="1" />
-					<bullet value="data/physicals/firespark.xml" />
+                    <bullet value="data/physicals/bullets/firespark.xml" />
 					<filter value="hostiles,wall,obstacle" />
 					<time-for-tracking calc="12.0"/>
 					<turning-speed calc="720.0"/>

@@ -12,7 +12,7 @@
         <ttl value="20.0f"/>
         <min-radius value="1.0f"/>
         <count value="5"/>
-        <template value="data/physicals/crawler-kamikadze.xml"/>
+        <template value="data/physicals/monsters/crawler-kamikadze.xml"/>
       </summoner>
     </effect>
   </effect>

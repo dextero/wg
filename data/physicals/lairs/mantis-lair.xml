@@ -20,5 +20,5 @@
   <anim name="core/anim/huge-lair/spawn" type="attack" />
   <anim name="core/anim/huge-lair/death" type="death" />
   
-  <monster filename="data/physicals/mantis.xml" />
+  <monster filename="data/physicals/monsters/mantis.xml" />
 </root>

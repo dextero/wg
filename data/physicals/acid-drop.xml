@@ -1,7 +1,0 @@
-<root type="bullet">
-  <scale min="0.1" max="0.2" />
-  <radius min="0.05" max="0.1" />
- 
-  <image filename="data/physicals/acid-drop.png" />
-  <destroyEffect name="explosion" />
-</root>

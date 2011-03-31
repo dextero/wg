@@ -20,7 +20,7 @@
   <anim name="core/anim/flower-lair-green/spawn" type="attack" />
   <anim name="core/anim/flower-lair-green/death" type="death" />
   
-  <monster filename="data/physicals/early.xml" />
+  <monster filename="data/physicals/monsters/early.xml" />
   
 
 </root>

@@ -20,5 +20,5 @@
   <anim name="core/anim/flower-lair-green/spawn" type="attack" />
   <anim name="core/anim/flower-lair-green/death" type="death" />
   
-  <monster filename="data/physicals/troll.xml" />
+  <monster filename="data/physicals/monsters/troll.xml" />
 </root>

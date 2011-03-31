@@ -71,7 +71,7 @@
 	<count calc="min(lvl,3)" />
 	<width calc="0.5 + min(lvl-1,3)*12" />
 	<ttl calc="0.6 + 0.2 * lvl" />
-	<bullet value="data/physicals/flaming-arrow.xml" />
+    <bullet value="data/physicals/bullets/flaming-arrow.xml" />
 	<casttime calc="0.03" />
 	<delay calc="0.02" />
 	<cooldown value="0.6 + (0.45 / (castspeed + 1.0))" />
