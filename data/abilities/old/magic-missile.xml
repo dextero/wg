@@ -34,7 +34,7 @@
 						<name value="fire-missile-flight"/>
 					</effect>
 				</flight-effect>
-				<bullet value="data/physicals/magic-missile.xml" />
+                <bullet value="data/physicals/bullets/magic-missile.xml" />
 				<range value="28.0 + int / 10" />
 				<acceleration value="1.0" />
 				<speed calc="6.0" />

@@ -73,7 +73,7 @@
   <acceleration value="1.2" />
   <explode-on-fade value="1" />
   <ttl value="3.0" />
-  <bullet value="data/physicals/iceball.xml" />
+  <bullet value="data/physicals/bullets/iceball.xml" />
   <filter value="player" />
   <bullet-angular-speed value="-720" />
   <casttime value="0.8" />

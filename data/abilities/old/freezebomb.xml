@@ -70,7 +70,7 @@
 				<count value="8" />
 				<width value="360" />
 				<acceleration value="1.0" />
-				<bullet value="data/physicals/icicle.xml" />
+                <bullet value="data/physicals/bullets/icicle.xml" />
 			</emitter>
 		  </effect>
         </explosion>
@@ -82,7 +82,7 @@
         <width value="0" />
         <acceleration value="0.0" />
 		<explode-on-fade value="1" />
-        <bullet value="data/physicals/freezebomb-armed.xml" />
+        <bullet value="data/physicals/bullets/freezebomb-armed.xml" />
       </emitter>
     </effect>
   </flight-effect>
@@ -92,7 +92,7 @@
   <speed value="10.0" />
   <acceleration value="-6.5"/>
   <ttl value="1.5" />
-  <bullet value="data/physicals/freezebomb-unarmed.xml" />
+  <bullet value="data/physicals/bullets/freezebomb-unarmed.xml" />
   <bullet-angular-speed value="360" />
   <casttime value="0.1" />
   <delay value="0.28" />

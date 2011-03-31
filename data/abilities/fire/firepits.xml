@@ -58,7 +58,7 @@
 	<count value="2" />
 	<width calc="30.0" />
 	<ttl value="8.0" />
-	<bullet value="data/physicals/invisible-bullet.xml" />
+    <bullet value="data/physicals/bullets/invisible-bullet.xml" />
 	<casttime calc="0.02 + 0.08 / (castspeed + 1.0)" />
 	<delay calc="0.38 + 0.32 / (castspeed + 1.0)" />
 	<cooldown calc="0.6 + 0.22 / (castspeed + 1.0)" />

@@ -29,7 +29,7 @@
         <ttl value="4.0" />
         <count value="1" />
         <width value="360" />
-        <bullet value="data/physicals/invisible-bullet.xml" />
+        <bullet value="data/physicals/bullets/invisible-bullet.xml" />
         <filter value="trap" /> <!-- tox, 26 sierpnia: "trap" bo nie ma filtru "nothing" -->
 
         <flight-effect type="recastable">
@@ -67,7 +67,7 @@
   <acceleration value="0.0" />
   <explode-on-fade value="1" />
   <ttl value="1.6" />
-  <bullet value="data/physicals/poison.xml" />
+  <bullet value="data/physicals/bullets/poison.xml" />
   <bullet-angular-speed value="-1440" />
   <casttime value="0.1" />
   <delay value="0.28" />

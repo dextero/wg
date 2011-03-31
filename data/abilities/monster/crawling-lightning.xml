@@ -55,7 +55,7 @@
 				<count value="1" />
 				<width value="0" />
 				<explode-on-fade value="1" />
-				<bullet value="data/physicals/invisible-bullet.xml" />
+                <bullet value="data/physicals/bullets/invisible-bullet.xml" />
 				<filter value="none" />
 
 				<flight-effect type="list">
@@ -80,7 +80,7 @@
 										<count value="1" />
 										<width value="0" />
 										<explode-on-fade value="1" />
-										<bullet value="data/physicals/invisible-bullet.xml" />
+                                        <bullet value="data/physicals/bullets/invisible-bullet.xml" />
 										<filter value="none" />
 
 										<flight-effect type="delayed">
@@ -104,7 +104,7 @@
 															<count value="2" />
 															<width value="0" />
 															<explode-on-fade value="1" />
-															<bullet value="data/physicals/invisible-bullet.xml" />
+                                                            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
 															<filter value="none" />
 
 															<flight-effect type="delayed">

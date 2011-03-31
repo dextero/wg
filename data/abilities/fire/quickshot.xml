@@ -64,7 +64,7 @@
         <width value="12" />
         <acceleration value="5.0" />
 		<speed-fuzziness value="1.0"/>
-        <bullet value="data/physicals/flaming-arrow.xml" />
+        <bullet value="data/physicals/bullets/flaming-arrow.xml" />
       </emitter>
     </effect>
   </effect>

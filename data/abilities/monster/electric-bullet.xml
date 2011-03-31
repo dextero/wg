@@ -17,7 +17,7 @@
 	<manacost value="0" />
 	<range calc="4.0 " />
 	<speed calc="12.0" />
-	<bullet value="data/physicals/smallspark.xml" />
+    <bullet value="data/physicals/bullets/smallspark.xml" />
 	<casttime calc="0.05"/>
 	<delay calc="0.4" />
 	<cooldown calc="0.6"/>

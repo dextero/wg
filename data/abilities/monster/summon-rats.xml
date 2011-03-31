@@ -11,7 +11,7 @@
         <ttl value="20.0f"/>
         <min-radius value="1.0f"/>
         <count value="3"/>
-        <template value="data/physicals/rat.xml"/>
+        <template value="data/physicals/monsters/rat.xml"/>
       </summoner>
     </effect>
   </effect>

@@ -84,7 +84,7 @@
     <acceleration value="1.0" />
     <explode-on-fade value="1" />
     <ttl value="3.0" />
-    <bullet value="data/physicals/ball-lightning.xml" />
+    <bullet value="data/physicals/bullets/ball-lightning.xml" />
     <filter value="wall" />
     <bullet-angular-speed value="-1440" />
     <casttime calc="0.08 + 0.36 / (castspeed + 1)" />

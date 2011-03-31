@@ -14,7 +14,7 @@
         <ttl value="20.0f"/>
         <min-radius value="1.0f"/>
         <count calc="lvl"/>
-        <template value="data/physicals/healer-ghost.xml"/>
+        <template value="data/physicals/monsters/healer-ghost.xml"/>
       </summoner>
     </effect>
   </effect>

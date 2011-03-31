@@ -1,0 +1,7 @@
+<root type="bullet">
+  <scale min="0.32" max="0.34" />
+  <radius min="0.2" max="0.2" />
+ 
+  <image filename="data/physicals/bullets/iceball.png" />
+  <effect name="ice" />
+</root>

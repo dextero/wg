@@ -20,42 +20,46 @@
     <lair file="data/physicals/lairs/shaggy-lair.xml" level="0" />
   </lairs>
   <monsters>
-    <monster file="data/physicals/rat.xml" minLevel="1" maxLevel="2" />
-    <monster file="data/physicals/rat-green.xml" level="1" />
-    <monster file="data/physicals/timberman.xml" level="2" />
-    <monster file="data/physicals/baldy.xml" level="3" />
-    <monster file="data/physicals/black-blade.xml" level="4" />
-    <monster file="data/physicals/blind-pincer.xml" level="5" />
-    <monster file="data/physicals/carrot.xml" level="6" />
-    <monster file="data/physicals/chityniak-plwacz.xml" level="7" />
-    <monster file="data/physicals/chityniak.xml" level="8" />
-    <monster file="data/physicals/cockroach.xml" level="9" />
-    <monster file="data/physicals/crawler-kamikadze.xml" level="10" />
-    <monster file="data/physicals/crawler.xml" level="11" />
-    <monster file="data/physicals/early.xml" level="12" />
-    <monster file="data/physicals/earwigle.xml" level="13" />
-    <monster file="data/physicals/entangler.xml" level="14" />
-    <monster file="data/physicals/eyebrain.xml" level="15" />
-    <monster file="data/physicals/flying-fish.xml" level="16" />
-    <monster file="data/physicals/frost-demon.xml" level="17" />
-    <monster file="data/physicals/hornet.xml" level="18" />
-    <monster file="data/physicals/horny.xml" level="19" />
-    <monster file="data/physicals/mantis.xml" level="20" />
-    <monster file="data/physicals/minelayer.xml" level="21" />
-    <monster file="data/physicals/redbaldy.xml" level="22" />
-    <monster file="data/physicals/redhorny.xml" level="23" />
-    <monster file="data/physicals/scarab.xml" level="24" />
-    <monster file="data/physicals/skeleton-mage.xml" level="25" />
-    <monster file="data/physicals/skeleton-warrior.xml" level="26" />
-    <monster file="data/physicals/surger.xml" level="27" />
-    <monster file="data/physicals/timberman-with-axe.xml" level="28" />
-    <monster file="data/physicals/timberman-with-knife.xml" level="29" />
-    <monster file="data/physicals/troll.xml" level="30" />
-    <monster file="data/physicals/warlock.xml" level="31" />
-    <monster file="data/physicals/winged-pincer.xml" level="32" />
-    <monster file="data/physicals/wolfbeast.xml" level="33" />
-    <monster file="data/physicals/bee.xml" level="34" />
-    <monster file="data/physicals/shaggy.xml" level="35" />
+    <monster file="data/physicals/monsters/baldy.xml" level="1" />
+    <monster file="data/physicals/monsters/bee.xml" level="2" />
+    <monster file="data/physicals/monsters/blind-pincer.xml" level="3" />
+    <monster file="data/physicals/monsters/easter-eggs/carrot.xml" level="4" />
+    <monster file="data/physicals/monsters/chityniak-plwacz.xml" level="5" />
+    <monster file="data/physicals/monsters/chityniak.xml" level="6" />
+    <monster file="data/physicals/monsters/cockroach.xml" level="7" />
+    <monster file="data/physicals/monsters/easter-eggs/cow.xml" level="8" />
+    <monster file="data/physicals/monsters/crawler-kamikadze.xml" level="9" />
+    <monster file="data/physicals/monsters/demon.xml" level="10" />
+    <monster file="data/physicals/monsters/early.xml" level="11" />
+    <monster file="data/physicals/monsters/earwigle.xml" level="12" />
+    <monster file="data/physicals/monsters/entangler.xml" level="13" />
+    <monster file="data/physicals/monsters/eyebrain.xml" level="14" />
+    <monster file="data/physicals/monsters/fire-elemental.xml" level="15" />
+    <monster file="data/physicals/monsters/flying-fish.xml" level="16" />
+    <monster file="data/physicals/monsters/frost-demon.xml" level="17" />
+    <monster file="data/physicals/monsters/healer-ghost.xml" level="18" />
+    <monster file="data/physicals/monsters/hornet.xml" level="19" />
+    <monster file="data/physicals/monsters/horny.xml" level="20" />
+    <monster file="data/physicals/monsters/lion-turret.xml" level="21" />
+    <monster file="data/physicals/monsters/mantis.xml" level="22" />
+    <monster file="data/physicals/monsters/minelayer.xml" level="23" />
+    <monster file="data/physicals/monsters/ogre-wife.xml" level="24" />
+    <monster file="data/physicals/monsters/ogre.xml" level="25" />
+    <monster file="data/physicals/monsters/rat-green.xml" level="26" />
+    <monster file="data/physicals/monsters/rat.xml" level="27" />
+    <monster file="data/physicals/monsters/redbaldy.xml" level="28" />
+    <monster file="data/physicals/monsters/redhorny.xml" level="29" />
+    <monster file="data/physicals/monsters/scarab.xml" level="30" />
+    <monster file="data/physicals/monsters/shaggy.xml" level="31" />
+    <monster file="data/physicals/monsters/skeleton-mage.xml" level="32" />
+    <monster file="data/physicals/monsters/skeleton-warrior.xml" level="33" />
+    <monster file="data/physicals/monsters/surger.xml" level="34" />
+    <monster file="data/physicals/monsters/timberman-with-axe.xml" level="35" />
+    <monster file="data/physicals/monsters/timberman-with-knife.xml" level="36" />
+    <monster file="data/physicals/monsters/troll.xml" level="37" />
+    <monster file="data/physicals/monsters/warlock.xml" level="38" />
+    <monster file="data/physicals/monsters/winged-pincer.xml" level="39" />
+    <monster file="data/physicals/monsters/wolfbeast.xml" level="40" />
   </monsters>
   <loots>
     <!-- hp -->

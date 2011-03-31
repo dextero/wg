@@ -45,7 +45,7 @@
 	<width value="0" />
 	<ttl calc="3.0" />
 	<explode-on-fade value="1" />
-	<bullet value="data/physicals/electron.xml" />
+    <bullet value="data/physicals/bullets/electron.xml" />
 	<extra-offset value="0.2"/>
 	<bullet-angular-speed value="820"/>
 	<filter value="wall" />

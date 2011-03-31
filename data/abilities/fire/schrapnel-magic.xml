@@ -13,7 +13,7 @@
 		<count calc="4+lvl" />
 		<width value="360" />
 		<explode-on-fade value="1" />
-		<bullet value="data/physicals/invisible-bullet.xml" />
+        <bullet value="data/physicals/bullets/invisible-bullet.xml" />
 		<filter value="none" />
 
 		<flight-effect type="non-cumulative">

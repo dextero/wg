@@ -20,7 +20,7 @@
   <anim name="core/anim/carapace-lair-green/spawn" type="attack" />
   <anim name="core/anim/carapace-lair-green/death" type="death" />
   
-  <monster filename="data/physicals/surger.xml" />
-  <monster filename="data/physicals/surger.xml" />
-  <monster filename="data/physicals/entangler.xml" />
+  <monster filename="data/physicals/monsters/surger.xml" />
+  <monster filename="data/physicals/monsters/surger.xml" />
+  <monster filename="data/physicals/monsters/entangler.xml" />
 </root>

@@ -1,0 +1,6 @@
+<root type="bullet">
+  <scale min="0.2" max="0.2" />
+  <radius min="0.15" max="0.15" />
+ 
+  <anim name="core/anim/bullet/black-blade" />
+</root>

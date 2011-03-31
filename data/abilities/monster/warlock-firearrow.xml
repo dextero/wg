@@ -25,7 +25,7 @@
 	<count value="1" />
 	<width calc="0.5 + (lvl-1)" />
 	<ttl value="1.0" />
-	<bullet value="data/physicals/flaming-arrow.xml" />
+    <bullet value="data/physicals/bullets/flaming-arrow.xml" />
 	<casttime value="0.5" />
 	<delay value="0.1" />
 	<filter value="player,wall,door"/>

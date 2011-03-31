@@ -55,7 +55,7 @@
 			<count value="1" />
 			<width value="360" />
 			<explode-on-fade value="1" />
-			<bullet value="data/physicals/invisible-bullet.xml" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
 			<filter value="none" />
 
 			<flight-effect type="list">
@@ -106,7 +106,7 @@
 						<count value="1" />
 						<width value="360" />
 						<explode-on-fade value="1" />
-						<bullet value="data/physicals/electron.xml" />
+                        <bullet value="data/physicals/bullets/electron.xml" />
 						<filter value="hostiles,wall,obstacle" />
 						<time-for-tracking calc="12.0"/>
 						<turning-speed calc="720.0"/>
@@ -145,7 +145,7 @@
   <ttl value="3.0" />
   <count calc="min(3, lvl + 1)" />
   <width calc="120" />
-  <bullet value="data/physicals/invisible-bullet.xml" />
+  <bullet value="data/physicals/bullets/invisible-bullet.xml" />
   <filter value="wall" />
   <bullet-angular-speed value="-1440" />
   <casttime calc="0.84 + 0.86 / (castspeed + 1)" />

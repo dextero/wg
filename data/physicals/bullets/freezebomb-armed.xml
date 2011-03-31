@@ -1,0 +1,6 @@
+<root type="bullet">
+  <scale min="0.35" max="0.35" />
+  <radius min="0.18" max="0.18" />
+ 
+  <image filename="data/physicals/bullets/freezebomb-armed.png" />
+</root>

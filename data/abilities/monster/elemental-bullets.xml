@@ -20,7 +20,7 @@
 	<acceleration value="1.0" />
 	<count calc="5" />
 	<width calc="30.0" />
-	<bullet value="data/physicals/firespark.xml" />
+    <bullet value="data/physicals/bullets/firespark.xml" />
 	<casttime calc="0.05"/>
 	<delay calc="0.4" />
 	<cooldown calc="0.6"/>

@@ -45,7 +45,7 @@
 	<explode-on-fade value="1" />
 	<count calc="10+2*lvl" />
 	<width calc="30.0 + 10 * lvl" />
-	<bullet value="data/physicals/firespark.xml" />
+    <bullet value="data/physicals/bullets/firespark.xml" />
 	<casttime calc="0.02 + 0.08 / (1 + castspeed)" />
 	<delay calc="0.02 + 0.38 / (1 + castspeed)" />
 	<cooldown calc="0.06 + 0.22 / (1 + castspeed)" />

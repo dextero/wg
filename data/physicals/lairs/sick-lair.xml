@@ -20,5 +20,5 @@
   <anim name="core/anim/sick-lair/spawn" type="attack" />
   <anim name="core/anim/sick-lair/death" type="death" />
   
-  <monster filename="data/physicals/flying-fish.xml" />
+  <monster filename="data/physicals/monsters/flying-fish.xml" />
 </root>
