@@ -20,7 +20,7 @@
     <lair file="data/physicals/lairs/shaggy-lair.xml" level="0" />
   </lairs>
   <monsters>
-    <monster file="data/physicals/monsters/baldy.xml" level="1" />
+    <monster file="data/physicals/monsters/baldy.xml" level="2" />
     <monster file="data/physicals/monsters/bee.xml" level="2" />
     <monster file="data/physicals/monsters/blind-pincer.xml" level="3" />
     <monster file="data/physicals/monsters/easter-eggs/carrot.xml" level="4" />
@@ -44,7 +44,7 @@
     <monster file="data/physicals/monsters/mantis.xml" level="22" />
     <monster file="data/physicals/monsters/minelayer.xml" level="23" />
     <monster file="data/physicals/monsters/ogre-wife.xml" level="24" />
-    <monster file="data/physicals/monsters/ogre.xml" level="25" />
+    <monster file="data/physicals/monsters/ogre.xml" level="1" />
     <monster file="data/physicals/monsters/rat-green.xml" level="26" />
     <monster file="data/physicals/monsters/rat.xml" level="27" />
     <monster file="data/physicals/monsters/redbaldy.xml" level="28" />

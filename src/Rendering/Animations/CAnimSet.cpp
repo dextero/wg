@@ -3,60 +3,58 @@
 #include "CAnimationManager.h"
 #include "SAnimation.h"
 
-std::string CAnimSet::mAnimClassNames[] = { "default", "move","attack", "death", "strafe" };
-int CAnimSet::mAnimClassNumber = sizeof(CAnimSet::mAnimClassNames) / sizeof(std::string);
+//std::string CAnimSet::mAnimClassNames[] = { "default", "move","attack", "death", "strafe" };
+//int CAnimSet::mAnimClassNumber = sizeof(CAnimSet::mAnimClassNames) / sizeof(std::string);
 
-CAnimSet::CAnimSet(){
-    mAnims.resize(mAnimClassNumber);
+std::string CAnimSet::acDefault = "default";
+std::string CAnimSet::acMove = "move";
+std::string CAnimSet::acAttack = "attack";
+std::string CAnimSet::acDeath = "death";
+std::string CAnimSet::acStrafe = "strafe";
+
+CAnimSet::CAnimSet() {
 }
 
-int CAnimSet::ParseAnimClass(std::string &input){
-    // najpierw domyslne
-    for (int i = 0; i < mAnimClassNumber; i++) 
-        if (mAnimClassNames[i]==input)
-            return i;
-    // a moze to liczba?
-    int tmp;
-    if (sscanf(input.c_str(),"%d",&tmp) == 1)
-        return mAnimClassNumber+tmp;
-    // nie to nie
-    return -1;
+void CAnimSet::SetAnimation(const std::string & ac, SAnimation *animPtr) {
+    if (ac == "") return;
+    if (animPtr == NULL) return;
+    CNameAnimPair nap(animPtr->name);
+    nap.SetAnim(animPtr);
+    mAnims[ac] = nap;
 }
 
-void CAnimSet::SetAnimation(int ac, SAnimation *animPtr){
-    if ((ac < 0) || (animPtr == NULL)) return;
-    if ((unsigned int) ac >= mAnims.size()) mAnims.resize(ac+1);
-    mAnims[ac] = CNameAnimPair(animPtr->name);
-    mAnims[ac].SetAnim(animPtr);
-}
-
-void CAnimSet::SetAnimation(int ac, std::string &animName){
-    if (ac < 0) return;
-    if ((unsigned int) ac >= mAnims.size()) mAnims.resize(ac+1);
+void CAnimSet::SetAnimation(const std::string & ac, const std::string & animName){
+    if (ac == "") return;
     mAnims[ac] = CNameAnimPair(animName);
 }
 
-std::string *CAnimSet::GetAnimName(int ac){
-    if ((ac < 0) || ((unsigned int) ac >= mAnims.size()))
-        return NULL;
-    return &mAnims[ac].name;
+std::string emptyString = "";
+const std::string & CAnimSet::GetAnimName(const std::string & ac) {
+    if (ac == "") return emptyString;
+    NameAnimPairMap::iterator i = mAnims.find(ac);
+    if (i == mAnims.end()) {
+        return emptyString;
+    }
+    return i->second.name;
 }
 
-SAnimation *CAnimSet::GetAnim(int ac){
-    if ((ac < 0) || ((unsigned int) ac >= mAnims.size()))
+SAnimation * CAnimSet::GetAnim(const std::string & ac) {
+    NameAnimPairMap::iterator i = mAnims.find(ac);
+    if (i == mAnims.end()) {
         return NULL;
-    if (!mAnims[ac].isReady){
-        mAnims[ac].SetAnim(gAnimationManager.GetAnimation(mAnims[ac].name));
     }
-    return mAnims[ac].anim;
+
+    if (!i->second.isReady) {
+        i->second.SetAnim(gAnimationManager.GetAnimation(i->second.name));
+    }
+    return i->second.anim;
 }
 
 void CAnimSet::Parse(CXml &xml,rapidxml::xml_node<> *root){
     std::string tmp;
-    for (xml_node<> *node=xml.GetChild(root,"anim"); node; node=xml.GetSibl(node,"anim") ){
-        tmp = xml.GetString(node,"type");
-        int ac = ParseAnimClass(tmp);
-        if (ac < 0) continue;
+    for (xml_node<> *node=xml.GetChild(root,"anim"); node; node=xml.GetSibl(node,"anim")) {
+        std::string ac = xml.GetString(node,"type");
+        if (ac == "") continue;
         tmp = xml.GetString(node,"name");
         SetAnimation(ac,tmp);
     }

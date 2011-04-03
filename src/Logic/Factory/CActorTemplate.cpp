@@ -67,12 +67,18 @@ bool CActorTemplate::Load(CXml &xml)
         mAnimations = NULL;
 
     std::string tmp;
+    bool hasDefaultAbilityAllready = false;
     for ( node=xml.GetChild(0,"ability"); node; node=xml.GetSibl(node,"ability") ){
         mAbilities.push_back(gResourceManager.GetAbility (xml.GetString(node,"name")));
         tmp = xml.GetString(node,"anim");
-        mAbilityAnims.push_back(CAnimSet::ParseAnimClass(tmp));
-        if (xml.GetInt(node,"default"))
+        mAbilityAnims.push_back(tmp);
+        if (xml.GetInt(node,"default")) {
+            if (hasDefaultAbilityAllready) {
+                fprintf(stderr, "CActorTemplate, warning: template %s has multiple default abilities\n", xml.GetFilename().c_str());
+            }
             mDefaultAbility = (int)mAbilities.size()-1;
+            hasDefaultAbilityAllready = true;
+        }
     }
 
 	for ( node=xml.GetChild(0,"sound"); node; node=xml.GetSibl(node,"sound") )

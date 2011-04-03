@@ -109,27 +109,7 @@ CPlayer* CPlayerTemplate::Create(std::wstring id)
 
 	player->SetCategory(PHYSICAL_PLAYER);
     Fill(player,random);
-    player->GetAbilityPerformer().Bind(new std::vector<SAbilityInstance>(), new std::vector<int>());
-
-    if (ToxicUtils::isGameInCrimsonMode) {
-        CAbility * ability = NULL;
-        ability = gResourceManager.GetAbility("data/player/firearrow.xml");
-        ability->trigger = "a";
-        SAbilityInstance ai(ability,1);
-        player->GetAbilityPerformer().AddAbility(ai,/*an->animCode o cholera, skad to wziac? dam jeden moze bedzie pasowac:*/ 1 );
-//        ability = gResourceManager.GetAbility("data/player/freezebomb.xml");
-//        ability->trigger = "b";
-//        ai = SAbilityInstance(ability,1);
-//        player->GetAbilityPerformer().AddAbility(ai,/*an->animCode o cholera, skad to wziac? dam jeden moze bedzie pasowac:*/ 2 );
-//        ability = gResourceManager.GetAbility("data/player/entangle.xml");
-//        ability->trigger = "c";
-//        ai = SAbilityInstance(ability,8);
-//        player->GetAbilityPerformer().AddAbility(ai,/*an->animCode o cholera, skad to wziac? dam jeden moze bedzie pasowac:*/ 3 );
-//        ability = gResourceManager.GetAbility("data/player/meditation.xml");
-//        ability->trigger = "d";
-//        ai = SAbilityInstance(ability,4);
-//        player->GetAbilityPerformer().AddAbility(ai,/*an->animCode o cholera, skad to wziac? dam jeden moze bedzie pasowac:*/ 4 );
-    } 
+    player->GetAbilityPerformer().Bind(new std::vector<SAbilityInstance>(), new std::vector<std::string>());
 
     for (unsigned int i = 0; i < mAbilities.size(); i++)
         player->GetAbilityPerformer().AddAbility(mAbilities[i],mAbilityAnims[i]);

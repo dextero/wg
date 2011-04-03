@@ -33,7 +33,7 @@ public:
 protected:
     CActor *mAttached;
     CAppliedEffectContainer *mAppEffectContainer;
-    int mAbilityAnim;
+    std::string mAbilityAnim;
     EActorAbilityState mAbilityState;
     SAbilityInstance *mActiveAbility;
     int mActiveAbilityIndex;
@@ -56,7 +56,7 @@ public:
 	// wyciaga zapamietany kontekst dla umiejki lub tworzy nowy
 	ExecutionContextPtr GetContext(int idx);
 
-    inline int GetAbilityAnim(){ return mAbilityAnim; }
+    inline const std::string & GetAbilityAnim(){ return mAbilityAnim; }
 
     inline EActorAbilityState GetAbilityState(){ return mAbilityState; }
     inline SAbilityInstance *GetActiveAbility(){ return mActiveAbility; }
@@ -71,15 +71,12 @@ public:
         return tmp;
     }
     // dodaje umiejetnosc, zwraca indeks
-    int AddAbility(SAbilityInstance &abi, int anim = -1, size_t invPos = -1);
+    int AddAbility(SAbilityInstance &abi, const std::string & anim = "", size_t invPos = -1);
 	// zwraca indeks umiejki w performerze
 	int FindAbilityIndex(CAbility *abi);
     // zwraca indeks umiejki-wstawionej-ostatnio-z-invPos w performerze
     int FindAbilityIndexByInvPos(size_t invPos);
 
-    // todo: //wywalic to, deprecated
-    void AddOrSwapAbilityWithTrigger(SAbilityInstance &abi, const std::string & trigger, int anim = -1);
-    
     // wykonuje umiejetnosc, niezaleznie czy jest dodana; nie wplywa na cooldown, tylko na delay
     EAbilityResult PerformAbility(SAbilityInstance &abi, bool ignoreMana = false, int data = -1,float extraCastingTime = 0.0f);
     // wykonuje umiejetnosc sposrod dodanych; dodatkowo mozna dodac juz wykorzystany casting time (wprowadzanie kombinacje)
@@ -129,16 +126,16 @@ protected:
         SAbilityData(): manacost(0.f), cooldown(0.f), delay(0.f), casttime(0.f), cooldownLeft(0.0f), context(NULL), source(NULL), invPos(0) {}
     };
     std::vector<SAbilityData> mAbilityData;
-    std::vector<int> *mAbilityAnims;
+    std::vector<std::string> *mAbilityAnims;
     // ktora umiejetnosc to standardowy atak?
     int mDefaultAttack;
 public:
     // przyjmuje podane wektory za wlasne
     // uwaga! nie wykonaja sie umiejetnosci pasywne
     // uwaga! AddAbility itp. beda teraz operowac na zbindowanych wektorach
-    inline void Bind(std::vector<SAbilityInstance> *abilities, std::vector<int> *anims){
+    inline void Bind(std::vector<SAbilityInstance> *abilities, std::vector<std::string> *anims){
         mAbilityAnims = anims;
-        mAbilities =  abilities;
+        mAbilities = abilities;
         if (abilities != NULL)
             mAbilityData.resize(abilities->size());
         else
