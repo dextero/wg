@@ -86,7 +86,7 @@ void CActor::UpdateAnimations(float dt){
         }
     } else {
         if (mSpawnState == ssDying){
-            SetAnimation(mAnimSet->GetDieAnim());
+            SetAnimation(mAnimSet->GetDeathAnim());
             mAnimationTimeLeft = mAnimationTime = GetDisplayable()->GetAnimationState()->animation->TotalLength();
             GetDisplayable()->GetAnimationState()->isLooped = false;
             GetDisplayable()->GetAnimationState()->RewindTo(0.0f);
@@ -114,7 +114,7 @@ void CActor::UpdateAnimations(float dt){
 			mAbilityPerformer.GetActiveAbilityComputedValues(cooldown,delay,casttime);
             mAnimationTime = delay + casttime;
             SAnimation *anim = NULL;
-            if (mAbilityPerformer.GetAbilityAnim() >= 0)
+            if (mAbilityPerformer.GetAbilityAnim() != "")
                 anim = mAnimSet->GetAnim(mAbilityPerformer.GetAbilityAnim());
             if (anim == NULL)
                 anim = mAnimSet->GetAttackAnim();
@@ -174,7 +174,7 @@ void CActor::Update(float dt) {
 }
 
 void CActor::Kill(){
-    if (mAnimSet->GetDieAnim() == NULL){
+    if (mAnimSet->GetDeathAnim() == NULL){
         MarkForDelete();
         gPlayerManager.XPGained(mXPValue);
     } else if (mSpawnState != ssDying){
@@ -268,20 +268,25 @@ CBleeder *CActor::GetBleeder(){
 void CActor::SetAnimSet(CAnimSet *as){
     if (mAnimSet){
         // plynna zmiana animacji
-        SAnimation *currAnim = GetAnimation();
-        const std::vector<CAnimSet::CNameAnimPair> &oldAnims = mAnimSet->GetAnims();
-        const std::vector<CAnimSet::CNameAnimPair> &newAnims = as->GetAnims();
-        unsigned int idx = -1;
-        for (unsigned int i = 0; i < oldAnims.size(); i++){
-            if (oldAnims[i].anim == currAnim){
-                idx = i;
+        SAnimation * currAnim = GetAnimation();
+        const CAnimSet::NameAnimPairMap & oldAnims = mAnimSet->GetAnims();
+        const CAnimSet::NameAnimPairMap & newAnims = as->GetAnims();
+        std::string idx;
+        for (CAnimSet::NameAnimPairMap::const_iterator i = oldAnims.begin() ; i != oldAnims.end() ; i++) {
+            if (i->second.anim == currAnim) {
+                idx = i->first;
                 break;
             }
         }
-        if ((idx >= 0) && (idx < newAnims.size()) && (newAnims[idx].anim != NULL)){
-            float currTime = GetDisplayable()->GetAnimationState()->currentTime;
-            SetAnimation(newAnims[idx].anim);
-            GetDisplayable()->GetAnimationState()->RewindTo(currTime);
+        if (idx != "") {
+            CAnimSet::NameAnimPairMap::const_iterator i = newAnims.find(idx);
+            if (i != newAnims.end()) {
+                if (i->second.anim != NULL) {
+                    float currTime = GetDisplayable()->GetAnimationState()->currentTime;
+                    SetAnimation(i->second.anim);
+                    GetDisplayable()->GetAnimationState()->RewindTo(currTime);
+                }
+            }
         }
     }
     mAnimSet = as;

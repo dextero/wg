@@ -11,7 +11,7 @@
 
 CAbilityPerformer::CAbilityPerformer(CActor *attached) :
     mAttached(attached),
-    mAbilityAnim(0),
+    mAbilityAnim(""),
     mAbilityState(asIdle),
     mActiveAbility(NULL),
     mActiveAbilityIndex(0),
@@ -29,7 +29,7 @@ CAbilityPerformer::CAbilityPerformer(CActor *attached) :
 
 CAbilityPerformer::~CAbilityPerformer(){}
 
-int CAbilityPerformer::AddAbility(SAbilityInstance &abi, int anim, size_t invPos){
+int CAbilityPerformer::AddAbility(SAbilityInstance &abi, const std::string & anim, size_t invPos){
     if (!abi.ability) return -1;
     mAbilities->push_back(abi);
     SAbilityData ad;
@@ -67,42 +67,6 @@ int CAbilityPerformer::FindAbilityIndexByInvPos(size_t invPos) {
         i--;
     }
     return -1;
-}
-
-void CAbilityPerformer::AddOrSwapAbilityWithTrigger(SAbilityInstance &abi, const std::string & trigger, int anim){
-    //implement me!
-    //chcemy przjechac po mAbilities i jesli znajdziemy tam przypiete CAbility o ->trigger = trigger, to
-    //wtedy chcemy jakos wymienic w danym miejscu mAbilities umiejke na ta przekazana w parametrze abi...
-    // a jesli nie ma w mAbilities umiejki o ->trigger? wtedy this->AddAbility(abi, anim);
-    //
-    // no to siup w ten glupi dziub:
-
-    for (std::vector<SAbilityInstance>::iterator it = mAbilities->begin() ; it != mAbilities->end() ; it++) {
-        if (trigger.compare(it->ability->trigger) == 0) {
-            //wymien;
-            //  najpierw zwolnij stare konteksty, source itp -> todo: spytac liosana
-            //    CExecutionContext::Dealloc(mAttached,*it);
-            //    pewnie cos jeszcze w mAbilityData trzeba usunac
-            //    i w mAbilityAnims... chrum chrum chrum...
-
-            //  a potem wstaw nowe dane:
-            *it = abi;
-            SAbilityData ad;
-            ad.source = new CEffectSource(abi.ability);
-            ad.source->SetSecondary(mAttached);
-            CActor* source = dynamic_cast<CActor*>(ad.source->DeterminePhysicalSource());
-            ad.context = CExecutionContext::Alloc(source->GetSafePointer(),mAttached,&abi,mAttached->GetPinnedAbilityBatch()); //CHECK
-            // a to gdzie ma byc wstawione? na koniec, czy pod ten sam indeks? todo: spytac liosana
-            mAbilityData.push_back(ad);
-            mAbilityAnims->push_back(anim);
-            if (abi.ability->abilityType == atPassive)
-                gEffectManager.ApplyPermanent(mAttached,abi.ability->effect->GetOffset(),ad.source,ad.context);
-            mAbilityVectorChanged = true;
-            return;
-        }
-    }
-    AddAbility(abi, anim);
-//    mAbilityVectorChanged = true; <-- spytac liosana, czy ta flaga ma byc tu, czy tylko przy dodawaniu do wektora...
 }
 
 void CAbilityPerformer::AdvanceAbilityLevel(int id){

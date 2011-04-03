@@ -304,7 +304,7 @@ void CPlayer::AddItem(CItem * item, size_t invPos) {
     item->mInvPos = invPos;
 
     SAbilityInstance ai(gResourceManager.GetAbility(item->GetAbility()), 1);
-    GetAbilityPerformer().AddAbility(ai, 1, invPos);
+    GetAbilityPerformer().AddAbility(ai, "", invPos);
 }
 
 void CPlayer::RemoveItem(CItem * item) {

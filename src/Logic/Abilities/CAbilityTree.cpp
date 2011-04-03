@@ -49,8 +49,7 @@ void CAbilityTree::Load(CXml &xml, rapidxml::xml_node<> *node){
 
         tmpNode = xml.GetChild(n,"anim");
         if (tmpNode){
-            std::string tmp = xml.GetString(tmpNode);
-            an.animCode = CAnimSet::ParseAnimClass(tmp);
+            an.animCode = xml.GetString(tmpNode);
         }
         tmpNode = xml.GetChild(n,"export");
         if (tmpNode){

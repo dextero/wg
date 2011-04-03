@@ -23,15 +23,13 @@
   <anim name="core/anim/ogre/default" type="default" />
   <anim name="core/anim/ogre/move" type="move" />
   <anim name="core/anim/ogre/attack" type="attack" />
-  <anim name="core/anim/ogre/attack-second" type="1" />
-  <!--<anim name="core/anim/ogre/attack-second" type="attack-second" />-->
+  <anim name="core/anim/ogre/attack-second" type="attack-second" />
   <anim name="core/anim/ogre/death" type="death" />
 
   <ai name="melee-chaser" />
 
   <ability name="data/abilities/monster/monsterbash.xml" anim="attack" default="1" />
-  <ability name="data/abilities/monster/monsterbash.xml" anim="1" />
-  <!--<ability name="data/abilities/monster/monsterbash.xml" anim="attack-second" />-->
+  <ability name="data/abilities/monster/monsterbash.xml" anim="attack-second" />
 
   <sound type="attack" filename="data/sounds/0AD/horse_11.ogg" />
   <sound type="attack" filename="data/sounds/EL/monster03.ogg" />

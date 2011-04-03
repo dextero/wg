@@ -83,7 +83,7 @@ CTriggerEffects::CTriggerEffects(const std::string &filename, CAnimSet *anims){
             }
             tmp = xml.GetString(xml.GetChild(node,"anim"));
             if (tmp != "")
-                te.mAnim = anims->GetAnim(anims->ParseAnimClass(tmp));
+                te.mAnim = anims->GetAnim(tmp);
             tmp = xml.GetString(node,"trigger");
             if (tmp != "")
                 mMap->Add(tmp,&te);

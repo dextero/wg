@@ -21,13 +21,13 @@ struct SAbilityNode{
     int minPlayerLevel;
     std::vector<std::pair<int, int> > preqs;    // pierwszy int = numer wymaganej umiejki w drzewie; drugi - potrzebny level
 	bool sharedTrigger;
-    int animCode;
+    std::string animCode;
     int row;
 	bool doExport;
 	std::string exportName;
 
     SAbilityNode(): ability(NULL), startLevel(0), minPlayerLevel(0), sharedTrigger(false),
-		animCode(-1),row(-1),doExport(false),exportName(""){}
+		animCode(""),row(-1),doExport(false),exportName(""){}
 };
 
 // mozna przerobic na zasob (IResource), gdy ktos bedzie potrzebowal

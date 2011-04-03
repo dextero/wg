@@ -50,7 +50,7 @@ protected:
     CAnimSet *mAnimations;
 
     std::vector<SAbilityInstance> mAbilities;
-    std::vector<int> mAbilityAnims;
+    std::vector<std::string> mAbilityAnims;
     int mDefaultAbility;
 
     std::map< std::string, std::vector<System::Resource::CSound*> > mSound;
