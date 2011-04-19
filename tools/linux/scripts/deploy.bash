@@ -39,7 +39,7 @@ cp libs32/libsndfile.so.1 deploy/libs32
 mkdir deploy/bin
 cp $binary32 deploy/bin
 
-g++ tools/linux/check_fullscreen/main.cpp -o deploy/bin/check_fullscreen.bin32 -static-libgcc -O2 /usr/lib/gcc/i486-linux-gnu/4.4.1/libstdc++.a -I"build/includes/SFML-1.6/include" -L"./libs32" -lsfml-graphics -lsfml-window -lsfml-system || fail
+g++ tools/linux/check_fullscreen/main.cpp -o deploy/bin/check_fullscreen.bin32 -static-libgcc -O2 /usr/lib/gcc/i686-linux-gnu/4.4/libstdc++.a -I"build/includes/SFML-1.6/include" -L"./libs32" -lsfml-graphics -lsfml-window -lsfml-system || fail
 cp tools/linux/check_fullscreen/check_fullscreen deploy/bin
 
 #bit64 version:
