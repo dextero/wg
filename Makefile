@@ -19,7 +19,7 @@ CXXFLAGS = -g -Wall
 #http://img183.imageshack.us/img183/8780/gameplay.png
 
 release: CXXFLAGS = -O2 -static-libgcc
-release: OTHER_OBJECTS = /usr/lib/gcc/i486-linux-gnu/4.4.1/libstdc++.a
+release: OTHER_OBJECTS = /usr/lib/gcc/i686-linux-gnu/4.4/libstdc++.a
 
 #edytor
 ifneq ($(findstring editor,$(MAKECMDGOALS)),)
