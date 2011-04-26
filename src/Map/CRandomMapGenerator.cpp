@@ -48,6 +48,10 @@ bool VectorCompareFunc(const CRandomMapGenerator::SPhysical& first, const CRando
 
 // -----------------------------------
 
+typedef std::vector<CRandomMapGenerator::SPhysical> PhysicalsVector;
+
+PhysicalsVector Filter(const PhysicalsVector & input, const std::string & byType);
+
 // metody generowania tuneli
 bool CRandomMapGenerator::GenerateTunnelsFromRandomCenter()
 {
@@ -618,30 +622,32 @@ bool CRandomMapGenerator::PlaceLairs()
 {
     CTimer timer("- lairs: ");
 
+    PhysicalsVector lairs = Filter(mPhysicals, "lair");
+
     // gniazda
-    if (mLairs.size() && mDesc.lairs && mPassableLeft)
+    if (lairs.size() && mDesc.lairs && mPassableLeft)
     {
         // znajdz 'najtrudniejsze' gniazda pasujace do levela
         size_t hard = (size_t)-1, medium = (size_t)-1, easy = (size_t)-1;
         size_t at = 0;
 
         // przesuniecie 'wskaznika'
-        for (; at < mLairs.size() - 1 && mLairs[at + 1].minLevel <= mDesc.level; ++at);
+        for (; at < lairs.size() - 1 && lairs[at + 1].minLevel <= mDesc.level; ++at);
 
-        if (at < mLairs.size())
+        if (at < lairs.size())
         {
             hard = at;
-            mXmlText << "\t<objtype code=\"lair0\" file=\"" << mLairs[hard].file << "\" />\n";
+            mXmlText << "\t<objtype code=\"lair0\" file=\"" << lairs[hard].file << "\" />\n";
         }
-        if (at - 1 < mLairs.size()) // przekrecenie licznika?
+        if (at - 1 < lairs.size()) // przekrecenie licznika?
         {
             medium = at - 1;
-            mXmlText << "\t<objtype code=\"lair1\" file=\"" << mLairs[medium].file << "\" />\n";
+            mXmlText << "\t<objtype code=\"lair1\" file=\"" << lairs[medium].file << "\" />\n";
         }
-        if (at - 2 < mLairs.size())
+        if (at - 2 < lairs.size())
         {
             easy = at - 2;
-            mXmlText << "\t<objtype code=\"lair2\" file=\"" << mLairs[easy].file << "\" />\n";
+            mXmlText << "\t<objtype code=\"lair2\" file=\"" << lairs[easy].file << "\" />\n";
         }
 
         for (unsigned int i = 0; i < std::min(mPassableLeft, mDesc.lairs); ++i)
@@ -662,9 +668,9 @@ bool CRandomMapGenerator::PlaceLairs()
             // skala zadeklarowana w xmlu
 
             size_t what = rand() % 9;
-            if (easy < mLairs.size() && what < 2)   // 2/9 gniazd 'easy'
+            if (easy < lairs.size() && what < 2)   // 2/9 gniazd 'easy'
                 mXmlText << "\t<obj code=\"lair2\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" rot=\"" << rot << "\" />\n";
-            else if (medium < mLairs.size() && what < 5)    // 3/9 gniazd 'medium' lub 5/9, gdy nie ma easy
+            else if (medium < lairs.size() && what < 5)    // 3/9 gniazd 'medium' lub 5/9, gdy nie ma easy
                 mXmlText << "\t<obj code=\"lair1\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" rot=\"" << rot << "\" />\n";
             else    // 4/9 gniazd 'hard' lub wszystkie, gdy nie ma medium
                 mXmlText << "\t<obj code=\"lair0\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" rot=\"" << rot << "\" />\n";
@@ -681,12 +687,14 @@ bool CRandomMapGenerator::PlaceMonsters()
 {
     CTimer timer("- monsters: ");
 
+    PhysicalsVector monsters = Filter(mPhysicals, "monster");
+
     std::vector<size_t> filteredOut;
-    for (size_t i = 0; i < mMonsters.size(); ++i) {
-        fprintf(stderr, "monster: %s, %d, %d\n", mMonsters[i].file.c_str(), mMonsters[i].minLevel, mMonsters[i].maxLevel);
-        if (mDesc.level >= mMonsters[i].minLevel && mDesc.level <= mMonsters[i].maxLevel) {
-            mXmlText << "\t<objtype code=\"monster" << StringUtils::ToString(i) << "\" file=\"" << mMonsters[i].file << "\" />\n";
-            fprintf(stderr, "monster: %s, included\n", mMonsters[i].file.c_str());
+    for (size_t i = 0; i < monsters.size(); ++i) {
+        fprintf(stderr, "monster: %s, %d, %d\n", monsters[i].file.c_str(), monsters[i].minLevel, monsters[i].maxLevel);
+        if (mDesc.level >= monsters[i].minLevel && mDesc.level <= monsters[i].maxLevel) {
+            mXmlText << "\t<objtype code=\"monster" << StringUtils::ToString(i) << "\" file=\"" << monsters[i].file << "\" />\n";
+            fprintf(stderr, "monster: %s, included\n", monsters[i].file.c_str());
             filteredOut.push_back(i);
         }
     }
@@ -711,33 +719,44 @@ bool CRandomMapGenerator::PlaceMonsters()
         size_t what = filteredOut[gRand.Rnd(filteredOut.size() - 1)];
         mXmlText << "\t<obj code=\"monster" << StringUtils::ToString(what) << "\" x=\"" << pos.x + offsetX << "\" y=\"" << pos.y + offsetY << "\" rot=\"" << rot << "\" />\n";
         
-        fprintf(stderr, "spawned monster %s\n", mMonsters[what].file.c_str());
+        fprintf(stderr, "spawned monster %s\n", monsters[what].file.c_str());
     }
 
     return true;
+}
+
+PhysicalsVector Filter(const PhysicalsVector & input, const std::string & byType) {
+    PhysicalsVector filteredOut;
+    for (PhysicalsVector::const_iterator it = input.begin() ; it != input.end() ; it++) {
+        if (it->type == byType) filteredOut.push_back(*it);
+    }
+
+    return filteredOut;
 }
 
 bool CRandomMapGenerator::PlaceLoots()
 {
     CTimer timer("- loots: ");
 
-    if (mLoots.size() && mDesc.loots && mPassableLeft)
+    PhysicalsVector loots = Filter(mPhysicals, "loot");
+
+    if (loots.size() && mDesc.loots && mPassableLeft)
     {
         // najlepsze przedmioty, ale o levelu nie wiekszym od podanego
-        std::vector<size_t> mLootsToPlace;
+        std::vector<size_t> lootsToPlace;
 
-        for (size_t i = mLoots.size() - 1; i != (size_t)-1; --i)
-            if (mLoots[i].minLevel <= mDesc.level)
+        for (size_t i = loots.size() - 1; i != (size_t)-1; --i)
+            if (loots[i].minLevel <= mDesc.level)
             {
-                mLootsToPlace.push_back(i);
+                lootsToPlace.push_back(i);
 
                 // max powiedzmy... 10 rodzajow znajdek
-                if (mLootsToPlace.size() > 9)
+                if (lootsToPlace.size() > 9)
                     break;
             }
 
-        for (size_t i = 0; i < mLootsToPlace.size(); ++i)
-            mXmlText << "\t<objtype code=\"loot" << i << "\" file=\"" << mLoots[mLootsToPlace[i]].file << "\" />\n";
+        for (size_t i = 0; i < lootsToPlace.size(); ++i)
+            mXmlText << "\t<objtype code=\"loot" << i << "\" file=\"" << loots[lootsToPlace[i]].file << "\" />\n";
 
         for (unsigned int i = 0; i < std::min(mPassableLeft, mDesc.loots); ++i)
         {
@@ -755,7 +774,7 @@ bool CRandomMapGenerator::PlaceLoots()
             float offsetY = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // + 0.5, zeby wycentrowac na kaflach
             // obrot w przypadku przedmiotow nie ma sensu, skala zadeklarowana w xmlu
 
-            size_t what = rand() % mLootsToPlace.size();
+            size_t what = rand() % lootsToPlace.size();
             mXmlText << "\t<obj code=\"loot" << what << "\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" />\n";
         }
 
@@ -846,27 +865,21 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
         mPartSets.insert(std::make_pair(xml.GetString(n, "name"), set));
     }
 
-    // gniazda
-    if (xml.GetChild(xml.GetRootNode(), "lairs"))
-        for (rapidxml::xml_node<>* n = xml.GetChild(xml.GetChild(xml.GetRootNode(), "lairs"), "lair"); n; n = xml.GetSibl(n, "lair"))
-            mLairs.push_back(SPhysical(xml.GetString(n, "file"), xml.GetInt(n, "level")));
-
-    // potwory
-    if (xml.GetChild(xml.GetRootNode(), "monsters"))
-        for (rapidxml::xml_node<>* n = xml.GetChild(xml.GetChild(xml.GetRootNode(), "monsters"), "monster"); n; n = xml.GetSibl(n, "monster")) {
+    if (xml.GetChild(xml.GetRootNode(), "physicals")) {
+        for (rapidxml::xml_node<>* n = xml.GetChild(xml.GetRootNode(), "physicals")->first_node(); n; n = n->next_sibling()) {
+            std::string type = n->name();
             int level = xml.GetInt(n, "level");
             int minLevel = xml.GetInt(n, "minLevel");
             int maxLevel = xml.GetInt(n, "maxLevel");
             if (level != 0) {
                 minLevel = maxLevel = level;
             }
-            mMonsters.push_back(SPhysical(xml.GetString(n, "file"), minLevel, maxLevel));
-        }
+            float frequency = xml.GetFloat(n, "frequency", 1.0f);
+            std::string file = xml.GetString(n, "file");
 
-    // przedmioty
-    if (xml.GetChild(xml.GetRootNode(), "loots"))
-        for (rapidxml::xml_node<>* n = xml.GetChild(xml.GetChild(xml.GetRootNode(), "loots"), "loot"); n; n = xml.GetSibl(n, "loot"))
-            mLoots.push_back(SPhysical(xml.GetString(n, "file"), xml.GetInt(n, "level")));
+            mPhysicals.push_back(SPhysical(type, file, minLevel, maxLevel, frequency));
+        }
+    }
 
     // maski do kafli
     if (xml.GetChild(xml.GetRootNode(), "tile-masks"))
@@ -874,9 +887,7 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
             mTileMasks.push_back(xml.GetString(n, "file"));
     
     // sortowanie gniazd, potworow i przedmiotow po levelu, zeby potem bylo latwiej dobierac
-    std::sort(mLairs.begin(), mLairs.end(), VectorCompareFunc);
-    std::sort(mMonsters.begin(), mMonsters.end(), VectorCompareFunc);
-    std::sort(mLoots.begin(), mLoots.end(), VectorCompareFunc);
+    std::sort(mPhysicals.begin(), mPhysicals.end(), VectorCompareFunc);
 
     return true;
 }
