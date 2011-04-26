@@ -47,22 +47,29 @@ private:
         std::vector<SDoodah> doodahs;
     };
 
+public:    
     struct SPhysical
     {
+        std::string type;
         std::string file;
         unsigned int minLevel;
         unsigned int maxLevel;
+        float frequency;
 
-        SPhysical(std::string file, unsigned int minLevel, unsigned int maxLevel): 
-            file(file), minLevel(minLevel), maxLevel(maxLevel) {}
-        SPhysical(std::string file, unsigned int level):
-            file(file), minLevel(level), maxLevel(level) {}
+        SPhysical(
+                std::string type,
+                std::string file,
+                unsigned int minLevel,
+                unsigned int maxLevel,
+                float frequency
+                ) :            
+            type(type), file(file), minLevel(minLevel), maxLevel(maxLevel), frequency(frequency) {}
     };
+    typedef std::vector<SPhysical> PhysicalsVector;
+private:
 
     std::map<std::string, SPartSet> mPartSets;
-    std::vector<SPhysical> mLairs;
-    std::vector<SPhysical> mMonsters;
-    std::vector<SPhysical> mLoots;
+    PhysicalsVector mPhysicals;
     std::vector<std::string> mTileMasks;
 
     unsigned int** mCurrent;

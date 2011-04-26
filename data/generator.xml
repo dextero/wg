@@ -1,67 +1,75 @@
 <root type="map-gen">
-  <lairs>
-    <lair file="data/physicals/lairs/rat-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/baldy-horny-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/chit-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/chityniak-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/cockroach-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/crawler-kamikadze-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/early-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/fire-elemental-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/grim-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/mantis-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/ogre-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/pincer-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/sick-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/surger-entangler-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/troll-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/wolfbeast-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/bee-lair.xml" level="0" />
-    <lair file="data/physicals/lairs/shaggy-lair.xml" level="0" />
-  </lairs>
-  <monsters>
-    <monster file="data/physicals/monsters/baldy.xml" level="2" />
-    <monster file="data/physicals/monsters/bee.xml" level="2" />
-    <monster file="data/physicals/monsters/blind-pincer.xml" level="3" />
-    <monster file="data/physicals/monsters/easter-eggs/carrot.xml" level="4" />
-    <monster file="data/physicals/monsters/chityniak-plwacz.xml" level="5" />
-    <monster file="data/physicals/monsters/chityniak.xml" level="6" />
-    <monster file="data/physicals/monsters/cockroach.xml" level="7" />
-    <monster file="data/physicals/monsters/easter-eggs/cow.xml" level="8" />
-    <monster file="data/physicals/monsters/crawler-kamikadze.xml" level="9" />
-    <monster file="data/physicals/monsters/demon.xml" level="10" />
-    <monster file="data/physicals/monsters/early.xml" level="11" />
-    <monster file="data/physicals/monsters/earwigle.xml" level="12" />
-    <monster file="data/physicals/monsters/entangler.xml" level="13" />
-    <monster file="data/physicals/monsters/eyebrain.xml" level="14" />
-    <monster file="data/physicals/monsters/fire-elemental.xml" level="15" />
-    <monster file="data/physicals/monsters/flying-fish.xml" level="16" />
-    <monster file="data/physicals/monsters/frost-demon.xml" level="17" />
-    <monster file="data/physicals/monsters/healer-ghost.xml" level="18" />
-    <monster file="data/physicals/monsters/hornet.xml" level="19" />
-    <monster file="data/physicals/monsters/horny.xml" level="20" />
-    <monster file="data/physicals/monsters/lion-turret.xml" level="21" />
-    <monster file="data/physicals/monsters/mantis.xml" level="22" />
-    <monster file="data/physicals/monsters/minelayer.xml" level="23" />
-    <monster file="data/physicals/monsters/ogre-wife.xml" level="24" />
-    <monster file="data/physicals/monsters/ogre.xml" level="1" />
-    <monster file="data/physicals/monsters/rat-green.xml" level="26" />
-    <monster file="data/physicals/monsters/rat.xml" level="27" />
-    <monster file="data/physicals/monsters/redbaldy.xml" level="28" />
-    <monster file="data/physicals/monsters/redhorny.xml" level="29" />
-    <monster file="data/physicals/monsters/scarab.xml" level="30" />
-    <monster file="data/physicals/monsters/shaggy.xml" level="31" />
-    <monster file="data/physicals/monsters/skeleton-mage.xml" level="32" />
-    <monster file="data/physicals/monsters/skeleton-warrior.xml" level="33" />
-    <monster file="data/physicals/monsters/surger.xml" level="34" />
-    <monster file="data/physicals/monsters/timberman-with-axe.xml" level="35" />
-    <monster file="data/physicals/monsters/timberman-with-knife.xml" level="36" />
-    <monster file="data/physicals/monsters/troll.xml" level="37" />
-    <monster file="data/physicals/monsters/warlock.xml" level="38" />
-    <monster file="data/physicals/monsters/winged-pincer.xml" level="39" />
-    <monster file="data/physicals/monsters/wolfbeast.xml" level="40" />
-  </monsters>
-  <loots>
+  <physicals>
+    <lair file="data/physicals/lairs/rat-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/baldy-horny-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/chit-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/chityniak-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/cockroach-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/crawler-kamikadze-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/early-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/fire-elemental-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/grim-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/mantis-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/ogre-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/pincer-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/sick-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/surger-entangler-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/troll-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/wolfbeast-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/bee-lair.xml" level="90" />
+    <lair file="data/physicals/lairs/shaggy-lair.xml" level="90" />
+
+    <monster file="data/physicals/monsters/rat-green.xml" minLevel="1" maxLevel="3" />
+    <monster file="data/physicals/monsters/rat.xml" minLevel="1" maxLevel="3" />
+    <lair    file="data/physicals/lairs/rat-lair.xml" minlevel="1" maxLevel="3" />
+    <monster file="data/physicals/monsters/timberman-with-knife.xml" minLevel="0" maxLevel="5" />
+    <monster file="data/physicals/monsters/timberman-with-axe.xml" minLevel="0" maxLevel="5" />
+    <monster file="data/physicals/monsters/chityniak.xml" minLevel="2" maxLevel="6" />
+    <lair    file="data/physicals/lairs/chityniak-lair.xml" level="2" />
+    <monster file="data/physicals/monsters/cockroach.xml" minLevel="3" maxLevel="6" />
+    <lair    file="data/physicals/lairs/chit-lair.xml" minLevel="3" maxLevel="3" />
+
+
+    <monster file="data/physicals/monsters/baldy.xml" level="99" />
+    <monster file="data/physicals/monsters/bee.xml" level="99" />
+    <monster file="data/physicals/monsters/blind-pincer.xml" level="99" />
+    <monster file="data/physicals/monsters/easter-eggs/carrot.xml" level="99" />
+    <monster file="data/physicals/monsters/chityniak-plwacz.xml" level="99" />
+    <monster file="data/physicals/monsters/chityniak.xml" level="99" />
+    <monster file="data/physicals/monsters/cockroach.xml" level="99" />
+    <monster file="data/physicals/monsters/easter-eggs/cow.xml" level="99" />
+    <monster file="data/physicals/monsters/crawler-kamikadze.xml" level="99" />
+    <monster file="data/physicals/monsters/demon.xml" level="99" />
+    <monster file="data/physicals/monsters/early.xml" level="99" />
+    <monster file="data/physicals/monsters/earwigle.xml" level="99" />
+    <monster file="data/physicals/monsters/entangler.xml" level="99" />
+    <monster file="data/physicals/monsters/eyebrain.xml" level="99" />
+    <monster file="data/physicals/monsters/fire-elemental.xml" level="99" />
+    <monster file="data/physicals/monsters/flying-fish.xml" level="99" />
+    <monster file="data/physicals/monsters/frost-demon.xml" level="99" />
+    <monster file="data/physicals/monsters/healer-ghost.xml" level="99" />
+    <monster file="data/physicals/monsters/hornet.xml" level="99" />
+    <monster file="data/physicals/monsters/horny.xml" level="99" />
+    <monster file="data/physicals/monsters/lion-turret.xml" level="99" />
+    <monster file="data/physicals/monsters/mantis.xml" level="99" />
+    <monster file="data/physicals/monsters/minelayer.xml" level="99" />
+    <monster file="data/physicals/monsters/ogre-wife.xml" level="99" />
+    <monster file="data/physicals/monsters/ogre.xml" level="99" />
+    <monster file="data/physicals/monsters/rat-green.xml" level="99" />
+    <monster file="data/physicals/monsters/rat.xml" level="99" />
+    <monster file="data/physicals/monsters/redbaldy.xml" level="99" />
+    <monster file="data/physicals/monsters/redhorny.xml" level="99" />
+    <monster file="data/physicals/monsters/scarab.xml" level="99" />
+    <monster file="data/physicals/monsters/shaggy.xml" level="99" />
+    <monster file="data/physicals/monsters/skeleton-mage.xml" level="99" />
+    <monster file="data/physicals/monsters/skeleton-warrior.xml" level="99" />
+    <monster file="data/physicals/monsters/surger.xml" level="99" />
+    <monster file="data/physicals/monsters/timberman-with-axe.xml" level="99" />
+    <monster file="data/physicals/monsters/timberman-with-knife.xml" level="99" />
+    <monster file="data/physicals/monsters/troll.xml" level="99" />
+    <monster file="data/physicals/monsters/warlock.xml" level="99" />
+    <monster file="data/physicals/monsters/winged-pincer.xml" level="99" />
+    <monster file="data/physicals/monsters/wolfbeast.xml" level="99" />
     <!-- hp -->
     <loot file="data/loots/small-hp.xml" level="0" />
     <loot file="data/loots/medium-hp.xml" level="2" />
@@ -86,7 +94,7 @@
     <loot file="data/loots/medium-mana.xml" level="2" />
 
     <loot file="data/loots/weapon.xml" level="1" />
-  </loots>
+  </physicals>
   <tile-masks>
     <tile-mask file="data/maps/tile_mask/mask1.png" />
     <tile-mask file="data/maps/tile_mask/mask2.png" />
