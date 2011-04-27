@@ -50,7 +50,39 @@ bool VectorCompareFunc(const CRandomMapGenerator::SPhysical& first, const CRando
 
 typedef std::vector<CRandomMapGenerator::SPhysical> PhysicalsVector;
 
-PhysicalsVector Filter(const PhysicalsVector & input, const std::string & byType);
+PhysicalsVector FilterByType(const PhysicalsVector & input, const std::string & Type);
+
+PhysicalsVector FilterByLevel(const PhysicalsVector & input, int level)
+{
+    PhysicalsVector filteredOut;
+    for (PhysicalsVector::const_iterator it = input.begin() ; it != input.end() ; it++) {
+        if (it->minLevel <= level && it->maxLevel >= level) filteredOut.push_back(*it);
+    }
+    return filteredOut;
+}
+
+CRandomMapGenerator::SPhysical ChooseRandomlyRegardingFrequency(const PhysicalsVector & input) {
+    fprintf(stderr, "input.size() = %d\n", input.size());
+    float totalFreq = 0.0f;
+    for (PhysicalsVector::const_iterator it = input.begin() ; it != input.end() ; it++) {
+        fprintf(stderr, "%s\n", it->file.c_str());
+        totalFreq += it->frequency;
+    }
+    float chosenFreq = gRand.Rndf(0.0f, totalFreq);
+    for (PhysicalsVector::const_iterator it = input.begin() ; it != input.end() ; it++) {
+        chosenFreq -= it->frequency;
+        if (chosenFreq <= 0.0f) {
+            return CRandomMapGenerator::SPhysical(*it);
+        }
+    }
+    return CRandomMapGenerator::SPhysical();
+}
+
+std::string CRandomMapGenerator::GetRandomWeaponFile(int level) {
+    PhysicalsVector weapons = FilterByLevel(FilterByType(mPhysicals, "weapon"), level);
+    SPhysical weapon = ChooseRandomlyRegardingFrequency(weapons);
+    return weapon.file;
+}
 
 // metody generowania tuneli
 bool CRandomMapGenerator::GenerateTunnelsFromRandomCenter()
@@ -622,7 +654,7 @@ bool CRandomMapGenerator::PlaceLairs()
 {
     CTimer timer("- lairs: ");
 
-    PhysicalsVector lairs = Filter(mPhysicals, "lair");
+    PhysicalsVector lairs = FilterByType(mPhysicals, "lair");
 
     // gniazda
     if (lairs.size() && mDesc.lairs && mPassableLeft)
@@ -687,7 +719,7 @@ bool CRandomMapGenerator::PlaceMonsters()
 {
     CTimer timer("- monsters: ");
 
-    PhysicalsVector monsters = Filter(mPhysicals, "monster");
+    PhysicalsVector monsters = FilterByType(mPhysicals, "monster");
 
     std::vector<size_t> filteredOut;
     for (size_t i = 0; i < monsters.size(); ++i) {
@@ -725,10 +757,10 @@ bool CRandomMapGenerator::PlaceMonsters()
     return true;
 }
 
-PhysicalsVector Filter(const PhysicalsVector & input, const std::string & byType) {
+PhysicalsVector FilterByType(const PhysicalsVector & input, const std::string & type) {
     PhysicalsVector filteredOut;
     for (PhysicalsVector::const_iterator it = input.begin() ; it != input.end() ; it++) {
-        if (it->type == byType) filteredOut.push_back(*it);
+        if (it->type == type) filteredOut.push_back(*it);
     }
 
     return filteredOut;
@@ -738,7 +770,7 @@ bool CRandomMapGenerator::PlaceLoots()
 {
     CTimer timer("- loots: ");
 
-    PhysicalsVector loots = Filter(mPhysicals, "loot");
+    PhysicalsVector loots = FilterByType(mPhysicals, "loot");
 
     if (loots.size() && mDesc.loots && mPassableLeft)
     {

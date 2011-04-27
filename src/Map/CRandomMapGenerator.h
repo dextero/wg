@@ -16,7 +16,8 @@ struct SRandomMapDesc
     unsigned int sizeX, sizeY;
     float obstaclesAreaPercent;
     unsigned int lairs, monsters, loots;
-    unsigned int maxLivingMonsters, maxMonsters, level;
+    unsigned int maxLivingMonsters, maxMonsters;
+    int level;
     std::string nextMap;
 
     SRandomMapDesc(): sizeX(0), sizeY(0), obstaclesAreaPercent(0.f), lairs(0), monsters(0), loots(0), maxLivingMonsters(0), maxMonsters(0), level(0), nextMap("@RANDOM") {}
@@ -52,16 +53,16 @@ public:
     {
         std::string type;
         std::string file;
-        unsigned int minLevel;
-        unsigned int maxLevel;
+        int minLevel;
+        int maxLevel;
         float frequency;
 
         SPhysical(
-                std::string type,
-                std::string file,
-                unsigned int minLevel,
-                unsigned int maxLevel,
-                float frequency
+                std::string type = "",
+                std::string file = "",
+                int minLevel = 0,
+                int maxLevel = 0,
+                float frequency = 0.0f
                 ) :            
             type(type), file(file), minLevel(minLevel), maxLevel(maxLevel), frequency(frequency) {}
     };
@@ -108,6 +109,8 @@ public:
     bool LoadPartSets(const std::string& filename);
 
     bool GenerateRandomMap(const std::string& filename, const SRandomMapDesc& desc);
+
+    std::string GetRandomWeaponFile(int level);
 
     // sortowanie potworow po levelu
     friend bool VectorCompareFunc(const SPhysical& first, const SPhysical& last);
