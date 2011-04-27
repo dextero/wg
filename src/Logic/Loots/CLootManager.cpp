@@ -9,6 +9,8 @@
 #include "../../Rendering/Effects/CGraphicalEffects.h"
 #include "../Items/CItem.h"
 #include "../../Utils/StringUtils.h"
+#include "../../Map/CRandomMapGenerator.h"
+#include "../../Map/CMapManager.h"
 
 template<> CLootManager* CSingleton<CLootManager>::msSingleton = 0;
 
@@ -57,53 +59,7 @@ bool CLootManager::LoadLoots(const std::string &filename)
 }
 
 void CLootManager::BindRandomWeaponToLoot(CLoot * loot) {
-    std::string prefix = "data/abilities/";
-    std::string ability;
-    switch (gRand.Rnd(0, 40)) {
-        default:
-        case 0 : ability = "electric/ball-lightning.xml"; break;
-        case 1 : ability = "electric/chain-lightning.xml"; break;
-        case 2 : ability = "electric/devolution.xml"; break;
-        case 3 : ability = "electric/electric-snare.xml"; break;
-        case 4 : ability = "electric/electron.xml"; break;
-        case 5 : ability = "electric/electrostatics.xml"; break;
-        case 6 : ability = "electric/forked-lightning.xml"; break;
-        case 7 : ability = "electric/laser.xml"; break;
-        case 8 : ability = "electric/lightning-strike.xml"; break;
-        case 9 : ability = "electric/magicstorm.xml"; break;
-        case 10 : ability = "electric/transfusion.xml"; break;
-        case 11 : ability = "fire/blazingfeet.xml"; break;
-        case 12 : ability = "fire/elemental-revenge.xml"; break;
-        case 13 : ability = "fire/exploding-corpse.xml"; break;
-        case 14 : ability = "fire/firearrow.xml"; break;
-        case 15 : ability = "fire/fireball.xml"; break;
-        case 16 : ability = "fire/firecircle.xml"; break;
-        case 17 : ability = "fire/firepits.xml"; break;
-        case 18 : ability = "fire/firewall.xml"; break;
-        case 19 : ability = "fire/flaming-hands.xml"; break;
-        case 20 : ability = "fire/flaming-mantle.xml"; break;
-        case 21 : ability = "fire/quickshot.xml"; break;
-        case 22 : ability = "fire/sparkrain.xml"; break;
-        case 23 : ability = "support/healself.xml"; break;
-        case 24 : ability = "support/superspeed.xml"; break;
-        case 25 : ability = "special/acidcircus.xml"; break;
-        case 26 : ability = "special/basher.xml"; break;
-        case 27 : ability = "special/blades.xml"; break;
-        case 28 : ability = "special/blizzard.xml"; break;
-        case 29 : ability = "special/resonator.xml"; break;
-        case 30 : ability = "old/entangle.xml"; break;
-        case 31 : ability = "old/freezebomb.xml"; break;
-        case 32 : ability = "old/frostnova.xml"; break;
-        case 33 : ability = "old/hibernate.xml"; break;
-        case 34 : ability = "old/icearrow.xml"; break;
-        case 35 : ability = "old/icecircle.xml"; break;
-        case 36 : ability = "old/ignite.xml"; break;
-        case 37 : ability = "old/magic-missile.xml"; break;
-        case 38 : ability = "old/meditation.xml"; break;
-        case 39 : ability = "old/poison.xml"; break;
-        case 40 : ability = "old/sting.xml"; break;
-    }
-    ability = prefix + ability;
+    std::string ability = gRandomMapGenerator.GetRandomWeaponFile(gMapManager.GetLevel());
     CItem * item = new CItem();
     item->SetAbility(ability);
     loot->SetItem(item);
