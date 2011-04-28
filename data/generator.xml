@@ -30,16 +30,19 @@
         <weapon file="data/abilities/special/blades.xml" minLevel="12" maxLevel="99" />
         <weapon file="data/abilities/special/blizzard.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/special/resonator.xml" minLevel="3" maxLevel="99" />
+        <weapon file="data/abilities/old/acidspray.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/old/entangle.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/old/freezebomb.xml" minLevel="14" maxLevel="99" />
         <weapon file="data/abilities/old/frostnova.xml" minLevel="16" maxLevel="99" />
         <weapon file="data/abilities/old/hibernate.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/old/icearrow.xml" minLevel="1" maxLevel="99" />
+        <weapon file="data/abilities/old/iceball.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/old/icecircle.xml" minLevel="10" maxLevel="99" />
         <weapon file="data/abilities/old/ignite.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/old/magic-missile.xml" minLevel="2" maxLevel="99" />
         <weapon file="data/abilities/old/meditation.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/old/poison.xml" minLevel="5" maxLevel="99" />
+        <weapon file="data/abilities/old/powerslash.xml" minLevel="1" maxLevel="99" />
         <weapon file="data/abilities/old/sting.xml" minLevel="1" maxLevel="99" />
         <!-- a gdzie jest freezer? takie cos co mrozilo kilku wrogow w zasiegu dloni -->
 
@@ -67,11 +70,24 @@
         <lair    file="data/physicals/lairs/rat-lair.xml" minlevel="1" maxLevel="3" />
         <monster file="data/physicals/monsters/timberman-with-knife.xml" minLevel="0" maxLevel="5" />
         <monster file="data/physicals/monsters/timberman-with-axe.xml" minLevel="0" maxLevel="5" />
+
         <monster file="data/physicals/monsters/chityniak.xml" minLevel="2" maxLevel="6" />
         <lair    file="data/physicals/lairs/chityniak-lair.xml" level="2" />
-        <monster file="data/physicals/monsters/cockroach.xml" minLevel="3" maxLevel="6" />
+
+        <monster file="data/physicals/monsters/crawler.xml" minLevel="3" maxLevel="6" />
         <lair    file="data/physicals/lairs/chit-lair.xml" minLevel="3" maxLevel="3" />
 
+        <monster file="data/physicals/monsters/bee.xml" minLevel="4" maxLevel="6" />
+        <monster file="data/physicals/monsters/hornet.xml" minLevel="4" maxLevel="6" />
+        <lair    file="data/physicals/lairs/bee-lair.xml" minLevel="5" maxLevel="6" />
+
+        <monster file="data/physicals/monsters/chityniak-plwacz.xml" minLevel="5" maxLevel="7" />
+
+        <monster file="data/physicals/monsters/wolfbeast.xml" minLevel="7" maxLevel="8" />
+        <lair    file="data/physicals/lairs/wolfbeast-lair.xml" minLevel="7" maxLevel="8" />
+
+        <monster file="data/physicals/monsters/troll.xml" minLevel="8" maxLevel="8" />
+        <lair    file="data/physicals/lairs/troll-lair.xml" minLevel="8" maxLevel="8" />
 
         <monster file="data/physicals/monsters/baldy.xml" level="99" />
         <monster file="data/physicals/monsters/bee.xml" level="99" />
