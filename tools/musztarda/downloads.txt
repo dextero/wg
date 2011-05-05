@@ -11,6 +11,9 @@ en  win 1.0             http://students.mimuw.edu.pl/~sk236086/WG/paczki/WG-VC20
 pl  win 1.0             http://students.mimuw.edu.pl/~sk236086/WG/paczki/WG-VC2008-30-12-2010-r1956.zip
 #en  lin 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/wg_linux_1.0_en.tar.gz
 #pl  lin 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/pl/wg_linux_1.0_pl.tar.gz
+#redirecty do 1.0.1
+en  lin 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/wg_linux_1.0.1_en.tar.gz
+pl  lin 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/pl/wg_linux_1.0.1_pl.tar.gz
 en  mac 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/mac/wg_osx_1.0_en.zip
 pl  mac 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/mac/wg_osx_1.0_pl.zip
 
