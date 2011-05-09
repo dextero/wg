@@ -396,6 +396,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\src\GUI\CInGameOptionChooser.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\GUI\CInGameOptionChooser.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\src\GUI\CKeyReader.cpp"
 				>
 			</File>
@@ -1155,19 +1163,19 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\src\Logic\Factory\CItemTemplate.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\src\Logic\Factory\CItemTemplate.h"
-					>
-				</File>
-				<File
 					RelativePath="..\..\src\Logic\Factory\CLairTemplate.cpp"
 					>
 				</File>
 				<File
 					RelativePath="..\..\src\Logic\Factory\CLairTemplate.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Logic\Factory\CLootTemplate.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Logic\Factory\CLootTemplate.h"
 					>
 				</File>
 				<File
@@ -1226,14 +1234,6 @@
 			<Filter
 				Name="Items"
 				>
-				<File
-					RelativePath="..\..\src\Logic\Items\CDropManager.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\src\Logic\Items\CDropManager.h"
-					>
-				</File>
 				<File
 					RelativePath="..\..\src\Logic\Items\CItem.cpp"
 					>
@@ -1396,6 +1396,46 @@
 				</File>
 				<File
 					RelativePath="..\..\src\Logic\Achievements\CAchievementManager.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="Loots"
+				>
+				<File
+					RelativePath="..\..\src\Logic\Loots\CLoot.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Logic\Loots\CLoot.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Logic\Loots\CLootManager.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Logic\Loots\CLootManager.h"
+					>
+				</File>
+			</Filter>
+			<Filter
+				Name="OptionChooser"
+				>
+				<File
+					RelativePath="..\..\src\Logic\OptionChooser\CChestOptionHandler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Logic\OptionChooser\CLootItemOptionHandler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Logic\OptionChooser\CSimpleOptionHandler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Logic\OptionChooser\IOptionChooserHandler.h"
 					>
 				</File>
 			</Filter>
