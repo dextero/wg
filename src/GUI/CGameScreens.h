@@ -19,6 +19,7 @@ namespace GUI
 	class CCompass;
     class CBossHud;
     class CAbiSlotsBar;
+    class CInventoryDisplayer;
 
     class CGameScreens : CScreens
 	{
@@ -36,6 +37,9 @@ namespace GUI
 		void UpdateAbilities( unsigned playerNumber );
 		void UpdateAbilitiesTextboxes( unsigned playerNumber );
         void SetActiveAbilityScreen( const std::wstring& name );
+        
+        void InitInventory( unsigned playerNumber );
+        void UpdateInventory( unsigned playerNumber );
 
         void InitControlListing( unsigned playerNumber );
         void UpdateControlListing( unsigned playerNumber );
@@ -66,6 +70,7 @@ namespace GUI
 		CGUIObject * mGameOver;
         CSaveScreen * mSaveScreen;
         CEditorScreens * mEditorScreens;
+        CInventoryDisplayer * mInventory[2];
 	};
 };
 
