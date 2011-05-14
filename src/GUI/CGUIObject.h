@@ -17,6 +17,7 @@
 
 class CPlayer; 
 class CAbilityTree;
+class CHudSprite;
 
 namespace GUI
 {
@@ -78,6 +79,8 @@ namespace GUI
 	class CKeyReader;
     class CAbilitySlot;
     class CAnimatedImage;
+    class CInventoryDisplayer;
+    class CItemSlot;
 
     typedef fastdelegate::FastDelegate0<void>                       EventCallback;
     typedef fastdelegate::FastDelegate1<const std::wstring&, void>  EventWStringCallback;
@@ -111,6 +114,8 @@ namespace GUI
         inline CGUIObject* GetTooltip()                             { return mTooltip; }
         inline void SetDraggable(bool drag)                         { mDraggable = drag; }
         inline bool GetDraggable()                                  { return mDraggable; }
+        // obrazek, jaki jest przenoszony podczas przeciagania
+        virtual CHudSprite* GetDragIcon()                           { return NULL; }
 		
 		CWindow*				CreateWindow( const std::string& name, bool forceZ = false, int z = Z_GUI1 );	/* stworz dzieci*/
 		CButton*				CreateButton( const std::string& name, bool forceZ = false, int z = Z_GUI1 );
@@ -127,6 +132,8 @@ namespace GUI
 		CKeyReader*				CreateKeyReader( const std::string& name, bool forceZ = false, int z = Z_GUI1 );
         CAbilitySlot*           CreateAbilitySlot( const std::string& name, bool forceZ = false, int z = Z_GUI1 );
         CAnimatedImage*         CreateAnimatedImage( const std::string& name, bool forceZ = false, int z = Z_GUI1 );
+        CInventoryDisplayer*    CreateInventoryDisplayer( const std::string& name, int player, bool forceZ = false, int z = Z_GUI1);
+        CItemSlot*              CreateItemSlot( const std::string& name, bool forceZ = false, int z = Z_GUI1 );
 
         void UpdateChilds( float secondsPassed );										/* uaktualnij wsp. globalne i sprite'y */ /*jesli !mIsVisible to nie uaktualnia*/
 

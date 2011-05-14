@@ -15,6 +15,8 @@
 #include "CKeyReader.h"
 #include "CAbilitySlot.h"
 #include "CAnimatedImage.h"
+#include "CInventoryDisplayer.h"
+#include "CItemSlot.h"
 #include "../Utils/Maths.h"
 #include "../Rendering/ZIndexVals.h"
 #include <iostream>
@@ -227,6 +229,19 @@ CAnimatedImage* CGUIObject::CreateAnimatedImage( const std::string& name, bool f
 	return ai;
 }
 
+CInventoryDisplayer* CGUIObject::CreateInventoryDisplayer( const std::string& name, int player, bool forceZ, int z)
+{
+    CInventoryDisplayer* id = new CInventoryDisplayer(name, this, forceZ ? z : (mZIndex - mZIndexCount), player);
+    mChilds.push_back( id );
+    return id;
+}
+
+CItemSlot* CGUIObject::CreateItemSlot(const std::string& name, bool forceZ, int z)
+{
+    CItemSlot* is = new CItemSlot(name, this, forceZ ? z : (mZIndex - mZIndexCount));
+    mChilds.push_back(is);
+    return is;
+}
 
 /*	Funkcje chronione
 	=================================================================================== */

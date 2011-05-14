@@ -19,6 +19,8 @@ namespace GUI
         inline CHudSprite* GetIconSprite()      { return mAbilityIcon; }
         inline CAbility* GetSelectedAbility()   { return mSelectedAbility; }
         inline void Clear()                     { mSelectedAbility = NULL; }
+        
+        CHudSprite* GetDragIcon() { return mAbilityIcon; };
     private:
         CAbilitySlot(const std::string &name, CGUIObject *parent, unsigned zindex);
         ~CAbilitySlot();

@@ -1,3 +1,6 @@
+#ifndef _CITEM_H_
+#define _CITEM_H_
+
 // klasa do przechowywania obiektow w plecaku bohatera
 
 #include <string>
@@ -14,3 +17,5 @@ class CItem
     private:
         std::string mAbility;
 };
+
+#endif // _CITEM_H_

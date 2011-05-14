@@ -87,7 +87,7 @@ CConsole::CConsole() :
     std::string lastCommandsFile = gGameOptions.GetUserDir() + "/last_commands.console";
     FILE *infile = fopen(lastCommandsFile.c_str(), "r");
     if (!infile) {
-        fprintf(stderr, "CConsole: unable to load m_LastCommands from file `%s'", lastCommandsFile.c_str());
+        fprintf(stderr, "CConsole: unable to load m_LastCommands from file `%s'\n", lastCommandsFile.c_str());
     }
     else
     {
