@@ -404,6 +404,30 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\src\GUI\CInventoryDisplayer.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\GUI\CInventoryDisplayer.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\GUI\CItemSlot.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\GUI\CItemSlot.h"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\GUI\CItemSlotsBar.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\GUI\CItemSlotsBar.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\src\GUI\CKeyReader.cpp"
 				>
 			</File>
