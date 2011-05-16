@@ -29,7 +29,7 @@ public:
     void SetRadius(float radius);
 	void SetOptions(const std::vector<std::string> & options);
 	void SetOptions(const char * first, ...);
-	void SetOptions(const char * first);
+	void SetOption(const char * first);
 	void SetOptions(const char * first, const char * second);
 	void SetOptions(const char * first, const char * second, const char * third);
 	void SetOptions(const char * first, const char * second, const char * third, const char * fourth);

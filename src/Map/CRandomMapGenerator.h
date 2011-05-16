@@ -84,6 +84,8 @@ private:
     bool GenerateTunnelsFromRandomCenter();
     bool GenerateTunnelsGraph();
 
+    unsigned int mSpawnedChestsCount;
+
     // BFS
     unsigned int DistanceDijkstra(sf::Vector2i start, sf::Vector2i end);
 
@@ -104,7 +106,7 @@ private:
 
     void ReleaseCurrent();
 
-    std::string GenerateNextLootTemplateFile();
+    std::string GenerateNextLootTemplateFile(bool canBeObstacle = false);
 
 public:
     CRandomMapGenerator();
