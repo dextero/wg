@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 9.00
-# Visual Studio 2005
+# Visual C++ Express 2005
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WarsztatGame", "WarsztatGame.vcproj", "{3D83327A-9949-4747-85F4-1DD4ADA9A874}"
 EndProject
 Global
@@ -9,8 +9,8 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{3D83327A-9949-4747-85F4-1DD4ADA9A874}.Debug|Win32.ActiveCfg = Debug|Win32
-		{3D83327A-9949-4747-85F4-1DD4ADA9A874}.Debug|Win32.Build.0 = Debug|Win32
+		{3D83327A-9949-4747-85F4-1DD4ADA9A874}.Debug|Win32.ActiveCfg = Release|Win32
+		{3D83327A-9949-4747-85F4-1DD4ADA9A874}.Debug|Win32.Build.0 = Release|Win32
 		{3D83327A-9949-4747-85F4-1DD4ADA9A874}.Release|Win32.ActiveCfg = Release|Win32
 		{3D83327A-9949-4747-85F4-1DD4ADA9A874}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection

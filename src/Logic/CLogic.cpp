@@ -387,6 +387,7 @@ void CLogic::PrepareToSaveGame(bool savePlayerPos)
             }
 		}
 	}
+	ss << "set-ability player0 data/abilities/fire/fireball.xml 0\n";// taka proba
 	ss << "add-xp " << xp << " ignore-skill-points silent\n";
     ss << "set-difficulty-factor " << mDifficultyFactor << "\n";
     ss << "set-score " << mScore << "\n";

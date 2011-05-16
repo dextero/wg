@@ -66,6 +66,8 @@
 				OutputFile="..\..\$(ProjectName).exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="libs\SFML-1.6\lib"
+				IgnoreAllDefaultLibraries="false"
+				IgnoreDefaultLibraryNames="LIBCMT"
 				GenerateDebugInformation="true"
 				SubSystem="0"
 				TargetMachine="1"
@@ -145,6 +147,7 @@
 				OutputFile="..\..\$(ProjectName).exe"
 				LinkIncremental="0"
 				AdditionalLibraryDirectories="libs\SFML-1.6\lib"
+				IgnoreDefaultLibraryNames="LIBCMT"
 				GenerateDebugInformation="true"
 				SubSystem="0"
 				OptimizeReferences="2"
@@ -2192,11 +2195,11 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\src\Utils\MathsFunc.cpp"
+				RelativePath="..\..\src\Utils\Maths.cpp"
 				>
 			</File>
 			<File
-				RelativePath="..\..\src\Utils\MathsFunc.h"
+				RelativePath="..\..\src\Utils\Maths.h"
 				>
 			</File>
 			<File
