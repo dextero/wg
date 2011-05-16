@@ -36,7 +36,7 @@ namespace GUI
         void SetBarBackground(const std::string& bg);
         void SetSlotBackground(const std::string& bg);
 
-        void SetSlotItem(unsigned int slot, CItem* item);
+        void SetSlotItem(unsigned int slot, CItem* item, bool updatePlayer = true);
         
         void SetBarPosPix(sf::Vector2f pos) { mBarPosPix = pos; }
         void SetBarSizePix(sf::Vector2f size) { mBarSizePix = size; }
