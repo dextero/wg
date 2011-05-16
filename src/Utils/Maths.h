@@ -178,5 +178,5 @@ namespace Maths
     }
 }
 
-#endif // __MATHS_FUNC__
+#endif // __MATHS_FUNC
 
