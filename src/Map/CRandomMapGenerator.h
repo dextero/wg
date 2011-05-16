@@ -10,6 +10,8 @@
 
 #include <SFML/System/Vector2.hpp>
 
+struct CLoot;
+
 struct SRandomMapDesc
 {
     std::string set;
@@ -102,6 +104,8 @@ private:
 
     void ReleaseCurrent();
 
+    std::string GenerateNextLootTemplateFile();
+
 public:
     CRandomMapGenerator();
     ~CRandomMapGenerator();
@@ -111,6 +115,11 @@ public:
     bool GenerateRandomMap(const std::string& filename, const SRandomMapDesc& desc);
 
     std::string GetRandomWeaponFile(int level);
+
+//  std::string GenerateNextFinding(bool isLootFromDyingMonster);
+
+    // tworzy i zwraca nowa znajdzke - uzywane m.in. przez ginace potwory
+    CLoot * GenerateNextLoot();
 
     // sortowanie potworow po levelu
     friend bool VectorCompareFunc(const SPhysical& first, const SPhysical& last);

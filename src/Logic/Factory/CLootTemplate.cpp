@@ -1,7 +1,7 @@
 #include "CLootTemplate.h"
+#include "CTemplateParam.h"
 #include "../CPhysicalManager.h"
 #include "../Loots/CLoot.h"
-#include "../Loots/CLootManager.h"
 #include "../../Utils/CXml.h"
 #include "../Effects/CEffectManager.h"
 #include "../../Rendering/CDisplayable.h"
@@ -47,6 +47,7 @@ void CLootTemplate::PrepareEditorPreviewer(CDisplayable* d)
 
 CLoot* CLootTemplate::Create(std::wstring id)
 {
+    fprintf(stderr, "CLootTemplate::Create()\n");
     CLoot *loot = gPhysicalManager.CreateLoot(id);
 	loot->SetTemplate( this );
     loot->SetImage ( mLoot.image );
@@ -54,15 +55,17 @@ CLoot* CLootTemplate::Create(std::wstring id)
     loot->GetDisplayable()->SetScale(0.25f,0.25f);
     loot->BindTemplate(&mLoot);
     loot->SetGenre(mGenre);
+    loot->SetAbility(mLoot.ability);
 
     gGraphicalEffects.ShowEffect("loot-circle-perpetual", loot); //todo: przeniesc do xml'a, zeby rozne
                                                                  //przedmioty mogly miec rozne effekty przypiete
-
-    if (mGenre == L"weapon") { //a moze "random_weapon" ?
-        gLootManager.BindRandomWeaponToLoot(loot);
-    }
-
     return loot;
+}
+
+CTemplateParam * CLootTemplate::ReadParam(CXml & xml, rapidxml::xml_node<> * node, CTemplateParam * orig) {
+    fprintf(stderr, "CLootTemplate::ReadParam\n");
+    mLoot.ability = xml.GetString(xml.GetChild(node, "ability"), "");
+    return CPhysicalTemplate::ReadParam(xml,node,orig);
 }
 
 bool operator<(const SLootTemplate& a, const SLootTemplate& b) { return a.lootLvl < b.lootLvl; }    
