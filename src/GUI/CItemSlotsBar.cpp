@@ -142,10 +142,11 @@ void CItemSlotsBar::SetSlotBackground(const std::string& bg)
     }
 }
 
-void CItemSlotsBar::SetSlotItem(unsigned int slot, CItem* item)
+void CItemSlotsBar::SetSlotItem(unsigned int slot, CItem* item, bool updatePlayer)
 {
     if (slot < ITEM_SLOTS_COUNT && mSlot[slot])
         mSlot[slot]->SetSelectedItem(item);
 
-    UpdatePlayerData();
+    if (updatePlayer)
+        UpdatePlayerData();
 }

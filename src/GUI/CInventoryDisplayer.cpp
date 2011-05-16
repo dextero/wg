@@ -68,9 +68,11 @@ void CInventoryDisplayer::UpdateSprites( float secondsPassed ){
         mForceReload = false;
         CPlayer* player = gPlayerManager.GetPlayerByNumber(mPlayer);
         if (player) {
-            
             for (size_t i = 0; i < CItemSlotsBar::ITEM_SLOTS_COUNT; ++i)
-                mBar->SetSlotItem(i, player->GetItem(i));
+            {
+                mBar->SetSlotItem(i, player->GetItem(i), false);
+                printf("Slot %d: item %p\n", i, player->GetItem(i));
+            }
         }
     }
 }

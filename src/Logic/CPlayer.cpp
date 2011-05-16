@@ -305,11 +305,13 @@ void CPlayer::AddItem(CItem * item, size_t invPos) {
 
     SAbilityInstance ai(gResourceManager.GetAbility(item->GetAbility()), 1);
     GetAbilityPerformer().AddAbility(ai, "", invPos);
+    printf("Added item %p at position %d\n", item, invPos);
 }
 
 void CPlayer::RemoveItem(CItem * item) {
     for (size_t i = 0 ; i < mItems.size() ; i++) {
         if (mItems[i] == item) {
+            printf("REMOVING item %p from pos: %d\n", item, i);
             mItems[i] = mItems.back();
             mItems.pop_back();
             break;
