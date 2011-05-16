@@ -149,7 +149,7 @@ void CInGameOptionChooser::SetOptions(const char * first, ...) {
     SetOptions(options);
 }
 
-void CInGameOptionChooser::SetOptions(const char * first) {
+void CInGameOptionChooser::SetOption(const char * first) {
     SetOptions(first, NULL);
 }
 void CInGameOptionChooser::SetOptions(const char * first, const char * second) {

@@ -47,7 +47,6 @@ void CLootTemplate::PrepareEditorPreviewer(CDisplayable* d)
 
 CLoot* CLootTemplate::Create(std::wstring id)
 {
-    fprintf(stderr, "CLootTemplate::Create()\n");
     CLoot *loot = gPhysicalManager.CreateLoot(id);
 	loot->SetTemplate( this );
     loot->SetImage ( mLoot.image );
@@ -63,7 +62,6 @@ CLoot* CLootTemplate::Create(std::wstring id)
 }
 
 CTemplateParam * CLootTemplate::ReadParam(CXml & xml, rapidxml::xml_node<> * node, CTemplateParam * orig) {
-    fprintf(stderr, "CLootTemplate::ReadParam\n");
     mLoot.ability = xml.GetString(xml.GetChild(node, "ability"), "");
     return CPhysicalTemplate::ReadParam(xml,node,orig);
 }

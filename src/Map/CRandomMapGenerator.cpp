@@ -771,8 +771,13 @@ PhysicalsVector FilterByType(const PhysicalsVector & input, const std::string & 
     return filteredOut;
 }
 
-std::string CRandomMapGenerator::GenerateNextLootTemplateFile()
+std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle)
 {
+    if (canBeObstacle && mSpawnedChestsCount < 3 && gRand.Rndf() < 0.25) {
+        fprintf(stderr, "Spawning chest!\n");
+        return "data/physicals/obstacles/chest.xml";
+    }
+
     PhysicalsVector loots = FilterByLevel(FilterByType(mPhysicals, "loot"), mDesc.level);
     if (loots.empty()) {
         return "";
@@ -828,7 +833,7 @@ bool CRandomMapGenerator::PlaceLoots()
             float offsetY = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // + 0.5, zeby wycentrowac na kaflach
             // obrot w przypadku przedmiotow nie ma sensu, skala zadeklarowana w xmlu
 
-            std::string lootTemplateFile = GenerateNextLootTemplateFile();
+            std::string lootTemplateFile = GenerateNextLootTemplateFile(true);
             // brzydki hak:
             if (lootTemplateFile == "data/loots/weapon.xml") {
                 const std::string ability = GetRandomWeaponFile(mDesc.level);
@@ -967,6 +972,8 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
         fprintf(stderr, "CRandomMapGenerator::GenerateRandomMap: invalid width and/or height: w=%u h=%u\n", desc.sizeX, desc.sizeY);
         return false;
     }
+
+    mSpawnedChestsCount = 0;
 
     mDesc = desc;
     mPassableLeft = mDesc.sizeX * mDesc.sizeY;
