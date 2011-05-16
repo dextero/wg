@@ -2,6 +2,11 @@
 
 #include "CMap.h"
 
+#include "../Logic/Loots/CLoot.h"
+#include "../Logic/Items/CItem.h"
+
+#include "../Logic/Factory/CLootTemplate.h"
+
 #include "../ResourceManager/CResourceManager.h"
 #include "../ResourceManager/CImage.h"
 
@@ -766,29 +771,46 @@ PhysicalsVector FilterByType(const PhysicalsVector & input, const std::string & 
     return filteredOut;
 }
 
+std::string CRandomMapGenerator::GenerateNextLootTemplateFile()
+{
+    PhysicalsVector loots = FilterByLevel(FilterByType(mPhysicals, "loot"), mDesc.level);
+    if (loots.empty()) {
+        return "";
+    }
+    SPhysical loot = ChooseRandomlyRegardingFrequency(loots);
+    
+    // pozniej tutaj wstawic takie bajery, zeby bralo pod uwage,
+    // * czy na aktualnym levelu juz byla wylosowana jakas bron?
+    // * jak dawno temu byla wylosowana bron?
+    // tak zeby zrownowazyc :) wypadanie ciekawych rzeczy
+    
+    return loot.file;
+
+    // o kurczaki, trzeba bedzie jakis mechanizm dorobic, zeby dalo sie przepychac
+    // konkretne weapony poprzez pliki .xml.... uga buga...
+}
+
+CLoot * CRandomMapGenerator::GenerateNextLoot()
+{
+    const std::string lootTemplateFile = GenerateNextLootTemplateFile();
+    if (lootTemplateFile.empty()) return NULL;
+
+    CLoot * loot = dynamic_cast<CLootTemplate*>(gResourceManager.GetPhysicalTemplate(lootTemplateFile))->Create();
+    if (loot->GetGenre() == L"weapon") { //a moze "random weapon" ?
+        const std::string ability = GetRandomWeaponFile(mDesc.level);
+        fprintf(stderr, "Generated random weapon: %s\n", ability.c_str());
+        loot->SetAbility(ability);
+    }
+    return loot;
+}
+
 bool CRandomMapGenerator::PlaceLoots()
 {
     CTimer timer("- loots: ");
 
-    PhysicalsVector loots = FilterByType(mPhysicals, "loot");
-
-    if (loots.size() && mDesc.loots && mPassableLeft)
+    if (mDesc.loots && mPassableLeft)
     {
-        // najlepsze przedmioty, ale o levelu nie wiekszym od podanego
-        std::vector<size_t> lootsToPlace;
-
-        for (size_t i = loots.size() - 1; i != (size_t)-1; --i)
-            if (loots[i].minLevel <= mDesc.level)
-            {
-                lootsToPlace.push_back(i);
-
-                // max powiedzmy... 10 rodzajow znajdek
-                if (lootsToPlace.size() > 9)
-                    break;
-            }
-
-        for (size_t i = 0; i < lootsToPlace.size(); ++i)
-            mXmlText << "\t<objtype code=\"loot" << i << "\" file=\"" << loots[lootsToPlace[i]].file << "\" />\n";
+        PhysicalsVector objTypes;
 
         for (unsigned int i = 0; i < std::min(mPassableLeft, mDesc.loots); ++i)
         {
@@ -806,8 +828,16 @@ bool CRandomMapGenerator::PlaceLoots()
             float offsetY = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // + 0.5, zeby wycentrowac na kaflach
             // obrot w przypadku przedmiotow nie ma sensu, skala zadeklarowana w xmlu
 
-            size_t what = rand() % lootsToPlace.size();
-            mXmlText << "\t<obj code=\"loot" << what << "\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" />\n";
+            std::string lootTemplateFile = GenerateNextLootTemplateFile();
+            // brzydki hak:
+            if (lootTemplateFile == "data/loots/weapon.xml") {
+                const std::string ability = GetRandomWeaponFile(mDesc.level);
+                fprintf(stderr, "Generated random weapon: %s\n", ability.c_str());
+
+                mXmlText << "\t<obj templateFile=\"" << lootTemplateFile << "\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" ><ability>" << ability << "</ability></obj>\n";
+            } else {
+                mXmlText << "\t<obj templateFile=\"" << lootTemplateFile << "\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" />\n";
+            }
         }
 
         // odejmujemy, ile dodalismy...

@@ -24,7 +24,7 @@ void CEnemy::Update(float dt)
 void CEnemy::Kill() 
 {
     if ( mSpawnState != ssDying )
-        gLootManager.DropLootAt( mPosition );
+        CLootManager::DropLootAt( mPosition );
 
     gBossManager.EnemyDied(this);
     gBestiary.EnableMonster(this);

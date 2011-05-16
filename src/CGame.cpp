@@ -19,7 +19,6 @@
 #include "GUI/CRoot.h"
 #include "GUI/CTextArea.h"
 #include "Audio/CAudioManager.h"
-#include "Logic/Loots/CLootManager.h"
 #include "Logic/Quests/CQuestManager.h"
 #include <sstream>
 #ifdef PLATFORM_MACOSX
@@ -123,7 +122,6 @@ void CGame::Run()
     gLogic;
     gCamera;
     gAudioManager;
-    gLootManager;
 	gQuestManager;
 
 #ifdef __I_AM_TOXIC__

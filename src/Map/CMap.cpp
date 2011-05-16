@@ -349,21 +349,29 @@ namespace Map{
         CMapObjectDescriptor *mapObj;
         for (node=xml.GetChild(0,"obj"); node; node=xml.GetSibl(node,"obj") ){
             str = xml.GetString(node,"code");
+            const std::string templateFile = xml.GetString(node,"templateFile");
+            CPhysicalTemplate * physicalTemplate = gResourceManager.GetPhysicalTemplate(templateFile);
             int i = GetMapObjectTypeIndex(str);
-            if (i < 0)
+            if (i < 0 && physicalTemplate == NULL) {
                 return false;
+            }
             mapObj = new CMapObjectDescriptor();
-            mapObj->code = str;
+            if (i >= 0) {
+                mapObj->templ = mMapObjectTypes[i]->templ;
+                mapObj->code = str;
+            } else if (!templateFile.empty()) {
+                mapObj->templ = physicalTemplate;
+                mapObj->code = "";
+            }
             mapObj->name = xml.GetString(node,"name");
             mapObj->x = xml.GetFloat(node,"x");
             mapObj->y = xml.GetFloat(node,"y");
             mapObj->rot = xml.GetInt(node,"rot");
-            mapObj->templ = mMapObjectTypes[i]->templ;
             mapObj->bossRadius = xml.GetFloat(node, "trigger-radius");
             mapObj->bossAI = xml.GetString(node, "trigger-ai");
             mapObj->bossPlaylist = xml.GetString(node, "trigger-playlist");
             if (node->first_node() != NULL)
-                mapObj->param = mMapObjectTypes[i]->templ->ReadParam(xml,node);
+                mapObj->param = mapObj->templ->ReadParam(xml,node);
             mMapObjectDescriptors.push_back(mapObj);
         }
 
