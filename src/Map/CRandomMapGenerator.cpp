@@ -777,6 +777,14 @@ std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle
         fprintf(stderr, "Spawning chest!\n");
         return "data/physicals/obstacles/chest.xml";
     }
+    if (gRand.Rndf() < mSpawnWeaponProbability) {
+        mSpawnedWeaponsCount++;
+        mSpawnWeaponProbability = 0.25f - (mSpawnedWeaponsCount * 0.20);
+        fprintf(stderr, "Spawning weapon!\n");
+        return "data/loots/weapon.xml";
+    } else {
+        mSpawnWeaponProbability += 0.05 - (mSpawnedWeaponsCount * 0.02);
+    }
 
     PhysicalsVector loots = FilterByLevel(FilterByType(mPhysicals, "loot"), mDesc.level);
     if (loots.empty()) {
@@ -974,6 +982,8 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
     }
 
     mSpawnedChestsCount = 0;
+    mSpawnedWeaponsCount = 0;
+    mSpawnWeaponProbability = 0.2;
 
     mDesc = desc;
     mPassableLeft = mDesc.sizeX * mDesc.sizeY;

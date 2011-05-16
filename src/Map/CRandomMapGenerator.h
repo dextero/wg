@@ -86,6 +86,9 @@ private:
 
     unsigned int mSpawnedChestsCount;
 
+    float mSpawnWeaponProbability;
+    unsigned int mSpawnedWeaponsCount;
+
     // BFS
     unsigned int DistanceDijkstra(sf::Vector2i start, sf::Vector2i end);
 
