@@ -101,7 +101,7 @@ void CInputHandler::FrameStarted( float secondsPassed ){
 
             CInGameOptionChooser * oc = pc->GetOptionChooser();
             // todo: null check
-            if (oc->IsVisible())
+            if (oc->IsVisible() && gBindManagerByPlayer(i)->GetMouseLook() != true)
             {
                 typedef std::map<std::string, size_t> MapType;
                 MapType mapping;

@@ -15,14 +15,13 @@
 #define _BUTTON_H_
 
 #include "CGUIObject.h"
+#include "Callbacks.h"
 #include <string>
 #include <FastDelegate.h>
 #include <SFML/Graphics/Color.hpp>
 
 class CHudSprite;
 class CHudStaticText;
-typedef fastdelegate::FastDelegate0<void> btn_callback;
-typedef fastdelegate::FastDelegate1<const std::wstring&,void> btn_param_callback;
 
 namespace GUI
 {
@@ -40,9 +39,11 @@ namespace GUI
         bool IsMouseOver() { return mMouseOver; }
 
         // ClickCallback rozni sie od eventow CGUIObject - potrzebuje nacisniecia I zwolnienia lewego przycisku
-		inline btn_callback* GetClickCallback()	{ return &mClickCallback; }
-		inline btn_param_callback* GetClickParamCallback() { return &mClickParamCallback; }
+		inline EventCallback* GetClickCallback()	{ return &mClickCallback; }
+		inline EventWStringCallback* GetClickParamCallback() { return &mClickParamCallback; }
+        inline EventIntCallback* GetClickIntCallback() { return &mClickIntCallback; }
 		inline void SetClickCallbackParams( const std::wstring& params ) { mClickCallbackParams = params; }
+		inline void SetClickIntCallbackParam( int param ) { mClickIntCallbackParam = param; }
 
 	private:
 		CButton( const std::string& name, CGUIObject* parent, unsigned zindex );
@@ -59,9 +60,12 @@ namespace GUI
 		CHudStaticText* mTextSprite;
 
 		float mFontSize[UNIT_COUNT];
-		btn_callback mClickCallback;
-		btn_param_callback mClickParamCallback;
+        GUI::EventCallback mClickCallback;
+        GUI::EventWStringCallback mClickParamCallback;
 		std::wstring mClickCallbackParams;
+
+        EventIntCallback mClickIntCallback;
+        int mClickIntCallbackParam;
 
 		friend class CGUIObject;
 	};
