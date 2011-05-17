@@ -128,6 +128,7 @@ bool CButton::OnMouseEvent( float x, float y, mouseEvent e )
             gGUI.SetActiveObject( NULL );
 		    if ( !mClickCallback.empty() )		mClickCallback();
 		    if ( !mClickParamCallback.empty() ) mClickParamCallback( mClickCallbackParams );
+            if ( !mClickIntCallback.empty() )   mClickIntCallback(mClickIntCallbackParam);
         }
         mMousePressed = false;
         break;
