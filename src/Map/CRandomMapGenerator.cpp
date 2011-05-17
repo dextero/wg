@@ -67,10 +67,8 @@ PhysicalsVector FilterByLevel(const PhysicalsVector & input, int level)
 }
 
 CRandomMapGenerator::SPhysical ChooseRandomlyRegardingFrequency(const PhysicalsVector & input) {
-    fprintf(stderr, "input.size() = %d\n", input.size());
     float totalFreq = 0.0f;
     for (PhysicalsVector::const_iterator it = input.begin() ; it != input.end() ; it++) {
-        fprintf(stderr, "%s\n", it->file.c_str());
         totalFreq += it->frequency;
     }
     float chosenFreq = gRand.Rndf(0.0f, totalFreq);
@@ -771,16 +769,18 @@ PhysicalsVector FilterByType(const PhysicalsVector & input, const std::string & 
     return filteredOut;
 }
 
-std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle)
+std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle, float additionalWeaponProbability)
 {
     if (canBeObstacle && mSpawnedChestsCount < 3 && gRand.Rndf() < 0.25) {
         fprintf(stderr, "Spawning chest!\n");
         return "data/physicals/obstacles/chest.xml";
     }
-    if (gRand.Rndf() < mSpawnWeaponProbability) {
+    float realWeaponSpawnProbability = mSpawnWeaponProbability + (additionalWeaponProbability * (3 - mSpawnedWeaponsCount));
+    fprintf(stderr, "realWeaponSpawnProbability = %f\n", realWeaponSpawnProbability);
+    if (gRand.Rndf() < realWeaponSpawnProbability) {
+        fprintf(stderr, "Spawning weapon!\n");
         mSpawnedWeaponsCount++;
         mSpawnWeaponProbability = 0.25f - (mSpawnedWeaponsCount * 0.20);
-        fprintf(stderr, "Spawning weapon!\n");
         return "data/loots/weapon.xml";
     } else {
         mSpawnWeaponProbability += 0.05 - (mSpawnedWeaponsCount * 0.02);
@@ -803,9 +803,9 @@ std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle
     // konkretne weapony poprzez pliki .xml.... uga buga...
 }
 
-CLoot * CRandomMapGenerator::GenerateNextLoot()
+CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability)
 {
-    const std::string lootTemplateFile = GenerateNextLootTemplateFile();
+    const std::string lootTemplateFile = GenerateNextLootTemplateFile(false, additionalWeaponProbability);
     if (lootTemplateFile.empty()) return NULL;
 
     CLoot * loot = dynamic_cast<CLootTemplate*>(gResourceManager.GetPhysicalTemplate(lootTemplateFile))->Create();

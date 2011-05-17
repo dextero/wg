@@ -109,7 +109,7 @@ private:
 
     void ReleaseCurrent();
 
-    std::string GenerateNextLootTemplateFile(bool canBeObstacle = false);
+    std::string GenerateNextLootTemplateFile(bool canBeObstacle = false, float additionalWeaponProbability = 0.0f);
 
 public:
     CRandomMapGenerator();
@@ -124,7 +124,7 @@ public:
 //  std::string GenerateNextFinding(bool isLootFromDyingMonster);
 
     // tworzy i zwraca nowa znajdzke - uzywane m.in. przez ginace potwory
-    CLoot * GenerateNextLoot();
+    CLoot * GenerateNextLoot(float additionalWeaponProbability = 0.0f);
 
     // sortowanie potworow po levelu
     friend bool VectorCompareFunc(const SPhysical& first, const SPhysical& last);
