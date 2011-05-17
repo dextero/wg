@@ -15,7 +15,6 @@
 #define _BUTTON_H_
 
 #include "CGUIObject.h"
-#include "Callbacks.h"
 #include <string>
 #include <FastDelegate.h>
 #include <SFML/Graphics/Color.hpp>
