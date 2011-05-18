@@ -370,8 +370,8 @@ void CGameScreens::InitInventory(unsigned int playerNumber)
 
 void CGameScreens::UpdateInventory(unsigned int playerNumber)
 {
-    if (!mInventory[playerNumber]){printf("Update&InitInventory(%u)\n",playerNumber);
-        InitInventory(playerNumber);}
+    if (!mInventory[playerNumber])
+        InitInventory(playerNumber);
     mInventory[playerNumber]->ForceReload();
 }
 
