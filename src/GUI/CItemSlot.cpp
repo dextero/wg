@@ -123,7 +123,14 @@ void CItemSlot::SetSelectedItem(CItem* item)
             if (img)
                 mItemIcon->GetSFSprite()->SetImage(*img);
             else
-                fprintf(stderr, "Error: couldn't open image: %s - it's likely it will cause a crash while dragging\n", abi->icon.c_str());
+            {
+                fprintf(stderr, "Error: couldn't open image: %s\n", abi->icon.c_str());
+                img = gResourceManager.GetImage("data/abilities/default.png");
+                if (img)
+                    mItemIcon->GetSFSprite()->SetImage(*img);
+                else
+                    fprintf(stderr, "Error: couldn't open ugly default ability icon (data/abilities/default.png). Prepare for crash.\n");
+            }
             // nic nie bedzie widac przy przeciaganiu, jesli sie zepsuje obrazek, ale ok...
             SetDraggable(true);
         }
