@@ -72,10 +72,13 @@ void CItemSlotsBar::UpdatePlayerData()
     {
         for (unsigned i = 0; i < ITEM_SLOTS_COUNT; ++i)
         {
-            if (!mSlot[i]->GetSelectedItem())           // zwolnij slot (i)
-                player->RemoveItem(player->GetItem(i));
-            else                                        // podmien
-                player->AddItem(mSlot[i]->GetSelectedItem(), i);
+            if (player->GetItem(i) != mSlot[i]->GetSelectedItem())
+            {
+                if (!mSlot[i]->GetSelectedItem())           // zwolnij slot (i)
+                    player->RemoveItem(player->GetItem(i));
+                else                                        // podmien
+                    player->AddItem(mSlot[i]->GetSelectedItem(), i);
+            }
         }
     }
 }
