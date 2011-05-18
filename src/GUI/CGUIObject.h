@@ -57,7 +57,9 @@ namespace GUI
         GUI_EDITOR_RESOURCE_PANEL,
 		GUI_KEY_READER,
         GUI_ABILITY_SLOT,
-        GUI_ANIMATED_IMAGE
+        GUI_ANIMATED_IMAGE,
+        GUI_INVENTORY_DISPLAYER,
+        GUI_ITEM_SLOT
 	};
 
 	/* jednostki opisujace pozycje etc. */

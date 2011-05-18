@@ -31,7 +31,7 @@
 
 using namespace GUI;
 
-const float CAbilityTreeDisplayer::HOLDER_SIZE = 7.5f;
+const float CAbilityTreeDisplayer::HOLDER_SIZE = 15.f;//7.5f
 const float CAbilityTreeDisplayer::DEPLINE_WIDTH = 5.0f;
 
 CAbilityTreeDisplayer::CAbilityTreeDisplayer( const std::string& name, CGUIObject* parent, 

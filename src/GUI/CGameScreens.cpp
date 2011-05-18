@@ -59,8 +59,8 @@ void CGameScreens::Show(const std::wstring &menu)
 	{
         //mAbiSlotsBar[0]->Show();
 		//mAbilities[0]->SetVisible( true );
-        mInventory[0]->SetVisible(true);
         UpdateInventory(0);
+        mInventory[0]->SetVisible(true);
 		//mAbiHelp[0]->SetVisible( true );
 		//UpdateAbilities( 0 );
         ShowCursor();
@@ -70,8 +70,8 @@ void CGameScreens::Show(const std::wstring &menu)
 	{
         //mAbiSlotsBar[1]->Show();
 		//mAbilities[1]->SetVisible( true );
-        mInventory[1]->SetVisible(true);
         UpdateInventory(1);
+        mInventory[1]->SetVisible(true);
 		//mAbiHelp[1]->SetVisible( true );
 		//UpdateAbilities( 1 );
         ShowCursor();
@@ -370,8 +370,8 @@ void CGameScreens::InitInventory(unsigned int playerNumber)
 
 void CGameScreens::UpdateInventory(unsigned int playerNumber)
 {
-    if (!mInventory[playerNumber])
-        InitInventory(playerNumber);
+    if (!mInventory[playerNumber]){printf("Update&InitInventory(%u)\n",playerNumber);
+        InitInventory(playerNumber);}
     mInventory[playerNumber]->ForceReload();
 }
 
