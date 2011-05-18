@@ -41,7 +41,6 @@ bool CItemSlot::OnMouseEvent( float x, float y, mouseEvent e )
     if (e == MOUSE_DROP)
     {
         CItemSlot* slot = NULL;
-        CButton* btn = NULL;
 
         if ((slot = dynamic_cast<CItemSlot*>(gGUI.GetLastDraggedObject())) != NULL)
         {
@@ -120,7 +119,12 @@ void CItemSlot::SetSelectedItem(CItem* item)
         CAbility* abi = gResourceManager.GetAbility(item->GetAbility());
         if (abi)
         {
-            mItemIcon->GetSFSprite()->SetImage(*gResourceManager.GetImage(abi->icon));
+            System::Resource::CImage* img = gResourceManager.GetImage(abi->icon);
+            if (img)
+                mItemIcon->GetSFSprite()->SetImage(*img);
+            else
+                fprintf(stderr, "Error: couldn't open image: %s - it's likely it will cause a crash while dragging\n", abi->icon.c_str());
+            // nic nie bedzie widac przy przeciaganiu, jesli sie zepsuje obrazek, ale ok...
             SetDraggable(true);
         }
     }
@@ -134,7 +138,7 @@ void CItemSlot::UndoDrag()
 
 
 CItemSlot::CItemSlot(const std::string &name, CGUIObject *parent, unsigned zindex)
-:	CGUIObject(name, GUI_ABILITY_SLOT, parent, zindex),
+:	CGUIObject(name, GUI_ITEM_SLOT, parent, zindex),
     mSelectedItem(NULL),
     mItemIcon(NULL)
 {

@@ -299,7 +299,7 @@ void CPlayerController::Update(float dt){
             if (mKeySequence.size() == 1) { // nowy klawisz nacisnieto
                 CItem * item = ((CPlayer*)mActor)->GetItem(mKeySequence[0]);
                 if (item) {
-                    fprintf(stderr, "item->%s\n", item->GetAbility().c_str());
+                    fprintf(stderr, "item->%s, %u\n", item->GetAbility().c_str(), item->mInvPos);
                     res = mActor->GetAbilityPerformer().FindAbilityIndexByInvPos(item->mInvPos);
                 }
             }

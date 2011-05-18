@@ -7,7 +7,7 @@
 #include <string>
 
 namespace System{
-    namespace Resource{
+    namespace Resource {
         class CImage;
     }
 }
@@ -17,6 +17,7 @@ namespace GUI
     class CWindow;
     class CImageBox;
     class CItemSlotsBar;
+    class CAbilityTreeDisplayer;
 
 	class CInventoryDisplayer : public CGUIObject
 	{
@@ -34,10 +35,9 @@ namespace GUI
         int mPlayer;
         bool mForceReload;
         
-        CWindow* mBackground;
+        CWindow* mBackground, * mRightPanel;
         CItemSlotsBar* mBar;
-
-        friend class CAbilitySlot;
+        CAbilityTreeDisplayer* mAbiTreeDisplayer;
 	};
 };
 

@@ -346,7 +346,7 @@ CGUIObject::CGUIObject(const std::string &name, GUI::guiType type, GUI::CGUIObje
 	}
 
     // pucujemy parametry
-    memset(mEventVoidPtrParam, NULL, MOUSE_EVENT_TYPES * sizeof(void*));
+    memset(mEventVoidPtrParam, 0, MOUSE_EVENT_TYPES * sizeof(void*));
 
 	gGUI.RegisterObject( this );
 }
