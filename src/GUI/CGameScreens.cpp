@@ -15,6 +15,7 @@
 #include "CCompass.h"
 #include "CBossHud.h"
 #include "CAbiSlotsBar.h"
+#include "CInventoryDisplayer.h"
 #include "../Logic/CLogic.h"
 #include "../Logic/CPlayerManager.h"
 #include "../Logic/CPlayer.h"
@@ -56,21 +57,25 @@ void CGameScreens::Show(const std::wstring &menu)
 	}
 	else if ( menu == L"abilities0" )
 	{
-        mAbiSlotsBar[0]->Show();
-		mAbilities[0]->SetVisible( true );
+        //mAbiSlotsBar[0]->Show();
+		//mAbilities[0]->SetVisible( true );
+        UpdateInventory(0);
+        mInventory[0]->SetVisible(true);
 		//mAbiHelp[0]->SetVisible( true );
-		UpdateAbilities( 0 );
+		//UpdateAbilities( 0 );
         ShowCursor();
-        SetActiveAbilityScreen(mActiveAbilitiesTab[0]);
+        //SetActiveAbilityScreen(mActiveAbilitiesTab[0]);
 	}
 	else if ( menu == L"abilities1" )
 	{
-        mAbiSlotsBar[1]->Show();
-		mAbilities[1]->SetVisible( true );
+        //mAbiSlotsBar[1]->Show();
+		//mAbilities[1]->SetVisible( true );
+        UpdateInventory(1);
+        mInventory[1]->SetVisible(true);
 		//mAbiHelp[1]->SetVisible( true );
-		UpdateAbilities( 1 );
+		//UpdateAbilities( 1 );
         ShowCursor();
-        SetActiveAbilityScreen(mActiveAbilitiesTab[1]);
+        //SetActiveAbilityScreen(mActiveAbilitiesTab[1]);
 	}
 	else if ( menu == L"controls0" )
 	{
@@ -117,8 +122,12 @@ void CGameScreens::Hide(const std::wstring &menu)
         mAbiSlotsBar[0]->UpdatePlayerData();
         mAbiSlotsBar[1]->Hide();
         mAbiSlotsBar[1]->UpdatePlayerData();
-		mAbilities[0]->SetVisible( false );
-		mAbilities[1]->SetVisible( false );
+		//mAbilities[0]->SetVisible( false );
+		//mAbilities[1]->SetVisible( false );
+        mInventory[0]->SetVisible(false);
+        mInventory[0]->UpdatePlayerData();
+        mInventory[1]->SetVisible(false);
+        mInventory[1]->UpdatePlayerData();
 		//mAbiHelp[0]->SetVisible( false );
 		//mAbiHelp[1]->SetVisible( false );
 		ShowCursor(false);
@@ -154,6 +163,8 @@ void CGameScreens::HideAll()
 	mGameOver->SetVisible( false );
     mEditorScreens->Hide();
     mSaveScreen->SetVisible(false);
+    mInventory[0]->SetVisible(false);
+    mInventory[1]->SetVisible(false);
 	gNotepad.Hide();
     ShowCursor(false);
 }
@@ -349,6 +360,19 @@ void CGameScreens::SetActiveAbilityScreen( const std::wstring& name )
     CAbilityTreeDisplayer* atd = dynamic_cast<CAbilityTreeDisplayer*>(tree->FindObject("abilities"));
     if (atd)
         atd->ForceReload();
+}
+
+void CGameScreens::InitInventory(unsigned int playerNumber)
+{
+    if (!mInventory[playerNumber])
+        mInventory[playerNumber] = gGUI.CreateInventoryDisplayer("inventory" + StringUtils::ToString(playerNumber), playerNumber);
+}
+
+void CGameScreens::UpdateInventory(unsigned int playerNumber)
+{
+    if (!mInventory[playerNumber])
+        InitInventory(playerNumber);
+    mInventory[playerNumber]->ForceReload();
 }
 
 void CGameScreens::InitControlListing(unsigned playerNumber)
@@ -624,6 +648,7 @@ CGameScreens::CGameScreens()
     mActiveAbilitiesTab[0] = mActiveAbilitiesTab[1] = L"abilities-fire";
 	mAbiHelp[0] = mAbiHelp[1] = NULL;
 	mControls[0] = mControls[1] = NULL;
+    mInventory[0] = mInventory[1] = NULL;
 
 	InitHud();
 	InitAbilities(0);
@@ -631,6 +656,8 @@ CGameScreens::CGameScreens()
 	InitControlListing(0);
 	InitControlListing(1);
 	InitGameOver();
+    InitInventory(0);
+    InitInventory(1);
     mSaveScreen = new CSaveScreen(this);
     mEditorScreens = new CEditorScreens();
 	HideAll();

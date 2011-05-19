@@ -10,6 +10,8 @@
 #include "CImageBox.h"
 #include "CAbilitySlot.h"
 #include "CAbiSlotsBar.h"
+#include "CInGameOptionChooser.h"
+#include "CItemSlot.h"
 #include "../CGame.h"
 #include "../CGameOptions.h"
 #include "../Logic/CLogic.h"
@@ -23,7 +25,6 @@
 #include "../Logic/CPlayerManager.h"
 #include "../Rendering/CHudSprite.h"
 #include "../Rendering/CDrawableManager.h"
-#include "CInGameOptionChooser.h"
 
 #undef CreateWindow
 #undef MOUSE_MOVED
@@ -243,13 +244,14 @@ void CRoot::SendMouseEvent(float x, float y, mouseEvent e)
             if ( e == MOUSE_RELEASED_LEFT && mDraggedObject != NULL )
             {
                 // wylacz podswietlanie slotow
-                CAbiSlotsBar* bar0 = gLogic.GetGameScreens()->GetAbiBar(0);
+                /*CAbiSlotsBar* bar0 = gLogic.GetGameScreens()->GetAbiBar(0);
                 CAbiSlotsBar* bar1 = gLogic.GetGameScreens()->GetAbiBar(1);
 
                 if (bar0)
                     bar0->SetSlotBackground("data/GUI/abi-bar/abi-bar-scroll.png");
                 if (bar1)
                     bar1->SetSlotBackground("data/GUI/abi-bar/abi-bar-scroll.png");
+                */
 
                 // wlasciwy drop
                 bool cont = false;
@@ -261,6 +263,10 @@ void CRoot::SendMouseEvent(float x, float y, mouseEvent e)
                     mDraggedImg->mForegroundSprite = NULL;
                 }
 
+                if (dynamic_cast<CItemSlot*>(*it) == NULL)
+                    // danger! probujemy wyrzucic umiejke poza sloty!
+                    CItemSlot::UndoDrag();
+                
                 (*it)->OnMouseEvent(x, y, MOUSE_DROP);
                 
                 if ((*it) != mDraggedObject)
@@ -273,28 +279,17 @@ void CRoot::SendMouseEvent(float x, float y, mouseEvent e)
             // drag
             else if ( e == MOUSE_PRESSED_LEFT && (*it)->GetDraggable() )
             {
-                CButton* btn = dynamic_cast<CButton*>(*it);
-                if (btn != NULL)
+                if ((*it)->GetDragIcon())
                 {
-                    mDraggedImg->mForegroundSprite = gDrawableManager.CloneHudSprite(btn->GetNormalSprite(), Z_DRAGGED_IMG);
-                    mDraggedImg->SetPosition(x, y, btn->mGlobalSize.x, btn->mGlobalSize.y, UNIT_PIXEL);
+                    mDraggedImg->mForegroundSprite = gDrawableManager.CloneHudSprite((*it)->GetDragIcon(), Z_DRAGGED_IMG);
+                    mDraggedImg->SetPosition(x, y, (*it)->mGlobalSize.x, (*it)->mGlobalSize.y, UNIT_PIXEL);
                     mDraggedImg->UpdateSprites(0.f);
                     mDraggedImg->SetVisible(true);
                     mDraggedObject = *it;
                 }
-
-                CAbilitySlot* slot = dynamic_cast<CAbilitySlot*>(*it);
-                if (slot != NULL)
-                {
-                    mDraggedImg->mForegroundSprite = gDrawableManager.CloneHudSprite(slot->GetIconSprite(), Z_DRAGGED_IMG);
-                    mDraggedImg->SetPosition(x, y, slot->mGlobalSize.x, slot->mGlobalSize.y, UNIT_PIXEL);
-                    mDraggedImg->UpdateSprites(0.f);
-                    mDraggedImg->SetVisible(true);
-                    mDraggedObject = *it;
-                }
-
+                
                 // podswietlanie slotow
-                if (mDraggedObject != NULL)
+                /*if (mDraggedObject != NULL)
                 {
                     CAbiSlotsBar* bar0 = gLogic.GetGameScreens()->GetAbiBar(0);
                     CAbiSlotsBar* bar1 = gLogic.GetGameScreens()->GetAbiBar(1);
@@ -303,7 +298,7 @@ void CRoot::SendMouseEvent(float x, float y, mouseEvent e)
                         bar0->SetSlotBackground("data/GUI/abi-bar/abi-bar-scroll-hl.png");
                     if (bar1)
                         bar1->SetSlotBackground("data/GUI/abi-bar/abi-bar-scroll-hl.png");
-                }
+                }*/
             }
 
             if (e == MOUSE_PRESSED_LEFT && prevEvent == MOUSE_RELEASED_LEFT && prevEventClock.GetElapsedTime() < 0.2f)

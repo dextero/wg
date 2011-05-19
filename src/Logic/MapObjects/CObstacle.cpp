@@ -59,7 +59,8 @@ void CObstacle::HandleCollisionWithPlayer(CPlayer * player) {
         mOptionHandler->mReferenceCounter++;
     }
     CInGameOptionChooser * oc = player->GetController()->GetOptionChooser();
-    oc->SetOptions("open", "close", "explode");
+    oc->SetTitle("You have found a chest");
+    oc->SetOption("Open it");
     oc->SetOptionHandler(mOptionHandler);
     oc->Show();
 }

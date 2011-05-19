@@ -122,6 +122,8 @@ void CInGameOptionChooser::SetOptions(const std::vector<std::string> & options)
             mButtons[i]->SetImage(mOptionImageNormal, mOptionImageMouseOver);
             mButtons[i]->SetFont(mOptionFont, mOptionFontSize, GUI::UNIT_PIXEL);
             mButtons[i]->SetColor(mOptionColor);
+            mButtons[i]->GetClickIntCallback()->bind(this, &CInGameOptionChooser::OptionSelected);
+            mButtons[i]->SetClickIntCallbackParam(i);
         }
         mButtons[i]->SetText(StringUtils::ConvertToWString(options[i]));
     }
@@ -149,7 +151,7 @@ void CInGameOptionChooser::SetOptions(const char * first, ...) {
     SetOptions(options);
 }
 
-void CInGameOptionChooser::SetOptions(const char * first) {
+void CInGameOptionChooser::SetOption(const char * first) {
     SetOptions(first, NULL);
 }
 void CInGameOptionChooser::SetOptions(const char * first, const char * second) {
@@ -207,9 +209,10 @@ bool CInGameOptionChooser::IsVisible()
     return mIsVisible;
 }
 
-void CInGameOptionChooser::OptionSelected(size_t selected)
+void CInGameOptionChooser::OptionSelected(int selected)
 {
-    if (selected >= mButtons.size()) // cos tu nie gra 
+    fprintf(stderr, "OptionSelected(%d)\n", selected);
+    if (selected >= (int)mButtons.size()) // cos tu nie gra 
         return;
     if (mOptionHandler) {
         mOptionHandler->OptionSelected(selected);
@@ -309,13 +312,13 @@ void CInGameOptionChooser::UpdatePosition()
 
 void CInGameOptionChooser::SaveCursorPosition()
 {
-	const sf::Input& in = gGame.GetRenderWindow()->GetInput();
-	mCursorPos.x = in.GetMouseX();
-	mCursorPos.y = in.GetMouseY();
+//	const sf::Input& in = gGame.GetRenderWindow()->GetInput();
+//	mCursorPos.x = in.GetMouseX();
+//	mCursorPos.y = in.GetMouseY();
 }
 
 void CInGameOptionChooser::RestoreCursorPosition()
 {
-	gGame.GetRenderWindow()->SetCursorPosition( mCursorPos.x, mCursorPos.y );
+//	gGame.GetRenderWindow()->SetCursorPosition( mCursorPos.x, mCursorPos.y );
 }
 

@@ -22,6 +22,16 @@ CLoot::~CLoot() {
     }
 }
 
+//weapon:
+void CLoot::SetAbility(const std::string & ability)
+{
+    if (ability.empty()) return;
+
+    CItem * item = new CItem();
+    item->SetAbility(ability);
+    mItem = item;
+}
+
 //-----------------
 void CLoot::HandleCollision(CPlayer * player)
 {
