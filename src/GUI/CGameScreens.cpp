@@ -58,7 +58,8 @@ void CGameScreens::Show(const std::wstring &menu)
 	else if ( menu == L"abilities0" )
 	{
         //mAbiSlotsBar[0]->Show();
-		//mAbilities[0]->SetVisible( true );
+		//mAbilities[0]->SetVisible( true )
+		Hide(L"hud");
         UpdateInventory(0);
         mInventory[0]->SetVisible(true);
 		//mAbiHelp[0]->SetVisible( true );
@@ -70,6 +71,7 @@ void CGameScreens::Show(const std::wstring &menu)
 	{
         //mAbiSlotsBar[1]->Show();
 		//mAbilities[1]->SetVisible( true );
+        Hide(L"hud");
         UpdateInventory(1);
         mInventory[1]->SetVisible(true);
 		//mAbiHelp[1]->SetVisible( true );
