@@ -9,16 +9,12 @@
 #include "../GUI/Localization/CLocalizator.h"
 
 void CommandShowGraphicalEffect(size_t argc, const std::vector<std::wstring> &argv);
-void CommandClearLootManager(size_t argc, const std::vector<std::wstring> &argv);
-void CommandInitLootManager(size_t argc, const std::vector<std::wstring> &argv);
 
  // na koncu musi byc {0,0,0}, bo sie wszystko ***
 CCommands::SCommandPair EffectsCommands [] =
 {
     {L"effects-init"                  , "$MAN_EFFECTS_INIT"             , CommandInitialize },
     {L"show-graphical-effect"         , "$MAN_SHOW_GRAPHICAL_EFFECT"    , CommandShowGraphicalEffect },
-    {L"load-loots"                    , "$MAN_LOAD_LOOTS"               , CommandInitLootManager },
-    {L"clear-loots"                   , "$MAN_CLEAR_LOOTS"              , CommandClearLootManager },
     {L"add-to-pm"                     , "$MAN_ADD_TO_PM"                , CommandAddPhysicalToPM },
     {L"msg"                           , "$MAN_MSG"                      , CommandMessage },
     {0,0,0}
@@ -116,27 +112,4 @@ void CommandAddPhysicalToPM(size_t argc, const std::vector<std::wstring> &argv)
         a->AddPhysical(p);
         gConsole.Print(L"Operation successfully");
     } while(false);        
-}
-
-#include "../Logic/Loots/CLootManager.h"
-#include "../Logic/Loots/CLoot.h"
-void CommandInitLootManager(size_t argc, const std::vector<std::wstring> &argv)
-{
-    if (argc < 2) {
-        gConsole.Print(L"Usage: load-loots <filename.xml>");
-        return;
-    }
-    else
-    {
-        std::string filename = StringUtils::ConvertToString(argv[1]);
-        if (!gLootManager.LoadLoots(filename)) {
-            gConsole.Printf(L"Failed to load loots configuration from %s file", argv[1].c_str());
-            return;
-        }
-    }
-}
-
-void CommandClearLootManager(size_t argc, const std::vector<std::wstring> &argv)
-{
-    gLootManager.Clear();
 }

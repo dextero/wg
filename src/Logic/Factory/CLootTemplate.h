@@ -16,6 +16,8 @@ public:
     CLootTemplate() {}
     ~CLootTemplate() {}
 
+    virtual CTemplateParam * ReadParam(CXml & xml, xml_node<> * node, CTemplateParam * orig = NULL);
+
     /* IResource */
 
 	std::string GetType();

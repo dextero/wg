@@ -61,8 +61,9 @@ int CAbilityPerformer::FindAbilityIndex(CAbility *abi) {
 int CAbilityPerformer::FindAbilityIndexByInvPos(size_t invPos) {
     size_t i = mAbilityData.size() - 1;
     while (i > 0) {
-        if (mAbilityData[i].invPos == invPos) { // przegladamy od tylu, bo nowo dodawane abilities beda ladowac na koncu listy i 'przykrywac' poprzednie
-            return i;                           // ... do czasu az ktos dopisze usuwanie umiejetnosci :P
+        // dex: !@#$%^AAAA "ja sobie tu zapomne -1 przy i, a wy sobie debugujcie, czemu umiejka nie dziala". dzieki, tox :D
+        if (mAbilityData[i-1].invPos == invPos) { // przegladamy od tylu, bo nowo dodawane abilities beda ladowac na koncu listy i 'przykrywac' poprzednie
+            return i-1;                           // ... do czasu az ktos dopisze usuwanie umiejetnosci :P
         }
         i--;
     }

@@ -26,8 +26,8 @@ public:
     float GetLootDropRate() const { return obj->dropRate; }
 
     void BindTemplate(SLootTemplate *tmpl){ obj = tmpl; }
-    const std::wstring & GetCommandOnTake(){ return commandOnTake; }
-    void SetCommandOnTake(const std::wstring & value){ commandOnTake = value; }
+
+    void SetAbility(const std::string & ability);
 
     void SetItem(CItem * item) { mItem = item; }
     CItem * GetItem() { return mItem; }
@@ -35,8 +35,6 @@ protected:
     SLootTemplate *obj;  
 
 private:
-    std::wstring commandOnTake;
-
     IOptionChooserHandler * mOptionHandler;
     CItem * mItem;
 };
