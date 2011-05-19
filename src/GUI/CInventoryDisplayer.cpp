@@ -5,6 +5,8 @@
 #include "CImageBox.h"
 #include "CAbilityTreeDisplayer.h"
 #include "CTextArea.h"
+#include "CButton.h"
+#include "CGameScreens.h"
 #include "Localization/CLocalizator.h"
 #include "../ResourceManager/CResourceManager.h"
 #include "../Utils/StringUtils.h"
@@ -65,7 +67,7 @@ CInventoryDisplayer::CInventoryDisplayer( const std::string& name, CGUIObject* p
     mBar->Init(this, player);
     
     mRightPanel = mBackground->CreateWindow("right-panel");
-    mRightPanel->SetPosition(50.f, 0.f, 50.f, 100.f);
+    mRightPanel->SetPosition(50.f, 8.f, 50.f, 92.f);
     
     mAbiTreeDisplayer = mRightPanel->CreateAbilityTreeDisplayer("tree", player, "adom");
     mAbiTreeDisplayer->SetPosition(5.f,8.f,90.0f,90.0f);
@@ -100,6 +102,15 @@ CInventoryDisplayer::CInventoryDisplayer( const std::string& name, CGUIObject* p
         case 0: avatar->AddImageToSequence("data/GUI/mag0.png"); break;
         default: avatar->AddImageToSequence("data/GUI/mag20.png"); break;
     }
+    
+    CButton* close = mBackground->CreateButton("close-button", true, Z_GUI2); // zeby nie bylo pod abi-tree-displayerem
+    close->SetPosition(77.f, 3.5f, 15.f, 5.f);// * (float)gGameOptions.GetWidth() / (float)gGameOptions.GetHeight());
+    close->SetImage("data/GUI/bbtn-up.png", "data/GUI/bbtn-hover.png", "data/GUI/bbtn-down.png");
+    close->GetClickCallback()->bind(gLogic.GetGameScreens(), &CGameScreens::ReturnToGame);
+    // temp (wywalic po zmianie grafiki):
+    close->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
+    close->SetText(gLocalizator.GetText("ABITREE_CLOSE"));
+    close->SetCenter(true);
     
     // zapisz umiejki
     UpdateSprites(0.f);
