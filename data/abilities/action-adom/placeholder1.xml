@@ -1,9 +1,0 @@
-<root type="ability" class="export">
-
-  <name>$ABI_FIRE_FIRE_MASTERY</name>
-  <icon>data/abilities/fire/mageoffire-0.png</icon>
-  <unavailable-icon>data/abilities/fire/mageoffire-1.png</unavailable-icon>
-  <description>$ABI_FIRE_FIRE_MASTERY_DESC</description>
-
-  <effect type="noEffect"/>
-</root>

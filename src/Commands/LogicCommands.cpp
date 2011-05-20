@@ -455,6 +455,9 @@ void CommandDisplayAbilities(size_t argc, const std::vector<std::wstring> &argv)
     }
 
     std::wstringstream out;
+
+    out << "HP: " << player->GetStats()->GetHP() << "/" << player->GetStats()->GetCurrAspect(aMaxHP) << "\n";
+    out << "mana: " << player->GetStats()->GetMana() << "/" << player->GetStats()->GetCurrAspect(aMaxMana) << "\n";
     std::vector<CAbilityTree*> *trees = player->GetBoundAbilityTrees();
     std::vector<SAbilityInstance> *abilities = player->GetAbilityPerformer().GetAbilities();
     for (unsigned int i = 0; i < trees->size(); i++){

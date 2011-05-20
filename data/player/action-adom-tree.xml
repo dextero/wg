@@ -3,29 +3,24 @@
     <background>data/GUI/skills-bkg-fire.jpg</background>
 
 	<ability code="a">
-        <name>data/abilities/action-adom/placeholder1.xml</name>
-		<row>1</row>
-		<export>
-			<name>placeholder1</name>
-		</export>
+        <name>data/abilities/passive/vitality.xml</name>
+        <row>0</row>
+        <start-level>1</start-level>
 	</ability>
     <ability code="b">
-        <name>data/abilities/action-adom/placeholder2.xml</name>
-        <row>1</row>
-        <export>
-            <name>placeholder2</name>
-        </export>
+        <name>data/abilities/passive/mana.xml</name>
+        <row>0</row>
     </ability>
     <ability code="c">
         <name>data/abilities/action-adom/placeholder3.xml</name>
-        <row>1</row>
+        <row>2</row>
         <export>
             <name>placeholder3</name>
         </export>
     </ability>
     <ability code="d">
         <name>data/abilities/action-adom/placeholder4.xml</name>
-        <row>2</row>
+        <row>3</row>
         <req-level>3</req-level>
         <export>
             <name>placeholder4</name>
@@ -33,7 +28,7 @@
     </ability>
     <ability code="e">
         <name>data/abilities/action-adom/placeholder5.xml</name>
-        <row>2</row>
+        <row>3</row>
         <req-level>3</req-level>
         <export>
             <name>placeholder5</name>
@@ -41,7 +36,7 @@
     </ability>
     <ability code="f">
         <name>data/abilities/action-adom/placeholder6.xml</name>
-        <row>2</row>
+        <row>4</row>
         <req-level>3</req-level>
         <export>
             <name>placeholder6</name>

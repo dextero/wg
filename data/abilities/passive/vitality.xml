@@ -1,0 +1,17 @@
+<root type="ability" class="passive">
+
+  <name>$ABI_PASSIVE_VITALITY</name>
+  <icon>data/abilities/fire/mageoffire-0.png</icon>
+  <unavailable-icon>data/abilities/fire/mageoffire-1.png</unavailable-icon>
+  <description>$ABI_PASSIVE_VITALITY_DESC</description>
+
+  <effect type="list">
+    <effect type="modify">
+      <aspect value="maxhp"/>
+      <amount calc="1 + ((lvl - 1) * 0.20)" />
+    </effect>
+    <effect type="heal">
+      <amount calc="2.0 + (lvl * 0.10)" />
+    </effect>
+  </effect>
+</root>
