@@ -116,7 +116,13 @@ bool CGameOptions::LoadOptions()
 			if (boost::filesystem::is_directory(file))
 				dirs.push_back(file);
 			else
-				gLocalizator.Load(file);
+            {
+                if (file.rfind(".xml") != file.length() - 4) {
+                    fprintf(stderr, "Localizator: found some non .xml file in locale, %s\n", file.c_str());
+                } else {
+    				gLocalizator.Load(file);
+                }
+            }
 		}
 	}
     // koniec ladowania locale

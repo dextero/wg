@@ -16,6 +16,7 @@ CXml::CXml(std::string filename, std::string root)
 		filepath = filename;
     try{
         mFile = new file<>( filepath.c_str() );
+        fprintf(stderr, "Parsing XML file: %s\n", filepath.c_str());
 	    mXmlDoc.parse< parse_declaration_node >( mFile->data() );
 	    mXmlRoot = mXmlDoc.first_node( root.c_str() );
     } catch(std::runtime_error &ex){

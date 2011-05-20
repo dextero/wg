@@ -92,13 +92,14 @@ void CPlayer::Kill()
 
 void CPlayer::NextLevel( bool ignoreSkillPoints, bool muteSound ){
     mStats.SetBaseAspect(aLevel,mStats.GetBaseAspect(aLevel)+1.0f);
-	mStats.SetBaseAspect(aMaxHP,mStats.GetBaseAspect(aMaxHP)+5.0f);
+//    mStats.SetBaseAspect(aMaxHP,mStats.GetBaseAspect(aMaxHP)+5.0f);
     if ( !ignoreSkillPoints )
     {
         gMessageSystem.AddMessagef(gLocalizator.GetText("MSG_LEVEL_UP").c_str(), GetLevel() );
         gMessageSystem.AddMessagef(gLocalizator.GetText("MSG_SKILLPOINT_GET").c_str());
-        mAttrPoints+=gRPGCalc.GetLevelDescr(GetLevel()).attrPoints;
-        mSkillPoints+=gRPGCalc.GetLevelDescr(GetLevel()).skillPoints;
+//        mAttrPoints+=gRPGCalc.GetLevelDescr(GetLevel()).attrPoints;
+        mSkillPoints += 5;
+//        mSkillPoints+=gRPGCalc.GetLevelDescr(GetLevel()).skillPoints;
     }
 
     if (!muteSound)

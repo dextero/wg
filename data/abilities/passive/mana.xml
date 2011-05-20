@@ -1,0 +1,14 @@
+<root type="ability" class="passive">
+
+  <name>$ABI_PASSIVE_MANA</name>
+  <icon>data/abilities/fire/mageoffire-0.png</icon>
+  <unavailable-icon>data/abilities/fire/mageoffire-1.png</unavailable-icon>
+  <description>$ABI_PASSIVE_MANA_DESC</description>
+
+  <effect type="list">
+    <effect type="modify">
+      <aspect value="maxmana"/>
+      <amount calc="1 + ((lvl) * 0.10)" />
+    </effect>
+  </effect>
+</root>

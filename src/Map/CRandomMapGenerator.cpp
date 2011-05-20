@@ -780,7 +780,7 @@ std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle
     if (gRand.Rndf() < realWeaponSpawnProbability) {
         fprintf(stderr, "Spawning weapon!\n");
         mSpawnedWeaponsCount++;
-        mSpawnWeaponProbability = 0.25f - (mSpawnedWeaponsCount * 0.20);
+        mSpawnWeaponProbability = 0.25f - (mSpawnedWeaponsCount * 0.30);
         return "data/loots/weapon.xml";
     } else {
         mSpawnWeaponProbability += 0.05 - (mSpawnedWeaponsCount * 0.02);
