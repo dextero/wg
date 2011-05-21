@@ -12,34 +12,31 @@
         <row>0</row>
     </ability>
     <ability code="c">
-        <name>data/abilities/action-adom/placeholder3.xml</name>
+        <name>data/abilities/export/melancholic-rune.xml</name>
         <row>2</row>
         <export>
-            <name>placeholder3</name>
+            <name>choleric</name>
         </export>
     </ability>
     <ability code="d">
-        <name>data/abilities/action-adom/placeholder4.xml</name>
+        <name>data/abilities/export/choleric-rune.xml</name>
         <row>3</row>
-        <req-level>3</req-level>
         <export>
-            <name>placeholder4</name>
+            <name>choleric</name>
         </export>
     </ability>
     <ability code="e">
-        <name>data/abilities/action-adom/placeholder5.xml</name>
+        <name>data/abilities/export/phlegmatic-rune.xml</name>
         <row>3</row>
-        <req-level>3</req-level>
         <export>
-            <name>placeholder5</name>
+            <name>phlegmatic</name>
         </export>
     </ability>
     <ability code="f">
-        <name>data/abilities/action-adom/placeholder6.xml</name>
+        <name>data/abilities/export/sanguine-rune.xml</name>
         <row>4</row>
-        <req-level>3</req-level>
         <export>
-            <name>placeholder6</name>
+            <name>sanguine</name>
         </export>
     </ability>
 </root>

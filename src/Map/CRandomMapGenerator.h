@@ -10,7 +10,7 @@
 
 #include <SFML/System/Vector2.hpp>
 
-struct CLoot;
+class CLoot;
 
 struct SRandomMapDesc
 {

@@ -1,9 +1,9 @@
 <root type="ability" class="export">
 
-  <name>$ABI_FIRE_FIRE_MASTERY</name>
+  <name>$ABI_EXPORT_PHLEGMATIC_RUNE</name>
   <icon>data/abilities/fire/mageoffire-0.png</icon>
   <unavailable-icon>data/abilities/fire/mageoffire-1.png</unavailable-icon>
-  <description>$ABI_FIRE_FIRE_MASTERY_DESC</description>
+  <description>$ABI_EXPORT_PHLEGMATIC_RUNE_DESC</description>
 
   <effect type="noEffect"/>
 </root>
