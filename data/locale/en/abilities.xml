@@ -1,5 +1,53 @@
 <root type="locale" name="English" code="en">
     <entry>
+        <key>ABI_EXPORT_SANGUINE_RUNE</key>
+        <value>Sanguine rune</value>
+    </entry>
+    <entry>
+        <key>ABI_EXPORT_SANGUINE_RUNE_DESC</key>
+        <value>A magic rune defining your skills in sanguine spells. The more skilled in this rune you are the
+more powerful are your spells combining uncornern, verbosity, sensitivity, vigor and leadership.
+Also by increasing this skill your character /todo/ will regenerate hit-points a little bit faster.
+//serce, krew//
+        </value>
+    </entry>
+    <entry>
+        <key>ABI_EXPORT_PHLEGMATIC_RUNE</key>
+        <value>Phlegmatic rune</value>
+    </entry>
+    <entry>
+        <key>ABI_EXPORT_PHLEGMATIC_RUNE_DESC</key>
+        <value>A magic rune defining your skills in phlegmatic spells. The more skilled in this rune you are the
+more powerful are your spells combining gentleness, passivity, conciliatory, caution and solemnity.
+Also by increasing this skill your character /todo/ will have greater poison resistance by a little bit.
+//mozg, sluz//
+        </value>
+    </entry>
+    <entry>
+        <key>ABI_EXPORT_MELANCHOLIC_RUNE</key>
+        <value>Melancholic rune</value>
+    </entry>
+    <entry>
+        <key>ABI_EXPORT_MELANCHOLIC_RUNE_DESC</key>
+        <value>A magic rune defining your skills in melancholic spells. The more skilled in this rune you are the
+more powerful are your spells combining reflectance, restraint, peace, stiffness and apathy.
+Also by increasing this skill your character /todo/ will regain mana little bit faster.
+//sledziona, czarna zolc//
+        </value>
+    </entry>
+    <entry>
+        <key>ABI_EXPORT_CHOLERIC_RUNE</key>
+        <value>Choleric rune</value>
+    </entry>
+    <entry>
+        <key>ABI_EXPORT_CHOLERIC_RUNE_DESC</key>
+        <value>A magic rune defining your skills in choleric spells. The more skilled in this rune you are the
+more powerful are your spells combining explosiveness, agression, variability, impulseviness and activity.
+Also by increasing this ability your character will be /todo/ moving a little bit faster.
+//watroba, zolc//
+        </value>
+    </entry>
+    <entry>
         <key>ABI_PASSIVE_MANA</key>
         <value>Mana</value>
     </entry>
