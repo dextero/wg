@@ -1,5 +1,9 @@
 <root type="map-gen">  
     <physicals>
+	<!-- przejrzane bronie: -->
+        <weapon file="data/abilities/weapons/firebolt.xml" minLevel="0" maxLevel="99" frequency="0.5" />
+	
+	<!-- inne -->
         <weapon file="data/abilities/electric/ball-lightning.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/electric/chain-lightning.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/electric/devolution.xml" minLevel="15" maxLevel="99" />
@@ -71,16 +75,17 @@
         <monster file="data/physicals/monsters/timberman-with-knife.xml" minLevel="0" maxLevel="5" />
         <monster file="data/physicals/monsters/timberman-with-axe.xml" minLevel="0" maxLevel="5" />
 
-        <monster file="data/physicals/monsters/chityniak.xml" minLevel="2" maxLevel="6" />
-        <lair    file="data/physicals/lairs/chityniak-lair.xml" level="2" />
+        <monster file="data/physicals/monsters/chityniak.xml" minLevel="2" maxLevel="2" frequency="0.20" />
+		
+        <monster file="data/physicals/monsters/chityniak.xml" minLevel="3" maxLevel="6" />
+        <lair    file="data/physicals/lairs/chityniak-lair.xml" level="3" />
 
-        <monster file="data/physicals/monsters/crawler.xml" minLevel="3" maxLevel="6" />
-        <lair    file="data/physicals/lairs/chit-lair.xml" minLevel="3" maxLevel="3" />
-
+        <monster file="data/physicals/monsters/crawler.xml" minLevel="4" maxLevel="6" />
+        <lair    file="data/physicals/lairs/chit-lair.xml" minLevel="4" maxLevel="3" />
         <monster file="data/physicals/monsters/bee.xml" minLevel="4" maxLevel="6" />
         <monster file="data/physicals/monsters/hornet.xml" minLevel="4" maxLevel="6" />
-        <lair    file="data/physicals/lairs/bee-lair.xml" minLevel="5" maxLevel="6" />
 
+        <lair    file="data/physicals/lairs/bee-lair.xml" minLevel="5" maxLevel="6" />
         <monster file="data/physicals/monsters/chityniak-plwacz.xml" minLevel="5" maxLevel="7" />
 
         <monster file="data/physicals/monsters/wolfbeast.xml" minLevel="7" maxLevel="8" />

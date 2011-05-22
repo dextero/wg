@@ -1,4 +1,14 @@
 <root type="locale" name="English" code="en">
+	<entry>
+		<key>ABI_WEAPONS_FIREBOLT</key>
+		<value>Fire bolt</value>
+	</entry>
+	<entry>
+		<key>ABI_WEAPONS_FIREBOLT_DESC</key>
+		<value>Battle mages&apos; favourite weapon - a bolt of liquid fire that burns hit enemies.</value>
+	</entry>
+
+
     <entry>
         <key>ABI_EXPORT_SANGUINE_RUNE</key>
         <value>Sanguine rune</value>
