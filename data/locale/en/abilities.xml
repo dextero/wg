@@ -1,5 +1,13 @@
 <root type="locale" name="English" code="en">
 	<entry>
+		<key>ABI_WEAPONS_FIREBALL</key>
+		<value>Fire ball</value>
+	</entry>
+	<entry>
+		<key>ABI_WEAPONS_FIREBALL_DESC</key>
+		<value>Fire mages&apos; favourite weapon - a ball of liquid fire that explodes if it hits an enemy. Just remember - move away or you might be burnt too...</value>
+	</entry>
+	<entry>
 		<key>ABI_WEAPONS_FIREBOLT</key>
 		<value>Fire bolt</value>
 	</entry>
