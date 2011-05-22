@@ -5,6 +5,7 @@
         <weapon file="data/abilities/weapons/electron.xml" minLevel="0" maxLevel="99" frequency="1.0" />	
         <weapon file="data/abilities/weapons/electrostatics.xml" minLevel="2" maxLevel="99" />
         <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="1.0" />
+        <weapon file="data/abilities/weapons/lightning.xml" minLevel="1" maxLevel="99" frequency="0.75" />
 	
 	<!-- inne -->
         <weapon file="data/abilities/electric/ball-lightning.xml" minLevel="8" maxLevel="99" />
