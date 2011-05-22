@@ -103,7 +103,8 @@ void CLightning::Animate(float secondsPassed)
 {
 	mAlpha = Maths::Clamp( mAlpha - secondsPassed/mDuration );
 
-	/* damork, chyba ³adniej wygl¹da jak tak nie miga, tylko powoli zanika...
+	// damork, chyba ³adniej wygl¹da jak tak nie miga, tylko powoli zanika...
+	// tox: potrzebuje tego migania jednak... odkomentowuje
 	timeToChange -= secondsPassed;
 	if(timeToChange <= 0.0f)
     {
@@ -114,7 +115,6 @@ void CLightning::Animate(float secondsPassed)
         else
             GenerateBolts(linesA);
     }
-	*/
 }
 
 void CLightning::Draw(sf::RenderWindow *renderWindow)

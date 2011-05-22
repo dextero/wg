@@ -150,7 +150,7 @@ sf::Vector2f CTargetChooser::ChoosePos(CPhysical *emiter, ExecutionContextPtr co
     if (rot >= 360) rot -= 360;
     if (rot < 0) rot += 360;
 	float r = range.Evaluate(context);
-	float dist = rnd * r;
+	float dist = 0.8 * r + 0.2 * r * rnd;
 	sf::Vector2f v = RotationToVector((float)rot)*dist;
 	float x = emiter->GetPosition().x + v.x;
 	float y = emiter->GetPosition().y + v.y;
