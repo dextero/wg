@@ -6,6 +6,7 @@
   <description>$ABI_HIDDEN_DESC</description>
 
   <effect type="restore-mana">
-    <amount calc="0.0 + (melancholic * 0.01 * 1050)" />
+    <!-- gracz zaczyna z 50 punktami many -->
+    <amount calc="0.0 + (melancholic * 0.01 * 20)" />
   </effect>
 </root>

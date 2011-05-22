@@ -475,7 +475,7 @@ void CommandDisplayAbilities(size_t argc, const std::vector<std::wstring> &argv)
                     found = true;
                     break;
                 }
-            if (!found)
+            if (!found && an != NULL)
                 out << an->ability->name << L"[" << StringUtils::ConvertToWString(an->code) << L"]: 0";
         }
         gConsole.Printf(out.str().c_str());

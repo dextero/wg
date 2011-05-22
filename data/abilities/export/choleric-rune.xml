@@ -1,11 +1,16 @@
-<root type="ability" class="export">
+<root type="ability" class="passive">
 
   <name>$ABI_EXPORT_CHOLERIC_RUNE</name>
   <icon>data/abilities/fire/mageoffire-0.png</icon>
   <unavailable-icon>data/abilities/fire/mageoffire-1.png</unavailable-icon>
   <description>$ABI_EXPORT_CHOLERIC_RUNE_DESC</description>
 
-  <max-level>100</max-level>  
+  <max-level value="100"/> 
+
+  <!-- brzydki hak, zeby sie przeliczyl 'faster-movement.xml' po podbiciu tej runy -->
+  <effect type="modify">
+    <aspect value="speed"/>
+    <amount calc="1.0"/>
+  </effect>
   
-  <effect type="noEffect"/>
 </root>

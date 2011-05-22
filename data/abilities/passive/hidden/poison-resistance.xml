@@ -8,5 +8,6 @@
   <effect type="modify">
     <aspect value="poisonresist"/>
     <amount calc="1.0 + (phlegmatic * 0.01 * 0.50)" />
+    <!-- rekalkulacja 'modify' nastapi przed aktualizacja 'phlegmatic' hm..hm..hm.. -->
   </effect>
 </root>
