@@ -60,6 +60,8 @@ float CExprParser::Evaluate(ExecutionContextPtr context){
 			CPinnedAbilityBatch *pab = context->GetPinnedAbilityBatch();
 			if (pab != mPAB){
 				mPAB = pab;
+			}
+			if (mPAB != NULL) {
 				Rebind();
 			}
 		} else {
