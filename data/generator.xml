@@ -2,6 +2,8 @@
     <physicals>
 	<!-- przejrzane bronie: -->
         <weapon file="data/abilities/weapons/firebolt.xml" minLevel="0" maxLevel="99" frequency="0.5" />
+        <weapon file="data/abilities/weapons/electron.xml" minLevel="0" maxLevel="99" frequency="1.0" />	
+        <weapon file="data/abilities/weapons/electrostatics.xml" minLevel="2" maxLevel="99" />
         <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="1.0" />
 	
 	<!-- inne -->
@@ -9,8 +11,6 @@
         <weapon file="data/abilities/electric/chain-lightning.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/electric/devolution.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/data/abilities/electric/electric-snare.xml" minLevel="15" maxLevel="99" />
-        <weapon file="data/abilities/electric/electron.xml" minLevel="0" maxLevel="99" />
-        <weapon file="data/abilities/electric/electrostatics.xml" minLevel="1" maxLevel="99" />
         <weapon file="data/abilities/electric/forked-lightning.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/electric/laser.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/electric/lightning-strike.xml" minLevel="1" maxLevel="99" />
@@ -20,7 +20,6 @@
         <weapon file="data/abilities/fire/elemental-revenge.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/fire/exploding-corpse.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/fire/firearrow.xml" minLevel="1" maxLevel="99" />
-        <weapon file="data/abilities/fire/fireball.xml" minLevel="0" maxLevel="99" />
         <weapon file="data/abilities/fire/firecircle.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/fire/firepits.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/fire/firewall.xml" minLevel="8" maxLevel="99" />

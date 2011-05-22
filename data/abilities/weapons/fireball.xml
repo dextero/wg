@@ -11,12 +11,12 @@
   
   <explosion type="list">
   	<effect type="graphical-effect">
-  	  <time value="1.0" />
       <name value="bullet-explosion" />
+  	  <time value="1.0" />
   	</effect>
   	<effect type="graphical-effect">
-  	  <time value="0.2" />
       <name value="shockwave" />
+  	  <time value="0.23" />
   	</effect>
 	<effect type="sound">
 		<name value="data/sounds/Lugaro/firestart.ogg" />
@@ -26,8 +26,8 @@
 	  <filter value="player" />
       <effect type="list">
         <effect type="damage">
-          <amount calc="3.0 * (1 + (0.2 * (1.0 * choleric + 0.0 * melancholic + 0.3 * sanguine + 0.2 * phlegmatic)))" />
           <damage-type value="fire"/>
+          <amount calc="3.0 * (1 + (0.2 * (1.0 * choleric + 0.0 * melancholic + 0.3 * sanguine + 0.2 * phlegmatic)))" />
         </effect>
         <effect type="knockback">
           <amount calc="1.25 * (1 + (0.2 * (1.0 * choleric + 0.0 * melancholic + 0.3 * sanguine + 0.2 * phlegmatic)))"/>
@@ -40,8 +40,8 @@
       <filter value="hostiles,obstacle" />
       <effect type="list">
         <effect type="damage">
-          <amount calc="16.0 * (1 + (0.2 * (1.0 * choleric + 0.0 * melancholic + 0.3 * sanguine + 0.2 * phlegmatic)))" />
           <damage-type value="fire"/>
+          <amount calc="16.0 * (1 + (0.2 * (1.0 * choleric + 0.0 * melancholic + 0.3 * sanguine + 0.2 * phlegmatic)))" />
         </effect>
         <effect type="knockback">
           <amount calc="1.25 * (1 + (0.2 * (1.0 * choleric + 0.0 * melancholic + 0.3 * sanguine + 0.2 * phlegmatic)))"/>
@@ -50,7 +50,6 @@
     </effect>
   </explosion>
 
-  <manacost calc="6.0 * (1 + (0.2 * (1.0 * choleric + 0.0 * melancholic + 0.3 * sanguine + 0.2 * phlegmatic)))" />
   <range calc="12.0" />
   <speed value="5.0" />
   <acceleration value="1.0" />
@@ -58,8 +57,10 @@
   <ttl value="0.6" />
   <bullet value="data/physicals/bullets/fireball.xml" />
   <bullet-angular-speed value="-1440" />
+
+  <manacost calc="6.0 * (1 + (0.2 * (1.0 * choleric + 0.0 * melancholic + 0.3 * sanguine + 0.2 * phlegmatic)))" />
   <casttime calc="0.09" />
-  <delay calc="0.10" />
+  <delay calc="0.05" />
   <cooldown value="0.60" />
 
 </root>
