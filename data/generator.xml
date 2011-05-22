@@ -2,10 +2,12 @@
     <physicals>
 	<!-- przejrzane bronie: -->
         <weapon file="data/abilities/weapons/firebolt.xml" minLevel="0" maxLevel="99" frequency="0.5" />
+
         <weapon file="data/abilities/weapons/electron.xml" minLevel="0" maxLevel="99" frequency="1.0" />	
+        <weapon file="data/abilities/weapons/lightning.xml" minLevel="1" maxLevel="99" frequency="0.75" />
+        <weapon file="data/abilities/weapons/icearrow.xml" minLevel="1" maxLevel="99" />
         <weapon file="data/abilities/weapons/electrostatics.xml" minLevel="2" maxLevel="99" />
         <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="1.0" />
-        <weapon file="data/abilities/weapons/lightning.xml" minLevel="1" maxLevel="99" frequency="0.75" />
 	
 	<!-- inne -->
         <weapon file="data/abilities/electric/ball-lightning.xml" minLevel="8" maxLevel="99" />
@@ -40,7 +42,6 @@
         <weapon file="data/abilities/old/freezebomb.xml" minLevel="14" maxLevel="99" />
         <weapon file="data/abilities/old/frostnova.xml" minLevel="16" maxLevel="99" />
         <weapon file="data/abilities/old/hibernate.xml" minLevel="3" maxLevel="99" />
-        <weapon file="data/abilities/old/icearrow.xml" minLevel="1" maxLevel="99" />
         <weapon file="data/abilities/old/iceball.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/old/icecircle.xml" minLevel="10" maxLevel="99" />
         <weapon file="data/abilities/old/ignite.xml" minLevel="21" maxLevel="99" />

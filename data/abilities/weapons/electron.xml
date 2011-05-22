@@ -1,9 +1,9 @@
 <root type="ability" class="bullet">
 
   <name>$ABI_WEAPONS_ELECTRON</name>
+  <description>$ABI_WEAPONS_ELECTRON_DESC</description>
   <icon>data/abilities/weapons/electron-0.png</icon>
   <unavailable-icon>data/abilities/weapons/electron-1.png</unavailable-icon>
-  <description>$ABI_WEAPONS_ELECTRON_DESC</description>
 
   <!-- power = 1x cho, 4x mel, 2x san, 2x phl -->
   <!-- power = (0.2 * (0.2 * choleric + 0.8 * melancholic + 0.4 * sanguine + 0.4 * phlegmatic)) --> 

@@ -1,0 +1,50 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_WEAPONS_ICEARROW</name>
+  <description>$ABI_WEAPONS_ICEARROW_DESC</description>
+  <icon>data/abilities/weapons/icearrow-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/icearrow-0.png</unavailable-icon>
+
+  <!-- power = 2x cho, 4x mel, 0x san, 3x phl -->
+  <!-- power = (0.2 * (0.4 * choleric + 0.8 * melancholic + 0.0 * sanguine + 0.6 * phlegmatic)) --> 
+
+  <explosion type="list">
+	<effect type="sound">
+		<name value="data/sounds/Lugaro/whoosh.ogg" />
+	</effect>
+    <effect type="graphical-effect">
+      <name value="blue-explosion-mini" />
+  	  <time value="0.8" />
+  	</effect>
+  </explosion>
+  
+  <effect type="list">
+    <effect type="graphical-effect">
+      <name value="colorize-blue" />
+      <time calc="1.75 + (0.02 * (0.2 * (0.4 * choleric + 0.8 * melancholic + 0.0 * sanguine + 0.6 * phlegmatic)))" />
+    </effect>
+    <effect type="non-cumulative">
+      <effect type="timed">
+        <time calc="1.75 + (0.02 * (0.2 * (0.4 * choleric + 0.8 * melancholic + 0.0 * sanguine + 0.6 * phlegmatic)))" />
+        <effect type="modify">
+          <aspect value="speed" />
+          <amount calc="0.76 - (0.005 * (0.2 * (0.4 * choleric + 0.8 * melancholic + 0.0 * sanguine + 0.6 * phlegmatic)))" />
+        </effect>
+      </effect>
+    </effect>
+    <effect type="damage">
+      <damage-type value="ice"/>
+      <amount calc="5.0 * (1 + (0.2 * (0.4 * choleric + 0.8 * melancholic + 0.0 * sanguine + 0.6 * phlegmatic)))" />
+    </effect>
+  </effect>
+  
+  <manacost calc="5.5 * (1 + (0.2 * (0.4 * choleric + 0.8 * melancholic + 0.0 * sanguine + 0.6 * phlegmatic)))" />
+  <range value="12.0" />
+  <speed value="10.0" />
+  <ttl value="0.8" />
+  <bullet value="data/physicals/bullets/icicle.xml" />
+  <casttime value="0.09" />
+  <delay value="0.05" />
+  <cooldown value="0.25" />
+  
+</root>
