@@ -7,6 +7,8 @@
 .*\.pdb$
 .*\.suo$
 .*\.ncb$
+data/maps/rnd.*.xml$
+data/maps/generated_tiles/.*
 build/vs2005/Debug/.*
 build/vs2005/Release/.*
 build/vs2005/.*\.user$
