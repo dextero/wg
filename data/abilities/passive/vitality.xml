@@ -5,13 +5,10 @@
   <unavailable-icon>data/abilities/fire/mageoffire-1.png</unavailable-icon>
   <description>$ABI_PASSIVE_VITALITY_DESC</description>
 
-  <effect type="list">
-    <effect type="modify">
-      <aspect value="maxhp"/>
-      <amount calc="1 + ((lvl - 1) * 0.20)" />
-    </effect>
-    <effect type="heal">
-      <amount calc="2.0 + (lvl * 0.10)" />
-    </effect>
+  <max-level>100</max-level>
+ 
+  <effect type="modify">
+    <aspect value="maxhp"/>
+    <amount calc="1 + (lvl * 0.20)" />
   </effect>
 </root>

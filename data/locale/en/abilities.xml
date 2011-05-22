@@ -63,7 +63,7 @@ Also by increasing this ability your character will be /todo/ moving a little bi
         <key>ABI_PASSIVE_VITALITY_DESC</key>
         <value>Your physical health. Defines your endurance, hit-points and overall regeneration.
 
-Each point gives you additional 20% hit-points limit and speeds up hit-points regeneration a little.</value>
+Each point gives you additional 20% hit-points limit.</value>
     </entry>
     
 	<entry>

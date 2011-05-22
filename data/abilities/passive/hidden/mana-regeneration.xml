@@ -1,0 +1,11 @@
+<root type="ability" class="passive">
+
+  <name>$ABI_HIDDEN</name>
+  <icon>data/abilities/hidden.png</icon>
+  <unavailable-icon>data/abilities/hidden-1.png</unavailable-icon>
+  <description>$ABI_HIDDEN_DESC</description>
+
+  <effect type="restore-mana">
+    <amount calc="0.0 + (melancholic * 0.01 * 1050)" />
+  </effect>
+</root>
