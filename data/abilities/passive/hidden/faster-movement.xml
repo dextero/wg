@@ -7,7 +7,8 @@
 
   <effect type="modify">
     <aspect value="speed"/>
-    <amount calc="sanguine"/>
+    <amount calc="1.0 + (choleric * 0.01 * 0.75)"/>
+    <!-- rekalkulacja 'modify' nastapi przed aktualizacja 'choleric' hm..hm..hm.. -->
   </effect>
 
 </root>

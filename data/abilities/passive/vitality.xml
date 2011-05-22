@@ -5,7 +5,7 @@
   <unavailable-icon>data/abilities/fire/mageoffire-1.png</unavailable-icon>
   <description>$ABI_PASSIVE_VITALITY_DESC</description>
 
-  <max-level>100</max-level>
+  <max-level value="100"/>
  
   <effect type="modify">
     <aspect value="maxhp"/>
