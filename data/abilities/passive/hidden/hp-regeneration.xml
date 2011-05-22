@@ -1,0 +1,12 @@
+<root type="ability" class="passive">
+
+  <name>$ABI_HIDDEN</name>
+  <icon>data/abilities/hidden.png</icon>
+  <unavailable-icon>data/abilities/hidden-1.png</unavailable-icon>
+  <description>$ABI_HIDDEN_DESC</description>
+
+  <effect type="heal">
+  <!-- gracz ma 100 zycia poczatkowo, 2pkty na sekunde regeneracji -->
+    <amount calc="2.0 + (sanguine * 0.01 * 1025)" />
+  </effect>
+</root>

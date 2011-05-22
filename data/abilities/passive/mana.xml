@@ -5,6 +5,8 @@
   <unavailable-icon>data/abilities/fire/mageoffire-1.png</unavailable-icon>
   <description>$ABI_PASSIVE_MANA_DESC</description>
 
+  <max-level>100</max-level>  
+  
   <effect type="list">
     <effect type="modify">
       <aspect value="maxmana"/>

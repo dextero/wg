@@ -5,7 +5,6 @@
 	<ability code="a">
         <name>data/abilities/passive/vitality.xml</name>
         <row>0</row>
-        <start-level>1</start-level>
 	</ability>
     <ability code="b">
         <name>data/abilities/passive/mana.xml</name>
@@ -15,7 +14,7 @@
         <name>data/abilities/export/melancholic-rune.xml</name>
         <row>2</row>
         <export>
-            <name>choleric</name>
+            <name>melancholic</name>
         </export>
     </ability>
     <ability code="d">

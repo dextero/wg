@@ -1,0 +1,13 @@
+﻿<root type="ability" class="passive">
+
+  <name>$ABI_HIDDEN</name>
+  <icon>data/player/hidden.png</icon>
+  <unavailable-icon>data/player/hidden-1.png</unavailable-icon>
+  <description>$ABI_HIDDEN_DESC</description>
+
+  <effect type="modify">
+    <aspect value="speed"/>
+    <amount calc="sanguine"/>
+  </effect>
+
+</root>
