@@ -1,10 +1,10 @@
 <root type="ability" class="bullet">
 
   <name>$ABI_WEAPONS_FIREBALL</name>
+  <description>$ABI_WEAPONS_FIREBALL_DESC</description>
   <trigger></trigger>
   <icon>data/abilities/weapons/fireball-0.png</icon>
   <unavailable-icon>data/abilities/weapons/fireball-0.png</unavailable-icon>
-  <description>$ABI_WEAPONS_FIREBALL_DESC</description>
 
   <!-- power = 5x cho, 0x mel, 3x san, 1x phl -->
   <!-- power = (0.2 * (1.0 * choleric + 0.0 * melancholic + 0.3 * sanguine + 0.2 * phlegmatic)) --> 
