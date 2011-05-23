@@ -16,7 +16,6 @@
         <weapon file="data/abilities/data/abilities/electric/electric-snare.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/electric/forked-lightning.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/electric/laser.xml" minLevel="21" maxLevel="99" />
-        <weapon file="data/abilities/electric/lightning-strike.xml" minLevel="1" maxLevel="99" />
         <weapon file="data/abilities/electric/magicstorm.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/electric/transfusion.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/fire/blazingfeet.xml" minLevel="3" maxLevel="99" />

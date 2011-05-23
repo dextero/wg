@@ -13,9 +13,11 @@
 #endif
 #include "../../../ResourceManager/CImage.h"
 
+const static float DEFAULT_TIME_TO_CHANGE = 0.05f;
+
 CLightning::CLightning(sf::Vector2f f, sf::Vector2f t, float duration, float red, float green, float blue): 
 swapLines(false), 
-timeToChange(0.05f),
+timeToChange(DEFAULT_TIME_TO_CHANGE),
 mDuration(duration),
 mRed(red),
 mGreen(green),
@@ -108,11 +110,11 @@ void CLightning::Animate(float secondsPassed)
 	timeToChange -= secondsPassed;
 	if(timeToChange <= 0.0f)
     {
-        timeToChange = 0.1f;
-        swapLines = !swapLines;
-        if(swapLines)
+        timeToChange = DEFAULT_TIME_TO_CHANGE;
+//        swapLines = !swapLines;
+//        if(swapLines)
             GenerateBolts(linesB);
-        else
+//        else
             GenerateBolts(linesA);
     }
 }

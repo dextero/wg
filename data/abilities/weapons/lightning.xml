@@ -22,7 +22,7 @@
     <effect type="retarget">
       <target-chooser>
         <filter value="hostiles, obstacle"/>
-        <range calc="4.2" />
+        <range calc="5.2" />
         <angle value="30.0"/>
         <aim-at-ground value="1"/>
       </target-chooser>
@@ -35,29 +35,11 @@
           <amount value="2.0" />
         </effect>
 
-          <effect type="linked-graphical-effect" tag="lightning-effect-tag">
-            <offset-x value="-0.25"/>
-            <offset-y value="0.5"/>
-            <time value="0.09" />
-            <name value="lightning" />
-          </effect>
-		<effect type="delayed">
-		  <time calc="0.08"/>
-          <effect type="linked-graphical-effect" tag="lightning-effect-tag">
-            <offset-x value="-0.25"/>
-            <offset-y value="0.5"/>
-            <time value="0.09" />
-            <name value="lightning" />
-          </effect>
-        </effect>
-		<effect type="delayed">
-		  <time calc="0.16"/>
-          <effect type="linked-graphical-effect" tag="lightning-effect-tag">
-            <offset-x value="-0.25"/>
-            <offset-y value="0.5"/>
-            <time value="0.09" />
-            <name value="lightning" />
-          </effect>
+        <effect type="linked-graphical-effect" tag="lightning-effect-tag">
+          <offset-x value="-0.25"/>
+          <offset-y value="0.5"/>
+          <time value="0.25" />
+          <name value="lightning" />
         </effect>
       </effect>
     </effect>
@@ -78,7 +60,7 @@
   	<amount value="0.2" />
   </delay-effect>
 
-  <manacost value="14.0 * (1 + (0.2 * (0.4 * choleric + 0.4 * melancholic + 0.6 * sanguine + 0.6 * phlegmatic)))" />
+  <manacost value="12 * (1 + (0.2 * (0.4 * choleric + 0.4 * melancholic + 0.6 * sanguine + 0.6 * phlegmatic)))" />
   <casttime calc="0.30" />
   <delay calc="0.50" />
   <cooldown calc="0.50" />
