@@ -7,7 +7,10 @@
         <weapon file="data/abilities/weapons/lightning.xml" minLevel="1" maxLevel="99" frequency="0.75" />
         <weapon file="data/abilities/weapons/icearrow.xml" minLevel="1" maxLevel="99" />
         <weapon file="data/abilities/weapons/electrostatics.xml" minLevel="2" maxLevel="99" />
+        <weapon file="data/abilities/weapons/firearrow.xml" minLevel="2" maxLevel="99" />
         <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="1.0" />
+        <weapon file="data/abilities/weapons/firearrow-lvl2.xml" minLevel="3" maxLevel="99" />
+        <weapon file="data/abilities/weapons/firearrow-lvl3.xml" minLevel="7" maxLevel="99" />
 	
 	<!-- inne -->
         <weapon file="data/abilities/electric/ball-lightning.xml" minLevel="8" maxLevel="99" />
@@ -21,7 +24,6 @@
         <weapon file="data/abilities/fire/blazingfeet.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/fire/elemental-revenge.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/fire/exploding-corpse.xml" minLevel="15" maxLevel="99" />
-        <weapon file="data/abilities/fire/firearrow.xml" minLevel="1" maxLevel="99" />
         <weapon file="data/abilities/fire/firecircle.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/fire/firepits.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/fire/firewall.xml" minLevel="8" maxLevel="99" />
