@@ -9,9 +9,9 @@
   <!-- power = (0.2 * (0.4 * choleric + 0.8 * melancholic + 0.0 * sanguine + 0.6 * phlegmatic)) --> 
 
   <explosion type="list">
-	<effect type="sound">
-		<name value="data/sounds/Lugaro/whoosh.ogg" />
-	</effect>
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/whoosh.ogg" />
+    </effect>
     <effect type="graphical-effect">
       <name value="blue-explosion-mini" />
   	  <time value="0.8" />

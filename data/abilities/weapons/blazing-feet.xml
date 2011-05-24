@@ -1,0 +1,79 @@
+<root type="ability" class="self">
+
+  <name>$ABI_WEAPONS_BLAZING_FEET</name>
+  <description>$ABI_WEAPONS_BLAZING_FEET_DESC</description>
+  <icon>data/abilities/weapons/blazing-feet-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/blazing-feet-1.png</unavailable-icon>
+
+  <!-- power = 0x cho, 2x mel, 3x san, 3x phl -->
+  <!-- power = (0.05 * (0 * choleric + 2 * melancholic + 3 * sanguine + 3 * phlegmatic)) --> 
+  
+  <effect type="recastable" >
+    <recast value="0.4" />
+    <time value="6.0" />
+    <effect type="bullet">
+      <emitter>
+        <speed value="0.0" />
+        <acceleration value="0.0" />
+        <ttl value="8.0" />
+        <count value="1" />
+        <width value="0" />
+        <explode-on-fade value="1" />
+        <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+        <filter value="none" />
+
+        <flight-effect type="list">
+          <effect type="graphical-effect">
+            <time value="8.0" />
+            <name value="flames" />
+          </effect>
+
+		  <!-- fire.ogg trwa troche ponad 4 sekundy, a recast dziala tak, ze najpierw czeka 'time' a dopiero
+		  potem odpala podefekt. dlatego tutaj takie smieszne gimnastyki zostawiam, tox 24 maja 2011 -->
+          <effect type="sound">
+            <name value="data/sounds/Lugaro/fire.ogg" />
+          </effect>
+          <effect type="recastable">
+            <time value="8.0" />
+            <recast value="4.1"/>
+            <effect type="sound">
+              <name value="data/sounds/Lugaro/fire.ogg" />
+            </effect>
+          </effect>			
+		  
+          <effect type="recastable">
+            <time value="15" />
+            <recast value="0.4"/>
+            <effect type="area">
+              <filter value="hostiles,obstacle" />
+              <area calc="0.4" />
+              <effect type="list">
+                <effect type="damage">
+                  <damage-type value="fire"/>
+                  <amount calc="2 * (1 + (0.05 * (0 * choleric + 2 * melancholic + 3 * sanguine + 3 * phlegmatic)))"/>
+                </effect>
+                <effect type="knockback">
+                  <amount calc="0.8" />
+                </effect>
+              </effect>
+			</effect>
+          </effect>
+        </flight-effect>
+      </emitter>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.8" />
+  </cast-time-effect>
+
+  <manacost calc="3.0" />
+  <casttime calc="0.15" />
+  <delay calc="0.05" />
+  <cooldown value="0.10" />
+
+  <focus-mana-cost calc="20.0 + (2.0 * (0.05 * (0 * choleric + 2 * melancholic + 3 * sanguine + 3 * phlegmatic)))" />
+  <focus-max-duration value="6.0" />
+
+</root>
