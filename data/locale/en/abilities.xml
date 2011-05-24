@@ -16,21 +16,21 @@
 		<value>Battle mages&apos; favourite weapon - a bolt of liquid fire that burns hit enemies.</value>
 	</entry>
 
-<!-- 4               1
+<!-- 3               2
 sangwiniczne:      Phlegmaticzne:
 + uncornern/beztro   gentleness
 + verbosity          passivity
   sensitivity        conciliatory (ugodowosc)
 + vigor            + caution
-+ leadership         solemnity (podnioslosc)
+  leadership       + solemnity (podnioslosc)
 //serce, krew//    //mozg, sluz//
 
-     0                3
+     1                3
 Melancholiczne:     Cholericzne:
-  reflectance         explosiveness
++ reflectance         explosiveness
   restraint (powsc) + agression
-  peace               variability
-  stiffness         + impulseviness
+  peace             + variability
+  stiffness           impulseviness
   apathy            + activity
 //sledziona,        //watroba, zolc//
  czarna zolc//

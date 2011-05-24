@@ -11,9 +11,9 @@
         <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="1.0" />
         <weapon file="data/abilities/weapons/firearrow-lvl2.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/weapons/firearrow-lvl3.xml" minLevel="7" maxLevel="99" />
-	
+        <weapon file="data/abilities/weapons/ball-lightning.xml" minLevel="8" maxLevel="99" />
+ 	
 	<!-- inne -->
-        <weapon file="data/abilities/electric/ball-lightning.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/electric/chain-lightning.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/electric/devolution.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/data/abilities/electric/electric-snare.xml" minLevel="15" maxLevel="99" />
