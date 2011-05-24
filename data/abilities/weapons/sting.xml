@@ -1,0 +1,48 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_WEAPONS_STING</name>
+  <description>$ABI_WEAPONS_STING_DESC</description>
+  <icon>data/abilities/weapons/sting-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/sting-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 4x mel, 2x san, 1x phl -->
+  <!-- power = (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 1 * phlegmatic)) --> 
+  
+  <effect type="non-cumulative">
+    <effect type="list">
+      <effect type="damage">
+        <damage-type value="poison"/>
+        <amount calc="0.5 + (0.05 * (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 1 * phlegmatic)))" />
+      </effect>
+      <effect type="timed">
+        <time calc="6.0 + (3.0 * (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 1 * phlegmatic)))" />
+        <effect type="damage">
+          <damage-type value="poison"/>
+          <amount calc="2.25 + (0.25 * (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 1 * phlegmatic)))"/>
+        </effect>
+      </effect>
+
+	  <!-- 2lvl - stun? -->
+      <effect type="check-level">
+        <amount value="2.0"/>
+        <effect type="timed">
+          <time calc="2.0"/>
+          <effect type="stun"/>     
+        </effect>
+      </effect>
+    </effect>    
+  </effect>
+
+  <range value="12.0" />
+  <speed value="11.0" />
+  <acceleration value="1.0" />
+  <explode-on-fade value="0" />
+  <ttl value="0.6" />
+  <bullet value="data/physicals/bullets/sting.xml" />
+
+  <manacost value="9.0 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 1 * phlegmatic)))" />
+  <casttime value="0.09" />
+  <delay value="0.05" />
+  <cooldown value="0.7" />
+  
+</root>

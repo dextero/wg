@@ -1,0 +1,53 @@
+<root type="ability" class="melee">
+
+  <name>$ABI_WEAPON_FREEZING_BLAST</name>
+  <description>$ABI_WEAPON_FREEZING_BLAST_DESC</description>
+  <icon>data/abilities/weapons/freezing-blast-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/freezing-blast-1.png</unavailable-icon>
+
+  <!-- power = 2x cho, 4x mel, 2x san, 2x phl -->
+  <!-- power = (0.05 * (2 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic)) --> 
+  
+  <effect type="delayed">
+    <time calc="0.10" />
+    <effect type="list">
+      <effect type="damage">
+        <damage-type value="ice"/>
+        <amount calc="5.0 * (1 + (0.05 * (2 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic))) " />
+      </effect>
+      <effect type="timed">
+        <time calc="1.750 + (0.05 * (0.05 * (2 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+        <effect type="stun" />
+      </effect>
+      <effect type="graphical-effect">
+        <name value="frost" />
+        <time calc="1.750 + (0.05 * (0.05 * (2 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+      </effect>
+    </effect>
+  </effect>
+  
+  <self-effect type="list">
+    <effect type="graphical-effect">
+      <name value="frost-wave" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-1"/>
+      <time value="0.35"/>
+	</effect>
+	<effect type="delayed">
+      <time calc="0.10" />
+      <effect type="sound">
+        <name value="data/sounds/Lugaro/whoosh.ogg" />
+      </effect>
+	</effect>
+  </self-effect>
+  
+  <range value="3.0" />
+  <width value="80.0" />
+
+  <manacost value="25.0 * (1 + (0.05 * (2 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+  <casttime value="0.09" />
+  <delay value="0.05" />
+  <cooldown value="0.50" />
+  
+</root>
