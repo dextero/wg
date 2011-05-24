@@ -1,0 +1,38 @@
+<root type="ability" class="melee">
+
+  <name>$ABI_WEAPONS_BURNING_HANDS</name>
+  <description>$ABI_WEAPONS_BURNING_HANDS_DESC</description>
+  <icon>data/abilities/weapons/burning-hands-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/burning-hands-1.png</unavailable-icon>
+
+  <!-- power = 4x cho, 2x mel, 2x san, 0x phl -->
+  <!-- power = (0.05 * (4 * choleric + 2 * melancholic + 2 * sanguine + 0 * phlegmatic)) --> 
+
+  <effect type="list">
+    <effect type="knockback">
+      <amount calc="3.0" />
+    </effect>
+    <effect type="damage">
+      <damage-type value="fire"/>
+      <amount calc="11.0 * (1 + (0.05 * (4 * choleric + 2 * melancholic + 2 * sanguine + 0 * phlegmatic))) " />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="bullet-explosion-mini" />
+      <time value="0.8" />
+    </effect>
+  </effect>	
+
+  <self-effect type="graphical-effect">
+    <name value="magic-circle-3"/>
+    <time value="0.35"/>
+  </self-effect>
+
+  <range value="1.1" />
+  <width value="75.0" />
+
+  <manacost calc="11.0 * (1 + (0.05 * (4 * choleric + 2 * melancholic + 2 * sanguine + 0 * phlegmatic)))" />
+  <casttime calc="0.09" />
+  <delay calc="0.05" />
+  <cooldown calc="0.40" />
+
+</root>
