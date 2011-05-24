@@ -39,7 +39,7 @@
   <ttl value="0.6" />
   <bullet value="data/physicals/bullets/firebolt.xml" />
 
-  <manacost calc="2.0 * (1 + (0.2*(1.0 * choleric + 0.2 * melancholic + 0.4 * sanguine)))" />
+  <manacost calc="2.2 * (1 + (0.2*(1.0 * choleric + 0.2 * melancholic + 0.4 * sanguine)))" />
   <casttime calc="0.09" />
   <delay calc="0.05" />
   <cooldown value="0.40" />

@@ -1,7 +1,7 @@
 <root type="ability" class="melee">
 
-  <name>$ABI_WEAPON_FREEZING_BLAST</name>
-  <description>$ABI_WEAPON_FREEZING_BLAST_DESC</description>
+  <name>$ABI_WEAPONS_FREEZING_BLAST</name>
+  <description>$ABI_WEAPONS_FREEZING_BLAST_DESC</description>
   <icon>data/abilities/weapons/freezing-blast-0.png</icon>
   <unavailable-icon>data/abilities/weapons/freezing-blast-1.png</unavailable-icon>
 

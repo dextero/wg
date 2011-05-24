@@ -1,6 +1,6 @@
 <root type="bullet">
-  <scale min="0.12" max="0.14" />
-  <radius min="0.05" max="0.05" />
+  <scale min="0.22" max="0.24" />
+  <radius min="0.10" max="0.10" />
  
   <image filename="data/physicals/bullets/iceball.png" />
 </root>
