@@ -1,0 +1,98 @@
+<root type="ability" class="self">
+
+  <name>$ABI_WEAPONS_BLIZZARD</name>
+  <description>$ABI_WEAPONS_BLIZZARD_DESC</description>
+  <icon>data/abilities/weapons/blizzard-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/blizzard-1.png</unavailable-icon>
+
+  <!-- power = 3x cho, 2x mel, 1x san, 2x phl -->
+  <!-- power = (0.05 * (3 * choleric + 2 * melancholic + 1 * sanguine + 2 * phlegmatic)) --> 
+
+  <effect type="list">
+    <effect type="graphical-effect">
+      <name value="blue-explosion" />
+      <time value="0.8" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="ice-circle-shockwave" />
+      <time value="0.5" />
+    </effect>
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/whoosh.ogg" />
+    </effect>
+    <effect type="area">
+      <area calc="1.4" />
+      <filter value="hostiles" />
+      <effect type="list">
+        <effect type="damage">
+          <damage-type value="ice"/>
+          <amount calc="15 * (1 + (0.05 * (3 * choleric + 2 * melancholic + 1 * sanguine + 2 * phlegmatic)))" />
+        </effect>
+        <effect type="graphical-effect">
+          <name value="frost" />
+          <time calc="1.0 + (0.04 * (0.05 * (3 * choleric + 2 * melancholic + 1 * sanguine + 2 * phlegmatic)))" />
+        </effect>
+        <effect type="timed">
+          <effect type="stun" />
+          <time calc="1.0 + (0.04 * (0.05 * (3 * choleric + 2 * melancholic + 1 * sanguine + 2 * phlegmatic)))"  />
+        </effect>
+      </effect>
+    </effect>
+	<effect type="delayed" >
+	  <time value="0.09" />
+        <effect type="area">
+          <area calc="2.5" />
+          <filter value="hostiles" />
+          <effect type="list">
+            <effect type="damage">
+              <damage-type value="ice"/>
+              <amount calc="30 * (1 + (0.05 * (3 * choleric + 2 * melancholic + 1 * sanguine + 2 * phlegmatic)))" />
+            </effect>
+            <effect type="graphical-effect">
+              <name value="colorize-blue" />
+              <time calc="1.5 + (0.04 * (0.05 * (3 * choleric + 2 * melancholic + 1 * sanguine + 2 * phlegmatic)))" />
+            </effect>
+            <effect type="non-cumulative">
+              <effect type="timed">
+                <time calc="1.5 + (0.04 * (0.05 * (3 * choleric + 2 * melancholic + 1 * sanguine + 2 * phlegmatic)))" />
+                <effect type="modify">
+                  <aspect value="speed"/>
+                  <amount value="0.5"/>
+                </effect>
+              </effect>
+            </effect>
+          </effect>
+        </effect>
+      </effect>		
+    <effect type="timed">
+      <time value="0.50"/>
+      <effect type="drain-mana">
+        <amount value="10.0"/>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list">
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.40"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.20"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+    </effect>
+    <effect type="drain-mana">
+      <amount value="2.0"/>
+    </effect>
+  </cast-time-effect>
+  
+  <manacost value="25 * (1 + (0.05 * (3 * choleric + 2 * melancholic + 1 * sanguine + 2 * phlegmatic)))" />
+  <casttime calc="0.20" />
+  <delay calc="0.50" />
+  <cooldown calc="1.20" />
+
+</root>

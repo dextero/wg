@@ -12,6 +12,7 @@
         <weapon file="data/abilities/weapons/firearrow-lvl2.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/weapons/firearrow-lvl3.xml" minLevel="7" maxLevel="99" />
         <weapon file="data/abilities/weapons/ball-lightning.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/weapons/blizzard.xml" minLevel="15" maxLevel="99" />
  	
 	<!-- inne -->
         <weapon file="data/abilities/electric/chain-lightning.xml" minLevel="8" maxLevel="99" />
@@ -36,7 +37,6 @@
         <weapon file="data/abilities/special/acidcircus.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/special/basher.xml" minLevel="9" maxLevel="99" />
         <weapon file="data/abilities/special/blades.xml" minLevel="12" maxLevel="99" />
-        <weapon file="data/abilities/special/blizzard.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/special/resonator.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/old/acidspray.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/old/entangle.xml" minLevel="8" maxLevel="99" />

@@ -1,7 +1,7 @@
 exec pre-new-game
 new-player 0
 set-ability player0 data/abilities/weapons/firebolt.xml 0
-set-ability player0 data/abilities/weapons/ball-lightning.xml 1
+set-ability player0 data/abilities/weapons/blizzard.xml 1
 set-map-level 0
 next-map
 #load-map data/maps/level01.xml entry
