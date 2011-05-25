@@ -79,6 +79,7 @@ private:
     unsigned int mPassableLeft; // TODO: sprawdzic, do czego to sluzylo poza generowaniem tuneli
     SRandomMapDesc mDesc;
     std::stringstream mXmlText;
+	std::string mTilesFolder;
 
     // metody generowania tuneli
     bool GenerateTunnelsFromRandomCenter();

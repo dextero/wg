@@ -96,7 +96,7 @@ bool CAbilitySlot::OnMouseEvent( float x, float y, mouseEvent e )
 
                             SetDraggable(true);
 
-                            return false;
+                            return true;
                         }
                 }
             }
@@ -110,10 +110,10 @@ bool CAbilitySlot::OnMouseEvent( float x, float y, mouseEvent e )
             mDraggedIcon = NULL;
         }
 
-        return false;
+        return true;
     }
 
-    return true;
+    return false;
 }
 
 void CAbilitySlot::UpdateSprites( float secondsPassed )

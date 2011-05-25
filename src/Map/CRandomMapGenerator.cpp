@@ -16,6 +16,8 @@
 #include "../Utils/StringUtils.h"
 #include "../Utils/FileUtils.h"
 
+#include "../CGameOptions.h"
+
 #include <fstream>
 #include <string.h>
 #include <list>
@@ -265,10 +267,10 @@ bool CRandomMapGenerator::GenerateIntermediateTile(const std::string& outFile, c
 
     // nie ma prawa wystapic sytuacja, kiedy generujemy posrednie kafle z
     // wczesniej wygenerowanych, bo inaczej wszystkie beda sie robic do 2012
-    if (topLeft.find("data/maps/generated_tiles") != std::string::npos ||
-        topRight.find("data/maps/generated_tiles") != std::string::npos ||
-        bottomLeft.find("data/maps/generated_tiles") != std::string::npos ||
-        bottomRight.find("data/maps/generated_tiles") != std::string::npos)
+    if (topLeft.find(mTilesFolder) != std::string::npos ||
+        topRight.find(mTilesFolder) != std::string::npos ||
+        bottomLeft.find(mTilesFolder) != std::string::npos ||
+        bottomRight.find(mTilesFolder) != std::string::npos)
     {
         fprintf(stderr, "CRandomMapGenerator::GenerateIntermediateTile: OMG FATAL ERROR (trying to generate from generated)!\n");
         return false;
@@ -472,12 +474,12 @@ bool CRandomMapGenerator::PlaceTiles()
 
             // IOCCC mode off
 
-            if (!boost::filesystem::exists("data/maps/generated_tiles"))
-                boost::filesystem::create_directory("data/maps/generated_tiles");
+            if (!boost::filesystem::exists(mTilesFolder))
+                boost::filesystem::create_directory(mTilesFolder);
             
             // nazwa przejsciowego kafla
             boost::uint64_t hash = StringUtils::GetStringHash(nameTopLeft + nameTopRight + nameBottomLeft + nameBottomRight);
-            std::string imgName = "data/maps/generated_tiles/" +
+            std::string imgName = mTilesFolder + "/" +
                 StringUtils::ToString(hash) + "_" +
                 StringUtils::ToString(tileMask) + ".png";
 
@@ -881,6 +883,7 @@ CRandomMapGenerator::CRandomMapGenerator():
     mPassableLeft(0u)
 {
     LoadPartSets("data/generator.xml");
+	mTilesFolder = gGameOptions.GetUserDir() + "/generated_tiles";
 }
 
 CRandomMapGenerator::~CRandomMapGenerator()

@@ -114,6 +114,8 @@ CInventoryDisplayer::CInventoryDisplayer( const std::string& name, CGUIObject* p
     
     // zapisz umiejki
     UpdateSprites(0.f);
+
+	gGUI.UnregisterObject(mBackground);
 }
 
 CInventoryDisplayer::~CInventoryDisplayer(){

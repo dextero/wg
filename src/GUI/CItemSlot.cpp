@@ -3,6 +3,8 @@
 #include "CButton.h"
 #include "CWindow.h"
 #include "CInventoryDisplayer.h"
+#include "CTextArea.h"
+#include "Localization/CLocalizator.h"
 #include "../Logic/CPlayerManager.h"
 #include "../Rendering/CDrawableManager.h"
 #include "../ResourceManager/CResourceManager.h"
@@ -20,6 +22,8 @@ CItemSlot* CItemSlot::mDraggedSlot = NULL;
 
 bool CItemSlot::OnMouseEvent( float x, float y, mouseEvent e )
 {
+	CGUIObject::OnMouseEvent(x, y, e);
+
     if (e == MOUSE_PRESSED_LEFT)
     {
         if (mItemIcon && mSelectedItem)
@@ -75,10 +79,10 @@ bool CItemSlot::OnMouseEvent( float x, float y, mouseEvent e )
             mDraggedSlot = NULL;
         }
 
-        return false;
+        return true;
     }
 
-    return true;
+    return false;
 }
 
 void CItemSlot::UpdateSprites( float secondsPassed )
@@ -111,6 +115,8 @@ void CItemSlot::SetSelectedItem(CItem* item)
         gDrawableManager.DestroyDrawable(mItemIcon);
     mItemIcon = NULL;
     SetDraggable(false);
+
+	std::wstring tooltipText;
     if (item)
     {
         mItemIcon = gDrawableManager.CreateHudSprite(mZIndex);
@@ -133,8 +139,28 @@ void CItemSlot::SetSelectedItem(CItem* item)
             }
             // nic nie bedzie widac przy przeciaganiu, jesli sie zepsuje obrazek, ale ok...
             SetDraggable(true);
+			
+			tooltipText = abi->name;
+			tooltipText += L"\n\n" + gLocalizator.GetText("SLOT_DRAG_ITEM_HERE");
+			tooltipText += L"\n\n" + abi->description;
         }
     }
+	else
+		tooltipText = gLocalizator.GetText("SLOT_EMPTY");
+	
+	if (GetTooltip())
+	{
+		CTextArea* description = dynamic_cast<CTextArea*>(GetTooltip()->FindObject("desc"));
+		if (description)
+		{
+			description->SetText(tooltipText);
+			description->SetPosition(20.f, 20.f, 360.f, 0.f, UNIT_PIXEL);
+
+			GetTooltip()->UpdateChilds(0.f);
+			description->UpdateText();
+			GetTooltip()->SetPosition(0.f, 0.f, 400.f, description->GetSize(UNIT_PIXEL).y + 30.f, UNIT_PIXEL);
+		}
+	}
 }
 
 void CItemSlot::UndoDrag()
@@ -149,6 +175,23 @@ CItemSlot::CItemSlot(const std::string &name, CGUIObject *parent, unsigned zinde
     mSelectedItem(NULL),
     mItemIcon(NULL)
 {
+	CWindow* tooltip = gGUI.CreateWindow("slot" + StringUtils::ToString(this) + "_tooltip", true, Z_GUI4);
+    tooltip->SetBackgroundImage("data/GUI/transparent-black.png");
+    tooltip->SetVisible(false);
+    tooltip->SetOffset(GetParent()->ConvertToGlobalPosition(GetSize()));
+
+    // opis
+    CTextArea* description = tooltip->CreateTextArea("desc");
+    description->SetVisible(false);
+    //description->SetCenter(true); // ³eeee³oooo³eeee³oooo bug alert, nie centrowac
+    description->SetAutoHeight(true);
+    description->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
+
+    // nie chcemy, zeby tooltip odbieral komunikaty myszy
+    gGUI.UnregisterObject(tooltip);
+    gGUI.UnregisterObject(description);
+    
+    SetTooltip(tooltip);
 }
 
 CItemSlot::~CItemSlot()
