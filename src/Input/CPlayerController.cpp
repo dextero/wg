@@ -295,65 +295,14 @@ void CPlayerController::Update(float dt){
         
 		int res = -1;
 
-        if (true) { // testy toxica
-            if (mKeySequence.size() == 1) { // nowy klawisz nacisnieto
-                CItem * item = ((CPlayer*)mActor)->GetItem(mKeySequence[0]);
-                if (item) {
-                    fprintf(stderr, "item->%s\n", item->GetAbility().c_str());
-                    res = mActor->GetAbilityPerformer().FindAbilityIndexByInvPos(item->mInvPos);
-                }
-            }
-        } else if (mKeySequence.size() == 1 && mKeySequence[0] >= 0 && mKeySequence[0] < (int)ABI_SLOTS_COUNT) { // czy uzyc umiejek ze slotow?
-			//fprintf(stderr, "slot!\n");
-
-			if (currentActionType != KeyActionTypes::OnlyAbi)
-			{
-				res = mSelectedAbilities[mKeySequence[0]];
-				//fprintf(stderr,"slot ok\n");
-			}
-		}
-        else
-		{
-			//fprintf(stderr, "sekwencja!\n");
-
-			if (currentActionType != KeyActionTypes::OnlySlot)
-			{
-
-				res = mKeyMap->FindAbility(mKeySequence);
-				if (res == CAbilityKeyMap::ABILITY_NOT_FOUND)
-				{
-					mActor->GetAbilityPerformer().SetReadyingAnim(NULL);
-					fprintf(stderr,"Sequence not found: ");
-					for (int i = 0; i < (int)mKeySequence.size(); i++)
-					{
-						if (i > 0) fprintf(stderr,"-");
-						fprintf(stderr,"%d",mKeySequence[i]);
-					}
-					fprintf(stderr,"\n");
-					mKeySequence.clear();
-				} 
-				else 
-				{
-					if ((mKeySequence.size() > 0) && (mTriggerEffects != NULL))
-					{
-						CTriggerEffects::STriggerEffect *te = mTriggerEffects->Find(mKeySequence);
-						if (te != NULL)
-						{
-							if (te->mSound != NULL)
-								gAudioManager.GetSoundPlayer().Play( te->mSound );
-							
-							if (te->mEffect != NULL)
-							{
-								mActor->GetAppliedEffectContainer()->RemoveEffects(mySource);
-								te->mEffect->Apply(mActor,mySource);
-							}
-							
-							mActor->GetAbilityPerformer().SetReadyingAnim(te->mAnim);
-						}
-					}
-				}
+        if (mKeySequence.size() > 0) { // nowy klawisz nacisnieto
+            CItem * item = ((CPlayer*)mActor)->GetItem(mKeySequence[0]);
+            if (item) {
+                fprintf(stderr, "item->%s\n", item->GetAbility().c_str());
+                res = mActor->GetAbilityPerformer().FindAbilityIndexByInvPos(item->mInvPos);
             }
         }
+
         if (res >= 0){
             mActor->GetAbilityPerformer().SetReadyingAnim(NULL);
 			if (mKeySequence.size() == 1) mCastingTime = 0.0f;
@@ -391,21 +340,6 @@ void CPlayerController::Update(float dt){
             mKeySequence.clear();
             mSequenceIdleTime = 0.0f;
 			mLastResult = result;
-        }
-    }
-    mSequenceIdleTime += dt;
-    if (mKeySequence.size() > 0){
-        mCastingTime+=dt;
-        if (mSequenceIdleTime > MaxSequenceIdleTime){
-            fprintf(stderr,"sequence time exceeded for sequence: ");
-            mActor->GetAbilityPerformer().SetReadyingAnim(NULL);
-            for (int i = 0; i < (int)mKeySequence.size(); i++){
-                if (i > 0) fprintf(stderr,"-");
-                fprintf(stderr,"%d",mKeySequence[i]);
-            }
-            fprintf(stderr,"\n");
-            mKeySequence.clear();
-            mSequenceIdleTime = 0.0f;
         }
     }
 }
