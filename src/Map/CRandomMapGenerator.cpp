@@ -593,7 +593,7 @@ bool CRandomMapGenerator::PlaceRegions()
             unsigned int newDist = DistanceDijkstra(newEntry, newExit);
             if (newDist != (unsigned int)-1 && newDist > dist)
             {
-                entry = newEntry;
+                mEntryPos = entry = newEntry;
                 exit = newExit;
                 dist = newDist;
             }
@@ -697,7 +697,9 @@ bool CRandomMapGenerator::PlaceLairs()
             sf::Vector2i tile;
             do
                 tile = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
-            while (!mCurrent[tile.x][tile.y]);
+            while (!mCurrent[tile.x][tile.y] ||
+                (std::min(mDesc.sizeX, mDesc.sizeY) > mDesc.minMonsterDist * 2.f &&     // jesli mapa nie ma rozmiaru przynajmniej 2*minMonsterDist, to olej sprawdzanie odleglosci
+                Maths::LengthSQ(sf::Vector2f(tile.x - mEntryPos.x, tile.y - mEntryPos.y)) <= mDesc.minMonsterDist * mDesc.minMonsterDist) );
 
             // zaklepanie pola, zeby sie 2 gniazda nie zespawnowaly na jednym
             mCurrent[tile.x][tile.y] = LAIR;
@@ -749,7 +751,9 @@ bool CRandomMapGenerator::PlaceMonsters()
         sf::Vector2i pos;
         do
             pos = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
-        while (!mCurrent[pos.x][pos.y]);
+        while (!mCurrent[pos.x][pos.y] ||
+                (std::min(mDesc.sizeX, mDesc.sizeY) > mDesc.minMonsterDist * 2.f &&     // jesli mapa nie ma rozmiaru przynajmniej 2*minMonsterDist, to olej sprawdzanie odleglosci
+                Maths::LengthSQ(sf::Vector2f(pos.x - mEntryPos.x, pos.y - mEntryPos.y)) <= mDesc.minMonsterDist * mDesc.minMonsterDist) );
 
         // i teraz pasowaloby cos tu postawic..
         float offsetX = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // offsety, zeby nie staly tak bardzo jednolicie

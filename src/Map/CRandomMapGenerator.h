@@ -21,8 +21,10 @@ struct SRandomMapDesc
     unsigned int maxLivingMonsters, maxMonsters;
     int level;
     std::string nextMap;
+    float minMonsterDist;   // jak daleko potwory maja sie spawnowac od wejscia
 
-    SRandomMapDesc(): sizeX(0), sizeY(0), obstaclesAreaPercent(0.f), lairs(0), monsters(0), loots(0), maxLivingMonsters(0), maxMonsters(0), level(0), nextMap("@RANDOM") {}
+    SRandomMapDesc(): sizeX(0), sizeY(0), obstaclesAreaPercent(0.f), lairs(0), monsters(0), loots(0),
+        maxLivingMonsters(0), maxMonsters(0), level(0), nextMap("@RANDOM"), minMonsterDist(0.f) {}
 };
 
 
@@ -79,7 +81,8 @@ private:
     unsigned int mPassableLeft; // TODO: sprawdzic, do czego to sluzylo poza generowaniem tuneli
     SRandomMapDesc mDesc;
     std::stringstream mXmlText;
-	std::string mTilesFolder;
+	std::string mTilesFolder;	// sciezka do folderu, gdzie maja ladowac generowane kafle
+	sf::Vector2i mEntryPos;		// pozycja startu - uzywane do spawnowania potworow z dala od gracza
 
     // metody generowania tuneli
     bool GenerateTunnelsFromRandomCenter();
@@ -102,7 +105,7 @@ private:
 
     bool PlaceTiles();
     bool PlaceWalls();      // invisible-walls
-    bool PlaceRegions();    // entry & exit
+    bool PlaceRegions();    // entry & exit - koniecznie przed PlaceLairs/Monsters, bo inaczej potwory moga sie spawnowac na glowie gracza
     bool PlaceDoodahs();
     bool PlaceLairs();
     bool PlaceMonsters();
