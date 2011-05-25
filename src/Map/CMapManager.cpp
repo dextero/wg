@@ -211,7 +211,7 @@ namespace Map{
         mLevel++;
         int r = gRand.Rnd(0, 100);
         // todo: robic w katalogu usera:
-        std::string filename = "data/maps/rnd" + StringUtils::ToString(r) + ".xml";
+		std::string filename = gGameOptions.GetUserDir() + "/generated_maps/rnd" + StringUtils::ToString(r) + ".xml";
         SRandomMapDesc desc;
         desc.set = "forest";
         desc.sizeX = 32;
