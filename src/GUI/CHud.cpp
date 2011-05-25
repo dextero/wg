@@ -218,31 +218,6 @@ void CHud::Update(float dt)
 				}
 			}
 		}
-
-        const float startRot = 60.0f;
-        const float step = 15.0f;
-        const float imgHalfSize = 5.0f;
-        const float radius = 50.0f;
-		if (idleTime < 1.5f){
-			bool isSingleKeyCombination = ((abiState == CAbilityPerformer::asCasting) || (abiState == CAbilityPerformer::asReadying)
-				|| (abiState == CAbilityPerformer::asDelay)) && (mSeq.size() == 1);
-			for (unsigned int i = 0; i < 10; i++){
-				if (i >= mSeq.size() || isSingleKeyCombination)
-					mSeqViewer[i]->SetVisible(false);
-				else if (mHud->IsVisible()) {
-					mSeqViewer[i]->SetVisible(true);
-					mSeqViewer[i]->SetSequenceState(mSeq[i]);
-					float x = 50.0f;
-					float y = 50.0f;
-					float s = step * idleTime / CPlayerController::MaxSequenceIdleTime;
-					sf::Vector2f r = radius * RotationToVector(startRot - s - step * (mSeq.size() - i));
-					mSeqViewer[i]->SetPosition(x - r.x - imgHalfSize, y - r.y - imgHalfSize, imgHalfSize * 2.0f, imgHalfSize * 2.0f);
-				}
-			}
-		} else {
-			for (unsigned int i = 0; i < 10; i++)
-				mSeqViewer[i]->SetVisible(false);
-		}
 	}
 	else
 		Hide();
