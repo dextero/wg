@@ -28,6 +28,8 @@ namespace GUI
         CItemSlot(const std::string &name, CGUIObject *parent, unsigned zindex);
         ~CItemSlot();
 
+        void UpdateTooltipText(const std::string& abi);
+
         CItem* mSelectedItem;
         CHudSprite* mItemIcon;
 
