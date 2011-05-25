@@ -209,7 +209,10 @@ namespace Map{
     void CMapManager::NextMap() {
         fprintf(stderr, "NextMap()\n");
         mLevel++;
-        int r = gRand.Rnd(0, 100);
+        int r = 0;
+        if (m_map && m_map->GetFilename()[m_map->GetFilename().size() - 5] == '0') // 5? "0.xml" == 5 znakow
+            r = 1;
+
         // todo: robic w katalogu usera:
 		std::string filename = gGameOptions.GetUserDir() + "/generated_maps/rnd" + StringUtils::ToString(r) + ".xml";
         SRandomMapDesc desc;
