@@ -1018,6 +1018,9 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
     // koniec
     mXmlText << "</map>";
 
+	if (!boost::filesystem::exists(filename))
+		boost::filesystem::create_directories(filename.substr(0, filename.find_last_of("/\\")));
+
     // skoro doszlismy tutaj, to znaczy, ze mozna zapisywac!
 	if (!FileUtils::WriteToFile(filename, mXmlText.str()))
     {
