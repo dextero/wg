@@ -39,6 +39,9 @@ bool CItemSlot::OnMouseEvent( float x, float y, mouseEvent e )
             mDraggedIcon->SetVisible(false);
 
             SetDraggable(false);
+
+            // usuniecie itema ze slota - update'ujemy tooltipa
+            UpdateTooltipText("");
         }
     }
 
@@ -68,6 +71,9 @@ bool CItemSlot::OnMouseEvent( float x, float y, mouseEvent e )
             mDraggedItem = NULL;
             mDraggedIcon = NULL;
             mDraggedSlot = NULL;
+            
+            // zmiana umiejki w slocie! w takim razie update'ujemy tooltipa
+            UpdateTooltipText(mSelectedItem ? mSelectedItem->GetAbility() : "");
         }
         else
         { 
@@ -116,7 +122,6 @@ void CItemSlot::SetSelectedItem(CItem* item)
     mItemIcon = NULL;
     SetDraggable(false);
 
-	std::wstring tooltipText;
     if (item)
     {
         mItemIcon = gDrawableManager.CreateHudSprite(mZIndex);
@@ -140,27 +145,11 @@ void CItemSlot::SetSelectedItem(CItem* item)
             // nic nie bedzie widac przy przeciaganiu, jesli sie zepsuje obrazek, ale ok...
             SetDraggable(true);
 			
-			tooltipText = abi->name;
-			tooltipText += L"\n\n" + gLocalizator.GetText("SLOT_DRAG_ITEM_HERE");
-			tooltipText += L"\n\n" + abi->description;
+            UpdateTooltipText(item->GetAbility());
         }
     }
 	else
-		tooltipText = gLocalizator.GetText("SLOT_EMPTY");
-	
-	if (GetTooltip())
-	{
-		CTextArea* description = dynamic_cast<CTextArea*>(GetTooltip()->FindObject("desc"));
-		if (description)
-		{
-			description->SetText(tooltipText);
-			description->SetPosition(20.f, 20.f, 360.f, 0.f, UNIT_PIXEL);
-
-			GetTooltip()->UpdateChilds(0.f);
-			description->UpdateText();
-			GetTooltip()->SetPosition(0.f, 0.f, 400.f, description->GetSize(UNIT_PIXEL).y + 30.f, UNIT_PIXEL);
-		}
-	}
+		UpdateTooltipText("");
 }
 
 void CItemSlot::UndoDrag()
@@ -197,4 +186,35 @@ CItemSlot::CItemSlot(const std::string &name, CGUIObject *parent, unsigned zinde
 CItemSlot::~CItemSlot()
 {
     if (mItemIcon) gDrawableManager.DestroyDrawable(mItemIcon);
+}
+
+void CItemSlot::UpdateTooltipText(const std::string& abiName)
+{
+    CAbility* abi = NULL;
+    if (abiName.size())
+        abi = gResourceManager.GetAbility(abiName);
+
+    std::wstring tooltipText;
+    if (abi)
+    {
+        tooltipText = abi->name;
+        tooltipText += L"\n\n" + gLocalizator.GetText("SLOT_DRAG_ITEM_HERE");
+        tooltipText += L"\n\n" + abi->description;
+    }
+    else
+        tooltipText = gLocalizator.GetText("SLOT_EMPTY");
+
+    if (GetTooltip())
+    {
+        CTextArea* description = dynamic_cast<CTextArea*>(GetTooltip()->FindObject("desc"));
+        if (description)
+        {
+            description->SetText(tooltipText);
+            description->SetPosition(20.f, 20.f, 360.f, 0.f, UNIT_PIXEL);
+
+            GetTooltip()->UpdateChilds(0.f);
+            description->UpdateText();
+            GetTooltip()->SetPosition(0.f, 0.f, 400.f, description->GetSize(UNIT_PIXEL).y + 30.f, UNIT_PIXEL);
+        }
+    }
 }
