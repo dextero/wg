@@ -1,0 +1,93 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_WEAPONS_POISON_CLOUD</name>
+  <description>$ABI_NATURE_POISON_DESC</description>
+  <icon>data/abilities/weapons/poison-cloud-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/poison-cloud-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 2x mel, 2x san, 3x phl -->
+  <!-- power = (0.05 * (1 * choleric + 2 * melancholic + 2 * sanguine + 3 * phlegmatic)) --> 
+  
+  <explosion type="list">
+    <effect type="graphical-effect">
+      <name value="green-explosion" />
+      <time value="1.1" />
+    </effect>
+
+    <effect type="graphical-effect">
+      <name value="acid-cloud" />
+      <time calc="3.6" />
+    </effect>
+    <effect type="bullet">
+      <emitter>
+        <speed value="0.0" />
+        <ttl value="4.0" />
+        <count value="1" />
+        <width value="360" />
+        <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+        <filter value="trap" /> <!-- tox, 26 sierpnia 2009: "trap" bo nie ma filtru "nothing" -->
+
+		<effect type="area" tag="poison-cloud-tag">
+		  <area value="1.134" />
+		  <filter value="hostiles" />
+          <effect type="list">
+            <effect type="graphical-effect">
+              <name value="colorize-green" />
+			  <time calc="2.0 + (0.5 * (0.05 * (1 * choleric + 2 * melancholic + 2 * sanguine + 3 * phlegmatic)))" />
+            </effect>			
+		    <effect type="non-cumulative">
+		      <effect type="timed">
+		        <time calc="2.0 + (0.5 * (0.05 * (1 * choleric + 2 * melancholic + 2 * sanguine + 3 * phlegmatic)))"/>
+			    <effect type="damage" tag="poison-cloud-damage-tag">
+			      <damage-type value="poison"/>
+			      <amount calc="5.0 + (0.25 + (0.05 * (1 * choleric + 2 * melancholic + 2 * sanguine + 3 * phlegmatic)))"/>
+			    </effect>
+		      </effect>
+	        </effect>	
+		  </effect>
+		</effect>
+		
+        <flight-effect type="list">
+          <effect type="recastable">
+            <time calc="0.11" />
+            <recast value="0.1" />
+            <effect type="jump">
+              <name value="poison-cloud-tag"/>
+            </effect>
+          </effect>   
+          <effect type="recastable">
+            <time calc="20.0" />
+            <recast value="0.5" />
+            <effect type="jump">
+              <name value="poison-cloud-tag"/>
+            </effect>
+          </effect>
+          <effect type="recastable">
+            <time calc="20.0" />
+            <recast value="1.0" />
+            <effect type="area">
+              <area value="1.134" />
+		      <filter value="hostiles" />
+              <effect type="jump">
+                <name value="poison-cloud-damage-tag"/>
+              </effect>
+			</effect>
+          </effect>
+        </flight-effect>
+      </emitter>
+    </effect>
+  </explosion>
+
+  <speed value="2.0" />
+  <acceleration value="0.0" />
+  <explode-on-fade value="1" />
+  <ttl value="1.6" />
+  <bullet value="data/physicals/bullets/poison.xml" />
+  <bullet-angular-speed value="-1440" />
+
+  <manacost value="21 * (1 + (0.05 * (1 * choleric + 2 * melancholic + 2 * sanguine + 3 * phlegmatic)))" />
+  <casttime value="0.1" />
+  <delay value="0.05" />
+  <cooldown value="0.8" />
+  
+</root>
