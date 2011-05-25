@@ -226,6 +226,7 @@ namespace Map{
         bool result = gRandomMapGenerator.GenerateRandomMap(filename, desc);
         fprintf(stderr, "Generating map %s: %s", filename.c_str(), (result ? "OK!" : "FAILED!"));
 
+		gResourceManager.DropResource(filename); // wymusza reload mapy z dysku
         ScheduleSetMap(filename, true, "entry");
     }
 }
