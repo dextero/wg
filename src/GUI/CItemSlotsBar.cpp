@@ -70,14 +70,16 @@ void CItemSlotsBar::UpdatePlayerData()
 {
     if (CPlayer* player = gPlayerManager.GetPlayerByNumber(mPlayerNumber))
     {
-        for (unsigned i = 0; i < ITEM_SLOTS_COUNT; ++i)
+        // dex: dlaczego od konca? nie wiem. "normalnie" sie crashuje w ~CPlayer, bo jakims cudem
+        // pojawia sie tam duplikat jednego itema, ktory przez to jest delete'owany dwukrotnie.
+        for (unsigned i = ITEM_SLOTS_COUNT; i > 0; --i)
         {
-            if (player->GetItem(i) != mSlot[i]->GetSelectedItem())
+            if (player->GetItem(i-1) != mSlot[i-1]->GetSelectedItem())
             {
-                if (!mSlot[i]->GetSelectedItem())           // zwolnij slot (i)
-                    player->RemoveItem(player->GetItem(i));
+                if (mSlot[i-1]->GetSelectedItem())           // zwolnij slot (i)
+                    player->RemoveItem(player->GetItem(i-1));
                 else                                        // podmien
-                    player->AddItem(mSlot[i]->GetSelectedItem(), i);
+                    player->AddItem(mSlot[i-1]->GetSelectedItem(), i-1);
             }
         }
     }

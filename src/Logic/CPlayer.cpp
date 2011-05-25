@@ -298,7 +298,7 @@ CItem * CPlayer::GetItem(size_t invPos) {
 
 void CPlayer::AddItem(CItem * item, size_t invPos) {
     CItem * prevItem = GetItem(invPos);
-    if (!prevItem) {
+    if (prevItem) {
         RemoveItem(prevItem);
     }
     mItems.push_back(item);
