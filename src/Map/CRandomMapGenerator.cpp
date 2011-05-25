@@ -127,7 +127,7 @@ bool CRandomMapGenerator::GenerateTunnelsFromRandomCenter()
 bool CRandomMapGenerator::GenerateTunnelsGraph()
 {
     // "szerokosc tunelu"
-    unsigned int size = 2;
+    unsigned int size = 3;
     // ilosc wierzcholkow grafu
     const unsigned int NUM_VERTS = 50;
 
@@ -582,8 +582,12 @@ bool CRandomMapGenerator::PlaceRegions()
                 newEntry = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
             while (!mCurrent[newEntry.x][newEntry.y]);
             do
-                newExit = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
-            while (!mCurrent[newExit.x][newExit.y]);
+                newExit = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);				// wyjscie powinno byc odsloniete:
+            while (!mCurrent[newExit.x][newExit.y] ||											// pole jest zablokowane (BLOCKED == 0)
+					(newExit.x <= 0 || !mCurrent[newExit.x - 1][newExit.y]) ||					// pole po lewej jest zablokowane (i moze zawalac "nasze" doodahami)
+					(newExit.x >= mDesc.sizeX - 1 || !mCurrent[newExit.x + 1][newExit.y]) ||	// j/w, po prawej
+					(newExit.y <= 0 || !mCurrent[newExit.x][newExit.y - 1]) ||					// j/w, gora
+					(newExit.y >= mDesc.sizeY - 1 || !mCurrent[newExit.x][newExit.y+1]) );		// j/w, dol
 
             // wybieramy najdluzsza droge
             unsigned int newDist = DistanceDijkstra(newEntry, newExit);
