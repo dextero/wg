@@ -1,0 +1,118 @@
+<root type="ability" class="self">
+
+  <name>$ABI_WEAPONS_FIRECIRCLE</name>
+  <description>$ABI_WEAPONS_FIRECIRCLE_DESC</description>
+  <icon>data/abilities/weapons/firecircle-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/firecircle-1.png</unavailable-icon>
+
+  <!-- power = 4x cho, 0x mel, 1x san, 3x phl -->
+  <!-- power = (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)) -->   
+  
+  <effect type="list">
+    <effect type="graphical-effect">
+      <time value="1.0" />
+      <name value="bullet-explosion" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="fire-circle-shockwave" />
+      <time value="0.4" />
+    </effect>
+    <effect type="sound">
+     <name value="data/sounds/Lugaro/break.ogg" />
+    </effect>
+    <effect type="area">
+      <area calc="0.73"  />
+      <filter value="hostiles,obstacle" />
+      <effect type="list">
+        <effect type="damage">	
+          <damage-type value="fire"/>
+          <amount calc="20.0 + (10 * (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))" />
+        </effect>
+        <effect type="knockback">
+          <amount calc="10.0"/>
+        </effect>
+        <effect type="chance">
+          <chance calc="0.5 + (0.01 * (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))"/>
+		  <effect type="non-cumulative">
+		    <effect type="list">
+              <effect type="graphical-effect">
+                <name value="flames" />
+                <time calc="4" />
+              </effect>
+              <effect type="sound">
+                <name value="data/sounds/Lugaro/fire.ogg" />
+              </effect>
+              <effect type="timed">
+                <time calc="4"/>
+                <effect type="damage">
+                  <damage-type value="fire"/>
+                  <amount value="2 + (0.25 * (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))"/>
+                </effect>
+              </effect>
+			</effect>
+		  </effect>
+        </effect>
+      </effect>
+    </effect>
+
+    <effect type="delayed" >
+      <time value="0.125" />
+      <effect type="area">
+        <area calc="1.3" />
+        <filter value="hostiles,obstacle" />
+        <effect type="list">
+          <effect type="damage">
+            <damage-type value="fire"/>
+            <amount calc="10.0 + (5.0 * (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))"/>
+          </effect>
+          <effect type="knockback">
+            <amount calc="8.0"/>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="delayed" >
+      <time value="0.250" />
+      <effect type="area">
+        <area calc="1.95" />
+        <filter value="hostiles,obstacle" />
+        <effect type="list">
+          <effect type="damage">
+            <damage-type value="fire"/>
+            <amount calc="5.0 + (2.5 * (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))" />
+          </effect>
+          <effect type="knockback">
+            <amount calc="6.25"/>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="delayed" >
+      <time value="0.375" />
+      <effect type="area">
+        <area calc="2.6" />
+        <filter value="hostiles,obstacle" />
+        <effect type="list">
+          <effect type="damage">
+            <damage-type value="fire"/>
+            <amount calc="2.5 + (1.25 * (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))" />
+          </effect>
+          <effect type="knockback">
+            <amount calc="4.5"/>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="graphical-effect">
+      <name value="magic-circle-4"/>
+      <time value="0.35"/>
+  </cast-time-effect>
+
+  <manacost calc="26 * (1 + (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))" />
+  <casttime calc="0.40" />
+  <delay calc="0.05" />
+  <cooldown calc="1.60" />
+
+</root>

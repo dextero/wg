@@ -18,6 +18,7 @@
         <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="1.0" />
         <weapon file="data/abilities/weapons/poison-cloud.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/meditation.xml" minLevel="5" maxLevel="99" />
+        <weapon file="data/abilities/weapons/firecircle.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/magic-missile-lvl2.xml" minLevel="6" maxLevel="99" frequency="0.5" />
         <weapon file="data/abilities/weapons/firearrow-lvl3.xml" minLevel="7" maxLevel="99" />
         <weapon file="data/abilities/weapons/ball-lightning.xml" minLevel="8" maxLevel="99" />
@@ -140,29 +141,29 @@
         <monster file="data/physicals/monsters/winged-pincer.xml" level="99" />
         <monster file="data/physicals/monsters/wolfbeast.xml" level="99" />
         <!-- hp -->
-        <loot file="data/loots/small-hp.xml" level="0" />
-        <loot file="data/loots/medium-hp.xml" level="2" />
-        <loot file="data/loots/big-hp.xml" level="5" />
-        <loot file="data/loots/regeneration.xml" level="7" />
+        <loot file="data/loots/small-hp.xml" minLevel="1" />
+        <loot file="data/loots/medium-hp.xml" minLevel="3" />
+        <loot file="data/loots/big-hp.xml" minLevel="5" />
+        <loot file="data/loots/regeneration.xml" minLevel="7" />
 
         <!-- xp -->
-        <loot file="data/loots/25xp.xml" level="0" />
-        <loot file="data/loots/64xp.xml" level="1" />
-        <loot file="data/loots/100xp.xml" level="2" />
-        <loot file="data/loots/200xp.xml" level="3" />
-        <loot file="data/loots/350xp.xml" level="4" />
-        <loot file="data/loots/600xp.xml" level="6" />
-        <loot file="data/loots/1k-xp.xml" level="10" />
+        <loot file="data/loots/25xp.xml" minLevel="1" />
+        <loot file="data/loots/64xp.xml" minLevel="3" />
+        <loot file="data/loots/100xp.xml" minLevel="5" />
+        <loot file="data/loots/200xp.xml" minLevel="8" />
+        <loot file="data/loots/350xp.xml" minLevel="13" />
+        <loot file="data/loots/600xp.xml" minLevel="18" />
+        <loot file="data/loots/1k-xp.xml" minLevel="25" />
 
         <!-- speciale - bez tych, ktorymi mozna tluc, bo wyskocza 3 takie na mapie i problem -->
         <!--    <loot file="data/loots/resonator-ball.xml" level="3" /> -->
         <!-- <loot file="data/loots/armor-ball.xml" level="4" /> -->
 
         <!-- inne -->
-        <loot file="data/loots/superspeed.xml" level="5" />
-        <loot file="data/loots/medium-mana.xml" level="2" />
+        <loot file="data/loots/superspeed.xml" minLevel="1" frequency="0.5" />
+        <loot file="data/loots/medium-mana.xml" minLevel="1" />
 
-        <loot file="data/loots/weapon.xml" level="1" />
+        <loot file="data/loots/weapon.xml" minLevel="1" />
     </physicals>
     <tile-masks>
         <tile-mask file="data/maps/tile_mask/mask1.png" />
