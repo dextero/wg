@@ -1,0 +1,75 @@
+<root type="ability" class="self">
+
+  <name>$ABI_WEAPONS_FIRESTREAM</name>
+  <description>$ABI_WEAPONS_FIRESTREAM_DESC</description>
+  <icon>data/abilities/weapons/firestream-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/firestream-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 0x mel, 5x san, 2x phl -->
+  <!-- power = (0.05 * (1 * choleric + 0 * melancholic + 5 * sanguine + 2 * phlegmatic)) --> 
+  
+  <effect type="recastable" >
+    <recast value="0.05" />
+    <time value="1.8" />
+    <effect type="bullet">
+      <emitter>
+        <explosion type="list">
+          <effect type="sound">
+            <name value="data/sounds/Lugaro/firestart.ogg" />
+          </effect>
+          <effect type="graphical-effect">
+            <time value="0.1" />
+            <name value="tinyfireball" />
+          </effect>
+          <effect type="graphical-effect">
+            <time value="0.8" />
+            <name value="bullet-explosion-mini" />
+          </effect>
+		</explosion>
+        <effect type="list">
+          <effect type="damage">
+            <damage-type value="fire"/>
+            <amount calc="4.0 * (1 + (1 * choleric + 0 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+          </effect>
+          <effect type="knockback">
+            <amount calc="0.8"/>
+          </effect>
+        </effect>
+
+        <range calc="6.0" />
+        <speed value="3.0" />
+        <ttl value="4.0" />
+        <count value="1" />
+        <width value="12" />
+        <acceleration value="5.0" />
+        <speed-fuzziness value="1.0"/>
+        <bullet value="data/physicals/bullets/flaming-arrow.xml" />
+      </emitter>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list">
+    <effect type="graphical-effect">
+      <name value="magic-circle-1"/>
+      <time value="0.40"/>
+    </effect>
+	<effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+	</effect>  
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.2" />
+  </delay-effect>
+
+  <manacost calc="2.0" />
+  <casttime calc="0.10" />
+  <delay calc="0.05" />
+  <cooldown value="0.10" />
+
+  <focus-mana-cost calc="18.0 * (1 + (1 * choleric + 0 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+  <focus-max-duration value="2.5" />
+
+</root>
