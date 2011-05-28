@@ -19,9 +19,12 @@
         <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="1.0" />
         <weapon file="data/abilities/weapons/poison-cloud.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/meditation.xml" minLevel="5" maxLevel="99" />
+        <weapon file="data/abilities/weapons/firestream.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/magic-missile-lvl2.xml" minLevel="6" maxLevel="99" frequency="0.5" />
         <weapon file="data/abilities/weapons/firearrow-lvl3.xml" minLevel="7" maxLevel="99" />
         <weapon file="data/abilities/weapons/ball-lightning.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/weapons/acidspray.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/weapons/icecircle.xml" minLevel="10" maxLevel="99" />
         <weapon file="data/abilities/weapons/blizzard.xml" minLevel="15" maxLevel="99" />
 
  	
@@ -38,7 +41,6 @@
         <weapon file="data/abilities/fire/firepits.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/fire/firewall.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/fire/flaming-mantle.xml" minLevel="21" maxLevel="99" />
-        <weapon file="data/abilities/fire/quickshot.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/fire/sparkrain.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/support/healself.xml" minLevel="1" maxLevel="99" />
         <weapon file="data/abilities/support/superspeed.xml" minLevel="5" maxLevel="99" />
@@ -46,11 +48,9 @@
         <weapon file="data/abilities/special/basher.xml" minLevel="9" maxLevel="99" />
         <weapon file="data/abilities/special/blades.xml" minLevel="12" maxLevel="99" />
         <weapon file="data/abilities/special/resonator.xml" minLevel="3" maxLevel="99" />
-        <weapon file="data/abilities/old/acidspray.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/old/entangle.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/old/freezebomb.xml" minLevel="14" maxLevel="99" />
         <weapon file="data/abilities/old/frostnova.xml" minLevel="16" maxLevel="99" />
-        <weapon file="data/abilities/old/icecircle.xml" minLevel="10" maxLevel="99" />
         <weapon file="data/abilities/old/ignite.xml" minLevel="21" maxLevel="99" />
 
         <lair file="data/physicals/lairs/rat-lair.xml" level="90" />
