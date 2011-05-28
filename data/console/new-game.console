@@ -1,7 +1,7 @@
 exec pre-new-game
 new-player 0
 set-ability player0 data/abilities/weapons/firebolt.xml 0
-set-ability player0 data/abilities/weapons/hibernation.xml 1
+set-ability player0 data/abilities/weapons/icecircle.xml 1
 #set-ability player0 data/abilities/weapons/blazing-feet.xml 1
 #set-ability player0 data/abilities/weapons/magic-missile-lvl2.xml 2
 set-ability player0 data/abilities/weapons/meditation.xml 3

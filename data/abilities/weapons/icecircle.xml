@@ -1,0 +1,97 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_WEAPONS_ICECIRCLE</name>
+  <description>$ABI_WEAPONS_ICECIRCLE_DESC</description>
+  <icon>data/abilities/weapons/icecircle-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/icecircle-1.png</unavailable-icon>
+
+  <!-- power = 2x cho, 2x mel, 2x san, 2x phl -->
+  <!-- power = (0.05 * (2 * choleric + 2 * melancholic + 2 * sanguine + 2 * phlegmatic)) --> 
+  
+  <explosion type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/whoosh.ogg" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="blue-explosion" />
+      <time value="1.0" />
+    </effect>
+
+    <effect type="area">
+      <area calc="0.5"/>
+      <filter value="hostiles,obstacle"/>
+      <effect type="list">
+        <effect type="damage" >
+          <damage-type value="ice"/>
+          <amount calc="12.0 * (1 + (0.05 * (2 * choleric + 2 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+        </effect>
+        <effect type="graphical-effect">
+          <time value="3.0" />
+          <name value="frost" />
+        </effect>
+        <effect type="non-cumulative">
+          <effect type="timed">
+            <time value="3.0"/>
+            <effect type="stun"/>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+
+    <effect type="bullet">
+      <emitter>
+        <extra-offset value="0.3"/>
+        <range value="12.0" />
+        <speed value="5.0" />
+        <ttl value="0.8" />
+        <count value="15" />
+        <width value="345" />
+        <bullet value="data/physicals/bullets/icicle.xml" />
+<!-- kopia icearrow.xml -->
+        <explosion type="list">
+          <effect type="sound">
+            <name value="data/sounds/Lugaro/whoosh.ogg" />
+          </effect>
+          <effect type="graphical-effect">
+            <name value="blue-explosion-mini" />
+            <time value="0.8" />
+		  </effect>
+		</explosion>  
+        <effect type="list">
+          <effect type="graphical-effect">
+            <name value="colorize-blue" />
+            <time calc="1.75 + (0.02 * (0.05 * (2 * choleric + 2 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+          </effect>
+          <effect type="non-cumulative">
+            <effect type="timed">
+              <time calc="1.75 + (0.02 * (0.05 * (2 * choleric + 2 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+              <effect type="modify">
+                <aspect value="speed" />
+                <amount calc="0.76 - (0.005 * (0.05 * (2 * choleric + 2 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+              </effect>
+            </effect>
+          </effect>
+          <effect type="damage">
+            <damage-type value="ice"/>
+            <amount calc="5.0 * (1 + (0.05 * (2 * choleric + 2 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+          </effect>
+		</effect>  
+<!-- koniec kopii icearrow.xml -->
+        </emitter>
+      </effect>
+  </explosion>
+      
+  <range value="12.0" />
+  <speed value="10.0" />
+  <acceleration value="-13.5"/>
+  <ttl value="1.0" />
+  <explode-on-fade value="1" />
+  <bullet value="data/physicals/bullets/freezebomb-armed.xml" />
+  <bullet-angular-speed value="360" />
+
+  <manacost value="20 * (1 + (0.05 * (2 * choleric + 2 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+  <casttime value="0.09" />
+  <delay value="0.05" />
+  <cooldown value="0.91" />
+  
+</root>
