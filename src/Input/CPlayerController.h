@@ -14,31 +14,14 @@ class CAbility;
 struct SAbilityInstance;
 class CTriggerEffects;
 
-class CAbilityKeyMap; // definicja w CPlayerController.cpp
 class CInGameOptionChooser;
-
-namespace KeyActionTypes
-{
-	enum e
-	{
-		Null,
-		OnlyAbi,
-		OnlySlot,
-		Both
-	};
-};
-typedef KeyActionTypes::e KeyActionType;
 
 class CPlayerController : public CActorController
 {
 public:
     static const int AbilityKeyCount; // iloma klawiszami sie wybiera animacje
     static const float TurningTimeThreshold; // zeby dodac odrobine precyzji do obrotu
-    static const float MaxSequenceIdleTime; // maksymalny czas pomiedzy klawiszami sekwencji
-    static const float SameKeyPause; // przerwa pomiedzy tymi samymi klawiszami sekwencji
 private:
-
-	KeyActionType currentActionType;
 
 	enum WalkingDir { wdNone = 0, wdForward = 1, wdBackward = 2, wdLeft = 4, wdRight =8};
 	int mWalkingDir;
@@ -47,17 +30,13 @@ private:
     float mTurningTime; // calkowity czas utrzymywania kierunku obrotu    
     float mWalkingTime; // calkowity czas utrzymywania kierunku marszu
     
-    CAbilityKeyMap *mKeyMap;
-    std::vector<int> mKeySequence;
-    std::vector<int> mLastKeySequence;
-    float mSequenceIdleTime;
     int mLastKey;
     float mCastingTime;
     CAbility *mFocusAbility;
+    bool mKeepFocus;
 	CAbility *mLastAbility;
 	EAbilityResult mLastResult;
 
-	bool mAbilityActivatedJustNow; // wynosi true tylko przez jedna klatke -> mouse caster jest ukrywany
     bool mControlsSwitched;
 
     CTriggerEffects *mTriggerEffects;
@@ -82,10 +61,8 @@ public:
     void SetWalkingAbsolute(bool north, bool east, bool south, bool west);
 	void SetMouseLook(bool look);
 
-    void AbiKeyPressed(KeyActionType actionType, int idx, bool hold);
+    void AbiKeyPressed(int idx, bool hold);
 	void StartTalk();
-
-    void RebuildAbilityData(std::vector<SAbilityInstance> &abilities);
 
     // wolane przez CPlayer
     virtual void Update(float dt);
@@ -94,12 +71,8 @@ public:
 
     inline void BindTriggerEffects(CTriggerEffects *triggerEffects){ mTriggerEffects = triggerEffects; }
 
-    inline const std::vector<int> &GetCurrentKeySequence(){ return mKeySequence; }
-    inline const std::vector<int> &GetLastKeySequence(){ return mLastKeySequence; }
 	inline EAbilityResult GetLastAbilityResult(){ return mLastResult; }
-    inline float GetCurrentSequenceIdleTime(){ return mSequenceIdleTime; }
 	inline CAbility *GetLastAbility(){ return mLastAbility; }
-	inline bool AbilityActivatedJustNow(){ return mAbilityActivatedJustNow; }
     inline int* GetSelectedAbilities() { return mSelectedAbilities; }
  
     bool AllowKeyHold();
