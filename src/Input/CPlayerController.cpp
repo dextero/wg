@@ -17,90 +17,20 @@
 #include "CBindManager.h"
 #include "../Logic/Items/CItem.h"
 
-const int CPlayerController::AbilityKeyCount = 4; // iloma klawiszami sie wybiera animacje
 const float CPlayerController::TurningTimeThreshold = 0.15f; // zeby dodac odrobine precyzji do obrotu
-const float CPlayerController::MaxSequenceIdleTime = 0.6f; // maksymalny czas pomiedzy klawiszami sekwencji
-const float CPlayerController::SameKeyPause = 0.3f; // przerwa pomiedzy tymi samymi klawiszami sekwencji
-
-class CAbilityKeyMap{
-public:
-    static const int ABILITY_NOT_FOUND = -1;
-    static const int ABILITY_INCOMPLETE = -2;
-private:
-    struct Node{
-        Node *children[CPlayerController::AbilityKeyCount];
-        int abiIndex;
-
-        Node(){
-            for (int i = 0; i < CPlayerController::AbilityKeyCount; i++)
-                children[i]=NULL;
-            abiIndex = ABILITY_INCOMPLETE;
-        }
-
-        ~Node(){
-            Clear();
-        }
-
-        void Clear(){
-            for (int i = 0; i < CPlayerController::AbilityKeyCount; i++)
-                if (children[i]!=NULL){
-                    delete children[i];
-                    children[i]=NULL;
-                }
-        }
-
-        void Add(std::string &sequence,int seqIndex, int abiIndex){
-            if (seqIndex >= (int)sequence.size()){
-                this->abiIndex = abiIndex;
-            } else {
-                int c = StringUtils::CharToCode(sequence[seqIndex]);
-                if (children[c] == NULL)
-                    children[c] = new Node();
-                children[c]->Add(sequence,seqIndex+1,abiIndex);
-            }
-        }
-
-        int Find(std::vector<int> &sequence, int seqIndex){
-            if (seqIndex >= (int)sequence.size())
-                return abiIndex;
-            int c = sequence[seqIndex];
-            if (children[c] == NULL)
-                return ABILITY_NOT_FOUND;
-            return children[c]->Find(sequence,seqIndex+1);
-        }
-    } mRoot;
-
-public:
-    CAbilityKeyMap(){}
-    ~CAbilityKeyMap(){}
-
-    void Rebuild(std::vector<SAbilityInstance> &abilities){
-        mRoot.Clear();
-        for (int i = 0; i < (int)abilities.size(); i++){
-			if (abilities[i].triggerEnabled && (abilities[i].ability->trigger.size() > 0))
-                mRoot.Add(abilities[i].ability->trigger,0,i);
-        }
-    }
-
-    int FindAbility(std::vector<int> &sequence){
-        return mRoot.Find(sequence,0);
-    }
-};
 
 CPlayerController::CPlayerController(CPlayer *player) :
     CActorController(player),
-    currentActionType(KeyActionTypes::Null),
     mWalkingDir(wdNone),
     mTurningDir(tdNone),
     mTurningTime(0.f),
     mWalkingTime(0.f),
-    mSequenceIdleTime(0.f),
     mLastKey(-1),
     mCastingTime(0.0f),
     mFocusAbility(NULL),
+    mKeepFocus(false),
 	mLastAbility(NULL),
     mLastResult(arUnknown),
-	mAbilityActivatedJustNow(false),
     mControlsSwitched(false),
     mTriggerEffects(NULL),
     mAbsoluteMoveX(0.0f),
@@ -110,7 +40,6 @@ CPlayerController::CPlayerController(CPlayer *player) :
     mOptionChooser(NULL)
 {
     fprintf(stderr,"CPlayerController::CPlayerController()\n");
-    mKeyMap = new CAbilityKeyMap();
     mySource = new CEffectSource(estCastingAbility,NULL);
 
     // -1 == ABILITY_NOT_FOUND
@@ -181,28 +110,19 @@ void CPlayerController::SetMouseLook(bool look)
 	mMouseLook = look;
 }
 
-void CPlayerController::AbiKeyPressed(KeyActionType actionType, int idx, bool hold){
-    if (mFocusAbility){ // focusowe
-        if (mLastKey != idx ){ // inny klawisz
-            mActor->GetAbilityPerformer().BreakFocus();
-            mFocusAbility = NULL;
-        } else { // klawisz "podtrzymujacy"
-            if (hold){
-                mSequenceIdleTime = 0.0f;
-            }
+void CPlayerController::AbiKeyPressed(int idx, bool hold){
+    if (mFocusAbility && mLastKey != idx) {
+        mActor->GetAbilityPerformer().BreakFocus();
+        mFocusAbility = NULL;
+    }
+
+    if (hold) {
+        if (mFocusAbility && mLastKey == idx) {
+            mKeepFocus = true;
         }
-    } else if ((!hold) || (mKeySequence.size() == 0)){ // nie-focusowe
-        //if (mLastKey == idx)
-        //    if (mSequenceIdleTime < SameKeyPause)
-        //        return; // ot, taka blokada przeciw przytrzymaniu klawisza
-
-		if (actionType== KeyActionTypes::OnlySlot) mKeySequence.clear();
-
-		currentActionType = actionType;
-
-        mKeySequence.push_back(idx);
         mLastKey = idx;
-        mSequenceIdleTime = 0.0f;
+    } else {
+        mLastKey = -1;
     }
 }
 
@@ -216,12 +136,7 @@ void CPlayerController::StartTalk()
 	npcChooser->SetFramesToDeath( 1 );
 }
 
-void CPlayerController::RebuildAbilityData(std::vector<SAbilityInstance> &abilities){
-    mKeyMap->Rebuild(abilities);
-}
-
-void CPlayerController::Update(float dt){
-
+void CPlayerController::Update(float dt) {
     if (mActor->GetSpawnState() != CActor::ssAlive) return;
     // reset stanu
     CActorController::Update(dt);
@@ -279,33 +194,26 @@ void CPlayerController::Update(float dt){
     }
 
     // focus
-    if (mFocusAbility){
-        if (mSequenceIdleTime > 0.0f){
+    if (mFocusAbility) {
+        if (!mKeepFocus) {
             mFocusAbility = NULL;
             mActor->GetAbilityPerformer().BreakFocus();
         }
     }
 
-	mAbilityActivatedJustNow = false;
-
-    // umiejetnosci za pomoca sekwencji
-    if (mSequenceIdleTime == 0.0f)
+    if (mLastKey != -1 && !mKeepFocus)
 	{
-		// dodano nowy klawisz
-        
 		int res = -1;
 
-        if (mKeySequence.size() > 0) { // nowy klawisz nacisnieto
-            CItem * item = ((CPlayer*)mActor)->GetItem(mKeySequence[0]);
-            if (item) {
-                fprintf(stderr, "item->%s\n", item->GetAbility().c_str());
-                res = mActor->GetAbilityPerformer().FindAbilityIndexByInvPos(item->mInvPos);
-            }
+        CItem * item = ((CPlayer*)mActor)->GetItem(mLastKey);
+        if (item) {
+            fprintf(stderr, "item->%s\n", item->GetAbility().c_str());
+            res = mActor->GetAbilityPerformer().FindAbilityIndexByInvPos(item->mInvPos);
         }
 
         if (res >= 0){
             mActor->GetAbilityPerformer().SetReadyingAnim(NULL);
-			if (mKeySequence.size() == 1) mCastingTime = 0.0f;
+			mCastingTime = 0.0f;
             EAbilityResult result = mActor->GetAbilityPerformer().PerformAbility(res,mCastingTime);
             CAbility *abi = mActor->GetAbilityPerformer().GetAbilities()->at(res).ability;
 			mLastAbility = abi;
@@ -313,35 +221,24 @@ void CPlayerController::Update(float dt){
                 mFocusAbility = abi;
             }
             mCastingTime = 0.0f;
-            if ((mKeySequence.size() > 1) || (result != arOK)){
-                //fprintf(stderr,"Sequence: ");
-                for (int i = 0; i < (int)mKeySequence.size(); i++){
-                    if (i > 0) fprintf(stderr,"-");
-                    //fprintf(stderr,"%d",mKeySequence[i]);
-                }
-                /*switch(result){
+            /* if (result != arOK) {
+                switch(result){
                     case arOK: fprintf(stderr," activated!\n"); break;
                     case arCooldown: fprintf(stderr," failed - cooldown\n"); break;
                     case arDelay: fprintf(stderr," failed - delay\n"); break;
                     case arNoMana: fprintf(stderr," failed - no mana\n"); break;
                     case arUnknown: fprintf(stderr," failed - unknown ability\n");
                     default: break;
-                };*/
-            }
+                };
+            } */
 
 			// przed wyczyszczeniem sekwencji trzeba zaktualizowac huda zeby zdazyl to wykryc
 			if (gLogic.GetHud(0) != NULL) gLogic.GetHud(0)->Update(0.0f);
 			if (gLogic.GetHud(1) != NULL) gLogic.GetHud(1)->Update(0.0f);
-            if (result == arOK)
-			{
-				mAbilityActivatedJustNow = true;
-                mLastKeySequence = mKeySequence;
-			}
-            mKeySequence.clear();
-            mSequenceIdleTime = 0.0f;
 			mLastResult = result;
         }
     }
+    mKeepFocus = false;
 }
 
 void CPlayerController::SwitchControls(){
@@ -349,7 +246,7 @@ void CPlayerController::SwitchControls(){
 }
 
 bool CPlayerController::AllowKeyHold(){
-    return (((mKeySequence.size() == 0)&&(mLastKeySequence.size()==1)) || (mFocusAbility != NULL));
+    return (mLastKey != -1 && mFocusAbility != NULL);
 }
 
 CInGameOptionChooser * CPlayerController::GetOptionChooser() {

@@ -126,35 +126,36 @@ void CInputHandler::FrameStarted( float secondsPassed ){
             }
             else
             {
-    			if (pc->AllowKeyHold()) keyMask |= CBindManager::KEY_HOLD;
+     			/*if (pc->AllowKeyHold())*/ keyMask |= CBindManager::KEY_HOLD;
+                keyMask |= CBindManager::KEY_RELEASE;
 
     			if ((outMask = gBindManagerByPlayer(i)->Check("QuickAttack") & keyMask))
-    				pc->AbiKeyPressed(KeyActionTypes::Both, 0, (outMask & CBindManager::KEY_HOLD) != 0); 
+    				pc->AbiKeyPressed(0, (outMask & CBindManager::KEY_HOLD) != 0); 
 
     			if ((outMask = gBindManagerByPlayer(i)->Check("Slot-0") & keyMask))
-    				pc->AbiKeyPressed(KeyActionTypes::OnlySlot, 0, (outMask & CBindManager::KEY_HOLD) != 0); 
+    				pc->AbiKeyPressed(0, (outMask & CBindManager::KEY_HOLD) != 0); 
     			if ((outMask = gBindManagerByPlayer(i)->Check("Slot-1") & keyMask))
-	    			pc->AbiKeyPressed(KeyActionTypes::OnlySlot, 1, (outMask & CBindManager::KEY_HOLD) != 0); 
+	    			pc->AbiKeyPressed(1, (outMask & CBindManager::KEY_HOLD) != 0); 
 		    	if ((outMask = gBindManagerByPlayer(i)->Check("Slot-2") & keyMask))
-			    	pc->AbiKeyPressed(KeyActionTypes::OnlySlot, 2, (outMask & CBindManager::KEY_HOLD) != 0); 
+			    	pc->AbiKeyPressed(2, (outMask & CBindManager::KEY_HOLD) != 0); 
 
     			if ((outMask = gBindManagerByPlayer(i)->Check("AbiX-0") & keyMask))
-	    			pc->AbiKeyPressed(KeyActionTypes::OnlyAbi, 0, (outMask & CBindManager::KEY_HOLD) != 0);
+	    			pc->AbiKeyPressed(0, (outMask & CBindManager::KEY_HOLD) != 0);
 		    	if ((outMask = gBindManagerByPlayer(i)->Check("AbiX-1") & keyMask))
-			    	pc->AbiKeyPressed(KeyActionTypes::OnlyAbi, 1, (outMask & CBindManager::KEY_HOLD) != 0);
+			    	pc->AbiKeyPressed(1, (outMask & CBindManager::KEY_HOLD) != 0);
     			if ((outMask = gBindManagerByPlayer(i)->Check("AbiX-2") & keyMask))
-	    			pc->AbiKeyPressed(KeyActionTypes::OnlyAbi, 2, (outMask & CBindManager::KEY_HOLD) != 0);
+	    			pc->AbiKeyPressed(2, (outMask & CBindManager::KEY_HOLD) != 0);
 		    	if ((outMask = gBindManagerByPlayer(i)->Check("AbiX-3") & keyMask))
-			    	pc->AbiKeyPressed(KeyActionTypes::OnlyAbi, 3, (outMask & CBindManager::KEY_HOLD) != 0);
+			    	pc->AbiKeyPressed(3, (outMask & CBindManager::KEY_HOLD) != 0);
 
     			if ((outMask = gBindManagerByPlayer(i)->Check("Abi-0") & keyMask))
-	    			pc->AbiKeyPressed(KeyActionTypes::Both, 0, (outMask & CBindManager::KEY_HOLD) != 0);
+	    			pc->AbiKeyPressed(0, (outMask & CBindManager::KEY_HOLD) != 0);
 		    	if ((outMask = gBindManagerByPlayer(i)->Check("Abi-1") & keyMask))
-			    	pc->AbiKeyPressed(KeyActionTypes::Both, 1, (outMask & CBindManager::KEY_HOLD) != 0);
+			    	pc->AbiKeyPressed(1, (outMask & CBindManager::KEY_HOLD) != 0);
     			if ((outMask = gBindManagerByPlayer(i)->Check("Abi-2") & keyMask))
-	    			pc->AbiKeyPressed(KeyActionTypes::Both, 2, (outMask & CBindManager::KEY_HOLD) != 0);
+	    			pc->AbiKeyPressed(2, (outMask & CBindManager::KEY_HOLD) != 0);
 		    	if ((outMask = gBindManagerByPlayer(i)->Check("Abi-3") & keyMask))
-			    	pc->AbiKeyPressed(KeyActionTypes::Both, 3, (outMask & CBindManager::KEY_HOLD) != 0);
+			    	pc->AbiKeyPressed(3, (outMask & CBindManager::KEY_HOLD) != 0);
             }
 
 			/* mouse cast */
@@ -167,11 +168,11 @@ void CInputHandler::FrameStarted( float secondsPassed ){
 				int currentKey = gBindManagerByPlayer(i)->GetMouseCaster()->GetCurrentKey();
 				int lastKey = gBindManagerByPlayer(i)->GetMouseCaster()->GetLastKey();
 				if ( currentKey >= 0 && pc->AllowKeyHold() == (lastKey == currentKey) )
-					pc->AbiKeyPressed(KeyActionTypes::Both, currentKey, pc->AllowKeyHold());
+					pc->AbiKeyPressed(currentKey, pc->AllowKeyHold());
 
 				if (gBindManagerByPlayer(i)->Check("SpecialAttack") & press)		mc->Cast();
 				else if (gBindManagerByPlayer(i)->Check("SpecialAttack") & release)	mc->Stop();
-				else if (pc->AbilityActivatedJustNow())								mc->Focus();
+//				else if (pc->AbilityActivatedJustNow())								mc->Focus();
 
 			}
 		}

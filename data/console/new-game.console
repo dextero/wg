@@ -3,8 +3,8 @@ new-player 0
 set-ability player0 data/abilities/weapons/firebolt.xml 0
 set-ability player0 data/abilities/weapons/sparkrain.xml 1
 #set-ability player0 data/abilities/weapons/blazing-feet.xml 1
-#set-ability player0 data/abilities/weapons/magic-missile-lvl2.xml 2
-set-ability player0 data/abilities/weapons/meditation.xml 3
+#et-ability player0 data/abilities/weapons/magic-missile-lvl2.xml 2
+set-ability player0 data/abilities/weapons/firestream.xml 3
 set-map-level 0
 next-map
 #load-map data/maps/level01.xml entry

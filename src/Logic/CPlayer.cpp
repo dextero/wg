@@ -64,9 +64,6 @@ CPlayer::~CPlayer()
 }
 
 void CPlayer::Update(float dt){
-    if (mAbilityPerformer.IsAbilityVectorChanged()){
-        ((CPlayerController*)mController)->RebuildAbilityData(*mAbilityPerformer.GetAbilities());
-    }
     mController->Update(dt);
     CActor::Update(dt);
 
@@ -233,7 +230,6 @@ void CPlayer::EnableTriggerInAbility(int treeId, int abiId)
 			for (unsigned i = 0; i < abis->size(); i++)
 				if (abis->at(i).ability->trigger == an->ability->trigger)
 					abis->at(i).triggerEnabled = (abis->at(i).abiNode == an);
-			GetController()->RebuildAbilityData(*(mAbilityPerformer.GetAbilities()));
 		}
 	}
 }

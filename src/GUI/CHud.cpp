@@ -176,37 +176,37 @@ void CHud::Update(float dt)
 			mHudFGText->SetText(L"");
 		}
 
-        float idleTime = player->GetController()->GetCurrentSequenceIdleTime();
+        //float idleTime = player->GetController()->GetCurrentSequenceIdleTime();
         //static bool last = false;
-		CAbilityPerformer::EActorAbilityState abiState = player->GetAbilityPerformer().GetAbilityState();
-		CAbility * activeAbility = NULL; 
-		if (player->GetAbilityPerformer().GetActiveAbility() != NULL)
-			activeAbility = player->GetAbilityPerformer().GetActiveAbility()->ability;
-		bool useLast;
-		if (player->GetController()->GetCurrentKeySequence().size() > 0){
-			useLast = false;
-		} else if ((activeAbility == player->GetController()->GetLastAbility()) &&
-			(abiState == CAbilityPerformer::asCasting||
-			abiState == CAbilityPerformer::asDelay)){
-			useLast = true;
-		} else if (abiState == CAbilityPerformer::asIdle ||
-			abiState == CAbilityPerformer::asReadying){
-			useLast = false;
-		} else {
-			useLast = true;
-		}
-		if (useLast){
+//		CAbilityPerformer::EActorAbilityState abiState = player->GetAbilityPerformer().GetAbilityState();
+//		CAbility * activeAbility = NULL; 
+//		if (player->GetAbilityPerformer().GetActiveAbility() != NULL)
+//			activeAbility = player->GetAbilityPerformer().GetActiveAbility()->ability;
+//		bool useLast;
+//		if (player->GetController()->GetCurrentKeySequence().size() > 0){
+//			useLast = false;
+//		} else if ((activeAbility == player->GetController()->GetLastAbility()) &&
+//			(abiState == CAbilityPerformer::asCasting||
+//			abiState == CAbilityPerformer::asDelay)){
+//			useLast = true;
+//		} else if (abiState == CAbilityPerformer::asIdle ||
+//			abiState == CAbilityPerformer::asReadying){
+//			useLast = false;
+//		} else {
+//			useLast = true;
+//		}
+//		if (useLast){
 			//if (!last){
 			//	fprintf(stderr,"switching to last\n");
 			//}
 			//last = true;
-			mSeq = player->GetController()->GetLastKeySequence();
-		} else {		
+//			mSeq = player->GetController()->GetLastKeySequence();
+//		} else {		
 			//if (last) fprintf(stderr,"switching to current\n");
 			//last = false;
-			int prevSize = mSeq.size();
-			mSeq = player->GetController()->GetCurrentKeySequence();
-			if ((prevSize > 0) && (mSeq.size()==0)){
+//			int prevSize = mSeq.size();
+//			mSeq = player->GetController()->GetCurrentKeySequence();
+//			if ((prevSize > 0) && (mSeq.size()==0)){
 				EAbilityResult result = player->GetController()->GetLastAbilityResult();
 				switch (result){
 					case arNoMana:
@@ -216,8 +216,8 @@ void CHud::Update(float dt)
 					default:
 						break;
 				}
-			}
-		}
+//			}
+//		}
 	}
 	else
 		Hide();
