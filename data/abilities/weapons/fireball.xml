@@ -16,8 +16,12 @@
   	</effect>
   	<effect type="graphical-effect">
       <name value="shockwave" />
-  	  <time value="0.23" />
-  	</effect>
+  	  <time value="0.33" />
+    </effect>
+    <effect type="graphical-effect">
+      <time value="0.1" />
+      <name value="tinyfireball" />
+    </effect>
 	<effect type="sound">
 		<name value="data/sounds/Lugaro/firestart.ogg" />
 	</effect>
