@@ -27,7 +27,8 @@
         <weapon file="data/abilities/weapons/icecircle.xml" minLevel="10" maxLevel="99" />
         <weapon file="data/abilities/weapons/sparkrain.xml" minLevel="10" maxLevel="99" />
         <weapon file="data/abilities/weapons/blizzard.xml" minLevel="15" maxLevel="99" />
-
+        <weapon file="data/abilities/weapons/fireburst.xml" minLevel="18" maxLevel="99" />
+	
  	
 	<!-- inne -->
         <weapon file="data/abilities/electric/chain-lightning.xml" minLevel="8" maxLevel="99" />
@@ -37,7 +38,6 @@
         <weapon file="data/abilities/electric/laser.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/electric/magicstorm.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/electric/transfusion.xml" minLevel="15" maxLevel="99" />
-        <weapon file="data/abilities/fire/elemental-revenge.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/fire/exploding-corpse.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/fire/firepits.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/fire/firewall.xml" minLevel="8" maxLevel="99" />

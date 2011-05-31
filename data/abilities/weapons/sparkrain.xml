@@ -31,7 +31,7 @@
             <time calc="4"/>
             <effect type="damage">
               <damage-type value="fire"/>
-              <amount value="2 + (0.25 * (0.05 * (4 * choleric + 0 * melancholic + 4 * sanguine + 1 * phlegmatic)))"/>
+              <amount calc="2 + (0.25 * (0.05 * (4 * choleric + 0 * melancholic + 4 * sanguine + 1 * phlegmatic)))"/>
             </effect>
           </effect>
         </effect>
