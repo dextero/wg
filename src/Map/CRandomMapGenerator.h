@@ -22,6 +22,7 @@ struct SRandomMapDesc
     int level;
     std::string nextMap;
     float minMonsterDist;   // jak daleko potwory maja sie spawnowac od wejscia
+    float narrowPathsPercent; // ile % sciezek bedzie waskich w "grafowych" mapach (2x2), reszta 3x3 [0.f - 100.f]
 
     SRandomMapDesc(): sizeX(0), sizeY(0), obstaclesAreaPercent(0.f), lairs(0), monsters(0), loots(0),
         maxLivingMonsters(0), maxMonsters(0), level(0), nextMap("@RANDOM"), minMonsterDist(0.f) {}
@@ -79,6 +80,9 @@ private:
 
     unsigned int** mCurrent;
     unsigned int mPassableLeft; // TODO: sprawdzic, do czego to sluzylo poza generowaniem tuneli
+                                // dex: wszystkie funkcje stawiajace rozne rzeczy na mapie przed wzieciem sie do roboty
+                                // sprawdzaja, czy jest jeszcze jakiekolwiek pole, na ktorym mozna cos postawic. inaczej
+                                // losowanie wspolrzednych by sie zapetlilo na amen.
     SRandomMapDesc mDesc;
     std::stringstream mXmlText;
 	std::string mTilesFolder;	// sciezka do folderu, gdzie maja ladowac generowane kafle
@@ -106,6 +110,7 @@ private:
     bool PlaceTiles();
     bool PlaceWalls();      // invisible-walls
     bool PlaceRegions();    // entry & exit - koniecznie przed PlaceLairs/Monsters, bo inaczej potwory moga sie spawnowac na glowie gracza
+                            // poniewaz PlaceRegions "kopie" przejscie naokolo teleportu, musi byc przed PlaceWalls
     bool PlaceDoodahs();
     bool PlaceLairs();
     bool PlaceMonsters();
