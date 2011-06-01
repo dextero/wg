@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/lightning-1.png</unavailable-icon>
 
   <!-- power = 2x cho, 2x mel, 3x san, 3x phl -->
-  <!-- power = (0.2 * (0.4 * choleric + 0.4 * melancholic + 0.6 * sanguine + 0.6 * phlegmatic)) --> 
+  <!-- power = (0.05 * (2 * choleric + 2 * melancholic + 3 * sanguine + 3 * phlegmatic)) --> 
   
   <effect type="list">
     <effect type="sound">
@@ -18,7 +18,6 @@
       <name value="data/sounds/EL/thunder6.ogg" />
       <name value="data/sounds/EL/thunder7.ogg" />
     </effect>
-
     <effect type="retarget">
       <target-chooser>
         <filter value="hostiles, obstacle"/>
@@ -29,17 +28,16 @@
       <effect type="list">
         <effect type="damage">
           <damage-type value="lightning"/>
-          <amount calc="18 * (1 + (0.2 * (0.4 * choleric + 0.4 * melancholic + 0.6 * sanguine + 0.6 * phlegmatic)))" />
+          <amount calc="18 * (1 + (0.05 * (2 * choleric + 2 * melancholic + 3 * sanguine + 3 * phlegmatic)))" />
         </effect>
         <effect type="knockback">
           <amount value="2.0" />
         </effect>
-
-        <effect type="linked-graphical-effect" tag="lightning-effect-tag">
+        <effect type="linked-graphical-effect">
+          <name value="lightning" />
           <offset-x value="-0.25"/>
           <offset-y value="0.5"/>
           <time value="0.25" />
-          <name value="lightning" />
         </effect>
       </effect>
     </effect>
@@ -60,7 +58,7 @@
   	<amount value="0.2" />
   </delay-effect>
 
-  <manacost value="12 * (1 + (0.2 * (0.4 * choleric + 0.4 * melancholic + 0.6 * sanguine + 0.6 * phlegmatic)))" />
+  <manacost value="12 * (1 + (0.05 * (2 * choleric + 2 * melancholic + 3 * sanguine + 3 * phlegmatic)))" />
   <casttime calc="0.30" />
   <delay calc="0.50" />
   <cooldown calc="0.50" />
