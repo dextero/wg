@@ -162,6 +162,9 @@ bool CRandomMapGenerator::GenerateTunnelsGraph()
         int deltaMax = std::max(abs(deltaInt.x), abs(deltaInt.y)) * 2;
         delta /= (float)deltaMax;
 
+        // losowanie szerokosci tunelu
+        size = ((float)rand() / RAND_MAX) < (mDesc.narrowPathsPercent / 100.f) ? 2 : 3;
+
         // kopanie tunelu od startu do konca
         sf::Vector2f at((float)verts[start].first.x, (float)verts[start].first.y);
         for (int j = 0; j < deltaMax; ++j)
@@ -580,14 +583,19 @@ bool CRandomMapGenerator::PlaceRegions()
             // do skutku, az bedzie na "przejezdnym"
             do
                 newEntry = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
-            while (!mCurrent[newEntry.x][newEntry.y]);
+            while (mCurrent[newEntry.x][newEntry.y] != FREE);
             do
-                newExit = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);				// wyjscie powinno byc odsloniete:
-            while (!mCurrent[newExit.x][newExit.y] ||											// pole jest zablokowane (BLOCKED == 0)
-					(newExit.x <= 0 || !mCurrent[newExit.x - 1][newExit.y]) ||					// pole po lewej jest zablokowane (i moze zawalac "nasze" doodahami)
-					(newExit.x >= mDesc.sizeX - 1 || !mCurrent[newExit.x + 1][newExit.y]) ||	// j/w, po prawej
-					(newExit.y <= 0 || !mCurrent[newExit.x][newExit.y - 1]) ||					// j/w, gora
-					(newExit.y >= mDesc.sizeY - 1 || !mCurrent[newExit.x][newExit.y+1]) );		// j/w, dol
+                newExit = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
+            while (mCurrent[newExit.x][newExit.y] != FREE);
+
+            // odslaniamy okolice wyjscia
+            for (int x = std::max<int>(newExit.x - 1, 0); x < std::min<int>(newExit.x + 2, mDesc.sizeX); ++x)
+                for (int y = std::max<int>(newExit.y - 1, 0); y < std::min<int>(newExit.y + 2, mDesc.sizeY); ++y)
+                    if (!mCurrent[x][y]) // == BLOCKED?
+                    {
+                        mCurrent[x][y] = FREE;
+                        ++mPassableLeft;
+                    }
 
             // wybieramy najdluzsza droge
             unsigned int newDist = DistanceDijkstra(newEntry, newExit);
@@ -697,7 +705,7 @@ bool CRandomMapGenerator::PlaceLairs()
             sf::Vector2i tile;
             do
                 tile = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
-            while (!mCurrent[tile.x][tile.y] ||
+            while (mCurrent[tile.x][tile.y] != FREE ||
                 (std::min(mDesc.sizeX, mDesc.sizeY) > mDesc.minMonsterDist * 2.f &&     // jesli mapa nie ma rozmiaru przynajmniej 2*minMonsterDist, to olej sprawdzanie odleglosci
                 Maths::LengthSQ(sf::Vector2f(tile.x - mEntryPos.x, tile.y - mEntryPos.y)) <= mDesc.minMonsterDist * mDesc.minMonsterDist) );
 
@@ -751,7 +759,7 @@ bool CRandomMapGenerator::PlaceMonsters()
         sf::Vector2i pos;
         do
             pos = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
-        while (!mCurrent[pos.x][pos.y] ||
+        while (mCurrent[pos.x][pos.y] != FREE ||
                 (std::min(mDesc.sizeX, mDesc.sizeY) > mDesc.minMonsterDist * 2.f &&     // jesli mapa nie ma rozmiaru przynajmniej 2*minMonsterDist, to olej sprawdzanie odleglosci
                 Maths::LengthSQ(sf::Vector2f(pos.x - mEntryPos.x, pos.y - mEntryPos.y)) <= mDesc.minMonsterDist * mDesc.minMonsterDist) );
 
@@ -841,7 +849,7 @@ bool CRandomMapGenerator::PlaceLoots()
             sf::Vector2i tile;
             do
                 tile = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
-            while (!mCurrent[tile.x][tile.y]);
+            while (mCurrent[tile.x][tile.y] != FREE);
 
             // zaklepanie pola, zeby sie 2 znajdki nie zespawnowaly na jednym
             mCurrent[tile.x][tile.y] = LOOT;
@@ -1016,9 +1024,9 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
 
     if (!GenerateMap())     return false;
     if (!PlaceTiles())      return false;
+    if (!PlaceRegions())    return false;
     if (!PlaceWalls())      return false;
     if (!PlaceDoodahs())    return false;
-    if (!PlaceRegions())    return false;
     if (!PlaceLoots())      return false;
     if (!PlaceMonsters())   return false;
     if (!PlaceLairs())      return false;

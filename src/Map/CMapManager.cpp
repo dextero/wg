@@ -219,7 +219,7 @@ namespace Map{
         desc.set = "forest";
         desc.sizeX = 32;
         desc.sizeY = 32;
-        desc.obstaclesAreaPercent = gRand.Rnd(40.0f,60.0f);
+        desc.obstaclesAreaPercent = (float)gRand.Rnd(40, 60);
         desc.maxLivingMonsters = gRand.Rnd(40, 60);
         desc.maxMonsters = gRand.Rnd(30, 60);
         desc.monsters = gRand.Rnd(15, 30);
@@ -227,6 +227,7 @@ namespace Map{
         desc.loots = gRand.Rnd(4, 8);
         desc.level = mLevel; // todo: inkrementowac
         desc.minMonsterDist = 10.f;
+        desc.narrowPathsPercent = (float)gRand.Rnd(40, 60);
         bool result = gRandomMapGenerator.GenerateRandomMap(filename, desc);
         fprintf(stderr, "Generating map %s: %s", filename.c_str(), (result ? "OK!" : "FAILED!"));
 
