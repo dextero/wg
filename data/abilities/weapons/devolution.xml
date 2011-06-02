@@ -1,0 +1,152 @@
+<root type="ability" class="self">
+
+  <name>$ABI_WEAPONS_DEVOLUTION</name>
+  <description>$ABI_WEAPONS_DEVOLUTION_DESC</description>
+  <icon>data/abilities/weapons/devolution-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/devolution-1.png</unavailable-icon>
+
+  <!-- power = 0x cho, 4x mel, 2x san, 2x phl -->
+  <!-- power = (0.05 * (0 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic)) --> 
+
+  <effect type="list">
+    <effect type="delayed">
+      <time value="0.14"/>
+      <effect type="recastable">
+        <recast value="0.28"/>
+        <time value="7.87"/>
+        <effect type="list">
+          <effect type="sound">
+            <name value="data/sounds/EL/thunder1.ogg" />
+            <name value="data/sounds/EL/thunder2.ogg" />
+            <name value="data/sounds/EL/thunder3.ogg" />
+            <name value="data/sounds/EL/thunder4.ogg" />
+            <name value="data/sounds/EL/thunder5.ogg" />
+            <name value="data/sounds/EL/thunder6.ogg" />
+            <name value="data/sounds/EL/thunder7.ogg" />
+          </effect>
+          <effect type="retarget">
+            <target-chooser>
+              <filter value="hostiles,obstacle"/>
+              <range calc="3.8" />
+              <angle value="75.0"/>
+              <aim-at-ground value="1"/>
+              <count calc="3" />
+            </target-chooser>
+            <effect type="list">
+              <effect type="linked-graphical-effect">
+                <name value="lightning" />
+                <time value="0.18" />
+                <offset-x value="0.25"/>
+                <offset-y value="0.25"/>
+              </effect>
+              <effect type="damage">
+                <damage-type value="lightning"/>
+                <amount calc="18 * (1 + (0.05 * (0 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+              </effect>
+              <effect type="knockback">
+                <amount value="2.0" />
+              </effect>
+            </effect>
+          </effect>
+		</effect>
+      </effect>
+    </effect>
+    <effect type="recastable">
+      <recast value="0.28"/>
+      <time value="8.0"/>
+      <effect type="list">
+        <effect type="sound">
+          <name value="data/sounds/EL/thunder1.ogg" />
+          <name value="data/sounds/EL/thunder2.ogg" />
+          <name value="data/sounds/EL/thunder3.ogg" />
+          <name value="data/sounds/EL/thunder4.ogg" />
+          <name value="data/sounds/EL/thunder5.ogg" />
+          <name value="data/sounds/EL/thunder6.ogg" />
+          <name value="data/sounds/EL/thunder7.ogg" />
+        </effect>
+        <effect type="retarget">
+          <target-chooser>
+            <filter value="hostiles,obstacle"/>
+            <range calc="3.8" />
+            <angle value="75.0"/>
+            <aim-at-ground value="1"/>
+            <count calc="3" />
+          </target-chooser>
+          <effect type="list">
+            <effect type="linked-graphical-effect">
+              <name value="lightning" />
+              <time value="0.18" />
+              <offset-x value="-0.25"/>
+              <offset-y value="0.25"/>
+            </effect>
+            <effect type="damage">
+              <damage-type value="lightning"/>
+              <amount calc="18 * (1 + (0.05 * (0 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+            </effect>
+            <effect type="knockback">
+              <amount value="2.0" />
+            </effect>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="recastable">
+      <recast value="0.40"/>
+      <time value="8.0"/>
+      <effect type="list">
+        <effect type="graphical-effect">
+          <name value="magic-circle-5"/>
+          <time value="0.41"/>
+        </effect>
+        <effect type="graphical-effect">
+          <name value="magic-circle-3"/>
+          <time value="0.25"/>
+        </effect>
+        <effect type="graphical-effect">
+          <name value="magic-circle-1"/>
+          <time value="0.7"/>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="timed">
+      <time value="8.0" />
+      <effect type="modify">
+        <aspect value="speed" />
+        <amount value="0.2" />
+      </effect>
+  	</effect>
+  </effect>
+  
+  <cast-time-effect type="list" >
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.4"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.3"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-1"/>
+      <time value="0.2"/>
+    </effect>
+  </cast-time-effect>
+
+  <self-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.2" />
+  </self-effect>
+  
+  <manacost value="2.0" />
+  <casttime calc="0.45" />
+  <delay calc="0.7" />
+  <cooldown calc="0.60" />
+
+  <focus-mana-cost calc="32 * (1 + (0.05 * (0 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+  <focus-max-duration value="8.0" />
+
+</root>
