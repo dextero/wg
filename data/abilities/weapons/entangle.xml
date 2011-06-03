@@ -1,0 +1,58 @@
+<root type="ability" class="self">
+
+  <name>$ABI_WEAPONS_ENTANGLE</name>
+  <description>$ABI_WEAPONS_ENTANGLE_DESC</description>
+  <icon>data/abilities/weapons/entangle-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/entangle-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 4x mel, 2x san, 3x phl -->
+  <!-- power = (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 3 * phlegmatic)) -->
+  
+  <effect type="retarget">
+    <target-chooser>
+      <filter value="hostiles"/>
+      <range value="6.0"/>
+      <angle value="66.0"/>
+    </target-chooser>
+    <effect type="list" >
+      <effect type="list" tag="entangle-tag">
+        <effect type="sound">
+          <name value="data/sounds/Lugaro/bushrustle.ogg" />
+        </effect>
+        <effect type="non-cumulative">
+          <effect type="list">
+            <effect type="graphical-effect">
+              <name value="entangle" />
+              <time calc="3.5" />
+            </effect>
+            <effect type="timed">
+              <time calc="3.5" />
+              <effect type="modify">
+                <aspect value="speed" />
+                <amount value="0.0" />
+              </effect>
+            </effect>
+          </effect>
+        </effect>
+      </effect>
+      <effect type="retarget">
+        <target-chooser>
+          <filter value="hostiles"/>
+          <range calc="0.02 + (0.5 * ln(1 + (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 3 * phlegmatic))))"/>
+          <angle value="360.0"/>
+          <aim-at-ground value="0"/>
+          <count calc="ln(1 + 2 * (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 3 * phlegmatic)))"/>
+        </target-chooser>
+        <effect type="jump">
+          <name value="entangle-tag"/>
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+  
+  <manacost value="17 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 3 * phlegmatic)))" />
+  <casttime value="0.10" />
+  <delay value="0.05" />
+  <cooldown value="0.90" />
+  
+</root>

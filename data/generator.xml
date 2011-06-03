@@ -17,6 +17,7 @@
         <weapon file="data/abilities/weapons/blazing-feet.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/weapons/hibernation.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="1.0" />
+        <weapon file="data/abilities/weapons/entangle.xml" minLevel="4" maxLevel="99" />
         <weapon file="data/abilities/weapons/poison-cloud.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/meditation.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/firestream.xml" minLevel="5" maxLevel="99" />
@@ -48,7 +49,6 @@
         <weapon file="data/abilities/support/superspeed.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/special/basher.xml" minLevel="9" maxLevel="99" />
         <weapon file="data/abilities/special/blades.xml" minLevel="12" maxLevel="99" />
-        <weapon file="data/abilities/old/entangle.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/old/freezebomb.xml" minLevel="14" maxLevel="99" />
         <weapon file="data/abilities/old/frostnova.xml" minLevel="16" maxLevel="99" />
         <weapon file="data/abilities/old/ignite.xml" minLevel="21" maxLevel="99" />
