@@ -1,0 +1,115 @@
+﻿<root type="ability" class="bullet">
+
+  <name>$ABI_WEAPONS_ACIDCIRCUS</name>
+  <description>$ABI_WEAPONS_ACIDCIRCUS_DESC</description>
+  <icon>data/abilities/weapons/acidcircus-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/acidcircus-1.png</unavailable-icon>
+
+  <!-- power = 2x cho, 0x mel, 3x san, 5x phl -->
+  <!-- power = (0.05 * (2 * choleric + 0 * melancholic + 3 * sanguine + 5 * phlegmatic)) -->
+
+  <explosion type="list">
+    <effect type="graphical-effect">
+      <time value="1.0" />
+      <name value="green-explosion" />
+    </effect>  
+    <effect type="area">
+      <area calc="1.5" />
+      <filter value="hostiles" />
+      <effect type="list">
+        <effect type="graphical-effect">
+          <name value="colorize-green" />
+          <time calc="5.0" />
+        </effect>
+        <effect type="non-cumulative">
+          <effect type="timed">
+            <time value="5.0" />
+            <effect type="damage">
+              <damage-type value="poison"/>
+              <amount calc="10.0 * (1 + (0.05 * (2 * choleric + 0 * melancholic + 3 * sanguine + 5 * phlegmatic)))" />
+            </effect>
+          </effect> 
+        </effect>
+      </effect>
+    </effect>
+  </explosion>
+
+  <flight-effect type="recastable" >
+    <recast value="0.1" />
+    <time value="3.0" />
+    <effect type="bullet">
+      <emitter>
+        <effect type="list">
+          <effect type="damage">
+            <damage-type value="poison"/>
+            <amount calc="7 * (1 + (0.05 * (2 * choleric + 0 * melancholic + 3 * sanguine + 5 * phlegmatic)))" />
+          </effect>
+        </effect>
+        <explosion type="list">
+          <effect type="sound">
+            <name value="data/sounds/Lugaro/splatter.ogg" />
+          </effect>
+          <effect type="graphical-effect">
+            <time value="0.8" />
+            <name value="green-explosion-mini" />
+          </effect>
+          <effect type="area">
+            <area calc="0.45" />
+            <filter value="hostiles" />
+            <effect type="list">
+              <effect type="graphical-effect">
+                <name value="colorize-green" />
+                <time calc="5.0" />
+              </effect>
+              <effect type="graphical-effect">
+                <name value="acid" />
+                <time value="0.5" />
+              </effect>
+              <effect type="non-cumulative">
+                <effect type="timed">
+                  <time value="5.0"/>
+                  <effect type="damage">
+                    <damage-type value="poison"/>
+                    <amount calc="7.0 * (1 + (0.05 * (2 * choleric + 0 * melancholic + 3 * sanguine + 5 * phlegmatic)))" />
+                  </effect>
+                </effect>
+              </effect>
+            </effect>
+          </effect>
+        </explosion>
+
+        <bullet-angular-speed value="0" />
+        <range calc="12.0" />
+        <speed value="5.0" />
+        <ttl value="0.8" />
+        <count value="3" />
+        <width value="360" />
+        <bullet value="data/physicals/bullets/acid-drop.xml" />
+      </emitter>
+    </effect>
+  </flight-effect>
+
+  <cast-time-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.4" />
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.6" />
+  </delay-effect>
+
+  <bullet-angular-speed value="720" />
+  <range calc="12.0" />
+  <explode-on-fade value="1" />
+  <speed value="3.0" />
+  <ttl value="3.0" />
+  <bullet value="data/physicals/bullets/acidball.xml" />
+  <filter value="wall" />
+
+  <manacost value="26 * (1 + (0.05 * (2 * choleric + 0 * melancholic + 3 * sanguine + 5 * phlegmatic)))" />
+  <casttime calc="0.09" />
+  <delay calc="0.05" />
+  <cooldown value="0.60" />
+
+</root>
