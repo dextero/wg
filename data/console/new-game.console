@@ -1,7 +1,7 @@
 exec pre-new-game
 new-player 0
 set-ability player0 data/abilities/weapons/firebolt.xml 0
-set-ability player0 data/abilities/weapons/firewall.xml 1
+set-ability player0 data/abilities/weapons/resonator.xml 1
 set-ability player0 data/abilities/weapons/acidspray.xml 2
 set-ability player0 data/abilities/weapons/acidcircus.xml 3
 set-map-level 0

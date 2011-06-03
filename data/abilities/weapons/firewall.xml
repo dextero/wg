@@ -126,7 +126,7 @@
     <effect type="graphical-effect">
       <name value="magic-circle-3"/>
       <time value="0.60"/>
-  </effect>
+    </effect>
     <effect type="modify">
       <aspect value="speed" />
       <amount value="0.2" />
