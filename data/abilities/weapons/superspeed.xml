@@ -1,0 +1,65 @@
+<root type="ability" class="self">
+
+  <name>$ABI_WEAPONS_SUPERSPEED</name>
+  <description>$ABI_WEAPONS_SUPERSPEED_DESC</description>
+  <icon>data/abilities/weapons/superspeed-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/superspeed-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 1x mel, 5x san, 2x phl -->
+  <!-- power = (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)) -->
+
+  <effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/jump.ogg" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="shield" />
+      <time calc="0.25" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="trail" />
+      <time calc="0.25" />
+    </effect>
+    <effect type="recastable">
+      <recast calc="0.25" />
+      <time calc="3.0 * (1 + (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+      <effect type="list">
+        <effect type="graphical-effect">
+          <name value="shield" />
+          <time calc="0.25" />
+        </effect>
+        <effect type="graphical-effect">
+          <name value="trail" />
+          <time calc="0.25" />
+        </effect>
+      </effect>
+    </effect>
+    <effect type="timed">
+      <time calc="3.0 * (1 + (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+      <effect type="modify">
+        <aspect value="speed" />
+        <amount calc="1.25 + 0.15 * ln(1 + 4 * (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list">
+    <effect type="modify">
+      <aspect value="speed"/>
+      <amount value="0.8" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.40"/>
+    </effect>
+  </cast-time-effect>
+
+  <manacost value="2.0" />
+  <casttime value="0.40" />
+  <delay value="0.05" />
+  <cooldown calc="3.0" />
+
+  <focus-mana-cost value="7.0 * (1 + (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+  <focus-max-duration value="3.0 * (1 + (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+  
+</root>
