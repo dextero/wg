@@ -22,6 +22,7 @@
         <weapon file="data/abilities/weapons/firestream.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/magic-missile-lvl2.xml" minLevel="6" maxLevel="99" frequency="0.5" />
         <weapon file="data/abilities/weapons/chain-lightning.xml" minLevel="6" maxLevel="99" />
+        <weapon file="data/abilities/weapons/resonator.xml" minLevel="6" maxLevel="99" />
         <weapon file="data/abilities/weapons/firearrow-lvl3.xml" minLevel="7" maxLevel="99" />
         <weapon file="data/abilities/weapons/forked-lightning.xml" minLevel="7" maxLevel="99" />
         <weapon file="data/abilities/weapons/ball-lightning.xml" minLevel="8" maxLevel="99" />
@@ -47,7 +48,6 @@
         <weapon file="data/abilities/support/superspeed.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/special/basher.xml" minLevel="9" maxLevel="99" />
         <weapon file="data/abilities/special/blades.xml" minLevel="12" maxLevel="99" />
-        <weapon file="data/abilities/special/resonator.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/old/entangle.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/old/freezebomb.xml" minLevel="14" maxLevel="99" />
         <weapon file="data/abilities/old/frostnova.xml" minLevel="16" maxLevel="99" />

@@ -1,0 +1,62 @@
+﻿<root type="ability" class="self">
+
+  <name>$ABI_WEAPONS_RESONATOR</name>
+  <description>$ABI_WEAPONS_RESONATOR_DESC</description>
+  <icon>data/abilities/weapons/resonator-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/resonator-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 4x mel, 0x san, 4x phl -->
+  <!-- power = (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 4 * phlegmatic)) -->
+  
+  <effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/consolesuccess.ogg" />
+    </effect>
+    <effect type="area">
+      <area calc="2.2"  />
+      <filter value="hostiles" />
+      <effect type="area">
+        <area calc="2.2"  />
+        <filter value="player" />
+        <effect type="knockback">
+           <amount calc="0.3 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 4 * phlegmatic)))"/>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="area">
+      <area calc="2.7"  />
+      <filter value="hostiles" />
+      <effect type="area">
+        <area calc="2.7"  />
+        <filter value="player" />
+        <effect type="knockback">
+           <amount calc="0.6 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 4 * phlegmatic)))"/>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="area">
+      <area calc="3.2"  />
+      <filter value="hostiles" />
+      <effect type="area">
+        <area calc="3.2"  />
+        <filter value="player" />
+        <effect type="knockback">
+           <amount calc="1.2 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 4 * phlegmatic)))"/>
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list"> 
+    <effect type="graphical-effect">
+      <name value="magic-circle-1"/>
+      <time value="0.20"/>
+    </effect>
+  </cast-time-effect>
+  
+  <manacost value="3.0 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 4 * phlegmatic)))" />
+  <casttime calc="0.10" />
+  <delay value="0.05" />
+  <cooldown calc="0.15" />
+
+</root>
