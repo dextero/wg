@@ -1,7 +1,7 @@
 ﻿<root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_ACID_SPRAY</name>
-  <description>$ABI_WEAPONS_ACID_SPRAY_DESC</description>
+  <name>$ABI_WEAPONS_ACIDSPRAY</name>
+  <description>$ABI_WEAPONS_ACIDSPRAY_DESC</description>
   <icon>data/abilities/weapons/acidspray-0.png</icon>
   <unavailable-icon>data/abilities/weapons/acidspray-1.png</unavailable-icon>
 
@@ -10,8 +10,11 @@
   
   <effect type="list">
     <effect type="graphical-effect">
-      <name value="green-explosion-mini" />
-      <time value="0.8" />
+      <name value="colorize-green" />
+      <time calc="2.0 + (0.01 * (0.05 * (1 * choleric + 0 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+    </effect>    
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/splatter.ogg" />
     </effect>
     <effect type="non-cumulative" >
       <effect type="timed">
@@ -26,24 +29,28 @@
   
   <explosion type="list">
     <effect type="graphical-effect">
-      <name value="acid" />
-      <time value="0.1" />
-    </effect>
-    <effect type="sound">
-      <name value="data/sounds/Lugaro/splatter.ogg" />
-    </effect>
+      <name value="green-explosion-mini" />
+      <time value="0.8" />
+    </effect>  
     <effect type="area">
       <area value="0.4" />
       <filter value="hostiles,obstacle" />
-      <effect type="damage">
-        <damage-type value="poison"/>
-        <amount calc="4.0 * (1 + (0.05 * (1 * choleric + 0 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+      <effect type="list">
+        <effect type="graphical-effect">
+          <name value="acid" />
+          <time value="0.5" />
+        </effect>
+        <effect type="damage">
+          <damage-type value="poison"/>
+          <amount calc="4.0 * (1 + (0.05 * (1 * choleric + 0 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+        </effect>
       </effect>
     </effect>
   </explosion>
   
   <bullet-angular-speed value="720" />
   <range value="12.0" />
+  <explode-on-fade value="1" />  
   <speed value="3.0" />
   <ttl value="0.8" />
   <count value="6" />
