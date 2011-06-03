@@ -5,8 +5,8 @@
   <icon>data/abilities/weapons/icearrow-0.png</icon>
   <unavailable-icon>data/abilities/weapons/icearrow-0.png</unavailable-icon>
 
-	  <!-- power = 2x cho, 4x mel, 0x san, 3x phl -->
-	  <!-- power = (0.05 * (2 * choleric + 4 * melancholic + 0 * sanguine + 3 * phlegmatic)) --> 
+  <!-- power = 2x cho, 4x mel, 0x san, 3x phl -->
+  <!-- power = (0.05 * (2 * choleric + 4 * melancholic + 0 * sanguine + 3 * phlegmatic)) --> 
 
   <explosion type="list">
     <effect type="sound">
