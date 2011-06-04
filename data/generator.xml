@@ -36,6 +36,7 @@
         <weapon file="data/abilities/weapons/blizzard.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/weapons/devolution.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/weapons/fireburst.xml" minLevel="18" maxLevel="99" />
+        <weapon file="data/abilities/weapons/flaming-mantle.xml" minLevel="21" maxLevel="99" />
 	 
  	
 	<!-- inne -->
@@ -45,7 +46,6 @@
         <weapon file="data/abilities/electric/transfusion.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/fire/exploding-corpse.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/fire/firepits.xml" minLevel="15" maxLevel="99" />
-        <weapon file="data/abilities/fire/flaming-mantle.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/support/healself.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/special/basher.xml" minLevel="9" maxLevel="99" />
         <weapon file="data/abilities/special/blades.xml" minLevel="12" maxLevel="99" />
