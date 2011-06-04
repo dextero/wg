@@ -1,9 +1,9 @@
 exec pre-new-game
 new-player 0
 set-ability player0 data/abilities/weapons/firebolt.xml 0
-set-ability player0 data/abilities/weapons/freezing-mine.xml 1
+set-ability player0 data/abilities/weapons/lazoor.xml 1
 set-ability player0 data/abilities/weapons/blades.xml 2
-set-ability player0 data/abilities/weapons/acidcircus.xml 3
+set-ability player0 data/abilities/weapons/basher.xml 3
 set-map-level 0
 next-map
 #load-map data/maps/level01.xml entry

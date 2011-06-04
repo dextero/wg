@@ -399,6 +399,14 @@ SEffectParamSet CGraphicalEffects::Prepare( const std::string & templateName )
         eps.red = 0.50f;
         eps.alpha = 1.0f;
     }
+    else if ( templateName == "colorize-red" )
+    {
+        eps.name = "colorize";
+        eps.blue = 0.0f;
+        eps.green = 0.0f;
+        eps.red = 1.0f;
+        eps.alpha = 1.0f;
+    }
     else if ( templateName == "colorize-invisible" )
     {
         eps.name = "colorize";
@@ -684,7 +692,7 @@ SDisplayableEffect * CGraphicalEffects::ShowEffect(
                 fromPos * (float)(Map::TILE_SIZE),
                 (fromPos + fromRot*10.0f) * (float)(Map::TILE_SIZE),
 				0.1f * (float)(Map::TILE_SIZE),
-				eps.duration, 1.0f, 0.8f, 0.7f
+				eps.duration, 0.9f, 0.0f, 0.0f, 0.75f
         );
         SDisplayableEffect * effect = new SDisplayableEffect( eps, NULL, linearEffect );
         gsEffects.push_back( effect );
