@@ -1,0 +1,46 @@
+<root type="ability" class="melee">
+
+  <name>$ABI_WEAPONS_BASHER</name>
+  <description>$ABI_WEAPONS_BASHER_DESC</description>
+  <icon>data/abilities/weapons/basher-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/basher-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 4x mel, 0x san, 1x phl -->
+  <!-- power = (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 1 * phlegmatic)) --> 
+
+  <effect type="list">
+    <effect type="knockback">
+      <amount calc="9.2" />
+    </effect>
+    <effect type="damage">
+      <damage-type value="physical"/>
+      <amount calc="21.0 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 1 * phlegmatic)))" />
+    </effect>
+    <effect type="damage">
+      <damage-type value="vorpal"/>
+      <amount calc="14.0 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 1 * phlegmatic)))" />
+    </effect>
+    <effect type="timed">
+      <effect type="stun"/>
+      <time calc="1.0 + ln(1 + (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 1 * phlegmatic)))"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="stars" />
+      <time calc="1.0 + ln(1 + (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 1 * phlegmatic)))"/>
+    </effect>
+  </effect>
+
+  <self-effect type="graphical-effect">
+    <name value="magic-circle-2"/>
+    <time value="0.35"/>
+  </self-effect>  
+
+  <range calc="1.1" />
+  <width value="90.0" />
+
+  <manacost calc="7.0 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 1 * phlegmatic)))" />
+  <casttime calc="0.09" />
+  <delay calc="0.05" />
+  <cooldown calc="0.40" />
+
+</root>

@@ -232,7 +232,6 @@ void CQuadTreeSceneManager::GetPhysicalsBetweenPoints(const sf::Vector2f& a, con
 						( Maths::PointToSegment(physical->GetPosition(), a, b) < physical->GetCircleRadius() + tolerance ))
 					{
 						outPhysicals.push_back( physical );
-						physical->SetColor(1.0f, 0.0f, 0.0f, 1.0f);
 					}
 				}
 

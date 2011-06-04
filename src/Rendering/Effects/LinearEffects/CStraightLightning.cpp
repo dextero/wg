@@ -11,13 +11,13 @@
 #include <GL/gl.h>
 #endif
 
-CStraightLightning::CStraightLightning(sf::Vector2f f, sf::Vector2f t, float width, float duration, float red, float green, float blue):
+CStraightLightning::CStraightLightning(sf::Vector2f f, sf::Vector2f t, float width, float duration, float red, float green, float blue, float alpha):
 mWidth(width),
 mDuration(duration),
 mRed(red),
 mGreen(green),
 mBlue(blue),
-mAlpha(1.0f)
+mAlpha(alpha)
 {
     from = f;
     to = t;

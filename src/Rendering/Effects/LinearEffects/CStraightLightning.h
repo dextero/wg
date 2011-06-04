@@ -17,7 +17,7 @@ public:
     CStraightLightning(
 		sf::Vector2f from, sf::Vector2f to, 
 		float width, float duration, 
-		float red = 1.0f, float green = 1.0f, float blue = 1.0f);
+		float red = 1.0f, float green = 1.0f, float blue = 1.0f, float alpha = 1.0f);
     virtual ~CStraightLightning();
 
     void Animate(float secondsPassed);
