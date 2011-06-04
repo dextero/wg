@@ -15,22 +15,22 @@
 		<key>ABI_WEAPONS_FIREBOLT_DESC</key>
 		<value>Battle mages&apos; favourite weapon - a bolt of liquid fire that burns hit enemies.</value>
 	</entry>
-<!-- 4	                  1
+<!-- 2	                  1
 sangwiniczne:      Phlegmaticzne:
-+ uncornern/beztro   gentleness
+  uncornern/beztro   gentleness
 + verbosity          passivity
 + sensitivity        conciliatory (ugodowosc)
-+ vigor            + caution
+  vigor            + caution
   leadership         solemnity (podnioslosc)
 //serce, krew//    //mozg, sluz//
 
-    0                     3 
+    3                     2 
 Melancholiczne:     Cholericzne:
-  reflectance         explosiveness
-  restraint (powsc) + agression
-  peace               variability
-  stiffness         + impulseviness
-  apathy            + activity
++ reflectance       + explosiveness
++ restraint (powsc)   agression
+  peace             + variability
++ stiffness           impulseviness
+  apathy              activity
 //sledziona,        //watroba, zolc//
  czarna zolc//
 -->

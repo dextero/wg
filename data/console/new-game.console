@@ -1,7 +1,7 @@
 exec pre-new-game
 new-player 0
 set-ability player0 data/abilities/weapons/firebolt.xml 0
-set-ability player0 data/abilities/weapons/flaming-mantle.xml 1
+set-ability player0 data/abilities/weapons/freezing-mine.xml 1
 set-ability player0 data/abilities/weapons/blades.xml 2
 set-ability player0 data/abilities/weapons/acidcircus.xml 3
 set-map-level 0
