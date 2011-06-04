@@ -1,0 +1,151 @@
+<root type="ability" class="self">
+
+  <name>$ABI_WEAPONS_FLAMING_MANTLE</name>
+  <description>$ABI_WEAPONS_FLAMING_MANTLE_DESC</description>
+  <icon>data/abilities/weapons/flaming-mantle-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/flaming-mantle-1.png</unavailable-icon>
+
+  <!-- power = 2x cho, 1x mel, 4x san, 1x phl -->
+  <!-- power = (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)) -->
+
+  <effect type="list" >
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/consolesuccess.ogg" />
+    </effect>
+    <effect type="non-cumulative">
+      <effect type="list">
+        <effect type="graphical-effect">
+          <name value="heal" />
+          <time calc="0.25" />
+        </effect>
+        <effect type="graphical-effect">
+          <name value="heal" />
+          <time calc="0.25" />
+        </effect>
+        <effect type="recastable">
+          <recast calc="0.25" />
+          <time calc="20.0 + (0.5 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+          <effect type="list">
+            <effect type="graphical-effect">
+              <name value="heal" />
+              <time calc="0.25" />
+            </effect>
+            <effect type="graphical-effect">
+              <name value="heal" />
+              <time calc="0.25" />
+            </effect>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="non-cumulative">
+      <effect type="list">
+        <effect type="timed">
+          <time calc="20.0 + (0.5 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+          <effect type="list">
+            <effect type="drain-mana">
+              <amount calc="3.0 + (0.5 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+            </effect>
+            <effect type="modify">
+              <aspect value="fireresist"/>
+              <amount value="10.0"/>
+            </effect>
+            <effect type="modify">
+              <aspect value="physresist"/>
+              <amount value="15.0"/>
+            </effect>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="non-cumulative">
+      <effect type="recastable">
+        <recast value="0.3" />
+        <time calc="20.0 + (0.5 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+        <effect type="area">
+          <area calc="0.55 + (0.05 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+          <filter value="hostiles,obstacle" />
+          <effect type="list">
+            <effect type="graphical-effect">
+              <name value="bullet-explosion" />
+              <time value="0.8" />
+            </effect>
+            <effect type="damage">
+              <damage-type value="fire"/>
+              <amount calc="12 * (1 + (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+            </effect>
+            <effect type="knockback">
+              <amount calc="2.0"/>
+            </effect>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="non-cumulative">
+      <effect type="recastable" >
+        <recast value="0.5" />
+        <time calc="20.0 + (0.5 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+        <effect type="bullet">
+          <emitter>
+            <speed value="7.5" />
+            <acceleration value="1.0" />
+            <ttl value="8.0" />
+            <count value="1" />
+            <width value="360" />
+            <explode-on-fade value="1" />
+            <bullet value="data/physicals/bullets/firespark.xml" />
+            <filter value="hostiles,wall,obstacle" />
+            <time-for-tracking calc="12.0"/>
+            <turning-speed calc="720.0"/>
+            <speed-fuzziness value="1.5"/>
+            <target-chooser>
+              <filter value="player"/>
+              <range calc="2.5"/>
+              <angle value="180.0"/>
+            </target-chooser>
+            <effect type="list">
+              <effect type="graphical-effect">
+                <name value="flames" />
+                <time value="0.1" />          
+              </effect>
+              <effect type="damage">
+                <damage-type value="fire"/>
+                <amount calc="5.0 + (2.0 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))"/>
+              </effect>
+            </effect>
+          </emitter>
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list" >
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.6" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-5"/>
+      <time value="1.4"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-4"/>
+      <time value="0.8"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.7"/>
+    </effect>
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.6" />
+  </delay-effect>
+
+  <manacost calc="35 * (1 + (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+  <casttime calc="1.4" />
+  <delay calc="0.05" />
+  <cooldown calc="10" />
+
+</root>

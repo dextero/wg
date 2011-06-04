@@ -59,7 +59,7 @@
   <delay value="0.05" />
   <cooldown calc="3.0" />
 
-  <focus-mana-cost value="7.0 * (1 + (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
-  <focus-max-duration value="3.0 * (1 + (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+  <focus-mana-cost calc="7.0 * (1 + (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+  <focus-max-duration calc="3.0 * (1 + (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
   
 </root>
