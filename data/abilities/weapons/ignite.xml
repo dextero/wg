@@ -1,0 +1,104 @@
+<root type="ability" class="self">
+
+  <name>$ABI_WEAPONS_IGNITE</name>
+  <description>$ABI_WEAPONS_IGNITE_DESC</description>
+  <icon>data/abilities/weapons/ignite-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/ignite-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 0x mel, 5x san, 3x phl -->
+  <!-- power = (0.05 * (1 * choleric + 0 * melancholic + 5 * sanguine + 3 * phlegmatic)) -->
+
+  <effect type="retarget">
+    <target-chooser>
+      <filter value="hostiles, obstacle"/>
+      <range calc="5.2" />
+      <angle value="30.0"/>
+      <aim-at-ground value="0"/>
+    </target-chooser>
+    <effect type="list">
+      <effect type="graphical-effect">
+        <time value="0.1" />
+        <name value="smallfireball" />
+      </effect>
+      <effect type="non-cumulative" tag="ignite-tag">
+        <effect type="list">
+          <effect type="graphical-effect">
+            <name value="flames" />
+            <time calc="0.25" />
+          </effect>
+          <effect type="recastable">
+            <recast calc="0.25" />
+            <time calc="8.0" />
+            <effect type="list">
+              <effect type="graphical-effect">
+                <name value="flames" />
+                <time calc="0.25" />
+              </effect>
+            </effect>
+          </effect>
+          <effect type="sound">
+            <name value="data/sounds/Lugaro/fire.ogg" />
+          </effect>
+          <effect type="timed">
+            <time calc="8.0"/>
+            <effect type="damage">
+              <damage-type value="fire"/>
+              <amount calc="4 * (1 + (0.05 * (1 * choleric + 0 * melancholic + 5 * sanguine + 3 * phlegmatic)))"/>
+            </effect>
+          </effect>
+          <effect type="recastable">
+            <recast value="4.1"/>
+            <time value="8.0" />
+            <effect type="sound">
+              <name value="data/sounds/Lugaro/fire.ogg" />
+            </effect>
+          </effect>
+          <effect type="non-cumulative">
+            <effect type="recastable">
+              <recast value="0.5" />
+              <time value="8.0"/>
+              <effect type="list" >
+                <effect type="retarget">
+                  <target-chooser>
+                    <filter value="hostiles"/>
+                    <range value="0.70"/>
+                    <angle value="360.0"/>
+                  </target-chooser>
+                  <effect type="chance">
+                    <chance value="0.33"/>
+                    <effect type="list">
+                      <effect type="jump">
+                        <name value="ignite-tag"/>
+                      </effect>
+                    </effect>
+                  </effect>
+                </effect>
+              </effect>
+            </effect>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list">
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-4"/>
+      <time value="0.40"/>
+    </effect>
+  </cast-time-effect>
+  <delay-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.2" />
+  </delay-effect>
+  
+  <manacost value="25.0 * (1 + (0.05 * (1 * choleric + 0 * melancholic + 5 * sanguine + 3 * phlegmatic)))" />
+  <casttime value="0.20" />
+  <delay value="0.05" />
+  <cooldown value="0.25" />
+  
+</root>

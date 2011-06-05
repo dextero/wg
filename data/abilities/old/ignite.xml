@@ -14,14 +14,14 @@
 		<effect type="non-cumulative" tag="ignite-tag">
 		<effect type="list" >
 			<effect type="damage">
-				<amount value="10.0" modifiers="level" level-gain="3"/>
+				<amount value="1.0" modifiers="level" level-gain="3"/>
             	<damage-type value="fire"/>
 			</effect>
 			<effect type="non-cumulative">
 				<effect type="timed">
 					<time value="20.0"/>
 					<effect type="damage">
-						<amount value="20.0" modifiers="level" level-gain="7"/>
+						<amount value="2.0" modifiers="level" level-gain="7"/>
             			<damage-type value="fire"/>
 					</effect>
 				</effect>
