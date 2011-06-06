@@ -2,7 +2,6 @@
 
   <name>$ABI_WEAPONS_FIREBALL</name>
   <description>$ABI_WEAPONS_FIREBALL_DESC</description>
-  <trigger></trigger>
   <icon>data/abilities/weapons/fireball-0.png</icon>
   <unavailable-icon>data/abilities/weapons/fireball-0.png</unavailable-icon>
 

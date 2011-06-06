@@ -1,8 +1,8 @@
 exec pre-new-game
 new-player 0
 set-ability player0 data/abilities/weapons/firebolt.xml 0
-set-ability player0 data/abilities/weapons/ignite.xml 1
-set-ability player0 data/abilities/old/ignite.xml 2
+set-ability player0 data/abilities/weapons/fireball.xml 1
+set-ability player0 data/abilities/weapons/dragonbreath.xml 2
 set-ability player0 data/abilities/old/frostnova.xml 3
 set-map-level 0
 next-map
