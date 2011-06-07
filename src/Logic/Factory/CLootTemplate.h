@@ -17,6 +17,7 @@ public:
     ~CLootTemplate() {}
 
     virtual CTemplateParam * ReadParam(CXml & xml, xml_node<> * node, CTemplateParam * orig = NULL);
+    virtual void Parametrise(CPhysical * loot, CTemplateParam * param);
 
     /* IResource */
 
