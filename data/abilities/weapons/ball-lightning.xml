@@ -81,8 +81,8 @@
   </cast-time-effect>
 
   <delay-effect type="modify">
-  	<aspect value="speed" />
-  	<amount value="0.2" />
+    <aspect value="speed" />
+    <amount value="0.2" />
   </delay-effect>
   
   <range calc="12.0" />
