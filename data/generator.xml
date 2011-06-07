@@ -41,11 +41,11 @@
         <weapon file="data/abilities/weapons/blizzard.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/weapons/devolution.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/weapons/dragonbreath.xml" minLevel="15" maxLevel="99" />
+        <weapon file="data/abilities/weapons/frostnova.xml" minLevel="16" maxLevel="99" />
         <weapon file="data/abilities/weapons/fireburst.xml" minLevel="18" maxLevel="99" />
         <weapon file="data/abilities/weapons/flaming-mantle.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/weapons/lazoor.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/weapons/lightning-storm.xml" minLevel="24" maxLevel="99" />
-        <weapon file="data/abilities/weapons/frostnova.xml" minLevel="16" maxLevel="99" />
 	 
  	
 	<!-- inne -->
