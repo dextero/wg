@@ -9,6 +9,7 @@
 class CTemplateParam{
 public:
     std::map<std::string, void*> values;
+    std::map<std::string, std::string> stringValues;
 };
 
 #endif

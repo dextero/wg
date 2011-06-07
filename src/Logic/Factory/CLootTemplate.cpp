@@ -62,8 +62,20 @@ CLoot* CLootTemplate::Create(std::wstring id)
 }
 
 CTemplateParam * CLootTemplate::ReadParam(CXml & xml, rapidxml::xml_node<> * node, CTemplateParam * orig) {
-    mLoot.ability = xml.GetString(xml.GetChild(node, "ability"), "");
+    if (orig == NULL) orig = new CTemplateParam();
+    std::string ability = xml.GetString(xml.GetChild(node, "ability"));
+    if (!ability.empty())
+        orig->stringValues["ability"] = ability;
+
     return CPhysicalTemplate::ReadParam(xml,node,orig);
+}
+
+void CLootTemplate::Parametrise(CPhysical * phys, CTemplateParam * param) {
+    CLoot * loot = (CLoot*)phys;
+    if (param->stringValues.count("ability") > 0) {
+        loot->SetAbility(param->stringValues["ability"]);
+    }
+    CPhysicalTemplate::Parametrise(loot, param);
 }
 
 bool operator<(const SLootTemplate& a, const SLootTemplate& b) { return a.lootLvl < b.lootLvl; }    
