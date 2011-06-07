@@ -45,6 +45,7 @@
         <weapon file="data/abilities/weapons/flaming-mantle.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/weapons/lazoor.xml" minLevel="21" maxLevel="99" />
         <weapon file="data/abilities/weapons/lightning-storm.xml" minLevel="24" maxLevel="99" />
+        <weapon file="data/abilities/weapons/frostnova.xml" minLevel="16" maxLevel="99" />
 	 
  	
 	<!-- inne -->
@@ -52,7 +53,6 @@
         <weapon file="data/abilities/fire/exploding-corpse.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/fire/firepits.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/support/healself.xml" minLevel="8" maxLevel="99" />
-        <weapon file="data/abilities/old/frostnova.xml" minLevel="16" maxLevel="99" />
 
         <lair file="data/physicals/lairs/rat-lair.xml" level="90" />
         <lair file="data/physicals/lairs/baldy-horny-lair.xml" level="90" />
