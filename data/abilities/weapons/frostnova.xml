@@ -1,0 +1,106 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_WEAPONS_FROSTNOVA</name>
+  <description>$ABI_WEAPONS_FROSTNOVA_DESC</description>
+  <icon>data/abilities/weapons/frostnova-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/frostnova-1.png</unavailable-icon>
+
+  <!-- power = ?x cho, ?x mel, ?x san, ?x phl -->
+  <!-- power = (0.05 * (? * choleric + ? * melancholic + ? * sanguine + ? * phlegmatic)) -->
+
+  <explosion type="list">
+    <effect type="graphical-effect">
+      <name value="blue-explosion" />
+      <time value="0.8" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="ice-circle-shockwave" />
+      <time value="0.4" />
+    </effect>
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/whoosh.ogg" />
+    </effect>
+    <effect type="area">
+      <area calc="2.0"/>
+      <filter value="hostiles,obstacle" />
+      <effect type="list">
+        <effect type="damage">
+          <damage-type value="ice"/>
+          <amount value="25.0 * (1 + power)" />
+        </effect>
+        <effect type="graphical-effect">
+          <name value="frost" />
+          <time calc="2.050"/>
+        </effect>
+        <effect type="non-cumulative">
+          <effect type="timed">
+            <time calc="2.550"/>
+            <effect type="stun" />
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="area">
+      <area calc="3.0"/>
+      <filter value="hostiles" />
+      <effect type="list">
+        <effect type="damage">
+          <damage-type value="ice"/>
+          <amount calc="22.0 * (1 + power)"/>
+        </effect>
+        <effect type="graphical-effect">
+          <name value="frost" />
+          <time calc="1.050"/>
+        </effect>
+        <effect type="non-cumulative">
+          <effect type="timed">
+            <time calc="1.550" />
+            <effect type="stun" />
+          </effect>
+        </effect>
+        <effect type="non-cumulative">
+          <effect type="timed">
+            <time calc="4.35"/>
+            <effect type="modify">
+              <aspect value="speed" />
+              <amount calc="0.76 - (0.005 * power)" />
+            </effect>
+          </effect>
+        </effect>
+        <effect type="graphical-effect">
+          <name value="colorize-blue" />
+          <time calc="4.35"/>
+        </effect>
+      </effect>
+    </effect>
+  </explosion>
+
+  <self-effect type="sound">
+      <name value="data/sounds/Lugaro/fireend.ogg" />
+  </self-effect>
+
+  <cast-time-effect type="list">
+    <effect type="graphical-effect">
+      <name value="magic-circle-4"/>
+      <time value="0.40"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+    </effect>
+  </cast-time-effect>
+
+  <range value="12.0" />
+  <speed value="7.0" />
+  <acceleration value="6.2" />
+  <explode-on-fade value="0" />
+  <ttl value="0.9" />
+  <bullet value="data/physicals/bullets/iceball.xml" />
+  <bullet-angular-speed value="-720" />
+
+  <manacost value="25 * (1 + power)" />
+  <casttime value="0.40" />
+  <delay value="0.05" />
+  <cooldown value="0.80" />
+  
+</root>

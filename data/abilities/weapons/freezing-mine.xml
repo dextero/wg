@@ -107,7 +107,7 @@
   <speed value="6.0" />
   <acceleration value="-28.5"/>
   <ttl value="0.3" />
-  <bullet value="data/physicals/bullets/freezebomb-unarmed.xml" />
+  <bullet value="data/physicals/bullets/iceball.xml" />
   <bullet-angular-speed value="360" />
   <explode-on-fade value="1" />
   <speed-fuzziness value="0.05" />  
