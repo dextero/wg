@@ -1,0 +1,81 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_WEAPONS_ELECTRIC_SNARE</name>
+  <description>$ABI_WEAPONS_ELECTRIC_SNARE_DESC</description>
+  <icon>data/abilities/weapons/electric-snare-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/electric-snare-1.png</unavailable-icon>
+
+  <!-- power = ?x cho, ?x mel, ?x san, ?x phl -->
+  <!-- power = (0.05 * (? * choleric + ? * melancholic + ? * sanguine + ? * phlegmatic)) --> 
+  
+  <flight-effect type="delayed">
+    <time value="1.0" />
+    <effect type="recastable">
+      <recast value="0.17" />
+      <time value="2.0" />
+      <effect type="retarget">
+        <target-chooser>
+          <filter value="monster" />
+          <range calc="1.4" />
+          <angle value="360.0" />
+          <aim-at-ground value="1"/>
+          <count calc="3" />
+        </target-chooser>
+        <effect type="list">
+          <effect type="sound">
+            <name value="data/sounds/EL/thunder1.ogg" />
+            <name value="data/sounds/EL/thunder2.ogg" />
+            <name value="data/sounds/EL/thunder3.ogg" />
+            <name value="data/sounds/EL/thunder4.ogg" />
+            <name value="data/sounds/EL/thunder5.ogg" />
+            <name value="data/sounds/EL/thunder6.ogg" />
+            <name value="data/sounds/EL/thunder7.ogg" />
+          </effect>
+          <effect type="linked-graphical-effect">
+            <time value="0.25" />
+            <name value="lightning" />
+          </effect>
+          <effect type="damage">
+            <damage-type value="lightning" />
+            <amount calc="14 * (1 + power)" />
+          </effect>
+          <effect type="knockback">
+            <amount value="-20" />
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+  </flight-effect>
+
+  <cast-time-effect type="list">
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.50"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.20"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+    </effect>
+  </cast-time-effect>
+
+  <range calc="6.0" />
+  <speed value="8.0" />
+  <speed-fuzziness value="0.15" />
+  <acceleration value="-15.0" />
+  <count value="1" />
+  <width value="5" />
+  <ttl calc="3.3" />
+  <bullet value="data/physicals/bullets/electron.xml" />
+  <extra-offset value="0.2"/>
+  <bullet-angular-speed value="820"/>
+  <filter value="wall" />
+
+  <manacost value="16.0 * (1 + power)" />
+  <casttime calc="0.33" />
+  <delay calc="0.05" />
+  <cooldown calc="1.8" />
+</root>
