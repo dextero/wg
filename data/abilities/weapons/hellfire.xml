@@ -1,0 +1,120 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_WEAPONS_HELLFIRE</name>
+  <description>$ABI_WEAPONS_HELLFIRE_DESC</description>
+  <icon>data/abilities/weapons/hellfire-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/hellfire-1.png</unavailable-icon>
+
+  <!-- power = ?x cho, ?x mel, ?x san, ?x phl -->
+  <!-- power = (0.05 * (? * choleric + ? * melancholic + ? * sanguine + ? * phlegmatic)) --> 
+
+  <flight-effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/fireend.ogg" />
+    </effect>
+    <effect type="recastable" >
+      <recast value="0.04" />
+      <time value="0.05" />
+      <effect type="bullet">
+        <emitter>
+          <speed value="0.0" />
+          <acceleration value="0.0" />
+          <ttl value="0.0" />
+          <count value="1" />
+          <width value="0" />
+          <explode-on-fade value="1" />
+          <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+          <filter value="none" />
+          <explosion type="list">
+            <effect type="graphical-effect">
+              <name value="bullet-explosion" />
+              <time value="1.0" />
+            </effect>
+          </explosion>
+        </emitter>
+      </effect>
+    </effect>
+    <effect type="recastable" >
+      <recast value="0.08" />
+      <time value="2.0" />
+      <effect type="bullet">
+        <emitter>
+          <speed value="0.0" />
+          <acceleration value="0.0" />
+          <ttl value="0.0" />
+          <count value="1" />
+          <width value="0" />
+          <explode-on-fade value="1" />
+          <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+          <filter value="none" />
+          <explosion type="list">
+            <effect type="graphical-effect">
+              <name value="smoke" />
+              <time value="0.1" />
+            </effect>
+          </explosion>
+        </emitter>
+      </effect>
+    </effect>
+  </flight-effect>
+  <explosion type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/firestart.ogg" />
+    </effect>
+    <effect type="area">
+      <area calc="0.4" />
+      <filter value="hostiles,obstacle" />
+      <effect type="damage">
+        <damage-type value="fire"/>
+        <amount calc="12.0 * (1 + power)" />
+      </effect>
+    </effect>
+    <effect type="bullet">
+      <emitter>
+        <extra-offset value="0.1"/>
+        <range value="12.0" />
+        <speed value="5.0" />
+        <acceleration value="-3.0" />
+        <ttl value="0.8" />
+        <count value="10" />
+        <width value="360" />
+        <bullet value="data/physicals/bullets/firebolt.xml" />
+        <filter value="hostiles,obstacle" />
+        <explosion type="list">
+          <effect type="graphical-effect">
+            <name value="bullet-explosion-mini" />
+            <time value="0.8" />
+          </effect>
+        </explosion>
+        <effect type="damage">
+          <damage-type value="fire"/>
+          <amount calc="12.0 * (1 + power)" />
+        </effect>
+      </emitter>
+    </effect>  
+  </explosion>
+
+  <range calc="12.0" />
+  <speed value="4.0" />
+  <acceleration value="1.0" />
+  <width value="68" />
+  <count calc="2" />
+  <explode-on-fade value="1" />
+  <ttl value="1.10" />
+  <bullet value="data/physicals/bullets/engulfing-flame.xml" />
+  <bullet-angular-speed value="0" />
+  <target-chooser>
+    <filter value="hostiles" />
+    <range value="3.0" />
+    <angle value="360" />
+    <aim-at-ground value="0" />
+  </target-chooser>
+  <turning-speed calc="100.0"/>
+  <time-for-tracking calc="0.53" />
+
+  <manacost calc="20 * (1 + power)" />
+  <casttime calc="0.09" />
+  <delay calc="0.05" />
+  <cooldown value="1.30" />
+
+</root>
