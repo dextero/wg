@@ -37,23 +37,9 @@
     <effect type="recastable" >
       <recast value="0.08" />
       <time value="2.0" />
-      <effect type="bullet">
-        <emitter>
-          <speed value="0.0" />
-          <acceleration value="0.0" />
-          <ttl value="0.0" />
-          <count value="1" />
-          <width value="0" />
-          <explode-on-fade value="1" />
-          <bullet value="data/physicals/bullets/invisible-bullet.xml" />
-          <filter value="none" />
-          <explosion type="list">
-            <effect type="graphical-effect">
-              <name value="smoke" />
-              <time value="0.1" />
-            </effect>
-          </explosion>
-        </emitter>
+      <effect type="graphical-effect">
+        <name value="smoke" />
+        <time value="0.1" />
       </effect>
     </effect>
   </flight-effect>
