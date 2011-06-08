@@ -15,6 +15,7 @@
         <weapon file="data/abilities/weapons/freezing-blast.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/weapons/blazing-feet.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/weapons/hibernation.xml" minLevel="3" maxLevel="99" />
+        <weapon file="data/abilities/weapons/transfusion.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/weapons/firearrow-lvl2.xml" minLevel="4" maxLevel="99" />
         <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="1.0" />
         <weapon file="data/abilities/weapons/entangle.xml" minLevel="4" maxLevel="99" />
@@ -25,6 +26,7 @@
         <weapon file="data/abilities/weapons/freezing-mine.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/magic-missile-lvl2.xml" minLevel="6" maxLevel="99" frequency="0.5" />
         <weapon file="data/abilities/weapons/chain-lightning.xml" minLevel="6" maxLevel="99" />
+        <weapon file="data/abilities/weapons/hellfire.xml" minLevel="6" maxLevel="99" />
         <weapon file="data/abilities/weapons/resonator.xml" minLevel="6" maxLevel="99" />
         <weapon file="data/abilities/weapons/firearrow-lvl3.xml" minLevel="7" maxLevel="99" />
         <weapon file="data/abilities/weapons/forked-lightning.xml" minLevel="7" maxLevel="99" />
@@ -49,7 +51,6 @@
 	 
  	
 	<!-- inne -->
-        <weapon file="data/abilities/electric/transfusion.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/fire/exploding-corpse.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/fire/firepits.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/support/healself.xml" minLevel="8" maxLevel="99" />

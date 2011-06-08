@@ -144,13 +144,15 @@ sf::Vector2f CTargetChooser::ChoosePos(CPhysical *emiter, ExecutionContextPtr co
         return sf::Vector2f();
     }
     float rnd = gRand.Rndf(0.5f);
+    fprintf(stderr, "rnd = %f", rnd);
     outOK = true;
 	float a = angle.Evaluate(context);
     int rot = (int)(emiter->GetRotation() + a * rnd - a * 0.5f);
     if (rot >= 360) rot -= 360;
     if (rot < 0) rot += 360;
 	float r = range.Evaluate(context);
-	float dist = 0.8 * r + 0.2 * r * rnd;
+	float dist = 0.85 * r + 0.4 * r * rnd;
+    fprintf(stderr, "dist = %f\n", dist);
 	sf::Vector2f v = RotationToVector((float)rot)*dist;
 	float x = emiter->GetPosition().x + v.x;
 	float y = emiter->GetPosition().y + v.y;
