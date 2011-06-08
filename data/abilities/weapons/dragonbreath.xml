@@ -3,7 +3,7 @@
   <name>$ABI_WEAPONS_DRAGONBREATH</name>
   <description>$ABI_WEAPONS_DRAGONBREATH_DESC</description>
   <icon>data/abilities/weapons/dragonbreath-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/dragonbreath-0.png</unavailable-icon>
+  <unavailable-icon>data/abilities/weapons/dragonbreath-1.png</unavailable-icon>
 
   <!-- power = ?x cho, ?x mel, ?x san, ?x phl -->
   <!-- power = (0.05 * (? * choleric + ? * melancholic + ? * sanguine + ? * phlegmatic)) --> 
