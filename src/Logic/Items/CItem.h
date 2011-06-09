@@ -13,6 +13,7 @@ class CItem
         const std::string & GetAbility();
         void SetAbility(const std::string & ability);
 
+        int mLevel;
         size_t mInvPos;
     private:
         std::string mAbility;

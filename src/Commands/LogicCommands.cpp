@@ -489,7 +489,7 @@ void CommandDisplayAbilities(size_t argc, const std::vector<std::wstring> &argv)
 
 void CommandSetAbility(size_t argc, const std::vector<std::wstring> &argv){
     if (argc < 4){
-        gConsole.Printf( L"usage: %ls id ability.xml trigger" , argv[0].c_str());
+        gConsole.Printf( L"usage: %ls id ability.xml trigger [level = 1]" , argv[0].c_str());
         return;
     }
 
@@ -505,6 +505,12 @@ void CommandSetAbility(size_t argc, const std::vector<std::wstring> &argv){
     size_t index = StringUtils::Parse<int>(StringUtils::ConvertToString(argv[3]));
     if (index > 3) index = 3;
 
+    int level = 1;
+    if (argc > 4)
+        level = StringUtils::Parse<int>(StringUtils::ConvertToString(argv[4]));
+    if (level < 1)
+        level = 1;
+
 //    CItem * item = player->GetItem(index);
 //    if (item != NULL) {
 //        item->SetAbility(abilityName);
@@ -513,6 +519,7 @@ void CommandSetAbility(size_t argc, const std::vector<std::wstring> &argv){
 
     CItem * item = new CItem();
     item->SetAbility(abilityName);
+    item->mLevel = level;
     player->AddItem(item, index);
 
 
