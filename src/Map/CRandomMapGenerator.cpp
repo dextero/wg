@@ -128,7 +128,7 @@ bool CRandomMapGenerator::GenerateTunnelsGraph()
 {
     // "szerokosc tunelu"
     unsigned int size = 3;
-    // ilosc wierzcholkow grafu
+    // ilosc wierzcholkow grafu - wieksze od 0 bo bedzie crash
     const unsigned int NUM_VERTS = 50;
 
     // losowanie wierzcholkow grafu
@@ -382,6 +382,7 @@ bool CRandomMapGenerator::GenerateMap()
 
     // upewniamy sie, ze % jest poprawny
     mDesc.obstaclesAreaPercent = Maths::Clamp(mDesc.obstaclesAreaPercent, 0.f, 100.f);
+    mDesc.narrowPathsPercent = Maths::Clamp(mDesc.narrowPathsPercent, 0.f, 100.f);
 
     return GenerateTunnelsGraph();
 }
@@ -406,6 +407,12 @@ bool CRandomMapGenerator::PlaceTiles()
 
     // dla wygody..
     SPartSet& set = mPartSets[mDesc.set];
+
+    if (set.tiles.size() == 0)
+    {
+        fprintf(stderr, "ERROR: no tiles in set \"%s\" (PlaceTiles)\n", mDesc.set.c_str());
+        return false;
+    }
 
     // losujemy co 4 kafel, reszte bedziemy dobierac wg sasiadow
     // [*][ ][*]
@@ -635,6 +642,12 @@ bool CRandomMapGenerator::PlaceDoodahs()
 
     // dla wygody..
     SPartSet& set = mPartSets[mDesc.set];
+
+    if (set.doodahs.size() == 0)
+    {
+        fprintf(stderr, "ERROR: no doodahs in set \"%s\" (PlaceDoodahs)\n", mDesc.set.c_str());
+        return false;
+    }
     
     // doodahy - 1 na kafla
     for (unsigned int y = 0; y < mDesc.sizeY; ++y)
