@@ -123,7 +123,10 @@ EAbilityResult CAbilityPerformer::PerformAbility(SAbilityInstance &abi, bool ign
         }
 		if (!(mAttached->GetHealthcast())){ // moze rzucamy za pomoca zdrowia...
 			if (!(stats->TryDrainMana(manaCost)))
-				return arNoMana;
+                if (stats->GetBaseAspect(aMaxMana) == stats->GetMana()) // jesli jest max many, to wszystko ok, mozna rzucac 
+                    stats->SetMana(stats->GetMana() - manaCost);
+                else
+				    return arNoMana;
 		} else {
 			if (!(stats->TryDrainHealth(manaCost)))
 				return arNoHealth;
