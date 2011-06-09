@@ -54,8 +54,9 @@ public:
         mMana = mana; 
         if (mMana > GetCurrAspect(aMaxMana)) 
             mMana = GetCurrAspect(aMaxMana); 
-        else 
-            if (mMana < 0.f) mMana = 0.f; 
+        // dex: e-e. na mocy #1023 mana moze byc mniejsza od 0
+        /*else 
+            if (mMana < 0.f) mMana = 0.f;  */
     }
     
     void RestoreMana(float val);
