@@ -4,6 +4,7 @@
 #include "CImageBox.h"
 #include "CTextArea.h"
 #include "CButton.h"
+#include "CInventoryDisplayer.h"
 #include "../Rendering/CDrawableManager.h"
 #include "../Rendering/CHudSprite.h"
 #include "../ResourceManager/CResourceManager.h"
@@ -17,6 +18,7 @@
 #include "../Logic/CPlayerManager.h"
 #include "../Logic/Effects/CEffectManager.h"
 #include "../Logic/Effects/CEffectHandle.h"
+#include "../Logic/CLogic.h"
 #include "Localization/GeneralKeys.h"
 #include "Localization/CLocalizator.h"
 #include "../Input/CBindManager.h"
@@ -398,6 +400,7 @@ void CAbilityTreeDisplayer::CAbilityNodeMirror::AddAbilityCallback(){
     if ((treeIdx >= 0) && (abiIdx >= 0)){
 		if (pl->TryBuyAbilityLevel(treeIdx,abiIdx) == abrOK){
 			atd->mForceReload=true;
+            gLogic.GetGameScreens()->GetInventoryDisplayer(atd->mPlayer)->ForceReload();
 		}
     }
 }

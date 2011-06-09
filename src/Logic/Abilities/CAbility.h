@@ -82,6 +82,9 @@ public:
 
     // czy umiejke da sie kupic?
     bool mCanBuy;
+
+    // szacowana "sila" umiejki
+    CComputedValue mPower;
 };
 
 #endif

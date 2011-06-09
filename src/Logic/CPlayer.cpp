@@ -314,3 +314,43 @@ void CPlayer::RemoveItem(CItem * item) {
     }
 }
 
+
+float CPlayer::GetAbilityPower(CAbility* abi)
+{
+    int index = GetAbilityPerformer().FindAbilityIndex(abi);
+    return abi->mPower.Evaluate(GetAbilityPerformer().GetContext(index));
+}
+
+float CPlayer::GetAbilityPowerAtNextLevelOfOther(CAbility* abi, CAbility* toUpgrade)
+{
+    int index = GetAbilityPerformer().FindAbilityIndex(abi);
+
+    std::vector<CPinnedAbilityBatch::SExportedAbility>& exported = const_cast<std::vector<CPinnedAbilityBatch::SExportedAbility>&>(mPinned->GetPinnedAbilities());
+
+    float ret = -1.f;
+    for (size_t i = 0; i < exported.size(); ++i)
+        if (exported[i].abi == toUpgrade)
+        {
+            ++exported[i].level;
+            ret = abi->mPower.Evaluate(GetAbilityPerformer().GetContext(index));
+            --exported[i].level;
+            break;
+        }
+
+    return ret;
+}
+
+std::vector<CAbility*> CPlayer::GetExportedAbilities()
+{
+    std::vector<CAbility*> ret;
+
+    for (size_t i = 0; i < mAbilityTrees->size(); ++i)
+    {
+        const std::vector<SAbilityNode>& nodes = mAbilityTrees->at(i)->GetAbilityNodes();
+        for (size_t a = 0; a < nodes.size(); ++a)
+            if (nodes[a].doExport)
+                ret.push_back(nodes[a].ability);
+    }
+
+    return ret;
+}

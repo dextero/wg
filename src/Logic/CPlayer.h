@@ -117,6 +117,13 @@ public:
 
     void SetHudDesc(SHudDesc desc) { mHudDesc = desc; };
     SHudDesc& GetHudDesc() { return mHudDesc; };
+
+    // obliczanie sily umiejetnosci
+    float GetAbilityPower(CAbility* abi);
+    // sila umiejetnosci po ulepszeniu innej
+    float GetAbilityPowerAtNextLevelOfOther(CAbility* abi, CAbility* toUpgrade);
+    // wyciaganie wszystkich umiejek, ktore maja wplyw na sile innych
+    std::vector<CAbility*> GetExportedAbilities();
 };
 
 #endif /*CPLAYER_H_*/

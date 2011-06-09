@@ -6,6 +6,7 @@
 #include "CTextArea.h"
 #include "Localization/CLocalizator.h"
 #include "../Logic/CPlayerManager.h"
+#include "../Logic/CPlayer.h"
 #include "../Rendering/CDrawableManager.h"
 #include "../ResourceManager/CResourceManager.h"
 #include "../ResourceManager/CImage.h"
@@ -159,10 +160,11 @@ void CItemSlot::UndoDrag()
 }
 
 
-CItemSlot::CItemSlot(const std::string &name, CGUIObject *parent, unsigned zindex)
+CItemSlot::CItemSlot(const std::string &name, unsigned player, CGUIObject *parent, unsigned zindex)
 :	CGUIObject(name, GUI_ITEM_SLOT, parent, zindex),
     mSelectedItem(NULL),
-    mItemIcon(NULL)
+    mItemIcon(NULL),
+    mPlayer(player)
 {
 	CWindow* tooltip = gGUI.CreateWindow("slot" + StringUtils::ToString(this) + "_tooltip", true, Z_GUI4);
     tooltip->SetBackgroundImage("data/GUI/transparent-black.png");
@@ -200,6 +202,18 @@ void CItemSlot::UpdateTooltipText(const std::string& abiName)
         tooltipText = abi->name;
         tooltipText += L"\n\n" + gLocalizator.GetText("SLOT_DRAG_ITEM_HERE");
         tooltipText += L"\n\n" + abi->description;
+        tooltipText += L"\n\n" + gLocalizator.GetText("CURRENT_ITEM_POWER");
+
+        CPlayer* player = gPlayerManager.GetPlayerByNumber(mPlayer);
+        if (player)
+            tooltipText += StringUtils::ToWString(player->GetAbilityPower(abi));
+
+        tooltipText += L"\n\n" + gLocalizator.GetText("ITEM_POWER_AFTER_UPGRADE") + L"\n";
+        
+        std::vector<CAbility*> abis = player->GetExportedAbilities();
+        for (size_t i = 0 ; i < abis.size(); ++i)
+            tooltipText += abis[i]->name + L": "
+                        + StringUtils::ToWString(player->GetAbilityPowerAtNextLevelOfOther(abi, abis[i])) + L"\n";
     }
     else
         tooltipText = gLocalizator.GetText("SLOT_EMPTY");

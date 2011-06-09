@@ -49,6 +49,7 @@ namespace GUI
         CHud* GetHud(unsigned int player);
         CAbiSlotsBar* GetAbiBar(unsigned int player);
         CGUIObject* GetAbilities(unsigned int player);
+        CInventoryDisplayer* GetInventoryDisplayer(unsigned int player);
 
         void ReturnToGame();
 

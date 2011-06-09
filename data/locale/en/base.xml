@@ -528,12 +528,20 @@ Anonim, borys94, BrutalComputer, ciVis, Fiolek, Kenji-dev, mt-z, pawlaks1, rzuf,
 		<key>OPT_LANGUAGE</key>
 		<value>Language:</value>
 	</entry>
-  <entry>
-    <key>SLOT_DRAG_ITEM_HERE</key>
-    <value>Drag &amp; drop an item to move it into another slot.</value>
-  </entry>
-  <entry>
-    <key>SLOT_EMPTY</key>
-    <value>This slot is empty - you can put any of your items here.</value>
-  </entry>
+	<entry>
+		<key>SLOT_DRAG_ITEM_HERE</key>
+		<value>Drag &amp; drop an item to move it into another slot.</value>
+	</entry>
+	<entry>
+		<key>SLOT_EMPTY</key>
+		<value>This slot is empty - you can put any of your items here.</value>
+	</entry>
+	<entry>
+		<key>CURRENT_ITEM_POWER</key>
+		<value>Current power: </value>
+	</entry>
+	<entry>
+		<key>ITEM_POWER_AFTER_UPGRADE</key>
+		<value>Power after upgrading abilities:</value>
+	</entry>
 </root>

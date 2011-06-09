@@ -25,7 +25,7 @@ namespace GUI
         // jezeli drop poszedl poza sloty, to dobrze byloby zapobiec usunieciu przedmiotu
         static void UndoDrag();
     private:
-        CItemSlot(const std::string &name, CGUIObject *parent, unsigned zindex);
+        CItemSlot(const std::string &name, unsigned player, CGUIObject *parent, unsigned zindex);
         ~CItemSlot();
 
         void UpdateTooltipText(const std::string& abi);
@@ -36,6 +36,8 @@ namespace GUI
         static CItem* mDraggedItem;
         static CItemSlot* mDraggedSlot;
         static CHudSprite* mDraggedIcon;
+
+        unsigned mPlayer;
 
         friend class CGUIObject;
     };
