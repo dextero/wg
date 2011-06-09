@@ -199,7 +199,7 @@ void CItemSlot::UpdateTooltipText(const std::string& abiName)
     std::wstring tooltipText;
     if (abi)
     {
-        tooltipText = abi->name;
+        tooltipText = abi->name + L" (" + gLocalizator.GetText("ITEM_LEVEL") + L" " + StringUtils::ToWString(mSelectedItem->mLevel) + L")";
         tooltipText += L"\n\n" + gLocalizator.GetText("SLOT_DRAG_ITEM_HERE");
         tooltipText += L"\n\n" + abi->description;
         tooltipText += L"\n\n" + gLocalizator.GetText("CURRENT_ITEM_POWER");
