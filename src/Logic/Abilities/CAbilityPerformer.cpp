@@ -112,6 +112,7 @@ EAbilityResult CAbilityPerformer::PerformAbility(SAbilityInstance &abi, bool ign
             source = dynamic_cast<CActor*>(mAbilityData[mActiveAbilityIndex].source->DeterminePhysicalSource());
     }*/
 	context = GetContext(data);
+	context->abilityPower = abi.ability->mPower.Evaluate(context);
 	float manaCost = abi.ability->mManaCost.Evaluate(context);
 	float casttime = abi.ability->casttime.Evaluate(context);
 	float delay = abi.ability->delay.Evaluate(context);

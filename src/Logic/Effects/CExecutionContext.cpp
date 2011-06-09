@@ -2,6 +2,7 @@
 #include "../CPhysical.h"
 #include "../CActor.h"
 #include "../Abilities/SAbilityInstance.h"
+#include "../Abilities/CAbility.h"
 #include "../Stats/CStats.h"
 #include "../../Utils/Memory/CPool.h"
 
@@ -24,6 +25,7 @@ void CExecutionContext::Init(Memory::CSafePtr<CActor> caster, CPhysical *physica
     if (stats != NULL){
         values = stats->GetAllCurrAspects();
     }
+	abilityPower = 0;
 	if (abi != NULL){
 		int bonus = 0;
 		if (caster != NULL) bonus = caster->ConsumeNextAbilityLevel();

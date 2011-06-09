@@ -1,7 +1,15 @@
 ﻿<root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_ACIDCIRCUS</name>
-  <description>$ABI_WEAPONS_ACIDCIRCUS_DESC</description>
+  <name>Acidcircus</name>
+  <description>
+    A truly frightening weapon - a spinning disc of acid spreading poisonous rain.
+
+    Power of this spell depends:
+      mildly on choleric rune
+      not at all on melancholice rune
+      heavily on sanguine rune
+      totally on phlegmatic rune 	  
+  </description>
   <icon>data/abilities/weapons/acidcircus-0.png</icon>
   <unavailable-icon>data/abilities/weapons/acidcircus-1.png</unavailable-icon>
 

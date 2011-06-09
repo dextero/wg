@@ -10,16 +10,17 @@
 
 using namespace mu;
 
-const std::string lvlStr = "lvl";
-const std::string intStr = "int";
-const std::string strStr = "str";
-const std::string wpStr = "wp";
+const std::string lvlStr = "level";
+const std::string intStr = "inteligence";
+const std::string strStr = "strength";
+const std::string wpStr = "willpower";
 
 double sNull = 0.0;
 double sLevel = 0.0;
 double sIntelligence = 0.0;
 double sWillpower = 0.0;
 double sStrength = 0.0;
+double sPower = 0.0;
 
 double* AddVariable(const char *a_szName, void *pUserData)
 {
@@ -36,6 +37,7 @@ CExprParser::CExprParser(const std::string& expr){
 		mParser->DefineVar(intStr,&sIntelligence);
 		mParser->DefineVar(strStr,&sStrength);
 		mParser->DefineVar(wpStr,&sWillpower);
+		mParser->DefineVar("power",&sPower);
 		mParser->SetExpr(expr);
 		// testujemy...
 		mParser->Eval();
@@ -57,6 +59,7 @@ float CExprParser::Evaluate(ExecutionContextPtr context){
 			sWillpower = context->values[aWillpower];
 			sIntelligence = context->values[aIntelligence];
 			sStrength = context->values[aStrength];
+			sPower = context->abilityPower;
 			CPinnedAbilityBatch *pab = context->GetPinnedAbilityBatch();
 			if (pab != mPAB){
 				mPAB = pab;
@@ -69,6 +72,7 @@ float CExprParser::Evaluate(ExecutionContextPtr context){
 			sWillpower = 0.0;
 			sIntelligence = 0.0;
 			sStrength = 0.0;
+			sPower = 0.0;
 		}
 		
 		return (float)(mParser->Eval());
