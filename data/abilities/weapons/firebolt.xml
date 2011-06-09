@@ -40,5 +40,6 @@
   <casttime calc="0.09" />
   <delay calc="0.05" />
   <cooldown value="0.40" />
+  <power calc="4.0 * (1 + (0.05 * (5 * choleric + 1 * melancholic + 2 * sanguine + 0 * phlegmatic)))" />
 
 </root>

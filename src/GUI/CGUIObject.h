@@ -135,7 +135,7 @@ namespace GUI
         CAbilitySlot*           CreateAbilitySlot( const std::string& name, bool forceZ = false, int z = Z_GUI1 );
         CAnimatedImage*         CreateAnimatedImage( const std::string& name, bool forceZ = false, int z = Z_GUI1 );
         CInventoryDisplayer*    CreateInventoryDisplayer( const std::string& name, int player, bool forceZ = false, int z = Z_GUI1);
-        CItemSlot*              CreateItemSlot( const std::string& name, bool forceZ = false, int z = Z_GUI1 );
+        CItemSlot*              CreateItemSlot( const std::string& name, unsigned player, bool forceZ = false, int z = Z_GUI1 );
 
         void UpdateChilds( float secondsPassed );										/* uaktualnij wsp. globalne i sprite'y */ /*jesli !mIsVisible to nie uaktualnia*/
 

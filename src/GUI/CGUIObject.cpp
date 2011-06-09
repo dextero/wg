@@ -236,9 +236,9 @@ CInventoryDisplayer* CGUIObject::CreateInventoryDisplayer( const std::string& na
     return id;
 }
 
-CItemSlot* CGUIObject::CreateItemSlot(const std::string& name, bool forceZ, int z)
+CItemSlot* CGUIObject::CreateItemSlot(const std::string& name, unsigned player, bool forceZ, int z)
 {
-    CItemSlot* is = new CItemSlot(name, this, forceZ ? z : (mZIndex - mZIndexCount));
+    CItemSlot* is = new CItemSlot(name, player, this, forceZ ? z : (mZIndex - mZIndexCount));
     mChilds.push_back(is);
     return is;
 }

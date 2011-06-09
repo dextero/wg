@@ -619,6 +619,11 @@ CGUIObject* CGameScreens::GetAbilities(unsigned int player)
     return mAbilities[player];
 }
 
+CInventoryDisplayer* CGameScreens::GetInventoryDisplayer(unsigned int player)
+{
+    return mInventory[player];
+}
+
 void CGameScreens::ReturnToGame()
 {
     // dex: nie mam lepszego pomysłu, jak to zrobić

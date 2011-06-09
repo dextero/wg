@@ -56,7 +56,7 @@ void CItemSlotsBar::Init(CGUIObject* parent, unsigned playerNumber)
         mBindKey[i]->SetPosition(3.f, 67.f, 94.f, 27.f);
         mBindKey[i]->SetFont(gLocalizator.GetFont(FONT_DIALOG), 15.f);
         mBindKey[i]->SetColor(sf::Color(255, 255, 255, 150));
-        mSlot[i] = mSlotBg[i]->CreateItemSlot("slot");
+        mSlot[i] = mSlotBg[i]->CreateItemSlot("slot", playerNumber);
         mSlot[i]->SetPosition(0.f, 0.f, 100.f, 100.f);
     }
 
