@@ -65,7 +65,6 @@
         <count value="10" />
         <width value="360" />
         <bullet value="data/physicals/bullets/firebolt.xml" />
-        <filter value="hostiles,obstacle" />
         <explosion type="list">
           <effect type="graphical-effect">
             <name value="bullet-explosion-mini" />

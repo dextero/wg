@@ -38,6 +38,7 @@ protected:
 public:
     static inline int GetInstanceCount(){ return InstancesCount; }
     CAspectBatch values;
+	float abilityPower;
 
     bool StillValidFor(CPhysical *physical, SAbilityInstance *abi);
     
