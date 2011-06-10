@@ -53,8 +53,17 @@
 	 
  	
 	<!-- inne -->
-        <weapon file="data/abilities/support/healself.xml" minLevel="8" maxLevel="99" />
-
+	<!-- fajne pomysly na bronie, ktore byc moze warto by pozniej odswiezyc i dorzucic do gry
+        <weapon file="data/abilities/deprecated/armor.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/chant.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/charged-spell.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/curse.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/fireburst.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/healself.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/pestilence.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/sacrifice.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/summon-healer-ghost.xml" minLevel="8" maxLevel="99" />
+    -->
         <lair file="data/physicals/lairs/rat-lair.xml" level="90" />
         <lair file="data/physicals/lairs/baldy-horny-lair.xml" level="90" />
         <lair file="data/physicals/lairs/chit-lair.xml" level="90" />

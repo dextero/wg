@@ -1,9 +1,13 @@
 <root type="ability" class="passive">
 
-  <name>$ABI_PASSIVE_MANA</name>
-  <icon>data/abilities/fire/mageoffire-0.png</icon>
-  <unavailable-icon>data/abilities/fire/mageoffire-1.png</unavailable-icon>
-  <description>$ABI_PASSIVE_MANA_DESC</description>
+  <name>Mana</name>
+  <description>
+Your mana capabilities. Defines your maximal magic storage.
+
+Each point increases it by 10%.
+  </description>
+  <icon>data/abilities/passive/mana-0.png</icon>
+  <unavailable-icon>data/abilities/passive/mana-1.png</unavailable-icon>
 
   <max-level value="100"/>
   

@@ -1,9 +1,13 @@
 <root type="ability" class="passive">
 
-  <name>$ABI_PASSIVE_VITALITY</name>
-  <icon>data/abilities/fire/mageoffire-0.png</icon>
-  <unavailable-icon>data/abilities/fire/mageoffire-1.png</unavailable-icon>
-  <description>$ABI_PASSIVE_VITALITY_DESC</description>
+  <name>Vitality</name>
+  <description>
+Your physical health. Defines your endurance, hit-points and overall regeneration.
+
+Each point gives you additional 20% hit-points limit.
+  </description>
+  <icon>data/abilities/passive/vitality-0.png</icon>
+  <unavailable-icon>data/abilities/passive/vitality-1.png</unavailable-icon>
 
   <max-level value="100"/>
  
