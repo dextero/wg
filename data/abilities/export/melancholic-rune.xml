@@ -1,9 +1,13 @@
 <root type="ability" class="export">
 
-  <name>$ABI_EXPORT_MELANCHOLIC_RUNE</name>
-  <icon>data/abilities/fire/mageoffire-0.png</icon>
-  <unavailable-icon>data/abilities/fire/mageoffire-1.png</unavailable-icon>
-  <description>$ABI_EXPORT_MELANCHOLIC_RUNE_DESC</description>
+  <name>Melancholic rune</name>
+  <description>
+A magic rune defining your skills in melancholic spells. The more skilled in this rune you are the more powerful are your spells combining reflectance, restraint, peace, stiffness and apathy.
+
+Also by increasing this skill your character will regain mana a little bit faster.
+  </description>
+  <icon>data/abilities/export/melancholic-rune-0.png</icon>
+  <unavailable-icon>data/abilities/export/melancholic-rune-1.png</unavailable-icon>
 
   <max-level value="100"/> 
 
