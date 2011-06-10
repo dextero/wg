@@ -298,4 +298,21 @@ std::string ToUpper(const std::string& s)
     return str;
 }
 
+
+std::string FloatToString(float num, unsigned precision)
+{
+    std::ostringstream streamOut;
+    streamOut.precision(precision);
+    streamOut << std::fixed << num;
+    return streamOut.str();
+}
+
+std::wstring FloatToWString(float num, unsigned precision)
+{
+    std::wostringstream streamOut;
+    streamOut.precision(precision);
+    streamOut << std::fixed << num;
+    return streamOut.str();
+}
+
 } // namespace StringUtils

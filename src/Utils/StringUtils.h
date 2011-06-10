@@ -104,6 +104,9 @@ std::string GenerateCode(std::vector<char> &chars,int maxLength,int hash);
 void Exclude( const std::string& s, char ch, std::vector<std::string>& out );
 
 std::string ToUpper(const std::string& s);
+
+std::string FloatToString(float num, unsigned precision);
+std::wstring FloatToWString(float num, unsigned precision);
 }
 
 // hack - kompatybilnosc minGW - g++
