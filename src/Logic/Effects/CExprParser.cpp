@@ -10,11 +10,6 @@
 
 using namespace mu;
 
-const std::string lvlStr = "level";
-const std::string intStr = "inteligence";
-const std::string strStr = "strength";
-const std::string wpStr = "willpower";
-
 double sNull = 0.0;
 double sLevel = 0.0;
 double sIntelligence = 0.0;
@@ -27,17 +22,34 @@ double* AddVariable(const char *a_szName, void *pUserData)
   return &sNull;
 }
 
+// Function callback
+value_type dot(value_type ax, value_type bx, value_type ay, value_type by, value_type az, value_type bz, value_type av, value_type bv) 
+{ 
+//  <!-- power = 5x cho, 1x mel, 2x san, 0x phl -->
+//  <power calc="0.2*((5*choleric+1*melancholic+2*sanguine+0*phlegmatic)/sqrt(5^2 + 1^2 + 2^2 + 0^2))*(((5*choleric+1*melancholic+2*sanguine+0*phlegmatic)/(sqrt(5^2+1^2+2^2+0^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^8)"/>
+    double a_dot_b = (ax * bx) + (ay * by) + (az * bz) + (av * bv);
+    double a_sq_length = (ax * ax) + (ay * ay) + (az * az) + (av * av);
+    double a_length = a_sq_length <= 0.0 ? 1 : sqrt(a_sq_length);
+    double b_sq_length = (bx * bx) + (by * by) + (bz * bz) + (bv * bv);
+    double b_length = b_sq_length <= 0.0 ? 1 : sqrt(b_sq_length);
+    double cos_ab = a_dot_b / (a_length * b_length);
+    double b_projected_on_a = a_dot_b / a_length;
+    double ret = b_projected_on_a * pow(cos_ab, 8);
+
+    return ret; 
+}
 
 CExprParser::CExprParser(const std::string& expr){
 	mPAB = NULL;
 	mParser = new Parser();
 	try{
 		mParser->SetVarFactory(AddVariable, NULL);
-		mParser->DefineVar(lvlStr,&sLevel);
-		mParser->DefineVar(intStr,&sIntelligence);
-		mParser->DefineVar(strStr,&sStrength);
-		mParser->DefineVar(wpStr,&sWillpower);
+		mParser->DefineVar("level",&sLevel);
+		mParser->DefineVar("intelligence",&sIntelligence);
+		mParser->DefineVar("strength",&sStrength);
+		mParser->DefineVar("willpower",&sWillpower);
 		mParser->DefineVar("power",&sPower);
+		mParser->DefineFun("dot", dot, false);
 		mParser->SetExpr(expr);
 		// testujemy...
 		mParser->Eval();

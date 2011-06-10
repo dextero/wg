@@ -15,7 +15,7 @@ Bonus for this spell depends:
   <unavailable-icon>data/abilities/weapons/firebolt-1.png</unavailable-icon>
 
   <!-- power = 5x cho, 1x mel, 2x san, 0x phl -->
-  <power calc="0.2*((5*choleric+1*melancholic+2*sanguine+0*phlegmatic)/sqrt(5^2 + 1^2 + 2^2 + 0^2))*(((5*choleric+1*melancholic+2*sanguine+0*phlegmatic)/(sqrt(5^2+1^2+2^2+0^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+  <power calc="0.2 * dot(5, choleric, 1, melancholic, 2, sanguine, 0, phlegmatic)"/>
   
   <explosion type="list">
     <effect type="graphical-effect">

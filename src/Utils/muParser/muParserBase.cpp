@@ -612,6 +612,14 @@ namespace mu
 	                                              a_vArg[2].GetVal(), 
 				   	  	                                a_vArg[1].GetVal(),
 													                      a_vArg[0].GetVal()) );  break;
+      case 8: valTok.SetVal( ((fun_type8)pFunc)(a_vArg[7].GetVal(),
+				                                a_vArg[6].GetVal(), 
+	                                            a_vArg[5].GetVal(), 
+	                                            a_vArg[4].GetVal(), 
+	                                            a_vArg[3].GetVal(), 
+	                                            a_vArg[2].GetVal(), 
+				   	  	                        a_vArg[1].GetVal(),
+									            a_vArg[0].GetVal()) );  break;
       default: Error(ecINTERNAL_ERROR, 6);
     }
 

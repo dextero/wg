@@ -249,6 +249,9 @@ namespace mu
   /** \brief Callback type used for functions with five arguments. */
   typedef value_type (*fun_type5)(value_type, value_type, value_type, value_type, value_type);
 
+  /** \brief Callback type used for functions with eight arguments. */
+  typedef value_type (*fun_type8)(value_type, value_type, value_type, value_type, value_type, value_type, value_type, value_type);
+
   /** \brief Callback type used for functions with a variable argument list. */
   typedef value_type (*multfun_type)(const value_type*, int);
 

@@ -14,7 +14,7 @@ Bonus for this spell depends:
   <unavailable-icon>data/abilities/weapons/basher-1.png</unavailable-icon>
 
   <!-- power = 1x cho, 4x mel, 0x san, 1x phl -->
-  <power calc="0.2*((1*choleric+4*melancholic+0*sanguine+1*phlegmatic)/sqrt(1^2 + 4^2 + 0^2 + 1^2))*(((1*choleric+4*melancholic+0*sanguine+1*phlegmatic)/(sqrt(1^2+4^2+0^2+1^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+  <power calc="0.2 * dot(1, choleric, 4, melancholic, 0, sanguine, 1, phlegmatic)"/>
 
   <effect type="list">
     <effect type="knockback">

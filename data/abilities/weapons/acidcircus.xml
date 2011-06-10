@@ -14,7 +14,7 @@ Bonus for this spell depends:
 <unavailable-icon>data/abilities/weapons/acidcircus-1.png</unavailable-icon>
 
   <!-- power = 2x cho, 0x mel, 3x san, 5x phl -->
-  <power calc="0.2*((2*choleric+0*melancholic+3*sanguine+5*phlegmatic)/sqrt(2^2 + 0^2 + 3^2 + 5^2))*(((2*choleric+0*melancholic+3*sanguine+5*phlegmatic)/(sqrt(2^2+0^2+3^2+5^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+  <power calc="0.2 * dot(2, choleric, 0, melancholic, 3, sanguine, 5, phlegmatic)"/>
 
   <explosion type="list">
     <effect type="graphical-effect">

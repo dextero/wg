@@ -57,6 +57,7 @@ public:
     ParserCallback(fun_type3 a_pFun, bool a_bAllowOpti);
     ParserCallback(fun_type4 a_pFun, bool a_bAllowOpti);
     ParserCallback(fun_type5 a_pFun, bool a_bAllowOpti);
+    ParserCallback(fun_type8 a_pFun, bool a_bAllowOpti);
     ParserCallback(multfun_type a_pFun, bool a_bAllowOpti);
     ParserCallback(strfun_type1 a_pFun, bool a_bAllowOpti);
     ParserCallback(strfun_type2 a_pFun, bool a_bAllowOpti);

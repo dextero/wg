@@ -6,7 +6,7 @@
   <description>$ABI_WEAPONS_LIGHTNING-STORM_DESC</description>
 
   <!-- power = ?x cho, ?x mel, ?x san, ?x phl -->
-  <power calc="0.2*((2*choleric+2*melancholic+3*sanguine+3*phlegmatic)/sqrt(2^2 + 2^2 + 3^2 + 3^2))*(((2*choleric+2*melancholic+3*sanguine+3*phlegmatic)/(sqrt(2^2+2^2+3^2+3^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+  <power calc="0.2 * do(0, choleric, 0, melancholic, 0, sanguine, 0, phlegmatic)"/>
 
   <effect type="list">
     <effect type="recastable">

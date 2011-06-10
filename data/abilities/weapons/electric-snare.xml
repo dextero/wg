@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/electric-snare-1.png</unavailable-icon>
 
   <!-- power = ?x cho, ?x mel, ?x san, ?x phl -->
-  <power calc="0.2*((0*choleric+4*melancholic+2*sanguine+2*phlegmatic)/sqrt(0^2 + 4^2 + 2^2 + 2^2))*(((0*choleric+4*melancholic+2*sanguine+2*phlegmatic)/(sqrt(0^2+4^2+2^2+2^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+  <power calc="0.2 * dot(0, choleric, 0, melancholic, 0, sanguine, 0, phlegmatic)"/>
 
   <explosion type="bullet">
     <emitter>  
