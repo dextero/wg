@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/firewall-1.png</unavailable-icon>
 
   <!-- power = 3x cho, 1x mel, 2x san, 2x phl -->
-  <power calc="0.2*((3*choleric+1*melancholic+2*sanguine+2*phlegmatic)/sqrt(3^2 + 1^2 + 2^2 + 2^2))*(((3*choleric+1*melancholic+2*sanguine+2*phlegmatic)/(sqrt(3^2+1^2+2^2+2^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+  <power calc="0.2 * dot(3, choleric, 1, melancholic, 2, sanguine, 2, phlegmatic)"/>
   
   <self-effect type="timed">
     <time calc="0.3"/>

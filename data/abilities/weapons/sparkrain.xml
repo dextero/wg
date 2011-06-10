@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/sparkrain-1.png</unavailable-icon>
 
   <!-- power = 4x cho, 0x mel, 4x san, 1x phl -->
-  <power calc="0.2*((4*choleric+0*melancholic+4*sanguine+1*phlegmatic)/sqrt(4^2 + 0^2 + 4^2 + 1^2))*(((4*choleric+0*melancholic+4*sanguine+1*phlegmatic)/(sqrt(4^2+0^2+4^2+1^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+  <power calc="0.2 * dot(4, choleric, 0, melancholic, 4, sanguine, 1, phlegmatic)"/>
   
   <effect type="list">
     <effect type="damage">

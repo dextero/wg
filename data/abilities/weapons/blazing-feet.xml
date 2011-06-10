@@ -14,7 +14,7 @@ Bonus for this spell depends:
   <unavailable-icon>data/abilities/weapons/blazing-feet-1.png</unavailable-icon>
 
   <!-- power = 0x cho, 2x mel, 3x san, 3x phl -->
-  <power calc="0.2*((0*choleric+2*melancholic+3*sanguine+3*phlegmatic)/sqrt(0^2 + 2^2 + 3^2 + 3^2))*(((0*choleric+2*melancholic+3*sanguine+3*phlegmatic)/(sqrt(0^2+2^2+3^2+3^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+  <power calc="0.2 * dot(0, choleric, 2, melancholic, 3, sanguine, 3, phlegmatic)"/>
   
   <effect type="recastable" >
     <recast value="0.4" />

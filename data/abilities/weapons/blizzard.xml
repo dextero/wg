@@ -14,7 +14,7 @@ Bonus for this spell depends:
   <unavailable-icon>data/abilities/weapons/blizzard-1.png</unavailable-icon>
 
   <!-- power = 3x cho, 2x mel, 1x san, 2x phl -->
-  <power calc="0.2*((3*choleric+2*melancholic+1*sanguine+2*phlegmatic)/sqrt(3^2 + 2^2 + 1^2 + 2^2))*(((3*choleric+2*melancholic+1*sanguine+2*phlegmatic)/(sqrt(3^2+2^2+1^2+2^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+  <power calc="0.2 * dot(3, choleric, 2, melancholic, 1, sanguine, 2, phlegmatic)"/>
 
   <effect type="list">
     <effect type="graphical-effect">

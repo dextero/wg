@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/burning-hands-1.png</unavailable-icon>
 
   <!-- power = 4x cho, 2x mel, 2x san, 0x phl -->
-  <power calc="0.2*((4*choleric+2*melancholic+2*sanguine+0*phlegmatic)/sqrt(4^2 + 2^2 + 2^2 + 0^2))*(((4*choleric+2*melancholic+2*sanguine+0*phlegmatic)/(sqrt(4^2+2^2+2^2+0^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+  <power calc="0.2 * dot(4, choleric, 2, melancholic, 2, sanguine, 0, phlegmatic)"/>
 
   <effect type="list">
     <effect type="knockback">

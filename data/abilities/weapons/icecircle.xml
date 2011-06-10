@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/icecircle-1.png</unavailable-icon>
 
   <!-- power = 2x cho, 2x mel, 2x san, 2x phl -->
-  <power calc="0.2*((2*choleric+2*melancholic+2*sanguine+2*phlegmatic)/sqrt(2^2 + 2^2 + 2^2 + 2^2))*(((2*choleric+2*melancholic+2*sanguine+2*phlegmatic)/(sqrt(2^2+2^2+2^2+2^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+  <power calc="0.2 * dot(2, choleric, 2, melancholic, 2, sanguine, 2, phlegmatic)"/>
   
   <explosion type="list">
     <effect type="sound">

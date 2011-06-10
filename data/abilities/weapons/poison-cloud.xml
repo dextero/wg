@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/poison-cloud-1.png</unavailable-icon>
 
   <!-- power = 1x cho, 2x mel, 2x san, 3x phl -->
-  <power calc="0.2*((1*choleric+2*melancholic+2*sanguine+3*phlegmatic)/sqrt(1^2 + 2^2 + 2^2 + 3^2))*(((1*choleric+2*melancholic+2*sanguine+3*phlegmatic)/(sqrt(1^2+2^2+2^2+3^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+  <power calc="0.2 * dot(1, choleric, 2, melancholic, 2, sanguine, 3, phlegmatic)"/>
   
   <explosion type="list">
     <effect type="graphical-effect">

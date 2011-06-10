@@ -98,6 +98,17 @@ namespace mu
 
 
   //---------------------------------------------------------------------------
+  ParserCallback::ParserCallback(fun_type8 a_pFun, bool a_bAllowOpti)
+    :m_pFun((void*)a_pFun)
+    ,m_iArgc(8)
+    ,m_iPri(-1)
+    ,m_iCode(cmFUNC)
+    ,m_iType(tpDBL)
+    ,m_bAllowOpti(a_bAllowOpti)
+  {}
+
+
+  //---------------------------------------------------------------------------
   ParserCallback::ParserCallback(multfun_type a_pFun, bool a_bAllowOpti)
     :m_pFun((void*)a_pFun)
     ,m_iArgc(-1)

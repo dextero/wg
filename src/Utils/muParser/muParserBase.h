@@ -141,6 +141,7 @@ private:
     MUP_DEFINE_FUNC(fun_type3)
     MUP_DEFINE_FUNC(fun_type4)
     MUP_DEFINE_FUNC(fun_type5)
+    MUP_DEFINE_FUNC(fun_type8)
     MUP_DEFINE_FUNC(multfun_type)
     MUP_DEFINE_FUNC(strfun_type1)
     MUP_DEFINE_FUNC(strfun_type2)
