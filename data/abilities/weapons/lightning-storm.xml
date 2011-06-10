@@ -173,7 +173,7 @@
     </effect>
   </effect>
 
-  <manacost value="34.0 * (1 + power)" />
+  <manacost calc="34.0 * (1 + power)" />
   <casttime calc="0.01" />
   <delay calc="0.05" />
   <cooldown calc="2.5" />

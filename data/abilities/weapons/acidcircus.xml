@@ -115,7 +115,7 @@ Bonus for this spell depends:
   <bullet value="data/physicals/bullets/acidball.xml" />
   <filter value="wall" />
 
-  <manacost value="26 * (1 + power)" />
+  <manacost calc="26 * (1 + power)" />
   <casttime calc="0.09" />
   <delay calc="0.05" />
   <cooldown value="0.60" />

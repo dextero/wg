@@ -50,7 +50,7 @@
     </effect>
   </effect>
   
-  <manacost value="17 * (1 + power)" />
+  <manacost calc="17 * (1 + power)" />
   <casttime value="0.10" />
   <delay value="0.05" />
   <cooldown value="0.90" />

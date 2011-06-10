@@ -88,7 +88,7 @@
     <amount value="0.2" />
   </delay-effect>
 
-  <manacost value="22 * (1 + power)" />
+  <manacost calc="22 * (1 + power)" />
   <casttime calc="0.30" />
   <delay calc="0.50" />
   <cooldown calc="0.50" />
