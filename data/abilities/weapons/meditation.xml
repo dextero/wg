@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/meditation-1.png</unavailable-icon>
 
   <!-- power = 0x cho, 4x mel, 0x san, 5x phl -->
-  <!-- power = (0.05 * (0 * choleric + 4 * melancholic + 0 * sanguine + 5 * phlegmatic)) --> 
+  <power calc="0.2*((0*choleric+4*melancholic+0*sanguine+5*phlegmatic)/sqrt(0^2 + 4^2 + 0^2 + 5^2))*(((0*choleric+4*melancholic+0*sanguine+5*phlegmatic)/(sqrt(0^2+4^2+0^2+5^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
   
   <effect type="list">
     <effect type="graphical-effect">
@@ -20,7 +20,7 @@
       <time value="5.0" />
       <effect type="list">
         <effect type="restore-mana">
-	      <amount calc="5.0 * (1 + (0.05 * (0 * choleric + 4 * melancholic + 0 * sanguine + 5 * phlegmatic))) "/>
+	      <amount calc="5.0 * (1 + power)"/>
         </effect>
         <effect type="modify">
           <aspect value="speed" />

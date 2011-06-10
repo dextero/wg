@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/firecircle-1.png</unavailable-icon>
 
   <!-- power = 4x cho, 0x mel, 1x san, 3x phl -->
-  <!-- power = (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)) -->   
+  <power calc="0.2*((4*choleric+0*melancholic+1*sanguine+3*phlegmatic)/sqrt(4^2 + 0^2 + 1^2 + 3^2))*(((4*choleric+0*melancholic+1*sanguine+3*phlegmatic)/(sqrt(4^2+0^2+1^2+3^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
   
   <effect type="list">
     <effect type="graphical-effect">
@@ -26,13 +26,13 @@
       <effect type="list">
         <effect type="damage">	
           <damage-type value="fire"/>
-          <amount calc="20.0 + (10 * (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))" />
+          <amount calc="20.0 + (10 * power)" />
         </effect>
         <effect type="knockback">
           <amount calc="10.0"/>
         </effect>
         <effect type="chance">
-          <chance calc="0.5 + (0.01 * (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))"/>
+          <chance calc="0.5 + (0.01 * power)"/>
 		  <effect type="non-cumulative">
 		    <effect type="list">
               <effect type="graphical-effect">
@@ -46,7 +46,7 @@
                 <time calc="4"/>
                 <effect type="damage">
                   <damage-type value="fire"/>
-                  <amount value="2 + (0.25 * (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))"/>
+                  <amount value="2 + (0.25 * power)"/>
                 </effect>
               </effect>
 			</effect>
@@ -63,7 +63,7 @@
         <effect type="list">
           <effect type="damage">
             <damage-type value="fire"/>
-            <amount calc="10.0 + (5.0 * (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))"/>
+            <amount calc="10.0 + (5.0 * power)"/>
           </effect>
           <effect type="knockback">
             <amount calc="8.0"/>
@@ -79,7 +79,7 @@
         <effect type="list">
           <effect type="damage">
             <damage-type value="fire"/>
-            <amount calc="5.0 + (2.5 * (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))" />
+            <amount calc="5.0 + (2.5 * power)" />
           </effect>
           <effect type="knockback">
             <amount calc="6.25"/>
@@ -95,7 +95,7 @@
         <effect type="list">
           <effect type="damage">
             <damage-type value="fire"/>
-            <amount calc="2.5 + (1.25 * (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))" />
+            <amount calc="2.5 + (1.25 * power)" />
           </effect>
           <effect type="knockback">
             <amount calc="4.5"/>
@@ -110,7 +110,7 @@
       <time value="0.35"/>
   </cast-time-effect>
 
-  <manacost calc="26 * (1 + (0.05 * (4 * choleric + 0 * melancholic + 1 * sanguine + 3 * phlegmatic)))" />
+  <manacost calc="26 * (1 + power)" />
   <casttime calc="0.40" />
   <delay calc="0.05" />
   <cooldown calc="1.60" />

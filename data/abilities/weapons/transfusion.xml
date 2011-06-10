@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/transfusion-0.png</unavailable-icon>
 
   <!-- power = ?x cho, ?x mel, ?x san, ?x phl -->
-  <!-- power = (0.05 * (? * choleric + ? * melancholic + ? * sanguine + ? * phlegmatic)) -->
+  <power calc="0.2*((1*choleric+1*melancholic+5*sanguine+2*phlegmatic)/sqrt(1^2 + 1^2 + 5^2 + 2^2))*(((1*choleric+1*melancholic+5*sanguine+2*phlegmatic)/(sqrt(1^2+1^2+5^2+2^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
 
   <effect type="list">
     <effect type="graphical-effect">
@@ -41,6 +41,10 @@
               <offset-x value="-0.25"/>
               <offset-y value="0.25"/>
             </effect>
+            <effect type="damage">
+              <damage-type value="lightning"/>
+              <amount calc="2 * (1 + power)" />
+            </effect>
             <effect type="transfer-life">
               <amount calc="2 * (1 + power)" />
             </effect>
@@ -60,6 +64,10 @@
               <time value="0.25" />
               <offset-x value="0.25"/>
               <offset-y value="0.25"/>
+            </effect>
+            <effect type="damage">
+              <damage-type value="lightning"/>
+              <amount calc="2 * (1 + power)" />
             </effect>
             <effect type="transfer-life">
               <amount calc="2 * (1 + power)" />

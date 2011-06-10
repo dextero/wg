@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/superspeed-1.png</unavailable-icon>
 
   <!-- power = 1x cho, 1x mel, 5x san, 2x phl -->
-  <!-- power = (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)) -->
+  <power calc="0.2*((1*choleric+1*melancholic+5*sanguine+2*phlegmatic)/sqrt(1^2 + 1^2 + 5^2 + 2^2))*(((1*choleric+1*melancholic+5*sanguine+2*phlegmatic)/(sqrt(1^2+1^2+5^2+2^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
 
   <effect type="list">
     <effect type="sound">
@@ -22,7 +22,7 @@
     </effect>
     <effect type="recastable">
       <recast calc="0.25" />
-      <time calc="3.0 * (1 + (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+      <time calc="3.0 * (1 + power)" />
       <effect type="list">
         <effect type="graphical-effect">
           <name value="shield" />
@@ -35,10 +35,10 @@
       </effect>
     </effect>
     <effect type="timed">
-      <time calc="3.0 * (1 + (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+      <time calc="3.0 * (1 + power)" />
       <effect type="modify">
         <aspect value="speed" />
-        <amount calc="1.25 + 0.15 * ln(1 + 4 * (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+        <amount calc="1.25 + 0.15 * ln(1 + 4 * (power))" />
       </effect>
     </effect>
   </effect>
@@ -59,7 +59,7 @@
   <delay value="0.05" />
   <cooldown calc="3.0" />
 
-  <focus-mana-cost calc="7.0 * (1 + (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
-  <focus-max-duration calc="3.0 * (1 + (0.05 * (1 * choleric + 1 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+  <focus-mana-cost calc="7.0 * (1 + power)" />
+  <focus-max-duration calc="3.0 * (1 + power)" />
   
 </root>

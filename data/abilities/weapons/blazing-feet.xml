@@ -1,12 +1,20 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_BLAZING_FEET</name>
-  <description>$ABI_WEAPONS_BLAZING_FEET_DESC</description>
+  <name>Blazing feet</name>
+  <description>
+Even while running away, a battlemage is dangerous to his foes. As long as the player&apos;s the spell holding key, the mage leaves a trail of blazing footprints which hurt all enemies who step on them.  
+  
+Bonus for this spell depends:
+  not at all on choleric rune
+  mildly on melancholice rune
+  heavily on sanguine rune
+  heavily on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/blazing-feet-0.png</icon>
   <unavailable-icon>data/abilities/weapons/blazing-feet-1.png</unavailable-icon>
 
   <!-- power = 0x cho, 2x mel, 3x san, 3x phl -->
-  <!-- power = (0.05 * (0 * choleric + 2 * melancholic + 3 * sanguine + 3 * phlegmatic)) --> 
+  <power calc="0.2*((0*choleric+2*melancholic+3*sanguine+3*phlegmatic)/sqrt(0^2 + 2^2 + 3^2 + 3^2))*(((0*choleric+2*melancholic+3*sanguine+3*phlegmatic)/(sqrt(0^2+2^2+3^2+3^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
   
   <effect type="recastable" >
     <recast value="0.4" />
@@ -50,7 +58,7 @@
               <effect type="list">
                 <effect type="damage">
                   <damage-type value="fire"/>
-                  <amount calc="2 * (1 + (0.05 * (0 * choleric + 2 * melancholic + 3 * sanguine + 3 * phlegmatic)))"/>
+                  <amount calc="2 * (1 + power)"/>
                 </effect>
                 <effect type="knockback">
                   <amount calc="0.8" />
@@ -73,7 +81,7 @@
   <delay calc="0.05" />
   <cooldown value="0.10" />
 
-  <focus-mana-cost calc="20.0 + (2.0 * (0.05 * (0 * choleric + 2 * melancholic + 3 * sanguine + 3 * phlegmatic)))" />
+  <focus-mana-cost calc="20.0 + (2.0 * power)" />
   <focus-max-duration value="6.0" />
 
 </root>

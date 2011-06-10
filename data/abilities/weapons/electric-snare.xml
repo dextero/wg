@@ -6,8 +6,8 @@
   <unavailable-icon>data/abilities/weapons/electric-snare-1.png</unavailable-icon>
 
   <!-- power = ?x cho, ?x mel, ?x san, ?x phl -->
-  <!-- power = (0.05 * (? * choleric + ? * melancholic + ? * sanguine + ? * phlegmatic)) --> 
-  
+  <power calc="0.2*((0*choleric+4*melancholic+2*sanguine+2*phlegmatic)/sqrt(0^2 + 4^2 + 2^2 + 2^2))*(((0*choleric+4*melancholic+2*sanguine+2*phlegmatic)/(sqrt(0^2+4^2+2^2+2^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+   
   <flight-effect type="delayed">
     <time value="1.0" />
     <effect type="recastable">

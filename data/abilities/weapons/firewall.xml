@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/firewall-1.png</unavailable-icon>
 
   <!-- power = 3x cho, 1x mel, 2x san, 2x phl -->
-  <!-- power = (0.05 * (3 * choleric + 1 * melancholic + 2 * sanguine + 2 * phlegmatic)) -->
+  <power calc="0.2*((3*choleric+1*melancholic+2*sanguine+2*phlegmatic)/sqrt(3^2 + 1^2 + 2^2 + 2^2))*(((3*choleric+1*melancholic+2*sanguine+2*phlegmatic)/(sqrt(3^2+1^2+2^2+2^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
   
   <self-effect type="timed">
     <time calc="0.3"/>
@@ -61,7 +61,7 @@
               <effect type="list">
                 <effect type="damage">
                   <damage-type value="fire"/>
-                  <amount calc="2 * (1 + (0.05 * (3 * choleric + 1 * melancholic + 2 * sanguine + 2 * phlegmatic)))"/>
+                  <amount calc="2 * (1 + power)"/>
                 </effect>
                 <effect type="knockback">
                   <amount calc="2.33" />
@@ -142,7 +142,7 @@
   <ttl value="0.2" />
   <bullet value="data/physicals/bullets/invisible-bullet.xml" />
 
-  <manacost calc="23 * (1 + (0.05 * (3 * choleric + 1 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+  <manacost calc="23 * (1 + power)" />
   <casttime calc="0.30" />
   <delay calc="0.05" />
   <cooldown calc="1.6" />

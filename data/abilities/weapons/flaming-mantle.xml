@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/flaming-mantle-1.png</unavailable-icon>
 
   <!-- power = 2x cho, 1x mel, 4x san, 1x phl -->
-  <!-- power = (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)) -->
+  <power calc="0.2*((2*choleric+1*melancholic+4*sanguine+1*phlegmatic)/sqrt(2^2 + 1^2 + 4^2 + 1^2))*(((2*choleric+1*melancholic+4*sanguine+1*phlegmatic)/(sqrt(2^2+1^2+4^2+1^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
 
   <effect type="list" >
     <effect type="sound">
@@ -24,7 +24,7 @@
         </effect>
         <effect type="recastable">
           <recast calc="0.25" />
-          <time calc="20.0 + (0.5 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+          <time calc="20.0 + (0.5 * power)" />
           <effect type="list">
             <effect type="graphical-effect">
               <name value="heal" />
@@ -41,10 +41,10 @@
     <effect type="non-cumulative">
       <effect type="list">
         <effect type="timed">
-          <time calc="20.0 + (0.5 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+          <time calc="20.0 + (0.5 * power)" />
           <effect type="list">
             <effect type="drain-mana">
-              <amount calc="3.0 + (0.5 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+              <amount calc="3.0 + (0.5 * power)" />
             </effect>
             <effect type="modify">
               <aspect value="fireresist"/>
@@ -61,9 +61,9 @@
     <effect type="non-cumulative">
       <effect type="recastable">
         <recast value="0.3" />
-        <time calc="20.0 + (0.5 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+        <time calc="20.0 + (0.5 * power)" />
         <effect type="area">
-          <area calc="0.55 + (0.05 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+          <area calc="0.55 + (0.05 * power)" />
           <filter value="hostiles,obstacle" />
           <effect type="list">
             <effect type="graphical-effect">
@@ -72,7 +72,7 @@
             </effect>
             <effect type="damage">
               <damage-type value="fire"/>
-              <amount calc="12 * (1 + (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+              <amount calc="12 * (1 + power)" />
             </effect>
             <effect type="knockback">
               <amount calc="2.0"/>
@@ -84,7 +84,7 @@
     <effect type="non-cumulative">
       <effect type="recastable" >
         <recast value="0.5" />
-        <time calc="20.0 + (0.5 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+        <time calc="20.0 + (0.5 * power)" />
         <effect type="bullet">
           <emitter>
             <speed value="7.5" />
@@ -110,7 +110,7 @@
               </effect>
               <effect type="damage">
                 <damage-type value="fire"/>
-                <amount calc="5.0 + (2.0 * (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))"/>
+                <amount calc="5.0 + (2.0 * power)"/>
               </effect>
             </effect>
           </emitter>
@@ -143,7 +143,7 @@
     <amount value="0.6" />
   </delay-effect>
 
-  <manacost calc="35 * (1 + (0.05 * (2 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+  <manacost calc="35 * (1 + power)" />
   <casttime calc="1.4" />
   <delay calc="0.05" />
   <cooldown calc="10" />

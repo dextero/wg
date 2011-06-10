@@ -6,23 +6,23 @@
   <unavailable-icon>data/abilities/weapons/sting-1.png</unavailable-icon>
 
   <!-- power = 1x cho, 4x mel, 2x san, 1x phl -->
-  <!-- power = (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 1 * phlegmatic)) --> 
+  <power calc="0.2*((1*choleric+4*melancholic+2*sanguine+1*phlegmatic)/sqrt(1^2 + 4^2 + 2^2 + 1^2))*(((1*choleric+4*melancholic+2*sanguine+1*phlegmatic)/(sqrt(1^2+4^2+2^2+1^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
   
   <effect type="non-cumulative">
     <effect type="list">
       <effect type="damage">
         <damage-type value="poison"/>
-        <amount calc="0.5 + (0.05 * (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 1 * phlegmatic)))" />
+        <amount calc="0.5 + (0.05 * power)" />
       </effect>
       <effect type="graphical-effect">
         <name value="colorize-green" />
-        <time calc="6.0 + (3.0 * (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 1 * phlegmatic)))" />
+        <time calc="6.0 + (3.0 * power)" />
       </effect>
       <effect type="timed">
-        <time calc="6.0 + (3.0 * (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 1 * phlegmatic)))" />
+        <time calc="6.0 + (3.0 * power)" />
         <effect type="damage">
           <damage-type value="poison"/>
-          <amount calc="2.25 + (0.25 * (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 1 * phlegmatic)))"/>
+          <amount calc="2.25 + (0.25 * power)"/>
         </effect>
       </effect>
 
@@ -44,7 +44,7 @@
   <ttl value="0.6" />
   <bullet value="data/physicals/bullets/sting.xml" />
 
-  <manacost value="9.0 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 2 * sanguine + 1 * phlegmatic)))" />
+  <manacost value="9.0 * (1 + power)" />
   <casttime value="0.09" />
   <delay value="0.05" />
   <cooldown value="0.7" />

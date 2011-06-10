@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/freezing-mine-1.png</unavailable-icon>
 
   <!-- power = 2x cho, 3x mel, 2x san, 1x phl -->
-  <!-- power = (0.05 * (2 * choleric + 3 * melancholic + 2 * sanguine + 1 * phlegmatic)) -->
+  <power calc="0.2*((2*choleric+3*melancholic+2*sanguine+1*phlegmatic)/sqrt(2^2 + 3^2 + 2^2 + 1^2))*(((2*choleric+3*melancholic+2*sanguine+1*phlegmatic)/(sqrt(2^2+3^2+2^2+1^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
 
   <explosion type="list">
     <effect type="graphical-effect">
@@ -41,7 +41,7 @@
             <effect type="list">
               <effect type="damage">
                 <damage-type value="ice"/>
-                <amount value="16.0 * (1 + (0.05 * (2 * choleric + 3 * melancholic + 2 * sanguine + 1 * phlegmatic)))"/>
+                <amount value="16.0 * (1 + power)"/>
               </effect>
               <effect type="non-cumulative">
                 <effect type="timed">
@@ -71,20 +71,20 @@
               <effect type="list">
                 <effect type="graphical-effect">
                   <name value="colorize-blue" />
-					<time calc="1.75 + (0.02 * (0.05 * (2 * choleric + 3 * melancholic + 2 * sanguine + 1 * phlegmatic)))" />
+					<time calc="1.75 + (0.02 * power)" />
                 </effect>
                 <effect type="non-cumulative">
                   <effect type="timed">
-                    <time calc="1.75 + (0.02 * (0.05 * (2 * choleric + 3 * melancholic + 2 * sanguine + 1 * phlegmatic)))" />
+                    <time calc="1.75 + (0.02 * power)" />
                     <effect type="modify">
                       <aspect value="speed" />
-                      <amount calc="0.76 - (0.005 * (0.05 * (2 * choleric + 3 * melancholic + 2 * sanguine + 1 * phlegmatic)))" />
+                      <amount calc="0.76 - (0.005 * power)" />
                     </effect>
                   </effect>
                 </effect>
                 <effect type="damage">
                   <damage-type value="ice"/>
-                  <amount calc="8.0 * (1 + (0.05 * (2 * choleric + 3 * melancholic + 2 * sanguine + 1 * phlegmatic)))" />
+                  <amount calc="8.0 * (1 + power)" />
                 </effect>
               </effect>
         
@@ -112,7 +112,7 @@
   <explode-on-fade value="1" />
   <speed-fuzziness value="0.05" />  
 
-  <manacost value="18 * (1 + (0.05 * (2 * choleric + 3 * melancholic + 2 * sanguine + 1 * phlegmatic)))" />
+  <manacost value="18 * (1 + power)" />
   <casttime value="0.09" />
   <delay value="0.05" />
   <cooldown value="1.0" />

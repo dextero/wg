@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/fireball-0.png</unavailable-icon>
 
   <!-- power = 5x cho, 0x mel, 3x san, 1x phl -->
-  <!-- power = (0.05 * (5 * choleric + 0.0 * melancholic + 3 * sanguine + 1 * phlegmatic)) --> 
+  <power calc="0.2*((5*choleric+0*melancholic+3*sanguine+1*phlegmatic)/sqrt(5^2 + 0^2 + 3^2 + 1^2))*(((5*choleric+0*melancholic+3*sanguine+1*phlegmatic)/(sqrt(5^2+0^2+3^2+1^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
   
   <explosion type="list">
     <effect type="graphical-effect">
@@ -30,7 +30,7 @@
       <effect type="list">
         <effect type="damage">
           <damage-type value="fire"/>
-          <amount calc="3.0 * (1 + (0.05 * (5 * choleric + 0 * melancholic + 3 * sanguine + 1 * phlegmatic)))" />
+          <amount calc="3.0 * (1 + power)" />
         </effect>
         <effect type="knockback">
           <amount calc="1.25"/>
@@ -44,13 +44,13 @@
       <effect type="list">
         <effect type="damage">
           <damage-type value="fire"/>
-          <amount calc="16.0 * (1 + (0.05 * (5 * choleric + 0 * melancholic + 3 * sanguine + 1 * phlegmatic)))" />
+          <amount calc="16.0 * (1 + power)" />
         </effect>
         <effect type="knockback">
           <amount calc="1.25"/>
         </effect>
         <effect type="chance">
-          <chance calc="0.25 + (0.005 * (0.05 * (5 * choleric + 0 * melancholic + 3 * sanguine + 1 * phlegmatic)))"/>
+          <chance calc="0.25 + (0.005 * power)"/>
           <effect type="non-cumulative">
             <effect type="list">
               <effect type="graphical-effect">
@@ -64,7 +64,7 @@
                 <time calc="4"/>
                 <effect type="damage">
                   <damage-type value="fire"/>
-                  <amount calc="2 + (0.25 * (0.05 * (5 * choleric + 0 * melancholic + 3 * sanguine + 1 * phlegmatic)))"/>
+                  <amount calc="2 + (0.25 * power)"/>
                 </effect>
               </effect>
             </effect>
@@ -83,7 +83,7 @@
   <bullet value="data/physicals/bullets/fireball.xml" />
   <bullet-angular-speed value="-1440" />
 
-  <manacost calc="6.0 * (1 + (0.2 * (1.0 * choleric + 0.0 * melancholic + 0.3 * sanguine + 0.2 * phlegmatic)))" />
+  <manacost calc="6.0 * (1 + power)" />
   <casttime calc="0.09" />
   <delay calc="0.05" />
   <cooldown value="0.60" />

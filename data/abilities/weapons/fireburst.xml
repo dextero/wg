@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/fireburst-1.png</unavailable-icon>
 
   <!-- power = 4x cho, 1x mel, 4x san, 1x phl -->
-  <!-- power = (0.05 * (4 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)) -->
+  <power calc="0.2*((4*choleric+1*melancholic+4*sanguine+1*phlegmatic)/sqrt(4^2 + 1^2 + 4^2 + 1^2))*(((4*choleric+1*melancholic+4*sanguine+1*phlegmatic)/(sqrt(4^2+1^2+4^2+1^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
   
   <effect type="list">
     <effect type="graphical-effect">
@@ -22,13 +22,13 @@
       <effect type="list">
         <effect type="damage">	
           <damage-type value="fire"/>
-          <amount calc="35.0 * (1 + (0.05 * (4 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+          <amount calc="35.0 * (1 + power)" />
         </effect>
         <effect type="knockback">
           <amount calc="10.0"/>
         </effect>
         <effect type="chance">
-          <chance calc="0.66 + (0.01 * (0.05 * (4 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))"/>
+          <chance calc="0.66 + (0.01 * power)"/>
 		  <effect type="non-cumulative">
 		    <effect type="list">
               <effect type="graphical-effect">
@@ -42,7 +42,7 @@
                 <time calc="4"/>
                 <effect type="damage">
                   <damage-type value="fire"/>
-                  <amount value="3 + (0.25 * (0.05 * (4 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))"/>
+                  <amount value="3 + (0.25 * power)"/>
                 </effect>
               </effect>
 			</effect>
@@ -71,7 +71,7 @@
               <effect type="list">
                 <effect type="damage">
                   <damage-type value="fire"/>
-                  <amount calc="11 + (0.4 * (0.05 * (4 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+                  <amount calc="11 + (0.4 * power)" />
                 </effect>
                 <effect type="knockback">
                 <amount calc="5 "/>
@@ -83,7 +83,7 @@
         <range calc="12.0" />
         <speed value="6.0" />
         <ttl calc="12.0" />
-        <count calc="7 + (0.4 * (0.05 * (4 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+        <count calc="7 + (0.4 * power)" />
         <width value="360" />
         <acceleration value="1.0" />
         <bullet value="data/physicals/bullets/flaming-arrow.xml" />
@@ -108,7 +108,7 @@
       <amount value="0.2" />
   </delay-effect>
 
-  <manacost value="29 * (1 + (0.05 * (4 * choleric + 1 * melancholic + 4 * sanguine + 1 * phlegmatic)))" />
+  <manacost value="29 * (1 + power)" />
   <casttime calc="0.10" />
   <delay calc="0.05" />
   <cooldown value="1.1" />

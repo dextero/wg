@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/resonator-1.png</unavailable-icon>
 
   <!-- power = 1x cho, 4x mel, 0x san, 4x phl -->
-  <!-- power = (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 4 * phlegmatic)) -->
+  <power calc="0.2*((1*choleric+4*melancholic+0*sanguine+4*phlegmatic)/sqrt(1^2 + 4^2 + 0^2 + 4^2))*(((1*choleric+4*melancholic+0*sanguine+4*phlegmatic)/(sqrt(1^2+4^2+0^2+4^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
   
   <effect type="list">
     <effect type="sound">
@@ -19,7 +19,7 @@
         <area calc="2.2"  />
         <filter value="player" />
         <effect type="knockback">
-           <amount calc="0.3 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 4 * phlegmatic)))"/>
+           <amount calc="0.3 * (1 + power)"/>
         </effect>
       </effect>
     </effect>
@@ -30,7 +30,7 @@
         <area calc="2.7"  />
         <filter value="player" />
         <effect type="knockback">
-           <amount calc="0.6 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 4 * phlegmatic)))"/>
+           <amount calc="0.6 * (1 + power)"/>
         </effect>
       </effect>
     </effect>
@@ -41,7 +41,7 @@
         <area calc="3.2"  />
         <filter value="player" />
         <effect type="knockback">
-           <amount calc="1.2 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 4 * phlegmatic)))"/>
+           <amount calc="1.2 * (1 + power)"/>
         </effect>
       </effect>
     </effect>
@@ -54,7 +54,7 @@
     </effect>
   </cast-time-effect>
   
-  <manacost value="3.0 * (1 + (0.05 * (1 * choleric + 4 * melancholic + 0 * sanguine + 4 * phlegmatic)))" />
+  <manacost value="3.0 * (1 + power)" />
   <casttime calc="0.10" />
   <delay value="0.05" />
   <cooldown calc="0.15" />

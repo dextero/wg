@@ -1,12 +1,20 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_BALL_LIGHTNING</name>
-  <description>$ABI_WEAPONS_BALL_LIGHTNING_DESC</description>
+  <name>Ball lighning</name>
+  <description>
+A sphere that throws lightning bolts at nearby victims.
+
+Bonus for this spell depends:
+  heavily on choleric rune
+  barely on melancholice rune
+  heavily on sanguine rune
+  mildly on phlegmatic rune
+  </description>
   <icon>data/abilities/weapons/ball-lightning-0.png</icon>
   <unavailable-icon>data/abilities/weapons/ball-lightning-1.png</unavailable-icon>
 
   <!-- power = 3x cho, 1x mel, 3x san, 2x phl -->
-  <!-- power = (0.05 * (3 * choleric + 1 * melancholic + 3 * sanguine + 2 * phlegmatic)) --> 
+  <power calc="0.2*((3*choleric+1*melancholic+3*sanguine+2*phlegmatic)/sqrt(3^2 + 1^2 + 3^2 + 2^2))*(((3*choleric+1*melancholic+3*sanguine+2*phlegmatic)/(sqrt(3^2+1^2+3^2+2^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
 
   <flight-effect type="recastable" >
     <recast value="0.1" />
@@ -45,7 +53,7 @@
           <effect type="list">
             <effect type="damage">
               <damage-type value="lightning"/>
-              <amount calc="10 + (7 * (0.05 * (3 * choleric + 1 * melancholic + 3 * sanguine + 2 * phlegmatic)))" />
+              <amount calc="10 + (7 * power)" />
             </effect>
             <effect type="knockback">
               <amount value="1.0" />
@@ -94,7 +102,7 @@
   <filter value="wall" />
   <bullet-angular-speed value="-1440" />
 
-  <manacost value="28.0 * (1 + (0.05 * (3 * choleric + 1 * melancholic + 3 * sanguine + 2 * phlegmatic))" />
+  <manacost value="28.0 * (1 + power)" />
   <casttime calc="0.44" />
   <delay calc="0.58" />
   <cooldown calc="0.5" />
