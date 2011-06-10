@@ -192,6 +192,9 @@ CItemSlot::~CItemSlot()
 
 void CItemSlot::UpdateTooltipText(const std::string& abiName)
 {
+    // dokladnosc wyswietlanych floatow - ile miejsc po przecinku
+    unsigned PRECISION = 4;
+
     CAbility* abi = NULL;
     if (abiName.size())
         abi = gResourceManager.GetAbility(abiName);
@@ -206,14 +209,14 @@ void CItemSlot::UpdateTooltipText(const std::string& abiName)
 
         CPlayer* player = gPlayerManager.GetPlayerByNumber(mPlayer);
         if (player)
-            tooltipText += StringUtils::ToWString(player->GetAbilityPower(abi));
+            tooltipText += StringUtils::FloatToWString(player->GetAbilityPower(abi), PRECISION);
 
         tooltipText += L"\n\n" + gLocalizator.GetText("ITEM_POWER_AFTER_UPGRADE") + L"\n";
         
         std::vector<CAbility*> abis = player->GetExportedAbilities();
         for (size_t i = 0 ; i < abis.size(); ++i)
             tooltipText += abis[i]->name + L": "
-                        + StringUtils::ToWString(player->GetAbilityPowerAtNextLevelOfOther(abi, abis[i])) + L"\n";
+                        + StringUtils::FloatToWString(player->GetAbilityPowerAtNextLevelOfOther(abi, abis[i]), PRECISION) + L"\n";
     }
     else
         tooltipText = gLocalizator.GetText("SLOT_EMPTY");
