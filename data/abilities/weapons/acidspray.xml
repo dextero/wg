@@ -1,27 +1,35 @@
 ﻿<root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_ACIDSPRAY</name>
-  <description>$ABI_WEAPONS_ACIDSPRAY_DESC</description>
+  <name>Acidspray</name>
+  <description>
+banana banana banana
+
+Bonus for this spell depends:
+  barely on choleric rune
+  not at all on melancholice rune
+  totally on sanguine rune
+  mildly on phlegmatic rune
+  </description>
   <icon>data/abilities/weapons/acidspray-0.png</icon>
   <unavailable-icon>data/abilities/weapons/acidspray-1.png</unavailable-icon>
 
   <!-- power = 1x cho, 0x mel, 5x san, 2x phl -->
-  <!-- power = (0.05 * (1 * choleric + 0 * melancholic + 5 * sanguine + 2 * phlegmatic)) --> 
+  <power calc="0.2*((1*choleric+0*melancholic+5*sanguine+2*phlegmatic)/sqrt(1^2 + 0^2 + 5^2 + 2^2))*(((1*choleric+0*melancholic+5*sanguine+2*phlegmatic)/(sqrt(1^2+0^2+5^2+2^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
   
   <effect type="list">
     <effect type="graphical-effect">
       <name value="colorize-green" />
-      <time calc="2.0 + (0.01 * (0.05 * (1 * choleric + 0 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+      <time calc="2.0 + (0.01 * power)" />
     </effect>    
     <effect type="sound">
       <name value="data/sounds/Lugaro/splatter.ogg" />
     </effect>
     <effect type="non-cumulative" >
       <effect type="timed">
-        <time calc="2.0 + (0.01 * (0.05 * (1 * choleric + 0 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+        <time calc="2.0 + (0.01 * power)" />
         <effect type="damage">
           <damage-type value="poison"/>
-          <amount calc="7.5 + (0.02 * (0.05 * (1 * choleric + 0 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+          <amount calc="7.5 + (0.02 * power)" />
         </effect>
       </effect>
     </effect>
@@ -42,7 +50,7 @@
         </effect>
         <effect type="damage">
           <damage-type value="poison"/>
-          <amount calc="4.0 * (1 + (0.05 * (1 * choleric + 0 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+          <amount calc="4.0 * (1 + power)" />
         </effect>
       </effect>
     </effect>
@@ -67,7 +75,7 @@
     <amount value="0.6" />
   </delay-effect>
   
-  <manacost value="10.0 * (1 + (0.05 * (1 * choleric + 0 * melancholic + 5 * sanguine + 2 * phlegmatic)))" />
+  <manacost value="10.0 * (1 + power)" />
   <casttime value="0.09" />
   <delay value="0.05" />
   <cooldown value="0.52" />

@@ -6,7 +6,7 @@
   <unavailable-icon>data/abilities/weapons/forked-lightning-1.png</unavailable-icon>
 
   <!-- power = 1x cho, 3x mel, 2x san, 2x phl -->
-  <!-- power = (0.05 * (1 * choleric + 3 * melancholic + 2 * sanguine + 2 * phlegmatic)) --> 
+  <power calc="0.2*((1*choleric+3*melancholic+2*sanguine+2*phlegmatic)/sqrt(1^2 + 3^2 + 2^2 + 2^2))*(((1*choleric+3*melancholic+2*sanguine+2*phlegmatic)/(sqrt(1^2+3^2+2^2+2^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
 
   <effect type="list">
     <effect type="sound">
@@ -30,7 +30,7 @@
       <effect type="list">
         <effect type="damage">
           <damage-type value="lightning"/>
-          <amount calc="18 * (1 + (0.05 * (1 * choleric + 3 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+          <amount calc="18 * (1 + power)" />
         </effect>
         <effect type="knockback">
           <amount value="2.0" />
@@ -54,7 +54,7 @@
       <effect type="list">
         <effect type="damage">
           <damage-type value="lightning"/>
-          <amount calc="18 * (1 + (0.05 * (1 * choleric + 3 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+          <amount calc="18 * (1 + power)" />
         </effect>
         <effect type="knockback">
           <amount value="2.0" />
@@ -88,7 +88,7 @@
     <amount value="0.2" />
   </delay-effect>
 
-  <manacost value="22 * (1 + (0.05 * (1 * choleric + 3 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+  <manacost value="22 * (1 + power)" />
   <casttime calc="0.30" />
   <delay calc="0.50" />
   <cooldown calc="0.50" />

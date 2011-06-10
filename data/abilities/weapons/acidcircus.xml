@@ -2,19 +2,19 @@
 
   <name>Acidcircus</name>
   <description>
-    A truly frightening weapon - a spinning disc of acid spreading poisonous rain.
+A truly frightening weapon - a spinning disc of acid spreading poisonous rain.
 
-    Power of this spell depends:
-      mildly on choleric rune
-      not at all on melancholice rune
-      heavily on sanguine rune
-      totally on phlegmatic rune 	  
-  </description>
-  <icon>data/abilities/weapons/acidcircus-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/acidcircus-1.png</unavailable-icon>
+Bonus for this spell depends:
+  mildly on choleric rune
+  not at all on melancholice rune
+  heavily on sanguine rune
+  totally on phlegmatic rune
+</description>
+<icon>data/abilities/weapons/acidcircus-0.png</icon>
+<unavailable-icon>data/abilities/weapons/acidcircus-1.png</unavailable-icon>
 
   <!-- power = 2x cho, 0x mel, 3x san, 5x phl -->
-  <!-- power = (0.05 * (2 * choleric + 0 * melancholic + 3 * sanguine + 5 * phlegmatic)) -->
+  <power calc="0.2*((2*choleric+0*melancholic+3*sanguine+5*phlegmatic)/sqrt(2^2 + 0^2 + 3^2 + 5^2))*(((2*choleric+0*melancholic+3*sanguine+5*phlegmatic)/(sqrt(2^2+0^2+3^2+5^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
 
   <explosion type="list">
     <effect type="graphical-effect">
@@ -34,7 +34,7 @@
             <time value="5.0" />
             <effect type="damage">
               <damage-type value="poison"/>
-              <amount calc="10.0 * (1 + (0.05 * (2 * choleric + 0 * melancholic + 3 * sanguine + 5 * phlegmatic)))" />
+              <amount calc="10.0 * (1 + power)" />
             </effect>
           </effect> 
         </effect>
@@ -50,7 +50,7 @@
         <effect type="list">
           <effect type="damage">
             <damage-type value="poison"/>
-            <amount calc="7 * (1 + (0.05 * (2 * choleric + 0 * melancholic + 3 * sanguine + 5 * phlegmatic)))" />
+            <amount calc="7 * (1 + power)" />
           </effect>
         </effect>
         <explosion type="list">
@@ -78,7 +78,7 @@
                   <time value="5.0"/>
                   <effect type="damage">
                     <damage-type value="poison"/>
-                    <amount calc="7.0 * (1 + (0.05 * (2 * choleric + 0 * melancholic + 3 * sanguine + 5 * phlegmatic)))" />
+                    <amount calc="7.0 * (1 + power)" />
                   </effect>
                 </effect>
               </effect>
@@ -115,7 +115,7 @@
   <bullet value="data/physicals/bullets/acidball.xml" />
   <filter value="wall" />
 
-  <manacost value="26 * (1 + (0.05 * (2 * choleric + 0 * melancholic + 3 * sanguine + 5 * phlegmatic)))" />
+  <manacost value="26 * (1 + power)" />
   <casttime calc="0.09" />
   <delay calc="0.05" />
   <cooldown value="0.60" />

@@ -6,22 +6,22 @@
   <unavailable-icon>data/abilities/weapons/freezing-blast-1.png</unavailable-icon>
 
   <!-- power = 2x cho, 4x mel, 2x san, 2x phl -->
-  <!-- power = (0.05 * (2 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic)) --> 
+  <power calc="0.2*((2*choleric+4*melancholic+2*sanguine+2*phlegmatic)/sqrt(2^2 + 4^2 + 2^2 + 2^2))*(((2*choleric+4*melancholic+2*sanguine+2*phlegmatic)/(sqrt(2^2+4^2+2^2+2^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
   
   <effect type="delayed">
     <time calc="0.10" />
     <effect type="list">
       <effect type="damage">
         <damage-type value="ice"/>
-        <amount calc="5.0 * (1 + (0.05 * (2 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic))) " />
+        <amount calc="5.0 * (1 + power)" />
       </effect>
       <effect type="timed">
-        <time calc="1.750 + (0.05 * (0.05 * (2 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+        <time calc="1.200 + (0.05 * power)" />
         <effect type="stun" />
       </effect>
       <effect type="graphical-effect">
         <name value="frost" />
-        <time calc="1.750 + (0.05 * (0.05 * (2 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+        <time calc="1.750 + (0.05 * power)" />
       </effect>
     </effect>
   </effect>
@@ -45,7 +45,7 @@
   <range value="3.0" />
   <width value="80.0" />
 
-  <manacost value="25.0 * (1 + (0.05 * (2 * choleric + 4 * melancholic + 2 * sanguine + 2 * phlegmatic)))" />
+  <manacost value="25.0 * (1 + power)" />
   <casttime value="0.09" />
   <delay value="0.05" />
   <cooldown value="0.50" />

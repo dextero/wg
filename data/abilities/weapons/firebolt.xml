@@ -1,13 +1,21 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_FIREBOLT</name>
-  <description>$ABI_WEAPONS_FIREBOLT_DESC</description>
+  <name>Firebolt</name>
+  <description>
+Battle mages&apos; favourite weapon - a bolt of liquid fire that burns hit enemies.  
+  
+Bonus for this spell depends:
+  totally on choleric rune
+  barely on melancholice rune
+  mildly on sanguine rune
+  not at all on phlegmatic rune 	  
+</description>
   <trigger></trigger>
   <icon>data/abilities/weapons/firebolt-0.png</icon>
   <unavailable-icon>data/abilities/weapons/firebolt-1.png</unavailable-icon>
 
   <!-- power = 5x cho, 1x mel, 2x san, 0x phl -->
-  <power calc="0.2*((5*choleric+1*melancholic+2*sanguine+0*phlegmatic)/sqrt(5^2 + 1^2 + 2^2 + 0^2))*(((5*choleric+1*melancholic+2*sanguine+0*phlegmatic)/(sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))*sqrt(5^2+1^2+2^2+0^2)))^10)"/>
+  <power calc="0.2*((5*choleric+1*melancholic+2*sanguine+0*phlegmatic)/sqrt(5^2 + 1^2 + 2^2 + 0^2))*(((5*choleric+1*melancholic+2*sanguine+0*phlegmatic)/(sqrt(5^2+1^2+2^2+0^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
   
   <explosion type="list">
   	<effect type="graphical-effect">
