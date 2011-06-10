@@ -8,7 +8,7 @@ Bonus for this spell depends:
   totally on choleric rune
   barely on melancholic rune
   mildly on sanguine rune
-  not at all on phlegmatic rune 	  
+  not at all on phlegmatic rune     
 </description>
   <trigger></trigger>
   <icon>data/abilities/weapons/firebolt-0.png</icon>
@@ -18,14 +18,14 @@ Bonus for this spell depends:
   <power calc="0.2*((5*choleric+1*melancholic+2*sanguine+0*phlegmatic)/sqrt(5^2 + 1^2 + 2^2 + 0^2))*(((5*choleric+1*melancholic+2*sanguine+0*phlegmatic)/(sqrt(5^2+1^2+2^2+0^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
   
   <explosion type="list">
-  	<effect type="graphical-effect">
+    <effect type="graphical-effect">
       <name value="bullet-explosion-mini" />
-  	  <time value="0.8" />
-  	</effect>
-	<effect type="sound">
-		<name value="data/sounds/Lugaro/firestart.ogg" />
-	</effect>
-  </explosion>	
+      <time value="0.8" />
+    </effect>
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/firestart.ogg" />
+    </effect>
+  </explosion>  
 
   <effect type="list">
     <effect type="damage">
