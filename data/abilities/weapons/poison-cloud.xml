@@ -25,8 +25,7 @@
         <count value="1" />
         <width value="360" />
         <bullet value="data/physicals/bullets/invisible-bullet.xml" />
-        <filter value="trap" /> <!-- tox, 26 sierpnia 2009: "trap" bo nie ma filtru "nothing" -->
-
+        <filter value="none" />
 		<effect type="area" tag="poison-cloud-tag">
 		  <area value="1.134" />
 		  <filter value="hostiles" />

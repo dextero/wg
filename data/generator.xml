@@ -28,6 +28,7 @@
         <weapon file="data/abilities/weapons/chain-lightning.xml" minLevel="6" maxLevel="99" />
         <weapon file="data/abilities/weapons/hellfire.xml" minLevel="6" maxLevel="99" />
         <weapon file="data/abilities/weapons/resonator.xml" minLevel="6" maxLevel="99" />
+        <weapon file="data/abilities/weapons/firepits.xml" minLevel="6" maxLevel="99" />
         <weapon file="data/abilities/weapons/firearrow-lvl3.xml" minLevel="7" maxLevel="99" />
         <weapon file="data/abilities/weapons/forked-lightning.xml" minLevel="7" maxLevel="99" />
         <weapon file="data/abilities/weapons/electric-snare.xml" minLevel="8" maxLevel="99" />
@@ -52,7 +53,6 @@
 	 
  	
 	<!-- inne -->
-        <weapon file="data/abilities/fire/firepits.xml" minLevel="15" maxLevel="99" />
         <weapon file="data/abilities/support/healself.xml" minLevel="8" maxLevel="99" />
 
         <lair file="data/physicals/lairs/rat-lair.xml" level="90" />
