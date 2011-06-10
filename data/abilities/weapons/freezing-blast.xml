@@ -45,7 +45,7 @@
   <range value="3.0" />
   <width value="80.0" />
 
-  <manacost value="25.0 * (1 + power)" />
+  <manacost calc="25.0 * (1 + power)" />
   <casttime value="0.09" />
   <delay value="0.05" />
   <cooldown value="0.50" />

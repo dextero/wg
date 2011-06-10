@@ -56,11 +56,11 @@
     </effect>
   </cast-time-effect>
   
-  <manacost value="3.0" />
+  <manacost calc="3.0" />
   <casttime value="0.6" />
   <delay value="0.05" />
   <cooldown value="3.0" />
 
-  <focus-mana-cost value="13.0 * (1 + power)" />
+  <focus-mana-cost calc="13.0 * (1 + power)" />
   <focus-max-duration value="5.0" />
 </root>

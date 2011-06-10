@@ -46,7 +46,7 @@
                 <time calc="4"/>
                 <effect type="damage">
                   <damage-type value="fire"/>
-                  <amount value="2 + (0.25 * power)"/>
+                  <amount calc="2 + (0.25 * power)"/>
                 </effect>
               </effect>
 			</effect>

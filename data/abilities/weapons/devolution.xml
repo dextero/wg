@@ -141,7 +141,7 @@
     <amount value="0.2" />
   </self-effect>
   
-  <manacost value="2.0" />
+  <manacost calc="2.0" />
   <casttime calc="0.45" />
   <delay calc="0.7" />
   <cooldown calc="0.60" />
