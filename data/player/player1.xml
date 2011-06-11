@@ -6,6 +6,12 @@
   <willpower min="40.0" max="40.0" />
   <intelligence min="10.0" max="10.0" />  
 
+  <physresist min="1.0" max="1.0"/>
+  <fireresist min="1.0" max="1.0"/>
+  <iceresist min="1.0" max="1.0"/>
+  <lightningresist min="1.0" max="1.0"/>
+  <poisonresist min="1.0" max="1.0"/>
+
   <maxhp min="100.0" max="100.0" />
   <maxmana min="50.0" max="50.0" />
 
@@ -28,10 +34,8 @@
   
   <trigger-effects>data/player/trigger-effects0.xml</trigger-effects>
   
-  <ability-tree code="fire">data/player/fire-tree.xml</ability-tree>
-  <ability-tree code="electricity">data/player/electricity-tree.xml</ability-tree>
-  <ability-tree code="support">data/player/support-tree.xml</ability-tree>
-  <ability-tree code="special">data/player/special-tree.xml</ability-tree>
+  <ability-tree code="adom">data/player/action-adom-tree.xml</ability-tree>
+  <ability-tree code="adom-hidden">data/player/action-adom-tree-hidden.xml</ability-tree>
 
   <hud>
     <bg path="data/GUI/hud_bkg.png" />

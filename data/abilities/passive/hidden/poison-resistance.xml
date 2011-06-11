@@ -1,4 +1,4 @@
-<root type="ability" class="pasive">
+<root type="ability" class="passive">
 
   <name>$ABI_HIDDEN</name>
   <icon>data/abilities/hidden.png</icon>
@@ -7,7 +7,7 @@
 
   <effect type="modify">
     <aspect value="poisonresist"/>
-    <amount calc="1.0 + (phlegmatic * 0.01 * 0.50)" />
+    <amount calc="1.0 + (phlegmatic * 0.01 * 25)" />
     <!-- rekalkulacja 'modify' nastapi przed aktualizacja 'phlegmatic' hm..hm..hm.. -->
   </effect>
 </root>

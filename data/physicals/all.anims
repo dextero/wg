@@ -264,33 +264,33 @@ test/anim/cacodemon/default
 
 test/anim/rat/default
 {
-    0.10  "data/physicals/monsters/rat-move.png" 32 32 96 96
+    0.10  "data/physicals/monsters/gfx/rat-move.png" 32 32 96 96
 }
 
 test/anim/rat/move
 {
-    0.10  "data/physicals/monsters/rat-move.png" 32 32 96 96
-    0.10  "data/physicals/monsters/rat-move.png" 160 32 224 96
-    0.10  "data/physicals/monsters/rat-move.png" 288 32 352 96
-    0.10  "data/physicals/monsters/rat-move.png" 416 32 480 96
+    0.10  "data/physicals/monsters/gfx/rat-move.png" 32 32 96 96
+    0.10  "data/physicals/monsters/gfx/rat-move.png" 160 32 224 96
+    0.10  "data/physicals/monsters/gfx/rat-move.png" 288 32 352 96
+    0.10  "data/physicals/monsters/gfx/rat-move.png" 416 32 480 96
 }
 
 test/anim/rat/death
 {
-    0.10  "data/physicals/monsters/rat-dying.png" 32 32 96 96
-    0.10  "data/physicals/monsters/rat-dying.png" 160 32 224 96
-    0.10  "data/physicals/monsters/rat-dying.png" 288 32 352 96
-    2.50  "data/physicals/monsters/rat-dying.png" 416 32 480 96
+    0.10  "data/physicals/monsters/gfx/rat-dying.png" 32 32 96 96
+    0.10  "data/physicals/monsters/gfx/rat-dying.png" 160 32 224 96
+    0.10  "data/physicals/monsters/gfx/rat-dying.png" 288 32 352 96
+    2.50  "data/physicals/monsters/gfx/rat-dying.png" 416 32 480 96
 }
 
 test/anim/rat/attack
 {
-    0.10  "data/physicals/monsters/rat-attack.png" 32 32 96 96
-    0.10  "data/physicals/monsters/rat-attack.png" 160 32 224 96
-    0.10  "data/physicals/monsters/rat-attack.png" 288 32 352 96
-    0.10  "data/physicals/monsters/rat-attack.png" 416 32 480 96
-    0.10  "data/physicals/monsters/rat-attack.png" 288 32 352 96
-    0.10  "data/physicals/monsters/rat-attack.png" 160 32 224 96
+    0.10  "data/physicals/monsters/gfx/rat-attack.png" 32 32 96 96
+    0.10  "data/physicals/monsters/gfx/rat-attack.png" 160 32 224 96
+    0.10  "data/physicals/monsters/gfx/rat-attack.png" 288 32 352 96
+    0.10  "data/physicals/monsters/gfx/rat-attack.png" 416 32 480 96
+    0.10  "data/physicals/monsters/gfx/rat-attack.png" 288 32 352 96
+    0.10  "data/physicals/monsters/gfx/rat-attack.png" 160 32 224 96
 }
 
 ###########################

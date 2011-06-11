@@ -13,7 +13,7 @@ using namespace mu;
 double sNull = 0.0;
 double sLevel = 0.0;
 double sIntelligence = 0.0;
-double sWillpower = 0.0;
+double sPoisonous = 0.0;
 double sStrength = 0.0;
 double sPower = 0.0;
 
@@ -47,7 +47,7 @@ CExprParser::CExprParser(const std::string& expr){
 		mParser->DefineVar("level",&sLevel);
 		mParser->DefineVar("intelligence",&sIntelligence);
 		mParser->DefineVar("strength",&sStrength);
-		mParser->DefineVar("willpower",&sWillpower);
+		mParser->DefineVar("poisonous",&sPoisonous);
 		mParser->DefineVar("power",&sPower);
 		mParser->DefineFun("dot", dot, false);
 		mParser->SetExpr(expr);
@@ -68,7 +68,7 @@ float CExprParser::Evaluate(ExecutionContextPtr context){
 	if (mParser){
 		if (context != NULL){
 			sLevel = context->values[aLevel];
-			sWillpower = context->values[aWillpower];
+			sPoisonous = context->values[aPoisonous];
 			sIntelligence = context->values[aIntelligence];
 			sStrength = context->values[aStrength];
 			sPower = context->abilityPower;
@@ -81,7 +81,7 @@ float CExprParser::Evaluate(ExecutionContextPtr context){
 			}
 		} else {
 			sLevel = 0.0;
-			sWillpower = 0.0;
+			sPoisonous = 0.0;
 			sIntelligence = 0.0;
 			sStrength = 0.0;
 			sPower = 0.0;

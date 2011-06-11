@@ -458,6 +458,12 @@ void CommandDisplayAbilities(size_t argc, const std::vector<std::wstring> &argv)
 
     out << "HP: " << player->GetStats()->GetHP() << "/" << player->GetStats()->GetCurrAspect(aMaxHP) << "\n";
     out << "mana: " << player->GetStats()->GetMana() << "/" << player->GetStats()->GetCurrAspect(aMaxMana) << "\n";
+	out << "speed: " << player->GetStats()->GetCurrAspect(aSpeed) << ":" << player->GetStats()->GetBaseAspect(aSpeed) << "\n";
+    out << "aPhysResist: " << player->GetStats()->GetCurrAspect(aPhysResist) << ":" << player->GetStats()->GetBaseAspect(aPhysResist) << "\n";
+    out << "aFireResist: " << player->GetStats()->GetCurrAspect(aFireResist) << ":" << player->GetStats()->GetBaseAspect(aFireResist) << "\n";
+    out << "aIceResist: " << player->GetStats()->GetCurrAspect(aIceResist) << ":" << player->GetStats()->GetBaseAspect(aIceResist) << "\n";
+    out << "aLightningResist: " << player->GetStats()->GetCurrAspect(aLightningResist) << ":" << player->GetStats()->GetBaseAspect(aLightningResist) << "\n";
+    out << "aPoisonResist: " << player->GetStats()->GetCurrAspect(aPoisonResist) << ":" << player->GetStats()->GetBaseAspect(aPoisonResist) << "\n";
     std::vector<CAbilityTree*> *trees = player->GetBoundAbilityTrees();
     std::vector<SAbilityInstance> *abilities = player->GetAbilityPerformer().GetAbilities();
     for (unsigned int i = 0; i < trees->size(); i++){
