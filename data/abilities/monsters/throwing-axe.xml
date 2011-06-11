@@ -31,16 +31,17 @@
   <ttl value="1.0" />
   <bullet value="data/physicals/bullets/throwing-axe.xml" />
   <bullet-angular-speed value="-440" />
-
   <filter value="player,wall,door"/>
-  <ai-hint>
-    <player-distance>3.0</player-distance>
-    <player-angle>30.0</player-angle>
-  </ai-hint>
 
   <manacost calc="0" />
   <casttime value="0.5" />
   <delay value="0.25" />
   <cooldown value="4.25" />
+
+  <ai-hint>
+    <player-distance>3.0</player-distance>
+    <player-angle>30.0</player-angle>
+  </ai-hint>
+
 
 </root>

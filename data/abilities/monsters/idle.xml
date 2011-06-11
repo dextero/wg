@@ -1,0 +1,19 @@
+<root type="ability" class="self">
+
+  <effect type="noEffect"/>
+
+  <cast-time-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.0" />
+  </cast-time-effect>
+  
+  <casttime value="0.8" />  
+  <delay value="0.0" />
+  <cooldown value="6.75" />
+  
+  <ai-hint>
+    <player-distance>8.0</player-distance>
+    <player-angle>360.0</player-angle>
+  </ai-hint>
+  
+</root>

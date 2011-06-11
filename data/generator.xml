@@ -84,27 +84,29 @@
         <lair file="data/physicals/lairs/shaggy-lair.xml" level="90" />
 
         <monster file="data/physicals/monsters/defs/rat.xml" minLevel="1" maxLevel="3" />
-        <monster file="data/physicals/monsters/defs/gargant.xml" minLevel="1" maxLevel="3" frequency="0.2" />
+        <monster file="data/physicals/monsters/defs/bandit.xml" minLevel="1" maxLevel="1" frequency="0.3" />
+
+        <monster file="data/physicals/monsters/defs/rat.xml" minLevel="2" maxLevel="3" />
+        <monster file="data/physicals/monsters/defs/chitiniac.xml" minLevel="2" maxLevel="2" frequency="0.2" />
+        <monster file="data/physicals/monsters/defs/bandit.xml" minLevel="2" maxLevel="5" frequency="0.3" />
+        <monster file="data/physicals/monsters/defs/timberman.xml" minLevel="2" maxLevel="5" frequency="0.3" />
+
+        <monster file="data/physicals/monsters/defs/rat.xml" minLevel="3" maxLevel="4" />
+        <monster file="data/physicals/monsters/defs/poisonous-rat.xml" minLevel="3" maxLevel="5" />
+        <monster file="data/physicals/monsters/defs/chitiniac.xml" minLevel="3" maxLevel="5" frequency="0.6" />
+        <monster file="data/physicals/monsters/defs/gargant.xml" minLevel="3" maxLevel="5" frequency="0.1" />
+
+        <monster file="data/physicals/monsters/defs/chitiniac-acid.xml" minLevel="4" maxLevel="5" frequency="0.5" />
 		
-        <monster file="data/physicals/monsters/defs/poisonous-rat.xml" minLevel="2" maxLevel="3" />
-        <monster file="data/physicals/monsters/defs/bandit.xml" minLevel="2" maxLevel="5" frequency="1.3" />
-        <monster file="data/physicals/monsters/defs/timberman.xml" minLevel="2" maxLevel="5" frequency="1.2" />
+		<!-- -->
+        <lair    file="data/physicals/lairs/rat-lair.xml" minlevel="92" maxLevel="3" />
 
-<!-- -->
-        <lair    file="data/physicals/lairs/rat-lair.xml" minlevel="2" maxLevel="3" />
+        <monster file="data/physicals/monsters/crawler.xml" minLevel="94" maxLevel="6" />
+        <lair    file="data/physicals/lairs/chit-lair.xml" minLevel="94" maxLevel="3" />
+        <monster file="data/physicals/monsters/bee.xml" minLevel="94" maxLevel="6" />
+        <monster file="data/physicals/monsters/hornet.xml" minLevel="94" maxLevel="6" />
 
-        <monster file="data/physicals/monsters/chityniak.xml" minLevel="2" maxLevel="2" frequency="0.20" />
-		
-        <monster file="data/physicals/monsters/chityniak.xml" minLevel="3" maxLevel="6" />
-        <lair    file="data/physicals/lairs/chityniak-lair.xml" level="3" />
-
-        <monster file="data/physicals/monsters/crawler.xml" minLevel="4" maxLevel="6" />
-        <lair    file="data/physicals/lairs/chit-lair.xml" minLevel="4" maxLevel="3" />
-        <monster file="data/physicals/monsters/bee.xml" minLevel="4" maxLevel="6" />
-        <monster file="data/physicals/monsters/hornet.xml" minLevel="4" maxLevel="6" />
-
-        <lair    file="data/physicals/lairs/bee-lair.xml" minLevel="5" maxLevel="6" />
-        <monster file="data/physicals/monsters/chityniak-plwacz.xml" minLevel="5" maxLevel="7" />
+        <lair    file="data/physicals/lairs/bee-lair.xml" minLevel="95" maxLevel="6" />
 
         <monster file="data/physicals/monsters/wolfbeast.xml" minLevel="7" maxLevel="8" />
         <lair    file="data/physicals/lairs/wolfbeast-lair.xml" minLevel="7" maxLevel="8" />
