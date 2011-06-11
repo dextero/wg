@@ -96,8 +96,8 @@
 		<value>Turn speed</value>
 	</entry>
 	<entry>
-		<key>ASPECT_WILLPOWER</key>
-		<value>Willpower</value>
+		<key>ASPECT_POISONOUS</key>
+		<value>Poisonous</value>
 	</entry>
 	<entry>
 		<key>BUY</key>

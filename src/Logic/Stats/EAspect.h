@@ -11,7 +11,7 @@
 
 namespace Aspects{
     const std::wstring aspectNames[] = { L"", L"level", L"scale", L"radius", L"mass", L"strength", L"speed", L"turnspeed",
-        L"maxhp", L"maxmana", L"manaregen", L"intelligence", L"willpower",
+        L"maxhp", L"maxmana", L"manaregen", L"intelligence", L"poisonous",
         L"physresist", L"fireresist", L"iceresist", L"lightningresist", L"poisonresist"};
 
     const int aspectCount = sizeof(aspectNames)/sizeof(std::wstring);
@@ -34,7 +34,7 @@ enum EAspect { // dodajac nowy aspekt, nalezy poprawic aspectNames
     aMaxMana = 1 << 8,
     aManaRegen = 1 << 9,
     aIntelligence = 1 << 10,
-    aWillpower = 1 << 11,
+    aPoisonous = 1 << 11,
     aPhysResist = 1 << 12,
     aFireResist = 1 << 13,
     aIceResist = 1 << 14,
