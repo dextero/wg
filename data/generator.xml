@@ -83,7 +83,12 @@
         <lair file="data/physicals/lairs/bee-lair.xml" level="90" />
         <lair file="data/physicals/lairs/shaggy-lair.xml" level="90" />
 
-        <monster file="data/physicals/monsters/defs/poisonous-rat.xml" minLevel="1" maxLevel="3" />
+        <monster file="data/physicals/monsters/defs/rat.xml" minLevel="1" maxLevel="3" />
+        <monster file="data/physicals/monsters/defs/gargant.xml" minLevel="1" maxLevel="3" frequency="0.2" />
+		
+        <monster file="data/physicals/monsters/defs/poisonous-rat.xml" minLevel="2" maxLevel="3" />
+
+<!-- -->
         <lair    file="data/physicals/lairs/rat-lair.xml" minlevel="2" maxLevel="3" />
         <monster file="data/physicals/monsters/timberman-with-knife.xml" minLevel="2" maxLevel="5" />
         <monster file="data/physicals/monsters/timberman-with-axe.xml" minLevel="2" maxLevel="5" />

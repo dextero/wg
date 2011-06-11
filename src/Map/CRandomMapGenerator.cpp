@@ -751,20 +751,13 @@ bool CRandomMapGenerator::PlaceMonsters()
 {
     CTimer timer("- monsters: ");
 
-    PhysicalsVector monsters = FilterByType(mPhysicals, "monster");
-
-    std::vector<size_t> filteredOut;
-    for (size_t i = 0; i < monsters.size(); ++i) {
-        fprintf(stderr, "monster: %s, %d, %d\n", monsters[i].file.c_str(), monsters[i].minLevel, monsters[i].maxLevel);
-        if (mDesc.level >= monsters[i].minLevel && mDesc.level <= monsters[i].maxLevel) {
-            mXmlText << "\t<objtype code=\"monster" << StringUtils::ToString(i) << "\" file=\"" << monsters[i].file << "\" />\n";
-            fprintf(stderr, "monster: %s, included\n", monsters[i].file.c_str());
-            filteredOut.push_back(i);
-        }
-    }
-    if (filteredOut.empty()) {
+    PhysicalsVector monsters = FilterByLevel(FilterByType(mPhysicals, "monster"), mDesc.level);
+    if (monsters.empty()) {
         return true;
     }
+
+	std::map<std::string, int> mapPhysicalToObjTypeCode;
+	int objTypesCount = 0;
 
     for (unsigned int i = 0; i < mDesc.monsters; ++i)
     {
@@ -782,10 +775,14 @@ bool CRandomMapGenerator::PlaceMonsters()
         int rot = rand() % 360;                                     // jeszcze obrot do tego
         // skala zadeklarowana w xmlu
 
-        size_t what = filteredOut[gRand.Rnd(filteredOut.size() - 1)];
+        SPhysical monster = ChooseRandomlyRegardingFrequency(monsters);
+		if (mapPhysicalToObjTypeCode.find(monster.file) == mapPhysicalToObjTypeCode.end()) {
+			mapPhysicalToObjTypeCode[monster.file] = objTypesCount;
+            mXmlText << "\t<objtype code=\"monster" << StringUtils::ToString(objTypesCount) << "\" file=\"" << monster.file << "\" />\n";
+			objTypesCount++;
+		}
+		int what = mapPhysicalToObjTypeCode[monster.file]; 
         mXmlText << "\t<obj code=\"monster" << StringUtils::ToString(what) << "\" x=\"" << pos.x + offsetX << "\" y=\"" << pos.y + offsetY << "\" rot=\"" << rot << "\" />\n";
-        
-        fprintf(stderr, "spawned monster %s\n", monsters[what].file.c_str());
     }
 
     return true;

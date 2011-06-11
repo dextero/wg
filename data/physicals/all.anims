@@ -4009,78 +4009,78 @@ core/anim/redbaldy/death
     0.10  "data/physicals/monsters/redbaldy-death-b.png"          448   0  512  64
 }
 
-###################################### baldy
+###################################### gargant
 
-core/anim/baldy/default
+core/anim/gargant/default
 {
-	0.10  "data/physicals/monsters/baldy-move.png"            0   0   64  64
+	0.10  "data/physicals/monsters/gfx/gargant-move.png"            0   0   64  64
 }
 
-core/anim/baldy/move
+core/anim/gargant/move
 {
-    0.10  "data/physicals/monsters/baldy-move.png"            0   0   64  64
-    0.10  "data/physicals/monsters/baldy-move.png"           64   0  128  64
-    0.10  "data/physicals/monsters/baldy-move.png"          128   0  192  64
-    0.10  "data/physicals/monsters/baldy-move.png"          192   0  256  64
-    0.10  "data/physicals/monsters/baldy-move.png"          256   0  320  64
-    0.10  "data/physicals/monsters/baldy-move.png"          320   0  384  64
-    0.10  "data/physicals/monsters/baldy-move.png"          384   0  448  64
-    0.10  "data/physicals/monsters/baldy-move.png"          448   0  512  64
+    0.10  "data/physicals/monsters/gfx/gargant-move.png"            0   0   64  64
+    0.10  "data/physicals/monsters/gfx/gargant-move.png"           64   0  128  64
+    0.10  "data/physicals/monsters/gfx/gargant-move.png"          128   0  192  64
+    0.10  "data/physicals/monsters/gfx/gargant-move.png"          192   0  256  64
+    0.10  "data/physicals/monsters/gfx/gargant-move.png"          256   0  320  64
+    0.10  "data/physicals/monsters/gfx/gargant-move.png"          320   0  384  64
+    0.10  "data/physicals/monsters/gfx/gargant-move.png"          384   0  448  64
+    0.10  "data/physicals/monsters/gfx/gargant-move.png"          448   0  512  64
 }
 
-core/anim/baldy/attack
+core/anim/gargant/attack
 {
-    0.20  "data/physicals/monsters/baldy-attack.png"            0   0   64  64
-    0.20  "data/physicals/monsters/baldy-attack.png"           64   0  128  64
-    0.20  "data/physicals/monsters/baldy-attack.png"          128   0  192  64
-    0.20  "data/physicals/monsters/baldy-attack.png"          192   0  256  64
-    0.20  "data/physicals/monsters/baldy-attack.png"          258   0  320  64
+    0.20  "data/physicals/monsters/gfx/gargant-attack.png"            0   0   64  64
+    0.20  "data/physicals/monsters/gfx/gargant-attack.png"           64   0  128  64
+    0.20  "data/physicals/monsters/gfx/gargant-attack.png"          128   0  192  64
+    0.20  "data/physicals/monsters/gfx/gargant-attack.png"          192   0  256  64
+    0.20  "data/physicals/monsters/gfx/gargant-attack.png"          258   0  320  64
 }
 
-core/anim/baldy-wounded/default
+core/anim/gargant/default/wounded
 {
-	0.10  "data/physicals/monsters/baldy-move-wounded.png"            0   0   64  64
+	0.10  "data/physicals/monsters/gfx/gargant-move-wounded.png"            0   0   64  64
 }
 
-core/anim/baldy-wounded/move
+core/anim/gargant/move/wounded
 {
-    0.10  "data/physicals/monsters/baldy-move-wounded.png"            0   0   64  64
-    0.10  "data/physicals/monsters/baldy-move-wounded.png"           64   0  128  64
-    0.10  "data/physicals/monsters/baldy-move-wounded.png"          128   0  192  64
-    0.10  "data/physicals/monsters/baldy-move-wounded.png"          192   0  256  64
-    0.10  "data/physicals/monsters/baldy-move-wounded.png"          256   0  320  64
-    0.10  "data/physicals/monsters/baldy-move-wounded.png"          320   0  384  64
-    0.10  "data/physicals/monsters/baldy-move-wounded.png"          384   0  448  64
-    0.10  "data/physicals/monsters/baldy-move-wounded.png"          448   0  512  64
+    0.10  "data/physicals/monsters/gfx/gargant-move-wounded.png"            0   0   64  64
+    0.10  "data/physicals/monsters/gfx/gargant-move-wounded.png"           64   0  128  64
+    0.10  "data/physicals/monsters/gfx/gargant-move-wounded.png"          128   0  192  64
+    0.10  "data/physicals/monsters/gfx/gargant-move-wounded.png"          192   0  256  64
+    0.10  "data/physicals/monsters/gfx/gargant-move-wounded.png"          256   0  320  64
+    0.10  "data/physicals/monsters/gfx/gargant-move-wounded.png"          320   0  384  64
+    0.10  "data/physicals/monsters/gfx/gargant-move-wounded.png"          384   0  448  64
+    0.10  "data/physicals/monsters/gfx/gargant-move-wounded.png"          448   0  512  64
 }
 
-core/anim/baldy-wounded/attack
+core/anim/gargant/attack/wounded
 {
-    0.20  "data/physicals/monsters/baldy-attack-wounded.png"            0   0   64  64
-    0.20  "data/physicals/monsters/baldy-attack-wounded.png"           64   0  128  64
-    0.20  "data/physicals/monsters/baldy-attack-wounded.png"          128   0  192  64
-    0.20  "data/physicals/monsters/baldy-attack-wounded.png"          192   0  256  64
-    0.20  "data/physicals/monsters/baldy-attack-wounded.png"          258   0  320  64
+    0.20  "data/physicals/monsters/gfx/gargant-attack-wounded.png"            0   0   64  64
+    0.20  "data/physicals/monsters/gfx/gargant-attack-wounded.png"           64   0  128  64
+    0.20  "data/physicals/monsters/gfx/gargant-attack-wounded.png"          128   0  192  64
+    0.20  "data/physicals/monsters/gfx/gargant-attack-wounded.png"          192   0  256  64
+    0.20  "data/physicals/monsters/gfx/gargant-attack-wounded.png"          258   0  320  64
 }
 
-core/anim/baldy/death
+core/anim/gargant/death
 {
-    0.10  "data/physicals/monsters/baldy-death.png"            0   0   64  64
-    0.10  "data/physicals/monsters/baldy-death.png"           64   0  128  64
-    0.10  "data/physicals/monsters/baldy-death.png"          128   0  192  64
-    0.10  "data/physicals/monsters/baldy-death.png"          192   0  256  64
-    0.10  "data/physicals/monsters/baldy-death.png"          256   0  320  64
-    0.10  "data/physicals/monsters/baldy-death.png"          320   0  384  64
-    0.10  "data/physicals/monsters/baldy-death.png"          384   0  448  64
-    0.10  "data/physicals/monsters/baldy-death.png"          448   0  512  64
-    0.10  "data/physicals/monsters/baldy-death-b.png"            0   0   64  64
-    0.10  "data/physicals/monsters/baldy-death-b.png"           64   0  128  64
-    0.10  "data/physicals/monsters/baldy-death-b.png"          128   0  192  64
-    0.10  "data/physicals/monsters/baldy-death-b.png"          192   0  256  64
-    0.10  "data/physicals/monsters/baldy-death-b.png"          256   0  320  64
-    0.10  "data/physicals/monsters/baldy-death-b.png"          320   0  384  64
-    0.10  "data/physicals/monsters/baldy-death-b.png"          384   0  448  64
-    0.10  "data/physicals/monsters/baldy-death-b.png"          448   0  512  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-0.png"            0   0   64  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-0.png"           64   0  128  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-0.png"          128   0  192  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-0.png"          192   0  256  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-0.png"          256   0  320  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-0.png"          320   0  384  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-0.png"          384   0  448  64
+    2.50  "data/physicals/monsters/gfx/gargant-death-0.png"          448   0  512  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-1.png"            0   0   64  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-1.png"           64   0  128  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-1.png"          128   0  192  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-1.png"          192   0  256  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-1.png"          256   0  320  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-1.png"          320   0  384  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-1.png"          384   0  448  64
+    0.10  "data/physicals/monsters/gfx/gargant-death-1.png"          448   0  512  64
 }
 
 ###################################### redhorny

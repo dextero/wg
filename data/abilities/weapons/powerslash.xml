@@ -17,9 +17,19 @@
     </effect>
   </effect>
 
-  <self-effect type="graphical-effect">
-    <name value="magic-circle-2"/>
-    <time value="0.35"/>
+  <self-effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/EL/whoosh-punch01.ogg" />
+      <name value="data/sounds/EL/whoosh-punch02.ogg" />
+      <name value="data/sounds/EL/whoosh-punch03.ogg" />
+      <name value="data/sounds/EL/whoosh-punch04.ogg" />
+      <name value="data/sounds/EL/whoosh-punch05.ogg" />
+      <name value="data/sounds/EL/whoosh-punch06.ogg" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.35"/>
+    </effect>
   </self-effect>  
   
   <range value="1.2" />
