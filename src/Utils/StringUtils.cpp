@@ -304,7 +304,9 @@ std::string FloatToString(float num, unsigned precision)
     std::ostringstream streamOut;
     streamOut.precision(precision);
     streamOut << std::fixed << num;
-    return streamOut.str();
+    std::string ret = streamOut.str();
+    size_t lastNonZero = ret.find_last_not_of(".0") + 1;
+    return ret.substr(0, std::max(lastNonZero ? lastNonZero : 1, ret.size() - precision - 1));
 }
 
 std::wstring FloatToWString(float num, unsigned precision)
@@ -312,7 +314,9 @@ std::wstring FloatToWString(float num, unsigned precision)
     std::wostringstream streamOut;
     streamOut.precision(precision);
     streamOut << std::fixed << num;
-    return streamOut.str();
+    std::wstring ret = streamOut.str();
+    size_t lastNonZero = ret.find_last_not_of(L".0") + 1;
+    return ret.substr(0, std::max(lastNonZero ? lastNonZero : 1, ret.size() - precision - 1));
 }
 
 } // namespace StringUtils

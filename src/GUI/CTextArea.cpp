@@ -3,6 +3,7 @@
 #include "../Rendering/CDrawableManager.h"
 #include "../Rendering/CHudSprite.h"
 #include "../Rendering/CHudStaticText.h"
+#include "../Rendering/CMultiColorString.h"
 #include "../ResourceManager/CResourceManager.h"
 #include "../CGameOptions.h"
 #include "../ResourceManager/CImage.h"
@@ -112,6 +113,11 @@ void CTextArea::UpdateText()
 sf::String *CTextArea::GetSFString()
 {
     return mTextSprite->GetSFString();
+}
+
+const std::wstring CTextArea::GetNextColorString(sf::Color col)
+{
+    return CMultiColorString::NextColor(col);
 }
 
 CTextArea::CTextArea(const std::string &name, GUI::CGUIObject *parent, unsigned zindex) :

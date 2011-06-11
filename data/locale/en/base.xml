@@ -538,11 +538,11 @@ Anonim, borys94, BrutalComputer, ciVis, Fiolek, Kenji-dev, mt-z, pawlaks1, rzuf,
 	</entry>
 	<entry>
 		<key>CURRENT_ITEM_POWER</key>
-		<value>Current power: </value>
+		<value>Current bonus: </value>
 	</entry>
 	<entry>
 		<key>ITEM_POWER_AFTER_UPGRADE</key>
-		<value>Power after upgrading abilities:</value>
+		<value>Bonus after upgrading abilities:</value>
 	</entry>
 	<entry>
 		<key>ITEM_LEVEL</key>

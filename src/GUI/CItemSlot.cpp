@@ -208,15 +208,47 @@ void CItemSlot::UpdateTooltipText(const std::string& abiName)
         tooltipText += L"\n\n" + gLocalizator.GetText("CURRENT_ITEM_POWER");
 
         CPlayer* player = gPlayerManager.GetPlayerByNumber(mPlayer);
-        if (player)
-            tooltipText += StringUtils::FloatToWString(player->GetAbilityPower(abi), PRECISION);
 
-        tooltipText += L"\n\n" + gLocalizator.GetText("ITEM_POWER_AFTER_UPGRADE") + L"\n";
+        if (!player)
+            tooltipText += L"\n\nError, player not set :(";
+        else
+        {
+            float currPower = player->GetAbilityPower(abi);
+            float bestPower = currPower;
         
-        std::vector<CAbility*> abis = player->GetExportedAbilities();
-        for (size_t i = 0 ; i < abis.size(); ++i)
-            tooltipText += abis[i]->name + L": "
-                        + StringUtils::FloatToWString(player->GetAbilityPowerAtNextLevelOfOther(abi, abis[i]), PRECISION) + L"\n";
+            std::vector<CAbility*> abis = player->GetExportedAbilities();
+            std::vector<float> powerAfterUpgrade;
+
+            for (size_t i = 0; i < abis.size(); ++i)
+
+            tooltipText += StringUtils::FloatToWString(currPower, PRECISION);
+            tooltipText += L"\n\n" + gLocalizator.GetText("ITEM_POWER_AFTER_UPGRADE") + L"\n";
+            
+            for (size_t i = 0 ; i < abis.size(); ++i)
+            {
+                float upgradedPower = player->GetAbilityPowerAtNextLevelOfOther(abi, abis[i]);
+                powerAfterUpgrade.push_back(upgradedPower);
+                if (bestPower < upgradedPower)
+                    bestPower = upgradedPower;
+            }
+
+            for (size_t i = 0; i < abis.size(); ++i)
+            {
+                tooltipText += abis[i]->name + L": ";
+                if (powerAfterUpgrade[i] == bestPower)
+                    tooltipText += CTextArea::GetNextColorString(sf::Color::Green)
+                                + StringUtils::FloatToWString(powerAfterUpgrade[i], PRECISION)
+                                + CTextArea::GetNextColorString(sf::Color::White);
+                else if (powerAfterUpgrade[i] < currPower)
+                    tooltipText += CTextArea::GetNextColorString(sf::Color::Red)
+                                + StringUtils::FloatToWString(powerAfterUpgrade[i], PRECISION)
+                                + CTextArea::GetNextColorString(sf::Color::White);
+                else
+                    tooltipText += StringUtils::FloatToWString(powerAfterUpgrade[i], PRECISION);
+
+                tooltipText += L"\n";
+            }
+        }
     }
     else
         tooltipText = gLocalizator.GetText("SLOT_EMPTY");

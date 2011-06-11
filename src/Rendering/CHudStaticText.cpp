@@ -5,6 +5,7 @@
 #include "../ResourceManager/CResourceManager.h"
 #include "../ResourceManager/CFont.h"
 #include "../Utils/StringUtils.h"
+#include "CMultiColorString.h"
 
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/Graphics/String.hpp>
@@ -24,7 +25,7 @@ CHudStaticText::CHudStaticText() :
 	mClipRectEnabled( false )
 {
     memset(mClipRect, 0, 4 * sizeof(int));
-    mSFString = new sf::String();
+    mSFString = new CMultiColorString();
 }
 
 CHudStaticText::~CHudStaticText()
@@ -54,6 +55,11 @@ void CHudStaticText::Draw( sf::RenderWindow* renderWindow ) {
 }
 
 sf::String* CHudStaticText::GetSFString()
+{
+    return mSFString;
+}
+
+CMultiColorString* CHudStaticText::GetMultiColorString()
 {
     return mSFString;
 }
