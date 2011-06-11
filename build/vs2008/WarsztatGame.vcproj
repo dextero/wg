@@ -2153,6 +2153,14 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\src\Rendering\CMultiColorString.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Rendering\CMultiColorString.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\src\Rendering\CWGSprite.cpp"
 					>
 				</File>

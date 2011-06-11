@@ -31,6 +31,8 @@ namespace GUI
 		inline std::wstring GetText()			{ return mText; }
 		inline float		GetTotalFontSize()	{ return mFontSize[UNIT_PERCENT] * mInternalRect.GetHeight() + mFontSize[UNIT_PIXEL]; }
         sf::String *		GetSFString();
+
+        static const std::wstring GetNextColorString(sf::Color col);
 	private:
 		CTextArea( const std::string& name, CGUIObject* parent, unsigned zindex );
 		virtual ~CTextArea();

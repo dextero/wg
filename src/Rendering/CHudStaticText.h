@@ -15,6 +15,8 @@ namespace sf{
     class RenderWindow;
 }
 
+class CMultiColorString;
+
 class CHudStaticText : public IDrawable
 {
 public:
@@ -23,6 +25,7 @@ public:
     virtual void Draw( sf::RenderWindow* renderWindow );
 
     sf::String* GetSFString();
+    CMultiColorString* GetMultiColorString();
 
 	/* Co prawda mozna ustawiac czcionke i pozycje bezposrednio w obiekcie sf::String
 	 * ale ponizsze funkcje maja na celu upiekszenie wyswietlanego tekstu */
@@ -35,7 +38,7 @@ public:
 	void SetClipRect( const sf::FloatRect& rect ); 
 
 private:
-    sf::String* mSFString;
+    CMultiColorString* mSFString;
 
 	std::string mFont;
 	unsigned mFontSize;
