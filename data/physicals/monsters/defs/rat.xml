@@ -4,16 +4,12 @@
     <name value="Rat" />
     <desc value="The overgrown rat, or rather rats - it's rare to find only one of these - are weak, but many. Use area-of-effect spells to get rid of any pesky horde." />
   </bestiary>
-
   <genre>rat</genre>
+
+  <maxhp min="4.0" max="5.0" />
   <speed min="1.5" max="2.2" />
   <turnspeed min="240.0" max="240.0" />
   <strength min="1.0" max="3.0" />
-  <!--  <fireresist min="10.0" max="10.0" />-->
-
-  <maxhp min="4.0" max="5.0" />
-  <maxmana min="0.0" max="0.0" />
-
   <xp min="3.0" max="4.0" />
 
   <scale min="0.5" max="0.8" />
