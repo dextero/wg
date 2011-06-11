@@ -1,0 +1,44 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="Gargant" />
+    <anim value="core/anim/gargant/default" />
+    <desc value="Gargants have a decidedly mixed reputation. First off, they average about five feet tall, have pale grey skin, and save the fine, luxuriant hair on their heads they have little or no body hair. Despite their unsettling near-savagery they have a disarming charm which almost offsets their strange appearance. Almost. Gargants are thin and wiry, small and compact but very tough for their size." />
+  </bestiary>
+  <genre>gargant</genre>
+
+  <maxhp min="10.0" max="14.0" />
+  <speed min="1.6" max="1.8" />
+  <turnspeed min="90.0" max="120.0" />
+  <strength min="4.0" max="8.0" />
+  <xp min="6.0" max="7.0" />
+
+  <radius min="0.3" max="0.4" />
+  <mass min="3.0" max="3.0" />
+  <scale min="0.7" max="0.9" />
+  <shadow-offset min="0.12" max="0.12" />
+
+  <animset>
+    <anim name="core/anim/gargant/default" type="default" />
+    <anim name="core/anim/gargant/move" type="move" />
+    <anim name="core/anim/gargant/attack" type="attack" />
+    <anim name="core/anim/gargant/death" type="death" />
+  </animset>
+  <animset>
+    <anim name="core/anim/gargant/default/wounded" type="default" />
+    <anim name="core/anim/gargant/move/wounded" type="move" />
+    <anim name="core/anim/gargant/attack/wounded" type="attack" />
+    <anim name="core/anim/gargant/death" type="death" />
+  </animset>
+
+  <ai name="boid-chaser" />
+
+  <ability name="data/abilities/monsters/melee-with-swing.xml" default="1" />
+
+  <sound type="attack" filename="data/sounds/EL/wolf_attack01.ogg" />
+  <sound type="attack" filename="data/sounds/EL/wolf_attack02.ogg" />
+  <sound type="spawn" filename="data/sounds/EL/wolf_attack03.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/wolf_yelp.ogg" />
+  <sound type="death" filename="data/sounds/EL/wolf_yelp.ogg" />
+
+</root>

@@ -1,0 +1,53 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="Timberman" />
+    <desc value="This timberman tries to chop the player to pieces, since the development team didn't code NPCs into the game. Maybe one day he'll be able to give us a quest?" />
+  </bestiary>
+  <genre>timberman</genre>
+
+  <maxhp min="10.0" max="15.0" />
+  <speed min="1.3" max="1.5" />
+  <turnspeed min="90.0" max="120.0" />
+  <strength min="8.0" max="10.0" />
+  <xp min="7.0" max="9.0" />
+
+  <radius min="0.425" max="0.5" />
+  <mass min="3.0" max="3.0" />
+  <scale min="0.95" max="1.0" />
+  <shadow-offset min="0.12" max="0.12" />
+
+  <anim name="core/anim/timberman/default" type="default" />
+  <anim name="core/anim/timberman/move" type="move" />
+  <anim name="core/anim/timberman/attack" type="attack" />
+  <anim name="core/anim/timberman/death" type="death" />
+
+  <ai name="melee-chaser" />
+
+  <ability name="data/abilities/monsters/melee-with-swing.xml" default="1" />
+  <ability name="data/abilities/monsters/throwing-axe.xml" />
+
+  <sound type="damaged" filename="data/sounds/EL/pain-male01.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/pain-male02.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/pain-male04.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/pain-male05.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/pain-male06.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain1.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain2.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain3.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain4.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain5.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain6.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain7.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain8.ogg" />
+  <sound type="damaged" filename="data/sounds/0AD/Pain9.ogg" />
+  <sound type="death" filename="data/sounds/EL/pain-male03.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_11.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_13.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_14.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_15.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_16.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_17.ogg" />
+  <sound type="death" filename="data/sounds/0AD/death_18.ogg" />
+
+</root>

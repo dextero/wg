@@ -96,6 +96,7 @@
   <sound path="data/sounds/Lugaro/growl2.ogg" groups="monster" />
   <sound path="data/sounds/Lugaro/hawk.ogg" groups="monster" />
   <sound path="data/sounds/Lugaro/knifedraw.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/knifesheathe.ogg" groups="monster" />
   <sound path="data/sounds/Lugaro/knifeslice.ogg" groups="monster" />
   <sound path="data/sounds/Lugaro/knifeswish.ogg" groups="monster" />
   <sound path="data/sounds/Lugaro/Rabbitattack.ogg" groups="monster" />

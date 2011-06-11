@@ -2069,86 +2069,86 @@ core/anim/gate/closed
 	0.10 "data/maps/doodahs/ancient/blocks-hole.png"	0	0	128	128
 }
 
-core/anim/timberman_4/default
+core/anim/bandit/default
 {
-    0.10  "data/physicals/monsters/timberman_4.png"                  0   0   64  64
+    0.10  "data/physicals/monsters/gfx/bandit-move.png"                  0   0   64  64
 }
 
-core/anim/timberman_4/move
+core/anim/bandit/move
 {
-    0.10  "data/physicals/monsters/timberman_4.png"                  0   0   64  64
-    0.10  "data/physicals/monsters/timberman_4.png"                 64   0  128  64
-    0.10  "data/physicals/monsters/timberman_4.png"                128   0  192  64
-    0.10  "data/physicals/monsters/timberman_4.png"                192   0  256  64
-    0.10  "data/physicals/monsters/timberman_4.png"                256   0  320  64
-    0.10  "data/physicals/monsters/timberman_4.png"                320   0  384  64
-    0.10  "data/physicals/monsters/timberman_4.png"                384   0  448  64
-    0.10  "data/physicals/monsters/timberman_4.png"                448   0  512  64
+    0.10  "data/physicals/monsters/gfx/bandit-move.png"                  0   0   64  64
+    0.10  "data/physicals/monsters/gfx/bandit-move.png"                 64   0  128  64
+    0.10  "data/physicals/monsters/gfx/bandit-move.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/bandit-move.png"                192   0  256  64
+    0.10  "data/physicals/monsters/gfx/bandit-move.png"                256   0  320  64
+    0.10  "data/physicals/monsters/gfx/bandit-move.png"                320   0  384  64
+    0.10  "data/physicals/monsters/gfx/bandit-move.png"                384   0  448  64
+    0.10  "data/physicals/monsters/gfx/bandit-move.png"                448   0  512  64
 }
 
-core/anim/timberman_4/attack
+core/anim/bandit/attack
 {
-    0.10  "data/physicals/monsters/timberman_4_attack.png"                  0   0   64  64
-    0.10  "data/physicals/monsters/timberman_4_attack.png"                 64   0  128  64
-    0.10  "data/physicals/monsters/timberman_4_attack.png"                128   0  192  64
-    0.10  "data/physicals/monsters/timberman_4_attack.png"                192   0  256  64
-    0.10  "data/physicals/monsters/timberman_4_attack.png"                256   0  320  64
-    0.10  "data/physicals/monsters/timberman_4_attack.png"                320   0  384  64
-    0.10  "data/physicals/monsters/timberman_4_attack.png"                384   0  448  64
-    0.10  "data/physicals/monsters/timberman_4_attack.png"                448   0  512  64
+    0.10  "data/physicals/monsters/gfx/bandit-attack.png"                  0   0   64  64
+    0.10  "data/physicals/monsters/gfx/bandit-attack.png"                 64   0  128  64
+    0.10  "data/physicals/monsters/gfx/bandit-attack.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/bandit-attack.png"                192   0  256  64
+    0.10  "data/physicals/monsters/gfx/bandit-attack.png"                256   0  320  64
+    0.10  "data/physicals/monsters/gfx/bandit-attack.png"                320   0  384  64
+    0.10  "data/physicals/monsters/gfx/bandit-attack.png"                384   0  448  64
+    0.10  "data/physicals/monsters/gfx/bandit-attack.png"                448   0  512  64
 }
 
-core/anim/timberman_4/death
+core/anim/bandit/death
 {
-    0.10  "data/physicals/monsters/timberman_4_death.png"                  0   0   64  64
-    0.10  "data/physicals/monsters/timberman_4_death.png"                 64   0  128  64
-    0.10  "data/physicals/monsters/timberman_4_death.png"                128   0  192  64
-    0.10  "data/physicals/monsters/timberman_4_death.png"                192   0  256  64
-    0.10  "data/physicals/monsters/timberman_4_death.png"                256   0  320  64
-    0.10  "data/physicals/monsters/timberman_4_death.png"                320   0  384  64
-    0.10  "data/physicals/monsters/timberman_4_death.png"                384   0  448  64
-    0.10  "data/physicals/monsters/timberman_4_death.png"                448   0  512  64
+    0.10  "data/physicals/monsters/gfx/bandit-death.png"                  0   0   64  64
+    0.10  "data/physicals/monsters/gfx/bandit-death.png"                 64   0  128  64
+    0.10  "data/physicals/monsters/gfx/bandit-death.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/bandit-death.png"                192   0  256  64
+    0.10  "data/physicals/monsters/gfx/bandit-death.png"                256   0  320  64
+    2.50  "data/physicals/monsters/gfx/bandit-death.png"                320   0  384  64
+    0.10  "data/physicals/monsters/gfx/bandit-death.png"                384   0  448  64
+    0.10  "data/physicals/monsters/gfx/bandit-death.png"                448   0  512  64
 }
 
-core/anim/evil_timberman/default
+core/anim/timberman/default
 {
-    0.10  "data/physicals/monsters/evil_timberman.png"                  0   0   64  64
+    0.10  "data/physicals/monsters/gfx/timberman-move.png"                  0   0   64  64
 }
 
-core/anim/evil_timberman/move
+core/anim/timberman/move
 {
-    0.10  "data/physicals/monsters/evil_timberman.png"                  0   0   64  64
-    0.10  "data/physicals/monsters/evil_timberman.png"                 64   0  128  64
-    0.10  "data/physicals/monsters/evil_timberman.png"                128   0  192  64
-    0.10  "data/physicals/monsters/evil_timberman.png"                192   0  256  64
-    0.10  "data/physicals/monsters/evil_timberman.png"                256   0  320  64
-    0.10  "data/physicals/monsters/evil_timberman.png"                320   0  384  64
-    0.10  "data/physicals/monsters/evil_timberman.png"                384   0  448  64
-    0.10  "data/physicals/monsters/evil_timberman.png"                448   0  512  64
+    0.10  "data/physicals/monsters/gfx/timberman-move.png"                  0   0   64  64
+    0.10  "data/physicals/monsters/gfx/timberman-move.png"                 64   0  128  64
+    0.10  "data/physicals/monsters/gfx/timberman-move.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/timberman-move.png"                192   0  256  64
+    0.10  "data/physicals/monsters/gfx/timberman-move.png"                256   0  320  64
+    0.10  "data/physicals/monsters/gfx/timberman-move.png"                320   0  384  64
+    0.10  "data/physicals/monsters/gfx/timberman-move.png"                384   0  448  64
+    0.10  "data/physicals/monsters/gfx/timberman-move.png"                448   0  512  64
 }
 
-core/anim/evil_timberman/attack
+core/anim/timberman/attack
 {
-    0.10  "data/physicals/monsters/evil_timberman_attack.png"                  0   0   64  64
-    0.10  "data/physicals/monsters/evil_timberman_attack.png"                 64   0  128  64
-    0.10  "data/physicals/monsters/evil_timberman_attack.png"                128   0  192  64
-    0.10  "data/physicals/monsters/evil_timberman_attack.png"                192   0  256  64
-    0.10  "data/physicals/monsters/evil_timberman_attack.png"                256   0  320  64
-    0.10  "data/physicals/monsters/evil_timberman_attack.png"                320   0  384  64
-    0.10  "data/physicals/monsters/evil_timberman_attack.png"                384   0  448  64
-    0.10  "data/physicals/monsters/evil_timberman_attack.png"                448   0  512  64
+    0.10  "data/physicals/monsters/gfx/timberman-attack.png"                  0   0   64  64
+    0.10  "data/physicals/monsters/gfx/timberman-attack.png"                 64   0  128  64
+    0.10  "data/physicals/monsters/gfx/timberman-attack.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/timberman-attack.png"                192   0  256  64
+    0.10  "data/physicals/monsters/gfx/timberman-attack.png"                256   0  320  64
+    0.10  "data/physicals/monsters/gfx/timberman-attack.png"                320   0  384  64
+    0.10  "data/physicals/monsters/gfx/timberman-attack.png"                384   0  448  64
+    0.10  "data/physicals/monsters/gfx/timberman-attack.png"                448   0  512  64
 }
 
-core/anim/evil_timberman/death
+core/anim/timberman/death
 {
-    0.10  "data/physicals/monsters/evil_timberman_die.png"                  0   0   64  64
-    0.10  "data/physicals/monsters/evil_timberman_die.png"                 64   0  128  64
-    0.10  "data/physicals/monsters/evil_timberman_die.png"                128   0  192  64
-    0.10  "data/physicals/monsters/evil_timberman_die.png"                192   0  256  64
-    0.10  "data/physicals/monsters/evil_timberman_die.png"                256   0  320  64
-    5.10  "data/physicals/monsters/evil_timberman_die.png"                320   0  384  64
-    0.10  "data/physicals/monsters/evil_timberman_die.png"                384   0  448  64
-    0.10  "data/physicals/monsters/evil_timberman_die.png"                448   0  512  64
+    0.10  "data/physicals/monsters/gfx/timberman-death.png"                  0   0   64  64
+    0.10  "data/physicals/monsters/gfx/timberman-death.png"                 64   0  128  64
+    0.10  "data/physicals/monsters/gfx/timberman-death.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/timberman-death.png"                192   0  256  64
+    0.10  "data/physicals/monsters/gfx/timberman-death.png"                256   0  320  64
+    0.10  "data/physicals/monsters/gfx/timberman-death.png"                320   0  384  64
+    0.10  "data/physicals/monsters/gfx/timberman-death.png"                384   0  448  64
+    2.50  "data/physicals/monsters/gfx/timberman-death.png"                448   0  512  64
 }
 
 #########
