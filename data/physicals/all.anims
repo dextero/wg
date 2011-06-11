@@ -463,65 +463,53 @@ core/anim/ogre-wife/attack
 }
 
 
-core/anim/chityniak/default
+core/anim/chitiniac/default
 {
-    0.10  "data/physicals/monsters/chityniak-stoi.png"                128   0  192  64
-    0.10  "data/physicals/monsters/chityniak-stoi.png"                192   0  256  64
-    0.10  "data/physicals/monsters/chityniak-stoi.png"                256   0  320  64
-    0.10  "data/physicals/monsters/chityniak-stoi.png"                320   0  384  64
-    0.10  "data/physicals/monsters/chityniak-stoi.png"                384   0  448  64
-    0.10  "data/physicals/monsters/chityniak-stoi.png"                448   0  512  64
-    0.10  "data/physicals/monsters/chityniak-stoi.png"                  0   0   64  64
-    0.10  "data/physicals/monsters/chityniak-stoi.png"                64   0  128  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-idle.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-idle.png"                192   0  256  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-idle.png"                256   0  320  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-idle.png"                320   0  384  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-idle.png"                384   0  448  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-idle.png"                448   0  512  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-idle.png"                  0   0   64  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-idle.png"                 64   0  128  64
 }
 
-core/anim/chityniak/move
+core/anim/chitiniac/move
 {
-    0.10  "data/physicals/monsters/chityniak-ruch.png"                128   0  192  64
-    0.10  "data/physicals/monsters/chityniak-ruch.png"                192   0  256  64
-    0.10  "data/physicals/monsters/chityniak-ruch.png"                256   0  320  64
-    0.10  "data/physicals/monsters/chityniak-ruch.png"                320   0  384  64
-    0.10  "data/physicals/monsters/chityniak-ruch.png"                384   0  448  64
-    0.10  "data/physicals/monsters/chityniak-ruch.png"                448   0  512  64
-    0.10  "data/physicals/monsters/chityniak-ruch.png"                  0   0   64  64
-    0.10  "data/physicals/monsters/chityniak-ruch.png"                64   0  128  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-move.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-move.png"                192   0  256  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-move.png"                256   0  320  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-move.png"                320   0  384  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-move.png"                384   0  448  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-move.png"                448   0  512  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-move.png"                  0   0   64  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-move.png"                 64   0  128  64
 }
 
-core/anim/chityniak/death
+core/anim/chitiniac/death
 {
-    0.15  "data/physicals/monsters/chityniak-death.png"                0	0  64  64
-    0.15  "data/physicals/monsters/chityniak-death.png"                64   0  128  64
-    0.15  "data/physicals/monsters/chityniak-death.png"                128   0  192  64
-    0.15  "data/physicals/monsters/chityniak-death.png"                192 0  256  64
-    5.15  "data/physicals/monsters/chityniak-death.png"                0	64  64  128
-    0.20  "data/physicals/monsters/chityniak-death.png"                64   64 128  128
-    2.20  "data/physicals/monsters/chityniak-death.png"                128   64  192  128
-    1.50  "data/physicals/monsters/chityniak-death.png"                192 64  256  128
+    0.10  "data/physicals/monsters/gfx/chitiniac-death.png"                0	0  64   64
+    0.10  "data/physicals/monsters/gfx/chitiniac-death.png"                64   0  128  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-death.png"                128  0  192  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-death.png"                192  0  256  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-death.png"                0   64  64  128
+    0.10  "data/physicals/monsters/gfx/chitiniac-death.png"                64  64  128  128
+    0.10  "data/physicals/monsters/gfx/chitiniac-death.png"                128 64  192  128
+    2.50  "data/physicals/monsters/gfx/chitiniac-death.png"                192 64  256  128
 }
 
-core/anim/chityniak/attack
+core/anim/chitiniac/attack
 {
-    0.10  "data/physicals/monsters/chityniak-atak1.png"                  0   0   64  64
-    0.10  "data/physicals/monsters/chityniak-atak1.png"                64   0  128  64
-    0.10  "data/physicals/monsters/chityniak-atak1.png"                128   0  192  64
-    0.10  "data/physicals/monsters/chityniak-atak1.png"                192   0  256  64
-    0.10  "data/physicals/monsters/chityniak-atak1.png"                256   0  320  64
-    0.10  "data/physicals/monsters/chityniak-atak1.png"                320   0  384  64
-    0.10  "data/physicals/monsters/chityniak-atak1.png"                384   0  448  64
-    0.10  "data/physicals/monsters/chityniak-atak1.png"                448   0  512  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-attack.png"                  0   0   64  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-attack.png"                 64   0  128  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-attack.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-attack.png"                192   0  256  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-attack.png"                256   0  320  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-attack.png"                320   0  384  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-attack.png"                384   0  448  64
+    0.10  "data/physicals/monsters/gfx/chitiniac-attack.png"                448   0  512  64
 }
-
-#core/anim/chityniak/attack2
-#{
-#    0.10  "data/physicals/chityniak-atak2.png"                  0   0   64  64
-#   0.10  "data/physicals/chityniak-atak2.png"                64   0  128  64
-#    0.10  "data/physicals/chityniak-atak2.png"                128   0  192  64
-#    0.10  "data/physicals/chityniak-atak2.png"                192   0  256  64
-#    0.10  "data/physicals/chityniak-atak2.png"                256   0  320  64
-#    0.10  "data/physicals/chityniak-atak2.png"                320   0  384  64
-#    0.10  "data/physicals/chityniak-atak2.png"                384   0  448  64
-#    0.10  "data/physicals/chityniak-atak2.png"                448   0  512  64
-#}
 
 core/anim/huge-lair/default
 {
