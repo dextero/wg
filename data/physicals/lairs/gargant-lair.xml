@@ -1,0 +1,23 @@
+<root type="lair">
+  
+  <genre>gargant-lair</genre>
+
+  <spawnLimit min="3" max="5" />
+  <spawnRate min="0.2" max="0.3" />
+  <spawnPosition x="0.0f" y="0.0f" />
+  <spawnSound filename="data/sounds/EL/imp01.ogg" />
+  <grouping-hint>1</grouping-hint>
+  
+  <maxhp min="160.0" max="180.0" />  
+  <xp min="76.0" max="84.0" />
+
+  <radius min="0.45" max="0.5" />
+  <scale min="0.9" max="1.0" />
+
+  <anim name="test/anim/lair/default" type="default" />
+  <anim name="test/anim/lair/spawn" type="attack" />
+  <anim name="test/anim/lair/death" type="death" />
+  
+  <monster filename="data/physicals/monsters/defs/gargant.xml" />
+
+</root>

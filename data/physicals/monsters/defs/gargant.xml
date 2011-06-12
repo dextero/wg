@@ -2,16 +2,16 @@
 
   <bestiary>
     <name value="Gargant" />
-    <anim value="core/anim/gargant/default" />
     <desc value="Gargants have a decidedly mixed reputation. First off, they average about five feet tall, have pale grey skin, and save the fine, luxuriant hair on their heads they have little or no body hair. Despite their unsettling near-savagery they have a disarming charm which almost offsets their strange appearance. Almost. Gargants are thin and wiry, small and compact but very tough for their size." />
   </bestiary>
   <genre>gargant</genre>
 
-  <maxhp min="30.0" max="34.0" />
+  <maxhp min="39.0" max="45.0" />
   <speed min="1.4" max="1.6" />
   <turnspeed min="90.0" max="120.0" />
-  <strength min="4.0" max="8.0" />
-  <xp min="14.0" max="15.0" />
+  <strength min="4.0" max="6.0" />
+  <iceresist min="4.0" max="6.0" />
+  <xp min="17.0" max="18.0" />
 
   <radius min="0.3" max="0.4" />
   <mass min="3.0" max="3.0" />

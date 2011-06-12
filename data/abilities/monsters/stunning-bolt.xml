@@ -1,0 +1,95 @@
+<root type="ability" class="bullet">
+
+  <explosion type="list">
+    <effect type="sound">
+      <name value="data/sounds/sparks.ogg" /> 
+    </effect>
+    <effect type="graphical-effect">
+      <name value="shield" />
+      <time calc="0.1"/>
+    </effect>
+  </explosion>
+  
+  <effect type="list">
+    <effect type="graphical-effect">
+      <name value="shield" />
+      <time calc="0.1"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="shield" />
+      <time calc="0.1"/>
+    </effect>
+    <effect type="damage">
+      <damage-type value="lightning"/>
+      <amount calc="1 * intelligence" />
+    </effect>
+    <effect type="knockback">
+      <amount calc="1.0"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="stars" />
+      <time calc="1.25"/>
+    </effect>
+    <effect type="non-cumulative">
+      <effect type="timed">
+        <time calc="0.8"/>
+        <effect type="stun" />
+      </effect>
+    </effect>
+    <effect type="non-cumulative">
+      <effect type="timed">
+        <time calc="1.25"/>
+        <effect type="modify">    
+          <aspect value="speed" />
+          <amount value="0.5" />
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <self-effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/fireend.ogg" /> 
+    </effect>
+  </self-effect>
+
+  <cast-time-effect type="list"> 
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.65"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="shield"/>
+      <time value="0.4"/>
+    </effect>
+    <effect type="modify">    
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </cast-time-effect>
+  <delay-effect type="list"> 
+    <effect type="modify">    
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </delay-effect>
+  
+  <range calc="12.0" />
+  <speed calc="5.0" />
+  <acceleration value="3.0" />
+  <width calc="10" />
+  
+  <bullet value="data/physicals/bullets/wizzing-missile.xml" />
+  <filter value="player,wall"/>
+  <explode-on-fade value="1" />
+
+  <manacost value="1" />
+  <casttime calc="0.4"/>
+  <delay calc="0.0" />
+  <cooldown calc="0.0"/>
+    
+  <ai-hint>
+    <player-distance>6.0</player-distance>
+    <player-angle>7.0</player-angle>
+  </ai-hint>
+</root>

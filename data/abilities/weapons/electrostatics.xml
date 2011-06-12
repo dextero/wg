@@ -9,44 +9,55 @@
   <power calc="0.2 * dot(3, choleric, 2, melancholic, 4, sanguine, 1, phlegmatic)"/>
 
   <explosion type="list">
+    <effect type="sound">
+      <name value="data/sounds/sparks.ogg" /> 
+    </effect>
     <effect type="graphical-effect">
-      <name value="stars" />
-      <time calc="0.5"/>
+      <name value="shield" />
+      <time calc="0.1"/>
     </effect>
   </explosion>
   
   <effect type="list">
+    <effect type="graphical-effect">
+      <name value="shield" />
+      <time calc="0.1"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="shield" />
+      <time calc="0.1"/>
+    </effect>
     <effect type="damage">
       <damage-type value="lightning"/>
       <amount calc="7.0 * (1 + power)"/>
     </effect>
     <effect type="chance">
-	  <chance calc="0.01 * power"/>
+      <chance calc="0.01 * power"/>
       <effect type="non-cumulative">
         <effect type="timed">
-		<time calc="0.5"/>
+        <time calc="0.5"/>
           <effect type="stun" />
-		</effect>
-	  </effect>
-	</effect>
+        </effect>
+      </effect>
+    </effect>
 
-	<effect type="retarget">
-	  <target-chooser>
-	    <filter value="hostiles" />
-		<range calc="1.0" />
-		<angle value="360.0" />
-		<aim-at-ground value="1"/>
-		<count calc="4 + (0.1 * power)" />
-	  </target-chooser>
-	  <effect type="list">
-	    <effect type="linked-graphical-effect">
+    <effect type="retarget">
+      <target-chooser>
+        <filter value="hostiles" />
+        <range calc="1.0" />
+        <angle value="360.0" />
+        <aim-at-ground value="1"/>
+        <count calc="4 + (0.1 * power)" />
+      </target-chooser>
+      <effect type="list">
+        <effect type="linked-graphical-effect">
           <name value="straight-lightning" />
-		  <time value="0.3" />
-		</effect>
-		<effect type="damage">
-	      <damage-type value="lightning"/>
-		  <amount calc="4.0 * (1 + power)" />
-		</effect>
+          <time value="0.3" />
+        </effect>
+        <effect type="damage">
+          <damage-type value="lightning"/>
+          <amount calc="4.0 * (1 + power)" />
+        </effect>
       </effect>
     </effect>
   </effect>

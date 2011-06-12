@@ -9,7 +9,7 @@
   <grouping-hint>3</grouping-hint>
   
   <maxhp min="25.0" max="30.0" />
-  <xp min="20.0" max="25.0" />
+  <xp min="15.0" max="20.0" />
 
   <radius min="0.25" max="0.25" />
   <scale min="0.5" max="0.5" />

@@ -1,0 +1,48 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="Gargant lord" />
+    <desc value="Similar to the first gargant fought, the Gargant Lord is very fast and can hit hard. Highly intelligent with arcane spell knowledge." />
+  </bestiary>
+  <genre>gargant-lord</genre>
+
+  <maxhp min="55.0" max="69.0" />
+  <speed min="1.5" max="1.7" />
+  <turnspeed min="95.0" max="125.0" />
+  <strength min="6.0" max="8.0" />
+  <intelligence min="6.0" max="8.0" />
+  <iceresist min="4.0" max="6.0" />
+  <maxmana min="1.0" max="3.0" />
+  <manaregen min="0.20" max="0.20" />
+  <xp min="25.0" max="28.0" />
+
+  <radius min="0.35" max="0.425" />
+  <mass min="3.0" max="3.5" />
+  <scale min="0.8" max="0.95" />
+  <shadow-offset min="0.12" max="0.12" />
+
+  <animset>
+    <anim name="core/anim/gargant/lord/default" type="default" />
+    <anim name="core/anim/gargant/lord/move" type="move" />
+    <anim name="core/anim/gargant/lord/attack" type="attack" />
+    <anim name="core/anim/gargant/lord/death" type="death" />
+  </animset>
+  <animset>
+    <anim name="core/anim/gargant/lord/wounded/default" type="default" />
+    <anim name="core/anim/gargant/lord/wounded/move" type="move" />
+    <anim name="core/anim/gargant/lord/wounded/attack" type="attack" />
+    <anim name="core/anim/gargant/lord/death" type="death" />
+  </animset>
+
+  <ai name="boid-chaser" />
+
+  <ability name="data/abilities/monsters/melee-with-swing.xml" default="1" />
+  <ability name="data/abilities/monsters/stunning-bolt.xml" anim="move" />
+
+<!--  <sound type="attack" filename="data/sounds/EL/wolf_attack01.ogg" />
+  <sound type="attack" filename="data/sounds/EL/wolf_attack02.ogg" /> zeby nie szczekali przy braku many-->
+  <sound type="spawn" filename="data/sounds/EL/wolf_attack03.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/wolf_yelp.ogg" />
+  <sound type="death" filename="data/sounds/EL/wolf_yelp.ogg" />
+
+</root>

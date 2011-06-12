@@ -9,13 +9,24 @@
   <power calc="0.2 * dot(1, choleric, 4, melancholic, 2, sanguine, 2, phlegmatic)"/>
  
   <explosion type="list">
+    <effect type="sound">
+      <name value="data/sounds/sparks.ogg" /> 
+    </effect>
     <effect type="graphical-effect">
-      <name value="stars" />
-      <time calc="0.5"/>
+      <name value="shield" />
+      <time calc="0.1"/>
     </effect>
   </explosion>
 
   <effect type="list">
+    <effect type="graphical-effect">
+      <name value="shield" />
+      <time calc="0.1"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="shield" />
+      <time calc="0.1"/>
+    </effect>
     <effect type="damage">
       <damage-type value="lightning"/>
       <amount calc="6.0 * (1 + power)"/>

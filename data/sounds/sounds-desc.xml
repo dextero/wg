@@ -138,5 +138,7 @@
   <sound path="data/sounds/shotgun.wav" groups="spell" />
 <!-- freesound, gcmax: http://www.freesound.org/usersViewSingle.php?id=1387464 -->
   <sound path="data/sounds/reload.wav" groups="player" />
+<!-- freesound, Connum: http://www.freesound.org/usersViewSingle.php?id=32572 -->
+  <sound path="data/sounds/sparks.ogg" groups="spell" />
 
 </root>

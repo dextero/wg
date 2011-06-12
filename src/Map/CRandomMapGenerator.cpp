@@ -684,34 +684,17 @@ bool CRandomMapGenerator::PlaceLairs()
 {
     CTimer timer("- lairs: ");
 
-    PhysicalsVector lairs = FilterByType(mPhysicals, "lair");
+    PhysicalsVector lairs = FilterByLevel(FilterByType(mPhysicals, "lair"), mDesc.level);
+    if (lairs.empty()) {
+        return true;
+    }
+
+	std::map<std::string, int> mapPhysicalToObjTypeCode;
+	int objTypesCount = 0;
 
     // gniazda
     if (lairs.size() && mDesc.lairs && mPassableLeft)
     {
-        // znajdz 'najtrudniejsze' gniazda pasujace do levela
-        size_t hard = (size_t)-1, medium = (size_t)-1, easy = (size_t)-1;
-        size_t at = 0;
-
-        // przesuniecie 'wskaznika'
-        for (; at < lairs.size() - 1 && lairs[at + 1].minLevel <= mDesc.level; ++at);
-
-        if (at < lairs.size())
-        {
-            hard = at;
-            mXmlText << "\t<objtype code=\"lair0\" file=\"" << lairs[hard].file << "\" />\n";
-        }
-        if (at - 1 < lairs.size()) // przekrecenie licznika?
-        {
-            medium = at - 1;
-            mXmlText << "\t<objtype code=\"lair1\" file=\"" << lairs[medium].file << "\" />\n";
-        }
-        if (at - 2 < lairs.size())
-        {
-            easy = at - 2;
-            mXmlText << "\t<objtype code=\"lair2\" file=\"" << lairs[easy].file << "\" />\n";
-        }
-
         for (unsigned int i = 0; i < std::min(mPassableLeft, mDesc.lairs); ++i)
         {
             // znalezienie wolnego pola
@@ -731,13 +714,14 @@ bool CRandomMapGenerator::PlaceLairs()
             int rot = rand() % 360;                                     // jeszcze obrot do tego
             // skala zadeklarowana w xmlu
 
-            size_t what = rand() % 9;
-            if (easy < lairs.size() && what < 2)   // 2/9 gniazd 'easy'
-                mXmlText << "\t<obj code=\"lair2\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" rot=\"" << rot << "\" />\n";
-            else if (medium < lairs.size() && what < 5)    // 3/9 gniazd 'medium' lub 5/9, gdy nie ma easy
-                mXmlText << "\t<obj code=\"lair1\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" rot=\"" << rot << "\" />\n";
-            else    // 4/9 gniazd 'hard' lub wszystkie, gdy nie ma medium
-                mXmlText << "\t<obj code=\"lair0\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" rot=\"" << rot << "\" />\n";
+            SPhysical lair = ChooseRandomlyRegardingFrequency(lairs);
+			if (mapPhysicalToObjTypeCode.find(lair.file) == mapPhysicalToObjTypeCode.end()) {
+				mapPhysicalToObjTypeCode[lair.file] = objTypesCount;
+	            mXmlText << "\t<objtype code=\"lair" << StringUtils::ToString(objTypesCount) << "\" file=\"" << lair.file << "\" />\n";
+				objTypesCount++;
+			}
+			int what = mapPhysicalToObjTypeCode[lair.file]; 
+			mXmlText << "\t<obj code=\"lair" << StringUtils::ToString(what) << "\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" rot=\"" << rot << "\" />\n";
         }
 
         // odejmujemy, ile dodalismy...
