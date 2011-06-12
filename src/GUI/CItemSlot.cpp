@@ -219,8 +219,6 @@ void CItemSlot::UpdateTooltipText(const std::string& abiName)
             std::vector<CAbility*> abis = player->GetExportedAbilities();
             std::vector<float> powerAfterUpgrade;
 
-            for (size_t i = 0; i < abis.size(); ++i)
-
             tooltipText += StringUtils::FloatToWString(currPower, PRECISION);
             tooltipText += L"\n\n" + gLocalizator.GetText("ITEM_POWER_AFTER_UPGRADE") + L"\n";
             
