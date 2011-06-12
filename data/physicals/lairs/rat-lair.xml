@@ -1,27 +1,25 @@
 <root type="lair">
   
+  <genre>rat-lair</genre>
+
   <spawnLimit min="15" max="15" />
   <spawnRate min="0.5" max="0.5" />
-  <grouping-hint>3</grouping-hint>
-  <genre>rat-lair</genre>
-  
-  <maxhp min="20.0" max="20.0" />
-  
-  <xp min="20.0" max="20.0" />
-
   <spawnPosition x="0.0f" y="0.0f" />
+  <spawnSound filename="data/sounds/EL/imp01.ogg" />
+  <grouping-hint>3</grouping-hint>
   
-  <spawnSound filename="data/physicals/lairs/lair-spawn.ogg" />
+  <maxhp min="25.0" max="30.0" />
+  <xp min="20.0" max="25.0" />
 
-  <scale min="0.5" max="0.5" />
   <radius min="0.25" max="0.25" />
+  <scale min="0.5" max="0.5" />
 
   <anim name="test/anim/lair/default" type="default" />
   <anim name="test/anim/lair/spawn" type="attack" />
   <anim name="test/anim/lair/death" type="death" />
   
-  <monster filename="data/physicals/monsters/rat.xml" />
-  <monster filename="data/physicals/monsters/rat.xml" />
-  <monster filename="data/physicals/monsters/rat-green.xml" />
+  <monster filename="data/physicals/monsters/defs/rat.xml" />
+  <monster filename="data/physicals/monsters/defs/rat.xml" />
+  <monster filename="data/physicals/monsters/defs/rat-poisonous.xml" />
 
 </root>

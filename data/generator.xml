@@ -16,9 +16,9 @@
         <weapon file="data/abilities/weapons/blazing-feet.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/weapons/hibernation.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/weapons/transfusion.xml" minLevel="3" maxLevel="99" />
-        <weapon file="data/abilities/weapons/firearrow-lvl2.xml" minLevel="4" maxLevel="99" />
         <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="1.0" />
         <weapon file="data/abilities/weapons/entangle.xml" minLevel="4" maxLevel="99" />
+        <weapon file="data/abilities/weapons/firearrow-lvl2.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/poison-cloud.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/meditation.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/firestream.xml" minLevel="5" maxLevel="99" />
@@ -64,7 +64,8 @@
         <weapon file="data/abilities/deprecated/sacrifice.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/deprecated/summon-healer-ghost.xml" minLevel="8" maxLevel="99" />
     -->
-        <lair file="data/physicals/lairs/rat-lair.xml" level="90" />
+<!--
+    	<lair file="data/physicals/lairs/rat-lair.xml" level="90" />
         <lair file="data/physicals/lairs/baldy-horny-lair.xml" level="90" />
         <lair file="data/physicals/lairs/chit-lair.xml" level="90" />
         <lair file="data/physicals/lairs/chityniak-lair.xml" level="90" />
@@ -82,7 +83,7 @@
         <lair file="data/physicals/lairs/wolfbeast-lair.xml" level="90" />
         <lair file="data/physicals/lairs/bee-lair.xml" level="90" />
         <lair file="data/physicals/lairs/shaggy-lair.xml" level="90" />
-
+-->
         <monster file="data/physicals/monsters/defs/rat.xml" minLevel="1" maxLevel="3" />
         <monster file="data/physicals/monsters/defs/bandit.xml" minLevel="1" maxLevel="1" frequency="0.3" />
 
@@ -92,14 +93,16 @@
         <monster file="data/physicals/monsters/defs/timberman.xml" minLevel="2" maxLevel="5" frequency="0.3" />
 
         <monster file="data/physicals/monsters/defs/rat.xml" minLevel="3" maxLevel="4" />
-        <monster file="data/physicals/monsters/defs/poisonous-rat.xml" minLevel="3" maxLevel="5" />
+        <monster file="data/physicals/monsters/defs/rat-poisonous.xml" minLevel="3" maxLevel="5" />
         <monster file="data/physicals/monsters/defs/chitiniac.xml" minLevel="3" maxLevel="5" frequency="0.6" />
         <monster file="data/physicals/monsters/defs/gargant.xml" minLevel="3" maxLevel="5" frequency="0.1" />
+        <lair    file="data/physicals/lairs/rat-lair.xml" minlevel="3" maxLevel="5" />
 
         <monster file="data/physicals/monsters/defs/chitiniac-acid.xml" minLevel="4" maxLevel="5" frequency="0.5" />
+
+        <lair    file="data/physicals/lairs/chitiniac-lair.xml" minLevel="5" maxLevel="5" />
 		
 		<!-- -->
-        <lair    file="data/physicals/lairs/rat-lair.xml" minlevel="92" maxLevel="3" />
 
         <monster file="data/physicals/monsters/crawler.xml" minLevel="94" maxLevel="6" />
         <lair    file="data/physicals/lairs/chit-lair.xml" minLevel="94" maxLevel="3" />
@@ -154,6 +157,7 @@
         <monster file="data/physicals/monsters/warlock.xml" level="99" />
         <monster file="data/physicals/monsters/winged-pincer.xml" level="99" />
         <monster file="data/physicals/monsters/wolfbeast.xml" level="99" />
+
         <!-- hp -->
         <loot file="data/loots/small-hp.xml" minLevel="0" maxLevel="99"/>
         <loot file="data/loots/medium-hp.xml" minLevel="3" maxLevel="99"/>
@@ -168,10 +172,6 @@
         <loot file="data/loots/350xp.xml" minLevel="13" maxLevel="25"/>
         <loot file="data/loots/600xp.xml" minLevel="18" maxLevel="99"/>
         <loot file="data/loots/1k-xp.xml" minLevel="25" maxLevel="99"/>
-
-        <!-- speciale - bez tych, ktorymi mozna tluc, bo wyskocza 3 takie na mapie i problem -->
-        <!--    <loot file="data/loots/resonator-ball.xml" level="3" /> -->
-        <!-- <loot file="data/loots/armor-ball.xml" level="4" /> -->
 
         <!-- inne -->
         <loot file="data/loots/superspeed.xml" minLevel="1" frequency="0.5" maxLevel="99" />

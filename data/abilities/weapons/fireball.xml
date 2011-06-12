@@ -15,7 +15,7 @@
     </effect>
     <effect type="graphical-effect">
       <name value="shockwave" />
-      <time value="0.33" />
+      <time value="0.16" />
     </effect>
     <effect type="graphical-effect">
       <time value="0.1" />
@@ -79,7 +79,7 @@
   <speed value="5.0" />
   <acceleration value="1.0" />
   <explode-on-fade value="1" />
-  <ttl value="0.6" />
+  <ttl value="0.7" />
   <bullet value="data/physicals/bullets/fireball.xml" />
   <bullet-angular-speed value="-1440" />
 
