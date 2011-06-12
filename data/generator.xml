@@ -84,6 +84,7 @@
         <lair file="data/physicals/lairs/bee-lair.xml" level="90" />
         <lair file="data/physicals/lairs/shaggy-lair.xml" level="90" />
 -->
+
         <monster file="data/physicals/monsters/defs/rat.xml" minLevel="1" maxLevel="3" />
         <monster file="data/physicals/monsters/defs/bandit.xml" minLevel="1" maxLevel="1" frequency="0.3" />
 
@@ -96,11 +97,20 @@
         <monster file="data/physicals/monsters/defs/rat-poisonous.xml" minLevel="3" maxLevel="5" />
         <monster file="data/physicals/monsters/defs/chitiniac.xml" minLevel="3" maxLevel="5" frequency="0.6" />
         <monster file="data/physicals/monsters/defs/gargant.xml" minLevel="3" maxLevel="5" frequency="0.1" />
-        <lair    file="data/physicals/lairs/rat-lair.xml" minlevel="3" maxLevel="5" />
+        <lair    file="data/physicals/lairs/rat-lair.xml" minLevel="3" maxLevel="5" />
 
         <monster file="data/physicals/monsters/defs/chitiniac-acid.xml" minLevel="4" maxLevel="5" frequency="0.5" />
+        <lair    file="data/physicals/lairs/bandit-lair.xml" minLevel="4" maxLevel="5" frequency="0.4" />
 
         <lair    file="data/physicals/lairs/chitiniac-lair.xml" minLevel="5" maxLevel="5" />
+
+        <monster file="data/physicals/monsters/defs/gargant.xml" minLevel="6" maxLevel="9" />
+        <monster file="data/physicals/monsters/defs/gargant-lord.xml" minLevel="6" maxLevel="9" frequency="0.15" />
+        <monster file="data/physicals/monsters/defs/gargant-berserker.xml" minLevel="6" maxLevel="9" frequency="0.2" />
+        <lair    file="data/physicals/lairs/gargant-lair.xml" minLevel="6" maxLevel="9" />
+        <monster file="data/physicals/monsters/defs/chitiniac.xml" minLevel="6" maxLevel="8" frequency="0.6" />
+        <monster file="data/physicals/monsters/defs/chitiniac-acid.xml" minLevel="6" maxLevel="8" frequency="0.4" />
+        <lair    file="data/physicals/lairs/chitiniac-lair.xml" minLevel="6" maxLevel="8" frequency="0.3" />
 		
 		<!-- -->
 
@@ -111,11 +121,11 @@
 
         <lair    file="data/physicals/lairs/bee-lair.xml" minLevel="95" maxLevel="6" />
 
-        <monster file="data/physicals/monsters/wolfbeast.xml" minLevel="7" maxLevel="8" />
-        <lair    file="data/physicals/lairs/wolfbeast-lair.xml" minLevel="7" maxLevel="8" />
+        <monster file="data/physicals/monsters/wolfbeast.xml" minLevel="97" maxLevel="8" />
+        <lair    file="data/physicals/lairs/wolfbeast-lair.xml" minLevel="97" maxLevel="8" />
 
-        <monster file="data/physicals/monsters/troll.xml" minLevel="8" maxLevel="8" />
-        <lair    file="data/physicals/lairs/troll-lair.xml" minLevel="8" maxLevel="8" />
+        <monster file="data/physicals/monsters/troll.xml" minLevel="98" maxLevel="8" />
+        <lair    file="data/physicals/lairs/troll-lair.xml" minLevel="98" maxLevel="8" />
 
         <monster file="data/physicals/monsters/baldy.xml" level="99" />
         <monster file="data/physicals/monsters/bee.xml" level="99" />

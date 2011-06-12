@@ -14,7 +14,7 @@ Each point increases it by 10%.
   <effect type="list">
     <effect type="modify">
       <aspect value="maxmana"/>
-      <amount calc="1 + ((lvl) * 0.10)" />
+      <amount calc="1 + (level * 0.10)" />
     </effect>
   </effect>
 </root>

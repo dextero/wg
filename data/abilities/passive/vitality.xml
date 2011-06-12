@@ -13,6 +13,6 @@ Each point gives you additional 20% hit-points limit.
  
   <effect type="modify">
     <aspect value="maxhp"/>
-    <amount calc="1 + (lvl * 0.20)" />
+    <amount calc="1 + (level * 0.20)" />
   </effect>
 </root>
