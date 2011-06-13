@@ -103,6 +103,7 @@
         <lair    file="data/physicals/lairs/bandit-lair.xml" minLevel="4" maxLevel="5" frequency="0.4" />
 
         <lair    file="data/physicals/lairs/chitiniac-lair.xml" minLevel="5" maxLevel="5" />
+        <monster file="data/physicals/monsters/defs/crawler.xml" minLevel="5" maxLevel="7" frequency="0.1" />
 
         <monster file="data/physicals/monsters/defs/gargant.xml" minLevel="6" maxLevel="9" />
         <monster file="data/physicals/monsters/defs/gargant-lord.xml" minLevel="6" maxLevel="9" frequency="0.15" />
@@ -112,10 +113,12 @@
         <monster file="data/physicals/monsters/defs/chitiniac-acid.xml" minLevel="6" maxLevel="8" frequency="0.4" />
         <lair    file="data/physicals/lairs/chitiniac-lair.xml" minLevel="6" maxLevel="8" frequency="0.3" />
 		
+        <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="7" maxLevel="99" frequency="0.03" />
+
+        <monster file="data/physicals/monsters/defs/crawler.xml" minLevel="8" maxLevel="10" frequency="0.3" />
+
 		<!-- -->
 
-        <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="91" maxLevel="1" frequency="0.3" />
-        <monster file="data/physicals/monsters/crawler.xml" minLevel="94" maxLevel="6" />
         <lair    file="data/physicals/lairs/chit-lair.xml" minLevel="94" maxLevel="3" />
         <monster file="data/physicals/monsters/bee.xml" minLevel="94" maxLevel="6" />
         <monster file="data/physicals/monsters/hornet.xml" minLevel="94" maxLevel="6" />

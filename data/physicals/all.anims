@@ -588,38 +588,38 @@ test/anim/lair/death
 
 test/anim/crawler/default
 {
-    0.10  "data/physicals/monsters/crawler-move.png"                  0   0   80  80
+    0.10  "data/physicals/monsters/gfx/crawler-move.png"                  0   0   80  80
 }
 
 test/anim/crawler/death
 {
-    0.10  "data/physicals/monsters/crawler-dying.png"				0	0	80	80
-    0.10  "data/physicals/monsters/crawler-dying.png"				80	0	160	80
-    0.10  "data/physicals/monsters/crawler-dying.png"				160	0	240	80
-    0.10  "data/physicals/monsters/crawler-dying.png"				0	80	80	160
-    0.10  "data/physicals/monsters/crawler-dying.png"				80	80	160	160
-    0.10  "data/physicals/monsters/crawler-dying.png"				160	80	240	160
-    5.10  "data/physicals/monsters/crawler-dying.png"				0	160	80	240
-    0.10  "data/physicals/monsters/crawler-dying.png"				80	160	160	240
-    0.10  "data/physicals/monsters/crawler-dying.png"				160	160	240	240
-    0.10  "data/physicals/monsters/crawler-dying.png"				0	240	80	320
-    0.10  "data/physicals/monsters/crawler-dying.png"				80	240	160	320
-    0.10  "data/physicals/monsters/crawler-dying.png"				160	240	240	320
-    0.30  "data/physicals/monsters/crawler-dying.png"				0	320	80	400
-    0.30  "data/physicals/monsters/crawler-dying.png"				80	320	160	400
-    0.30  "data/physicals/monsters/crawler-dying.png"				160	320	240	400
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				0	0	80	80
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				80	0	160	80
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				160	0	240	80
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				0	80	80	160
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				80	80	160	160
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				160	80	240	160
+    2.50  "data/physicals/monsters/gfx/crawler-death.png"				0	160	80	240
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				80	160	160	240
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				160	160	240	240
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				0	240	80	320
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				80	240	160	320
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				160	240	240	320
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				0	320	80	400
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				80	320	160	400
+    0.10  "data/physicals/monsters/gfx/crawler-death.png"				160	320	240	400
 }
 
 test/anim/crawler/move
 {
-    0.10  "data/physicals/monsters/crawler-move.png"                  0   0   80  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  80   0   160  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  160   0   240  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  240   0   320  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  320   0   400  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  400   0   480  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  480   0   560  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  560   0   640  80
+    0.09  "data/physicals/monsters/gfx/crawler-move.png"                  0   0   80  80
+    0.09  "data/physicals/monsters/gfx/crawler-move.png"                  80   0   160  80
+    0.09  "data/physicals/monsters/gfx/crawler-move.png"                  160   0   240  80
+    0.09  "data/physicals/monsters/gfx/crawler-move.png"                  240   0   320  80
+    0.09  "data/physicals/monsters/gfx/crawler-move.png"                  320   0   400  80
+    0.09  "data/physicals/monsters/gfx/crawler-move.png"                  400   0   480  80
+    0.09  "data/physicals/monsters/gfx/crawler-move.png"                  480   0   560  80
+    0.09  "data/physicals/monsters/gfx/crawler-move.png"                  560   0   640  80
 }
 
 test/anim/crawler/explode
@@ -636,18 +636,18 @@ test/anim/crawler/explode
 
 test/anim/crawler/attack
 {
-    0.10  "data/physicals/monsters/crawler-attack.png"                  0   0   80  80
-    0.10  "data/physicals/monsters/crawler-attack.png"                  80   0   160  80
-    0.10  "data/physicals/monsters/crawler-attack.png"                  160   0   240  80
-    0.10  "data/physicals/monsters/crawler-attack.png"                  240   0   320  80
-    0.10  "data/physicals/monsters/crawler-attack.png"                  320   0   400  80
-    0.10  "data/physicals/monsters/crawler-attack.png"                  400   0   480  80
-    0.10  "data/physicals/monsters/crawler-attack.png"                  480   0   560  80
-    0.10  "data/physicals/monsters/crawler-attack.png"                  400   0   480  80
-    0.10  "data/physicals/monsters/crawler-attack.png"                  320   0   400  80
-    0.10  "data/physicals/monsters/crawler-attack.png"                  240   0   320  80
-    0.10  "data/physicals/monsters/crawler-attack.png"                  160   0   240  80
-    0.10  "data/physicals/monsters/crawler-attack.png"                  80   0   160  80
+    0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  0   0   80  80
+    0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  80   0   160  80
+    0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  160   0   240  80
+    0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  240   0   320  80
+    0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  320   0   400  80
+    0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  400   0   480  80
+    0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  480   0   560  80
+    0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  400   0   480  80
+    0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  320   0   400  80
+    0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  240   0   320  80
+    0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  160   0   240  80
+    0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  80   0   160  80
 }
 
 core/anim/hornet/default

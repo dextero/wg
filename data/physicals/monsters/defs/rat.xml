@@ -12,9 +12,9 @@
   <strength min="1.0" max="3.0" />
   <xp min="3.0" max="4.0" />
 
-  <scale min="0.5" max="0.8" />
-  <radius min="0.165" max="0.22" />
   <mass min="0.6" max="1.0" />
+  <radius min="0.165" max="0.22" />
+  <scale min="0.5" max="0.8" />
 
   <anim name="test/anim/rat/default" type="default" />
   <anim name="test/anim/rat/move" type="move" />
