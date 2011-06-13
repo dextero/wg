@@ -16,7 +16,7 @@
     </effect>
     <effect type="graphical-effect">
       <name value="colorize-green" /> 
-      <time calc="6.0" /> 
+      <time calc="2.0" /> 
     </effect>
     <effect type="graphical-effect">
       <name value="acid" />
@@ -24,7 +24,7 @@
     </effect>
     <effect type="non-cumulative">
       <effect type="timed">
-      <time value="6.0" />
+      <time value="2.0" />
         <effect type="damage">
           <damage-type value="poison"/>
           <amount calc="1.0 * poisonous" />
