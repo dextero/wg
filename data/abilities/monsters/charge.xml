@@ -15,7 +15,7 @@
         <time value="0.1"/>
         <effect type="modify">
           <aspect value="speed" />
-          <amount value="1.75" />
+          <amount value="2.00" />
         </effect>
       </effect>
     </effect>
@@ -25,7 +25,7 @@
         <time value="1.00"/>
         <effect type="modify">
           <aspect value="speed" />
-          <amount value="2.5" />
+          <amount value="3.0" />
         </effect>
       </effect>
     </effect>
@@ -35,7 +35,7 @@
         <time value="0.10"/>
         <effect type="modify">
           <aspect value="speed" />
-          <amount value="2.0" />
+          <amount value="2.25" />
         </effect>
       </effect>
     </effect>
@@ -45,7 +45,7 @@
         <time value="0.10"/>
         <effect type="modify">
           <aspect value="speed" />
-          <amount value="1.5" />
+          <amount value="1.75" />
         </effect>
       </effect>
     </effect>

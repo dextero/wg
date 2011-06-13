@@ -19,5 +19,9 @@
   <anim name="test/anim/lair/death" type="death" />
   
   <monster filename="data/physicals/monsters/defs/gargant.xml" />
+  <monster filename="data/physicals/monsters/defs/gargant.xml" />
+  <monster filename="data/physicals/monsters/defs/gargant.xml" />
+  <monster filename="data/physicals/monsters/defs/gargant-lord.xml" />
+  <monster filename="data/physicals/monsters/defs/gargant-berserker.xml" />
 
 </root>

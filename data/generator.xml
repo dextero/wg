@@ -7,30 +7,30 @@
         <weapon file="data/abilities/weapons/lightning.xml" minLevel="1" maxLevel="99" frequency="0.75" />
         <weapon file="data/abilities/weapons/icearrow.xml" minLevel="1" maxLevel="99" />
         <weapon file="data/abilities/weapons/sting.xml" minLevel="1" maxLevel="99" frequency="0.6" />
-        <weapon file="data/abilities/weapons/powerslash.xml" minLevel="1" maxLevel="99" />
+        <weapon file="data/abilities/weapons/burning-hands.xml" minLevel="1" maxLevel="99" />
         <weapon file="data/abilities/weapons/electrostatics.xml" minLevel="2" maxLevel="99" />
         <weapon file="data/abilities/weapons/firearrow.xml" minLevel="2" maxLevel="99" />
-        <weapon file="data/abilities/weapons/burning-hands.xml" minLevel="2" maxLevel="99" />
         <weapon file="data/abilities/weapons/magic-missile.xml" minLevel="2" maxLevel="99" />
-        <weapon file="data/abilities/weapons/freezing-blast.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/weapons/blazing-feet.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/weapons/hibernation.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/weapons/transfusion.xml" minLevel="3" maxLevel="99" />
+        <weapon file="data/abilities/weapons/poison-cloud.xml" minLevel="3" maxLevel="99" />
+        <weapon file="data/abilities/weapons/chain-lightning.xml" minLevel="3" maxLevel="99" />
         <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="1.0" />
         <weapon file="data/abilities/weapons/entangle.xml" minLevel="4" maxLevel="99" />
+        <weapon file="data/abilities/weapons/powerslash.xml" minLevel="4" maxLevel="99" />
         <weapon file="data/abilities/weapons/firearrow-lvl2.xml" minLevel="5" maxLevel="99" />
-        <weapon file="data/abilities/weapons/poison-cloud.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/meditation.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/firestream.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/superspeed.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/freezing-mine.xml" minLevel="5" maxLevel="99" />
+        <weapon file="data/abilities/weapons/freezing-blast.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/magic-missile-lvl2.xml" minLevel="6" maxLevel="99" frequency="0.5" />
-        <weapon file="data/abilities/weapons/chain-lightning.xml" minLevel="6" maxLevel="99" />
-        <weapon file="data/abilities/weapons/hellfire.xml" minLevel="6" maxLevel="99" />
         <weapon file="data/abilities/weapons/resonator.xml" minLevel="6" maxLevel="99" />
         <weapon file="data/abilities/weapons/firepits.xml" minLevel="6" maxLevel="99" />
         <weapon file="data/abilities/weapons/firearrow-lvl3.xml" minLevel="7" maxLevel="99" />
         <weapon file="data/abilities/weapons/forked-lightning.xml" minLevel="7" maxLevel="99" />
+        <weapon file="data/abilities/weapons/hellfire.xml" minLevel="7" maxLevel="99" />
         <weapon file="data/abilities/weapons/electric-snare.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/weapons/acidspray.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/weapons/firewall.xml" minLevel="8" maxLevel="99" />
