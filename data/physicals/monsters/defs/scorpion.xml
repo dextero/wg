@@ -9,15 +9,15 @@
   <maxhp min="85.0" max="99.0" />
   <speed min="0.6" max="0.7" />
   <turnspeed min="95.0" max="125.0" />
-  <strength min="5.0" max="7.0" />
+  <strength min="3.0" max="5.0" />
   <poisonous min="5.0" max="6.0" />
-  <intelligence min="3.0" max="4.0" />
+  <intelligence min="4.0" max="6.0" />
   <fireresist min="4.0" max="6.0" />
   <lightningresist min="4.0" max="6.0" />
   <xp min="45.0" max="48.0" />
 
-  <radius min="0.35" max="0.425" />
   <mass min="2.0" max="2.5" />
+  <radius min="0.35" max="0.425" />
   <scale min="0.8" max="0.95" />
   <shadow-offset min="0.06" max="0.06" />
 

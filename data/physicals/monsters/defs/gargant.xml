@@ -13,8 +13,8 @@
   <iceresist min="4.0" max="6.0" />
   <xp min="17.0" max="18.0" />
 
-  <radius min="0.3" max="0.4" />
   <mass min="3.0" max="3.0" />
+  <radius min="0.3" max="0.4" />
   <scale min="0.7" max="0.9" />
   <shadow-offset min="0.12" max="0.12" />
 
