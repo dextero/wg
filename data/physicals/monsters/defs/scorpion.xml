@@ -1,0 +1,48 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="Scorpion" />
+    <desc value="The largest of scorpions, but not the longest, the desert scorpion has a dark body ranging from dark blue through brown to black. The large pincers are blackish-red and have a granular texture. The tail ends with the sharp, venomous sting." />
+  </bestiary>
+  <genre>scorpion</genre>
+
+  <maxhp min="85.0" max="99.0" />
+  <speed min="0.6" max="0.7" />
+  <turnspeed min="95.0" max="125.0" />
+  <strength min="5.0" max="7.0" />
+  <poisonous min="5.0" max="6.0" />
+  <intelligence min="3.0" max="4.0" />
+  <fireresist min="4.0" max="6.0" />
+  <lightningresist min="4.0" max="6.0" />
+  <xp min="45.0" max="48.0" />
+
+  <radius min="0.35" max="0.425" />
+  <mass min="2.0" max="2.5" />
+  <scale min="0.8" max="0.95" />
+  <shadow-offset min="0.06" max="0.06" />
+
+  <animset>
+    <anim name="core/anim/scorpion/default" type="default" />
+    <anim name="core/anim/scorpion/move" type="move" />
+    <anim name="core/anim/scorpion/attack" type="attack" />
+    <anim name="core/anim/scorpion/death" type="death" />
+  </animset>
+  <animset>
+    <anim name="core/anim/scorpion/wounded/default" type="default" />
+    <anim name="core/anim/scorpion/wounded/move" type="move" />
+    <anim name="core/anim/scorpion/wounded/attack" type="attack" />
+    <anim name="core/anim/scorpion/death" type="death" />
+  </animset>
+
+  <ai name="boid-chaser" />
+
+  <ability name="data/abilities/monsters/melee-poison.xml" default="1" />
+  <ability name="data/abilities/monsters/scorpion-missiles.xml" anim="attack" />
+  <ability name="data/abilities/monsters/scorpion-sting.xml" anim="attack" />
+
+  <sound type="attack" filename="data/sounds/EL/monster03.ogg" />
+  <sound type="spawn" filename="data/sounds/EL/dragon02.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/monster05.ogg" />
+  <sound type="death" filename="data/sounds/EL/monster01.ogg" />
+
+</root>

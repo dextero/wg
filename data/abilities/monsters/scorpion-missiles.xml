@@ -1,0 +1,86 @@
+<root type="ability" class="bullet">
+
+  <explosion type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/firestart.ogg" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="bullet-explosion-mini" />
+      <time calc="0.8"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="tinyfireball" />
+      <time calc="0.1"/>
+    </effect>
+  </explosion>
+  
+  <effect type="list">
+    <effect type="damage">
+      <damage-type value="fire"/>
+      <amount calc="1 * intelligence" />
+    </effect>
+    <effect type="knockback">
+      <amount calc="2.0"/>
+    </effect>
+  </effect>
+
+  <self-effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/fireend.ogg" /> 
+    </effect>
+  </self-effect>
+
+  <cast-time-effect type="list"> 
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.65"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="heal"/>
+      <time value="0.65"/>
+    </effect>
+    <effect type="modify">    
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+    <effect type="modify">    
+      <aspect value="turnspeed" />
+      <amount value="0.0" />
+    </effect>
+  </cast-time-effect>
+  <delay-effect type="list"> 
+    <effect type="modify">    
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </delay-effect>
+  
+  <range calc="12.0" />
+  <speed calc="2.0" />
+  <acceleration value="2.0" />
+  <width calc="180" />
+  <count value="5" />
+  <extra-offset value="0.2" />
+  <ttl value="2.0" />
+  <bullet value="data/physicals/bullets/flameball.xml" />
+  <filter value="player,wall"/>
+  <explode-on-fade value="1" />
+  <target-chooser>
+    <filter value="player" />
+    <range value="14.0" />
+    <angle value="360" />
+    <aim-at-ground value="0" />
+  </target-chooser>
+  <turning-speed calc="1440.0"/>
+  <time-for-tracking calc="0.11" />
+
+  <manacost value="0" />
+  <casttime calc="0.65"/>
+  <delay calc="0.0" />
+  <cooldown calc="5.0"/>
+    
+  <ai-hint>
+    <player-distance>6.0</player-distance>
+    <player-angle>7.0</player-angle>
+  </ai-hint>
+</root>

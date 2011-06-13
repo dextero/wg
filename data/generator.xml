@@ -114,6 +114,7 @@
 		
 		<!-- -->
 
+        <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="91" maxLevel="1" frequency="0.3" />
         <monster file="data/physicals/monsters/crawler.xml" minLevel="94" maxLevel="6" />
         <lair    file="data/physicals/lairs/chit-lair.xml" minLevel="94" maxLevel="3" />
         <monster file="data/physicals/monsters/bee.xml" minLevel="94" maxLevel="6" />
