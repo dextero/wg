@@ -62,6 +62,10 @@
     </effect>
   </effect>
 
+  <self-effect type="sound">
+    <name value="data/sounds/wzzzz.ogg" />
+  </self-effect>
+
   <range calc="18.0" />
   <speed value="8.5" />
   <acceleration value="3.0" />

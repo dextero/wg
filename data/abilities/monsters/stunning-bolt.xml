@@ -47,10 +47,8 @@
     </effect>
   </effect>
 
-  <self-effect type="list">
-    <effect type="sound">
-      <name value="data/sounds/Lugaro/fireend.ogg" /> 
-    </effect>
+  <self-effect type="sound">
+    <name value="data/sounds/wzzzz.ogg" />
   </self-effect>
 
   <cast-time-effect type="list"> 
