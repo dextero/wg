@@ -141,4 +141,6 @@
 <!-- freesound, Connum: http://www.freesound.org/usersViewSingle.php?id=32572 -->
   <sound path="data/sounds/sparks.ogg" groups="spell" />
 
+  <sound path="data/sounds/wzzzz.ogg" groups="spell" />
+  
 </root>
