@@ -25,11 +25,13 @@
     <anim name="core/anim/gargant/berserker/default" type="default" />
     <anim name="core/anim/gargant/berserker/move" type="move" />
     <anim name="core/anim/gargant/berserker/attack" type="attack" />
+    <anim name="core/anim/gargant/berserker/charge" type="charge" />
     <anim name="core/anim/gargant/berserker/death" type="death" />
   </animset>
   <animset>
     <anim name="core/anim/gargant/berserker/wounded/default" type="default" />
     <anim name="core/anim/gargant/berserker/wounded/move" type="move" />
+    <anim name="core/anim/gargant/berserker/wounded/charge" type="charge" />
     <anim name="core/anim/gargant/berserker/wounded/attack" type="attack" />
     <anim name="core/anim/gargant/berserker/death" type="death" />
   </animset>
@@ -37,7 +39,7 @@
   <ai name="boid-chaser" />
 
   <ability name="data/abilities/monsters/melee-with-swing.xml" default="1" />
-  <ability name="data/abilities/monsters/charge.xml" anim="move" />
+  <ability name="data/abilities/monsters/charge.xml" anim="charge" />
 
   <sound type="attack" filename="data/sounds/EL/wolf_attack01.ogg" />
   <sound type="attack" filename="data/sounds/EL/wolf_attack02.ogg" />

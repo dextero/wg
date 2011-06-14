@@ -5,8 +5,8 @@
   <unavailable-icon>data/abilities/weapons/lightning-storm-1.png</unavailable-icon>
   <description>$ABI_WEAPONS_LIGHTNING-STORM_DESC</description>
 
-  <!-- power = ?x cho, ?x mel, ?x san, ?x phl -->
-  <power calc="0.2 * do(0, choleric, 0, melancholic, 0, sanguine, 0, phlegmatic)"/>
+  <!-- power = 4x cho, 1x mel, 3x san, 1x phl -->
+  <power calc="0.2 * do(4, choleric, 1, melancholic, 3, sanguine, 1, phlegmatic)"/>
 
   <effect type="list">
     <effect type="recastable">
