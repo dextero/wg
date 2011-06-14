@@ -3942,6 +3942,18 @@ core/anim/gargant/berserker/move
     0.10  "data/physicals/monsters/gfx/gargant-berserker-move.png"          448   0  512  64
 }
 
+core/anim/gargant/berserker/charge
+{
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move.png"            0   0   64  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move.png"           64   0  128  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move.png"          128   0  192  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move.png"          192   0  256  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move.png"          256   0  320  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move.png"          320   0  384  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move.png"          384   0  448  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move.png"          448   0  512  64
+}
+
 core/anim/gargant/berserker/attack
 {
     0.20  "data/physicals/monsters/gfx/gargant-berserker-attack.png"            0   0   64  64
@@ -3966,6 +3978,18 @@ core/anim/gargant/berserker/wounded/move
     0.10  "data/physicals/monsters/gfx/gargant-berserker-move-wounded.png"          320   0  384  64
     0.10  "data/physicals/monsters/gfx/gargant-berserker-move-wounded.png"          384   0  448  64
     0.10  "data/physicals/monsters/gfx/gargant-berserker-move-wounded.png"          448   0  512  64
+}
+
+core/anim/gargant/berserker/wounded/charge
+{
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move-wounded.png"            0   0   64  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move-wounded.png"           64   0  128  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move-wounded.png"          128   0  192  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move-wounded.png"          192   0  256  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move-wounded.png"          256   0  320  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move-wounded.png"          320   0  384  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move-wounded.png"          384   0  448  64
+    0.033  "data/physicals/monsters/gfx/gargant-berserker-move-wounded.png"          448   0  512  64
 }
 
 core/anim/gargant/berserker/wounded/attack
