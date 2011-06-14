@@ -63,21 +63,26 @@ Bonus for this spell depends:
     <effect type="recastable">
       <recast value="0.4"/>
       <time value="8.0"/>
-      <effect type="retarget" tag="attack">
-        <target-chooser>
-          <filter value="hostiles,obstacle"/>
-          <range calc="1.0"/>
-          <angle value="75.0"/>
-          <count value="2"/>
-          <aim-at-ground value="0"/>
-        </target-chooser>
-        <effect type="list">
-          <effect type="knockback">
-            <amount calc="2.0" />
-          </effect>
-          <effect type="damage">
-            <damage-type value="fire"/>
-            <amount calc="8.0 * (1 + power) " />
+      <effect type="list">
+        <effect type="drain-mana">
+          <amount calc="10.0 + (1 * power)" />
+        </effect>
+        <effect type="retarget" tag="attack">
+          <target-chooser>
+            <filter value="hostiles,obstacle"/>
+            <range calc="1.0"/>
+            <angle value="75.0"/>
+            <count value="2"/>
+            <aim-at-ground value="0"/>
+          </target-chooser>
+          <effect type="list">
+            <effect type="knockback">
+              <amount calc="2.0" />
+            </effect>
+            <effect type="damage">
+              <damage-type value="fire"/>
+              <amount calc="8.0 * (1 + power) " />
+            </effect>
           </effect>
         </effect>
       </effect>
@@ -100,7 +105,7 @@ Bonus for this spell depends:
   <delay calc="0.05" />
   <cooldown calc="0.05" />
 
-  <focus-mana-cost calc="10.0 * (1 + power)" />
+  <focus-mana-cost calc="0.0" />
   <focus-max-duration value="8.0" />
   
 </root>

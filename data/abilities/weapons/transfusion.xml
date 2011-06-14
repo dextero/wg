@@ -14,7 +14,7 @@
       <time value="0.45"/>
     </effect>
     <effect type="recastable">
-      <recast value="0.20"/>
+      <recast value="0.25"/>
       <time value="7.87"/>
       <effect type="list">
         <effect type="sound">
@@ -43,10 +43,10 @@
             </effect>
             <effect type="damage">
               <damage-type value="lightning"/>
-              <amount calc="2 * (1 + power)" />
+              <amount calc="1.5 * (1 + power)" />
             </effect>
             <effect type="transfer-life">
-              <amount calc="2 * (1 + power)" />
+              <amount calc="0.5 * (1 + power)" />
             </effect>
           </effect>
         </effect>
@@ -67,10 +67,10 @@
             </effect>
             <effect type="damage">
               <damage-type value="lightning"/>
-              <amount calc="2 * (1 + power)" />
+              <amount calc="1.5 * (1 + power)" />
             </effect>
             <effect type="transfer-life">
-              <amount calc="2 * (1 + power)" />
+              <amount calc="0.5 * (1 + power)" />
             </effect>
           </effect>
         </effect>

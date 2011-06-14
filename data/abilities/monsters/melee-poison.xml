@@ -33,10 +33,11 @@
     <amount value="0.0" />
   </delay-effect>
   
-  <cast-time value="0.15" />
   <range value="0.7" />
   <width value="90.0" />
-  <delay value="0.15" />
-  <cooldown value="0.5" />
+
+  <cast-time value="0.2" />
+  <delay value="0.2" />
+  <cooldown value="0.75" />
   
 </root>
