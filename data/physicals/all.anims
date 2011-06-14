@@ -818,36 +818,36 @@ test/barrier/open
 
 core/anim/bee/move
 {
-    0.10 "data/physicals/monsters/bee.png" 0 0 64 64
-    0.10 "data/physicals/monsters/bee.png" 64 0 128 64
-    0.10 "data/physicals/monsters/bee.png" 128 0 192 64
-    0.10 "data/physicals/monsters/bee.png" 192 0 256 64
-    0.10 "data/physicals/monsters/bee.png" 256 0 320 64
-    0.10 "data/physicals/monsters/bee.png" 320 0 384 64
-    0.10 "data/physicals/monsters/bee.png" 384 0 448 64
-    0.10 "data/physicals/monsters/bee.png" 448 0 512 64
+    0.05 "data/physicals/monsters/gfx/bee.png" 0 0 64 64
+    0.05 "data/physicals/monsters/gfx/bee.png" 64 0 128 64
+    0.05 "data/physicals/monsters/gfx/bee.png" 128 0 192 64
+    0.05 "data/physicals/monsters/gfx/bee.png" 192 0 256 64
+    0.05 "data/physicals/monsters/gfx/bee.png" 256 0 320 64
+    0.05 "data/physicals/monsters/gfx/bee.png" 320 0 384 64
+    0.05 "data/physicals/monsters/gfx/bee.png" 384 0 448 64
+    0.05 "data/physicals/monsters/gfx/bee.png" 448 0 512 64
 }
 
 core/anim/bee/attack
-{
-    0.05 "data/physicals/monsters/bee.png" 0 64 64 128
-    0.10 "data/physicals/monsters/bee.png" 64 64 128 128
-    0.10 "data/physicals/monsters/bee.png" 128 64 192 128
-    0.10 "data/physicals/monsters/bee.png" 192 64 256 128
-    0.20 "data/physicals/monsters/bee.png" 256 64 320 128
-    0.20 "data/physicals/monsters/bee.png" 320 64 384 128
-    0.10 "data/physicals/monsters/bee.png" 384 64 448 128
+{	
+    0.05 "data/physicals/monsters/gfx/bee.png" 0 64 64 128
+    0.10 "data/physicals/monsters/gfx/bee.png" 64 64 128 128
+    0.10 "data/physicals/monsters/gfx/bee.png" 128 64 192 128
+    0.10 "data/physicals/monsters/gfx/bee.png" 192 64 256 128
+    0.20 "data/physicals/monsters/gfx/bee.png" 256 64 320 128
+    0.20 "data/physicals/monsters/gfx/bee.png" 320 64 384 128
+    0.10 "data/physicals/monsters/gfx/bee.png" 384 64 448 128
 }
 
 core/anim/bee/death
 {
-    0.15 "data/physicals/monsters/bee.png" 0 128 64 192
-    0.25 "data/physicals/monsters/bee.png" 64 128 128 192
-    5.5 "data/physicals/monsters/bee.png" 128 128 192 192
-	0.15 "data/physicals/monsters/bee.png" 192 128 256 192
-	0.15 "data/physicals/monsters/bee.png" 256 128 192 192
-	0.15 "data/physicals/monsters/bee.png" 320 128 384 192
-	0.15 "data/physicals/monsters/bee.png" 384 128 448 192
+    0.15 "data/physicals/monsters/gfx/bee.png" 0 128 64 192
+    0.25 "data/physicals/monsters/gfx/bee.png" 64 128 128 192
+    2.50 "data/physicals/monsters/gfx/bee.png" 128 128 192 192
+	0.15 "data/physicals/monsters/gfx/bee.png" 192 128 256 192
+	0.15 "data/physicals/monsters/gfx/bee.png" 256 128 192 192
+	0.15 "data/physicals/monsters/gfx/bee.png" 320 128 384 192
+	0.15 "data/physicals/monsters/gfx/bee.png" 384 128 448 192
 }
 
 core/anim/warlock/stand
@@ -4474,14 +4474,7 @@ core/anim/hard-lair-red/spawn
 
 core/anim/flower-lair/default
 {
-	1.9 "data/physicals/lairs/flower_lair.png"				0	0	64	64
-	0.1 "data/physicals/lairs/flower_lair.png"				1	1	63	63
-	0.1 "data/physicals/lairs/flower_lair.png"				2	2	62	62
-	0.1 "data/physicals/lairs/flower_lair.png"				1	1	63	63 
-}
-
-core/anim/flower-lair/spawn
-{
+	0.1 "data/physicals/lairs/flower_lair.png"				0	0	64	64
 	0.1 "data/physicals/lairs/flower_lair.png"				1	1	63	63
 	0.1 "data/physicals/lairs/flower_lair.png"				2	2	62	62
 	0.1 "data/physicals/lairs/flower_lair.png"				3	3	61	61
@@ -4489,6 +4482,17 @@ core/anim/flower-lair/spawn
 	0.1 "data/physicals/lairs/flower_lair.png"				3	3	61	61
 	0.1 "data/physicals/lairs/flower_lair.png"				2	2	62	62
 	0.1 "data/physicals/lairs/flower_lair.png"				1	1	63	63 
+}
+
+core/anim/flower-lair/spawn
+{
+	0.1 "data/physicals/lairs/flower_lair.png"				65	1	63	63
+	0.1 "data/physicals/lairs/flower_lair.png"				66	2	62	62
+	0.1 "data/physicals/lairs/flower_lair.png"				67	3	61	61
+	0.5 "data/physicals/lairs/flower_lair.png"				68	4	60	60
+	0.1 "data/physicals/lairs/flower_lair.png"				67	3	61	61
+	0.1 "data/physicals/lairs/flower_lair.png"				66	2	62	62
+	0.1 "data/physicals/lairs/flower_lair.png"				65	1	63	63 
 }
 
 core/anim/flower-lair/death
