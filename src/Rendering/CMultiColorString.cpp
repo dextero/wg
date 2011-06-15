@@ -3,8 +3,16 @@
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
 #include <SFML/System/Unicode.hpp>
-#include <windows.h>
-#include <GL/gl.h>
+
+#ifndef PLATFORM_LINUX  // dex: macosx tez pod to podchodzil, prawda?
+#   include <windows.h>
+#endif
+#ifdef PLATFORM_MACOSX
+#   include <gl.h>
+#else
+#   include <GL/gl.h>
+#endif
+
 #include <locale>
 
 using namespace sf;
