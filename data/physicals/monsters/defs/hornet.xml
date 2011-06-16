@@ -1,0 +1,46 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="Hornet" />
+    <desc value="An extremely dangerous hornet-rodent hybrid. A flock of these would be really hard to beat, since they're quite speedy and resistant. Their venom cripples the victim." />
+  </bestiary>
+  <genre>hornet</genre>
+
+  <maxhp min="90.0" max="120.0" />
+  <speed min="1.4" max="1.8" />
+  <turnspeed min="240.0" max="240.0" />
+  <strength min="10.0" max="12.0" />
+  <poisonous min="3.0" max="4.0" />
+  <fireresist min="10.0" max="10.0" />  
+  <poisonresist min="5.0" max="5.0" />  
+  <lightningresist min="3.0" max="3.0" />  
+  <xp min="40.0" max="45.0" />
+
+  <radius min="0.3" max="0.45" />
+  <mass min="1.6" max="2.0" />
+  <scale min="0.6" max="0.9" />
+
+  <animset>
+  	<anim name="core/anim/hornet/default" type="default" />
+  	<anim name="core/anim/hornet/move" type="move" />
+  	<anim name="core/anim/hornet/attack" type="attack" />
+  	<anim name="core/anim/hornet/death" type="death" />
+  </animset>
+  <animset>
+  	<anim name="core/anim/hornet/wounded/default" type="default" />
+  	<anim name="core/anim/hornet/wounded/move" type="move" />
+  	<anim name="core/anim/hornet/wounded/attack" type="attack" />
+  	<anim name="core/anim/hornet/death" type="death" />
+  </animset>
+
+  <ai name="boid-chaser" />
+
+  <ability name="data/abilities/monsters/melee-poison.xml" default="1" />
+  <ability name="data/abilities/monsters/summon-rats.xml" />
+
+  <sound type="attack" filename="data/sounds/EL/imp03.ogg" />
+  <sound type="spawn" filename="data/sounds/EL/imp01.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/imp04.ogg" />
+  <sound type="death" filename="data/sounds/EL/imp02.ogg" />
+
+</root>

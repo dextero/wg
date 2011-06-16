@@ -2,6 +2,7 @@
 
 #include "../../Utils/muParser/muParser.h"
 #include "../Abilities/CPinnedAbilityBatch.h"
+#include "../../Utils/CRand.h"
 #include <cassert>
 #include <cstdio>
 #include <set>
@@ -39,6 +40,12 @@ value_type dot(value_type ax, value_type bx, value_type ay, value_type by, value
     return ret; 
 }
 
+// Function callback
+value_type rnd(value_type ax, value_type bx) 
+{ 
+    return gRand.Rndf((float)ax, (float)bx); 
+}
+
 CExprParser::CExprParser(const std::string& expr){
 	mPAB = NULL;
 	mParser = new Parser();
@@ -49,7 +56,8 @@ CExprParser::CExprParser(const std::string& expr){
 		mParser->DefineVar("strength",&sStrength);
 		mParser->DefineVar("poisonous",&sPoisonous);
 		mParser->DefineVar("power",&sPower);
-		mParser->DefineFun("dot", dot, false);
+		mParser->DefineFun("dot", dot, true);
+		mParser->DefineFun("rnd", rnd, false);
 		mParser->SetExpr(expr);
 		// testujemy...
 		mParser->Eval();
