@@ -4,7 +4,7 @@ if [ -n "$1" ]
 then
     package_name="$1"
 else
-    revision=`hg describe`
+    revision=`hg describe -l 10000`
     DATE=`date +%F_%H-%M-%S`
     package_name="$revision"_"$DATE"
 fi

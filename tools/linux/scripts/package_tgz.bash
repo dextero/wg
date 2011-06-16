@@ -8,7 +8,7 @@ if [ -n "$package_name" ]
 then
     package_name="wg_linux_$package_name"
 else
-    revision=`hg describe`
+    revision=`hg describe -l 10000`
     DATE=`date +%F_%H-%M-%S`
     package_name="wg_linux_"$revision"_"$DATE
 fi
