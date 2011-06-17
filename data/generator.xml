@@ -18,6 +18,7 @@
         <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="1.0" />
         <weapon file="data/abilities/weapons/entangle.xml" minLevel="4" maxLevel="99" />
         <weapon file="data/abilities/weapons/powerslash.xml" minLevel="4" maxLevel="99" />
+        <weapon file="data/abilities/weapons/gorgon-shards.xml" minLevel="4" maxLevel="99" />
         <weapon file="data/abilities/weapons/firearrow-lvl2.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/meditation.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/firestream.xml" minLevel="5" maxLevel="99" />
