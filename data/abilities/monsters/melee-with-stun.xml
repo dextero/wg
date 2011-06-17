@@ -14,8 +14,27 @@
       <amount calc="1.0 * strength" />
     </effect>
     <effect type="knockback">
-      <amount value="1.0"/>
+      <amount value="20.0"/>
     </effect>
+    <effect type="graphical-effect">
+      <name value="stars" />
+      <time calc="0.75"/>
+    </effect>
+    <effect type="non-cumulative">
+      <effect type="timed">
+        <time calc="0.5"/>
+        <effect type="stun" />
+      </effect>
+    </effect>
+    <effect type="non-cumulative">
+      <effect type="timed">
+        <time calc="0.75"/>
+        <effect type="modify">    
+          <aspect value="speed" />
+          <amount value="0.5" />
+        </effect>
+      </effect>
+    </effect>	
   </effect>
   
   <cast-time-effect type="modify">
