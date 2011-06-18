@@ -1,0 +1,47 @@
+<root type="ability" class="bullet">
+
+  <effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/knifesheathe.ogg" />
+    </effect>
+    <effect type="damage">
+      <amount calc="6" />
+    </effect>
+  </effect>
+  
+  <self-effect type="sound">
+    <name value="data/sounds/Lugaro/knifedraw.ogg" />
+  </self-effect>
+
+  <cast-time-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.0" />
+  </cast-time-effect>
+  <delay-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.0" />
+  </delay-effect>
+  
+  <range value="12.0" />
+  <speed calc="7.6" />
+  <acceleration value="-2.3" />
+  <explode-on-fade value="0" />
+  <count value="1" />
+  <width calc="5" />
+  <ttl value="1.0" />
+  <bullet value="data/physicals/bullets/small-axe.xml" />
+  <bullet-angular-speed value="-440" />
+  <filter value="player,wall,door"/>
+
+  <manacost calc="0" />
+  <casttime value="0.35" />
+  <delay value="0.1" />
+  <cooldown value="3.75" />
+
+  <ai-hint>
+    <player-distance>3.0</player-distance>
+    <player-angle>30.0</player-angle>
+  </ai-hint>
+
+
+</root>
