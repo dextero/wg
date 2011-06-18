@@ -3557,36 +3557,35 @@ core/anim/surger/attack
 	0.10 "data/physicals/monsters/surger.png" 0 0 30 30
 }
 
-############################# Ear-wigle
+############################# Fafmycel
 
-core/anim/earwigle/default
+core/anim/fafmycel/default
 {
-	0.10 "data/physicals/monsters/earwigle.png" 0 0 75 75
+	0.10 "data/physicals/monsters/gfx/fafmycel.png" 0 0 75 75
 }
 
-core/anim/earwigle/move
+core/anim/fafmycel/move
 {
-	0.05 "data/physicals/monsters/earwigle.png" 0 0 75 75
-	0.05 "data/physicals/monsters/earwigle.png" 75 0 150 75
-	0.05 "data/physicals/monsters/earwigle.png" 150 0 225 75
-	0.05 "data/physicals/monsters/earwigle.png" 225 0 300 75
-	0.10 "data/physicals/monsters/earwigle.png" 300 0 375 75
-	0.05 "data/physicals/monsters/earwigle.png" 225 0 300 75
-	0.05 "data/physicals/monsters/earwigle.png" 150 0 225 75
-	0.05 "data/physicals/monsters/earwigle.png" 75 0 150 75
+	0.05 "data/physicals/monsters/gfx/fafmycel.png"  0  0 75  75
+	0.05 "data/physicals/monsters/gfx/fafmycel.png"  75 0 150 75
+	0.05 "data/physicals/monsters/gfx/fafmycel.png" 150 0 225 75
+	0.05 "data/physicals/monsters/gfx/fafmycel.png" 225 0 300 75
+	0.10 "data/physicals/monsters/gfx/fafmycel.png" 300 0 375 75
+	0.05 "data/physicals/monsters/gfx/fafmycel.png" 225 0 300 75
+	0.05 "data/physicals/monsters/gfx/fafmycel.png" 150 0 225 75
+	0.05 "data/physicals/monsters/gfx/fafmycel.png"  75 0 150 75
 }
 
-
-core/anim/earwigle/attack
+core/anim/fafmycel/attack
 {
-	0.05 "data/physicals/monsters/earwigle-attack.png" 0 0 75 75
-	0.05 "data/physicals/monsters/earwigle-attack.png" 75 0 150 75
-	0.05 "data/physicals/monsters/earwigle-attack.png" 150 0 225 75
-	0.15 "data/physicals/monsters/earwigle-attack.png" 225 0 300 75
-	0.40 "data/physicals/monsters/earwigle-attack.png" 300 0 375 75
-	0.15 "data/physicals/monsters/earwigle-attack.png" 225 0 300 75
-	0.05 "data/physicals/monsters/earwigle-attack.png" 150 0 225 75
-	0.05 "data/physicals/monsters/earwigle-attack.png" 75 0 150 75
+	0.05 "data/physicals/monsters/gfx/fafmycel-attack.png"  0  0 75  75
+	0.05 "data/physicals/monsters/gfx/fafmycel-attack.png"  75 0 150 75
+	0.05 "data/physicals/monsters/gfx/fafmycel-attack.png" 150 0 225 75
+	0.15 "data/physicals/monsters/gfx/fafmycel-attack.png" 225 0 300 75
+	0.40 "data/physicals/monsters/gfx/fafmycel-attack.png" 300 0 375 75
+	0.15 "data/physicals/monsters/gfx/fafmycel-attack.png" 225 0 300 75
+	0.05 "data/physicals/monsters/gfx/fafmycel-attack.png" 150 0 225 75
+	0.05 "data/physicals/monsters/gfx/fafmycel-attack.png"  75 0 150 75
 }
 
 

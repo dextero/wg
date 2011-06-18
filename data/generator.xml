@@ -124,6 +124,7 @@
         <monster file="data/physicals/monsters/defs/hornet.xml" minLevel="7" maxLevel="12" frequency="0.6" />
 
         <monster file="data/physicals/monsters/defs/crawler.xml" minLevel="8" maxLevel="13" frequency="0.3" />
+        <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="7" maxLevel="12" frequency="0.05" />
 
         <lair    file="data/physicals/lairs/hornet-lair.xml" minLevel="9" maxLevel="12" frequency="0.6" />
         <lair    file="data/physicals/lairs/troll-lair.xml" minLevel="9" maxLevel="9" frequency="0.05" />
@@ -136,6 +137,8 @@
         <monster file="data/physicals/monsters/defs/gargant-lord.xml" minLevel="10" maxLevel="12" frequency="0.05" />
         <monster file="data/physicals/monsters/defs/gargant-berserker.xml" minLevel="10" maxLevel="12" frequency="0.05" />
 
+        <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="13" maxLevel="18" frequency="0.1" />
+		
 		<!-- -->
 
         <lair    file="data/physicals/lairs/chit-lair.xml" minLevel="94" maxLevel="3" />
