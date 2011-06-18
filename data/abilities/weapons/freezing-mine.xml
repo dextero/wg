@@ -112,7 +112,7 @@
   <explode-on-fade value="1" />
   <speed-fuzziness value="0.05" />  
 
-  <manacost calc="18 * (1 + power)" />
+  <manacost calc="18 * (1 + 0.66 * power)" />
   <casttime value="0.09" />
   <delay value="0.05" />
   <cooldown value="1.0" />

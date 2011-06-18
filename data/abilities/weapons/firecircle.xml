@@ -110,7 +110,7 @@
       <time value="0.35"/>
   </cast-time-effect>
 
-  <manacost calc="26 * (1 + power)" />
+  <manacost calc="26 * (1 + 0.66 * power)" />
   <casttime calc="0.40" />
   <delay calc="0.05" />
   <cooldown calc="1.60" />
