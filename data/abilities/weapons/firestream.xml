@@ -71,7 +71,7 @@
   <delay calc="0.05" />
   <cooldown value="0.10" />
 
-  <focus-mana-cost calc="18.0 * (1 + power)" />
+  <focus-mana-cost calc="18.0 * (1 + 0.66 * power)" />
   <focus-max-duration calc="2.5 * (1 + power)" />
 
 </root>

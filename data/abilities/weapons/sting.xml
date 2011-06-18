@@ -44,7 +44,7 @@
   <ttl value="0.6" />
   <bullet value="data/physicals/bullets/sting.xml" />
 
-  <manacost calc="9.0 * (1 + power)" />
+  <manacost calc="9.0 * (1 + 0.66 * power)" />
   <casttime value="0.09" />
   <delay value="0.05" />
   <cooldown value="0.7" />

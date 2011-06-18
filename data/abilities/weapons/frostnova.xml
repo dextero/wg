@@ -98,7 +98,7 @@
   <bullet value="data/physicals/bullets/iceball.xml" />
   <bullet-angular-speed value="-720" />
 
-  <manacost calc="25 * (1 + power)" />
+  <manacost calc="25 * (1 + 0.66 * power)" />
   <casttime value="0.40" />
   <delay value="0.05" />
   <cooldown value="0.80" />

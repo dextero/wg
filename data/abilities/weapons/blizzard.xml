@@ -98,7 +98,7 @@ Bonus for this spell depends:
     </effect>
   </cast-time-effect>
   
-  <manacost calc="25 * (1 + power)" />
+  <manacost calc="25 * (1 + 0.66 * power)" />
   <casttime calc="0.20" />
   <delay calc="0.50" />
   <cooldown calc="1.20" />

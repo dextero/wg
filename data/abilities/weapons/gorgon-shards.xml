@@ -39,7 +39,7 @@
   <bullet-angular-speed value="-1440" />
   <filter value="wall" />
 
-  <manacost calc="10 * (1 + power)" />
+  <manacost calc="10 * (1 + 0.66 * power)" />
   <casttime calc="0.09" />
   <delay calc="0.05" />
   <cooldown value="0.60" />
