@@ -1,25 +1,22 @@
 <root type="lair">
   
-  <spawnLimit min="4" max="4" />
-  <spawnRate min="0.25" max="0.25" />
-  <grouping-hint>1</grouping-hint>
   <genre>wolfbeast-lair</genre>
 
-  <maxhp min="120.0" max="140.0" />
-  
-  <xp min="30.0" max="30.0" />
-
+  <spawnLimit min="4" max="10" />
+  <spawnRate min="0.25" max="0.33" />
   <spawnPosition x="0.0f" y="0.0f" />
-  
   <spawnSound filename="data/physicals/lairs/lair-spawn.ogg" />
+  <grouping-hint>1</grouping-hint>
 
-  <scale min="1.0" max="1.0" />
-  <radius min="0.45" max="0.45" />
+  <maxhp min="250.0" max="280.0" />
+  <xp min="115.0" max="119.0" />
 
-  <anim name="core/anim/flower-lair/default" type="default" />
-  <anim name="core/anim/flower-lair/spawn" type="attack" />
-  <anim name="core/anim/flower-lair/death" type="death" />
+  <radius min="0.4" max="0.475" />
+  <scale min="0.8" max="0.95" />
+
+  <anim name="test/anim/lair/default" type="default" />
+  <anim name="test/anim/lair/spawn" type="attack" />
+  <anim name="test/anim/lair/death" type="death" />
   
-  <monster filename="data/physicals/monsters/wolfbeast.xml" />
-
+  <monster filename="data/physicals/monsters/troll.xml" />
 </root>

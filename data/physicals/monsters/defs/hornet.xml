@@ -9,7 +9,7 @@
   <maxhp min="90.0" max="120.0" />
   <speed min="1.4" max="1.8" />
   <turnspeed min="240.0" max="240.0" />
-  <strength min="10.0" max="12.0" />
+  <strength min="8.0" max="10.0" />
   <poisonous min="3.0" max="4.0" />
   <fireresist min="10.0" max="10.0" />  
   <poisonresist min="5.0" max="5.0" />  
