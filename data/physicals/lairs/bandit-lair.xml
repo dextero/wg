@@ -16,8 +16,8 @@
 
   <anim name="core/anim/well/default" type="default" />
   <anim name="core/anim/well/default" type="attack" />
-  <!-- <anim name="core/anim/well/default" type="death" /> tox, 9jul - bo chce, zeby znikaly po smierci-->
-  
+  <anim name="core/anim/effects/test-explosions/1" type="death" /> 
+
   <monster filename="data/physicals/monsters/defs/bandit.xml" />
   <monster filename="data/physicals/monsters/defs/bandit.xml" />
   <monster filename="data/physicals/monsters/defs/timberman.xml" />

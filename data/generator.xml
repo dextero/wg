@@ -119,7 +119,7 @@
         <monster file="data/physicals/monsters/defs/troll.xml" minLevel="6" maxLevel="9" frequency="0.05" />
         <monster file="data/physicals/monsters/defs/wolfbeast.xml" minLevel="6" maxLevel="8" frequency="0.1" />
 		
-        <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="7" maxLevel="99" frequency="0.03" />
+        <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="7" maxLevel="12" frequency="0.03" />
         <lair    file="data/physicals/lairs/hornet-lair.xml" minLevel="7" maxLevel="8" frequency="0.1" />
         <monster file="data/physicals/monsters/defs/hornet.xml" minLevel="7" maxLevel="12" frequency="0.6" />
 
@@ -131,13 +131,22 @@
         <lair    file="data/physicals/lairs/wolfbeast-lair.xml" minLevel="9" maxLevel="15" frequency="0.4" />
         <monster file="data/physicals/monsters/defs/wolfbeast.xml" minLevel="9" maxLevel="15" frequency="0.4" />
 
+        <lair    file="data/physicals/lairs/gargant-lair.xml" minLevel="10" maxLevel="11" frequency="0.1" />
         <monster file="data/physicals/monsters/defs/troll.xml" minLevel="10" maxLevel="12" frequency="0.5" />
         <lair    file="data/physicals/lairs/troll-lair.xml" minLevel="10" maxLevel="12" frequency="0.2" />
         <monster file="data/physicals/monsters/defs/gargant.xml" minLevel="10" maxLevel="12" frequency="0.15"/>
         <monster file="data/physicals/monsters/defs/gargant-lord.xml" minLevel="10" maxLevel="12" frequency="0.05" />
         <monster file="data/physicals/monsters/defs/gargant-berserker.xml" minLevel="10" maxLevel="12" frequency="0.05" />
+        <monster file="data/physicals/monsters/defs/ogrillion.xml" minLevel="10" maxLevel="12" frequency="0.2" />
 
+        <monster file="data/physicals/monsters/defs/ogre.xml" minLevel="11" maxLevel="12" frequency="0.2" />
+		
+        <lair    file="data/physicals/lairs/ogre-lair.xml" minLevel="12" maxLevel="18" />
+
+        <monster file="data/physicals/monsters/defs/ogrillion.xml" minLevel="13" maxLevel="18" />
+        <monster file="data/physicals/monsters/defs/ogre.xml" minLevel="13" maxLevel="18" />
         <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="13" maxLevel="18" frequency="0.1" />
+        <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="13" maxLevel="99" frequency="0.06" />
 		
 		<!-- -->
 

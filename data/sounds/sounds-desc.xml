@@ -11,19 +11,6 @@
 
   <!-- Przynależność dźwięków do grup. Poszczególne grupy oddzielamy spacją. -->
 
-  <sound path="data/sounds/rat-attack1.wav" groups="monster" />
-  <sound path="data/sounds/wolfbeast-attack1.wav" groups="monster" />
-  <sound path="data/sounds/crawler-attack1.wav" groups="monster" />
-  <sound path="data/sounds/chityniak-attack1.wav" groups="monster" />
-  <sound path="data/sounds/mantis-attack1.wav" groups="monster" />
-  <sound path="data/sounds/bee-attack1.wav" groups="monster" />
-  <sound path="data/sounds/hornet-attack1.wav" groups="monster" />
-  <sound path="data/sounds/cockroach-attack1.wav" groups="monster" />
-  <sound path="data/sounds/early-attack1.wav" groups="monster" />
-  <sound path="data/sounds/ogre-attack1.wav" groups="monster" />
-  <sound path="data/sounds/shaggy-attack1.wav" groups="monster" />
-  <sound path="data/sounds/troll-attack1.wav" groups="monster" />
-
   <!-- Dźwięki z Eternal Lands -->
   <sound path="data/sounds/EL/rat01.ogg" groups="monster" />
   <sound path="data/sounds/EL/wolf_attack01.ogg" groups="monster" />
@@ -92,8 +79,8 @@
   <sound path="data/sounds/Lugaro/Bark2.ogg" groups="monster" />
   <sound path="data/sounds/Lugaro/Bark3.ogg" groups="monster" />
   <sound path="data/sounds/Lugaro/Barkgrowl.ogg" groups="monster" />
-  <sound path="data/sounds/Lugaro/growl.ogg" groups="monster" />
-  <sound path="data/sounds/Lugaro/growl2.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Growl.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Growl2.ogg" groups="monster" />
   <sound path="data/sounds/Lugaro/hawk.ogg" groups="monster" />
   <sound path="data/sounds/Lugaro/knifedraw.ogg" groups="monster" />
   <sound path="data/sounds/Lugaro/knifesheathe.ogg" groups="monster" />
@@ -108,8 +95,8 @@
   <sound path="data/sounds/Lugaro/Rabbitpain.ogg" groups="monster" />
   <sound path="data/sounds/Lugaro/Rabbitpain2.ogg" groups="monster" />
   <sound path="data/sounds/Lugaro/skid.ogg" groups="monster" />
-  <sound path="data/sounds/Lugaro/snarl.ogg" groups="monster" />
-  <sound path="data/sounds/Lugaro/snarl2.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Snarl.ogg" groups="monster" />
+  <sound path="data/sounds/Lugaro/Snarl2.ogg" groups="monster" />
   
   <sound path="data/sounds/Lugaro/jump.ogg" groups="spell" />
   <sound path="data/sounds/Lugaro/splatter.ogg" groups="spell" />
