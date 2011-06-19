@@ -6,7 +6,7 @@
   </bestiary>
   <genre>hornet</genre>
 
-  <maxhp min="90.0" max="120.0" />
+  <maxhp min="80.0" max="90.0" />
   <speed min="1.4" max="1.8" />
   <turnspeed min="240.0" max="240.0" />
   <strength min="8.0" max="10.0" />

@@ -35,7 +35,7 @@
 
   <sound type="attack" filename="data/sounds/EL/dragon02.ogg" />
   <sound type="damaged" filename="data/sounds/EL/monster01.ogg" />
-  <sound type="death" filename="data/sounds/EL/imp04.ogg" />
+  <sound type="death" filename="data/sounds/Lugaro/hawk.ogg" />
   <sound type="spawn" filename="data/sounds/EL/imp01.ogg" />
 
 </root>

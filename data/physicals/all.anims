@@ -161,103 +161,6 @@ test/anim/hero2/death
 	5.0  "data/player/player2-die.png"                448   0  512  64
 }
 
-
-##############################
-# a teraz cacodemon testowy: #
-##############################
-
-test/anim/cacodemon/default
-{
-    0.05  "data/physicals/cacodemon.png"                  0   0  64  64
-    0.05  "data/physicals/cacodemon.png"                 64   0 128  64
-    0.05  "data/physicals/cacodemon.png"                128   0 192  64
-    0.05  "data/physicals/cacodemon.png"                192   0 256  64
-    0.05  "data/physicals/cacodemon.png"                256   0 320  64
-    0.05  "data/physicals/cacodemon.png"                320   0 384  64
-    0.05  "data/physicals/cacodemon.png"                384   0 448  64
-    0.05  "data/physicals/cacodemon.png"                448   0 512  64
-    0.05  "data/physicals/cacodemon.png"                512   0 576  64
-    0.05  "data/physicals/cacodemon.png"                576   0 640  64
-
-    0.05  "data/physicals/cacodemon.png"                  0  64  64 128
-    0.05  "data/physicals/cacodemon.png"                 64  64 128 128
-    0.05  "data/physicals/cacodemon.png"                128  64 192 128
-    0.05  "data/physicals/cacodemon.png"                192  64 256 128
-    0.05  "data/physicals/cacodemon.png"                256  64 320 128
-    0.05  "data/physicals/cacodemon.png"                320  64 384 128
-    0.05  "data/physicals/cacodemon.png"                384  64 448 128
-    0.05  "data/physicals/cacodemon.png"                448  64 512 128
-    0.05  "data/physicals/cacodemon.png"                512  64 576 128
-    0.05  "data/physicals/cacodemon.png"                576  64 640 128
-
-    0.05  "data/physicals/cacodemon.png"                  0 128  64 192
-    0.05  "data/physicals/cacodemon.png"                 64 128 128 192
-    0.05  "data/physicals/cacodemon.png"                128 128 192 192
-    0.05  "data/physicals/cacodemon.png"                192 128 256 192
-    0.05  "data/physicals/cacodemon.png"                256 128 320 192
-    0.05  "data/physicals/cacodemon.png"                320 128 384 192
-    0.05  "data/physicals/cacodemon.png"                384 128 448 192
-    0.05  "data/physicals/cacodemon.png"                448 128 512 192
-    0.05  "data/physicals/cacodemon.png"                512 128 576 192
-    0.05  "data/physicals/cacodemon.png"                576 128 640 192
-
-    0.05  "data/physicals/cacodemon.png"                  0 192  64 256
-    0.05  "data/physicals/cacodemon.png"                 64 192 128 256
-    0.05  "data/physicals/cacodemon.png"                128 192 192 256
-    0.05  "data/physicals/cacodemon.png"                192 192 256 256
-    0.05  "data/physicals/cacodemon.png"                256 192 320 256
-    0.05  "data/physicals/cacodemon.png"                320 192 384 256
-    0.05  "data/physicals/cacodemon.png"                384 192 448 256
-    0.05  "data/physicals/cacodemon.png"                448 192 512 256
-    0.05  "data/physicals/cacodemon.png"                512 192 576 256
-    0.05  "data/physicals/cacodemon.png"                576 192 640 256
-
-    0.05  "data/physicals/cacodemon.png"                  0 256  64 320
-    0.05  "data/physicals/cacodemon.png"                 64 256 128 320
-    0.05  "data/physicals/cacodemon.png"                128 256 192 320
-    0.05  "data/physicals/cacodemon.png"                192 256 256 320
-    0.05  "data/physicals/cacodemon.png"                256 256 320 320
-    0.05  "data/physicals/cacodemon.png"                320 256 384 320
-    0.05  "data/physicals/cacodemon.png"                384 256 448 320
-    0.05  "data/physicals/cacodemon.png"                448 256 512 320
-    0.05  "data/physicals/cacodemon.png"                512 256 576 320
-    0.05  "data/physicals/cacodemon.png"                576 256 640 320
-
-    0.05  "data/physicals/cacodemon.png"                  0 320  64 384
-    0.05  "data/physicals/cacodemon.png"                 64 320 128 384
-    0.05  "data/physicals/cacodemon.png"                128 320 192 384
-    0.05  "data/physicals/cacodemon.png"                192 320 256 384
-    0.05  "data/physicals/cacodemon.png"                256 320 320 384
-    0.05  "data/physicals/cacodemon.png"                320 320 384 384
-    0.05  "data/physicals/cacodemon.png"                384 320 448 384
-    0.05  "data/physicals/cacodemon.png"                448 320 512 384
-    0.05  "data/physicals/cacodemon.png"                512 320 576 384
-    0.05  "data/physicals/cacodemon.png"                576 320 640 384
-
-    0.05  "data/physicals/cacodemon.png"                  0 384  64 448
-    0.05  "data/physicals/cacodemon.png"                 64 384 128 448
-    0.05  "data/physicals/cacodemon.png"                128 384 192 448
-    0.05  "data/physicals/cacodemon.png"                192 384 256 448
-    0.05  "data/physicals/cacodemon.png"                256 384 320 448
-    0.05  "data/physicals/cacodemon.png"                320 384 384 448
-    0.05  "data/physicals/cacodemon.png"                384 384 448 448
-    0.05  "data/physicals/cacodemon.png"                448 384 512 448
-    0.05  "data/physicals/cacodemon.png"                512 384 576 448
-    0.05  "data/physicals/cacodemon.png"                576 384 640 448
-
-    0.05  "data/physicals/cacodemon.png"                  0 448  64 512
-    0.05  "data/physicals/cacodemon.png"                 64 448 128 512
-    0.05  "data/physicals/cacodemon.png"                128 448 192 512
-    0.05  "data/physicals/cacodemon.png"                192 448 256 512
-    0.05  "data/physicals/cacodemon.png"                256 448 320 512
-    0.05  "data/physicals/cacodemon.png"                320 448 384 512
-    0.05  "data/physicals/cacodemon.png"                384 448 448 512
-    0.05  "data/physicals/cacodemon.png"                448 448 512 512
-    0.05  "data/physicals/cacodemon.png"                512 448 576 512
-    0.05  "data/physicals/cacodemon.png"                576 448 640 512
-
-}
-
 ##################
 # szczurek idzie #
 ##################
@@ -294,174 +197,179 @@ test/anim/rat/attack
 }
 
 ###########################
-# testowe od jack flowera #
-# ####################### #
+# ogre 
+###########################
 
 core/anim/ogre/default
 {
-    0.10  "data/physicals/monsters/ogre-move.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/ogre-move.png"                128   0  192  64
 }
 
 core/anim/ogre/move
 {
-    0.10  "data/physicals/monsters/ogre-move.png"                  0   0   64  64
-    0.10  "data/physicals/monsters/ogre-move.png"                 64   0  128  64
-    0.10  "data/physicals/monsters/ogre-move.png"                128   0  192  64
-    0.10  "data/physicals/monsters/ogre-move.png"                192   0  256  64
-    0.10  "data/physicals/monsters/ogre-move.png"                256   0  320  64
-    0.10  "data/physicals/monsters/ogre-move.png"                320   0  384  64
-    0.10  "data/physicals/monsters/ogre-move.png"                384   0  448  64
-    0.10  "data/physicals/monsters/ogre-move.png"                448   0  512  64
+    0.15  "data/physicals/monsters/gfx/ogre-move.png"                  0   0   64  64
+    0.15  "data/physicals/monsters/gfx/ogre-move.png"                 64   0  128  64
+    0.15  "data/physicals/monsters/gfx/ogre-move.png"                128   0  192  64
+    0.15  "data/physicals/monsters/gfx/ogre-move.png"                192   0  256  64
+    0.15  "data/physicals/monsters/gfx/ogre-move.png"                256   0  320  64
+    0.15  "data/physicals/monsters/gfx/ogre-move.png"                320   0  384  64
+    0.15  "data/physicals/monsters/gfx/ogre-move.png"                384   0  448  64
+    0.15  "data/physicals/monsters/gfx/ogre-move.png"                448   0  512  64
 }
 
 core/anim/ogre/attack
 {
-    0.05  "data/physicals/monsters/ogre-attack.png"                  0   0   64  64
-    0.05  "data/physicals/monsters/ogre-attack.png"                 64   0  128  64
-    0.05  "data/physicals/monsters/ogre-attack.png"                128   0  192  64
-    0.05  "data/physicals/monsters/ogre-attack.png"                192   0  256  64
-    0.05  "data/physicals/monsters/ogre-attack.png"                256   0  320  64
-    0.05  "data/physicals/monsters/ogre-attack.png"                320   0  384  64
-    0.05  "data/physicals/monsters/ogre-attack.png"                384   0  448  64
-    0.10  "data/physicals/monsters/ogre-attack.png"                448   0  512  64
-    0.05  "data/physicals/monsters/ogre-attack.png"                384   0  448  64
-    0.05  "data/physicals/monsters/ogre-attack.png"                320   0  384  64
-    0.05  "data/physicals/monsters/ogre-attack.png"                256   0  320  64
-    0.05  "data/physicals/monsters/ogre-attack.png"                192   0  256  64
-    0.05  "data/physicals/monsters/ogre-attack.png"                128   0  192  64
-    0.05  "data/physicals/monsters/ogre-attack.png"                 64   0  128  64
-    0.05  "data/physicals/monsters/ogre-attack.png"                  0   0   64  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                  0   0   64  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                 64   0  128  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                128   0  192  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                192   0  256  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                256   0  320  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                320   0  384  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                384   0  448  64
+    0.10  "data/physicals/monsters/gfx/ogre-attack-0.png"                448   0  512  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                384   0  448  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                320   0  384  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                256   0  320  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                192   0  256  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                128   0  192  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                 64   0  128  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-0.png"                  0   0   64  64
 }
 
 core/anim/ogre/attack-second
 {
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                  0   0   64  64
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                 64   0  128  64
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                128   0  192  64
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                192   0  256  64
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                256   0  320  64
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                320   0  384  64
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                384   0  448  64
-    0.10  "data/physicals/monsters/ogre-attack-second.png"                448   0  512  64
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                384   0  448  64
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                320   0  384  64
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                256   0  320  64
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                192   0  256  64
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                128   0  192  64
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                 64   0  128  64
-    0.05  "data/physicals/monsters/ogre-attack-second.png"                  0   0   64  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                  0   0   64  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                 64   0  128  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                128   0  192  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                192   0  256  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                256   0  320  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                320   0  384  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                384   0  448  64
+    0.10  "data/physicals/monsters/gfx/ogre-attack-1.png"                448   0  512  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                384   0  448  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                320   0  384  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                256   0  320  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                192   0  256  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                128   0  192  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                 64   0  128  64
+    0.05  "data/physicals/monsters/gfx/ogre-attack-1.png"                  0   0   64  64
 }
 
 core/anim/ogre/death
 {
-    0.05 "data/physicals/monsters/ogre-death.png" 0 0 64 64
-    0.05 "data/physicals/monsters/ogre-death.png" 64 0 128 64
-    0.05 "data/physicals/monsters/ogre-death.png" 128 0 192 64
-    0.05 "data/physicals/monsters/ogre-death.png" 192 0 256 64
-    0.05 "data/physicals/monsters/ogre-death.png" 0 64 64 128
-    0.05 "data/physicals/monsters/ogre-death.png" 64 64 128 128
-    0.05 "data/physicals/monsters/ogre-death.png" 128 64 192 128
-    0.05 "data/physicals/monsters/ogre-death.png" 192 64 256 128
-    0.05 "data/physicals/monsters/ogre-death.png" 0 128 64 192
-    0.05 "data/physicals/monsters/ogre-death.png" 64 128 128 192
-    0.05 "data/physicals/monsters/ogre-death.png" 128 128 192 192
-    0.05 "data/physicals/monsters/ogre-death.png" 192 128 256 192
-    0.05 "data/physicals/monsters/ogre-death.png" 0 192 64 256
-    0.05 "data/physicals/monsters/ogre-death.png" 64 192 128 256
-    0.05 "data/physicals/monsters/ogre-death.png" 128 192 192 256
-    0.05 "data/physicals/monsters/ogre-death.png" 192 192 256 256
-    0.05 "data/physicals/monsters/ogre-death.png" 0 256 64 320
-    0.05 "data/physicals/monsters/ogre-death.png" 64 256 128 320
-    5.05 "data/physicals/monsters/ogre-death.png" 128 256 192 320
-    0.05 "data/physicals/monsters/ogre-death.png" 192 256 256 320
-    0.05 "data/physicals/monsters/ogre-death.png" 0 320 64 384
-    0.05 "data/physicals/monsters/ogre-death.png" 64 320 128 384
-    0.05 "data/physicals/monsters/ogre-death.png" 128 320 192 384
-    0.05 "data/physicals/monsters/ogre-death.png" 192 320 256 384
-    0.05 "data/physicals/monsters/ogre-death.png" 0 384 64 448
-    0.05 "data/physicals/monsters/ogre-death.png" 64 384 128 448
-    0.05 "data/physicals/monsters/ogre-death.png" 128 384 192 448
-    0.05 "data/physicals/monsters/ogre-death.png" 192 384 256 448
-    0.05 "data/physicals/monsters/ogre-death.png" 0 448 64 512
-    0.05 "data/physicals/monsters/ogre-death.png" 64 448 128 512
-    0.05 "data/physicals/monsters/ogre-death.png" 128 448 192 512
-    0.05 "data/physicals/monsters/ogre-death.png" 192 448 256 512
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 0 0 64 64
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 64 0 128 64
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 128 0 192 64
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 192 0 256 64
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 0 64 64 128
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 64 64 128 128
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 128 64 192 128
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 192 64 256 128
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 0 128 64 192
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 64 128 128 192
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 128 128 192 192
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 192 128 256 192
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 0 192 64 256
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 64 192 128 256
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 128 192 192 256
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 192 192 256 256
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 0 256 64 320
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 64 256 128 320
+    2.50 "data/physicals/monsters/gfx/ogre-death.png" 128 256 192 320
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 192 256 256 320
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 0 320 64 384
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 64 320 128 384
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 128 320 192 384
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 192 320 256 384
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 0 384 64 448
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 64 384 128 448
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 128 384 192 448
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 192 384 256 448
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 0 448 64 512
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 64 448 128 512
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 128 448 192 512
+    0.05 "data/physicals/monsters/gfx/ogre-death.png" 192 448 256 512
 }
 
-core/anim/ogre-wife/default
+##########################
+# ogrillion
+##########################
+
+core/anim/ogrillion/default
 {
-    0.10  "data/physicals/monsters/ogre-wife-move.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/ogrillion-move.png"                128   0  192  64
 }
 
-core/anim/ogre-wife/move
+core/anim/ogrillion/move
 {
-    0.10  "data/physicals/monsters/ogre-wife-move.png"                  0   0   64  64
-    0.10  "data/physicals/monsters/ogre-wife-move.png"                 64   0  128  64
-    0.10  "data/physicals/monsters/ogre-wife-move.png"                128   0  192  64
-    0.10  "data/physicals/monsters/ogre-wife-move.png"                192   0  256  64
-    0.10  "data/physicals/monsters/ogre-wife-move.png"                256   0  320  64
-    0.10  "data/physicals/monsters/ogre-wife-move.png"                320   0  384  64
-    0.10  "data/physicals/monsters/ogre-wife-move.png"                384   0  448  64
-    0.10  "data/physicals/monsters/ogre-wife-move.png"                448   0  512  64
+    0.16  "data/physicals/monsters/gfx/ogrillion-move.png"                  0   0   64  64
+    0.16  "data/physicals/monsters/gfx/ogrillion-move.png"                 64   0  128  64
+    0.16  "data/physicals/monsters/gfx/ogrillion-move.png"                128   0  192  64
+    0.16  "data/physicals/monsters/gfx/ogrillion-move.png"                192   0  256  64
+    0.16  "data/physicals/monsters/gfx/ogrillion-move.png"                256   0  320  64
+    0.16  "data/physicals/monsters/gfx/ogrillion-move.png"                320   0  384  64
+    0.16  "data/physicals/monsters/gfx/ogrillion-move.png"                384   0  448  64
+    0.16  "data/physicals/monsters/gfx/ogrillion-move.png"                448   0  512  64
 }
 
-
-core/anim/ogre-wife/death
+core/anim/ogrillion/death
 {
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 0 0 64 64
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 64 0 128 64
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 128 0 192 64
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 192 0 256 64
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 0 64 64 128
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 64 64 128 128
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 128 64 192 128
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 192 64 256 128
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 0 128 64 192
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 64 128 128 192
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 128 128 192 192
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 192 128 256 192
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 0 192 64 256
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 64 192 128 256
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 128 192 192 256
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 192 192 256 256
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 0 256 64 320
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 64 256 128 320
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 128 256 192 320
-    5.05 "data/physicals/monsters/ogre-wife-death.png" 192 256 256 320
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 0 320 64 384
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 64 320 128 384
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 128 320 192 384
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 192 320 256 384
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 0 384 64 448
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 64 384 128 448
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 128 384 192 448
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 192 384 256 448
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 0 448 64 512
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 64 448 128 512
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 128 448 192 512
-    0.05 "data/physicals/monsters/ogre-wife-death.png" 192 448 256 512
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 0 0 64 64
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 64 0 128 64
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 128 0 192 64
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 192 0 256 64
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 0 64 64 128
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 64 64 128 128
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 128 64 192 128
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 192 64 256 128
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 0 128 64 192
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 64 128 128 192
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 128 128 192 192
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 192 128 256 192
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 0 192 64 256
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 64 192 128 256
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 128 192 192 256
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 192 192 256 256
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 0 256 64 320
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 64 256 128 320
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 128 256 192 320
+    2.50 "data/physicals/monsters/gfx/ogrillion-death.png" 192 256 256 320
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 0 320 64 384
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 64 320 128 384
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 128 320 192 384
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 192 320 256 384
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 0 384 64 448
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 64 384 128 448
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 128 384 192 448
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 192 384 256 448
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 0 448 64 512
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 64 448 128 512
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 128 448 192 512
+    0.05 "data/physicals/monsters/gfx/ogrillion-death.png" 192 448 256 512
 }
 
-
-core/anim/ogre-wife/attack
+core/anim/ogrillion/attack
 {
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                  0   0   64  64
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                 64   0  128  64
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                128   0  192  64
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                192   0  256  64
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                256   0  320  64
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                320   0  384  64
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                384   0  448  64
-    0.10  "data/physicals/monsters/ogre-wife-attack.png"                448   0  512  64
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                384   0  448  64
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                320   0  384  64
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                256   0  320  64
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                192   0  256  64
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                128   0  192  64
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                 64   0  128  64
-    0.05  "data/physicals/monsters/ogre-wife-attack.png"                  0   0   64  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                  0   0   64  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                 64   0  128  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                128   0  192  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                192   0  256  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                256   0  320  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                320   0  384  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                384   0  448  64
+    0.10  "data/physicals/monsters/gfx/ogrillion-attack.png"                448   0  512  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                384   0  448  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                320   0  384  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                256   0  320  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                192   0  256  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                128   0  192  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                 64   0  128  64
+    0.05  "data/physicals/monsters/gfx/ogrillion-attack.png"                  0   0   64  64
 }
 
+##########################
+# chitiniac
+##########################
 
 core/anim/chitiniac/default
 {
@@ -511,6 +419,10 @@ core/anim/chitiniac/attack
     0.10  "data/physicals/monsters/gfx/chitiniac-attack.png"                448   0  512  64
 }
 
+######################
+# huge-lair
+######################
+
 core/anim/huge-lair/default
 {
 	0.10 "data/physicals/lairs/huge_lair_default.png"					0   0   128  128
@@ -556,35 +468,42 @@ core/anim/huge-lair/death
 	0.1 "data/physicals/lairs/huge_lair_death.png"					384 384   512  512
 }
 
+########################
+# lair
+########################
+
 test/anim/lair/default
 {
 	1.00 "data/physicals/lairs/lair-default.png"							0   0   64  64
 	0.20 "data/physicals/lairs/lair-default.png"						   64   0  128  64
-	0.10  "data/physicals/lairs/lair-default.png"            	 	  128   0  192  64
-	0.13  "data/physicals/lairs/lair-default.png"                	  192   0  256  64
-	0.10  "data/physicals/lairs/lair-default.png"            	 	  128   0  192  64
+	0.10 "data/physicals/lairs/lair-default.png"  		          	 	  128   0  192  64
+	0.13 "data/physicals/lairs/lair-default.png"        	        	  192   0  256  64
+	0.10 "data/physicals/lairs/lair-default.png"            		 	  128   0  192  64
 	0.20 "data/physicals/lairs/lair-default.png"						   64   0  128  64
 }
 
 test/anim/lair/spawn
 {
 	0.10 "data/physicals/lairs/lair-default.png"						   64   0  128  64
-    0.10  "data/physicals/lairs/lair-default.png"            	 	  128   0  192  64
-    0.13  "data/physicals/lairs/lair-default.png"                	  192   0  256  64
-    0.15  "data/physicals/lairs/lair-default.png" 	            	  256   0  320  64
-    0.15  "data/physicals/lairs/lair-default.png"    	           	  320   0  384  64
-    0.12  "data/physicals/lairs/lair-default.png"        	       	  384   0  448  64
-    0.10  "data/physicals/lairs/lair-default.png"            	   	  448   0  512  64
+    0.10 "data/physicals/lairs/lair-default.png"            	 		  128   0  192  64
+    0.13 "data/physicals/lairs/lair-default.png"                		  192   0  256  64
+    0.15 "data/physicals/lairs/lair-default.png" 	            		  256   0  320  64
+    0.15 "data/physicals/lairs/lair-default.png"    	    	       	  320   0  384  64
+    0.12 "data/physicals/lairs/lair-default.png"        		       	  384   0  448  64
+    0.10 "data/physicals/lairs/lair-default.png"    	        	   	  448   0  512  64
 }
-
 
 test/anim/lair/death
 {
-	0.10 "data/physicals/lairs/lair-death.png"						   0  0  64  64
+	0.10 "data/physicals/lairs/lair-death.png"					 	    0   0   64  64
 	0.10 "data/physicals/lairs/lair-death.png"						   64   0  128  64
-    0.10  "data/physicals/lairs/lair-death.png"            	 	  128   0  192  64
-    0.13  "data/physicals/lairs/lair-death.png"                	  192   0  256  64
+    0.10 "data/physicals/lairs/lair-death.png"        	    	 	  128   0  192  64
+    0.13 "data/physicals/lairs/lair-death.png"          	      	  192   0  256  64
 }
+
+##################
+# crawler
+#################
 
 test/anim/crawler/default
 {
@@ -649,6 +568,10 @@ test/anim/crawler/attack
     0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  160   0   240  80
     0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  80    0   160  80
 }
+
+#####################
+# hornet
+#####################
 
 core/anim/hornet/default
 {
@@ -719,6 +642,10 @@ core/anim/hornet/death
     2.50  "data/physicals/monsters/gfx/hornet-death.png"                128  64  192  128
     0.15  "data/physicals/monsters/gfx/hornet-death.png"                192  64  256  128
 }
+
+########################
+# cockroach
+########################
 
 core/anim/cockroach/default
 {
@@ -850,6 +777,8 @@ core/anim/bee/death
 	0.15 "data/physicals/monsters/gfx/bee.png" 384 128 448 192
 }
 
+#####################
+
 core/anim/warlock/stand
 {
     0.10  "data/physicals/monsters/warlock-move.png"                256   0  320  64
@@ -918,6 +847,8 @@ core/anim/shaggy/default
     0.2 "data/physicals/monsters/shaggy_attack.png" 128 64 192 128
     0.2 "data/physicals/monsters/shaggy_attack.png" 192 64 256 128
 }
+
+######################3
 
 core/anim/shaggy/move
 {
@@ -1022,131 +953,9 @@ core/anim/shaggy-winged/attack
     0.1 "data/physicals/monsters/shaggy_attack_winged.png" 64 64 128 128
 }
 
-core/anim/mantis/default
-{
-    0.5 "data/physicals/monsters/praying_mantis_move_sprite.png" 64 0 128 64
-}
-
-core/anim/mantis/move
-{
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 0 0 64 64
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 64 0 128 64
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 128 0 192 64
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 192 0 256 64
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 0 64 64 128
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 64 64 128 128
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 128 64 192 128
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 192 64 256 128
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 0 128 64 192
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 64 128 128 192
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 128 128 192 192
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 192 128 256 192
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 0 192 64 256
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 64 192 128 256
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 128 192 192 256
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite.png" 192 192 256 256
-}
-
-core/anim/mantis/attack
-{
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 0 0 64 64
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 64 0 128 64
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 128 0 192 64
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 192 0 256 64
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 0 64 64 128
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 64 64 128 128
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 128 64 192 128
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 192 64 256 128
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 0 128 64 192
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 64 128 128 192
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 128 128 192 192
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 192 128 256 192
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 0 192 64 256
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 64 192 128 256
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 128 192 192 256
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite.png" 192 192 256 256
-}
-
-core/anim/mantis-winged/default
-{
-    0.5 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 64 0 128 64
-}
-
-core/anim/mantis-winged/move
-{
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 0 0 64 64
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 64 0 128 64
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 128 0 192 64
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 192 0 256 64
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 0 64 64 128
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 64 64 128 128
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 128 64 192 128
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 192 64 256 128
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 0 128 64 192
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 64 128 128 192
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 128 128 192 192
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 192 128 256 192
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 0 192 64 256
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 64 192 128 256
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 128 192 192 256
-    0.05 "data/physicals/monsters/praying_mantis_move_sprite_winged.png" 192 192 256 256
-}
-
-core/anim/mantis-winged/attack
-{
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 0 0 64 64
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 64 0 128 64
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 128 0 192 64
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 192 0 256 64
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 0 64 64 128
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 64 64 128 128
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 128 64 192 128
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 192 64 256 128
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 0 128 64 192
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 64 128 128 192
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 128 128 192 192
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 192 128 256 192
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 0 192 64 256
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 64 192 128 256
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 128 192 192 256
-    0.05 "data/physicals/monsters/praying_mantis_attack_sprite_winged.png" 192 192 256 256
-}
-
-core/anim/mantis/death
-{
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 0 0 64 64
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 64 0 128 64
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 128 0 192 64
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 192 0 256 64
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 0 64 64 128
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 64 64 128 128
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 128 64 192 128
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 192 64 256 128
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 0 128 64 192
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 64 128 128 192
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 128 128 192 192
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 192 128 256 192
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 0 192 64 256
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 64 192 128 256
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 128 192 192 256
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 192 192 256 256
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 0 256 64 320
-    5.2 "data/physicals/monsters/praying_mantis_sprite_death.png" 64 256 128 320
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 128 256 192 320
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 192 256 256 320
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 0 320 64 384
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 64 320 128 384
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 128 320 192 384
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 192 320 256 384
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 0 384 64 448
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 64 384 128 448
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 128 384 192 448
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 192 384 256 448
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 0 448 64 512
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 64 448 128 512
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 128 448 192 512
-    0.05 "data/physicals/monsters/praying_mantis_sprite_death.png" 192 448 256 512
-}
+#####################
+# troll
+#####################
 
 core/anim/troll/default
 {
@@ -1458,7 +1267,7 @@ core/anim/wolfbeast/death
 }
 
 ##############################
-# Jakas eksplozja od Liosana #
+# explosions and effects     #
 ##############################
 
 core/anim/effects/test-explosions/1
@@ -2065,6 +1874,10 @@ core/anim/gate/closed
 	0.10 "data/maps/doodahs/ancient/blocks-hole.png"	0	0	128	128
 }
 
+######################
+# bandit
+######################
+
 core/anim/bandit/default
 {
     0.10  "data/physicals/monsters/gfx/bandit-move.png"                  0   0   64  64
@@ -2169,9 +1982,9 @@ core/anim/cow/attack
 	0.10 "data/physicals/monsters/easter-eggs/cow.png"					512	128	640	256
 }
 
-###################
-# nowe eksplozej  #
-###################
+###########################
+# explosions and effects  #
+###########################
 
 core/anim/effects/blue-explosions/1
 {
@@ -4517,13 +4330,13 @@ core/anim/flower-lair/default
 
 core/anim/flower-lair/spawn
 {
-	0.1 "data/physicals/lairs/flower_lair.png"				65	1	63	63
-	0.1 "data/physicals/lairs/flower_lair.png"				66	2	62	62
-	0.1 "data/physicals/lairs/flower_lair.png"				67	3	61	61
-	0.5 "data/physicals/lairs/flower_lair.png"				68	4	60	60
-	0.1 "data/physicals/lairs/flower_lair.png"				67	3	61	61
-	0.1 "data/physicals/lairs/flower_lair.png"				66	2	62	62
-	0.1 "data/physicals/lairs/flower_lair.png"				65	1	63	63 
+	0.1 "data/physicals/lairs/flower_lair.png"				65	1	127	63
+	0.1 "data/physicals/lairs/flower_lair.png"				66	2	126	62
+	0.1 "data/physicals/lairs/flower_lair.png"				67	3	125	61
+	0.5 "data/physicals/lairs/flower_lair.png"				68	4	124	60
+	0.1 "data/physicals/lairs/flower_lair.png"				67	3	125	61
+	0.1 "data/physicals/lairs/flower_lair.png"				66	2	126	62
+	0.1 "data/physicals/lairs/flower_lair.png"				65	1	127	63 
 }
 
 core/anim/flower-lair/death

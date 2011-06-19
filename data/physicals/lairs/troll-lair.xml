@@ -5,7 +5,7 @@
   <spawnLimit min="4" max="6" />
   <spawnRate min="0.25" max="0.25" />
   <spawnPosition x="0.0f" y="0.0f" />
-  <spawnSound filename="data/physicals/lairs/lair-spawn.ogg" />
+  <spawnSound filename="data/sounds/EL/imp01.ogg" />
   <grouping-hint>2</grouping-hint>
 
   <maxhp min="270.0" max="320.0" />
