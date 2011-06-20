@@ -13,8 +13,8 @@ Bonus for this spell depends:
   <icon>data/abilities/weapons/firepits-0.png</icon>
   <unavailable-icon>data/abilities/weapons/firepits-1.png</unavailable-icon>
 
-  <!-- power = ?x cho, ?x mel, ?x san, ?x phl -->
-  <power calc="0.2 * dot(0, choleric, 0, melancholic, 0, sanguine, 0, phlegmatic)"/>
+  <!-- power = 1x cho, 3x mel, 1x san, 3x phl -->
+  <power calc="0.2 * dot(1, choleric, 3, melancholic, 1, sanguine, 3, phlegmatic)"/>
   
   <explosion type="bullet">
     <emitter>

@@ -27,9 +27,15 @@
             </effect>
             <effect type="timed">
               <time calc="3.5" />
-              <effect type="modify">
-                <aspect value="speed" />
-                <amount value="0.0" />
+              <effect type="list">
+                <effect type="modify">
+                  <aspect value="speed" />
+                  <amount value="0.0" />
+                </effect>
+                <effect type="modify">
+                  <aspect value="mass" />
+                  <amount value="1000.0" />
+                </effect>
               </effect>
             </effect>
           </effect>
