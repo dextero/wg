@@ -1,0 +1,104 @@
+<root type="ability" class="self">
+
+  <effect type="list">
+    <effect type="list" tag="heal-tag">
+      <effect type="sound">
+        <name value="data/sounds/Lugaro/consolesuccess.ogg" />
+      </effect>
+      <effect type="delayed">
+        <time value="0.20" />
+        <effect type="list" >
+          <effect type="graphical-effect">
+            <name value="magic-circle-5"/>
+            <time value="0.65"/>
+          </effect>
+          <effect type="graphical-effect">
+            <name value="magic-circle-3"/>
+            <time value="0.80"/>
+          </effect>
+          <effect type="graphical-effect">
+            <name value="shield"/>
+            <time value="0.60"/>
+          </effect>
+        </effect>
+      </effect>
+      <effect type="area">
+        <area calc="3.1" />
+        <filter value="hostiles" />
+        <effect type="list">
+          <effect type="graphical-effect">
+            <name value="magic-circle-1"/>
+            <time value="0.45"/>
+          </effect>
+          <effect type="graphical-effect">
+            <name value="heal" /> 
+            <time calc="0.2" /> 
+          </effect>
+          <effect type="graphical-effect">
+            <name value="heal" /> 
+            <time calc="0.2" /> 
+          </effect>
+          <effect type="graphical-effect">
+            <name value="heal" /> 
+            <time calc="0.2" /> 
+          </effect>
+          <effect type="heal">
+            <amount calc="2 * intelligence"/>
+            <show-amount />
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="recastable">
+      <time calc="3.11" />
+      <recast value="1.0" />
+      <effect type="jump">
+        <name value="heal-tag"/>
+      </effect>
+    </effect>   
+  </effect>
+    
+  <cast-time-effect type="list"> 
+    <effect type="graphical-effect">
+      <name value="magic-circle-5"/>
+      <time value="0.65"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.80"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="shield"/>
+      <time value="0.60"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+    <effect type="modify">
+      <aspect value="turnspeed" />
+      <amount value="0.0" />
+    </effect>
+  </cast-time-effect>
+  
+  <delay-effect type="list"> 
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+    <effect type="modify">
+      <aspect value="turnspeed" />
+      <amount value="0.0" />
+    </effect>
+  </delay-effect>
+
+  <manacost value="10.0" />  
+  <casttime value="0.8" />
+  <delay value="3.2" />
+  <cooldown value="16.25" />
+
+  <ai-hint>
+      <player-distance>5.0</player-distance>
+  </ai-hint>  
+  
+</root>

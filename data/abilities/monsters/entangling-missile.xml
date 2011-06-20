@@ -1,0 +1,93 @@
+<root type="ability" class="bullet">
+
+  <self-effect>
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/jump.ogg" />
+    </effect>  
+  </self-effect>
+
+  <effect type="list">
+    <effect type="timed">
+      <time value="3.0" />
+      <effect type="list">
+        <effect type="modify">
+          <aspect value="speed" />
+          <amount value="0.0" />
+        </effect>
+        <effect type="modify">
+          <aspect value="mass" />
+          <amount value="1000.0" />
+        </effect>
+      </effect>
+    </effect>
+    <effect type="graphical-effect">
+      <time value="3.0" />
+      <name value="entangle" />      
+    </effect>
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/bushrustle.ogg" />
+    </effect>
+  </effect>
+
+  <flight-effect type="recastable">
+    <recast value="0.37"/>
+    <time value="6.0"/>
+    <effect type="bullet">
+      <emitter>
+        <speed value="0.0" />
+        <ttl value="1.5"/>
+        <filter value="none"/>
+        <bullet value="data/physicals/bullets/entangle-trail.xml" />
+      </emitter>
+    </effect>
+  </flight-effect>
+
+  <cast-time-effect type="list" >
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.40"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-1"/>
+      <time value="0.40"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="shield"/>
+      <time value="0.30"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+    <effect type="modify">
+      <aspect value="turnspeed" />
+      <amount value="0.0" />
+    </effect>
+  </cast-time-effect>
+  
+  <delay-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.0" />
+  </delay-effect>
+  
+  <ttl value="6.0"/>
+  <speed calc="1.75" />
+  <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+  <filter value="player,wall"/>
+  <target-chooser>
+    <filter value="player"/>
+    <range calc="10.0"/>
+    <angle value="360.0"/>
+  </target-chooser>
+  <time-for-tracking calc="6.0" />
+    
+  <manacost value="10" />
+  <casttime calc="0.3"/>
+  <delay calc="0.2" />
+  <cooldown calc="7.1"/>
+
+  <ai-hint>
+    <player-distance>8.0</player-distance>
+    <player-angle>30.0</player-angle>
+  </ai-hint>
+</root>

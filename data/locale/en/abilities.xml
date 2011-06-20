@@ -17,20 +17,20 @@
 	</entry>
 <!-- 3	                  1
 sangwiniczne:      Phlegmaticzne:
-  uncornern/beztro   gentleness
-+ verbosity          passivity
-+ sensitivity        conciliatory (ugodowosc)
+- uncornern/beztro - gentleness
++ verbosity        - passivity
++ sensitivity      - conciliatory (ugodowosc)
 + vigor            + caution
-  leadership         solemnity (podnioslosc)
+- leadership       - solemnity (podnioslosc)
 //serce, krew//    //mozg, sluz//
 barely, mildly, heavily, extremely, totally
-    1                     4 
+    0                     5 
 Melancholiczne:     Cholericzne:
-  reflectance         explosiveness
-+ restraint (powsc) + agression
-  peace             + variability
-  stiffness         + impulseviness
-  apathy            + activity
+- reflectance       + explosiveness
+- restraint (powsc) + agression
+- peace             + variability
+- stiffness         + impulseviness
+- apathy            + activity
 //sledziona,        //watroba, zolc//
  czarna zolc//
 -->

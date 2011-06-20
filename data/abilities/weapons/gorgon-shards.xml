@@ -5,8 +5,8 @@
   <icon>data/abilities/weapons/gorgon-shards-0.png</icon>
   <unavailable-icon>data/abilities/weapons/gorgon-shards-1.png</unavailable-icon>
 
-  <!-- power = 0x cho, 0x mel, 0x san, 0x phl -->
-  <power calc="0.2 * dot(0, choleric, 0, melancholic, 0, sanguine, 0, phlegmatic)"/>
+  <!-- power = 5x cho, 0x mel, 3x san, 1x phl -->
+  <power calc="0.2 * dot(5, choleric, 0, melancholic, 3, sanguine, 1, phlegmatic)"/>
   
   <explosion type="list">
     <effect type="graphical-effect">
