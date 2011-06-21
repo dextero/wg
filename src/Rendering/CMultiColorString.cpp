@@ -26,14 +26,18 @@ using namespace sf;
 const std::wstring CMultiColorString::NextColor(sf::Color col)
 {
     // tak! std::wstring moze miec nulle w srodku :3
-    wchar_t buffer[4];
+    wchar_t buffer[6];
     buffer[0] = MAGIC_CHAR;
-    buffer[1] = ((const wchar_t*)&col)[0];
-    buffer[2] = ((const wchar_t*)&col)[1];
-    buffer[3] = L'\0';
+    buffer[1] = (wchar_t) col.r;
+    buffer[2] = (wchar_t) col.g;
+    buffer[3] = (wchar_t) col.b;
+    buffer[4] = (wchar_t) col.a;
+    buffer[5] = L'\0';
 
-    return std::wstring(buffer, 3);
+    return std::wstring(buffer, 5);
 }
+
+#include <stdio.h>
 
 void CMultiColorString::Render(sf::RenderTarget&) const
 {
@@ -73,12 +77,11 @@ void CMultiColorString::Render(sf::RenderTarget&) const
     for (std::size_t i = 0; i < Text.size(); ++i)
     {
         // jesli mamy magic_char i sa za nim jeszcze przynajmniej 2 znaki, to zmien kolor
-        if (Text[i] == MAGIC_CHAR && Text.size() > i + 2)
+        if (Text[i] == MAGIC_CHAR && Text.size() > i + 4)
         {
-            unsigned int value = Text[i + 1] | (Text[i + 2] << 16);
-            sf::Color col = *(sf::Color*)&value;
+            sf::Color col(Text[i+1], Text[i+2], Text[i+3], Text[i+4]);
             GLCheck(glColor4ub(col.r, col.g, col.b, col.a));
-            i += 2; // MAGIC_CHAR i 2 znaki na kolor, ale jest jeszcze ++i
+            i += 4; // MAGIC_CHAR i 4 znaki na kolor, ale jest jeszcze ++i
             continue;
         }
 
