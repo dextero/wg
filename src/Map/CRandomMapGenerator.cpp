@@ -97,7 +97,7 @@ bool CRandomMapGenerator::GenerateTunnelsFromRandomCenter()
     // punkt, w ktorym kopiemy
     unsigned int nextX = origX, nextY = origY;
     // ile pol ma byc 'przejezdnych'?
-    unsigned int mPassableLeft = (unsigned int)(((100.f - mDesc.obstaclesAreaPercent) / 100.f) * (float)(mDesc.sizeX * mDesc.sizeY));
+    mPassableLeft = (unsigned int)(((100.f - mDesc.obstaclesAreaPercent) / 100.f) * (float)(mDesc.sizeX * mDesc.sizeY));
 
     for (unsigned int i = 0; i < mPassableLeft;)   // NIE blad, ma byc pusto po ostatnim ;
     {
@@ -127,7 +127,8 @@ bool CRandomMapGenerator::GenerateTunnelsFromRandomCenter()
 bool CRandomMapGenerator::GenerateTunnelsGraph()
 {
     // "szerokosc tunelu"
-    unsigned int size = 3;
+    unsigned int narrowTunnelSize = 2;
+    unsigned int wideTunnelSize = 3;
     // ilosc wierzcholkow grafu - wieksze od 0 bo bedzie crash
     const unsigned int NUM_VERTS = 50;
 
@@ -138,9 +139,10 @@ bool CRandomMapGenerator::GenerateTunnelsGraph()
         verts[i] = std::make_pair(sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY), false);
 
     // ile pol ma byc 'przejezdnych'?
-    unsigned int mPassableLeft = (unsigned int)(((100.f - mDesc.obstaclesAreaPercent) / 100.f) * (float)(mDesc.sizeX * mDesc.sizeY));
+    mPassableLeft = (unsigned int)(((100.f - mDesc.obstaclesAreaPercent) / 100.f) * (float)(mDesc.sizeX * mDesc.sizeY));
 
-    for (unsigned int i = 0; i < mPassableLeft;)   // NIE blad, ma byc pusto po ostatnim ;
+    unsigned int i = 0;
+    for (i = 0; i < mPassableLeft;)   // NIE blad, ma byc pusto po ostatnim ;
     {
         // losowanie startu i konca wierzcholka
         size_t start;
@@ -153,44 +155,161 @@ bool CRandomMapGenerator::GenerateTunnelsGraph()
         verts[start].second = true;
         verts[end].second = true;
 
-        // wybieramy deltaMax punktow na odcinku pomiedzy start i end
-        // i kopiemy przejscie w kazdym punkcie (+ 3 pola przylegle)
-        // pojedynczy krok
-        sf::Vector2i deltaInt(verts[end].first - verts[start].first);
-        sf::Vector2f delta((float)(deltaInt.x), (float)(deltaInt.y));
-        // ile punktow bedzie sprawdzanych, wiecej = lepiej
-        int deltaMax = std::max(abs(deltaInt.x), abs(deltaInt.y)) * 2;
-        delta /= (float)deltaMax;
-
         // losowanie szerokosci tunelu
-        size = ((float)rand() / RAND_MAX) < (mDesc.narrowPathsPercent / 100.f) ? 2 : 3;
+        unsigned int tunnelSize = ((float)rand() / RAND_MAX) < (mDesc.narrowPathsPercent / 100.f) ? narrowTunnelSize : wideTunnelSize;
 
-        // kopanie tunelu od startu do konca
-        sf::Vector2f at((float)verts[start].first.x, (float)verts[start].first.y);
-        for (int j = 0; j < deltaMax; ++j)
-        {
-            at += delta;
-            unsigned int atX = (unsigned int)at.x, atY = (unsigned int) at.y;
-
-            if (atX >= mDesc.sizeX || atY >= mDesc.sizeY)
-                break;
-
-            // kopanie + poszerzanie
-            for (unsigned int x = 0; x < size; ++x)
-                if (atX + x < mDesc.sizeX)
-                    for (unsigned int y = 0; y < size; ++y)
-                        if (atY + y < mDesc.sizeY)
-                            if (mCurrent[atX + x][atY + y] == BLOCKED)
-                            {
-                                mCurrent[atX + x][atY + y] = FREE;
-                                ++i;
-                            }
-        }
+        // kopu kopu
+        i += GenerateStraightTunnel(verts[start].first, verts[end].first, tunnelSize);
     }
     
-    mPassableLeft = mDesc.sizeX * mDesc.sizeY - mPassableLeft;
+    mPassableLeft = mDesc.sizeX * mDesc.sizeY - i;
 
     return true;
+}
+
+bool CRandomMapGenerator::GenerateTunnelsBossArena()
+{
+    unsigned int tunnelSize = 3;
+    unsigned int minDistFromMapEdge = 6;
+
+    // -tunnelSize, zeby nie wyszedl tunel o szerokosci 1 w dolnym rogu
+    sf::Vector2i entry(0, rand() % (mDesc.sizeY - tunnelSize - 2 * minDistFromMapEdge) + minDistFromMapEdge),                // lewa
+                 exit(mDesc.sizeX - 1, rand() % (mDesc.sizeY - tunnelSize - 2 * minDistFromMapEdge) + minDistFromMapEdge);   // prawa
+
+    // zapewniamy polaczenie miedzy tymi dwoma
+    mPassableLeft = mDesc.sizeX * mDesc.sizeY - GenerateStraightTunnel(entry, exit, tunnelSize);
+
+    // wlasciwa arena
+    // http://roguebasin.roguelikedevelopment.org/index.php?title=Irregular_Shaped_Rooms
+    unsigned int borderSize = 3;    // szerokosc "ramki", w ktorej nie beda drazone tunele
+    unsigned int rectSize = 5;      // szerokosc prostokata - patrz link w komentarzu wyzej
+    // UWAGA: niech tunnelSize + minDistFromMapEdge >= borderSize + rectSize, bo sciezka moze sie nie przeciac z arena
+
+    mPassableLeft -= GenerateIrregularCave(sf::IntRect(borderSize, borderSize, mDesc.sizeX - borderSize, mDesc.sizeY - borderSize), rectSize);
+
+    return true;
+}
+
+
+// generowanie pojedynczego prostego tunelu miedzy dwoma punktami - zwraca ilosc wykopanych pol
+unsigned int CRandomMapGenerator::GenerateStraightTunnel(const sf::Vector2i& from, const sf::Vector2i& to, unsigned int tunnelSize)
+{
+    unsigned int fieldsFreed = 0;
+
+    // wybieramy deltaMax punktow na odcinku pomiedzy start i end
+    // i kopiemy przejscie w kazdym punkcie (+ 3 pola przylegle)
+    // pojedynczy krok
+    sf::Vector2i deltaInt(to - from);
+    sf::Vector2f delta((float)(deltaInt.x), (float)(deltaInt.y));
+    // ile punktow bedzie sprawdzanych, wiecej = lepiej
+    int deltaMax = std::max(abs(deltaInt.x), abs(deltaInt.y)) * 2;
+    delta /= (float)deltaMax;
+
+    // kopanie tunelu od startu do konca
+    sf::Vector2f at((float)from.x, (float)from.y);
+    for (int j = 0; j < deltaMax; ++j)
+    {
+        at += delta;
+        unsigned int atX = (unsigned int)at.x, atY = (unsigned int) at.y;
+
+        if (atX >= mDesc.sizeX || atY >= mDesc.sizeY)
+            break;
+
+        // kopanie + poszerzanie
+        for (unsigned int x = 0; x < tunnelSize; ++x)
+            if (atX + x < mDesc.sizeX)
+                for (unsigned int y = 0; y < tunnelSize; ++y)
+                    if (atY + y < mDesc.sizeY)
+                        if (mCurrent[atX + x][atY + y] == BLOCKED)
+                        {
+                            mCurrent[atX + x][atY + y] = FREE;
+                            ++fieldsFreed;
+                        }
+    }
+
+    return fieldsFreed;
+}
+
+// pomocnicze funkcje, uzywane w GenerateIrregularCave
+bool VectorXLess(sf::Vector2i a, sf::Vector2i b) { return a.x < b.x; }
+bool VectorXGreater(sf::Vector2i a, sf::Vector2i b) { return a.x > b.x; }
+bool VectorYLess(sf::Vector2i a, sf::Vector2i b) { return a.y < b.y; }
+bool VectorYGreater(sf::Vector2i a, sf::Vector2i b) { return a.y > b.y; }
+
+// generowanie "jaskini" o nieregularnych ksztaltach (wielokat); rectSize - "grubosc" prostokatow, w ktorych moga znalezc sie wierzcholki
+// patrz: http://roguebasin.roguelikedevelopment.org/index.php?title=Irregular_Shaped_Rooms
+unsigned int CRandomMapGenerator::GenerateIrregularCave(const sf::IntRect& outsideRect, unsigned int rectSize)
+{
+    unsigned int fieldsFreed = 0;
+
+    unsigned int minVertsInRect = 2;
+    unsigned int maxVertsInRect = 6;
+
+    std::vector<sf::Vector2i> points; // lista wierzcholkow wielokata
+    std::vector<sf::Vector2i>::iterator it;
+    points.reserve(maxVertsInRect * 4 + 1);
+
+    unsigned int rectWidth = outsideRect.GetWidth() - 2 * rectSize;     // szerokosc gornego/dolnego prostokata
+    unsigned int rectHeight = outsideRect.GetHeight() - 2 * rectSize;   // wysokosc lewego/prawego prostokata
+
+    // gorny prostokat
+    unsigned int vertsInRect = rand() % (maxVertsInRect - minVertsInRect) + minVertsInRect;
+    for (unsigned int i = 0; i < vertsInRect; ++i)
+        points.push_back(sf::Vector2i(rand() % rectWidth + outsideRect.Left + rectSize, rand() % rectSize + outsideRect.Top));
+
+    // sortowanie po x, rosnaco
+    it = points.begin();
+    std::sort<std::vector<sf::Vector2i>::iterator>(it, points.end(), VectorXLess);
+    it = --points.end();
+
+    // prawy prostokat
+    vertsInRect = rand() % (maxVertsInRect - minVertsInRect) + minVertsInRect;
+    for (unsigned int i = 0; i < vertsInRect; ++i)
+        points.push_back(sf::Vector2i(rand() % rectSize + outsideRect.Right - rectSize, rand() % rectHeight + outsideRect.Top + rectSize));
+
+    // sortowanie po y, rosnaco
+    ++it;
+    std::sort<std::vector<sf::Vector2i>::iterator>(it, points.end(), VectorYLess);
+    it = --points.end();
+
+    // dolny prostokat
+    vertsInRect = rand() % (maxVertsInRect - minVertsInRect) + minVertsInRect;
+    for (unsigned int i = 0; i < vertsInRect; ++i)
+        points.push_back(sf::Vector2i(rand() % rectWidth + outsideRect.Left + rectSize, rand() % rectSize + outsideRect.Bottom - rectSize));
+
+    // sortowanie po x, malejaco
+    ++it;
+    std::sort<std::vector<sf::Vector2i>::iterator>(it, points.end(), VectorXGreater);
+    it = --points.end();
+
+    // lewy prostokat
+    vertsInRect = rand() % (maxVertsInRect - minVertsInRect) + minVertsInRect;
+    for (unsigned int i = 0; i < vertsInRect; ++i)
+        points.push_back(sf::Vector2i(rand() % rectSize + outsideRect.Left, rand() % rectHeight + outsideRect.Top + rectSize));
+
+    // sortowanie po y, malejaco
+    ++it;
+    std::sort<std::vector<sf::Vector2i>::iterator>(it, points.end(), VectorYGreater);
+
+    for (int y = outsideRect.Top; y < outsideRect.Bottom; ++y)
+        for (int x = outsideRect.Left; x < outsideRect.Right; ++x)
+        {
+            unsigned int i, j;
+            bool c = false;
+
+            for (i = 0, j = points.size() - 1; i < points.size(); j = i++)
+                if (((points[i].y > y) != (points[j].y > y)) &&
+                    (x < (points[j].x - points[i].x) * (y - points[i].y) / (points[j].y - points[i].y) + points[i].x))
+                    c = !c;
+
+            if (c && mCurrent[x][y] == BLOCKED)
+            {
+                mCurrent[x][y] = FREE;
+                ++fieldsFreed;
+            }
+        }
+
+    return fieldsFreed;
 }
 
 
@@ -384,7 +503,10 @@ bool CRandomMapGenerator::GenerateMap()
     mDesc.obstaclesAreaPercent = Maths::Clamp(mDesc.obstaclesAreaPercent, 0.f, 100.f);
     mDesc.narrowPathsPercent = Maths::Clamp(mDesc.narrowPathsPercent, 0.f, 100.f);
 
-    return GenerateTunnelsGraph();
+    if (mDesc.mapType == SRandomMapDesc::MAP_BOSS)
+        return GenerateTunnelsBossArena();
+    else
+        return GenerateTunnelsGraph();
 }
 
 bool CRandomMapGenerator::PlaceTiles()
@@ -575,13 +697,34 @@ bool CRandomMapGenerator::PlaceWalls()
 bool CRandomMapGenerator::PlaceRegions()
 {
     CTimer timer("- regions: ");
-
+    
     // za malo miejsca, zeby postawic chociazby regiony wejscia i wyjscia..
     if (mPassableLeft < 2) return false;
+    
+    sf::Vector2i entry, exit;
 
-    // wejscie i exit
+    // w przypadku bossa regiony sa na krawedziach - wejscie po lewej, wyjscie po prawej
+    if (mDesc.mapType == SRandomMapDesc::MAP_BOSS)
     {
-        sf::Vector2i entry, exit;
+        unsigned int first, last;
+        for (first = 0; first < mDesc.sizeY && mCurrent[0][first] == BLOCKED; ++first);     // poczatek wejscia
+        for (last = first; last < mDesc.sizeY && mCurrent[0][last] == FREE; ++last);        // koniec wejscia
+
+        if (first == mDesc.sizeY && last == mDesc.sizeY) // nie ma wejscia
+            return false;
+    
+        entry = sf::Vector2i(0, (last + first) / 2);    // srodek tunelu
+
+        for (first = 0; first < mDesc.sizeY && mCurrent[mDesc.sizeX - 1][first] == BLOCKED; ++first);     // poczatek wyjscia
+        for (last = first; last < mDesc.sizeY && mCurrent[mDesc.sizeX - 1][last] == FREE; ++last);        // koniec wyjscia
+
+        if (first == mDesc.sizeY && last == mDesc.sizeY) // nie ma wyjscia
+            return false;
+
+        exit = sf::Vector2i(mDesc.sizeX - 1, (last + first) / 2);
+    }
+    else    // jesli to nie mapa z bossem, to regiony moga byc gdzie im sie podoba
+    {
         unsigned int dist = 0;
 
         for (size_t i = 0; i < 100; ++i)
@@ -613,19 +756,20 @@ bool CRandomMapGenerator::PlaceRegions()
                 dist = newDist;
             }
         }
-        mXmlText << "\t<region name=\"entry\" x=\"" << entry.x + 0.5f << "\" y=\"" << entry.y + 0.5f << "\" rot=\"0\" scale=\"1\"></region>\n"
-            << "\t<region name=\"exit\" x=\"" << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" rot=\"0\" scale=\"1\">\n"
-            << "\t\t<next-map>" << mDesc.nextMap << "</next-map>\n"
+    }
+
+    mXmlText << "\t<region name=\"entry\" x=\"" << entry.x + 0.5f << "\" y=\"" << entry.y + 0.5f << "\" rot=\"0\" scale=\"1\"></region>\n"
+        << "\t<region name=\"exit\" x=\"" << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" rot=\"0\" scale=\"1\">\n"
+        << "\t\t<next-map>" << mDesc.nextMap << "</next-map>\n"
 //            << "\t\t<next-map>data/maps/level01.xml</next-map>\n"
 //            << "\t\t<next-map-region>entry</next-map-region>\n"
-            << "\t</region>\n"
-            // tlo pod wyjscie - portal
-            << "\t<objtype code=\"exit-portal\" file=\"data/physicals/walls/test-barrier.xml\" />\n"
-            << "\t<obj code=\"exit-portal\" x=\"" << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" />\n";
+        << "\t</region>\n"
+        // tlo pod wyjscie - portal
+        << "\t<objtype code=\"exit-portal\" file=\"data/physicals/walls/test-barrier.xml\" />\n"
+        << "\t<obj code=\"exit-portal\" x=\"" << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" />\n";
 
-        // te 2 regiony "zapychaja" pola
-        mPassableLeft -= 2;
-    }
+    // te 2 regiony "zapychaja" pola
+    mPassableLeft -= 2;
 
     return true;
 }
