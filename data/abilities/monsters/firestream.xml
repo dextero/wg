@@ -21,7 +21,7 @@
           <effect type="list">        
             <effect type="damage">
               <damage-type value="fire"/>
-              <amount calc="1 * intelligence" />
+              <amount calc="0.5 * intelligence" />
             </effect>
             <effect type="knockback">
               <amount calc="0.3"/>
@@ -30,7 +30,7 @@
 
           <range calc="12.0" />
           <speed value="3.0" />
-          <ttl value="1.0" />
+          <ttl value="1.3" />
           <count value="1" />
           <width value="12" />
           <acceleration value="5.0" />

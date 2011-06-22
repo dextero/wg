@@ -10,7 +10,7 @@
   <speed min="1.5" max="1.6" />
   <turnspeed min="60.0" max="80.0" />
   <strength min="4.0" max="5.0" />
-  <intelligence min="3.0" max="4.0" />
+  <intelligence min="6.0" max="8.0" />
   <fireresist min="14.0" max="14.0" />  
   <lightningresist min="2.0" max="4.0" />  
   <poisonresist min="2.0" max="4.0" />  

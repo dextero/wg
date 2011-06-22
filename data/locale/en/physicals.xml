@@ -1,14 +1,6 @@
 <root type="locale" name="English" code="en">
 	<entry>
-		<key>PHYSICAL_BOSS1</key>
-		<value>Chester</value>
-	</entry>
-	<entry>
-		<key>PHYSICAL_BOSS2</key>
-		<value>Brooke</value>
-	</entry>
-	<entry>
-		<key>PHYSICAL_BOSS3</key>
-		<value>Walter</value>
+		<key>PHYSICAL_FINAL-BOSS</key>
+		<value>Boss</value>
 	</entry>
 </root>

@@ -55,7 +55,7 @@
   <width calc="33" />
   <count calc="3" />
   <bullet value="data/physicals/bullets/smallspark.xml" />
-  <filter value="player, wall"/>
+  <filter value="player,wall"/>
 
   <manacost value="8" />
   <casttime calc="0.65"/>

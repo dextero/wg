@@ -45,8 +45,9 @@ private:
         {
             std::string file;
             bool isInForeground;
+            float scale;
 
-            SDoodah(std::string file, bool isInForeground): file(file), isInForeground(isInForeground) {}
+            SDoodah(std::string file, bool isInForeground, float scale = 1.0f): file(file), isInForeground(isInForeground), scale(scale) {}
         };
 
         std::vector<std::string> tiles;

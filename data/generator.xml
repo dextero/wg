@@ -278,32 +278,32 @@
             <tile image="data/maps/themes/oblique_way/tileset_scheme_b_e7.png" />
         </tiles>
         <doodahs>
-            <doodah file="data/maps/doodahs/desert/desert_rock1.png" z="foreground" />
-            <doodah file="data/maps/doodahs/desert/desert_rock2.png" z="foreground" />
-            <doodah file="data/maps/doodahs/desert/desert_rock3.png" z="foreground" />
-            <doodah file="data/maps/doodahs/desert/desert_rock4.png" z="foreground" />
-            <doodah file="data/maps/doodahs/desert/desert_rock5.png" z="foreground" />
-            <doodah file="data/maps/doodahs/desert/desert_foliage1.png" z="foreground" />
-            <doodah file="data/maps/doodahs/desert/desert_foliage2.png" z="foreground" />
-            <doodah file="data/maps/doodahs/desert/desert_foliage3.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/boulder1.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/boulder2.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rock1.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rock2.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rock3.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rock4.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rock5.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rock6.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rock7.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rock8.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rocka1.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rocka2.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rocka3.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rocka4.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rocka5.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rocka6.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rocka7.png" z="foreground" />
-            <doodah file="data/maps/doodahs/boulders/rocka8.png" z="foreground" />
+            <doodah file="data/maps/doodahs/desert/desert_rock1.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/desert/desert_rock2.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/desert/desert_rock3.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/desert/desert_rock4.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/desert/desert_rock5.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/desert/desert_foliage1.png" z="background" />
+            <doodah file="data/maps/doodahs/desert/desert_foliage2.png" z="background" />
+            <doodah file="data/maps/doodahs/desert/desert_foliage3.png" z="background" />
+            <doodah file="data/maps/doodahs/boulders/boulder1.png" z="background" scale="0.66"/>
+            <doodah file="data/maps/doodahs/boulders/boulder2.png" z="background" scale="0.66" />
+            <doodah file="data/maps/doodahs/boulders/rock1.png" z="background" scale="1.25" />
+            <doodah file="data/maps/doodahs/boulders/rock2.png" z="background" scale="1.25"/>
+            <doodah file="data/maps/doodahs/boulders/rock3.png" z="background" scale="1.25"/>
+            <doodah file="data/maps/doodahs/boulders/rock4.png" z="background" scale="1.25"/>
+            <doodah file="data/maps/doodahs/boulders/rock5.png" z="background" scale="1.25"/>
+            <doodah file="data/maps/doodahs/boulders/rock6.png" z="background" scale="1.25"/>
+            <doodah file="data/maps/doodahs/boulders/rock7.png" z="background" scale="1.25"/>
+            <doodah file="data/maps/doodahs/boulders/rock8.png" z="background" scale="1.25"/>
+            <doodah file="data/maps/doodahs/boulders/rocka1.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/boulders/rocka2.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/boulders/rocka3.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/boulders/rocka4.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/boulders/rocka5.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/boulders/rocka6.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/boulders/rocka7.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/boulders/rocka8.png" z="background" scale="0.75"/>
             <doodah file="data/maps/doodahs/deadtree1.png" z="foreground" />
             <doodah file="data/maps/doodahs/deadtree2.png" z="foreground" />
             <doodah file="data/maps/doodahs/deadtree3.png" z="foreground" />
