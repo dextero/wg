@@ -826,6 +826,41 @@ bool CRandomMapGenerator::PlaceDoodahs()
     return true;
 }
 
+bool CRandomMapGenerator::PlaceBossDoors()
+{
+    CTimer timer("- boss doors: ");
+
+    if (mDesc.mapType != SRandomMapDesc::MAP_BOSS)
+        return true;    // nie potrzeba drzwi
+
+    PhysicalsVector doors = FilterByType(mPhysicals, "door");
+    if (doors.empty())
+        return false;   // buu, nie ma drzwi :(
+
+    // wybieramy jeden rodzaj drzwi, bedzie uzyty pare razy...
+    SPhysical door = doors[rand() % doors.size()];
+
+    mXmlText << "\t<objtype code=\"door\" file=\"" << door.file << "\" />\n";
+    
+    unsigned int x = mDesc.sizeX - 3;   // stawiamy drzwi na wszystkich polach znajdujacych sie 3 kafle od prawej krawedzi
+
+    for (unsigned int i = 0; i < mDesc.sizeY; ++i)
+        if (mCurrent[x][i] != BLOCKED)
+        {
+            mXmlText << "\t<obj code=\"door\" x=\"" << (float)mDesc.sizeX - 2.5f
+                     << "\" y=\"" << (float)i + 0.5f << "\">\n"
+                     << "\t\t<cond check=\"once\">\n"
+                     << "\t\t\t<type>killed</type>\n"
+                     << "\t\t\t<param>boss</param>\n"   // zakladamy, ze boss ma id "boss"
+                     << "\t\t</cond>\n"
+                     << "\t</obj>\n";
+
+            mCurrent[x][i] = DOOR;
+        }
+
+    return true;
+}
+
 bool CRandomMapGenerator::PlaceLairs()
 {
     CTimer timer("- lairs: ");
@@ -1195,6 +1230,7 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
     if (!PlaceRegions())    return false;
     if (!PlaceWalls())      return false;
     if (!PlaceDoodahs())    return false;
+    if (!PlaceBossDoors())  return false;   // zwraca true, jesli nie ma bossa na mapie
     if (!PlaceLoots())      return false;
     if (!PlaceMonsters())   return false;
     if (!PlaceLairs())      return false;
