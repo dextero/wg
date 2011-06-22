@@ -9,6 +9,7 @@
 #include <sstream>
 
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics/Rect.hpp>
 
 class CLoot;
 
@@ -23,9 +24,13 @@ struct SRandomMapDesc
     std::string nextMap;
     float minMonsterDist;   // jak daleko potwory maja sie spawnowac od wejscia
     float narrowPathsPercent; // ile % sciezek bedzie waskich w "grafowych" mapach (2x2), reszta 3x3 [0.f - 100.f]
+    enum EMapType {
+        MAP_NORMAL,     // zwykla mapa, bez udziwnien
+        MAP_BOSS        // arena z bossem
+    } mapType;
 
     SRandomMapDesc(): sizeX(0), sizeY(0), obstaclesAreaPercent(0.f), lairs(0), monsters(0), loots(0),
-        maxLivingMonsters(0), maxMonsters(0), level(0), nextMap("@RANDOM"), minMonsterDist(0.f) {}
+        maxLivingMonsters(0), maxMonsters(0), level(0), nextMap("@RANDOM"), minMonsterDist(0.f), mapType(MAP_NORMAL) {}
 };
 
 
@@ -92,11 +97,19 @@ private:
     // metody generowania tuneli
     bool GenerateTunnelsFromRandomCenter();
     bool GenerateTunnelsGraph();
+    bool GenerateTunnelsBossArena();
 
     unsigned int mSpawnedChestsCount;
 
     float mSpawnWeaponProbability;
     unsigned int mSpawnedWeaponsCount;
+
+    // generowanie pojedynczego prostego tunelu miedzy dwoma punktami - zwraca ilosc wykopanych pol
+    unsigned int GenerateStraightTunnel(const sf::Vector2i& from, const sf::Vector2i& to, unsigned int tunnelSize);
+
+    // generowanie "jaskini" o nieregularnych ksztaltach (wielokat); rectSize - "grubosc" prostokatow, w ktorych moga znalezc sie wierzcholki
+    // patrz: http://roguebasin.roguelikedevelopment.org/index.php?title=Irregular_Shaped_Rooms
+    unsigned int GenerateIrregularCave(const sf::IntRect& outsideRect, unsigned int rectSize);
 
     // BFS
     unsigned int DistanceDijkstra(sf::Vector2i start, sf::Vector2i end);
