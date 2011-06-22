@@ -181,7 +181,7 @@ bool CRandomMapGenerator::GenerateTunnelsBossArena()
 
     // wlasciwa arena
     // http://roguebasin.roguelikedevelopment.org/index.php?title=Irregular_Shaped_Rooms
-    unsigned int borderSize = 3;    // szerokosc "ramki", w ktorej nie beda drazone tunele
+    unsigned int borderSize = 5;    // szerokosc "ramki", w ktorej nie beda drazone tunele
     unsigned int rectSize = 5;      // szerokosc prostokata - patrz link w komentarzu wyzej
     // UWAGA: niech tunnelSize + minDistFromMapEdge >= borderSize + rectSize, bo sciezka moze sie nie przeciac z arena
 
