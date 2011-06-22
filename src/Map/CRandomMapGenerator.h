@@ -67,15 +67,21 @@ public:
         int minLevel;
         int maxLevel;
         float frequency;
+        float bossTriggerRadius;
 
+        std::string bossTriggerAI, bossPlaylist;
         SPhysical(
                 std::string type = "",
                 std::string file = "",
                 int minLevel = 0,
                 int maxLevel = 0,
-                float frequency = 0.0f
+                float frequency = 0.0f,
+                float bossTriggerRadius = 0.f,
+                std::string bossTriggerAI = "",
+                std::string bossPlaylist = ""
                 ) :            
-            type(type), file(file), minLevel(minLevel), maxLevel(maxLevel), frequency(frequency) {}
+            type(type), file(file), minLevel(minLevel), maxLevel(maxLevel), frequency(frequency),
+            bossPlaylist(bossPlaylist), bossTriggerRadius(bossTriggerRadius), bossTriggerAI(bossTriggerAI) {}
     };
     typedef std::vector<SPhysical> PhysicalsVector;
 private:

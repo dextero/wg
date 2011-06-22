@@ -848,8 +848,8 @@ bool CRandomMapGenerator::PlaceLairs()
             do
                 tile = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
             while (mCurrent[tile.x][tile.y] != FREE ||
-                (std::min(mDesc.sizeX, mDesc.sizeY) > mDesc.minMonsterDist * 2.f &&     // jesli mapa nie ma rozmiaru przynajmniej 2*minMonsterDist, to olej sprawdzanie odleglosci
-                Maths::LengthSQ(sf::Vector2f(tile.x - mEntryPos.x, tile.y - mEntryPos.y)) <= mDesc.minMonsterDist * mDesc.minMonsterDist) );
+                ((float)std::min(mDesc.sizeX, mDesc.sizeY) > mDesc.minMonsterDist * 2.f &&     // jesli mapa nie ma rozmiaru przynajmniej 2*minMonsterDist, to olej sprawdzanie odleglosci
+                Maths::LengthSQ(sf::Vector2f((float)(tile.x - mEntryPos.x), (float)(tile.y - mEntryPos.y))) <= mDesc.minMonsterDist * mDesc.minMonsterDist) );
 
             // zaklepanie pola, zeby sie 2 gniazda nie zespawnowaly na jednym
             mCurrent[tile.x][tile.y] = LAIR;
@@ -881,6 +881,30 @@ bool CRandomMapGenerator::PlaceMonsters()
 {
     CTimer timer("- monsters: ");
 
+    if (mDesc.mapType == SRandomMapDesc::MAP_BOSS)
+    {
+        PhysicalsVector bosses = FilterByLevel(FilterByType(mPhysicals, "boss"), mDesc.level);
+        if (bosses.empty())
+            return false; // zadamy mapy z bossem, a takiego nie ma :C
+
+        sf::Vector2i pos(mDesc.sizeX / 2, mDesc.sizeY / 2);
+        while (mCurrent[pos.x][pos.y] != FREE) {
+            // ta petla nie powinna sie wykonac, ale niech zostanie dla zabezpieczenia.
+            // boss powinien moc sie zespawnowac na srodku mapy, jesli tak nie jest, to niedobrze
+            pos = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
+        }
+
+        SPhysical boss = bosses[rand() % bosses.size()];
+        mXmlText << "\t<objtype code=\"boss\" file=\"" << boss.file << "\" />\n";
+        mXmlText << "\t<obj code=\"boss\" x=\"" << pos.x    // boss niech sie spawnuje na srodku mapy
+            << "\" y=\"" << pos.y
+            << "\" rot=\"" << rand() % 360
+            << "\" name=\"boss\" trigger-radius=\"" << boss.bossTriggerRadius
+            << "\" trigger-ai=\"" << boss.bossTriggerAI
+            << "\" trigger-playlist=\"" << boss.bossPlaylist
+            << "\" />\n";
+    }
+
     PhysicalsVector monsters = FilterByLevel(FilterByType(mPhysicals, "monster"), mDesc.level);
     if (monsters.empty()) {
         return true;
@@ -897,7 +921,7 @@ bool CRandomMapGenerator::PlaceMonsters()
             pos = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
         while (mCurrent[pos.x][pos.y] != FREE ||
                 (std::min(mDesc.sizeX, mDesc.sizeY) > mDesc.minMonsterDist * 2.f &&     // jesli mapa nie ma rozmiaru przynajmniej 2*minMonsterDist, to olej sprawdzanie odleglosci
-                Maths::LengthSQ(sf::Vector2f(pos.x - mEntryPos.x, pos.y - mEntryPos.y)) <= mDesc.minMonsterDist * mDesc.minMonsterDist) );
+                Maths::LengthSQ(sf::Vector2f((float)(pos.x - mEntryPos.x), (float)(pos.y - mEntryPos.y))) <= mDesc.minMonsterDist * mDesc.minMonsterDist) );
 
         // i teraz pasowaloby cos tu postawic..
         float offsetX = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // offsety, zeby nie staly tak bardzo jednolicie
@@ -938,10 +962,10 @@ std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle
     if (gRand.Rndf() < realWeaponSpawnProbability) {
         fprintf(stderr, "Spawning weapon!\n");
         mSpawnedWeaponsCount++;
-        mSpawnWeaponProbability = 0.25f - (mSpawnedWeaponsCount * 0.30);
+        mSpawnWeaponProbability = 0.25f - (mSpawnedWeaponsCount * 0.30f);
         return "data/loots/weapon.xml";
     } else {
-        mSpawnWeaponProbability += 0.05 - (mSpawnedWeaponsCount * 0.02);
+        mSpawnWeaponProbability += 0.05f - (mSpawnedWeaponsCount * 0.02f);
     }
 
     PhysicalsVector loots = FilterByLevel(FilterByType(mPhysicals, "loot"), mDesc.level);
@@ -1110,8 +1134,12 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
             }
             float frequency = xml.GetFloat(n, "frequency", 1.0f);
             std::string file = xml.GetString(n, "file");
+            // opcjonalne, tycza sie tylko bossow
+            float bossTriggerRadius = xml.GetFloat(n, "trigger-radius");
+            std::string bossTriggerAI = xml.GetString(n, "trigger-ai");
+            std::string bossPlaylist = xml.GetString(n, "trigger-playlist");
 
-            mPhysicals.push_back(SPhysical(type, file, minLevel, maxLevel, frequency));
+            mPhysicals.push_back(SPhysical(type, file, minLevel, maxLevel, frequency, bossTriggerRadius, bossTriggerAI, bossPlaylist));
         }
     }
 
@@ -1142,7 +1170,7 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
 
     mSpawnedChestsCount = 0;
     mSpawnedWeaponsCount = 0;
-    mSpawnWeaponProbability = 0.2;
+    mSpawnWeaponProbability = 0.2f;
 
     mDesc = desc;
     mPassableLeft = mDesc.sizeX * mDesc.sizeY;
