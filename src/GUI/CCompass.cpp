@@ -6,12 +6,16 @@
 #include "CWindow.h"
 #include "../Logic/CPlayerManager.h"
 #include "../Logic/CPlayer.h"
+#include "../Logic/CEnemy.h"
+#include "../Logic/Boss/CBossManager.h"
 #include "../Map/CMapManager.h"
 #include "../Utils/Directions.h"
 #include "../Rendering/CCamera.h"
 #include "../Rendering/CHudSprite.h"
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Drawable.hpp>
+
+#undef CreateWindow
 
 using namespace GUI;
 
@@ -85,8 +89,16 @@ inline float saturate(float v) { if(v>1)return 1;if(v<0)return 0;return v; }
 
 void CCompass::PointExit()
 {
-    if (!mExitFound)
-        FindExit();
+    sf::Vector2f exitPos;
+
+    if (gBossManager.GetBoss())
+        exitPos = gBossManager.GetBoss()->GetPosition() * (float)Map::TILE_SIZE;
+    else
+    {
+        if (!mExitFound)
+            FindExit();
+        exitPos = mExitPos;
+    }
 
 //	pobieranie pozycji kompasu - stare
 	sf::Vector2f mPos1 = gCamera.GetPosition();
@@ -112,6 +124,6 @@ void CCompass::PointExit()
 	mPos.y *= Map::TILE_SIZE;
 
 	//warning C4244: '=' : conversion from 'int' to 'float', possible loss of data
-    mRotation = (float)RotationFromVector (sf::Vector2f (mExitPos.x - mPos.x, mExitPos.y - mPos.y));
+    mRotation = (float)RotationFromVector (sf::Vector2f (exitPos.x - mPos.x, exitPos.y - mPos.y));
     mArrow->mBackgroundSprite->GetSFSprite()->SetRotation(mRotation);
 };
