@@ -229,6 +229,10 @@
         <loot file="data/loots/medium-mana.xml" minLevel="1" maxLevel="99" />
 
         <loot file="data/loots/weapon.xml" minLevel="1" maxLevel="99" />
+      
+        <!-- le boss -->
+        <boss file="data/physicals/monsters/defs/rat.xml" minLevel="1" maxLevel="5" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-small.xml" />
+      
     </physicals>
     <tile-masks>
         <tile-mask file="data/maps/tile_mask/mask1.png" />
