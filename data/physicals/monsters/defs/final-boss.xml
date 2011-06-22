@@ -1,0 +1,59 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="Baldurian" />
+    <desc value="This demon comes from the deepest and least explored reaches of hell. He commands powerful magic that summons multiple minions." />
+  </bestiary>
+  <genre>final-boss</genre>
+
+  <maxhp min="2500.0" max="2500.0" />
+  <speed min="1.25" max="1.25" />
+  <turnspeed min="90.0" max="120.0" />
+  <strength min="40.0" max="40.0" />
+  <intelligence min="12" max="12" />
+  <fireresist min="10" max="10" />
+  <lightningresist min="2" max="2" />
+  <poisonresist min="8" max="8" />
+  <maxmana min="500.0" max="500.0" />
+  <manaregen min="10" max="10"/>
+  <xp min="500.0" max="500.0" />
+
+  <mass min="5.0" max="5.0" />
+  <radius min="0.65" max="0.65" />
+  <scale min="1.30" max="1.3" />
+  <shadow-offset min="0.12" max="0.12" />
+  <!--  <color r="0.5" g="0.2" b="0.01" a="1.0" /> -->
+
+  <animset>
+    <anim name="core/anim/demon/default" type="default" />
+    <anim name="core/anim/demon/move" type="move" />
+    <anim name="core/anim/demon/attack" type="attack" />
+    <anim name="core/anim/demon/death" type="death" />
+  </animset>
+  <animset>
+    <anim name="core/anim/demon/default/wounded" type="default" />
+    <anim name="core/anim/demon/move/wounded" type="move" />
+    <anim name="core/anim/demon/attack/wounded" type="attack" />
+    <anim name="core/anim/demon/death" type="death" />
+  </animset>
+
+  <ai name="melee-chaser" />
+
+  <ability name="data/abilities/monsters/melee-with-stun.xml" default="1" />
+  <ability name="data/abilities/monsters/fireburst.xml" />
+  <ability name="data/abilities/monsters/electric-bullets.xml" />
+  <ability name="data/abilities/monsters/firestream.xml" />
+  <ability name="data/abilities/monsters/firearrows.xml" />
+  <ability name="data/abilities/monsters/meteor.xml" />
+
+  <!--  <ability name="data/abilities/monster/rage.xml" /> -->
+  <!--  <ability name="data/abilities/monster/summon-warlocks.xml" />  -->
+  <!-- <ability name="data/abilities/monster/summon-kamikadze-crawlers.xml" />  -->
+
+  <sound type="attack" filename="data/sounds/EL/monster03.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/monster01.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/monster02.ogg" />
+  <sound type="spawn" filename="data/sounds/EL/dragon02.ogg" />
+  <sound type="death" filename="data/sounds/EL/monster06.ogg" />
+
+</root>

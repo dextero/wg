@@ -667,6 +667,8 @@ bool CRandomMapGenerator::PlaceDoodahs()
                     (y < mDesc.sizeY - 1 && mCurrent[x][y + 1] != BLOCKED))
                     scale = Maths::Clamp(scale, 0.f, 1.1f);
 
+                scale *= set.doodahs[doodahNum].scale;
+
                 mXmlText << "\t<sprite file=\"" << set.doodahs[doodahNum].file
                     << "\" x=\"" << (float)x + offsetX
                     << "\" y=\"" << (float)y + offsetY
@@ -941,7 +943,7 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
         // doodahy
         if (xml.GetChild(n, "doodahs"))
             for (rapidxml::xml_node<>* doodah = xml.GetChild(xml.GetChild(n, "doodahs"), "doodah"); doodah; doodah = xml.GetSibl(doodah, "doodah"))
-                set.doodahs.push_back(SPartSet::SDoodah(xml.GetString(doodah, "file"), !!(xml.GetString(doodah, "z") == "foreground")));
+                set.doodahs.push_back(SPartSet::SDoodah(xml.GetString(doodah, "file"), !!(xml.GetString(doodah, "z") == "foreground"), xml.GetFloat(doodah, "scale", 1.0f)));
         
         // i przynajmniej jednego doodaha
         if (!set.doodahs.size())

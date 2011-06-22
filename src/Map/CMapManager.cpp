@@ -209,6 +209,11 @@ namespace Map{
     void CMapManager::NextMap() {
         fprintf(stderr, "NextMap()\n");
         mLevel++;
+
+        if (mLevel == 18) {
+            return ScheduleSetMap("data/maps/final-arena.xml", true, "entry");
+        }
+
         int r = 0;
         if (m_map && m_map->GetFilename()[m_map->GetFilename().size() - 5] == '0') // 5? "0.xml" == 5 znakow
             r = 1;
@@ -216,7 +221,11 @@ namespace Map{
         // todo: robic w katalogu usera:
 		std::string filename = gGameOptions.GetUserDir() + "/generated_maps/rnd" + StringUtils::ToString(r) + ".xml";
         SRandomMapDesc desc;
-        desc.set = "forest";
+        if (mLevel <= 9) {
+            desc.set = "forest";
+        } else {
+            desc.set = "desert";
+        }
         desc.sizeX = 32;
         desc.sizeY = 32;
         desc.obstaclesAreaPercent = (float)gRand.Rnd(40, 60);

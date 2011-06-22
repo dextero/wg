@@ -1,0 +1,138 @@
+<root type="ability" class="bullet">
+
+  <explosion type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/break.ogg" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="bullet-explosion" />
+      <time value="0.8" />
+    </effect>
+    <effect type="graphical-effect">
+      <time value="0.1" />
+      <name value="smallfireball" />
+    </effect>
+
+    <effect type="bullet">
+      <emitter>
+        <explosion type="list">
+          <effect type="graphical-effect">
+            <name value="flames" />
+            <time value="0.06" />
+          </effect>
+          <effect type="graphical-effect">
+            <name value="firearrow-trail" />
+            <time value="0.06" />
+          </effect>
+        </explosion>
+        <effect type="list">
+          <effect type="damage">
+            <damage-type value="fire"/>
+            <amount calc="0.25 * intelligence" />
+          </effect>
+          <effect type="knockback">
+            <amount calc="5 "/>
+          </effect>
+        </effect>
+        <flight-effect type="graphical-effect">
+          <name value="bullet-explosion"/>
+          <time value="0.3" />
+        </flight-effect>
+        <range calc="12.0" />
+        <speed value="5.8" />
+        <ttl calc="0.3" />
+        <count calc="18" />
+        <width value="340" />
+        <acceleration value="-1.0" />
+        <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+        <filter value="player,wall,door" />
+      </emitter>
+    </effect>
+  </explosion>
+
+  <effect type="list">
+    <effect type="damage">
+      <damage-type value="fire"/>
+      <amount calc="1 * intelligence" />
+    </effect>
+  </effect>
+
+  <flight-effect type="list">
+    <effect type="recastable">
+      <recast value="0.2" />
+      <time value="3.0" />
+      <effect type="graphical-effect">
+        <name value="bullet-explosion-mini"/>
+        <time value="0.3"/>
+      </effect>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="bullet-explosion-mini"/>
+      <time value="0.3"/>
+    </effect>
+    <effect type="recastable">
+      <recast value="0.2" />
+      <time value="3.0" />
+      <effect type="graphical-effect">
+        <name value="flames"/>
+        <time value="0.3"/>
+      </effect>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="flames"/>
+      <time value="0.2"/>
+    </effect>  
+  </effect>
+
+  <cast-time-effect type="list" >
+    <effect type="graphical-effect">
+      <name value="magic-circle-4"/>
+      <time value="0.70"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.35"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-1"/>
+      <time value="0.70"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="shield"/>
+      <time value="0.50"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </cast-time-effect>
+
+  <range value="12.0" />
+  <speed calc="6.0" />
+  <acceleration value="1.0" />
+  <explode-on-fade value="1" />
+  <count calc="1 + rint(0.16 * intelligence)" />
+  <width calc="0.5 + rint(0.16 * intelligence) * 20" />
+  <ttl calc="0.5 + rnd(0, 1.0)" />
+  <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+  <filter value="player,wall,door"/>
+  <target-chooser>
+    <filter value="player" />
+    <range value="12.0"  />
+    <angle value="360.0" />
+    <aim-at-ground value="0"/>
+  </target-chooser>
+  <time-for-tracking value="0.02"/>
+  <turning-speed value="1200" />
+
+  <manacost calc="5" />
+  <casttime value="0.7" />
+  <delay value="0.3" />
+  <cooldown value="4.8 + rnd(0, 2.8)" />
+
+  <ai-hint>
+	<player-distance>9.0</player-distance>
+	<player-angle>30.0</player-angle>
+  </ai-hint>
+
+</root>
