@@ -1,0 +1,117 @@
+﻿<root type="ability-tree">
+	<name>$ABITREE_FIRE</name>
+    <background>data/GUI/skills-bkg-fire.jpg</background>
+
+	<ability code="a">
+		<name>data/abilities/fire/fireball.xml</name>
+		<start-level>1</start-level>
+		<row>0</row>
+		<export/>
+	</ability>
+	<ability code="k">
+		<name>data/abilities/fire/fire-mastery.xml</name>
+		<row>1</row>
+    <req ability="a" level="1" />
+    <req-level>3</req-level>
+		<export>
+			<name>fm</name>
+		</export>
+	</ability>
+	<ability code="b">
+		<name>data/abilities/fire/firearrow.xml</name>
+		<row>1</row>
+    <req ability="a" level="1" />
+    <req-level>3</req-level>
+	</ability>
+	<ability code="d">
+		<name>data/abilities/fire/flaming-hands.xml</name>
+		<row>0</row>
+	</ability>
+	<ability code="c">
+		<name>data/abilities/fire/firecircle.xml</name>
+		<row>1</row>
+    <req ability="a" level="1" />
+    <req ability="d" level="1" />
+    <req-level>3</req-level>
+	</ability>
+	<ability code="e">
+		<name>data/abilities/fire/blazingfeet.xml</name>
+		<row>1</row>
+    <req ability="d" level="1" />
+    <req-level>3</req-level>
+	</ability>
+	<ability code="j">
+		<name>data/abilities/fire/quickshot.xml</name>
+		<row>2</row>
+    <req ability="b" level="1" />
+    <req ability="k" level="1" />
+    <req-level>8</req-level>
+	</ability>
+	<ability code="l">
+		<name>data/abilities/fire/explosive-magic.xml</name>
+		<row>2</row>
+    <req ability="c" level="1" />
+    <req-level>8</req-level>
+		<export>
+			<name>expl</name>
+		</export>
+	</ability>
+	<ability code="f">
+		<name>data/abilities/fire/firewall.xml</name>
+		<row>2</row>
+    <req ability="c" level="1" />
+    <req-level>8</req-level>
+	</ability>
+	<ability code="n">
+		<name>data/abilities/fire/schrapnel-magic.xml</name>
+		<row>3</row>
+    <req ability="l" level="1" />
+    <req ability="j" level="1" />
+    <req-level>15</req-level>
+		<export>
+			<name>schr</name>
+		</export>
+	</ability>
+	<ability code="i">
+		<name>data/abilities/fire/exploding-corpse.xml</name>
+		<row>3</row>
+    <req ability="l" level="1" />
+    <req-level>15</req-level>
+	</ability>
+	<ability code="m">
+		<name>data/abilities/fire/igniting-magic.xml</name>
+		<row>2</row>
+    <req ability="e" level="1" />
+    <req-level>8</req-level>
+		<export>
+			<name>ignite</name>
+		</export>
+	</ability>
+	<ability code="g">
+		<name>data/abilities/fire/firepits.xml</name>
+		<row>3</row>
+    <req ability="f" level="1" />
+    <req ability="m" level="1" />
+    <req-level>15</req-level>
+	</ability>
+	<ability code="h">
+		<name>data/abilities/fire/sparkrain.xml</name>
+    <req ability="n" level="1" />
+    <req-level>24</req-level>
+		<row>4</row>
+	</ability>
+	<ability code="o">
+		<name>data/abilities/fire/elemental-revenge.xml</name>
+		<row>4</row>
+    <req ability="i" level="1" />
+    <req ability="n" level="1" />
+    <req-level>24</req-level>
+	</ability>
+	<ability code="p">
+		<name>data/abilities/fire/flaming-mantle.xml</name>
+    <req ability="g" level="1" />
+    <req ability="i" level="1" />
+    <req-level>24</req-level>
+		<row>4</row>
+	</ability>
+</root>

@@ -1,0 +1,9 @@
+<root type="bullet">
+  <scale min="0.5" max="0.5" />
+  <radius min="0.25" max="0.25" />
+ 
+  <anim name="core/anim/bullet/flaming-arrow" />
+  <image filename="data/physicals/bullets/flaming-arrow.png" />
+  <effect name="fire" />
+  <destroyEffect name="explosion" />
+</root>

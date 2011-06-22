@@ -1,0 +1,47 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_THROW_AXE</name>
+  <trigger>a</trigger>
+  <icon>data/player/flaming-arrow.png</icon>
+  <unavailable-icon>data/player/flaming-arrow-grey.png</unavailable-icon>
+  <description>$ABI_THROW_AXE_DESC</description>
+
+  <effect type="list">
+<!--
+    <effect type="graphical-effect">
+      <time value="0.8" />
+      <name value="bullet-explosion" />
+    </effect> 
+-->
+    <effect type="damage">
+      <amount calc="8" />
+    </effect>
+  </effect>
+
+  <manacost calc="0" />
+  <range value="12.0" />
+  <speed calc="6.6" />
+  <acceleration value="-3.3" />
+  <explode-on-fade value="0" />
+  <count value="1" />
+  <width calc="0.5 + (lvl-1)" />
+  <ttl value="1.0" />
+  <bullet value="data/physicals/bullets/throwing-axe.xml" />
+  <bullet-angular-speed value="-440" />
+  <casttime value="0.5" />
+  <cast-time-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.0" />
+  </cast-time-effect>
+  <delay value="0.5" />
+
+  <filter value="player,wall,door"/>
+  <cooldown value="4.25" />
+  <ai-hint>
+    <player-distance>3.0</player-distance>
+    <player-angle>30.0</player-angle>
+  </ai-hint>
+
+
+
+</root>

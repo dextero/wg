@@ -1,0 +1,61 @@
+<root type="ability" class="self">
+
+  <name>Lazoor</name>
+  <description>
+A thin beam with very long range and superior penetration, burning everything on its way.
+
+Bonus for this spell depends:
+  barely on choleric rune
+  brealy on melancholic rune
+  mildly on sanguine rune
+  mildly on phlegmatic rune  
+  </description>
+  <icon>data/abilities/weapons/lazoor-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/lazoor-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 1x mel, 2x san, 2x phl -->
+  <power calc="0.2 * dot(1, choleric, 1, melancholic, 2, sanguine, 2, phlegmatic)"/>
+  
+  <effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/firestart.ogg" />
+    </effect>
+    <effect type="linked-graphical-effect">
+      <name value="laser" />
+      <time value="0.2" />
+      <offset-x value="-0.25"/>
+      <offset-y value="0.3"/>
+    </effect>
+    <effect type="ray">
+      <area calc="10.0" />
+      <filter value="hostiles,obstacle" />
+      <offset-x value="-0.25"/>
+      <offset-y value="0.3"/>
+      <effect type="list">
+        <effect type="graphical-effect">
+          <name value="colorize-red" />
+          <time value="0.2" />
+        </effect>
+        <effect type="graphical-effect">
+          <name value="smoke" />
+          <time value="0.5" />
+        </effect>
+        <effect type="damage">
+          <damage-type value="lightning" />
+          <amount calc="25 * (1 + power)" />
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.2" />
+  </cast-time-effect>
+
+  <manacost calc="24 * (1 + 0.66 * power)" />
+  <casttime calc="0.09" />
+  <delay calc="0.05" />
+  <cooldown calc="0.2" />
+</root>
+

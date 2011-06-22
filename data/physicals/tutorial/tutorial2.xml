@@ -1,0 +1,14 @@
+﻿<root type="loot">
+  <genre>tutorial2</genre>
+	<name name="$ITEM_TUTORIAL2" />
+	<level value="1" />
+	<image filename="data/loots/star.png" />
+	<droprate value="0.0" />
+	<effect type="console">
+		<text>
+      [
+      start-dialog ryszard2
+      spawn-physical data/physicals/tutorial/tutorial3.xml 2 8
+      ]</text>
+	</effect>
+</root>

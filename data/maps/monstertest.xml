@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?><map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <version>
+    3
+  </version>
+  <width>
+    12
+  </width>
+  <height>
+    8
+  </height>
+  <tiletype code="a" image="data/maps/themes/test/bricks.png" />
+  <tiles>
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+  </tiles>
+  <objtype code="a" file="data/physicals/eyebrain.xml" />
+  <objtype code="b" file="data/physicals/fire-elemental.xml" />
+  <objtype code="c" file="data/physicals/blind-pincer.xml" />
+  <objtype code="d" file="data/physicals/winged-pincer.xml" />
+  <objtype code="e" file="data/physicals/carrot.xml" />
+  <objtype code="f" file="data/physicals/surger.xml" />
+  <objtype code="g" file="data/physicals/earwigle.xml" />
+  <objtype code="h" file="data/physicals/flying-fish.xml" />
+  <objtype code="i" file="data/physicals/entangler.xml" />
+  <objtype code="j" file="data/physicals/minelayer.xml" />
+  <objtype code="k" file="data/physicals/skeleton-warrior.xml" />
+  <objtype code="l" file="data/physicals/skeleton-mage.xml" />
+  <objtype code="m" file="data/physicals/redbaldy.xml" />
+  <objtype code="n" file="data/physicals/baldy.xml" />
+  <objtype code="o" file="data/physicals/redhorny.xml" />
+  <objtype code="p" file="data/physicals/horny.xml" />
+  <objtype code="q" file="data/physicals/lairs/sick-lair.xml" />
+  <objtype code="r" file="data/physicals/lairs/grim-lair.xml" />
+  <!--<obj code="a" x="10.0" y="1.2" />
+  <obj code="b" x="8.0" y="1.2" />
+  <obj code="c" x="8.0" y="1.2" />
+  <obj code="c" x="7.0" y="1.2" />
+  <obj code="d" x="6.0" y="1.2" />
+  <obj code="d" x="6.0" y="1.2" />
+  <obj code="e" x="5.0" y="1.2" />
+  <obj code="e" x="4.0" y="1.2" />
+  <obj code="f" x="3.0" y="1.2" />
+  <obj code="g" x="2.0" y="1.2" />
+  <obj code="h" x="1.0" y="1.2" />
+  <obj code="h" x="0.5" y="1" />
+  <obj code="h" x="0.5" y="1.5" />
+  <obj code="h" x="0.5" y="2" />
+  <obj code="i" x="0.5" y="2.5" />
+  <obj code="i" x="0.5" y="3" />
+  <obj code="j" x="0.5" y="3.5" />
+  <obj code="k" x="0.5" y="4.5" />
+  <obj code="l" x="0.5" y="5.5" />-->
+  <obj code="m" x="0.5" y="6.5" />
+  <obj code="n" x="0.5" y="7.5" />
+  <obj code="o" x="1.5" y="7.5" />
+  <obj code="p" x="2.5" y="7.5" />
+  <obj code="q" x="3.5" y="7.5" />
+  <obj code="r" x="7.5" y="6.5" />
+  <region name="exit" x="-0.5" y="-0.5">
+    <next-map>
+      data/maps/atlastest.xml
+    </next-map>
+    <next-map-region>
+      entry
+    </next-map-region>
+  </region>
+  <region name="entry" x="0.5" y="3.5" />
+</map>

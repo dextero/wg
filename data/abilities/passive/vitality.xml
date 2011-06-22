@@ -1,0 +1,18 @@
+<root type="ability" class="passive">
+
+  <name>Vitality</name>
+  <description>
+Your physical health. Defines your endurance, hit-points and overall regeneration.
+
+Each point gives you additional 20% hit-points limit.
+  </description>
+  <icon>data/abilities/passive/vitality-0.png</icon>
+  <unavailable-icon>data/abilities/passive/vitality-1.png</unavailable-icon>
+
+  <max-level value="100"/>
+ 
+  <effect type="modify">
+    <aspect value="maxhp"/>
+    <amount calc="1 + (level * 0.20)" />
+  </effect>
+</root>

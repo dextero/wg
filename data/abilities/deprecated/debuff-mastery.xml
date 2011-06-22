@@ -1,0 +1,8 @@
+<root type="ability" class="export">
+	<name>$ABI_ELECTRIC_DEBUFF_MASTERY</name>
+	<icon>data/abilities/electric/masterofweakness-0.png</icon>
+	<unavailable-icon>data/abilities/electric/masterofweakness-1.png</unavailable-icon>
+	<description>$ABI_ELECTRIC_DEBUFF_MASTERY_DESC</description>
+
+	<effect type="noEffect"/>
+</root>

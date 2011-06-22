@@ -1,0 +1,33 @@
+﻿<root type="enemy">
+
+  <bestiary>
+    <name value="Rat" />
+    <desc value="The overgrown rat, or rather rats - it's rare to find only one of these - are weak, but many. Use area-of-effect spells to get rid of any pesky horde." />
+  </bestiary>
+  <genre>rat</genre>
+
+  <maxhp min="4.0" max="5.0" />
+  <speed min="1.5" max="2.2" />
+  <turnspeed min="240.0" max="240.0" />
+  <strength min="1.0" max="3.0" />
+  <xp min="3.0" max="4.0" />
+
+  <mass min="0.6" max="1.0" />
+  <radius min="0.165" max="0.22" />
+  <scale min="0.5" max="0.8" />
+
+  <anim name="test/anim/rat/default" type="default" />
+  <anim name="test/anim/rat/move" type="move" />
+  <anim name="test/anim/rat/death" type="death" />
+  <anim name="test/anim/rat/attack" type="attack" />
+
+  <ai name="boid-chaser" />
+
+  <ability name="data/abilities/monsters/melee.xml" default="1" />
+
+  <sound type="attack" filename="data/sounds/EL/rat01.ogg" />
+  <sound type="death" filename="data/sounds/EL/rat01.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/rat01.ogg" />
+  <sound type="spawn" filename="data/sounds/EL/rat01.ogg" />
+
+</root>

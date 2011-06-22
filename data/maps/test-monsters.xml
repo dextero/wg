@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <version>3</version>
+  <width>19</width>
+  <height>16</height>
+  <tiletype code="a" image="data/maps/themes/grassland/jf_grassland_a.png" index="0" />
+  <tiletype code="b" image="data/maps/themes/grassland/jf_grassland_a.png" index="1" />
+  <tiletype code="c" image="data/maps/themes/grassland/jf_grassland_a.png" index="2" />
+  <tiletype code="d" image="data/maps/themes/grassland/jf_grassland_a.png" index="3" />
+  <tiletype code="e" image="data/maps/themes/grassland/jf_grassland_a.png" index="4" />
+  <tiletype code="f" image="data/maps/themes/grassland/jf_grassland_a.png" index="5" />
+  <tiletype code="g" image="data/maps/themes/grassland/jf_grassland_a.png" index="6" />
+  <tiletype code="h" image="data/maps/themes/grassland/jf_grassland_a.png" index="7" />
+  <tiletype code="i" image="data/maps/themes/grassland/jf_grassland_a.png" index="8" />
+  <tiletype code="j" image="data/maps/themes/grassland/jf_grassland_a.png" index="9" />
+  <tiletype code="k" image="data/maps/themes/grassland/jf_grassland_a.png" index="10" />
+  <tiletype code="l" image="data/maps/themes/grassland/jf_grassland_a.png" index="11" />
+  <tiletype code="m" image="data/maps/themes/grassland/jf_grassland_a.png" index="12" />
+  <tiletype code="n" image="data/maps/themes/grassland/jf_grassland_a.png" index="13" />
+  <tiletype code="o" image="data/maps/themes/grassland/jf_grassland_a.png" index="14" />
+  <tiletype code="p" image="data/maps/themes/grassland/jf_grassland_a.png" index="15" />
+  <tiletype code="q" image="data/maps/themes/grassland/jf_grassland_a.png" index="16" />
+  <tiletype code="r" image="data/maps/themes/grassland/jf_grassland_a.png" index="17" />
+  <tiletype code="s" image="data/maps/themes/grassland/jf_grassland_a.png" index="18" />
+  <tiletype code="t" image="data/maps/themes/grassland/jf_grassland_a.png" index="19" />
+  <tiletype code="u" image="data/maps/themes/grassland/jf_grassland_a.png" index="20" />
+  <tiletype code="v" image="data/maps/themes/grassland/jf_grassland_a.png" index="21" />
+  <tiletype code="w" image="data/maps/themes/grassland/jf_grassland_a.png" index="22" />
+  <tiletype code="x" image="data/maps/themes/grassland/jf_grassland_a.png" index="23" />
+  <tiletype code="y" image="data/maps/themes/grassland/jf_grassland_a.png" index="24" />
+  <tiletype code="z" image="data/maps/themes/grassland/jf_grassland_a.png" index="25" />
+  <tiletype code="A" image="data/maps/themes/green_forest/grass.png" />
+  <tiletype code="B" image="data/maps/themes/grassland/jf_grassland_a.png" index="26" />
+  <tiletype code="C" image="data/maps/themes/grassland/jf_grassland_a.png" index="27" />
+  <tiles>
+i j x x x k s t u v m f r p x s a a a
+h p q x w x a d x w g h i j k x a a a
+l j x x x a y j q z m n o p q x a a a
+h p x e q g o p x x s t u v w x a a a
+u v x x k s u v x k x x a c d x a a a
+x x k x x w q x x a b c y r j x a a a
+b c b c d e x z x g o h n h p q a a a
+h h h h j x k x e m h h h f B c a a a
+h h r h B c d x a y h f h o h h a a a
+o h h f h l j x g f h h h h i h a a a
+u t u C o h p k m h o n h r h h a a a 
+x q x s t u v x s t u C r h h l a a a
+a b c d e x w a b c d s t u t u a a a
+h h h j x k x g h l j w x x e x a a a
+f h i B c d q m f h p k x x x x a a a
+n h h o h j x s t u v x x q x x a a a
+</tiles>
+  <objtype code="f" file="data/physicals/simple-wall.xml" />
+  
+  <objtype code="h" file="data/loots/1k-xp.xml" />
+  
+  <region name="spawn1" x="0.5" y="2.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn1</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/bee.xml
+        spawn-physical data/physicals/bee.xml 0.5 0.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn2" x="2.5" y="2.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn2</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/chityniak.xml
+        spawn-physical data/physicals/chityniak.xml 2.5 0.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn3" x="4.5" y="2.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn3</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/cockroach.xml
+        spawn-physical data/physicals/cockroach.xml 4.5 0.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn4" x="6.5" y="2.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn4</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/crawler.xml
+        spawn-physical data/physicals/crawler.xml 6.5 0.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn5" x="8.5" y="2.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn5</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/hornet.xml
+        spawn-physical data/physicals/hornet.xml 8.5 0.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn6" x="10.5" y="2.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn6</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/mantis.xml
+        spawn-physical data/physicals/mantis.xml 10.5 0.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn7" x="12.5" y="2.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn7</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/ogre-red-wife.xml
+        spawn-physical data/physicals/ogre-red-wife.xml 12.5 0.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+
+  <region name="spawn8" x="0.5" y="9.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn8</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/ogre-wife.xml
+        spawn-physical data/physicals/ogre-wife.xml 0.5 11.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn9" x="2.5" y="9.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn9</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/ogre.xml
+        spawn-physical data/physicals/ogre.xml 2.5 11.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn10" x="4.5" y="9.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn10</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/rat.xml
+        spawn-physical data/physicals/rat.xml 4.5 11.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn11" x="6.5" y="9.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn11</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/shaggy-winged.xml
+        spawn-physical data/physicals/shaggy-winged.xml 6.5 11.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn12" x="8.5" y="9.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn12</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/shaggy.xml
+        spawn-physical data/physicals/shaggy.xml 8.5 11.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn13" x="10.5" y="9.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn13</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/spideroo.xml
+        spawn-physical data/physicals/spideroo.xml 10.5 11.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn14" x="12.5" y="9.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn14</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/troll.xml
+        spawn-physical data/physicals/troll.xml 12.5 11.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn15" x="14.5" y="9.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn15</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/wolfbeast.xml
+        spawn-physical data/physicals/wolfbeast.xml 14.5 11.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn16" x="14.5" y="2.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn16</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/rat-green.xml
+        spawn-physical data/physicals/rat-green.xml 14.5 0.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+  <region name="spawn17" x="16.5" y="2.5" >
+    <cond check="never" >
+      <type>region-triggered</type>
+      <param>spawn17</param>
+    </cond>
+    <effect-on-enter type="console" >
+      <text>[
+        msg data/physicals/early.xml
+        spawn-physical data/physicals/early.xml 16.5 0.5
+        ]
+      </text>
+    </effect-on-enter>
+  </region> 
+
+
+  <region name="entry" x="5" y="4" />
+<!--  <region name="exit" x="0.5" y="12.5">
+  	<next-map>data/maps/level3.xml</next-map>
+  	<next-map-region>entry</next-map-region>
+  </region>-->
+  
+  <obj code="f" x="1.5" y="0.5"/>
+  <obj code="f" x="1.5" y="1.5"/>
+  <obj code="f" x="1.5" y="2.5"/>
+
+  <obj code="f" x="3.5" y="0.5"/>
+  <obj code="f" x="3.5" y="1.5"/>
+  <obj code="f" x="3.5" y="2.5"/>
+
+  <obj code="f" x="5.5" y="0.5"/>
+  <obj code="f" x="5.5" y="1.5"/>
+  <obj code="f" x="5.5" y="2.5"/>
+
+  <obj code="f" x="7.5" y="0.5"/>
+  <obj code="f" x="7.5" y="1.5"/>
+  <obj code="f" x="7.5" y="2.5"/>
+
+  <obj code="f" x="9.5" y="0.5"/>
+  <obj code="f" x="9.5" y="1.5"/>
+  <obj code="f" x="9.5" y="2.5"/>
+
+  <obj code="f" x="11.5" y="0.5"/>
+  <obj code="f" x="11.5" y="1.5"/>
+  <obj code="f" x="11.5" y="2.5"/>
+
+  <obj code="f" x="13.5" y="0.5"/>
+  <obj code="f" x="13.5" y="1.5"/>
+  <obj code="f" x="13.5" y="2.5"/>
+
+  <obj code="f" x="15.5" y="0.5"/>
+  <obj code="f" x="15.5" y="1.5"/>
+  <obj code="f" x="15.5" y="2.5"/>
+
+  <obj code="f" x="17.5" y="0.5"/>
+  <obj code="f" x="17.5" y="1.5"/>
+  <obj code="f" x="17.5" y="2.5"/>
+
+
+  <obj code="f" x="0.5" y="12.5"/>
+  <obj code="f" x="1.5" y="12.5"/>
+  <obj code="f" x="2.5" y="12.5"/>
+  <obj code="f" x="3.5" y="12.5"/>
+  <obj code="f" x="4.5" y="12.5"/>
+  <obj code="f" x="5.5" y="12.5"/>
+  <obj code="f" x="6.5" y="12.5"/>
+  <obj code="f" x="7.5" y="12.5"/>
+  <obj code="f" x="8.5" y="12.5"/>
+  <obj code="f" x="9.5" y="12.5"/>
+  <obj code="f" x="10.5" y="12.5"/>
+  <obj code="f" x="11.5" y="12.5"/>
+  <obj code="f" x="12.5" y="12.5"/>
+  <obj code="f" x="13.5" y="12.5"/>
+
+  <obj code="f" x="1.5" y="9.5"/>
+  <obj code="f" x="1.5" y="10.5"/>
+  <obj code="f" x="1.5" y="11.5"/>
+
+  <obj code="f" x="3.5" y="9.5"/>
+  <obj code="f" x="3.5" y="10.5"/>
+  <obj code="f" x="3.5" y="11.5"/>
+
+  <obj code="f" x="5.5" y="9.5"/>
+  <obj code="f" x="5.5" y="10.5"/>
+  <obj code="f" x="5.5" y="11.5"/>
+
+  <obj code="f" x="7.5" y="9.5"/>
+  <obj code="f" x="7.5" y="10.5"/>
+  <obj code="f" x="7.5" y="11.5"/>
+
+  <obj code="f" x="9.5" y="9.5"/>
+  <obj code="f" x="9.5" y="10.5"/>
+  <obj code="f" x="9.5" y="11.5"/>
+
+  <obj code="f" x="11.5" y="9.5"/>
+  <obj code="f" x="11.5" y="10.5"/>
+  <obj code="f" x="11.5" y="11.5"/>
+
+  <obj code="f" x="13.5" y="9.5"/>
+  <obj code="f" x="13.5" y="10.5"/>
+  <obj code="f" x="13.5" y="11.5"/>
+
+  <obj code="f" x="15.5" y="9.5"/>
+  <obj code="f" x="15.5" y="10.5"/>
+  <obj code="f" x="15.5" y="11.5"/>
+
+
+</map>

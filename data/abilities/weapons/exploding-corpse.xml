@@ -1,0 +1,77 @@
+<root type="ability" class="self">
+
+  <name>Exploding corpse</name>
+  <description>
+Although a lot of mages despise this spell, because of it&apos;s close relationship to necromancy, it&apos;s very useful in some situations - corpses of recently killed monsters explode, damaging nearby enemies. The longer the player hold&apos;s the spell key, the more corpses explode.  
+
+Bonus for this spell depends:
+  mildly on choleric rune
+  mildly on melancholic rune
+  mildly on sanguine rune
+  mildly on phlegmatic rune  
+  </description>
+  <icon>data/abilities/weapons/exploding-corpse-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/exploding-corpse-1.png</unavailable-icon>
+
+  <!-- power = 2x cho, 2x mel, 2x san, 2x phl -->
+  <power calc="0.2 * dot(2, choleric, 2, melancholic, 2, sanguine, 2, phlegmatic)"/>
+  
+  <effect type="recastable" >
+    <recast value="0.2" />
+    <time value="5.0" />
+    <effect type="retarget">
+      <target-chooser>
+        <filter value="hostiles"/>
+        <range calc="7.0"/>
+        <angle value="110.0"/>
+        <aim-at-ground value="0" />
+        <dead-bodies value="1"/>
+      </target-chooser>
+      <effect type="list">
+        <effect type="sound">
+          <name value="data/sounds/Lugaro/firestart.ogg" />
+        </effect>
+        <effect type="graphical-effect">
+          <name value="bullet-explosion" />
+          <time value="1.0" />
+        </effect>
+        <effect type="graphical-effect">
+          <name value="smallfireball" />
+          <time value="0.1" />
+        </effect>
+        <effect type="annihilate"/>
+        <effect type="area">
+          <area calc="1.3" />
+          <filter value="hostiles,obstacle" />
+          <effect type="list">
+            <effect type="damage">
+              <damage-type value="fire"/>
+              <amount calc="19.0 * (1 + power)" />
+            </effect>
+            <effect type="knockback">
+              <amount calc="2.0"/>
+            </effect>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.2" />
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.1" />
+  </delay-effect>
+
+  <manacost calc="2.0" />
+  <casttime calc="0.09" />
+  <delay calc="0.05" />
+  <cooldown value="0.0" />
+
+  <focus-mana-cost calc="14.0 * (1 + 0.66 * power)" />
+  <focus-max-duration value="5.0" />
+</root>

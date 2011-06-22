@@ -1,0 +1,424 @@
+<map>
+<version>3</version>
+<width>30</width>
+<height>25</height>
+<max-living-monsters>35</max-living-monsters>
+<tiletype code="a" image="data/maps/themes/test/rgrass.png"/>
+<tiletype code="aa" image="data/maps/themes/test/rsand_sand_1_1.png"/>
+<tiletype code="ba" image="data/maps/themes/test/rgrass_1.png"/>
+<tiletype code="ca" image="data/maps/themes/test/rswamp.png"/>
+<tiletype code="da" image="data/maps/themes/sand/tilesets_sand_a_2.png"/>
+<tiletype code="ea" image="data/maps/themes/sand/tilesets_sand_a_13.png"/>
+<tiletype code="fa" image="data/maps/themes/sand/tilesets_sand_a_6.png"/>
+<tiletype code="ga" image="data/maps/themes/sand/tilesets_sand_a_1.png"/>
+<tiletype code="ha" image="data/maps/themes/sand/tilesets_sand_a_10.png"/>
+<tiletype code="ia" image="data/maps/themes/sand/tilesets_sand_a_7.png"/>
+<tiletype code="ja" image="data/maps/themes/sand/tilesets_sand_a_12.png"/>
+<tiletype code="ka" image="data/maps/themes/sand/tilesets_sand_a_4.png"/>
+<tiletype code="la" image="data/maps/themes/sand/tilesets_sand_a_11.png"/>
+<tiletype code="ma" image="data/maps/themes/sand/tilesets_sand_a_9.png"/>
+<tiletype code="na" image="data/maps/themes/sand/tilesets_sand_a_8.png"/>
+<tiletype code="oa" image="data/maps/themes/sand/tilesets_sand_a_5.png"/>
+<tiletype code="pa" image="data/maps/themes/test/rsand-grass_10.png"/>
+<tiletype code="qa" image="data/maps/themes/test/rswamp-grass_0.png"/>
+<tiletype code="ra" image="data/maps/themes/small_rock/tileset_scheme_a_c8.png"/>
+<tiletype code="sa" image="data/maps/themes/test/rgrass-grass_7.png"/>
+<tiletype code="ta" image="data/maps/themes/test/rsand-grass_11.png"/>
+<tiletype code="ua" image="data/maps/themes/test/rsand-grass_6.png"/>
+<tiletype code="va" image="data/maps/themes/test/rsand-grass_4.png"/>
+<tiletype code="wa" image="data/maps/themes/test/rsand-grass_8.png"/>
+<tiletype code="xa" image="data/maps/themes/test/rsand-grass_9.png"/>
+<tiletype code="ya" image="data/maps/themes/test/rsand-grass_3.png"/>
+<tiletype code="za" image="data/maps/themes/test/rsand-grass_1.png"/>
+<tiletype code="ab" image="data/maps/themes/test/rsand-grass_7.png"/>
+<tiletype code="bb" image="data/maps/themes/sand/tilesets_sand_a_3.png"/>
+<tiletype code="cb" image="data/maps/themes/test/rgrass-grass_2.png"/>
+<tiletype code="db" image="data/maps/themes/rock/tilesets_rock_a_4.png"/>
+<tiletype code="eb" image="data/maps/themes/rock/tilesets_rock_a_5.png"/>
+<tiletype code="fb" image="data/maps/themes/rock/tilesets_rock_a_6.png"/>
+<tiletype code="gb" image="data/maps/themes/rock/tilesets_rock_a_7.png"/>
+<tiletype code="hb" image="data/maps/themes/test/rgrass-rock_1.png"/>
+<tiletype code="ib" image="data/maps/themes/test/rgrass-rock_4.png"/>
+<tiletype code="jb" image="data/maps/themes/test/rgrass-rock_3.png"/>
+<tiletype code="kb" image="data/maps/themes/test/rgrass-rock_11.png"/>
+<tiletype code="lb" image="data/maps/themes/test/rgrass-rock_6.png"/>
+<tiletype code="mb" image="data/maps/themes/test/rgrass-rock_9.png"/>
+<tiletype code="nb" image="data/maps/themes/test/rgrass-rock_8.png"/>
+<tiletype code="ob" image="data/maps/themes/test/rgrass-rock_0.png"/>
+<tiletype code="pb" image="data/maps/themes/test/rgrass-rock_10.png"/>
+<tiletype code="qb" image="data/maps/themes/test/rgrass-grass_1.png"/>
+<tiletype code="rb" image="data/maps/themes/test/rgrass-grass_9.png"/>
+<tiletype code="sb" image="data/maps/themes/test/rgrass-grass_5.png"/>
+<tiletype code="tb" image="data/maps/themes/test/rgrass-grass_4.png"/>
+<tiletype code="ub" image="data/maps/themes/test/rgrass-grass_3.png"/>
+<tiletype code="vb" image="data/maps/themes/test/rgrass-grass_11.png"/>
+<tiletype code="wb" image="data/maps/themes/test/rgrass-rock_2.png"/>
+<tiletype code="xb" image="data/maps/themes/test/rgrass-rock_5.png"/>
+<tiletype code="yb" image="data/maps/themes/test/rgrass-rock_7.png"/>
+<tiletype code="zb" image="data/maps/themes/test/rrock.png"/>
+<tiletype code="ac" image="data/maps/themes/test/rswamp-grass_10.png"/>
+<tiletype code="bc" image="data/maps/themes/test/rgrass-grass_0.png"/>
+<tiletype code="cc" image="data/maps/themes/test/rgrass-grass_10.png"/>
+<tiletype code="dc" image="data/maps/themes/test/rgrass-grass_8.png"/>
+<tiletype code="ec" image="data/maps/themes/test/rgrass-grass_6.png"/>
+<tiletype code="fc" image="data/maps/themes/small_rock/tileset_scheme_a_c1.png"/>
+<tiletype code="gc" image="data/maps/themes/small_rock/tileset_scheme_a_c5.png"/>
+<tiletype code="hc" image="data/maps/themes/small_rock/tileset_scheme_a_c4.png"/>
+<tiletype code="ic" image="data/maps/themes/small_rock/tileset_scheme_a_c2.png"/>
+<tiletype code="jc" image="data/maps/themes/small_rock/tileset_scheme_a_c7.png"/>
+<tiletype code="kc" image="data/maps/themes/small_rock/tileset_scheme_a_c6.png"/>
+<tiletype code="lc" image="data/maps/themes/test/rswamp-grass_7.png"/>
+<tiletype code="mc" image="data/maps/themes/test/rswamp-grass_4.png"/>
+<tiletype code="nc" image="data/maps/themes/test/rswamp-grass_3.png"/>
+<tiletype code="oc" image="data/maps/themes/test/rswamp-grass_8.png"/>
+<tiletype code="pc" image="data/maps/themes/test/rswamp-grass_6.png"/>
+<tiletype code="qc" image="data/maps/themes/test/rswamp-grass_1.png"/>
+<tiletype code="rc" image="data/maps/themes/test/rswamp-grass_9.png"/>
+<tiletype code="sc" image="data/maps/themes/test/rswamp-grass_11.png"/>
+<tiletype code="tc" image="data/maps/themes/test/rswamp-grass_2.png"/>
+<tiletype code="uc" image="data/maps/themes/test/rswamp-grass_5.png"/>
+<tiletype code="vc" image="data/maps/themes/small_rock/tileset_scheme_a_c3.png"/>
+<tiles>
+a a a a vb ba ba ba ba ba ba bc sa a a a a a a a a a a a a a a a a a
+a a a a vb ba ba ba ba ba bc sa a a a a a a a a a a a a a a a a a a
+a a a a ec qb ba ba ba bc sa a a a a a a tc rc nc a a a a a a a a a a
+a a a a a vb ba ba bc sa a a a a a a a sc ca mc nc a a a a a a a a a
+a a a a cb sb ba ba cc a ea ea a a a a a sc fc ic mc nc a a a a a a a a
+a a a a vb ba ba ba cc a a ea ea ea ea a a sc gc hc kc ac a a a a a a a a
+a a a a vb ba ba bc sa a ea ea ea ea ea a a pc qc gc jc ac a a a a a a a a
+a a a cb sb ba ba cc a a a a a a a a a a pc oc oc lc a a a a a a a a
+a a a vb ba ba bc sa ea a ea na da da da fa ia a ea ea tc rc rc nc a a a a a a
+a a a vb ba bc sa a a a na ja ja ja ja ja fa ia ea ea sc vc hc mc nc a a a a a
+a a a vb ba cc a a a a oa ja ja ja ja ja ja fa ia a pc qc gc hc mc rc nc a a a
+a a a ec dc sa a a a a ea oa ja ja ja ja ja ja fa ia a pc qc gc hc kc ac a a a
+a a a a a a a a a a ea na ja ja ja ja ja ja ma ha a a pc qc gc jc ac a a a
+a a a a a a a a a ga da ja ja ja ja ja ja ma ha a a a a pc oc oc lc a a a
+a a a a a a a a a ka ja ja ja ja ja ja ma ha ea a a a a a a a a a a a
+a a a a a a a a a oa ja ja ja ja ja ma ha a a a a a a a a a a a a a
+a a a a a a a a a a oa ja ja ja ja bb a a a a a a a a a a a a a a
+a a a a a a a a a a a oa la la ma ha a a a a a a a a a a a a a a
+a a a a a a a a a a a a cb rb rb rb ub a cb rb ub a a a a a a a a a
+a a a a ea ea ea ea ea a cb rb sb ob hb rb tb rb sb ba tb ub a a a a a a a a
+cb ub a ea cb rb rb rb rb rb sb ob nb yb kb ba ba ba ba ba ba tb ub a a a a a a a
+sb tb ub ea vb ba ba ba ba ba ba pb zb wb xb ba ba ba ba ba ba ba tb rb ub a a a a a
+ba ba tb rb sb ba ba ba ba ba ba ib jb lb nb nb nb nb hb ba ba ba ba ba tb ub a a a a
+ba ba ba ba ba ba ba ba ba ba ba ba ib mb mb mb mb jb lb hb ba ba ba ba ba tb rb ub a a
+ba ba ba ba ba ba ba ba ba ba qb ba ba ba ba ba ba ib jb lb hb ba ba ba ba ba ba tb ub a </tiles><objtype code="aa" file="data/physicals/walls/invisible-wall.xml"/>
+<objtype code="ba" file="data/physicals/walls/invisible-wall-half.xml"/>
+<objtype code="ca" file="data/physicals/walls/invisible-wall4x1.xml"/>
+<objtype code="monster1" file="data/physicals/rat.xml"/>
+<objtype code="monster2" file="data/physicals/rat-green.xml"/>
+<objtype code="monster3" file="data/physicals/rat-green.xml"/>
+<objtype code="monster4" file="data/physicals/timberman-with-knife.xml"/>
+<objtype code="monster5" file="data/physicals/timberman-with-knife.xml"/>
+<objtype code="monster6" file="data/physicals/timberman-with-axe.xml"/>
+<objtype code="monster7" file="data/physicals/timberman-with-axe.xml"/>
+<objtype code="monster8" file="data/physicals/chityniak.xml"/>
+<objtype code="monster9" file="data/physicals/crawler.xml"/>
+<objtype code="monster-lair1" file="data/physicals/lairs/rat-lair.xml"/>
+<objtype code="monster-lair2" file="data/physicals/lairs/rat-lair.xml"/>
+<objtype code="monster-lair3" file="data/physicals/lairs/rat-lair.xml"/>
+<objtype code="monster-lair4" file="data/physicals/lairs/rat-lair.xml"/>
+<objtype code="monster-lair5" file="data/physicals/lairs/rat-lair.xml"/>
+<objtype code="monster-lair6" file="data/physicals/lairs/chit-lair.xml"/>
+<objtype code="monster-lair7" file="data/physicals/lairs/chit-lair.xml"/>
+<objtype code="monster-lair8" file="data/physicals/lairs/chit-lair.xml"/>
+<objtype code="monster-lair9" file="data/physicals/lairs/chit-lair.xml"/>
+<objtype code="monster-lair0" file="data/physicals/lairs/wolfbeast-lair.xml"/>
+<objtype code="pacman1" file="data/loots/64xp.xml"/>
+<objtype code="exit-door" file="data/physicals/walls/test-barrier.xml"/>
+<objtype code="da" file="data/loots/resonator-ball.xml"/>
+<obj code="aa" x="6.95313" y="0.53125"/>
+<obj code="aa" x="6.64063" y="1.53125"/>
+<obj code="aa" x="6.4375" y="2.57813"/>
+<obj code="aa" x="6.59375" y="3.60938"/>
+<obj code="aa" x="5.89063" y="4.65625"/>
+<obj code="aa" x="6.14063" y="5.67188"/>
+<obj code="aa" x="5.67188" y="6.6875"/>
+<obj code="aa" x="7.1875" y="5.71875"/>
+<obj code="aa" x="6.59375" y="4.65625"/>
+<obj code="aa" x="7.625" y="3.95313"/>
+<obj code="aa" x="5.46875" y="7.70313"/>
+<obj code="aa" x="5.28125" y="8.71875"/>
+<obj code="aa" x="4.92188" y="9.71875"/>
+<obj code="aa" x="4.45313" y="7.84375"/>
+<obj code="ba" x="9.76563" y="1.32813"/>
+<obj code="aa" x="0.53125" y="21.2813"/>
+<obj code="aa" x="1.5625" y="22.1406"/>
+<obj code="aa" x="2.5625" y="22.1094"/>
+<obj code="aa" x="3.5625" y="21.7344"/>
+<obj code="aa" x="4.5625" y="21.4375"/>
+<obj code="aa" x="5.5625" y="21.4219"/>
+<obj code="aa" x="6.04688" y="20.4219"/>
+<obj code="aa" x="6.75" y="18.3906"/>
+<obj code="aa" x="6.53125" y="24.3438"/>
+<obj code="aa" x="8.67188" y="21.7344"/>
+<obj code="aa" x="8.20313" y="20.75"/>
+<obj code="aa" x="7.79688" y="19.75"/>
+<obj code="aa" x="7.5" y="18.7188"/>
+<obj code="aa" x="7.32813" y="17.7188"/>
+<obj code="aa" x="7.51563" y="16.7188"/>
+<obj code="ba" x="9.42188" y="21.7656"/>
+<obj code="aa" x="10.7031" y="24.3906"/>
+<obj code="ba" x="11.4375" y="24.0938"/>
+<obj code="ba" x="11.9375" y="24.0781"/>
+<obj code="ba" x="8.28125" y="16.8594"/>
+<obj code="aa" x="7.5" y="14.7031"/>
+<obj code="aa" x="8.54688" y="15.2031"/>
+<obj code="aa" x="9.54688" y="15.0313"/>
+<obj code="ba" x="10.2969" y="15.3906"/>
+<obj code="aa" x="9.14063" y="14.0469"/>
+<obj code="aa" x="9.14063" y="13.0469"/>
+<obj code="ba" x="9.90625" y="12.6719"/>
+<obj code="aa" x="10.4844" y="12.2188"/>
+<obj code="aa" x="10.4688" y="11.2188"/>
+<obj code="aa" x="11.1563" y="10.2031"/>
+<obj code="aa" x="11.1719" y="9.23438"/>
+<obj code="aa" x="12.1875" y="9.23438"/>
+<obj code="aa" x="13.2031" y="9.1875"/>
+<obj code="aa" x="12.2188" y="10.2344"/>
+<obj code="aa" x="13.2188" y="10.2188"/>
+<obj code="aa" x="12.7188" y="8.42188"/>
+<obj code="ca" x="15.2031" y="19.2031"/>
+<obj code="ca" x="15.2031" y="18.1719"/>
+<obj code="aa" x="16.6875" y="17.1563"/>
+<obj code="aa" x="17.7188" y="19.5156"/>
+<obj code="aa" x="18.0313" y="20.5156"/>
+<obj code="aa" x="19.0469" y="20.8906"/>
+<obj code="aa" x="19.625" y="21.875"/>
+<obj code="aa" x="20.6406" y="21.8906"/>
+<obj code="aa" x="29.5781" y="23.0938"/>
+<obj code="ba" x="28.8125" y="22.4688"/>
+<obj code="aa" x="28.3125" y="21.7031"/>
+<obj code="aa" x="26.2813" y="22.4219"/>
+<obj code="aa" x="24.7813" y="20.2813"/>
+<obj code="ba" x="24.5938" y="19.5156"/>
+<obj code="aa" x="25.1094" y="18.7188"/>
+<obj code="aa" x="24.0781" y="18.75"/>
+<obj code="aa" x="23.6563" y="17.7656"/>
+<obj code="aa" x="24.6563" y="17.0313"/>
+<obj code="aa" x="17.2344" y="15.1094"/>
+<obj code="ba" x="17.4531" y="14.3438"/>
+<obj code="aa" x="18.1875" y="13.6563"/>
+<obj code="aa" x="17.75" y="18.5156"/>
+<obj code="aa" x="18.5781" y="18.7344"/>
+<obj code="aa" x="21.625" y="21.375"/>
+<obj code="aa" x="20.6406" y="21.4063"/>
+<obj code="ba" x="19.8594" y="21.1406"/>
+<obj code="ba" x="20.875" y="20.6563"/>
+<obj code="aa" x="24.5156" y="11.9219"/>
+<obj code="aa" x="23.5" y="11.0625"/>
+<obj code="ba" x="24.5781" y="12.6563"/>
+<obj code="ba" x="24.3125" y="11.3438"/>
+<obj code="ba" x="23.7344" y="11.5938"/>
+<obj code="aa" x="20.3125" y="6.35938"/>
+<obj code="aa" x="18.5781" y="5.09375"/>
+<obj code="ba" x="18.7969" y="5.64063"/>
+<obj code="ba" x="19.6094" y="6.625"/>
+<obj code="aa" x="29.5313" y="2.375"/>
+<obj code="ba" x="28.7344" y="2.57813"/>
+<obj code="ba" x="28.2031" y="2.76563"/>
+<obj code="aa" x="27.8281" y="0.421875"/>
+<obj code="ba" x="28.0938" y="1.17188"/>
+<obj code="ba" x="27.5781" y="1.46875"/>
+<obj code="ba" x="28.1094" y="1.6875"/>
+<obj code="aa" x="28.875" y="1.64063"/>
+<obj code="aa" x="22.5625" y="10.9531"/>
+<obj code="aa" x="22.5781" y="9.92188"/>
+<obj code="ba" x="23.3438" y="10.2969"/>
+<obj code="ba" x="23.3281" y="9.64063"/>
+<obj code="ba" x="21.5938" y="9.6875"/>
+<obj code="ba" x="22" y="9.45313"/>
+<obj code="aa" x="18.5469" y="4.34375"/>
+<obj code="ba" x="17.7969" y="4.125"/>
+<obj code="aa" x="15.2188" y="17.1719"/>
+<obj code="ba" x="23.4375" y="17"/>
+<obj code="ba" x="25.8594" y="18.7344"/>
+<obj code="aa" x="22.4375" y="20.4375"/>
+<obj code="aa" x="27.2813" y="21.8281"/>
+<obj code="aa" x="21.6406" y="22.7344"/>
+<obj code="aa" x="22.8594" y="24.1406"/>
+<obj code="aa" x="22.6719" y="23.1406"/>
+<obj code="aa" x="6.71875" y="23.3438"/>
+<obj code="aa" x="7.6875" y="22.5938"/>
+<obj code="aa" x="4.89063" y="18.125"/>
+<obj code="aa" x="5.84375" y="18.0938"/>
+<obj code="ba" x="4.15625" y="18.1406"/>
+<obj code="ba" x="4.95313" y="17.3594"/>
+<obj code="ba" x="5.875" y="17.3125"/>
+<obj code="aa" x="9.0625" y="1.8125"/>
+<obj code="aa" x="7.35938" y="2.92188"/>
+<obj code="aa" x="8.01563" y="1.875"/>
+<obj code="aa" x="9.8125" y="0.53125"/>
+<obj code="ba" x="10.5469" y="0.484375"/>
+<obj code="ba" x="10.9531" y="0.3125"/>
+<obj code="aa" x="7.8125" y="15.7031"/>
+<obj code="ba" x="7.03125" y="16.5938"/>
+<obj code="aa" x="7" y="19.4063"/>
+<obj code="aa" x="25.2656" y="22.9063"/>
+<obj code="aa" x="24.3906" y="20.8281"/>
+<obj code="aa" x="23.7031" y="21.8438"/>
+<obj code="aa" x="24.2188" y="22.875"/>
+<obj code="aa" x="23.4063" y="20.8125"/>
+<obj code="ba" x="23.0781" y="24.7813"/>
+<obj code="ba" x="16.4844" y="15.6719"/>
+<obj code="ba" x="17" y="15.8594"/>
+<obj code="ba" x="16.6719" y="16.3438"/>
+<obj code="aa" x="17.4531" y="17.4688"/>
+<obj code="aa" x="19.5" y="6.09375"/>
+<obj code="aa" x="19.3594" y="5.07813"/>
+<obj code="ba" x="20.1094" y="4.65625"/>
+<obj code="aa" x="25.3438" y="12.5"/>
+<obj code="ba" x="25.2188" y="11.7656"/>
+<obj code="exit-door" x="19.53" y="24.35"/>
+<obj code="monster-lair7" x="8.73804" y="24.0312" rot="315">
+<monster-count>10</monster-count>
+</obj>
+<obj code="monster-lair5" x="21.2572" y="18.3077"/>
+<obj code="monster-lair5" x="28.1875" y="18.8858"/>
+<obj code="monster-lair6" x="26.2969" y="5.15146" rot="59"/>
+<obj code="monster-lair2" x="2" y="19.8674"/>
+<obj code="monster-lair3" x="17.0781" y="3.1875" rot="90"/>
+<obj code="monster-lair1" x="11.2969" y="14.1094" rot="270"/>
+<obj code="monster-lair6" x="15.7344" y="20.9375" rot="90">
+<monster-count>10</monster-count>
+</obj>
+<obj code="pacman1" x="29.5156" y="22.0793" rot="355"/>
+<obj code="monster6" x="26.875" y="20.0037" rot="23"/>
+<obj code="monster6" x="27.1719" y="16.9725" rot="268"/>
+<obj code="monster5" x="29.4531" y="19.9256" rot="62"/>
+<obj code="monster5" x="20.0312" y="16.4568" rot="102"/>
+<obj code="monster4" x="22.25" y="18.8162" rot="41"/>
+<obj code="monster5" x="22.8281" y="14.8787" rot="325"/>
+<obj code="monster4" x="26.2344" y="14.41" rot="105"/>
+<obj code="monster8" x="28.8438" y="11.6756" rot="183"/>
+<obj code="monster3" x="26.2188" y="9.45683" rot="206"/>
+<obj code="monster5" x="28.6719" y="7.36308" rot="7"/>
+<obj code="monster5" x="29.1719" y="9.26933" rot="239"/>
+<obj code="monster6" x="24.1562" y="3.47246" rot="44"/>
+<obj code="monster6" x="28.1406" y="4.23808" rot="260"/>
+<obj code="monster6" x="22.0469" y="5.25371" rot="52"/>
+<obj code="monster3" x="16.3468" y="1.5" rot="307"/>
+<obj code="monster3" x="18.675" y="2.46875" rot="358"/>
+<obj code="monster2" x="16.4406" y="5.6875" rot="173"/>
+<obj code="monster1" x="1.48438" y="13.1562" rot="226"/>
+<obj code="monster1" x="5.07812" y="12.6875" rot="283"/>
+<obj code="monster1" x="2.95312" y="16.0781" rot="14"/>
+<obj code="monster2" x="9.89062" y="6.15625" rot="74"/>
+<obj code="monster3" x="11.0938" y="6.92188" rot="205"/>
+<obj code="monster4" x="12.0781" y="0.515625" rot="241"/>
+<obj code="monster9" x="16.9375" y="23.1875" rot="161"/>
+<obj code="monster5" x="10.875" y="19.3281" rot="15"/>
+<obj code="monster6" x="12.7969" y="20.625" rot="163"/>
+<obj code="monster9" x="13.5781" y="24.2031" rot="328"/>
+<obj code="monster9" x="14.3438" y="20.6406" rot="218"/>
+<obj code="monster3" x="14.9688" y="15.1719" rot="249"/>
+<obj code="monster4" x="15.7812" y="13.6406" rot="13"/>
+<obj code="monster3" x="11.625" y="17.1719" rot="287"/>
+<obj code="monster-lair1" x="18.4531" y="9.3125" rot="122"/>
+<obj code="pacman1" x="29.4219" y="3.67188" rot="279"/>
+<obj code="pacman1" x="5.96875" y="19.3477" rot="5"/>
+<obj code="da" x="26.3406" y="18.7188" rot="29"/>
+<region name="entry" x="4.06916" y="0.882939" rot="180" scale="1">
+</region>
+<region name="exit" x="19.53" y="24.35" rot="0" scale="1">
+<next-map>data/maps/level03.xml</next-map>
+<next-map-region>entry</next-map-region>
+</region>
+<sprite file="data/maps/doodahs/wood_cutter_two.png" x="17.3125" y="14.625" z="foreground" scale="0.968724" rot="38.8905"/>
+<sprite file="data/maps/doodahs/wood_stack_big.png" x="8.92188" y="14.1406" z="background" scale="0.978127" rot="-96.6739"/>
+<sprite file="data/maps/doodahs/wood_stack_one.png" x="13.1875" y="8.2188" z="background" scale="1.42393" rot="271.229"/>
+<sprite file="data/maps/doodahs/foliage3.png" x="18.1563" y="13.6563" z="background" scale="1.29124" rot="11.0625"/>
+<sprite file="data/maps/doodahs/foliage4.png" x="16.7813" y="15.6875" z="background" scale="1.57809" rot="81.4891"/>
+<sprite file="data/maps/doodahs/bonefire_one.png" x="12.3281" y="11.4531" z="background" scale="0.891488" rot="118.924"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="7.82813" y="15.5781" z="background" scale="1.54723" rot="34.2982"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="17.3438" y="19.5625" z="background" scale="1.5414" rot="-29.9474"/>
+<sprite file="data/maps/doodahs/tree2.png" x="25.6719" y="22.8438" z="foreground" scale="1.37288" rot="37.4015"/>
+<sprite file="data/maps/doodahs/foliage3.png" x="23.8281" y="22.3906" z="background" scale="1.69436" rot="-21.7376"/>
+<sprite file="data/maps/doodahs/foliage7.png" x="26.8438" y="24.3281" z="background" scale="1.59403" rot="-15.4868"/>
+<sprite file="data/maps/doodahs/tree1.png" x="20.9375" y="20.4844" z="foreground" scale="0.659528" rot="-22.6724"/>
+<sprite file="data/maps/doodahs/foliage7.png" x="22.6563" y="20.5938" z="background" scale="1.81938" rot="-11.9549"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="18.25" y="20.6563" z="background" scale="2.11232" rot="-48.1084"/>
+<sprite file="data/maps/doodahs/tree2.png" x="6" y="20.4844" z="foreground" scale="1.20528" rot="-30.6342"/>
+<sprite file="data/maps/doodahs/tree1.png" x="28.375" y="21.5469" z="foreground" scale="1" rot="4.34008"/>
+<sprite file="data/maps/doodahs/foliage1.png" x="7.8125" y="22.5938" z="background" scale="1.53622" rot="79.7724"/>
+<sprite file="data/maps/doodahs/tree2.png" x="3.35938" y="23.75" z="foreground" scale="1.23589" rot="32.8056"/>
+<sprite file="data/maps/doodahs/foliage7.png" x="5.20313" y="21.9219" z="background" scale="1.25296" rot="-32.646"/>
+<sprite file="data/maps/doodahs/tree1.png" x="11.7656" y="23.9219" z="foreground" scale="0.880103" rot="45.1303"/>
+<sprite file="data/maps/doodahs/tree2.png" x="9.1875" y="21.7969" z="foreground" scale="1.10293" rot="-29.7608"/>
+<sprite file="data/maps/doodahs/foliage1.png" x="1.51563" y="24.1406" z="background" scale="1.56474" rot="36.1065"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="0.59375" y="20.9531" z="background" scale="1.44797" rot="52.3158"/>
+<sprite file="data/maps/doodahs/foliage7.png" x="10.5" y="24.4063" z="background" scale="1.52095" rot="-66.3746"/>
+<sprite file="data/maps/doodahs/foliage4.png" x="8.4375" y="16.8906" z="background" scale="1.31207" rot="62.4862"/>
+<sprite file="data/maps/doodahs/wood_cutter_three.png" x="10.1094" y="15.2656" z="background" scale="1.02739" rot="-36.2995"/>
+<sprite file="data/maps/doodahs/tree1.png" x="19.9688" y="21.8594" z="foreground" scale="1.52946" rot="0"/>
+<sprite file="data/maps/doodahs/tree2.png" x="24.4844" y="20.625" z="foreground" scale="1.40292" rot="-16.255"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="21.7656" y="22.9375" z="background" scale="1.87224" rot="-10.9641"/>
+<sprite file="data/maps/doodahs/tree1.png" x="0.859375" y="22.4844" z="foreground" scale="1.5453" rot="25.1059"/>
+<sprite file="data/maps/doodahs/foliage7.png" x="4.95313" y="23.7656" z="background" scale="1.75893" rot="-25.3714"/>
+<sprite file="data/maps/doodahs/tree2.png" x="7.01563" y="18.3906" z="foreground" scale="1.5805" rot="-55.6729"/>
+<sprite file="data/maps/doodahs/tree2.png" x="7.90625" y="20.375" z="foreground" scale="1.22001" rot="-66.8157"/>
+<sprite file="data/maps/doodahs/tree2.png" x="6.59375" y="1.21875" z="foreground" scale="1.22001" rot="-47.261"/>
+<sprite file="data/maps/doodahs/tree2.png" x="7.5" y="3.89063" z="foreground" scale="1.22001" rot="-101.393"/>
+<sprite file="data/maps/doodahs/foliage7.png" x="6.42188" y="2.89063" z="background" scale="1.87863" rot="-11.1122"/>
+<sprite file="data/maps/doodahs/tree2.png" x="5.85938" y="4.79688" z="foreground" scale="1.27955" rot="-37.8308"/>
+<sprite file="data/maps/doodahs/tree1.png" x="5.73438" y="6.92188" z="foreground" scale="1.40571" rot="16.3845"/>
+<sprite file="data/maps/doodahs/foliage7.png" x="4.25" y="7.95313" z="background" scale="1.50461" rot="53.9301"/>
+<sprite file="data/maps/doodahs/tree2.png" x="5.01563" y="9.5625" z="foreground" scale="1.30953" rot="34.3322"/>
+<sprite file="data/maps/doodahs/tree2.png" x="9.14063" y="1.64063" z="foreground" scale="1.30953" rot="34.3322"/>
+<sprite file="data/maps/doodahs/tree2.png" x="16.8594" y="17.2813" z="foreground" scale="1.40773" rot="-115.278"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="15.375" y="17.0781" z="background" scale="1.74001" rot="23.3582"/>
+<sprite file="data/maps/doodahs/tree2.png" x="18.3281" y="18.6094" z="foreground" scale="1.28045" rot="-64.3396"/>
+<sprite file="data/maps/doodahs/tree2.png" x="29.0469" y="1.01563" z="foreground" scale="1.54007" rot="-64.3396"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="19.8594" y="4.59375" z="background" scale="1.46922" rot="44.7934"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="22.5156" y="11.1406" z="background" scale="1.46922" rot="44.7934"/>
+<sprite file="data/maps/doodahs/foliage2.png" x="25.1875" y="11.5781" z="background" scale="1.03822" rot="0"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="23.2656" y="9.6875" z="background" scale="1.33356" rot="0"/>
+<sprite file="data/maps/doodahs/foliage2.png" x="17.8594" y="4.09375" z="background" scale="1.15066" rot="0"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="9.3125" y="12.8906" z="background" scale="1.2543" rot="41.1539"/>
+<sprite file="data/maps/doodahs/tree2.png" x="10.5156" y="12.2344" z="foreground" scale="1.22654" rot="0"/>
+<sprite file="data/maps/doodahs/tree2.png" x="24.5313" y="17.0625" z="foreground" scale="1.21182" rot="-19.8996"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="27.0156" y="22.0156" z="background" scale="1.79869" rot="196.48"/>
+<sprite file="data/maps/doodahs/tree1.png" x="7.59375" y="14.5" z="foreground" scale="1.11115" rot="95.9938"/>
+<sprite file="data/maps/doodahs/trunk_three.png" x="4.03125" y="21.3906" z="background" scale="0.961765" rot="20.3686"/>
+<sprite file="data/maps/doodahs/foliage6.png" x="1.98438" y="21.75" z="background" scale="1.36144" rot="-25.8746"/>
+<sprite file="data/maps/doodahs/foliage6.png" x="21.4688" y="21.3906" z="background" scale="1.31276" rot="27.8166"/>
+<sprite file="data/maps/doodahs/tree2.png" x="29.0469" y="23.0313" z="foreground" scale="1.23718" rot="-24.7641"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="5.64063" y="8.21875" z="background" scale="1.52223" rot="47.2477"/>
+<sprite file="data/maps/doodahs/foliage2.png" x="4.71875" y="7.375" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="10.0625" y="0.921875" z="background" scale="1.21116" rot="-25.74"/>
+<sprite file="data/maps/doodahs/foliage4.png" x="7.34375" y="16.5625" z="background" scale="1.48773" rot="92.0042"/>
+<sprite file="data/maps/doodahs/tree2.png" x="19.4063" y="20.2969" z="foreground" scale="0.777395" rot="-111.746"/>
+<sprite file="data/maps/doodahs/foliage3.png" x="7.125" y="5.79688" z="background" scale="1.80527" rot="-155.31"/>
+<sprite file="data/maps/doodahs/foliage6.png" x="10.8438" y="0.390625" z="background" scale="1.06114" rot="-133.069"/>
+<sprite file="data/maps/doodahs/tree2.png" x="5.01563" y="18.25" z="foreground" scale="1" rot="-91.6744"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="5.85938" y="17.25" z="background" scale="1" rot="-11.7493"/>
+<sprite file="data/maps/doodahs/foliage4.png" x="4.98438" y="17.3594" z="background" scale="1" rot="41.6206"/>
+<sprite file="data/maps/doodahs/foliage7.png" x="4.23438" y="18.125" z="background" scale="1" rot="26.7617"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="18.8906" y="3.98438" z="background" scale="1.12077" rot="23.1836"/>
+<sprite file="data/maps/doodahs/foliage6.png" x="29.3281" y="2.625" z="background" scale="1.12837" rot="107.938"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="28.2969" y="2.64063" z="background" scale="1.13892" rot="81.0033"/>
+<sprite file="data/maps/doodahs/foliage7.png" x="27.4844" y="1.53125" z="background" scale="1" rot="-101.488"/>
+<sprite file="data/maps/doodahs/foliage6.png" x="27.6094" y="0.515625" z="background" scale="1" rot="0"/>
+<sprite file="data/maps/doodahs/foliage6.png" x="25.3594" y="19.1719" z="background" scale="1.15366" rot="0"/>
+<sprite file="data/maps/doodahs/tree2.png" x="23.8906" y="18.625" z="foreground" scale="1.08991" rot="-41.4315"/>
+<sprite file="data/maps/doodahs/foliage7.png" x="25.4219" y="18.2188" z="background" scale="1" rot="170.187"/>
+<sprite file="data/maps/doodahs/foliage7.png" x="26.0938" y="18.7656" z="background" scale="1" rot="40.258"/>
+<sprite file="data/maps/doodahs/foliage4.png" x="22.7188" y="24.2344" z="background" scale="1.12007" rot="99.2357"/>
+<sprite file="data/maps/doodahs/tree2.png" x="22.4219" y="22.3906" z="foreground" scale="1" rot="-68.1655"/>
+<sprite file="data/maps/doodahs/tree2.png" x="6.65625" y="23.9063" z="foreground" scale="1.08846" rot="25.3681"/>
+<sprite file="data/maps/doodahs/foliage7.png" x="6.53125" y="22.0781" z="background" scale="1.05966" rot="9.91654"/>
+<sprite file="data/maps/doodahs/tree1.png" x="12.1719" y="8.25" z="foreground" scale="1" rot="31.4873"/>
+<sprite file="data/maps/doodahs/foliage4.png" x="10.1563" y="10.7188" z="background" scale="1.10926" rot="117.058"/>
+<sprite file="data/maps/doodahs/foliage4.png" x="7.79688" y="2.4375" z="background" scale="1.15955" rot="205.142"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="23.1094" y="17.375" z="background" scale="1" rot="-27.9323"/>
+<sprite file="data/maps/doodahs/foliage6.png" x="23.5" y="16.7344" z="background" scale="1" rot="17.8908"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="17.75" y="15.4688" z="background" scale="1.10118" rot="-46.1837"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="23.1094" y="24.7031" z="background" scale="1" rot="-8.25523"/>
+<sprite file="data/maps/doodahs/tree2.png" x="24.0625" y="24.2344" z="foreground" scale="1.06056" rot="-64.663"/>
+<sprite file="data/maps/doodahs/tree2.png" x="27.5156" y="23.2344" z="foreground" scale="1.06056" rot="-19.1409"/>
+<sprite file="data/maps/doodahs/foliage5.png" x="25.7031" y="24.375" z="background" scale="1" rot="-26.3"/>
+<sprite file="data/maps/doodahs/foliage6.png" x="28.4219" y="24.4063" z="background" scale="1.16144" rot="109.156"/>
+<sprite file="data/maps/doodahs/cote_broken_one.png" x="12.2188" y="9.79688" z="background" scale="1.0767" rot="0"/>
+<sprite file="data/maps/doodahs/shed_broken_two.png" x="14.8594" y="18.6875" z="background" scale="1.31626" rot="0"/>
+</map>

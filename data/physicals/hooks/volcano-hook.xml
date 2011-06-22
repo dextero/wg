@@ -1,0 +1,38 @@
+<root type="hook">
+	<effect type="list">
+		<effect type="graphical-effect">
+			<time value="100000.0" />
+			<name value="smoke" />
+		</effect>
+		<effect type="recastable">
+			<time value="10000.0" />
+			<recast value="6.0" />
+			<effect type="list">
+				<effect type="graphical-effect">
+					<time value="1.0" />
+					<name value="smallfireball" />
+				</effect>	
+				<effect type="area">
+					<area value="1.5" />
+					<filter value="player,hostiles" />
+					<effect type="list">
+						<effect type="damage">
+							<amount value="15.0" />
+							<damage-type value="fire" />
+						</effect>
+						<effect type="knockback">
+							<amount value="10.0"/>
+						</effect>
+						<effect type="timed">
+							<time value="4.0" />
+							<effect type="damage">
+								<amount value="5.0" />
+								<damage-type value="fire" />
+							</effect>
+						</effect>
+					</effect>
+				</effect>
+			</effect>
+		</effect>
+	</effect>
+</root>

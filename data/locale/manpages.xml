@@ -1,0 +1,1081 @@
+<root type="locale" name="Polski" code="pl">
+	<entry>
+		<key>MAN_ADD_ACHIEVEMENT</key>
+		<value>[[ składnia ]]
+add-achievement nazwa
+
+[[ opis ]]
+Achievement o podanej nazwie zostaje oznaczony jako ukończony.
+
+[[ uwagi ]]
+Nie używać do oszukiwania. Proszę.</value>
+	</entry>
+	<entry>
+		<key>MAN_ADD_EFFECTS_COMMANDS</key>
+		<value>[[ składnia ]]
+add-effect-commands
+
+[[ opis ]]
+Pozwala na używanie komend efektów.
+
+[[ uwagi ]]
+Nie mam pojęcia, o co tu chodzi.</value>
+	</entry>
+	<entry>
+		<key>MAN_ADD_TO_PM</key>
+		<value>[[ składnia ]]
+add-to-pm nazwa-punktu-masy id-physicala
+
+[[ opis ]]
+Robi coś z punktem masy i physicalem. Czarna magia.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_ADD_XP</key>
+		<value>[[ składnia ]]
+add-xp ile [ignore-skill-points] [silent]
+
+[[ opis ]]
+Daje podaną wartość XP każdemu graczowi. Parametr ignore-skill-points powoduje, że nie dostają oni punktów umiejętności za te poziomy, a silent zapobiega odtwarzaniu dźwięku po zdobyciu poziomu.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_BUY_ABILITY</key>
+		<value>[[ składnia ]]
+buy-ability id drzewo umiejętność
+
+[[ opis ]]
+Wydaje punkt umiejętności gracza, kupując jedną. Drzewo - fire, electricity, support, special. Umiejętność - litera.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_CLEAN</key>
+		<value>[[ składnia ]]
+clean
+
+[[ opis ]]
+Czyści okno konsoli.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_CLEAR_LOOTS</key>
+		<value>[[ składnia ]]
+clear-loots
+
+[[ opis ]]
+Usuwa z pamięci informacje o przedmiotach.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_CLEAR_PHYSICAL</key>
+		<value>[[ składnia ]]
+clear-physicals
+
+[[ opis ]]
+Usuwa wszystkie physicale.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_CLOCK_INFO</key>
+		<value>[[ składnia ]]
+clock-info
+
+[[ opis ]]
+Wyświetla:
+- liczbę FPS
+- średnią liczbę FPS
+- ilość narysowanych klatek (od uruchomienia)
+- losowe liczby z przedziałów: (-1..1), (0..1), (0..RAND_MAX), (1..10) // wtf
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_CREATE_WALL</key>
+		<value>[[ składnia ]]
+create-wall szablon [ id ]
+
+[[ opis ]]
+Tworzy ścianę na podstawie szablonu.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_DEFINE_QUEST_FLAG</key>
+		<value>[[ składnia ]]
+define-quest-flag flaga
+
+[[ opis ]]
+Definiuje flagę zadania.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_DELAY</key>
+		<value>[[ składnia ]]
+delay czas
+
+[[ opis ]]
+Zawiesza działanie skryptu na określony czas (w sekundach).
+
+[[ uwagi ]]
+Działa tylko w blokach poleceń.</value>
+	</entry>
+	<entry>
+		<key>MAN_DESTROY_PHYSICAL</key>
+		<value>[[ składnia ]]
+destroy-physical id
+
+[[ opis ]]
+Kasuje physicala o podanym id.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_DISPLAY_ABILITIES</key>
+		<value>[[ składnia ]]
+display-abilities id
+
+[[ opis ]]
+Wyświetla listę dostępnych umiejętności gracza o podanym id.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_DISPLAY_EFFECT_DEBUG_DATA</key>
+		<value>[[ składnia ]]
+display-effect-debug-data
+
+[[ opis ]]
+Wyświetla informacje o liczbie physicali, efektów itp.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_DO_DEFAULT_ATTACK</key>
+		<value>[[ składnia ]]
+do-default-attack id
+
+[[ opis ]]
+Physical o podanym id wykonuje domyślny atak.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_ECHO</key>
+		<value>[[ składnia ]]
+echo [tekst|klucz_lokalizatora]
+
+[[ opis ]]
+Wypisuje w konsoli podany tekst lub wartość klucza lokalizatora.
+
+[[ uwagi ]]
+Klucze rozpoczynają się od znaku dolara ($).</value>
+	</entry>
+	<entry>
+		<key>MAN_EDITOR_HELP</key>
+		<value>[[ składnia ]]
+editor-help
+
+[[ opis ]]
+Wyświetla opis komend edytora.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_EFFECTS_INIT</key>
+		<value>[[ składnia ]]
+effects-init
+
+[[ opis ]]
+Inicjuje efekty graficzne.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_EXEC</key>
+		<value>[[ składnia ]]
+exec ścieżka
+
+[[ opis ]]
+Wczytuje skrypt z dysku i wykonuje go.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_EXIT_TO_MAIN_MENU</key>
+		<value>[[ składnia ]]
+exit-to-main-menu
+
+[[ opis ]]
+Wychodzi do menu głównego.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_EXTRACT_VFS</key>
+		<value>[[ składnia ]]
+extract-vfs ścieżka
+
+[[ opis ]]
+Wypakowuje zawartość VFSa do podanego katalogu.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_FORCE_BUY_ABILITY</key>
+		<value>[[ składnia ]]
+force-buy-ability id drzewo umiejętność
+
+[[ opis ]]
+Kupuje umiejętność graczowi o podanym id, nie zabierając mu za to punktów i nie zwracając uwagi na wymagania. Drzewo - fire, electricity, support, special. Umiejętność - litera.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_FORCE_LOAD_ALL</key>
+		<value>[[ składnia ]]
+force-load-all
+
+[[ opis ]]
+Ładuje do pamięci wszystkie zasoby (obrazki, dźwięki, mapy, szablony physicali, wsio).
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_FREEZE</key>
+		<value>[[ składnia ]]
+freeze
+
+[[ opis ]]
+&quot;zamraża&quot; grę.
+
+[[ uwagi ]]
+Patrz też: unfreeze.</value>
+	</entry>
+	<entry>
+		<key>MAN_GET_ASPECT</key>
+		<value>[[ składnia ]]
+get-aspect id aspekt
+
+[[ opis ]]
+Wyświetla wartość jednego z atrybutów aktora - level, strength, speed, turnspeed, scale, radius, maxhp, maxmana, manaregen, mass, intelligence, willpower, physresist, fireresist, iceresist, lightningresist, poisonresist.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_GET_PINNED_ABIS</key>
+		<value>[[ składnia ]]
+get-pinned-abis
+
+[[ opis ]]
+Wypisuje niektóre z umiejętności pierwszego gracza. Tylko co to za umiejętności..?
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_GOD_MODE</key>
+		<value>[[ składnia ]]
+god-mode (on | off)
+
+[[ opis ]]
+Włącza/wyłącza god mode.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_HELP</key>
+		<value>[[ składnia ]]
+help polecenie
+
+[[ opis ]]
+Wyświetla opis polecenia.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_KILL_ACTOR</key>
+		<value>[[ składnia ]]
+kill-actor id
+
+[[ opis ]]
+W brutalny sposób pozbawia życia aktora o podanym id.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_KILL_ALL</key>
+		<value>[[ składnia ]]
+kill-all
+
+[[ opis ]]
+Z zimną krwią dokonuje rzezi niewiniątek, tzn. physicali.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_LIST_VFS_CONTENTS</key>
+		<value>[[ składnia ]]
+list-vfs-contents
+
+[[ opis ]]
+Wyświetla listę plików przechowywanych w VFSie.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_LOAD_LOOTS</key>
+		<value>[[ składnia ]]
+load-loots plik
+
+[[ opis ]]
+Wczytuje z pliku listę przedmiotów.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_LOAD_MAP</key>
+		<value>[[ składnia ]]
+load-map mapa
+
+[[ opis ]]
+Wczytuje mapę z pliku o podanej nazwie. Działa w grze i edytorze.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_LOAD_PLAYLIST</key>
+		<value>[[ składnia ]]
+load-playlist ścieżka
+
+[[ opis ]]
+Wczytuje playlistę z pliku.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_LOAD_RESOURCE</key>
+		<value>[[ składnia ]]
+load-resource typ ścieżka [ klucz1 wartość1 [ klucz2 wartość2 ] ]
+
+[[ opis ]]
+Ładuje do pamięci zasób.
+- typ: image, map, font, sound, music, atlas
+- ścieżka do pliku
+- klucze i wartości (???)
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_MAN</key>
+		<value>[[ składnia ]]
+man polecenie
+
+[[ opis ]]
+Wyświetla opis polecenia.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_MSG</key>
+		<value>[[ składnia ]]
+msg (tekst | klucz lokalizatora)
+
+[[ opis ]]
+Wyświetla tekst lub wartość klucza lokalizatora (możliwe oba naraz) w formie latającego napisu u góry ekranu.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_NEW_PLAYER</key>
+		<value>[[ składnia ]]
+new-player [numer = 0]
+
+[[ opis ]]
+Tworzy gracza na podstawie odpowiedniego szablonu. Numer może przyjmować wartości 0 lub 1.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_PAUSE</key>
+		<value>[[ składnia ]]
+pause
+
+[[ opis ]]
+Włącza pauzę.
+
+[[ uwagi ]]
+Patrz też: unpause.</value>
+	</entry>
+	<entry>
+		<key>MAN_PLAY_CUTSCENE</key>
+		<value>[[ składnia ]]
+play-cutscene ścieżka
+
+[[ opis ]]
+Uruchamia cut-scenkę z pliku.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_PLAY_MUSIC</key>
+		<value>[[ składnia ]]
+play-music nazwa
+
+[[ opis ]]
+Włącza piosenkę o podanej nazwie.
+
+[[ uwagi ]]
+Najpierw należy załadować plik do pamięci (load-resource)</value>
+	</entry>
+	<entry>
+		<key>MAN_PLAY_SOUND</key>
+		<value>[[ składnia ]]
+play-sound ścieżka
+
+[[ opis ]]
+Odtwarza dźwięk, jeśli trzeba, wczytując go do pamięci.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_PRINT_SCENE_STATS</key>
+		<value>[[ składnia ]]
+print-scene-stats
+
+[[ opis ]]
+Wypisuje informacje o ilości obiektów na scenie.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_PRINT_SCREEN</key>
+		<value>[[ składnia ]]
+print-screen
+
+[[ opis ]]
+Zapisuje na dysku zrzut ekranu gry. Plik ląduje w katalogu [ścieżka_do_gry]/user/.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_QUIT</key>
+		<value>[[ składnia ]]
+quit
+
+[[ opis ]]
+Zamyka aplikację.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_RANDOMIZE_DEFAULT_ATTACK</key>
+		<value>[[ składnia ]]
+randomize-default-attack id
+
+[[ opis ]]
+Losuje domyślny atak physicala.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SAVE_EMPTY_MAP</key>
+		<value>[[ składnia ]]
+save-empty-map nazwa szer wys
+
+[[ opis ]]
+Tworzy na dysku pustą mapę o określonej nazwie i wymiarach (w kaflach).
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SAVE_MAP</key>
+		<value>[[ składnia ]]
+save-map nazwa
+
+[[ opis ]]
+Zapisuje aktualną mapę do pliku o podanej nazwie.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_ABILITY</key>
+		<value>[[ składnia ]]
+set-ability id plik-umiejki kombinacja
+
+[[ opis ]]
+TYLKO TRYB CRIMSON (eksperymentalny)
+Ustawia aktywną umiejętność gracza id, wczytując ją z pliku i przypisując jej kombinację klawiszy (złożoną z liter abcd).
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_ACTIVE_ABILITY</key>
+		<value>[[ składnia ]]
+set-active-ability numer-gracza drzewo umiejętność
+
+[[ opis ]]
+Ustawia aktywną umiejętność danego gracza (0 | 1).
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_AI_SCHEME</key>
+		<value>[[ składnia ]]
+set-ai-scheme id schemat
+
+[[ opis ]]
+Ustala schemat zachowania przeciwnika o podanym id. Dostępne schematy: wanderer, stupid-chaser, quich-chaser, lair-guardian, ranged-caster, melee-chaser, generic-combat, idle-movement, turning-only.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_BASE_ASPECT</key>
+		<value>[[ składnia ]]
+set-aspect id aspekt
+
+[[ opis ]]
+Ustawia bazową wartość jednego z atrybutów aktora - level, strength, speed, turnspeed, scale, radius, maxhp, maxmana, manaregen, mass, intelligence, willpower, physresist, fireresist, iceresist, lightningresist, poisonresist.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_CAMERA_POSITION</key>
+		<value>[[ składnia ]]
+set-camera-position x y
+
+[[ opis ]]
+Zmienia pozycję kamery.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_DISPLAYABLE_ANIMATION</key>
+		<value>[[ składnia ]]
+set-displayable-animation animacja
+
+[[ opis ]]
+Zmienia animację ostatnio stworzonego displayable&apos;a.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_DISPLAYABLE_ANIMATION_PLAY</key>
+		<value>[[ składnia ]]
+set-displayable-animation-play
+
+[[ opis ]]
+Włącza animację ostatnio stworzonego displayable&apos;a.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_DISPLAYABLE_ANIMATION_REWIND_TO</key>
+		<value>[[ składnia ]]
+set-displayable-animation-rewind-to pozycja
+
+[[ opis ]]
+Przewija animację ostatnio stworzonego displayable&apos;a do podanej pozycji (0.0 - 1.0).
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_DISPLAYABLE_CENTER</key>
+		<value>[[ składnia ]]
+set-displayable-center x y
+
+[[ opis ]]
+Teoretycznie zmienia położenie środka ostatnio stworzonego displayable&apos;a, ale z jakiegoś powodu ta linia jest zakomentowana. Jaka szkoda.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_DISPLAYABLE_IMAGE</key>
+		<value>[[ składnia ]]
+set-displayable-image obrazek
+
+[[ opis ]]
+Zmienia obrazek ostatnio swtorzonego displayable&apos;a.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_DISPLAYABLE_POSITION</key>
+		<value>[[ składnia ]]
+set-displayable-position x y
+
+[[ opis ]]
+Zmienia pozycję ostatnio stworzonego displayable&apos;a.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_DISPLAYABLE_RECT</key>
+		<value>[[ składnia ]]
+set-displayable-rect lewo góra prawo dół
+
+[[ opis ]]
+Zmienia wewnętrzny obszar ostatnio stworzonego displayable&apos;a.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_LOGIC_STATE</key>
+		<value>[[ składnia ]]
+set-logic-state state
+
+[[ opis ]]
+tox, 14 sierpnia: deprecated, proszę nie używać.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_PHYSICAL_ANIMATION</key>
+		<value>[[ składnia ]]
+set-physical-animation id animacja
+
+[[ opis ]]
+Zmienia animację physicala.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_PHYSICAL_CATEGORY</key>
+		<value>[[ składnia ]]
+set-physical-category id kategoria
+
+[[ opis ]]
+Ustawia kategorię physicala o podanym id. Kategorie: detector, player, monster, bullet, lair, item.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_PHYSICAL_IMAGE</key>
+		<value>[[ składnia ]]
+set-physical-image id obrazek
+
+[[ opis ]]
+W jakiś sposób zmienia obrazek physicala. Jaki obrazek? Kto to wie..
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_PHYSICAL_VELOCITY</key>
+		<value>[[ składnia ]]
+set-physical-velocity id x y
+
+[[ opis ]]
+Zmienia prędkość poruszania się physicala na wektor (x, y).
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_VIDEO_MODE</key>
+		<value>[[ składnia ]]
+set-video-mode szer wys fs bpp
+
+[[ opis ]]
+Zmienia tryb wideo.
+- szer - rozdzielczość pozioma (piksele)
+- wys - rozdzielczość pionowa (piksele)
+- fs - pełny ekran (1 | 0)
+- bpp - głębia kolorów (8 | 16 | 24 | 32)
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SHOW_BOID_DEBUG</key>
+		<value>[[ składnia ]]
+show-boid-debug (on | off)
+
+[[ opis ]]
+Pokazuje/ukrywa linie pokazujące działanie boidów.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SHOW_CURSOR</key>
+		<value>[[ składnia ]]
+show-cursor (true | false | 1 | 0)
+
+[[ opis ]]
+Pokazuje (true | 1) lub ukrywa (false | 0) kursor w oknie gry.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SHOW_FPS</key>
+		<value>[[ składnia ]]
+show-fps (on | off)
+
+[[ opis ]]
+Pokazuje/ukrywa informację o aktualnym stanie fps.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SHOW_GRAPHICAL_EFFECT</key>
+		<value>[[ składnia ]]
+show-graphical-effect nazwa-efektu id-od
+show-graphical-effect nazwa-efektu x y [ id-od id-do ]
+
+[[ opis ]]
+Pokazuje efekt graficzny o podanych parametrach.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SHOW_LOADINGSCREEN</key>
+		<value>[[ składnia ]]
+show-loadingscreen (true | false | 1 | 0)
+
+[[ opis ]]
+Pokazuje (true | 1) lub chowa (false | 0) niepodpięty ekran ładowania.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SHOW_REGION</key>
+		<value>[[ składnia ]]
+show-region nazwa (on | off)
+
+[[ opis ]]
+Włącza/wyłącza pokazywanie regionu o podanej nazwie.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SPAWN_DISPLAYABLE.</key>
+		<value>[[ składnia ]]
+spawn-displayable
+
+[[ opis ]]
+Tworzy displayable&apos;a.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SPAWN_PHYSICAL</key>
+		<value>[[ składnia ]]
+spawn-physical szablon (id | (x y))
+
+[[ opis ]]
+Na podstawie szablonu (ścieżka do pliku) tworzy nowego physicala, o określonym id lub pozycji (wtedy physical nie ma id).
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SPAWN_RAW_PHYSICAL</key>
+		<value>[[ składnia ]]
+spawn-raw-physical [id]
+
+[[ opis ]]
+Tworzy physicala, opcjonalnie o określonym id.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_START_BOSS_FIGHT</key>
+		<value>[[ składnia ]]
+start-boss-fight id
+
+[[ opis ]]
+Rozpoczyna walkę z bossem o podanym id.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_START_DIALOG</key>
+		<value>[[ składnia ]]
+start-dialog npc-id
+
+[[ opis ]]
+Rozpoczyna dialog z NPC o podanym id.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_START_NEW_GAME</key>
+		<value>[[ składnia ]]
+start-new-game
+
+[[ opis ]]
+Rozpoczyna nową grę.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_STOP_MUSIC</key>
+		<value>[[ składnia ]]
+stop-music
+
+[[ opis ]]
+Przerywa odtwarzanie piosenki o podanej nazwie.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SWAY_TO</key>
+		<value>[[ składnia ]]
+camera-sway-to x y [ czas ]
+
+[[ opis ]]
+Kamera przesuwa się na pozycję x y, opcjonalnie w określonym czasie.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SWITCH_CONTROLS</key>
+		<value>[[ składnia ]]
+switch-controls
+
+[[ opis ]]
+Zmienia aktywny schemat sterowania na następny z kolei.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_TIME</key>
+		<value>[[ składnia ]]
+time [ slower | faster | reverse ]
+
+[[ opis ]]
+Manipuluje przepływem czasu w grze.
+- (bez parametrów) - wraca do normalności
+- slower - bullet time
+- faster - shift time
+- reverse - lepiej nie używać.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_TOGGLE_FX</key>
+		<value>[[ składnia ]]
+toggle-fx ((experiment | light | hole | colorize) (on | off)) | (mode (rtt | shd | non)) | (fade (in | out))
+
+[[ opis ]]
+Włącza/wyłącza efekty post-fx.
+- experiment - ?
+- light - oświetlenie
+- hole - ?
+- colorize - ?
+- mode: rtt - ?, shd - ?, non - ?
+- fade - ?
+
+[[ uwagi ]]
+Jedno wielkie WTF, uzupełnić :x</value>
+	</entry>
+	<entry>
+		<key>MAN_TRAIL_PHYSICAL</key>
+		<value>[[ składnia ]]
+trail-physical id [ sway czas ]
+
+[[ opis ]]
+Kamera śledzi physicala o podanym id, opcjonalnie z opóźnieniem czasowym.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_TRAIL_PLAYERS</key>
+		<value>[[ składnia ]]
+trail-players]
+
+[[ opis ]]
+Kamera śledzi wszystkich (obu) graczy naraz.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_TRAIL_STOP</key>
+		<value>[[ składnia ]]
+trail-stop
+
+[[ opis ]]
+Kamera przerywa śledzenie physicala.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_UNDEF_QUEST_FLAG</key>
+		<value>[[ składnia ]]
+undef-quest-flag flaga
+
+[[ opis ]]
+Usuwa zdefiniowaną wcześniej flagę zadania.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_UNFREEZE</key>
+		<value>[[ składnia ]]
+unfreeze
+
+[[ opis ]]
+Wyłącza &quot;zamrożenie&quot;.
+
+[[ uwagi ]]
+Patrz też: freeze.</value>
+	</entry>
+	<entry>
+		<key>MAN_UNLOAD_MAP</key>
+		<value>[[ składnia ]]
+unload-map
+
+[[ opis ]]
+Wyłącza aktualną mapę, oznaczając ją jako odwiedzoną.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_UNPAUSE</key>
+		<value>[[ składnia ]]
+unpause
+
+[[ opis ]]
+Wyłącza pauzę.
+
+[[ uwagi ]]
+Patrz też: pause.</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_DIFFICULTY_LEVEL</key>
+		<value>[[ składnia ]]
+set-difficulty-factor poziom
+
+[[ opis ]]
+Ustawia poziom trudności (liczba zmiennoprzecinkowa, 1 = normalny).
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_SCORE</key>
+		<value>[[ składnia ]]
+set-score numer-gracza wynik
+
+[[ opis ]]
+Won mi stąd.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SHOW_SCORE</key>
+		<value>[[ składnia ]]
+show-score
+
+[[ opis ]]
+Wyświetla liczbę zdobytych punktów.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_ADD_SCORE</key>
+		<value>[[ składnia ]]
+add-score punkty
+
+[[ opis ]]
+Won mi stąd.
+
+[[ uwagi ]]
+(brak)</value>
+	</entry>
+	<entry>
+		<key>MAN_SET_ARCADE_MODE</key>
+		<value>[[ składnia ]]
+set-arcade-mode (on | off)
+
+[[ opis ]]
+Ustawia/czyści flagę arcadeMode.
+
+[[ uwagi ]]
+NIE modyfikuje istniejących graczy ani nie przyspiesza/spowalnia gry.</value>
+	</entry>
+</root>

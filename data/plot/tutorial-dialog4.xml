@@ -1,0 +1,25 @@
+﻿<root type="dialog">
+
+  <startNode>0</startNode>
+
+  <node>
+    <id>0</id>
+    <type>npc</type>
+    <child>1</child>
+    <string>$DLG_TUTORIAL4_1</string>
+  </node>
+
+  <node>
+    <id>0</id>
+    <type>npc</type>
+    <child>2</child>
+    <string>$DLG_TUTORIAL4_2</string>
+  </node>
+  
+  <node>
+    <id>2</id>
+    <type>npc</type>
+    <string>$DLG_TUTORIAL4_3</string>
+  </node>
+
+</root>

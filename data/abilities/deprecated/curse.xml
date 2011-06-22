@@ -1,0 +1,84 @@
+<root type="ability" class="melee">
+
+  <name>$ABI_SPECIAL_CURSE</name>
+  <trigger>dcdbbd</trigger>
+  <icon>data/abilities/special/curse-0.png</icon>
+  <unavailable-icon>data/abilities/special/curse-1.png</unavailable-icon>
+  <description>$ABI_SPECIAL_CURSE_DESC</description>
+
+	<effect type="list">
+		<effect type="non-cumulative">
+			<effect type="timed">
+				<time value="10000.0"/>
+				<effect type="damage">
+					<amount calc="9.0 + wp / 20" />
+					<damage-type value="poison"/>
+				</effect>
+			</effect>
+		</effect>
+		<effect type="non-cumulative">
+			<effect type="timed">
+				<time value="10000.0"/>
+				<effect type="modify">
+					<aspect value="physresist"/>
+					<amount value="0.9"/>
+				</effect>
+			</effect>
+		</effect>
+		<effect type="non-cumulative">
+			<effect type="timed">
+				<time value="10000.0"/>
+				<effect type="modify">
+					<aspect value="iceresist"/>
+					<amount value="0.9"/>
+				</effect>
+			</effect>
+		</effect>
+		<effect type="non-cumulative">
+			<effect type="timed">
+				<time value="10000.0"/>
+				<effect type="modify">
+					<aspect value="fireresist"/>
+					<amount value="0.9"/>
+				</effect>
+			</effect>
+		</effect>
+		<effect type="non-cumulative">
+			<effect type="timed">
+				<time value="10000.0"/>
+				<effect type="modify">
+					<aspect value="lightningresist"/>
+					<amount value="0.9"/>
+				</effect>
+			</effect>
+		</effect>
+		<effect type="non-cumulative">
+			<effect type="timed">
+				<time value="10000.0"/>
+				<effect type="modify">
+					<aspect value="poisonresist"/>
+					<amount value="0.9"/>
+				</effect>
+			</effect>
+		</effect>
+		<effect type="graphical-effect">
+			<time value="10000.0"/>
+			<name value="colorize-blue" />
+		</effect>
+	</effect>
+
+  <range calc="4.0 + 0.3 * spellrange" />
+  <width value="60.0" />
+
+  <manacost calc="4.0 * (1.0 - fm * 0.03)" />
+  <casttime calc="0.01 + 0.04 / (castspeed + 1)" />
+  <delay calc="0.06 + 0.24 / (castspeed + 1)" />
+  <cooldown calc="0.01 + 0.04 / (castspeed + 1)" />
+  <no-buy />
+
+  <self-effect type="graphical-effect">
+      <name value="frost-wave"/>
+      <time value="1.0"/>
+  </self-effect>
+
+</root>

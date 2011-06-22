@@ -1,0 +1,51 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="Kliver" />
+    <desc value="The race of klivers are reputed to be an artificial creation of a malicious wizard. They bear a violent dislike of the Human race, and will go out of their way to cause trouble at any time." />
+  </bestiary>
+  <genre>kliver</genre>
+
+  <maxhp min="80.0" max="90.0" />
+  <speed min="1.5" max="1.6" />
+  <turnspeed min="60.0" max="80.0" />
+  <strength min="5.0" max="7.0" />
+  <intelligence min="6.0" max="10.0" />
+  <lightningresist min="4.0" max="6.0" />
+  <maxmana min="30.0" max="50.0" />
+  <manaregen min="2.0" max="10.0" />
+  <xp min="46.0" max="52.0" />
+
+  <mass min="2.8" max="2.9" />
+  <radius min="0.4" max="0.425" />
+  <scale min="0.8" max="0.95" />
+  <shadow-offset min="0.12" max="0.12" />
+
+  <animset>
+    <anim type="default"  name="core/anim/kliver/default" />
+    <anim type="move"     name="core/anim/kliver/move" />
+    <anim type="attack"   name="core/anim/kliver/attack" />
+    <anim type="death"    name="core/anim/kliver/death" />
+  </animset>
+  <animset>
+    <anim type="default"  name="core/anim/kliver/wounded/default" />
+    <anim type="move"     name="core/anim/kliver/wounded/move" />
+    <anim type="attack"   name="core/anim/kliver/wounded/attack" />
+    <anim type="death"    name="core/anim/kliver/death" />
+  </animset>
+
+  <ai name="ranged-caster" />
+
+  <ability name="data/abilities/monsters/melee-with-swing.xml" default="1" />
+  <ability name="data/abilities/monsters/mass-haste.xml" />
+  <ability name="data/abilities/monsters/entangling-missile.xml" />
+  <ability name="data/abilities/monsters/mass-bloodlust.xml" />
+  <ability name="data/abilities/monsters/mass-heal.xml" />
+  <ability name="data/abilities/monsters/electric-bullets.xml" />
+
+<!--  <sound type="attack" filename="data/sounds/Lugaro/Rabbitattack.ogg" /> -->
+  <sound type="spawn" filename="data/sounds/Lugaro/Rabbitattack3.ogg" />
+  <sound type="damaged" filename="data/sounds/Lugaro/Rabbitattack2.ogg" />
+  <sound type="death" filename="data/sounds/Lugaro/Rabbitpain2.ogg" />
+
+</root>

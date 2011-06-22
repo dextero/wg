@@ -1,0 +1,100 @@
+<root type="ability" class="bullet">
+
+  <name>Poison cloud</name>
+  <description>
+A slow projectile turning into cloud of suffocating gas.
+
+Bonus for this spell depends:
+  barely on choleric rune
+  mildly on melancholic rune
+  mildly on sanguine rune
+  heavily on phlegmatic rune  
+  </description>
+  <icon>data/abilities/weapons/poison-cloud-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/poison-cloud-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 2x mel, 2x san, 3x phl -->
+  <power calc="0.2 * dot(1, choleric, 2, melancholic, 2, sanguine, 3, phlegmatic)"/>
+  
+  <explosion type="list">
+    <effect type="graphical-effect">
+      <name value="green-explosion" />
+      <time value="1.1" />
+    </effect>
+
+    <effect type="graphical-effect">
+      <name value="acid-cloud" />
+      <time calc="3.6" />
+    </effect>
+    <effect type="bullet">
+      <emitter>
+        <speed value="0.0" />
+        <ttl value="4.0" />
+        <count value="1" />
+        <width value="360" />
+        <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+        <filter value="none" />
+		<effect type="area" tag="poison-cloud-tag">
+		  <area value="1.134" />
+		  <filter value="hostiles" />
+          <effect type="list">
+            <effect type="graphical-effect">
+              <name value="colorize-green" />
+			  <time calc="5.0 + (1.5 * power)" />
+            </effect>			
+		    <effect type="non-cumulative">
+		      <effect type="timed">
+		        <time calc="5.0 + (1.5 * power)"/>
+			    <effect type="damage" tag="poison-cloud-damage-tag">
+			      <damage-type value="poison"/>
+			      <amount calc="3.5 + (0.25 + power)"/>
+			    </effect>
+		      </effect>
+	        </effect>	
+		  </effect>
+		</effect>
+		
+        <flight-effect type="list">
+          <effect type="recastable">
+            <time calc="0.11" />
+            <recast value="0.1" />
+            <effect type="jump">
+              <name value="poison-cloud-tag"/>
+            </effect>
+          </effect>   
+          <effect type="recastable">
+            <time calc="20.0" />
+            <recast value="0.5" />
+            <effect type="jump">
+              <name value="poison-cloud-tag"/>
+            </effect>
+          </effect>
+          <effect type="recastable">
+            <time calc="20.0" />
+            <recast value="1.0" />
+            <effect type="area">
+              <area value="1.134" />
+		      <filter value="hostiles" />
+              <effect type="jump">
+                <name value="poison-cloud-damage-tag"/>
+              </effect>
+			</effect>
+          </effect>
+        </flight-effect>
+      </emitter>
+    </effect>
+  </explosion>
+
+  <speed value="2.0" />
+  <acceleration value="0.0" />
+  <explode-on-fade value="1" />
+  <ttl value="1.6" />
+  <bullet value="data/physicals/bullets/poison.xml" />
+  <bullet-angular-speed value="-1440" />
+
+  <manacost calc="21 * (1 + 0.66 * power)" />
+  <casttime value="0.1" />
+  <delay value="0.05" />
+  <cooldown value="0.8" />
+  
+</root>

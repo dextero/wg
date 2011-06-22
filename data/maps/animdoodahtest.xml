@@ -1,0 +1,41 @@
+<map>
+<version>3</version>
+<width>12</width>
+<height>8</height>
+<tiletype code="a" image="data/maps/themes/test/rsand_sand_1_0.png" />
+<tiles>
+  a a a a a a a a a a a a
+  a a a a a a a a a a a a
+  a a a a a a a a a a a a
+  a a a a a a a a a a a a
+  a a a a a a a a a a a a
+  a a a a a a a a a a a a
+  a a a a a a a a a a a a
+  a a a a a a a a a a a a
+  a a a a a a a a a a a a
+  a a a a a a a a a a a a
+  a a a a a a a a a a a a
+  a a a a a a a a a a a a
+</tiles>
+  <sprite animname="core/anim/doodah/animtest" x="8.0" y="2.0" z="foreground" scale="1.6" rot="60" />
+  <sprite animname="core/anim/doodah/animtest" x="4.0" y="4.0" z="foreground" scale="0.5" rot="60" />
+  <sprite file="data/maps/doodahs/tree2.png" x="6.0" y="6.0" z="foreground" scale="1.6" rot="60"/>
+  <sprite file="data/maps/doodahs/tree2.png" x="4.0" y="6.0" z="foreground" scale="0.6" rot="60"/>
+<region name="exit" x="0.5" y="0.5">
+  <next-map>
+    data/maps/atlastest.xml
+  </next-map>
+  <next-map-region>
+    entry
+  </next-map-region>
+  <cond check="is">
+    <type>
+      region-triggered
+    </type>
+    <param>
+      entry
+    </param>
+  </cond>
+</region>
+<region name="entry" x="0.5" y="3.5" />
+</map>

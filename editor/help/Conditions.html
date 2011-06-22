@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    </head>
+    <body>
+      <h3>Conditions</h3>
+      Logical conditions, describing when an object/event can be activated.<br />
+      
+      <h4>Format:</h4>
+      <pre><code>&lt;cond check="is"&gt;
+  &lt;type&gt;...&lt;/type&gt;
+  &lt;param&gt;...&lt;/param&gt;
+&lt;/cond&gt;</code></pre>
+      <b>Attributes:</b>
+      <ul>
+        <li><code>check</code> - when the related object will be enabled? Available values:
+          <ul>
+            <li><code>is</code> (<i>default</i>) - the condition is fulfilled.</li>
+            <li><code>isnt</code> - the condition is not fulfilled.</li>
+            <li><code>once</code> - the condition was fulfilled.</li>
+            <li><code>never</code> - the condition wasn't fulfilled.</li>
+          </ul>
+        </li>
+      </ul>
+      <b>Parameters:</b>
+      <ul>
+        <li><code>type</code> - condition type. Available values:
+          <ul>
+            <li><code>none</code> - empty condition. Parameter: none.</li>
+            <li><code>clear</code> - all physicals of given type were wiped out. Parameter: <a href="Filters.html">filter name</a> (string).</li>
+            <li><code>time-elapsed</code> - given amount of time elapsed after the map had been loaded. Parameter: time (float, [s]).</li>
+            <li><code>region-triggered</code> - somebody walked into a given region. Parameter: <a href="Maps.html#regions">region name</a> (string).</li>
+            <li><code>killed</code> - named physical is dead and his corpse is still on the map. Parameter: physical name (string).</li>
+          </ul>
+        </li>
+        <li><code>param</code> - depends on <code>type</code> parameter.</li>
+      </ul>
+    </body>
+</html>

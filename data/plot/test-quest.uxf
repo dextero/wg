@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?><umlet_diagram><help_text></help_text><element><type>com.umlet.element.base.Note</type><coordinates><x>170</x><y>10</y><w>260</w><h>60</h></coordinates><panel_attributes>#startnode
+#actions
+define-quest-flag IHaveNotKilledRats
+</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Note</type><coordinates><x>170</x><y>120</y><w>270</w><h>120</h></coordinates><panel_attributes>#requirements
+StatementDisplay IAgreeToKillRats
+#actions
+undef-quest-flag IHaveNotKilledRats
+#notepad Polowanie na szczury
+Zobowiązałem się zabić kilka szczurów, aby pomóc miejscowym drwalom.</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Note</type><coordinates><x>170</x><y>280</y><w>260</w><h>120</h></coordinates><panel_attributes>#requirements
+PhysicalDeathByGenre rat 5
+#actions
+define-quest-flag IHaveKilledRats
+#notepad Polowanie na szczury
+Zabiłem 5 szczurów. To powinno wystarczyć.</panel_attributes><additional_attributes></additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>270</x><y>50</y><w>40</w><h>90</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>20;70;20;20</additional_attributes></element><element><type>com.umlet.element.base.Relation</type><coordinates><x>270</x><y>219</y><w>40</w><h>81</h></coordinates><panel_attributes>lt=&lt;&lt;-</panel_attributes><additional_attributes>20;61;20;20</additional_attributes></element><element><type>com.umlet.element.base.Note</type><coordinates><x>180</x><y>480</y><w>140</w><h>70</h></coordinates><panel_attributes>#globalNode
+#requirements
+ItemGiven Sword1</panel_attributes><additional_attributes></additional_attributes></element></umlet_diagram>

@@ -1,0 +1,14 @@
+﻿<root type="ability" class="passive">
+
+  <name>$ABI_HIDDEN</name>
+  <icon>data/abilities/hidden.png</icon>
+  <unavailable-icon>data/abilities/hidden-1.png</unavailable-icon>
+  <description>$ABI_HIDDEN_DESC</description>
+
+  <effect type="modify">
+    <aspect value="speed"/>
+    <amount calc="1.0 + (choleric * 0.01 * 0.75)"/>
+    <!-- rekalkulacja 'modify' nastapi przed aktualizacja 'choleric' hm..hm..hm.. -->
+  </effect>
+
+</root>

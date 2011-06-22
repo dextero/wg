@@ -1,0 +1,37 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="Ogrillion" />
+    <desc value="The ogrillion or the ogrette, as the eastern magi call them, is a strong, loud, hateful monster full of spite and malice. Not exactly smart, though. Just keep your distance and you'll be fine." />
+  </bestiary>
+  <genre>ogrillion</genre>
+
+  <maxhp min="120.0" max="140.0" />
+  <speed min="1.15" max="1.25" />
+  <turnspeed min="62.0" max="73.0" />
+  <strength min="12.0" max="15.0" />
+  <lightningresist min="2.0" max="4.0" />  
+  <iceresist min="6.0" max="8.0" />  
+  <poisonresist min="6.0" max="8.0" />  
+  <xp min="50.0" max="54.0" />
+
+  <mass min="3.1" max="3.2" />
+  <radius min="0.4" max="0.45" />
+  <scale min="0.8" max="0.9" />
+  <shadow-offset min="0.12" max="0.12" />
+
+  <anim name="core/anim/ogrillion/default" type="default" />
+  <anim name="core/anim/ogrillion/move" type="move" />
+  <anim name="core/anim/ogrillion/attack" type="attack" />
+  <anim name="core/anim/ogrillion/death" type="death" />
+
+  <ai name="melee-chaser" />
+
+  <ability name="data/abilities/monsters/melee-with-swing.xml" default="1" />
+
+  <sound type="attack" filename="data/sounds/Lugaro/Growl2.ogg" />
+  <sound type="damaged" filename="data/sounds/Lugaro/Snarl2.ogg" />
+  <sound type="death" filename="data/sounds/EL/monster06.ogg" />
+  <sound type="spawn" filename="data/sounds/0AD/horse_11.ogg" />
+
+</root>

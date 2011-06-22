@@ -1,0 +1,58 @@
+<root type="ability" class="bullet">
+
+  <name>Ice arrow</name>
+  <description>
+Basic offensive spell used by Water Mages - an icicle that wounds and slows down enemy.  
+  
+Bonus for this spell depends:
+  mildly on choleric rune
+  extremely on melancholic rune
+  not at all on sanguine rune
+  heavily on phlegmatic rune  
+  </description>
+  <icon>data/abilities/weapons/icearrow-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/icearrow-0.png</unavailable-icon>
+
+  <!-- power = 2x cho, 4x mel, 0x san, 3x phl -->
+  <power calc="0.2 * dot(2, choleric, 4, melancholic, 0, sanguine, 3, phlegmatic)"/>
+
+  <explosion type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/whoosh.ogg" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="blue-explosion-mini" />
+  	  <time value="0.8" />
+  	</effect>
+  </explosion>
+  
+  <effect type="list">
+    <effect type="graphical-effect">
+      <name value="colorize-blue" />
+      <time calc="1.75 + (0.02 * power)" />
+    </effect>
+    <effect type="non-cumulative">
+      <effect type="timed">
+        <time calc="1.75 + (0.02 * power)" />
+        <effect type="modify">
+          <aspect value="speed" />
+          <amount calc="0.76 - (0.005 * power)" />
+        </effect>
+      </effect>
+    </effect>	
+    <effect type="damage">
+      <damage-type value="ice"/>
+      <amount calc="5.0 * (1 + power)" />
+    </effect>
+  </effect>
+  
+  <manacost calc="5.5 * (1 + 0.66 * power)" />
+  <range value="12.0" />
+  <speed value="10.0" />
+  <ttl value="0.8" />
+  <bullet value="data/physicals/bullets/icicle.xml" />
+  <casttime value="0.09" />
+  <delay value="0.05" />
+  <cooldown value="0.25" />
+  
+</root>

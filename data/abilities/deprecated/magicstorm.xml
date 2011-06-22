@@ -1,0 +1,155 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_ELECTRIC_MAGICSTORM</name>
+  <icon>data/abilities/electric/storm-0.png</icon>
+  <unavailable-icon>data/abilities/electric/storm-1.png</unavailable-icon>
+  <description>$ABI_ELECTRIC_MAGICSTORM_DESC</description>
+  <trigger></trigger>
+
+  <flight-effect type="list" >
+    <effect type="recastable">
+		<recast value="0.2" />
+		<time value="3.0" />
+    	<effect type="retarget">
+    		<target-chooser>
+    			<filter value="hostiles" />
+    			<range calc="0.80 + 0.02 * wp + lv * 0.15 + 0.08 * spellrange" />
+    			<angle value="90.0" />
+				<aim-at-ground value="1"/>
+    		</target-chooser>
+    		<effect type="list">
+    			<effect type="linked-graphical-effect">
+    				<time value="0.2" />
+    				<name value="lightning" />
+    			</effect>
+    			<effect type="list">
+    				<effect type="damage">
+    					<amount value="6" modifiers="willpower" linear-gain="19" />
+      					<damage-type value="lightning"/>
+    				</effect>
+    				<effect type="knockback">
+    					<amount value="1.0" />
+    				</effect>
+    			</effect>
+				<effect type="sound">
+					<name value="data/sounds/EL/thunder1.ogg" />
+					<name value="data/sounds/EL/thunder2.ogg" />
+					<name value="data/sounds/EL/thunder3.ogg" />
+					<name value="data/sounds/EL/thunder4.ogg" />
+					<name value="data/sounds/EL/thunder5.ogg" />
+					<name value="data/sounds/EL/thunder6.ogg" />
+					<name value="data/sounds/EL/thunder7.ogg" />
+				</effect>
+    		</effect>
+        </effect>
+	</effect>
+
+    <effect type="recastable">
+		<recast value="0.3" />
+		<time value="3.0" />
+		<effect type="bullet">
+		<emitter>
+			<speed value="3.0" />
+			<acceleration value="-2.0" />
+			<ttl value="5.0" />
+			<count value="1" />
+			<width value="360" />
+			<explode-on-fade value="1" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+			<filter value="none" />
+
+			<flight-effect type="list">
+				<effect type="recastable" >
+					<recast value="0.6" />
+					<time value="5.0" />
+					<effect type="retarget">
+						<target-chooser>
+							<filter value="hostiles" />
+							<range calc="0.80 + 0.02 * wp + lv * 0.15 + 0.08 * spellrange" />
+							<angle value="90.0" />
+							<aim-at-ground value="1"/>
+						</target-chooser>
+						<effect type="list">
+							<effect type="linked-graphical-effect">
+								<time value="0.2" />
+								<name value="lightning" />
+							</effect>
+							<effect type="list">
+								<effect type="damage">
+									<amount value="6" modifiers="willpower" linear-gain="19" />
+									<damage-type value="lightning"/>
+								</effect>
+								<effect type="knockback">
+									<amount value="1.0" />
+								</effect>
+							</effect>
+							<effect type="sound">
+								<name value="data/sounds/EL/thunder1.ogg" />
+								<name value="data/sounds/EL/thunder2.ogg" />
+								<name value="data/sounds/EL/thunder3.ogg" />
+								<name value="data/sounds/EL/thunder4.ogg" />
+								<name value="data/sounds/EL/thunder5.ogg" />
+								<name value="data/sounds/EL/thunder6.ogg" />
+								<name value="data/sounds/EL/thunder7.ogg" />
+							</effect>
+						</effect>
+					</effect>
+				</effect>
+				<effect type="recastable" >
+					<recast value="1.0" />
+					<time value="5.0" />
+					<effect type="bullet">
+					<emitter>
+						<speed value="7.5" />
+						<acceleration value="1.0" />
+						<ttl value="8.0" />
+						<count value="1" />
+						<width value="360" />
+						<explode-on-fade value="1" />
+                        <bullet value="data/physicals/bullets/electron.xml" />
+						<filter value="hostiles,wall,obstacle" />
+						<time-for-tracking calc="12.0"/>
+						<turning-speed calc="720.0"/>
+						<target-chooser>
+							<filter value="hostiles"/>
+							<range calc="2.5 + 0.25 * spellrange"/>
+							<angle value="180.0"/>
+						</target-chooser>
+						<effect type="damage">
+							<amount calc="5.0 + 2.0 * lvl + wp / 10.0"/>
+							<damage-type value="lightning"/>
+						</effect>
+					</emitter>
+					</effect>
+				</effect>
+				<effect type="graphical-effect">
+					<name value="storm-cloud" />
+					<time value="5.0" />
+				</effect>
+			</flight-effect>
+		</emitter>
+		</effect>
+  	</effect>
+</flight-effect>
+
+  <cast-time-effect type="graphical-effect">
+    <name value="magic-circle-5"/>
+    <time value="1.0"/>
+  </cast-time-effect>
+
+  <manacost value="34.0" />
+  <range calc="12.0 + 1.2 * spellrange" />
+  <speed value="1.8" />
+  <acceleration value="0.0" />
+  <explode-on-fade value="1" />
+  <ttl value="3.0" />
+  <count calc="min(3, lvl + 1)" />
+  <width calc="120" />
+  <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+  <filter value="wall" />
+  <bullet-angular-speed value="-1440" />
+  <casttime calc="0.84 + 0.86 / (castspeed + 1)" />
+  <delay calc="0.36 + 0.22 / (castspeed + 1)" />
+  <cooldown calc="0.9 + 0.6 / (castspeed + 1)" />
+
+</root>

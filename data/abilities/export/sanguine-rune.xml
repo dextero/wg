@@ -1,0 +1,16 @@
+<root type="ability" class="export">
+
+  <name>Sanguine rune</name>
+  <description>
+A magic rune defining your skills in sanguine spells. The more skilled in this rune you are the more powerful are your spells combining uncornern, verbosity, sensitivity, vigor and leadership.
+
+Also by increasing this skill your character will regenerate hit-points a little bit faster.
+  </description>
+  <icon>data/abilities/export/sanguine-rune-0.png</icon>
+  <unavailable-icon>data/abilities/export/sanguine-rune-1.png</unavailable-icon>
+
+  <max-level value="100"/> 
+ 
+  <effect type="noEffect"/>
+
+</root>

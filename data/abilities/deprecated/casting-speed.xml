@@ -1,0 +1,11 @@
+﻿<root type="ability" class="export">
+
+  <name>$ABI_SUPPORT_CASTING_SPEED</name>
+  <icon>data/abilities/support/fastcast-0.png</icon>
+  <unavailable-icon>data/abilities/support/fastcast-1.png</unavailable-icon>
+  <description>$ABI_SUPPORT_CASTING_SPEED_DESC</description>
+
+  <export>
+    <name>castspeed</name>
+  </export>
+</root>

@@ -1,0 +1,58 @@
+<root type="ability" class="bullet">
+
+  <name>Magic missile (MkII)</name>
+  <description>
+Just a casual Magic Missile. Shoots five projectiles that cause physical damages.
+
+Bonus for this spell depends:
+  mildly on choleric rune
+  barely on melancholic rune
+  extremely on sanguine rune
+  heavily on phlegmatic rune  
+  </description>
+  <icon>data/abilities/weapons/magic-missile-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/magic-missile-1.png</unavailable-icon>
+
+  <!-- power = 2x cho, 1x mel, 4x san, 3x phl -->
+  <power calc="0.2 * dot(2, choleric, 1, melancholic, 4, sanguine, 3, phlegmatic)"/>
+
+  <effect type="damage">
+    <amount calc="10.0 * (1 + power)" />
+  </effect>
+  
+  <explosion type="list">
+	<effect type="sound">
+		<name value="data/sounds/Lugaro/fireend.ogg" />
+	</effect>
+    <effect type="graphical-effect">
+      <name value="bullet-explosion-mini" />
+      <time value="0.8" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="blue-explosion-mini" />
+      <time value="0.8" />
+    </effect>
+  </effect>
+
+  <bullet value="data/physicals/bullets/magic-missile.xml" />
+  <range value="14.0" />
+  <acceleration value="1.0" />
+  <speed calc="9.0" />
+  <explode-on-fade value="1" />
+  <count value="5" />
+  <width calc="50.5" />
+  <ttl value="5.6" />
+  <bullet-angular-speed value="-1440" />
+  <target-chooser>
+    <filter value="hostiles,obstacle" />
+	<range value="2.5" />
+	<angle value="30" />
+    <aim-at-ground value="0" />
+  </target-chooser>	
+	
+  <manacost calc="18 * (1 + 0.66 * power)" />
+  <casttime value="0.09" />
+  <delay value="0.05" />
+  <cooldown value="0.28" />
+
+</root>

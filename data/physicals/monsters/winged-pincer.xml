@@ -1,0 +1,33 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="$BESTIARY_WINGED_PINCER_NAME" />
+    <desc value="$BESTIARY_WINGED_PINCER_DESC" />
+  </bestiary>
+  <genre>winged-pincer</genre>
+  
+  <speed min="2.5" max="2.5" />
+  <strength min="25.0" max="25.0" />
+  <turnspeed min="240.0" max="240.0" />
+  <shadow-offset min="0.12" max="0.12" />
+
+  <maxhp min="100.0" max="140.0" />
+  <maxmana min="30.0" max="50.0" />
+
+  <xp min="50.0" max="80.0" />
+
+  <scale min="0.4" max="0.4" />
+  <radius min="0.15" max="0.15" />
+  <mass min="3.0" max="3.0" />
+
+	<anim name="core/anim/winged-pincer/default" type="default" />
+  	<anim name="core/anim/winged-pincer/default" type="move" /> <!-- specjalnie - brak move -->
+  	<anim name="core/anim/winged-pincer/attack" type="attack" />
+  	<anim name="core/anim/winged-pincer/default" type="death" />
+  
+  <ai name="ranged-caster" />
+
+  <ability name="data/abilities/monster/weakbite.xml" default="1" />
+  <ability name="data/abilities/monster/electric-bullet.xml" />
+
+</root>

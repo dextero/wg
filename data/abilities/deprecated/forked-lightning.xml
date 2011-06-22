@@ -1,0 +1,74 @@
+<root type="ability" class="self">
+
+  <name>$ABI_ELECTRIC_FORKED_LIGHTNING</name>
+  <description>$ABI_ELECTRIC_FORKED_LIGHTNING_DESC</description>
+  <icon>data/abilities/electric/mlightning-0.png</icon>
+  <unavailable-icon>data/abilities/electric/mlightning-1.png</unavailable-icon>
+  <trigger></trigger>
+
+  <effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/EL/thunder1.ogg" />
+      <name value="data/sounds/EL/thunder2.ogg" />
+      <name value="data/sounds/EL/thunder3.ogg" />
+      <name value="data/sounds/EL/thunder4.ogg" />
+      <name value="data/sounds/EL/thunder5.ogg" />
+      <name value="data/sounds/EL/thunder6.ogg" />
+      <name value="data/sounds/EL/thunder7.ogg" />
+    </effect>
+    <effect type="recastable">
+      <recast value="0.13"/>
+      <time value="0.40"/>
+      <effect type="retarget">
+        <target-chooser>
+          <filter value="hostiles"/>
+          <range calc="4.0 + 0.5 * lvl + 0.8 * spellrange" />
+          <angle value="90.0"/>
+          <aim-at-ground value="1"/>
+          <count calc="3" />
+        </target-chooser>
+        <effect type="list">
+          <effect type="linked-graphical-effect">
+            <offset-x value="-0.25"/>
+            <offset-y value="0.25"/>
+            <time value="0.14" />
+            <name value="lightning" />
+          </effect>
+          <effect type="damage">
+            <amount calc="14 + (7*lvl)" />
+            <damage-type value="lightning"/>
+          </effect>
+          <effect type="knockback">
+            <amount value="2.0" />
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list" >
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.3"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-1"/>
+      <time value="0.4"/>
+    </effect>
+  </cast-time-effect>
+  <delay-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.2" />
+  </delay-effect>
+
+  <manacost value="22.0 + (3 * lvl)" />
+  <!--todo: castspeed, tutaj i w zwyklej blyskawicy, tox 7 lip -->
+  <casttime calc="0.3" />
+  <delay calc="0.4 + (0.3 / (castspeed + 1))" />
+  <cooldown calc="0.28 + (0.32 / (castspeed + 1))" />
+
+</root>

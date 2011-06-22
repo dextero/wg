@@ -1,0 +1,51 @@
+<root type="ability" class="self">
+
+  <name>$ABI_SPECIAL_CHANT</name>
+  <trigger>dcdaba</trigger>
+  <icon>data/abilities/special/chant-0.png</icon>
+  <unavailable-icon>data/abilities/special/chant-1.png</unavailable-icon>
+  <description>$ABI_SPECIAL_CHANT_DESC</description>
+
+	<effect type="retarget">
+		<target-chooser>
+			<filter value="player"/>
+			<range calc="9.0 + 0.9 * (lv + spellrange)" />
+			<angle value="360.0"/>
+		</target-chooser>
+		<effect type="list">
+			<effect type="list" tag="chant-tag">
+				<effect type="non-cumulative">
+					<effect type="recastable">
+						<time calc="30.0 + int / 2"/>
+            <recast value="0.5" />
+						<effect type="heal">
+							<amount calc="7+int/5"/>
+              <show-amount />
+						</effect>
+					</effect>
+				</effect>
+				<effect type="graphical-effect">
+					<time calc="21.0 + int/2" />
+					<name value="shield"/>
+				</effect>
+			</effect>
+			<effect type="retarget">
+				<target-chooser>
+					<filter value="player"/>
+					<range calc="8.0 + 0.8 * (lv + spellrange)" />
+					<angle value="360.0"/>
+				</target-chooser>
+				<effect type="jump">
+					<name value="chant-tag"/>
+				</effect>
+			</effect>
+		</effect>
+	</effect>
+
+  <manacost value="10.0 " />
+  <casttime calc="0.02 + 0.08 / (castspeed + 1)" />
+  <delay value="0.0" />
+  <cooldown calc="0.0002 + 0.0008 / (castspeed + 1)" />
+  <no-buy />
+
+</root>

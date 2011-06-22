@@ -1,0 +1,39 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="Ogre" />
+    <desc value="A smelly, cowardly beast. Attacks in groups, since that makes feel safe and strong. His heavy fists can bash and stun the opponnent." />
+  </bestiary>
+  <genre>ogre</genre>
+
+  <maxhp min="140.0" max="160.0" />
+  <speed min="1.10" max="1.20" />
+  <turnspeed min="60.0" max="70.0" />
+  <strength min="15.0" max="20.0" />
+  <fireresist min="2.0" max="4.0" />  
+  <lightningresist min="4.0" max="6.0" />  
+  <iceresist min="6.0" max="8.0" />  
+  <xp min="55.0" max="59.0" />
+
+  <mass min="3.3" max="3.4" />
+  <radius min="0.475" max="0.525" />
+  <scale min="0.95" max="1.05" />
+  <shadow-offset min="0.12" max="0.12" />
+
+  <anim name="core/anim/ogre/default" type="default" />
+  <anim name="core/anim/ogre/move" type="move" />
+  <anim name="core/anim/ogre/attack" type="attack" />
+  <anim name="core/anim/ogre/attack-second" type="attack-second" />
+  <anim name="core/anim/ogre/death" type="death" />
+
+  <ai name="melee-chaser" />
+
+  <ability name="data/abilities/monsters/melee-with-swing.xml" anim="attack" default="1" />
+  <ability name="data/abilities/monsters/melee-with-swing.xml" anim="attack-second" />
+
+  <sound type="attack" filename="data/sounds/Lugaro/Growl.ogg" />
+  <sound type="damaged" filename="data/sounds/Lugaro/Snarl.ogg" />
+  <sound type="death" filename="data/sounds/EL/monster06.ogg" />
+  <sound type="spawn" filename="data/sounds/0AD/horse_11.ogg" />
+
+</root>

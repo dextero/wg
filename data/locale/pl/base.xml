@@ -1,0 +1,619 @@
+<root type="locale" name="Polski" code="pl">
+	<entry>
+		<key>ABILITY_NOT_FOR_SALE</key>
+		<value>Tylko do znalezienia na mapie.</value>
+	</entry>
+	<entry>
+		<key>ABITREE_CLOSE</key>
+		<value>Zamknij</value>
+	</entry>
+	<entry>
+		<key>ABITREE_ELECTRICITY</key>
+		<value>Elektryczność</value>
+	</entry>
+	<entry>
+		<key>ABITREE_FIRE</key>
+		<value>Ogień</value>
+	</entry>
+	<entry>
+		<key>ABITREE_SPECIAL</key>
+		<value>Specjalne</value>
+	</entry>
+	<entry>
+		<key>ABITREE_SUPPORT</key>
+		<value>Wsparcie</value>
+	</entry>
+	<entry>
+		<key>ARCADE_MODE</key>
+		<value>Tryb arcade</value>
+	</entry>
+	<entry>
+		<key>ASPECT_FIRERESIST</key>
+		<value>Ogień</value>
+	</entry>
+	<entry>
+		<key>ASPECT_ICERESIST</key>
+		<value>Lód</value>
+	</entry>
+	<entry>
+		<key>ASPECT_INTELLIGENCE</key>
+		<value>Inteligencja</value>
+	</entry>
+	<entry>
+		<key>ASPECT_LEVEL</key>
+		<value>Poziom</value>
+	</entry>
+	<entry>
+		<key>ASPECT_LIGHTNINGRESIST</key>
+		<value>Błyskawice</value>
+	</entry>
+	<entry>
+		<key>ASPECT_MANAREGEN</key>
+		<value>Regeneracja many</value>
+	</entry>
+	<entry>
+		<key>ASPECT_MASS</key>
+		<value>Masa</value>
+	</entry>
+	<entry>
+		<key>ASPECT_MAXHP</key>
+		<value>Maks. HP</value>
+	</entry>
+	<entry>
+		<key>ASPECT_MAXMANA</key>
+		<value>Maks. mana</value>
+	</entry>
+	<entry>
+		<key>ASPECT_PHYSRESIST</key>
+		<value>Fizyczne</value>
+	</entry>
+	<entry>
+		<key>ASPECT_POISONRESIST</key>
+		<value>Trucizna</value>
+	</entry>
+	<entry>
+		<key>ASPECT_RADIUS</key>
+		<value>Promień (lol)</value>
+	</entry>
+	<entry>
+		<key>ASPECT_RESISTS</key>
+		<value>Odporności</value>
+	</entry>
+	<entry>
+		<key>ASPECT_SCALE</key>
+		<value>Skala</value>
+	</entry>
+	<entry>
+		<key>ASPECT_SPEED</key>
+		<value>Szybkość</value>
+	</entry>
+	<entry>
+		<key>ASPECT_STRENGTH</key>
+		<value>Siła</value>
+	</entry>
+	<entry>
+		<key>ASPECT_TURNSPEED</key>
+		<value>Szybk. obrotu</value>
+	</entry>
+	<entry>
+		<key>ASPECT_WILLPOWER</key>
+		<value>Siła woli</value>
+	</entry>
+	<entry>
+		<key>BUY</key>
+		<value>Kup</value>
+	</entry>
+	<entry>
+		<key>CHOOSE_CONTROLS_SCHEME</key>
+		<value>Wybierz schemat sterowania</value>
+	</entry>
+	<entry>
+		<key>CLICK_TO_BUY</key>
+		<value>Naciśnij lewy przycisk myszy, aby kupić umiejętność</value>
+	</entry>
+	<entry>
+		<key>CLOSE_POPUP</key>
+		<value>Zamknij</value>
+	</entry>
+	<entry>
+		<key>CONSOLE_WELCOME</key>
+		<value>F11: chowanie konsoli; help: lista komend</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_ABS_TOOLTIP</key>
+		<value>Opcja określająca sposób poruszania się bohatera. Włączona powoduje jego ruch równolegle do krawędzi ekranu, wyłączona powoduje ruch względem kierunku patrzenia.</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_MOUSE_LOOK_TOOLTIP</key>
+		<value>Opcja obracająca bohatera zawsze w kierunku kursora myszki. Przydatne jeśli grasz myszką.</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_MOUSECAST_TOOLTIP</key>
+		<value>Opcja pozwalająca na rzucanie poznanych czarów za pomocą gestów myszką. Po naciśnieciu specjalnego klawisza pojawią się na ekranie monitora cztery runy, które trzeba zaznaczać kursorem myszy aby rzucić czar.</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_SEPARATE_SEQ_TOOLTIP</key>
+		<value>Opcja pozwalająca na rzucanie poznanych czarów dwoma osobnymi zestawami klawiszy - jeden dla kombinacji a drugi dla tzw. &quot;slotów&quot;.</value>
+	</entry>
+	<entry>
+		<key>CURR_LEVEL</key>
+		<value>Aktualny poziom: </value>
+	</entry>
+	<entry>
+		<key>CUTSCENE_ENDDEMO</key>
+		<value>Gratulacje!
+
+Udało Ci się ukończyć wszystko, co przygotowaliśmy dla Ciebie :)
+Mamy nadzieję, że grało się przyjemnie - czekamy na Twoją opinię.
+
+Stay tuned!</value>
+	</entry>
+	<entry>
+		<key>CUTSCENE_ENDDEMO_BG</key>
+		<value>data/cutscene/end-screen.png</value>
+	</entry>
+	<entry>
+		<key>DIFFICULTY</key>
+		<value>Poziom trudności: </value>
+	</entry>
+	<entry>
+		<key>DIFFICULTY_1</key>
+		<value>Normalny</value>
+	</entry>
+	<entry>
+		<key>DIFFICULTY_2</key>
+		<value>Trudny</value>
+	</entry>
+	<entry>
+		<key>DIFFICULTY_3</key>
+		<value>Sparta</value>
+	</entry>
+	<entry>
+		<key>DIFFICULTY_4</key>
+		<value>Malbolge</value>
+	</entry>
+	<entry>
+		<key>DIFFICULTY_5</key>
+		<value>WTF</value>
+	</entry>
+	<entry>
+		<key>DRAG_TO_USE</key>
+		<value>Przeciągnij umiejętność do paska na dole, aby móc z niej korzystać podczas walki.</value>
+	</entry>
+	<entry>
+		<key>ENABLE_ABILITY</key>
+		<value>Aktywuj</value>
+	</entry>
+	<entry>
+		<key>ERR</key>
+		<value>Błąd</value>
+	</entry>
+	<entry>
+		<key>ERR_NO_CTRL_SCHEMES</key>
+		<value>Plik data/config.xml  nie zawiera żadnych schematów sterowania. Uaktualnij go lub stwórz własne sterowanie.</value>
+	</entry>
+	<entry>
+		<key>FONT_CONSOLE</key>
+		<value>data/GUI/free_mono.ttf</value>
+	</entry>
+	<entry>
+		<key>FONT_DIALOG</key>
+		<value>data/GUI/verdana.ttf</value>
+	</entry>
+	<entry>
+		<key>FONT_MENU</key>
+		<value>data/GUI/argbrujs.ttf</value>
+	</entry>
+	<entry>
+		<key>FONT_MESSAGE</key>
+		<value>data/GUI/monotype-corsiva.ttf</value>
+	</entry>
+	<entry>
+		<key>FULLSCREEN_MESSAGE</key>
+		<value>Czy chcesz uruchomić Warsztat Game w trybie pełnoekranowym? Jeżeli wybierzesz OK to gra zostanie uruchomiona w rozdzielczości %dx%d. Jeżeli wybierzesz Anuluj (Cancel) to gra zostanie uruchomiona w oknie 800x600. Rozdzielczość i tryb pełnoekranowy możesz w każdej chwili zmienić w menu opcji.</value>
+	</entry>
+	<entry>
+		<key>FULLSCREEN_TITLE</key>
+		<value>Pierwsze uruchomienie</value>
+	</entry>
+	<entry>
+		<key>GAME_TITLE</key>
+		<value>Warsztat Game</value>
+	</entry>
+	<entry>
+		<key>GUI_POSTMORTEM_BG</key>
+		<value>data/GUI/bg-postmortem.jpg</value>
+	</entry>
+	<entry>
+		<key>HELP_ABILITIES</key>
+		<value>Drzewo umiejętności po Twojej lewej umożliwi Ci poznawanie i doskonalenie zaklęć - kliknij na ikony, by przeczytać opis i kupić poziom czaru.</value>
+	</entry>
+	<entry>
+		<key>HELP_SCREENS_CONTROLS</key>
+		<value>Ekrany pomocy:
+- Gracz 1: %ls
+- Gracz 2: %ls
+Ekrany umiejętności:
+- Gracz 1: %ls
+- Gracz 2: %ls
+F11 - konsola</value>
+	</entry>
+	<entry>
+		<key>KEY_SEQUENCE</key>
+		<value>Kombinacja:</value>
+	</entry>
+	<entry>
+		<key>MAX_LEVEL_REACHED</key>
+		<value>Osiągnięto maksymalny poziom!</value>
+	</entry>
+	<entry>
+		<key>MENU_1_PLAYER</key>
+		<value>1 gracz</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_1_PLAYER_TUTORIAL</key>
+		<value>Tutorial</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_2_PLAYERS</key>
+		<value>2 graczy</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_ACHIEVEMENTS</key>
+		<value>Osiągnięcia</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_AUTOSAVE</key>
+		<value>Autozapis</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_BESTIARY</key>
+		<value>Bestiariusz</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_CONTINUE</key>
+		<value>Kontynuuj</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_EDITOR</key>
+		<value>Edytor</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_EMPTY_SAVE_SLOT</key>
+		<value>Puste miejsce</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_EXIT</key>
+		<value>Wyjście</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_LOAD</key>
+		<value>Wczytaj</value>
+	</entry>
+	<entry>
+		<key>MENU_LOAD_GAME</key>
+		<value>Wczytaj grę</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_NEW_GAME</key>
+		<value>Nowa gra</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_OPTIONS</key>
+		<value>Opcje</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_README</key>
+		<value>Instrukcja</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_RETURN</key>
+		<value>Powrót</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MENU_SAVE_GAME</key>
+		<value>Zapisz grę</value>
+		<size>35%</size>
+	</entry>
+	<entry>
+		<key>MSG_FOUND</key>
+		<value>Znalazłeś</value>
+	</entry>
+	<entry>
+		<key>MSG_GAME_SAVED</key>
+		<value>Gra została zapisana</value>
+	</entry>
+	<entry>
+		<key>MSG_ITEM_PICKUP</key>
+		<value>Gracz zebrał przedmiot &quot;%ls&quot;!
+</value>
+	</entry>
+	<entry>
+		<key>MSG_LEVEL_UP</key>
+		<value>Awansowałeś na poziom %d!
+</value>
+	</entry>
+	<entry>
+		<key>MSG_SKILLPOINT_GET</key>
+		<value>Zdobyłeś punkt umiejętności!
+</value>
+	</entry>
+	<entry>
+		<key>MSG_XP_POINTS</key>
+		<value>punkty doświadczenia!</value>
+	</entry>
+	<entry>
+		<key>NEWGAME_HELLO_1</key>
+		<value>Witaj w grze warsztatowej!</value>
+	</entry>
+	<entry>
+		<key>NEWGAME_HELLO_2</key>
+		<value>Wciśnij F1, by zobaczyć sterowanie i listę czarów</value>
+	</entry>
+	<entry>
+		<key>NEWGAME_HELLO_3</key>
+		<value>Wciśnij F2, by kupować nowe zaklęcia</value>
+	</entry>
+	<entry>
+		<key>NEWGAME_HELLO_4</key>
+		<value>... i nie daj się zabić :)</value>
+	</entry>
+	<entry>
+		<key>NOT_ENOUGH_SP</key>
+		<value>Za mało punktów.</value>
+	</entry>
+	<entry>
+		<key>OPT_3D_SOUND</key>
+		<value>Dźwięk 3D:</value>
+	</entry>
+	<entry>
+		<key>OPT_CANCEL</key>
+		<value>Anuluj</value>
+		<size>38%</size>
+	</entry>
+	<entry>
+		<key>OPT_CONTROLS1</key>
+		<value>Sterowanie gracza 1:</value>
+	</entry>
+	<entry>
+		<key>OPT_CONTROLS2</key>
+		<value>Sterowanie gracza 2:</value>
+	</entry>
+	<entry>
+		<key>OPT_DEFINE</key>
+		<value>Konfiguruj</value>
+		<size>45%</size>
+	</entry>
+	<entry>
+		<key>OPT_FULLSCREEN</key>
+		<value>Pełny ekran: </value>
+	</entry>
+	<entry>
+		<key>OPT_MUSIC_LEVEL</key>
+		<value>Poziom muzyki:</value>
+	</entry>
+	<entry>
+		<key>OPT_RESOLUTION</key>
+		<value>Rozdzielczość: </value>
+	</entry>
+	<entry>
+		<key>OPT_SAVE</key>
+		<value>Zastosuj</value>
+		<size>38%</size>
+	</entry>
+	<entry>
+		<key>OPT_SOUND_LEVEL</key>
+		<value>Poziom dźwięku: </value>
+	</entry>
+	<entry>
+		<key>OPT_VSYNC</key>
+		<value>V-Sync: </value>
+	</entry>
+	<entry>
+		<key>PREQS_NOT_MET</key>
+		<value>Nie spełniono wymagań: </value>
+	</entry>
+	<entry>
+		<key>README_ASCII_LOGO</key>
+		<value>       __      __                                __          __
+      /  \    /  \_____ _______  _______________/  |______ _/  |_
+      \   \/\/   /\__  \\_  __ \/  ___/\___   /\   __\__  \\   __\
+       \        /  / __ \|  | \/\___ \  / ___/  |  |  / __ \|  |
+        \__/\  /  (____  /__|  /____  &gt;/_____ \ |__| (____  /__|
+             \/        \/           \/       \/           \/
+                     ________
+                    /  _____/_____    _____   ____
+                   /   \  ___\__  \  /     \_/ __ \
+                   \    \_\  \/ __ \|  Y Y  \  ___/
+                    \______  (____  /__|_|  /\___  &gt;
+                           \/     \/      \/     \/
+</value>
+		<size>14</size>
+	</entry>
+	<entry>
+		<key>README_TEXT</key>
+		<value>---------------------------------------------
+0x0: Spis treści :
+- 0x0: Spis treści
+- 0x1: Wstęp
+- 0x2: O grze
+- 0x3: Wymagania
+- 0x4: Klawiszologia (!!!)
+- 0x5: Modyfikowanie gry
+- 0x6: Znane bugi
+- 0x7: Kontakt, Linki
+- 0x8: Zespół
+- 0x9: Podziękowania
+
+
+0x1: Wstęp.
+---------------------------------------------
+
+Czym jest Warsztat Game? Otóż jest to projekt społeczności Warsztatu. Warsztat jest portalem o tematyce programowania gier ( http://www.gamedev.pl ). Pewnego dnia ktoś zarzucił na forum pomysł aby zebrać ludzi i stworzyć grę. Początkowo zebrało się dużo ludzi, dużo pomysłów i ... projekt upadł. Jednak udało się nam projekt reaktywować. Gra jak i te wypociny są tego dowodem :)
+
+Kod źródłowy jest na licencji MIT/X11, a zasoby gry, które można znaleźć w katalogu &apos;data&apos;, są udostępnione na licencji CC. Gra bazuje na bibliotece SFML, rapidxml oraz zlib. Staramy się, by działała na dwóch systemach - Windows i Linux.
+
+
+0x2: O grze.
+---------------------------------------------
+
+Grałeś w Gauntleta, Get Medieval, Diablo, GTA albo Crimsonlanda? Otóż nasza gra jest połączeniem pomysłów z tych gier wraz z kilkoma własnymi ulepszeniami.
+
+Jesteś magiem. Największym kozakiem wśród magów. Jednak na Twojej drodze stają różne brzydale - zniszcz je! Nie zapomnij zrównać z ziemią także ich gniazd... Czasem coś wypadnie ze stwora - miksturka, runa - pamiętaj jednak że te cfane przedmioty zostaną uaktywnione, gdy tylko się zbliżysz. Natychmiast, bez litości.
+
+Powoli krystalizuje się także nić Twojego przeznaczenia - co Cię czeka jako sługę króla?
+Któż wie, to dopiero zalążek historii o Twojej legendzie...
+
+
+0x3: Wymagania.
+---------------------------------------------
+
+Na razie trudno jest nam określić. Możesz nam pomóc przesyłając konfigurację Twojego komputera oraz ilość FPS jaką osiągasz. Najbardziej interesujące nas dane to procesor, karta graficzna, pamięć RAM oraz system operacyjny.
+
+W opcjach możesz ustalić rozdzielczość, tryb pełnoekranowy, włączyć/wyłączyć synchronizację pionową.
+
+Uruchamialiśmy grę na granicy grywalnej ilości klatek na sprzęcie (laptop) o parametrach:
+Procesor :   celeron 1.6 Ghz
+Pamięć :   512 MB RAM
+Karta Grafiki :   SIS M661MX
+
+
+0x4: Klawiszologia.
+---------------------------------------------
+
+W razie uruchomienia gry najfajniejsze klawisze to:
+
+    * F1 (drugi gracz: F3) - pomoc
+    * F2 (drugi gracz: F4) - ekran umiejętności (za zdobyte skill pointy można tam kupić ulepszenia lub nowe zaklęcia)
+    * Q W E R - przy pomocy tych magicznych, runicznych klawiszy jesteś w stanie wprowadzać sekwencje które wywołają odpowiednie zaklęcie
+    * F10 - wyjście z gry
+    * F11 - konsola
+    * F12 - print screen
+    * ESC - przerwanie cut-scenek
+    * SPACJA - rozpoczynanie dialogów, pomijanie kwestii NPCów
+
+      W przypadku sterowania klawiaturą (sterowanie klasyczne - domyślne):
+
+    * strzałki - chodzenie
+
+      W przypadku myszy:
+    * lewy klawisz myszy - chodzenie w przód
+    * prawy klawisz myszy - chód w tył
+    * A D - strafe w prawo/lewo
+
+
+0x5: Modyfikowanie (modding) gry.
+---------------------------------------------
+
+W znacznej częci gra jest data-driven co oznacza tyle, że bardzo, ale to bardzo łatwo można ją modyfikować bez zmiany kodu źródłowego. Praktycznie wszystkie dane są trzymane w plikach XML lub przyjaznych danych tekstowych. Zmiana statystyk, grafik czy tworzenie np: nowych potworów jest bardzo prosta.
+I tak przykładowo:
+- data/config.xml ---------- zawiera parametry gry
+- data/physicals/*.xml ----- zawiera dane physicali czyli potworow, umiejetnosci (np: atakow)
+- data/player/
+- data/physicals/*.anims - zawiera opis wszystkich animacji (obrazki, czas trwania wyświetlania klatek itp)
+- data/effects/particles/particles.xml - umożliwia tworzenie nowych/modyfikacje efektów cząsteczkowych
+- ...
+
+Format zapisu jest raczej dość oczywisty i łatwo przyswajalny. Dlatego zachęcamy do eksperymentowania, a gdybyś zrobił coś ciekawego to możesz się z nami skontaktować i pochwalić swoim dziełem ;)
+
+Tak swoją drogą, edytowanie map bez edytora to zadanie tylko dla prawdziwych hardcorów ^ ^
+
+
+0x6: Znane bugi.
+---------------------------------------------
+
+- no na razie nic o bugach nie wiemy ;p
+// tak w ogóle to po co to tutaj, i tak nie będziemy tego aktualizować o_O
+
+
+0x7: Kontakt, Linki.
+---------------------------------------------
+
+Gdybyś chciał pomóc w rozwoju projektu, zgłosić błąd lub po prostu zobaczyć jak idą prace to możesz to zrobić odwiedzając poniższe linki:
+
+Strona projektu:................... http://www.warsztat.gd/projects.php?x=view&amp;id=658
+Strona rozwojowa projektu:......... http://www.assembla.com/spaces/gdpl
+Forum rozwojowe projektu:.......... http://gb.iql.pl/gdplforum/
+
+W sprawie rekrutacji najlepiej pisać na adres: ipc0nfg@gmail.com .
+Jest to adres koordynatora (póki co ;p) projektu, kryjącego się pod nickiem rAum.
+
+
+0x8: Zespół.
+---------------------------------------------
+
+Ciągle zmienny :), aktualna lista osób w teamie znajduje się na stronie assembli:
+http://www.assembla.com/spaces/gdpl/team
+
+Swoje trzy grosze (albo i więcej) dołożyli:
+Core team:
+DamorK - programowanie
+Liosan - programowanie
+rAum - programowanie, grafika
+jackflower - grafika
+toxic - programowanie
+Programowanie:
+bemon, borys94, BrutalComputer, DarkJarek, dextero, Fiolek, freakapp, Kenji-dev, mt-z, pawlaks1, PsichiX, raver, rm-f, rzuf, Solgar, Syriusz, thyros, yunior, zule
+Muzyka:, Leuland Deshaim, calderon(intro)
+Fabuła:, Nauthiz, sorge
+Dźwięki:, 0 A.D. Team, Eternal Lands Team - el@erdie.de
+Testy: za dużo by wymienić :)
+
+
+0x9: Podziękowania.
+---------------------------------------------
+
+Podziękowania za włożoną pracę, pomoc, inspiracje.
+W kolejności alfabetycznej zwłaszcza osobom kryjącym się pod nickami:
+Anonim, borys94, BrutalComputer, ciVis, Fiolek, Kenji-dev, mt-z, pawlaks1, rzuf, Solgar
+za ich wkład do projektu.
+
+A także wielu innym których nie jestem w stanie wymienić.
+
+Specjalne podziękowania dla:
+- Marcel Vijfwinkel - cgtextures.com
+- twórców open-sourcowego 0 A.D. - http://www.wildfiregames.com/0ad/
+- twórców Eternal Lands - http://www.eternal-lands.com/ - za udostępnienie nam dźwięków z gry.
+</value>
+		<size>14</size>
+	</entry>
+	<entry>
+		<key>REQ_LEVEL</key>
+		<value>Wymagany poziom: </value>
+	</entry>
+	<entry>
+		<key>TOO_LOW_PREQ_LEVEL</key>
+		<value>Nie spełniono wymagań</value>
+	</entry>
+	<entry>
+		<key>UI_LEVEL</key>
+		<value>Poziom: </value>
+	</entry>
+	<entry>
+		<key>UI_POINTS</key>
+		<value>Punkty: </value>
+	</entry>
+	<entry>
+		<key>UI_XP</key>
+		<value>XP: </value>
+	</entry>
+	<entry>
+		<key>OPT_LANGUAGE</key>
+		<value>Język:</value>
+	</entry>
+</root>

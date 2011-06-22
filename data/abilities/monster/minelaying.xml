@@ -1,0 +1,36 @@
+<root type="ability" class="bullet">
+
+	<name>$ABI_ELECTRIC_BULLET</name>
+	<trigger>a</trigger>
+	<description>$ABI_ELECTRIC_BULLET_DESC</description>
+
+	<effect type="list">
+		<effect type="damage">
+			<amount calc="1" />
+			<damage-type value="poison"/>
+		</effect>
+		<effect type="knockback">
+			<amount calc="0.5"/>
+		</effect>
+	</effect>
+	
+	<explosion type="graphical-effect">
+		<name value="green-explosion-mini"/>
+		<time value="0.35"/>
+	</explosion>
+
+	<manacost value="0" />
+	<ttl value="15.0 " />
+	<speed calc="0.0" />
+    <bullet value="data/physicals/bullets/mine.xml" />
+	<casttime calc="0.1"/>
+	<delay calc="0.1" />
+	<cooldown calc="1.0"/>
+	<filter value="player"/>
+	<extra-offset value="-0.7"/>
+	<explode-on-fade value="1"/>
+	
+	<ai-hint>
+		<player-distance>15.0</player-distance>
+	</ai-hint>
+</root>

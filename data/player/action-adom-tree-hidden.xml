@@ -1,0 +1,25 @@
+﻿<root type="ability-tree">
+	<name>$ABITREE_HIDDEN</name>
+    <background>data/GUI/skills-bkg-fire.jpg</background>
+
+	<ability code="a">
+        <name>data/abilities/passive/hidden/hp-regeneration.xml</name>
+        <row>0</row>
+        <start-level>1</start-level>
+	</ability>
+	<ability code="b">
+        <name>data/abilities/passive/hidden/mana-regeneration.xml</name>
+        <row>0</row>
+        <start-level>1</start-level>
+	</ability>
+	<ability code="c">
+        <name>data/abilities/passive/hidden/faster-movement.xml</name>
+        <row>0</row>
+        <start-level>1</start-level>
+	</ability>
+	<ability code="d">
+        <name>data/abilities/passive/hidden/poison-resistance.xml</name>
+        <row>0</row>
+        <start-level>1</start-level>
+	</ability>
+</root>

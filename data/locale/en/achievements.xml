@@ -1,0 +1,50 @@
+<root type="locale" name="English" code="en">
+	<entry>
+		<key>ACH_KILL250RATS</key>
+		<value>Rat-catcher</value>
+	</entry>
+	<entry>
+		<key>ACH_COMPLETED</key>
+		<value>Achievement unlocked: </value>
+	</entry>
+	<entry>
+		<key>ACH_DIE</key>
+		<value>Cadaver</value>
+	</entry>
+	<entry>
+		<key>ACH_CHEATER</key>
+		<value>Cheater</value>
+	</entry>
+	<entry>
+		<key>ACH_FIRST_BOSS</key>
+		<value>Ogre killer</value>
+	</entry>
+	<entry>
+		<key>ACH_ZOMBIE</key>
+		<value>Undead</value>
+	</entry>
+	<entry>
+		<key>ACH_RETURN_OF_THE_KING</key>
+		<value>Return of the King</value>
+	</entry>
+	<entry>
+		<key>ACH_PALADIN</key>
+		<value>Paladin</value>
+	</entry>
+	<entry>
+		<key>ACH_ANCIENT_KNOWLEDGE</key>
+		<value>Ancient knowledge</value>
+	</entry>
+	<entry>
+		<key>ACH_GLOBAL_WARMING</key>
+		<value>Global warming</value>
+	</entry>
+	<entry>
+		<key>ACH_BEGINNER</key>
+		<value>Beginner</value>
+	</entry>
+	<entry>
+		<key>ACH_EUTHANASIA</key>
+		<value>Euthanasia</value>
+	</entry>
+</root>

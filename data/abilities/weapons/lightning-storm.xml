@@ -1,0 +1,192 @@
+<root type="ability" class="self">
+
+  <name>Lightning storm</name>
+  <description>
+The battlemage summons a magical storm, creating an unstoppable mass of lightning bolts. Even if someone manages to dogde the storm, they will be catched by wandering electrons.
+
+Bonus for this spell depends:
+  extremely on choleric rune
+  barely on melancholic rune
+  heavily on sanguine rune
+  barely on phlegmatic rune  
+  </description>
+  <icon>data/abilities/weapons/lightning-storm-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/lightning-storm-1.png</unavailable-icon>
+
+  <!-- power = 4x cho, 1x mel, 3x san, 1x phl -->
+  <power calc="0.2 * do(4, choleric, 1, melancholic, 3, sanguine, 1, phlegmatic)"/>
+
+  <effect type="list">
+    <effect type="recastable">
+      <recast value="1.83" />
+      <time value="1.84" />
+      <effect type="bullet">
+        <emitter>
+          <range calc="12.0" />
+          <speed value="1.8" />
+          <acceleration value="0.0" />
+          <ttl value="3.0" />
+          <count calc="3" />
+          <width calc="120" />
+          <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+          <filter value="nothing" />
+          <bullet-angular-speed value="-1440" />
+
+          <flight-effect type="list" >
+            <effect type="recastable">
+              <recast value="0.3" />
+              <time value="3.0" />
+              <effect type="bullet">
+                <emitter>
+                  <speed value="2.8" />
+                  <acceleration value="-2.2" />
+                  <speed-fuzziness value="0.4" />
+                  <ttl value="5.0" />
+                  <count value="1" />
+                  <width value="360" />
+                  <explode-on-fade value="1" />
+                  <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+                  <filter value="none" />
+
+                  <flight-effect type="list">
+                    <effect type="recastable" >
+                      <recast value="0.2" />
+                      <time value="5.0" />
+                      <effect type="chance">
+                        <chance calc="0.33"/>
+                        <effect type="retarget">
+                          <target-chooser>
+                            <filter value="hostiles,obstacle" />
+                            <range calc="1.43" />
+                            <angle value="90.0" />
+                            <aim-at-ground value="1"/>
+                          </target-chooser>
+                          <effect type="list">
+                            <effect type="linked-graphical-effect">
+                              <name value="lightning" />
+                              <time value="0.25" />
+                            </effect>
+                            <effect type="damage">
+                              <damage-type value="lightning"/>
+                              <amount calc="18 * (1 + power)"/>
+                            </effect>
+                            <effect type="knockback">
+                              <amount value="1.0" />
+                            </effect>
+                            <effect type="sound">
+                              <name value="data/sounds/EL/thunder1.ogg" />
+                              <name value="data/sounds/EL/thunder2.ogg" />
+                              <name value="data/sounds/EL/thunder3.ogg" />
+                              <name value="data/sounds/EL/thunder4.ogg" />
+                              <name value="data/sounds/EL/thunder5.ogg" />
+                              <name value="data/sounds/EL/thunder6.ogg" />
+                              <name value="data/sounds/EL/thunder7.ogg" />
+                            </effect>
+                          </effect>
+                        </effect>
+                      </effect>
+                    </effect>
+                    <effect type="recastable" >
+                      <recast value="0.25" />
+                      <time value="5.0" />
+                      <effect type="chance">
+                        <chance calc="0.25"/>
+                        <effect type="bullet">
+                          <emitter>
+                            <speed value="17.5" />
+                            <acceleration value="3.0" />
+                            <ttl value="0.15" />
+                            <count value="1" />
+                            <width value="360" />
+                            <bullet value="data/physicals/bullets/electron.xml" />
+                            <filter value="hostiles,wall,obstacle" />
+                            <time-for-tracking calc="12.0"/>
+                            <turning-speed calc="1440.0"/>
+                            <target-chooser>
+                              <filter value="hostiles"/>
+                              <range calc="3.5"/>
+                              <angle value="180.0"/>
+                            </target-chooser>
+                            <effect type="damage">
+                              <damage-type value="lightning"/>
+                              <amount calc="6.0 * (1 + power)"/>
+                            </effect>
+                          </emitter>
+                        </effect>
+                      </effect>
+                    </effect>
+                    <effect type="graphical-effect">
+                      <name value="storm-cloud" />
+                      <time value="5.0" />
+                    </effect>
+                  </flight-effect>
+                </emitter>
+              </effect>
+            </effect>
+          </flight-effect>
+        </emitter>
+      </effect>
+    </effect>
+
+    <effect type="list">
+      <effect type="graphical-effect">
+        <name value="shield"/>
+        <time value="0.15"/>
+      </effect>
+      <effect type="recastable">
+        <recast value="0.15"/>
+        <time value="1.80"/>
+        <effect type="graphical-effect">
+          <name value="shield"/>
+          <time value="0.15"/>
+        </effect>
+      </effect>
+      <effect type="graphical-effect">
+        <name value="magic-circle-5"/>
+        <time value="2.60"/>
+      </effect>
+      <effect type="delayed">
+        <time value="0.90"/>
+        <effect type="graphical-effect">
+          <name value="magic-circle-4"/>
+          <time value="1.30"/>
+        </effect>
+      </effect>
+      <effect type="recastable">
+        <recast value="0.05"/>
+        <time value="1.80"/>
+        <effect type="chance">
+          <chance calc="0.33"/>
+          <effect type="graphical-effect">
+            <name value="magic-circle-2"/>
+            <time value="0.80"/>
+          </effect>
+        </effect>
+      </effect>
+      <effect type="graphical-effect">
+        <name value="magic-circle-4"/>
+        <time value="1.30"/>
+      </effect>
+      <effect type="graphical-effect">
+        <name value="magic-circle-3"/>
+        <time value="0.80"/>
+      </effect>
+      <effect type="timed">
+        <time value="2.03"/>
+        <effect type="modify">
+          <aspect value="speed" />
+          <amount value="0.2" />
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <manacost calc="34.0 * (1 + 0.66 * power)" />
+  <casttime calc="0.01" />
+  <delay calc="0.05" />
+  <cooldown calc="2.5" />
+
+  <focus-mana-cost value="0.0" />
+  <focus-max-duration value="1.90" />
+
+</root>

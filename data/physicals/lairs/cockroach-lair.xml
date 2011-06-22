@@ -1,0 +1,24 @@
+<root type="lair">
+  
+  <spawnLimit min="4" max="4" />
+  <spawnRate min="0.33" max="0.33" />
+  <grouping-hint>2</grouping-hint>
+  <genre>cockroach-lair</genre>
+  
+  <maxhp min="150.0" max="150.0" />
+  
+  <xp min="200.0" max="200.0" />
+
+  <spawnPosition x="0.0f" y="0.0f" />
+  
+  <spawnSound filename="data/physicals/lairs/lair-spawn.ogg" />
+
+  <scale min="0.8" max="1.0" />
+  <radius min="0.4" max="0.5" />
+
+  <anim name="core/anim/flower-lair/default" type="default" />
+  <anim name="core/anim/flower-lair/spawn" type="attack" />
+  <anim name="core/anim/flower-lair/death" type="death" />
+  
+  <monster filename="data/physicals/monsters/cockroach.xml" />
+</root>

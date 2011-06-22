@@ -1,0 +1,20 @@
+<root type="ability" class="passive">
+
+  <name>Mana</name>
+  <description>
+Your mana capabilities. Defines your maximal magic storage.
+
+Each point increases it by 10%.
+  </description>
+  <icon>data/abilities/passive/mana-0.png</icon>
+  <unavailable-icon>data/abilities/passive/mana-1.png</unavailable-icon>
+
+  <max-level value="100"/>
+  
+  <effect type="list">
+    <effect type="modify">
+      <aspect value="maxmana"/>
+      <amount calc="1 + (level * 0.10)" />
+    </effect>
+  </effect>
+</root>

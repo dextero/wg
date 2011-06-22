@@ -1,0 +1,158 @@
+<root type="ability" class="bullet">
+
+  <name>Fire wall</name>
+  <description>
+This spell creates a barrier of impenetrable flame, which hurts monsters (and careless battlemages), preventing them from passing through. Only the most desperated enemies can make it to the other side, but they will pay dearly for it.
+
+Bonus for this spell depends:
+  heavily on choleric rune
+  barely on melancholic rune
+  mildly on sanguine rune
+  mildly on phlegmatic rune  
+  </description>
+  <icon>data/abilities/weapons/firewall-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/firewall-1.png</unavailable-icon>
+
+  <!-- power = 3x cho, 1x mel, 2x san, 2x phl -->
+  <power calc="0.2 * dot(3, choleric, 1, melancholic, 2, sanguine, 2, phlegmatic)"/>
+  
+  <self-effect type="timed">
+    <time calc="0.3"/>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+    </effect>
+  </self-effect>    
+
+  <explosion type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/fireend.ogg" />
+    </effect>
+  
+    <effect type="bullet">
+      <emitter>
+        <speed value="0.0" />
+        <acceleration value="0.0" />
+        <ttl value="8.0" />
+        <count value="1" />
+        <width value="0" />
+        <explode-on-fade value="1" />
+        <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+        <filter value="none" />
+
+        <flight-effect type="list" tag="firewall-blaze">
+
+          <effect type="graphical-effect">
+            <time value="8.0" />
+            <name value="flames" />
+          </effect>
+
+      <!-- fire.ogg trwa troche ponad 4 sekundy, a recast dziala tak, ze najpierw czeka 'time' a dopiero
+      potem odpala podefekt. dlatego tutaj takie smieszne gimnastyki zostawiam, tox 24 maja 2011 -->
+          <effect type="sound">
+            <name value="data/sounds/Lugaro/fire.ogg" />
+          </effect>
+          <effect type="recastable">
+            <time value="8.0" />
+            <recast value="4.1"/>
+            <effect type="sound">
+              <name value="data/sounds/Lugaro/fire.ogg" />
+            </effect>
+          </effect>      
+      
+          <effect type="recastable">
+            <recast value="0.4"/>
+            <time value="15" />
+            <effect type="area">
+              <area calc="0.4" />
+              <filter value="hostiles,obstacle,friendly" />
+              <effect type="list">
+                <effect type="damage">
+                  <damage-type value="fire"/>
+                  <amount calc="2 * (1 + power)"/>
+                </effect>
+                <effect type="knockback">
+                  <amount calc="2.33" />
+                </effect>
+              </effect>
+            </effect>
+          </effect>
+        </flight-effect>
+      </emitter>
+    </effect>
+
+    <effect type="bullet">
+      <emitter>
+        <speed value="3.6" />
+        <acceleration value="-10.0" />
+        <ttl value="8.0" />
+        <count value="2" />
+        <width value="180" />
+        <explode-on-fade value="1" />
+        <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+        <filter value="none" />
+        <flight-effect type="non-cumulative">
+          <effect type="jump">
+            <name value="firewall-blaze"/>
+          </effect>
+        </flight-effect>
+      </emitter>
+    </effect>
+    <effect type="bullet">
+      <emitter>
+        <speed value="7.2" />
+        <acceleration value="-20.0" />
+        <ttl value="8.0" />
+        <count value="2" />
+        <width value="180" />
+        <explode-on-fade value="1" />
+        <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+        <filter value="none" />
+        <flight-effect type="jump">
+          <name value="firewall-blaze"/>
+        </flight-effect>
+      </emitter>
+    </effect>
+    <effect type="bullet">
+      <emitter>
+        <speed value="10.8" />
+        <acceleration value="-30.0" />
+        <ttl value="8.0" />
+        <count value="2" />
+        <width value="180" />
+        <explode-on-fade value="1" />
+        <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+        <filter value="none" />
+        <flight-effect type="jump">
+          <name value="firewall-blaze"/>
+        </flight-effect>
+      </emitter>
+    </effect>
+  </explosion>
+
+  <cast-time-effect type="list"> 
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.60"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+    </effect>  
+  </cast-time-effect>
+
+  <range calc="12.0" />
+  <speed calc="15.0" />
+  <acceleration value="-6.0" />
+  <explode-on-fade value="1" />
+  <count value="1" />
+  <width calc="0.0" />
+  <ttl value="0.2" />
+  <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+
+  <manacost calc="23 * (1 + 0.66 * power)" />
+  <casttime calc="0.30" />
+  <delay calc="0.05" />
+  <cooldown calc="1.6" />
+
+</root>

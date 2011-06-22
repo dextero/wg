@@ -1,0 +1,4 @@
+load-resource music data/music/loop40175.ogg loop true
+load-resource music data/music/loop33367.wav loop false
+play-music data/music/loop40175.ogg
+echo "aby zatrzymac wpisz 'stop-music data/music/loop40175.ogg'"

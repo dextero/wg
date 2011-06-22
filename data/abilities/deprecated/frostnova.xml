@@ -1,0 +1,96 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_WATER_FROSTNOVA</name>
+  <trigger>cabcab</trigger>
+  <icon>data/player/frostnova.png</icon>
+  <unavailable-icon>data/player/frostnova-grey.png</unavailable-icon>
+  <description>$ABI_WATER_FROSTNOVA_DESC</description>
+
+  <explosion type="list">
+  	<effect type="graphical-effect">
+  		<time value="0.8" />
+  		<name value="blue-explosion" />
+  	</effect>
+  	<effect type="graphical-effect">
+        <name value="ice-circle-shockwave" />
+        <time value="0.4" />
+    </effect>
+  	<effect type="area">
+  		<area value="2.0" modifiers="level" />
+  		<filter value="hostiles" />
+  		<effect type="list">
+  			<effect type="damage">
+  				<amount value="45.0" modifiers="willpower" linear-gain="29.0" />
+            	<damage-type value="ice"/>
+  			</effect>
+			<effect type="graphical-effect">
+				<time value="2.050" modifiers="level" linear-gain="0.450" />
+				<name value="frost" />
+			</effect>
+			<effect type="sound">
+				<name value="data/sounds/Lugaro/whoosh.ogg" />
+			</effect>
+            <effect type="non-cumulative">
+      			<effect type="timed">
+  				    <time value="2.550" modifiers="level" linear-gain="0.450" />
+  			    	<effect type="list">
+  		    			<effect type="stun" />
+  	    			</effect>
+      			</effect>
+            </effect>
+  		</effect>
+  	</effect>
+<!--    <effect type="delayed" >
+        <time value="0.2" /> -->
+      	<effect type="area">
+  	    	<area value="3.0" modifiers="level" />
+      		<filter value="hostiles" />
+      		<effect type="list">
+      			<effect type="damage">
+      				<amount value="22.0" modifiers="willpower" linear-gain="17.0" />
+            		<damage-type value="ice"/>
+      			</effect>
+    			<effect type="graphical-effect">
+    				<time value="1.050" modifiers="level" linear-gain="0.250" />
+    				<name value="frost" />
+    			</effect>
+                <effect type="non-cumulative">
+          			<effect type="timed">
+      				    <time value="1.550" modifiers="level" linear-gain="0.250" />
+     			    	<effect type="list">
+      		    			<effect type="stun" />
+                        </effect>
+  	    			</effect>
+      			</effect>
+                <effect type="non-cumulative">
+                    <effect type="timed">
+                    <time value="4.35" linear-gain="0.25" />
+                        <effect type="modify">
+                            <amount value="0.60" modifiers="level,inv" />
+                            <aspect value="speed" />
+                        </effect>
+                    </effect>
+               </effect>
+               <effect type="graphical-effect">
+                   <time value="4.35" linear-gain="0.25" />
+                   <name value="colorize-blue" />
+               </effect>
+
+            </effect>
+  		</effect>
+<!--  	</effect> -->
+  </explosion>
+
+  <manacost value="25.0" />
+  <range value="12.0" />
+  <speed value="5.0" />
+  <acceleration value="1.2" />
+  <explode-on-fade value="1" />
+  <ttl value="3.0" />
+  <bullet value="data/physicals/bullets/iceball.xml" />
+  <bullet-angular-speed value="-720" />
+  <casttime value="0.2" />
+  <delay value="0.2" />
+  <cooldown value="0.4" />
+  
+</root>

@@ -1,0 +1,453 @@
+<map>
+	<version>3</version>
+	<width>40</width>
+	<height>35</height>
+	<tiletype code="aa" image="data/maps/themes/test/rgrass.png"/>
+	<tiletype code="ba" image="data/maps/themes/oblique_way/tileset_scheme_b_f7.png"/>
+	<tiletype code="ca" image="data/maps/themes/oblique_way/tileset_scheme_b_f5.png"/>
+	<tiletype code="da" image="data/maps/themes/oblique_way/tileset_scheme_b_f2.png"/>
+	<tiletype code="ea" image="data/maps/themes/oblique_way/tileset_scheme_b_f14.png"/>
+	<tiletype code="fa" image="data/maps/themes/oblique_way/tileset_scheme_b_f1.png"/>
+	<tiletype code="ga" image="data/maps/themes/oblique_way/tileset_scheme_b_f3.png"/>
+	<tiletype code="ha" image="data/maps/themes/oblique_way/tileset_scheme_b_f13.png"/>
+	<tiletype code="ia" image="data/maps/themes/oblique_way/tileset_scheme_b_f11.png"/>
+	<tiletype code="ja" image="data/maps/themes/oblique_way/tileset_scheme_b_f10.png"/>
+	<tiletype code="ka" image="data/maps/themes/oblique_way/tileset_scheme_b_f6.png"/>
+	<tiletype code="la" image="data/maps/themes/oblique_way/tileset_scheme_b_f12.png"/>
+	<tiletype code="ma" image="data/maps/themes/oblique_way/tileset_scheme_b_f9.png"/>
+	<tiletype code="na" image="data/maps/themes/oblique_way/tileset_scheme_b_f4.png"/>
+	<tiletype code="oa" image="data/maps/themes/oblique_way/tileset_scheme_b_f8.png"/>
+	<tiletype code="pa" image="data/maps/themes/rock/tilesets_rock_a_9.png"/>
+	<tiletype code="qa" image="data/maps/themes/rock/tilesets_rock_a_10.png"/>
+	<tiletype code="ra" image="data/maps/themes/rock/tilesets_rock_a_5.png"/>
+	<tiletype code="sa" image="data/maps/themes/rock/tilesets_rock_a_6.png"/>
+	<tiletype code="ta" image="data/maps/themes/small_rock/tileset_scheme_a_c5.png"/>
+	<tiletype code="ua" image="data/maps/themes/small_rock/tileset_scheme_a_c7.png"/>
+	<tiletype code="va" image="data/maps/themes/small_rock/tileset_scheme_a_c4.png"/>
+	<tiletype code="wa" image="data/maps/themes/small_rock/tileset_scheme_a_c6.png"/>
+	<tiletype code="xa" image="data/maps/themes/small_rock/tileset_scheme_a_c3.png"/>
+	<tiletype code="ya" image="data/maps/themes/small_rock/tileset_scheme_a_c1.png"/>
+	<tiletype code="za" image="data/maps/themes/small_rock/tileset_scheme_a_c9.png"/>
+	<tiletype code="ab" image="data/maps/themes/small_rock/rock.png"/>
+	<tiletype code="bb" image="data/maps/themes/swamp/swamp_placeholder_f_4.png"/>
+	<tiletype code="cb" image="data/maps/themes/swamp/swamp_placeholder_f_5.png"/>
+	<tiletype code="db" image="data/maps/themes/swamp/swamp_placeholder_g_6.png"/>
+	<tiletype code="eb" image="data/maps/themes/swamp/swamp_placeholder_f_6.png"/>
+	<tiletype code="fb" image="data/maps/themes/swamp/swamp_placeholder_f_1.png"/>
+	<tiletype code="gb" image="data/maps/themes/swamp/tilesets_swamp_a_9.png"/>
+	<tiletype code="hb" image="data/maps/themes/swamp/tilesets_swamp_a_7.png"/>
+	<tiletype code="ib" image="data/maps/themes/swamp/tilesets_swamp_a_17.png"/>
+	<tiletype code="jb" image="data/maps/themes/oblique_way/tileset_scheme_b_p1.png"/>
+	<tiletype code="kb" image="data/maps/themes/oblique_way/tileset_scheme_b_p2.png"/>
+	<tiletype code="lb" image="data/maps/themes/oblique_way/tileset_scheme_b_p3.png"/>
+	<tiletype code="mb" image="data/maps/themes/oblique_way/tileset_scheme_b_p9.png"/>
+	<tiletype code="nb" image="data/maps/themes/oblique_way/tileset_scheme_b_p10.png"/>
+	<tiletype code="ob" image="data/maps/themes/oblique_way/tileset_scheme_b_p5.png"/>
+	<tiletype code="pb" image="data/maps/themes/oblique_way/tileset_scheme_b_p13.png"/>
+	<tiletype code="qb" image="data/maps/themes/oblique_way/tileset_scheme_b_p6.png"/>
+	<tiletype code="rb" image="data/maps/themes/oblique_way/tileset_scheme_b_p14.png"/>
+	<tiletype code="sb" image="data/maps/themes/oblique_way/tileset_scheme_b_p7.png"/>
+	<tiletype code="tb" image="data/maps/themes/oblique_way/tileset_scheme_b_p11.png"/>
+	<tiletype code="ub" image="data/maps/themes/oblique_way/tileset_scheme_b_p12.png"/>
+	<tiletype code="vb" image="data/maps/themes/oblique_way/tileset_scheme_b_p8.png"/>
+	<tiletype code="wb" image="data/maps/themes/bandy_way/tileset_scheme_c_f7.png"/>
+	<tiletype code="xb" image="data/maps/themes/bandy_way/tileset_scheme_c_f6.png"/>
+	<tiletype code="yb" image="data/maps/themes/oblique_way/tileset_scheme_b_m1.png"/>
+	<tiletype code="zb" image="data/maps/themes/oblique_way/tileset_scheme_b_l14.png"/>
+	<tiletype code="ac" image="data/maps/themes/oblique_way/tileset_scheme_b_l4.png"/>
+	<tiletype code="bc" image="data/maps/themes/oblique_way/tileset_scheme_b_l6.png"/>
+	<tiletype code="cc" image="data/maps/themes/oblique_way/tileset_scheme_b_l8.png"/>
+	<tiletype code="dc" image="data/maps/themes/oblique_way/tileset_scheme_b_l9.png"/>
+	<tiletype code="ec" image="data/maps/themes/oblique_way/tileset_scheme_b_m13.png"/>
+	<tiletype code="fc" image="data/maps/themes/oblique_way/tileset_scheme_b_m12.png"/>
+	<tiletype code="gc" image="data/maps/themes/oblique_way/tileset_scheme_b_m6.png"/>
+	<tiletype code="hc" image="data/maps/themes/oblique_way/tileset_scheme_b_m8.png"/>
+	<tiletype code="ic" image="data/maps/themes/oblique_way/tileset_scheme_b_l13.png"/>
+	<tiletype code="jc" image="data/maps/themes/oblique_way/tileset_scheme_b_l5.png"/>
+	<tiletype code="kc" image="data/maps/themes/oblique_way/tileset_scheme_b_l12.png"/>
+	<tiletype code="lc" image="data/maps/themes/swamp/tilesets_swamp_a_2.png"/>
+	<tiletype code="mc" image="data/maps/themes/test/rgrass-rock_9.png"/>
+	<tiletype code="nc" image="data/maps/themes/test/rgrass-rock_4.png"/>
+	<tiletype code="oc" image="data/maps/themes/test/rgrass-grass_5.png"/>
+	<tiletype code="pc" image="data/maps/themes/test/rgrass-grass_9.png"/>
+	<tiletype code="qc" image="data/maps/themes/test/rswamp-rock_6.png"/>
+	<tiletype code="rc" image="data/maps/themes/test/rswamp-rock_9.png"/>
+	<tiletype code="sc" image="data/maps/themes/test/rswamp-rock_5.png"/>
+	<tiletype code="tc" image="data/maps/themes/test/rswamp-rock_7.png"/>
+	<tiletype code="uc" image="data/maps/themes/test/rswamp-rock_11.png"/>
+	<tiletype code="vc" image="data/maps/themes/test/rswamp-rock_0.png"/>
+	<tiletype code="wc" image="data/maps/themes/test/rswamp-rock_1.png"/>
+	<tiletype code="xc" image="data/maps/themes/test/rswamp-rock_8.png"/>
+	<tiletype code="yc" image="data/maps/themes/test/rswamp-rock_4.png"/>
+	<tiletype code="zc" image="data/maps/themes/test/rswamp-rock_3.png"/>
+	<tiletype code="ad" image="data/maps/themes/test/rswamp-rock_10.png"/>
+	<tiletype code="bd" image="data/maps/themes/test/rrock-magma_2.png"/>
+	<tiletype code="cd" image="data/maps/themes/test/rrock-magma_5.png"/>
+	<tiletype code="dd" image="data/maps/themes/test/rrock-magma_8.png"/>
+	<tiletype code="ed" image="data/maps/themes/test/rrock-magma_9.png"/>
+	<tiletype code="fd" image="data/maps/themes/test/rrock-magma_7.png"/>
+	<tiletype code="gd" image="data/maps/themes/test/rrock-magma_6.png"/>
+	<tiletype code="hd" image="data/maps/themes/test/rrock-magma_0.png"/>
+	<tiletype code="id" image="data/maps/themes/test/rrock-magma_1.png"/>
+	<tiletype code="jd" image="data/maps/themes/test/rrock-magma_11.png"/>
+	<tiletype code="kd" image="data/maps/themes/test/rrock-magma_3.png"/>
+	<tiletype code="ld" image="data/maps/themes/test/rrock-magma_4.png"/>
+	<tiletype code="md" image="data/maps/themes/test/rmagma.png"/>
+	<tiletype code="nd" image="data/maps/themes/test/rrock-magma_10.png"/>
+	<tiletype code="od" image="data/maps/themes/test/rswamp-grass_5.png"/>
+	<tiletype code="pd" image="data/maps/themes/test/rswamp.png"/>
+	<tiletype code="qd" image="data/maps/themes/test/rswamp-grass_10.png"/>
+	<tiletype code="rd" image="data/maps/themes/test/rswamp-grass_3.png"/>
+	<tiletype code="sd" image="data/maps/themes/test/rswamp-grass_4.png"/>
+	<tiletype code="td" image="data/maps/themes/test/rswamp-grass_6.png"/>
+	<tiletype code="ud" image="data/maps/themes/test/rswamp-grass_11.png"/>
+	<tiletype code="vd" image="data/maps/themes/test/rswamp-grass_1.png"/>
+	<tiletype code="wd" image="data/maps/themes/test/rswamp-grass_8.png"/>
+	<tiletype code="xd" image="data/maps/themes/test/rswamp-grass_9.png"/>
+	<tiletype code="yd" image="data/maps/themes/oblique_way/tileset_scheme_b_l3.png"/>
+	<tiletype code="zd" image="data/maps/themes/oblique_way/tileset_scheme_b_l1.png"/>
+	<tiletype code="ae" image="data/maps/themes/oblique_way/tileset_scheme_b_m7.png"/>
+	<tiletype code="be" image="data/maps/themes/oblique_way/tileset_scheme_b_m9.png"/>
+	<tiletype code="ce" image="data/maps/themes/oblique_way/tileset_scheme_b_l10.png"/>
+	<tiletype code="de" image="data/maps/themes/oblique_way/tileset_scheme_b_l11.png"/>
+	<tiletype code="ee" image="data/maps/themes/oblique_way/tileset_scheme_b_k9.png"/>
+	<tiletype code="fe" image="data/maps/themes/oblique_way/tileset_scheme_b_k7.png"/>
+	<tiletype code="ge" image="data/maps/themes/oblique_way/tileset_scheme_b_k1.png"/>
+	<tiletype code="he" image="data/maps/themes/oblique_way/tileset_scheme_b_j7.png"/>
+	<tiletype code="ie" image="data/maps/themes/oblique_way/tileset_scheme_b_i7.png"/>
+	<tiletype code="je" image="data/maps/themes/oblique_way/tileset_scheme_b_g8.png"/>
+	<tiletype code="ke" image="data/maps/themes/oblique_way/tileset_scheme_b_g7.png"/>
+	<tiletype code="le" image="data/maps/themes/oblique_way/tileset_scheme_b_h1.png"/>
+	<tiletype code="me" image="data/maps/themes/oblique_way/tileset_scheme_b_h14.png"/>
+	<tiletype code="ne" image="data/maps/themes/oblique_way/tileset_scheme_b_j6.png"/>
+	<tiletype code="oe" image="data/maps/themes/oblique_way/tileset_scheme_b_j5.png"/>
+	<tiletype code="pe" image="data/maps/themes/oblique_way/tileset_scheme_b_j1.png"/>
+	<tiletype code="qe" image="data/maps/themes/oblique_way/tileset_scheme_b_z4.png"/>
+	<tiletype code="re" image="data/maps/themes/oblique_way/tileset_scheme_b_z10.png"/>
+	<tiletype code="se" image="data/maps/themes/oblique_way/tileset_scheme_b_z11.png"/>
+	<tiletype code="te" image="data/maps/themes/oblique_way/tileset_scheme_b_z9.png"/>
+	<tiletype code="ue" image="data/maps/themes/oblique_way/tileset_scheme_b_q7.png"/>
+	<tiletype code="ve" image="data/maps/themes/oblique_way/tileset_scheme_b_v6.png"/>
+	<tiletype code="we" image="data/maps/themes/oblique_way/tileset_scheme_b_x7.png"/>
+	<tiletype code="xe" image="data/maps/themes/oblique_way/tileset_scheme_b_x8.png"/>
+	<tiletype code="ye" image="data/maps/themes/oblique_way/tileset_scheme_b_x1.png"/>
+	<tiletype code="ze" image="data/maps/themes/oblique_way/tileset_scheme_b_x2.png"/>
+	<tiletype code="af" image="data/maps/themes/oblique_way/tileset_scheme_b_n5.png"/>
+	<tiletype code="bf" image="data/maps/themes/oblique_way/tileset_scheme_b_n6.png"/>
+	<tiletype code="cf" image="data/maps/themes/oblique_way/tileset_scheme_b_n7.png"/>
+	<tiletype code="df" image="data/maps/themes/oblique_way/tileset_scheme_b_n8.png"/>
+	<tiletype code="ef" image="data/maps/themes/oblique_way/tileset_scheme_b_n3.png"/>
+	<tiletype code="ff" image="data/maps/themes/oblique_way/tileset_scheme_b_o14.png"/>
+	<tiletype code="gf" image="data/maps/themes/oblique_way/tileset_scheme_b_j3.png"/>
+	<tiletype code="hf" image="data/maps/themes/oblique_way/tileset_scheme_b_g3.png"/>
+	<tiletype code="if" image="data/maps/themes/oblique_way/tileset_scheme_b_g5.png"/>
+	<tiletype code="jf" image="data/maps/themes/oblique_way/tileset_scheme_b_s8.png"/>
+	<tiletype code="kf" image="data/maps/themes/oblique_way/tileset_scheme_b_s7.png"/>
+	<tiletype code="lf" image="data/maps/themes/oblique_way/tileset_scheme_b_s10.png"/>
+	<tiletype code="mf" image="data/maps/themes/oblique_way/tileset_scheme_b_s4.png"/>
+	<tiletype code="nf" image="data/maps/themes/oblique_way/tileset_scheme_b_s5.png"/>
+	<tiletype code="of" image="data/maps/themes/oblique_way/tileset_scheme_b_s6.png"/>
+	<tiletype code="pf" image="data/maps/themes/oblique_way/tileset_scheme_b_s2.png"/>
+	<tiletype code="qf" image="data/maps/themes/oblique_way/tileset_scheme_b_s1.png"/>
+	<tiletype code="rf" image="data/maps/themes/test/rswamp-sand_0.png"/>
+	<tiletype code="sf" image="data/maps/themes/test/rswamp-sand_1.png"/>
+	<tiletype code="tf" image="data/maps/themes/test/rswamp-sand_10.png"/>
+	<tiletype code="uf" image="data/maps/themes/test/rswamp-sand_11.png"/>
+	<tiletype code="vf" image="data/maps/themes/test/rswamp-sand_3.png"/>
+	<tiletype code="wf" image="data/maps/themes/test/rswamp-sand_4.png"/>
+	<tiletype code="xf" image="data/maps/themes/test/rswamp-sand_5.png"/>
+	<tiletype code="yf" image="data/maps/themes/test/rswamp-sand_8.png"/>
+	<tiletype code="zf" image="data/maps/themes/test/rswamp-sand_2.png"/>
+	<tiletype code="ag" image="data/maps/themes/test/rswamp-sand_9.png"/>
+	<tiletype code="bg" image="data/maps/themes/test/rswamp-sand_6.png"/>
+	<tiletype code="cg" image="data/maps/themes/test/rsand.png"/>
+	<tiletype code="dg" image="data/maps/themes/test/rgrass-rock_2.png"/>
+	<tiletype code="eg" image="data/maps/themes/test/rgrass-rock_6.png"/>
+	<tiletype code="fg" image="data/maps/themes/test/rgrass-rock_8.png"/>
+	<tiletype code="gg" image="data/maps/themes/test/rrock.png"/>
+	<tiletype code="hg" image="data/maps/themes/test/rgrass-rock_11.png"/>
+	<tiletype code="ig" image="data/maps/themes/test/rgrass_1.png"/>
+	<tiletype code="jg" image="data/maps/themes/test/rmagma_grass_1_7.png"/>
+	<tiletype code="kg" image="data/maps/themes/test/rmagma_grass_1_10.png"/>
+	<tiletype code="lg" image="data/maps/themes/test/rgrass-rock_1.png"/>
+	<tiles>
+		cb db pd pd pd pd pd vc xc wc pd qd aa aa aa aa aa aa ud pd ad qa gd dd dd dd id kg ig ig ig ig ig ig aa aa aa aa aa aa 
+		va wa pd pd pd pd vc tc qa uc pd qd aa aa aa aa aa aa ud pd yc zc qa qa qa qa gd jg ig ig ig ig ig aa aa aa aa aa aa aa 
+		ta ua pd pd pd pd yc rc rc sc pd sd xd rd aa aa aa aa ud pd pd yc rc zc qa qa hg ig ig ig ig ig ig aa aa aa aa aa aa aa 
+		ba ba ba ba ba xa ab va ba ba ba ba ba qd aa aa aa aa td wd vd pd pd ad qa qa hg ig ig ig ig ig aa aa aa aa aa aa aa aa 
+		ia la na ba ba ba ta ua ba ba ba ba ba qd aa aa aa aa aa aa ud pd vc tc qa qa hg ig ig ig ig ig aa aa aa aa aa aa aa aa 
+		ea ea ja na ba ba la ia la na ba ba ba sd xd xd xd xd xd xd od vc tc bd ed kd eg lg ig ig ig aa aa aa aa aa aa aa aa aa 
+		ea ea ea ja ia ha ea ea ea ja na ba ba gb gb gb gb gb pd pd vc tc bd cd md ld kd hg ig ig aa aa aa aa aa aa aa aa aa aa 
+		ea ea ea ea ea ea ea ea ea ea ja na ba ib ib ib ib ib pd pd ad qa jd md md md nd hg ig ig aa aa aa aa gd aa aa aa aa aa 
+		da ga ea ea ea ea ea ea ea ea ea ja na cb hb hb hb hb pd pd yc zc gd id md hd fd hg ig aa aa aa aa aa aa aa aa aa aa aa 
+		ba oa ea ea ea ea ea ea ea ea fa ka ba jb kb lb pd pd pd pd pd yc zc gd dd fd qa hg ig aa aa aa aa aa aa aa aa aa aa aa 
+		ba ha ea ea ea ea ea ea ea ea ma ba ba mb sb ob qb lb pd pd pd pd yc zc qa qa qa eg fg wc aa aa aa aa aa aa aa aa aa aa 
+		ha ea ea ea ea ea ea fa da ka ba ba ba nb sb sb sb vb ba ba ba ba pd ad gg gg gg bd kd uc aa aa aa aa aa aa aa aa aa aa 
+		ga ea ea ea ea ea fa ba ba ba ba ba ba rb nb sb sb ob yf yf sf pd pd yc rc rc zc gd fd uc aa aa aa aa aa aa aa aa aa aa 
+		oa ea ea ea ea fa ba rb ba ba yb gc gc kc ac nb tb ub pb ie uf pd pd pd pd pd yc rc rc sc aa aa aa aa aa aa aa aa aa aa 
+		ca ka da ga ea ma ba ba ba ba cc zb zb zb hc pd pd pd ie ie bg yf sf pd pd pd pd aa aa aa aa aa aa aa aa aa aa aa aa aa 
+		ba ba ba ca ka ba rb ba ba ba cc zb zb zb hc pd pd ie ie ie ie ie bg yf sf pd pd pd aa aa aa aa aa aa aa aa aa aa aa aa 
+		ba ba ba ba ba ba rb ba ba yb ic zb zb zb dc pd pd ie ie ie ie ie ie ie uf pd pd aa aa aa aa aa aa aa aa aa aa aa aa aa 
+		ba ba ba aa aa aa aa aa ba jc yd zd bc fc ec pd ie ie ie ie ie ie ie ie uf pd pd rf yf yf yf sf pd aa aa aa aa aa aa aa 
+		aa aa aa ff ff ff ff ba ba ba cc dc ba ba ba ba ie ie ie ie ie ie ie ie bg sf pd tf cg cg cg uf pd aa aa aa aa aa aa aa 
+		aa aa aa cf ef ff ff ff ba ba cc hc ba ba ba ba ie ie ie ie ie ie ie ie ie bg sf wf vf cg zf xf pd aa aa aa aa aa aa aa 
+		aa aa aa cf df ff ff ff ba yb ic hc ba ba ba ba ie ie ie ie ie ie ie ie ie ie bg sf wf ag xf pd pd aa aa aa aa aa aa aa 
+		aa aa aa ke df ff ff ba ba cc zd ec ba ba ba ba ie ie ie ie ie ie ie ie ie ie ie bg yf yf yf sf pd aa aa aa aa aa aa aa 
+		aa aa ke ke af ef ff ba ba be dc ba ia la ia la ie ie ie ie ie ie ie ie ie ie ie ie ie ie ie uf pd aa aa aa aa aa aa aa 
+		aa aa ke ke ke df ff kc de ic ce ba oa ea ea ea ea aa ie ie ie ie ie ie ie ie ie ie ie ie ie uf pd aa aa aa aa aa aa aa 
+		cf ke ke ke ke af bf hf zb zb zb ce ha ea ea ea fe fe ie ie ie ie ie ie ie ie ie ie ie ie ie uf pd aa aa aa aa aa aa aa 
+		ke ke ke ke ke cf cf je me me me zb ee ea fe fe fe fe fe ie ie ie ie ie ie ie ie ie ie ie ie uf aa aa aa aa aa aa aa aa 
+		ke ke ke ke ke ke cf je me me me ge ea fe fe fe fe fe fe ie ie ie ie ie ie ie ie ie ie ie ie uf aa aa aa aa aa aa aa aa 
+		ke ke ke ke ke ke ke if gf me pe te se qe fe fe fe fe fe ie ie ie ie ie ie ie ie ie ie ie zf xf aa aa aa aa aa aa aa aa 
+		ke ke ke ke ke ke ye ue oe ne ue ue ue te fe fe fe fe fe fe ie ie ie ie ie ie ie ie ie ie uf aa aa aa aa aa aa aa aa aa 
+		ke ke ke ke ke ke we ue ue he he ue ue he te re se re se re ie ie ie ie ie ie ie ie ie ie uf aa aa aa aa aa aa aa aa aa 
+		ke ke ke ke ke ye ue ue ue he he he he he he he he he he he aa ie ie ie ie ie ie ie ie ie uf aa aa aa aa aa aa aa aa aa 
+		ke ke ke ke ke xe ue ue ue he he he he he he he he he he he he ie ie ie ie ie ie zf ag ag xf aa aa aa aa aa aa aa aa aa 
+		ke ke ke ke ke ve ue ue he he he he he he he he he he he he ie ie ie ie ie zf ag xf aa aa aa aa aa aa aa aa aa aa aa aa 
+		ke ke ke ke cf we ue he he he he he he he he he he he he he he ie ie ie ie uf aa aa aa aa aa aa aa aa aa aa aa aa aa aa 
+		ke ke ke ye ze ue ue he he he he he he he he he he he he he he ie ie ie ie uf aa aa aa aa aa aa aa aa aa aa aa aa aa aa 
+	</tiles>
+	<objtype code="aa" file="data/physicals/hooks/acid-smoke.xml"/>
+	<objtype code="ba" file="data/physicals/entangler.xml"/>
+	<objtype code="ca" file="data/physicals/early.xml"/>
+	<objtype code="ea" file="data/physicals/simple-wall.xml"/>
+	<objtype code="da" file="data/physicals/hooks/volcano-hook.xml"/>
+	<objtype code="fa" file="data/physicals/walls/invisible-wall.xml"/>
+	<objtype code="ga" file="data/physicals/chityniak.xml"/>
+	<objtype code="ha" file="data/physicals/crawler-kamikadze.xml"/>
+	<objtype code="ia" file="data/physicals/cow.xml"/>
+	<objtype code="ja" file="data/physicals/cockroach.xml"/>
+	<objtype code="ka" file="data/physicals/skeleton-mage.xml"/>
+	<objtype code="la" file="data/physicals/skeleton-warrior.xml"/>
+	<objtype code="ma" file="data/physicals/rat-green.xml"/>
+	<objtype code="na" file="data/physicals/rat.xml"/>
+	<objtype code="oa" file="data/physicals/chityniak-plwacz.xml"/>
+	<objtype code="pa" file="data/physicals/surger.xml"/>
+	<objtype code="qa" file="data/physicals/scarab.xml"/>
+	<objtype code="ra" file="data/physicals/sacred-cow.xml"/>
+	<objtype code="sa" file="data/physicals/shaggy.xml"/>
+	<objtype code="ta" file="data/physicals/warlock.xml"/>
+	<objtype code="ua" file="data/physicals/redhorny.xml"/>
+	<objtype code="va" file="data/physicals/redbaldy.xml"/>
+	<objtype code="wa" file="data/physicals/carrot.xml"/>
+	<objtype code="xa" file="data/physicals/blind-pincer.xml"/>
+	<objtype code="ya" file="data/physicals/earwigle.xml"/>
+	<objtype code="za" file="data/physicals/eyebrain.xml"/>
+	<objtype code="ab" file="data/physicals/crawler.xml"/>
+	<objtype code="bb" file="data/physicals/lairs/pincer-lair.xml"/>
+	<objtype code="cb" file="data/physicals/lairs/crawler-kamikadze-lair.xml"/>
+	<objtype code="db" file="data/physicals/lairs/surger-entangler-lair.xml"/>
+	<objtype code="eb" file="data/physicals/lairs/baldy-horny-lair.xml"/>
+	<objtype code="fb" file="data/physicals/lairs/fire-elemental-lair.xml"/>
+	<objtype code="gb" file="data/physicals/lairs/cockroach-lair.xml"/>
+	<objtype code="hb" file="data/physicals/lairs/wolfbeast-lair.xml"/>
+	<objtype code="ib" file="data/physicals/lairs/troll-lair.xml"/>
+	<objtype code="jb" file="data/physicals/lairs/early-lair.xml"/>
+	<obj code="bb" x="10.2969" y="34.2656" rot="-22"/>
+	<obj code="cb" x="16.8125" y="30.8438" rot="15"/>
+	<obj code="bb" x="19.9375" y="34.5313"/>
+	<obj code="eb" x="0.46875" y="25.7188" rot="29"/>
+	<obj code="fb" x="24.4063" y="7.53125"/>
+	<obj code="eb" x="3.8125" y="34.2813" rot="-45"/>
+	<obj code="ib" x="8.5" y="7.375"/>
+	<obj code="jb" x="6.98438" y="8.57813" rot="87"/>
+	<sprite file="data/maps/doodahs/desert/cactus2.png" x="5.75" y="5.78125" z="background" scale="0.8625" rot="38.25"/>
+	<sprite file="data/maps/doodahs/desert/desert_foliage1.png" x="12.1406" y="9.20313" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/desert_foliage3.png" x="0.671875" y="10.8125" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/desert_foliage3.png" x="10.0156" y="11.2656" z="background" scale="0.7625" rot="38.25"/>
+	<sprite file="data/maps/doodahs/desert/desert_foliage1.png" x="6.0625" y="13.2188" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/leaf.png" x="6.125" y="9.20313" z="background" scale="0.9375" rot="13.5"/>
+	<sprite file="data/maps/doodahs/desert/leaf.png" x="6.42188" y="8.9375" z="background" scale="0.9375" rot="-40.5"/>
+	<sprite file="data/maps/doodahs/desert/skeleton.png" x="6.78125" y="9.1875" z="background" scale="0.6625" rot="-137.25"/>
+	<sprite file="data/maps/doodahs/desert/green_bottle.png" x="7.10938" y="9.48438" z="background" scale="0.825" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/broken_wheel_2.png" x="7.32813" y="8.76563" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="7.01563" y="12.2813" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="7.0625" y="12.1406" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="7.34375" y="11.7656" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="7.79688" y="11.875" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="8.10938" y="12.0469" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="7.09375" y="11.8281" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="7.5" y="12.0313" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="7.90625" y="12.0625" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="8.125" y="12.25" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="7.17188" y="12.0625" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="6.82813" y="11.9375" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="7.35938" y="12.1719" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="7.01563" y="12.2969" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="6.54688" y="12.1406" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="6.875" y="12.1406" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass2.png" x="6.84375" y="12.4063" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass1.png" x="7.625" y="12.0469" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass1.png" x="7.10938" y="11.9688" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass1.png" x="7.5" y="12.0469" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass1.png" x="7" y="12.4063" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass1.png" x="7.64063" y="12.2969" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass1.png" x="7.3125" y="12.75" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass1.png" x="8.10938" y="12.3125" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass1.png" x="7.67188" y="12.4531" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass1.png" x="7.15625" y="12.4531" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass1.png" x="6.85938" y="12.6094" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass1.png" x="7.73438" y="12.4688" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass1.png" x="8.14063" y="12.2813" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/grass1.png" x="7.17188" y="12.6094" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/desert_rock5.png" x="5.29688" y="15.0625" z="background" scale="0.7125" rot="-117"/>
+	<sprite file="data/maps/doodahs/desert/desert_rock5.png" x="1.26563" y="6.0625" z="background" scale="0.475001" rot="-47.25"/>
+	<sprite file="data/maps/doodahs/bonefire_five.png" x="8.98438" y="11.2969" z="background" scale="0.775" rot="-38.25"/>
+	<sprite file="data/maps/doodahs/foliage3.png" x="8.82813" y="17.1094" z="background" scale="0.925" rot="29.25"/>
+	<sprite file="data/maps/doodahs/foliage8.png" x="7.57813" y="16.7969" z="background" scale="0.925" rot="18"/>
+	<sprite file="data/maps/doodahs/foliage8.png" x="3.125" y="17.0156" z="background" scale="0.675" rot="-99"/>
+	<sprite file="data/maps/doodahs/foliage9.png" x="5.57813" y="16.9531" z="background" scale="0.7625" rot="11.25"/>
+	<sprite file="data/maps/doodahs/tree-strange.png" x="12.4688" y="15.4063" z="background" scale="0.7125" rot="33.75"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="7.6875" y="17.5156" z="background" scale="0.8875" rot="-27"/>
+	<sprite file="data/maps/doodahs/tree6.png" x="5.76563" y="17.5" z="background" scale="0.7625" rot="38.25"/>
+	<sprite file="data/maps/doodahs/tree6.png" x="3.04688" y="17.75" z="background" scale="0.7875" rot="-3.35276e-008"/>
+	<sprite file="data/maps/doodahs/tree6.png" x="1.54688" y="18.5313" z="background" scale="0.6" rot="49.5"/>
+	<sprite file="data/maps/doodahs/tree7.png" x="2.9375" y="20.2656" z="background" scale="1" rot="-45"/>
+	<sprite file="data/maps/doodahs/tree4.png" x="0.375" y="18.7344" z="background" scale="0.9125" rot="-58.5"/>
+	<sprite file="data/maps/doodahs/tree7.png" x="2.71875" y="18.8594" z="background" scale="0.875" rot="49.5"/>
+	<sprite file="data/maps/doodahs/tree4.png" x="6.70313" y="17.375" z="background" scale="0.8625" rot="-47.25"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="4.14063" y="17.6094" z="background" scale="0.9375" rot="-40.5"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="4.73438" y="18.0625" z="background" scale="0.7375" rot="-20.25"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="4.8125" y="17.1094" z="background" scale="0.5625" rot="-105.75"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="2.09375" y="18.0469" z="background" scale="0.5625" rot="-148.5"/>
+	<sprite file="data/maps/doodahs/tree4.png" x="0.9375" y="18.0625" z="background" scale="0.8125" rot="0"/>
+	<sprite file="data/maps/doodahs/tree6.png" x="1.21875" y="19.8125" z="background" scale="0.7625" rot="-45"/>
+	<sprite file="data/maps/doodahs/tree6.png" x="1.125" y="21.9688" z="background" scale="0.8375" rot="13.5"/>
+	<sprite file="data/maps/doodahs/tree6.png" x="1.67188" y="23.3281" z="background" scale="0.675" rot="-24.75"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="2.28125" y="22.25" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="1.57813" y="17.6875" z="background" scale="0.8375" rot="-90"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="2.07813" y="19.4688" z="background" scale="0.725" rot="-15.75"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="0.46875" y="20.2656" z="background" scale="0.825" rot="11.25"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="3.3125" y="21.25" z="background" scale="0.825" rot="11.25"/>
+	<sprite file="data/maps/doodahs/tree6.png" x="1.57813" y="20.7656" z="background" scale="0.8" rot="-45"/>
+	<sprite file="data/maps/doodahs/tree7.png" x="0.796875" y="24.1563" z="background" scale="0.95" rot="51.75"/>
+	<sprite file="data/maps/doodahs/tree7.png" x="0.3125" y="22.6563" z="background" scale="0.6" rot="4.5"/>
+	<sprite file="data/maps/doodahs/tree7.png" x="4.25" y="19.1875" z="background" scale="0.825" rot="63"/>
+	<sprite file="data/maps/doodahs/tree7.png" x="0.3125" y="16.6719" z="background" scale="0.825" rot="49.5"/>
+	<sprite file="data/maps/doodahs/tree7.png" x="18.5469" y="0.515625" z="background" scale="0.825" rot="49.5"/>
+	<sprite file="data/maps/doodahs/palmtree6.png" x="16.6406" y="13.6719" z="background" scale="0.95" rot="-36"/>
+	<sprite file="data/maps/doodahs/ship_two.png" x="15.2188" y="9.26563" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/tree3.png" x="13.4688" y="6" z="background" scale="0.9" rot="27"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="15.3438" y="5.95313" z="background" scale="0.9375" rot="-18"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="16.375" y="6.3125" z="background" scale="0.8125" rot="76.5"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="18.125" y="6.75" z="background" scale="0.75" rot="11.25"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="17.5938" y="6.23438" z="background" scale="0.75" rot="-20.25"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="17.2031" y="5.60938" z="background" scale="0.9125" rot="58.5"/>
+	<sprite file="data/maps/doodahs/tree5.png" x="13.7188" y="9.54688" z="background" scale="0.9125" rot="58.5"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="18.7031" y="13.4063" z="background" scale="1" rot="-29.25"/>
+	<sprite file="data/maps/doodahs/tree4.png" x="18.4219" y="12.0781" z="background" scale="0.9125" rot="31.5"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="18.0469" y="10.9688" z="background" scale="0.875" rot="-33.75"/>
+	<sprite file="data/maps/doodahs/tree7.png" x="18.2188" y="9.4375" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/tree7.png" x="18.25" y="5.35938" z="background" scale="0.8375" rot="-38.25"/>
+	<sprite file="data/maps/doodahs/tree7.png" x="18.8594" y="2.28125" z="background" scale="0.8375" rot="-20.25"/>
+	<sprite file="data/maps/doodahs/tree1.png" x="19.9844" y="3.71875" z="background" scale="0.9" rot="40.5"/>
+	<sprite file="data/maps/doodahs/palmtree6.png" x="17.3125" y="10.3594" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/palmtree2.png" x="19.2188" y="3.17188" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="20.0313" y="5.0625" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="19.3125" y="5.5625" z="background" scale="0.9125" rot="31.5"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="19.125" y="4.67188" z="background" scale="0.9125" rot="6.75"/>
+	<sprite file="data/maps/doodahs/tree6.png" x="19.5313" y="5.04688" z="background" scale="0.8875" rot="-27"/>
+	<sprite file="data/maps/doodahs/tree6.png" x="17.5781" y="1.65625" z="background" scale="0.7875" rot="-56.25"/>
+	<sprite file="data/maps/doodahs/deadtree2.png" x="21.2656" y="8.64063" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/deadtree3.png" x="21.5781" y="5.90625" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/deadtree2.png" x="27.0938" y="9.39063" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/foliage9.png" x="11.9219" y="2.92188" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/foliage9.png" x="4.21875" y="1.39063" z="background" scale="0.9" rot="-31.5"/>
+	<sprite file="data/maps/doodahs/foliage7.png" x="12.5469" y="0.34375" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="11.3594" y="0.40625" z="background" scale="1" rot="-29.25"/>
+	<sprite file="data/maps/doodahs/foliage5.png" x="12.0469" y="0.578125" z="background" scale="0.925" rot="-9"/>
+	<sprite file="data/maps/doodahs/foliage4.png" x="11.9375" y="0.234375" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/boulder2.png" x="17.6719" y="14.4531" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rock7.png" x="16.7344" y="15.0469" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka1.png" x="17.0781" y="15.5156" z="background" scale="0.8625" rot="29.25"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="16.3281" y="16.9688" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka8.png" x="16.2188" y="18.6406" z="background" scale="1" rot="-24.75"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="15.7656" y="19.6094" z="background" scale="1" rot="33.75"/>
+	<sprite file="data/maps/doodahs/boulders/rocka8.png" x="15.8906" y="21.0469" z="background" scale="1" rot="27"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="16.1094" y="22.0313" z="background" scale="0.8625" rot="-27"/>
+	<sprite file="data/maps/doodahs/boulders/rocka4.png" x="16.75" y="22.875" z="background" scale="0.8625" rot="31.5"/>
+	<sprite file="data/maps/doodahs/boulders/rocka4.png" x="17.2813" y="16.4063" z="background" scale="0.8625" rot="31.5"/>
+	<sprite file="data/maps/doodahs/boulders/rocka5.png" x="15.375" y="18.5156" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka5.png" x="16.7031" y="20.875" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rock3.png" x="16.5938" y="23.9219" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rock6.png" x="16.9063" y="24.2344" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rock7.png" x="16" y="22.8906" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rock4.png" x="17.1406" y="23.7344" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rock6.png" x="17.1719" y="24.0313" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka2.png" x="17.4063" y="24.3594" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka2.png" x="17.8906" y="23.2656" z="background" scale="1.0875" rot="-45"/>
+	<sprite file="data/maps/doodahs/boulders/rocka2.png" x="16.75" y="18.7656" z="background" scale="0.8125" rot="4.5"/>
+	<sprite file="data/maps/doodahs/boulders/rocka5.png" x="17.0469" y="25.2969" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka6.png" x="18.1563" y="26.0625" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka8.png" x="18.6719" y="26.8906" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka5.png" x="19.1563" y="28.0156" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka3.png" x="19.3125" y="27.0938" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka3.png" x="18.7344" y="25.1406" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka4.png" x="20.25" y="28.875" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="19.8125" y="29.8438" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka5.png" x="16.5" y="29.9844" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rock8.png" x="22.4844" y="25.25" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rock8.png" x="14.4219" y="21.4219" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rock6.png" x="19.6875" y="18.8125" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rock3.png" x="20" y="30.8438" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka5.png" x="19.6875" y="32.3906" z="background" scale="0.7375" rot="-105.75"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="21.3438" y="34.6875" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka8.png" x="21.5" y="33.5313" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka5.png" x="19.8125" y="33.4688" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka5.png" x="20.9375" y="31.4219" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka1.png" x="19.9531" y="31.6406" z="background" scale="0.7" rot="-54"/>
+	<sprite file="data/maps/doodahs/boulders/rocka1.png" x="21.0156" y="33.2813" z="background" scale="0.725" rot="27"/>
+	<sprite file="data/maps/doodahs/boulders/rocka2.png" x="20.8438" y="33.7031" z="background" scale="0.7125" rot="85.5"/>
+	<sprite file="data/maps/doodahs/boulders/boulder1.png" x="20.9688" y="30.3281" z="background" scale="0.6375" rot="-141.75"/>
+	<sprite file="data/maps/doodahs/boulders/rock7.png" x="21.4688" y="30.3438" z="background" scale="1" rot="38.25"/>
+	<sprite file="data/maps/doodahs/beast_skeleton.png" x="12.3125" y="23.7813" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/desert/cactus2.png" x="15.9531" y="24.75" z="background" scale="0.6875" rot="45"/>
+	<sprite file="data/maps/doodahs/palmtree6.png" x="6.98438" y="24.3281" z="background" scale="1" rot="-20.25"/>
+	<sprite file="data/maps/doodahs/palmtree4.png" x="6.96875" y="23.6875" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/oasis.png" x="6.85938" y="32.3594" z="background" scale="0.85" rot="2.25"/>
+	<sprite file="data/maps/doodahs/palmtree5.png" x="7.9375" y="31" z="background" scale="0.7" rot="316"/>
+	<sprite file="data/maps/doodahs/palmtree5.png" x="3.73438" y="31.2344" z="background" scale="0.7" rot="135"/>
+	<sprite file="data/maps/doodahs/palmtree2.png" x="6.25" y="34.0469" z="background" scale="0.7" rot="55"/>
+	<sprite file="data/maps/doodahs/palmtree6.png" x="10.0625" y="32.2656" z="background" scale="0.7" rot="244"/>
+	<sprite file="data/maps/doodahs/palmtree2.png" x="9.70313" y="32.875" z="background" scale="0.7" rot="291"/>
+	<sprite file="data/maps/doodahs/palmtree2.png" x="10.5313" y="32.7813" z="background" scale="0.7" rot="22"/>
+	<sprite file="data/maps/doodahs/deadtree3.png" x="8.03125" y="27.4531" z="background" scale="0.7" rot="61"/>
+	<sprite file="data/maps/doodahs/deadtree2.png" x="7.92188" y="27.8125" z="background" scale="0.7" rot="266"/>
+	<sprite file="data/maps/doodahs/deadtree2.png" x="7.375" y="27.875" z="background" scale="0.7" rot="-23.75"/>
+	<sprite file="data/maps/doodahs/deadtree2.png" x="7.29688" y="27.5" z="background" scale="0.7" rot="197"/>
+	<sprite file="data/maps/doodahs/deadtree3.png" x="11.7813" y="24.5781" z="background" scale="0.8875" rot="126.5"/>
+	<sprite file="data/maps/doodahs/boulders/rocka4.png" x="18.9531" y="23.4844" z="background" scale="1" rot="0"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="20.5156" y="23.4219" z="background" scale="0.7" rot="160"/>
+	<sprite file="data/maps/doodahs/boulders/rocka6.png" x="21.9063" y="23.8438" z="background" scale="0.7" rot="326"/>
+	<sprite file="data/maps/doodahs/boulders/rocka8.png" x="22.0469" y="22.875" z="background" scale="0.7" rot="249"/>
+	<sprite file="data/maps/doodahs/boulders/rocka8.png" x="21.2344" y="23.3906" z="background" scale="0.7" rot="52"/>
+	<sprite file="data/maps/doodahs/boulders/rocka3.png" x="19.8906" y="23.4219" z="background" scale="0.7" rot="331"/>
+	<sprite file="data/maps/doodahs/boulders/rocka5.png" x="20.8438" y="24.0469" z="background" scale="0.7" rot="166"/>
+	<sprite file="data/maps/doodahs/boulders/rocka4.png" x="21.5781" y="23.0781" z="background" scale="0.7" rot="95"/>
+	<sprite file="data/maps/doodahs/boulders/rocka2.png" x="19.5469" y="22.4531" z="background" scale="0.7" rot="159"/>
+	<sprite file="data/maps/doodahs/boulders/rocka8.png" x="19.5781" y="24" z="background" scale="0.7" rot="8"/>
+	<sprite file="data/maps/doodahs/boulders/rocka3.png" x="20.1563" y="24.1563" z="background" scale="0.7" rot="268"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="23.75" y="22.7969" z="background" scale="0.7" rot="266"/>
+	<sprite file="data/maps/doodahs/boulders/rocka8.png" x="20.2188" y="26.0625" z="background" scale="0.7" rot="224"/>
+	<sprite file="data/maps/doodahs/boulders/rocka4.png" x="20.5938" y="24.8438" z="background" scale="0.7" rot="299"/>
+	<sprite file="data/maps/doodahs/boulders/rocka4.png" x="17.9219" y="22.0469" z="background" scale="0.7" rot="6"/>
+	<sprite file="data/maps/doodahs/boulders/rocka3.png" x="19.625" y="25.0625" z="background" scale="0.7" rot="240"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="22.3906" y="21.7344" z="background" scale="0.7" rot="303"/>
+	<sprite file="data/maps/doodahs/boulders/rocka2.png" x="22.9219" y="22.6875" z="background" scale="0.7" rot="235"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="22.5" y="24.25" z="background" scale="0.7" rot="37"/>
+	<sprite file="data/maps/doodahs/boulders/rocka3.png" x="22.8906" y="25.4375" z="background" scale="0.7" rot="252"/>
+	<sprite file="data/maps/doodahs/boulders/rocka3.png" x="23.5313" y="25.0469" z="background" scale="0.7" rot="176"/>
+	<sprite file="data/maps/doodahs/boulders/rocka1.png" x="20.7344" y="27" z="background" scale="0.7" rot="38"/>
+	<sprite file="data/maps/doodahs/boulders/rocka1.png" x="16.3281" y="25.8438" z="background" scale="0.7" rot="220"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="17.1094" y="26.75" z="background" scale="0.7" rot="72"/>
+	<sprite file="data/maps/doodahs/boulders/rocka4.png" x="17.7031" y="27.9063" z="background" scale="0.7" rot="299"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="17.0781" y="26.1406" z="background" scale="0.7" rot="131"/>
+	<sprite file="data/maps/doodahs/boulders/rocka2.png" x="18.0469" y="27.2031" z="background" scale="0.7" rot="1"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="15.2344" y="25.4375" z="background" scale="0.7" rot="268"/>
+	<sprite file="data/maps/doodahs/boulders/rocka8.png" x="16.0781" y="25.5156" z="background" scale="0.7" rot="94"/>
+	<sprite file="data/maps/doodahs/boulders/rocka4.png" x="16.6094" y="23.8125" z="background" scale="0.7" rot="306"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="16.0313" y="23.1875" z="background" scale="0.7" rot="267"/>
+	<sprite file="data/maps/doodahs/boulders/rocka1.png" x="15.2813" y="23.2656" z="background" scale="0.7" rot="87"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="17.6563" y="21.2656" z="background" scale="0.7" rot="31"/>
+	<sprite file="data/maps/doodahs/boulders/rocka7.png" x="19.75" y="21.5156" z="background" scale="0.7" rot="65"/>
+</map>

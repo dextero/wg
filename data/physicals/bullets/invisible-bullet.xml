@@ -1,0 +1,6 @@
+<root type="bullet">
+  <scale min="0.2" max="0.4" />
+  <radius min="0.1" max="0.2" />
+ 
+  <destroyEffect name="explosion" />
+</root>

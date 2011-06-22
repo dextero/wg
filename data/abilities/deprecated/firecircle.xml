@@ -1,0 +1,110 @@
+<root type="ability" class="self">
+
+  <name>$ABI_FIRE_FIRECIRCLE</name>
+  <trigger></trigger>
+  <icon>data/abilities/fire/fcircle-0.png</icon>
+  <unavailable-icon>data/abilities/fire/fcircle-1.png</unavailable-icon>
+  <description>$ABI_FIRE_FIRECIRCLE_DESC</description>
+
+  <effect type="list">
+  	<effect type="graphical-effect">
+  	  <time value="0.8" />
+      <name value="bullet-explosion" />
+  	</effect>
+    <effect type="graphical-effect">
+      <name value="fire-circle-shockwave" />
+      <time value="0.4" />
+    </effect>
+	<effect type="sound">
+		<name value="data/sounds/Lugaro/break.ogg" />
+	</effect>
+    <effect type="area">
+      <area calc="0.73 + 0.073 * spellrange"  />
+      <filter value="hostiles,obstacle" />
+      <effect type="list">
+        <effect type="damage">
+			<amount calc="20.0 + (10.0*lvl)" />
+            <damage-type value="fire"/>
+        </effect>
+        <effect type="knockback">
+          <amount calc="2.0*lvl"/>
+        </effect>
+		<effect type="chance">
+			<chance calc="0.5 + 0.1 * lvl + 0.1 * ignite"/>
+			<effect type="timed">
+			<time calc="20 / lvl"/>
+				<effect type="damage">
+					<amount value="2 * lvl"/>
+					<damage-type value="fire"/>
+				</effect>
+			</effect>
+		</effect>
+
+        <effect type="graphical-effect">
+			<time value="1.5" />
+			<name value="flames" />
+        </effect>
+      </effect>
+    </effect>
+    <effect type="delayed" >
+      <time value="0.125" />
+      <effect type="area">
+        <area calc="1.3 + 0.13 * spellrange" />
+        <filter value="hostiles,obstacle" />
+        <effect type="list">
+          <effect type="damage">
+            <amount calc="10.0 + (5.0*lvl)"/>
+            <damage-type value="fire"/>
+          </effect>
+          <effect type="knockback">
+            <amount value="8.0" linear-gain="0.0"/>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="delayed" >
+      <time value="0.250" />
+      <effect type="area">
+        <area calc="1.95 + 0.195 * spellrange" />
+        <filter value="hostiles,obstacle" />
+        <effect type="list">
+          <effect type="damage">
+            <amount calc="5.0 + (2.5*lvl)" />
+            <damage-type value="fire"/>
+          </effect>
+          <effect type="knockback">
+            <amount value="7.0" linear-gain="0.0"/>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="delayed" >
+      <time value="0.375" />
+      <effect type="area">
+        <area calc="2.6 + 0.26 * spellrange" />
+        <filter value="hostiles,obstacle" />
+        <effect type="list">
+          <effect type="damage">
+            <amount calc="2.5 * (1.25*lvl)" />
+            <damage-type value="fire"/>
+          </effect>
+          <effect type="knockback">
+            <amount value="4.5" linear-gain="0.0"/>
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+
+  </effect>
+
+  <cast-time-effect type="graphical-effect">
+      <name value="magic-circle-4"/>
+      <time value="0.35"/>
+  </cast-time-effect>
+
+  <manacost calc="(26.0 + 5.5*lvl) * (0.80^fm)" />
+  <casttime calc="0.22 + (0.18 / (castspeed + 1.0))" />
+  <delay calc="0.05 + (0.32 / (castspeed + 1))" />
+  <cooldown calc="0.70 + (0.90 / (castspeed + 1.0))" />
+
+</root>

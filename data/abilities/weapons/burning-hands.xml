@@ -1,0 +1,106 @@
+<root type="ability" class="self">
+
+  <name>Burning hands</name>
+  <description>
+A cone of searing flame shoots from your fingertips. Any creature in the area of the flames takes fire damage.
+
+Bonus for this spell depends:
+  extremely on choleric rune
+  mildly on melancholic rune
+  mildly on sanguine rune
+  not at all on phlegmatic rune
+  </description>
+  <icon>data/abilities/weapons/burning-hands-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/burning-hands-1.png</unavailable-icon>
+
+  <!-- power = 4x cho, 2x mel, 2x san, 0x phl -->
+  <power calc="0.2 * dot(4, choleric, 2, melancholic, 2, sanguine, 0, phlegmatic)"/>
+
+  <effect type="list">
+    <effect type="recastable">
+      <recast value="0.1"/>
+      <time value="8.0"/>
+      <effect type="list">
+        <effect type="sound">
+          <name value="data/sounds/Lugaro/firestart.ogg" />
+        </effect>
+        <effect type="bullet">
+          <emitter>
+            <extra-offset value="0.1"/>
+            <range value="12.0" />
+            <speed value="2.0" />
+            <acceleration value="-4.0" />
+            <ttl value="0.3" />
+            <count value="2" />
+            <width value="35" />
+            <speed-fuzziness value="0.15" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+            <flight-effect type="graphical-effect">
+              <name value="bullet-explosion-mini" />
+              <time value="0.3" />
+            </flight-effect>
+          </emitter>
+        </effect>
+        <effect type="bullet">
+          <emitter>
+            <extra-offset value="0.1"/>
+            <range value="12.0" />
+            <speed value="2.0" />
+            <acceleration value="-4.0" />
+            <ttl value="0.3" />
+            <count value="2" />
+            <width value="55" />
+            <speed-fuzziness value="0.15" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+            <flight-effect type="graphical-effect">
+              <name value="bullet-explosion-mini" />
+              <time value="0.3" />
+            </flight-effect>
+          </emitter>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="recastable">
+      <recast value="0.4"/>
+      <time value="8.0"/>
+      <effect type="retarget" tag="attack">
+        <target-chooser>
+          <filter value="hostiles,obstacle"/>
+          <range calc="1.0"/>
+          <angle value="75.0"/>
+          <count value="2"/>
+          <aim-at-ground value="0"/>
+        </target-chooser>
+        <effect type="list">
+          <effect type="knockback">
+            <amount calc="2.0" />
+          </effect>
+          <effect type="damage">
+            <damage-type value="fire"/>
+            <amount calc="8.0 * (1 + power) " />
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="delayed">
+      <time value="0.1" />
+      <effect type="jump">
+        <name value="attack"/>
+      </effect>
+    </effect>
+  </effect>	
+
+  <cast-time-effect type="graphical-effect">
+    <name value="magic-circle-3"/>
+    <time value="0.20"/>
+  </cast-time-effect>
+
+  <manacost calc="0.0" />
+  <casttime calc="0.20" />
+  <delay calc="0.05" />
+  <cooldown calc="0.05" />
+
+  <focus-mana-cost calc="10.0 * (1 + 0.66 * power)" />
+  <focus-max-duration value="8.0" />
+  
+</root>

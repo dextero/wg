@@ -1,0 +1,318 @@
+<root type="map-gen">  
+    <physicals>
+	<!-- przejrzane bronie: -->
+        <weapon file="data/abilities/weapons/firebolt.xml" minLevel="0" maxLevel="99" frequency="0.5" />
+
+        <weapon file="data/abilities/weapons/electron.xml" minLevel="0" maxLevel="99" frequency="1.0" />	
+        <weapon file="data/abilities/weapons/lightning.xml" minLevel="1" maxLevel="99" frequency="0.75" />
+        <weapon file="data/abilities/weapons/icearrow.xml" minLevel="1" maxLevel="99" />
+        <weapon file="data/abilities/weapons/sting.xml" minLevel="1" maxLevel="99" frequency="0.6" />
+        <weapon file="data/abilities/weapons/burning-hands.xml" minLevel="1" maxLevel="99" />
+        <weapon file="data/abilities/weapons/electrostatics.xml" minLevel="2" maxLevel="99" />
+        <weapon file="data/abilities/weapons/firearrow.xml" minLevel="2" maxLevel="99" />
+        <weapon file="data/abilities/weapons/magic-missile.xml" minLevel="2" maxLevel="99" />
+        <weapon file="data/abilities/weapons/blazing-feet.xml" minLevel="3" maxLevel="99" />
+        <weapon file="data/abilities/weapons/hibernation.xml" minLevel="3" maxLevel="99" />
+        <weapon file="data/abilities/weapons/poison-cloud.xml" minLevel="3" maxLevel="99" />
+        <weapon file="data/abilities/weapons/chain-lightning.xml" minLevel="3" maxLevel="99" />
+        <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="1.0" />
+        <weapon file="data/abilities/weapons/entangle.xml" minLevel="4" maxLevel="99" />
+        <weapon file="data/abilities/weapons/powerslash.xml" minLevel="4" maxLevel="99" />
+        <weapon file="data/abilities/weapons/gorgon-shards.xml" minLevel="4" maxLevel="99" />
+        <weapon file="data/abilities/weapons/firearrow-lvl2.xml" minLevel="5" maxLevel="99" />
+        <weapon file="data/abilities/weapons/meditation.xml" minLevel="5" maxLevel="99" />
+        <weapon file="data/abilities/weapons/firestream.xml" minLevel="5" maxLevel="99" />
+        <weapon file="data/abilities/weapons/haste.xml" minLevel="5" maxLevel="99" />
+        <weapon file="data/abilities/weapons/freezing-mine.xml" minLevel="5" maxLevel="99" />
+        <weapon file="data/abilities/weapons/freezing-blast.xml" minLevel="5" maxLevel="99" />
+        <weapon file="data/abilities/weapons/magic-missile-lvl2.xml" minLevel="6" maxLevel="99" frequency="0.5" />
+        <weapon file="data/abilities/weapons/resonator.xml" minLevel="6" maxLevel="99" />
+        <weapon file="data/abilities/weapons/firepits.xml" minLevel="6" maxLevel="99" />
+        <weapon file="data/abilities/weapons/firearrow-lvl3.xml" minLevel="7" maxLevel="99" />
+        <weapon file="data/abilities/weapons/forked-lightning.xml" minLevel="7" maxLevel="99" />
+        <weapon file="data/abilities/weapons/hellfire.xml" minLevel="7" maxLevel="99" />
+        <weapon file="data/abilities/weapons/electric-snare.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/weapons/acidspray.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/weapons/firewall.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/weapons/blades.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/weapons/transfusion.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/weapons/basher.xml" minLevel="9" maxLevel="99" />
+        <weapon file="data/abilities/weapons/ignite.xml" minLevel="9" maxLevel="99" />
+        <weapon file="data/abilities/weapons/icecircle.xml" minLevel="10" maxLevel="99" />
+        <weapon file="data/abilities/weapons/sparkrain.xml" minLevel="10" maxLevel="99" />
+        <weapon file="data/abilities/weapons/ball-lightning.xml" minLevel="10" maxLevel="99" />
+        <weapon file="data/abilities/weapons/acidcircus.xml" minLevel="15" maxLevel="99" />
+        <weapon file="data/abilities/weapons/blizzard.xml" minLevel="15" maxLevel="99" />
+        <weapon file="data/abilities/weapons/devolution.xml" minLevel="15" maxLevel="99" />
+        <weapon file="data/abilities/weapons/dragonbreath.xml" minLevel="15" maxLevel="99" />
+        <weapon file="data/abilities/weapons/exploding-corpse.xml" minLevel="15" maxLevel="99" />
+        <weapon file="data/abilities/weapons/frostnova.xml" minLevel="16" maxLevel="99" />
+        <weapon file="data/abilities/weapons/fireburst.xml" minLevel="18" maxLevel="99" />
+        <weapon file="data/abilities/weapons/flaming-mantle.xml" minLevel="21" maxLevel="99" />
+        <weapon file="data/abilities/weapons/lazoor.xml" minLevel="21" maxLevel="99" />
+        <weapon file="data/abilities/weapons/lightning-storm.xml" minLevel="24" maxLevel="99" />
+	 
+ 	
+	<!-- inne -->
+	<!-- fajne pomysly na bronie, ktore byc moze warto by pozniej odswiezyc i dorzucic do gry
+        <weapon file="data/abilities/deprecated/armor.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/chant.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/charged-spell.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/curse.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/fireburst.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/healself.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/pestilence.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/sacrifice.xml" minLevel="8" maxLevel="99" />
+        <weapon file="data/abilities/deprecated/summon-healer-ghost.xml" minLevel="8" maxLevel="99" />
+    -->
+<!--
+    	<lair file="data/physicals/lairs/rat-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/baldy-horny-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/chit-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/chityniak-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/cockroach-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/crawler-kamikadze-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/early-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/fire-elemental-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/grim-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/mantis-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/ogre-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/pincer-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/sick-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/surger-entangler-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/troll-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/wolfbeast-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/bee-lair.xml" level="90" />
+        <lair file="data/physicals/lairs/shaggy-lair.xml" level="90" />
+-->
+
+        <monster file="data/physicals/monsters/defs/rat.xml" minLevel="1" maxLevel="3" />
+        <monster file="data/physicals/monsters/defs/bandit.xml" minLevel="1" maxLevel="1" frequency="0.3" />
+
+        <monster file="data/physicals/monsters/defs/rat.xml" minLevel="2" maxLevel="3" />
+        <monster file="data/physicals/monsters/defs/chitiniac.xml" minLevel="2" maxLevel="2" frequency="0.2" />
+        <monster file="data/physicals/monsters/defs/bandit.xml" minLevel="2" maxLevel="5" frequency="0.3" />
+        <monster file="data/physicals/monsters/defs/timberman.xml" minLevel="2" maxLevel="5" frequency="0.3" />
+
+        <monster file="data/physicals/monsters/defs/rat.xml" minLevel="3" maxLevel="4" />
+        <monster file="data/physicals/monsters/defs/rat-poisonous.xml" minLevel="3" maxLevel="5" />
+        <monster file="data/physicals/monsters/defs/chitiniac.xml" minLevel="3" maxLevel="5" frequency="0.6" />
+        <monster file="data/physicals/monsters/defs/gargant.xml" minLevel="3" maxLevel="5" frequency="0.1" />
+        <lair    file="data/physicals/lairs/rat-lair.xml" minLevel="3" maxLevel="5" />
+
+        <monster file="data/physicals/monsters/defs/chitiniac-acid.xml" minLevel="4" maxLevel="5" frequency="0.5" />
+        <lair    file="data/physicals/lairs/bandit-lair.xml" minLevel="4" maxLevel="5" frequency="0.4" />
+        <monster file="data/physicals/monsters/defs/bee.xml" minLevel="4" maxLevel="11" frequency="0.05" />
+
+        <lair    file="data/physicals/lairs/chitiniac-lair.xml" minLevel="5" maxLevel="5" />
+        <lair    file="data/physicals/lairs/bee-lair.xml" minLevel="5" maxLevel="11" frequency="0.1" />
+        <monster file="data/physicals/monsters/defs/crawler.xml" minLevel="5" maxLevel="7" frequency="0.1" />
+        <monster file="data/physicals/monsters/defs/hornet.xml" minLevel="5" maxLevel="7" frequency="0.05" />
+        <monster file="data/physicals/monsters/defs/kliver.xml" minLevel="5" maxLevel="20" frequency="0.09" />
+
+        <monster file="data/physicals/monsters/defs/gargant.xml" minLevel="6" maxLevel="9" />
+        <monster file="data/physicals/monsters/defs/gargant-lord.xml" minLevel="6" maxLevel="9" frequency="0.15" />
+        <monster file="data/physicals/monsters/defs/gargant-berserker.xml" minLevel="6" maxLevel="9" frequency="0.2" />
+        <lair    file="data/physicals/lairs/gargant-lair.xml" minLevel="6" maxLevel="9" />
+        <monster file="data/physicals/monsters/defs/chitiniac.xml" minLevel="6" maxLevel="8" frequency="0.6" />
+        <monster file="data/physicals/monsters/defs/chitiniac-acid.xml" minLevel="6" maxLevel="8" frequency="0.4" />
+        <lair    file="data/physicals/lairs/chitiniac-lair.xml" minLevel="6" maxLevel="8" frequency="0.3" />
+        <monster file="data/physicals/monsters/defs/troll.xml" minLevel="6" maxLevel="9" frequency="0.05" />
+        <monster file="data/physicals/monsters/defs/wolfbeast.xml" minLevel="6" maxLevel="8" frequency="0.1" />
+		
+        <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="7" maxLevel="12" frequency="0.03" />
+        <lair    file="data/physicals/lairs/hornet-lair.xml" minLevel="7" maxLevel="8" frequency="0.1" />
+        <monster file="data/physicals/monsters/defs/hornet.xml" minLevel="7" maxLevel="12" frequency="0.4" />
+
+        <monster file="data/physicals/monsters/defs/crawler.xml" minLevel="8" maxLevel="13" frequency="0.3" />
+        <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="7" maxLevel="12" frequency="0.05" />
+
+        <lair    file="data/physicals/lairs/hornet-lair.xml" minLevel="9" maxLevel="12" frequency="0.3" />
+        <lair    file="data/physicals/lairs/troll-lair.xml" minLevel="9" maxLevel="9" frequency="0.05" />
+        <lair    file="data/physicals/lairs/wolfbeast-lair.xml" minLevel="9" maxLevel="15" frequency="0.6" />
+        <monster file="data/physicals/monsters/defs/wolfbeast.xml" minLevel="9" maxLevel="15" frequency="0.4" />
+
+        <lair    file="data/physicals/lairs/gargant-lair.xml" minLevel="10" maxLevel="11" frequency="0.1" />
+        <monster file="data/physicals/monsters/defs/troll.xml" minLevel="10" maxLevel="12" frequency="0.25" />
+        <lair    file="data/physicals/lairs/troll-lair.xml" minLevel="10" maxLevel="12" frequency="0.2" />
+        <monster file="data/physicals/monsters/defs/gargant.xml" minLevel="10" maxLevel="12" frequency="0.15"/>
+        <monster file="data/physicals/monsters/defs/gargant-lord.xml" minLevel="10" maxLevel="12" frequency="0.05" />
+        <monster file="data/physicals/monsters/defs/gargant-berserker.xml" minLevel="10" maxLevel="12" frequency="0.05" />
+        <monster file="data/physicals/monsters/defs/ogrillion.xml" minLevel="10" maxLevel="12" frequency="0.2" />
+
+        <monster file="data/physicals/monsters/defs/ogre.xml" minLevel="11" maxLevel="12" frequency="0.2" />
+		
+        <lair    file="data/physicals/lairs/ogre-lair.xml" minLevel="12" maxLevel="18" />
+
+        <monster file="data/physicals/monsters/defs/ogrillion.xml" minLevel="13" maxLevel="18" />
+        <monster file="data/physicals/monsters/defs/ogre.xml" minLevel="13" maxLevel="18" />
+        <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="13" maxLevel="18" frequency="0.1" />
+        <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="13" maxLevel="99" frequency="0.06" />
+        <monster file="data/physicals/monsters/defs/troll.xml" minLevel="13" maxLevel="14" frequency="0.125" />
+        <monster file="data/physicals/monsters/defs/ugonoth.xml" minLevel="13" maxLevel="14" frequency="0.125" />
+
+        <monster file="data/physicals/monsters/defs/ugonoth.xml" minLevel="15" maxLevel="18" frequency="0.25" />
+        <lair    file="data/physicals/lairs/ugonoth-lair.xml" minLevel="16" maxLevel="18" frequency="0.1" />
+		
+		<!-- -->
+
+        <lair    file="data/physicals/lairs/chit-lair.xml" minLevel="94" maxLevel="3" />
+        <monster file="data/physicals/monsters/bee.xml" minLevel="94" maxLevel="6" />
+        <monster file="data/physicals/monsters/hornet.xml" minLevel="94" maxLevel="6" />
+
+        <lair    file="data/physicals/lairs/bee-lair.xml" minLevel="95" maxLevel="6" />
+
+        <monster file="data/physicals/monsters/wolfbeast.xml" minLevel="97" maxLevel="8" />
+        <lair    file="data/physicals/lairs/wolfbeast-lair.xml" minLevel="97" maxLevel="8" />
+
+        <monster file="data/physicals/monsters/troll.xml" minLevel="98" maxLevel="8" />
+        <lair    file="data/physicals/lairs/troll-lair.xml" minLevel="98" maxLevel="8" />
+
+        <monster file="data/physicals/monsters/baldy.xml" level="99" />
+        <monster file="data/physicals/monsters/bee.xml" level="99" />
+        <monster file="data/physicals/monsters/blind-pincer.xml" level="99" />
+        <monster file="data/physicals/monsters/easter-eggs/carrot.xml" level="99" />
+        <monster file="data/physicals/monsters/chityniak-plwacz.xml" level="99" />
+        <monster file="data/physicals/monsters/chityniak.xml" level="99" />
+        <monster file="data/physicals/monsters/cockroach.xml" level="99" />
+        <monster file="data/physicals/monsters/easter-eggs/cow.xml" level="99" />
+        <monster file="data/physicals/monsters/crawler-kamikadze.xml" level="99" />
+        <monster file="data/physicals/monsters/demon.xml" level="99" />
+        <monster file="data/physicals/monsters/early.xml" level="99" />
+        <monster file="data/physicals/monsters/earwigle.xml" level="99" />
+        <monster file="data/physicals/monsters/entangler.xml" level="99" />
+        <monster file="data/physicals/monsters/eyebrain.xml" level="99" />
+        <monster file="data/physicals/monsters/fire-elemental.xml" level="99" />
+        <monster file="data/physicals/monsters/flying-fish.xml" level="99" />
+        <monster file="data/physicals/monsters/frost-demon.xml" level="99" />
+        <monster file="data/physicals/monsters/healer-ghost.xml" level="99" />
+        <monster file="data/physicals/monsters/hornet.xml" level="99" />
+        <monster file="data/physicals/monsters/horny.xml" level="99" />
+        <monster file="data/physicals/monsters/lion-turret.xml" level="99" />
+        <monster file="data/physicals/monsters/mantis.xml" level="99" />
+        <monster file="data/physicals/monsters/minelayer.xml" level="99" />
+        <monster file="data/physicals/monsters/ogre-wife.xml" level="99" />
+        <monster file="data/physicals/monsters/ogre.xml" level="99" />
+        <monster file="data/physicals/monsters/rat-green.xml" level="99" />
+        <monster file="data/physicals/monsters/rat.xml" level="99" />
+        <monster file="data/physicals/monsters/redbaldy.xml" level="99" />
+        <monster file="data/physicals/monsters/redhorny.xml" level="99" />
+        <monster file="data/physicals/monsters/scarab.xml" level="99" />
+        <monster file="data/physicals/monsters/shaggy.xml" level="99" />
+        <monster file="data/physicals/monsters/skeleton-mage.xml" level="99" />
+        <monster file="data/physicals/monsters/skeleton-warrior.xml" level="99" />
+        <monster file="data/physicals/monsters/surger.xml" level="99" />
+        <monster file="data/physicals/monsters/timberman-with-axe.xml" level="99" />
+        <monster file="data/physicals/monsters/timberman-with-knife.xml" level="99" />
+        <monster file="data/physicals/monsters/troll.xml" level="99" />
+        <monster file="data/physicals/monsters/warlock.xml" level="99" />
+        <monster file="data/physicals/monsters/winged-pincer.xml" level="99" />
+        <monster file="data/physicals/monsters/wolfbeast.xml" level="99" />
+
+        <!-- hp -->
+        <loot file="data/loots/small-hp.xml" minLevel="0" maxLevel="99"/>
+        <loot file="data/loots/medium-hp.xml" minLevel="3" maxLevel="99"/>
+        <loot file="data/loots/big-hp.xml" minLevel="5" maxLevel="99"/>
+        <loot file="data/loots/regeneration.xml" minLevel="7" maxLevel="99"/>
+
+        <!-- xp -->
+        <loot file="data/loots/25xp.xml" minLevel="0" maxLevel="5"/>
+        <loot file="data/loots/64xp.xml" minLevel="3" maxLevel="8"/>
+        <loot file="data/loots/100xp.xml" minLevel="5" maxLevel="13"/>
+        <loot file="data/loots/200xp.xml" minLevel="8" maxLevel="18"/>
+        <loot file="data/loots/350xp.xml" minLevel="13" maxLevel="25"/>
+        <loot file="data/loots/600xp.xml" minLevel="18" maxLevel="99"/>
+        <loot file="data/loots/1k-xp.xml" minLevel="25" maxLevel="99"/>
+
+        <!-- inne -->
+        <loot file="data/loots/superspeed.xml" minLevel="1" frequency="0.5" maxLevel="99" />
+        <loot file="data/loots/medium-mana.xml" minLevel="1" maxLevel="99" />
+
+        <loot file="data/loots/weapon.xml" minLevel="1" maxLevel="99" />
+    </physicals>
+    <tile-masks>
+        <tile-mask file="data/maps/tile_mask/mask1.png" />
+        <tile-mask file="data/maps/tile_mask/mask2.png" />
+        <tile-mask file="data/maps/tile_mask/mask3.png" />
+        <tile-mask file="data/maps/tile_mask/mask4.png" />
+        <tile-mask file="data/maps/tile_mask/mask5.png" />
+    </tile-masks>
+
+    <set name="forest">
+        <tiles>
+            <tile image="data/maps/themes/test/rgrass.png" />
+            <tile image="data/maps/themes/test/rgrass_1.png" />
+            <tile image="data/maps/themes/test/rswamp.png" />
+        </tiles>
+        <doodahs>
+            <doodah file="data/maps/doodahs/tree1.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/foliage1.png" z="foreground" />
+            <doodah file="data/maps/doodahs/foliage2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/foliage3.png" z="foreground" />
+            <doodah file="data/maps/doodahs/foliage4.png" z="foreground" />
+            <doodah file="data/maps/doodahs/foliage5.png" z="foreground" />
+            <doodah file="data/maps/doodahs/foliage6.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree1.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree3.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree4.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree5.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree6.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree7.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree8.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree9.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree-strange.png" z="foreground" />
+            <doodah file="data/maps/doodahs/ancientblocks.png" z="background" />
+        </doodahs>
+    </set>
+    <set name="desert">
+        <tiles>
+            <tile image="data/maps/themes/sand/tilesets_sand_a_12.png" />
+            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_a7.png" />
+            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_a14.png" />
+            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_b14.png" />
+            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_c4.png" />
+            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_d4.png" />
+            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_c14.png" />
+            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_e7.png" />
+        </tiles>
+        <doodahs>
+            <doodah file="data/maps/doodahs/desert/desert_rock1.png" z="foreground" />
+            <doodah file="data/maps/doodahs/desert/desert_rock2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/desert/desert_rock3.png" z="foreground" />
+            <doodah file="data/maps/doodahs/desert/desert_rock4.png" z="foreground" />
+            <doodah file="data/maps/doodahs/desert/desert_rock5.png" z="foreground" />
+            <doodah file="data/maps/doodahs/desert/desert_foliage1.png" z="foreground" />
+            <doodah file="data/maps/doodahs/desert/desert_foliage2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/desert/desert_foliage3.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/boulder1.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/boulder2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rock1.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rock2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rock3.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rock4.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rock5.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rock6.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rock7.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rock8.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rocka1.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rocka2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rocka3.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rocka4.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rocka5.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rocka6.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rocka7.png" z="foreground" />
+            <doodah file="data/maps/doodahs/boulders/rocka8.png" z="foreground" />
+            <doodah file="data/maps/doodahs/deadtree1.png" z="foreground" />
+            <doodah file="data/maps/doodahs/deadtree2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/deadtree3.png" z="foreground" />
+            <doodah file="data/maps/doodahs/palmtree1.png" z="foreground" />
+            <doodah file="data/maps/doodahs/palmtree2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/palmtree3.png" z="foreground" />
+            <doodah file="data/maps/doodahs/palmtree4.png" z="foreground" />
+            <doodah file="data/maps/doodahs/palmtree5.png" z="foreground" />
+            <doodah file="data/maps/doodahs/palmtree6.png" z="foreground" />
+        </doodahs>
+    </set>
+</root>

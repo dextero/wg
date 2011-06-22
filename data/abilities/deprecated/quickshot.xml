@@ -1,0 +1,90 @@
+<root type="ability" class="self">
+
+  <name>$ABI_FIRE_QUICKSHOT</name>
+  <trigger></trigger>
+  <icon>data/abilities/fire/fquickshot-0.png</icon>
+  <unavailable-icon>data/abilities/fire/fquickshot-1.png</unavailable-icon>
+  <description>$ABI_FIRE_QUICKSHOT_DESC</description>
+
+  <effect type="recastable" >
+  	<recast value="0.05 - 0.005 * lvl" />
+    <time value="1.8" />
+    <effect type="bullet">
+      <emitter>
+      	<effect type="knockback">
+      	  <amount value="0.8" />
+      	</effect>
+        <explosion type="list">
+          <effect type="sound">
+            <name value="data/sounds/Lugaro/firestart.ogg" />
+          </effect>
+          <effect type="area">
+            <area calc="0.4 + 0.04 * spellrange" />
+            <filter value="hostiles,obstacle" />
+            <effect type="list">
+              <effect type="damage">
+                <amount calc="4.5 + (1.25*lvl)" />
+            	<damage-type value="fire"/>
+			  </effect>
+			  <effect type="knockback">
+				<amount calc="0.2"/>
+              </effect>
+            </effect>
+          </effect>
+          <effect type="graphical-effect">
+  	  		<time value="0.1" />
+      		<name value="tinyfireball" />
+  		  </effect>
+          <effect type="graphical-effect">
+  	  		<time value="0.8" />
+      		<name value="bullet-explosion-mini" />
+  		  </effect>
+				<effect type="chance">
+					<chance calc="ignite*0.1"/>
+					<effect type="inject">
+						<tree value="fire"/>
+						<code value="k"/>
+						<name value="igniting-magic"/>
+					</effect>
+				</effect>
+				<effect type="chance">
+					<chance calc="expl*0.1"/>
+					<effect type="inject">
+						<tree value="fire"/>
+						<code value="l"/>
+						<name value="explosive-magic"/>
+					</effect>
+				</effect>
+        </explosion>
+
+        <range calc="6.0 + (1.2 * spellrange)" />
+        <speed value="3.0" />
+        <ttl value="4.0" />
+        <count value="1" />
+        <width value="12" />
+        <acceleration value="5.0" />
+		<speed-fuzziness value="1.0"/>
+        <bullet value="data/physicals/bullets/flaming-arrow.xml" />
+      </emitter>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.1" />
+  </delay-effect>
+
+  <manacost calc="2.0 * (0.80^fm)" />
+  <casttime calc="0.02 + 0.08 / (castspeed + 1.0)" />
+  <delay calc="0.3 + 0.4 / (castspeed + 1.0)" />
+  <cooldown value="0.0" />
+
+  <focus-mana-cost calc="(15.0 + 3.0*lvl) * (0.80^fm)" />
+  <focus-max-duration value="2.5" />
+
+</root>

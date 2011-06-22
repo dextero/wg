@@ -1,0 +1,51 @@
+<root type="ability" class="bullet">
+
+	<name>$ABI_SPECIAL_BLADES</name>
+	<trigger>dcdadc</trigger>
+	<icon>data/abilities/special/blades-0.png</icon>
+	<unavailable-icon>data/abilities/special/blades-1.png</unavailable-icon>
+	<description>$ABI_SPECIAL_BLADES_DESC</description>
+
+	<flight-effect type="list">
+		<effect type="recastable">
+			<time calc="10 + int/10 + lvl" />
+            <recast value="0.2"/>
+			<effect type="area">
+				<filter value="hostiles"/>
+				<area calc="0.8 + 0.1 * spellrange"/>
+				<effect type="list">
+					<effect type="damage">
+						<amount calc="10.0 + wp*0.2" />
+						<damage-type value="vorpal"/>
+					</effect>
+					<effect type="knockback">
+						<amount calc="0.7 + 0.5 * lvl"/>
+					</effect>
+				</effect>
+			</effect>
+		</effect>
+	</flight-effect>
+
+	<manacost calc="(6 + 2*lvl) * (1.0 - fm * 0.03)" />
+	<speed calc="6.0" />
+	<acceleration value="2.0" />
+	<count calc="3 + int / 10" />
+	<width calc="30.0 + int / 10" />
+	<ttl calc="4 + int/10 + lvl" />
+    <bullet value="data/physicals/bullets/firespark.xml" />
+	<casttime calc="0.02 + 0.08 / (castspeed + 1)" />
+	<delay calc="0.02 + 0.08 / (castspeed + 1)" />
+	<cooldown calc="0.5 + 0.22 / (castspeed + 1)" />
+	<filter value="none"/>
+	<spread-type value="shotgun"/>
+	<speed-fuzziness value="0.5" />
+	<target-chooser>
+		<filter value="hostiles"/>
+		<range calc="2.5"/>
+		<angle value="240.0"/>
+	</target-chooser>
+	<time-for-tracking calc="10 + int/10" />
+	<turning-speed calc="640.0"/>
+  <no-buy />
+
+</root>

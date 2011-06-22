@@ -1,0 +1,16 @@
+﻿<root type="ability" class="passive">
+
+  <name>$ABI_SUPPORT_MAGICAL_POWER</name>
+  <icon>data/abilities/support/power-0.png</icon>
+  <unavailable-icon>data/abilities/support/power-1.png</unavailable-icon>
+  <description>$ABI_SUPPORT_MAGICAL_POWER_DESC</description>
+
+  <effect type="modify">
+    <aspect value="intelligence" />
+    <amount value="2.0" modifiers="log,level" />
+  </effect>
+  <effect type="modify">
+    <aspect value="willpower" />
+    <amount value="2.0" modifiers="log,level" />
+  </effect>
+</root>

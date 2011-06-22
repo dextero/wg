@@ -1,0 +1,41 @@
+<root type="ability" class="bullet">
+
+	<name>$ABI_LION_TURRET_BULLETS</name>
+	<trigger>a</trigger>
+	<description>$ABI_LION_TURRET_BULLETS_DESC</description>
+
+	<effect type="list"><effect type="graphical-effect">
+		<time value="0.8" />
+			<name value="bullet-explosion" />
+		</effect>
+		<effect type="sound">
+			<name value="data/sounds/Lugaro/firestart.ogg" />
+		</effect>
+		<effect type="damage">
+			<amount calc="12" />
+			<damage-type value="fire"/>
+		</effect>
+		<effect type="knockback">
+			<amount calc="2.5"/>
+		</effect>
+	</effect>
+
+	<manacost value="0" />
+	<range calc="12.0 " />
+	<speed calc="12.0" />
+	<acceleration value="1.0" />
+	<count calc="1" />
+	<width calc="0.0" />
+    <bullet value="data/physicals/bullets/flameball.xml" />
+	<casttime calc="0.05"/>
+	<delay calc="0.4" />
+	<cooldown calc="0.6"/>
+	<filter value="player"/>
+	
+	<ai-hint>
+		<player-distance>12.0</player-distance>
+		<player-angle>90.0</player-angle>
+	</ai-hint>
+ 
+
+</root>

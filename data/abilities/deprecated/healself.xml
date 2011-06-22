@@ -1,0 +1,42 @@
+<root type="ability" class="self">
+
+    <name>$ABI_NATURE_HEALSELF</name>
+    <icon>data/abilities/support/health-0.png</icon>
+    <unavailable-icon>data/abilities/support/health-1.png</unavailable-icon>
+    <trigger>daa</trigger>
+    <description>$ABI_NATURE_HEALSELF</description>
+
+    <effect type="list">
+        <effect type="non-cumulative">
+          <effect type="recastable">
+            <time value="10.35" linear-gain="-0.35" />
+            <recast value="0.5" />
+              <effect type="heal">
+                  <amount value="4.5" square-gain="0.02" linear-gain="0.5" />
+                  <show-amount />
+              </effect>
+            </effect>
+        </effect>
+        <!-- todo: jak liosan zrobi non-cumulative per lista to tutaj tez podpiac ten
+         graphical effect do powyzszego non-cumulative -->
+         <!-- A fige, graphical-effecty nie sa czyszczone. to jest wiekszy problem,
+            w ogole nie ma interfejsu zeby to w tej chwili zrobic.
+            todo: wystawic ticket... // Liosan -->
+        <effect type="graphical-effect">
+            <time value="10.35" linear-gain="-0.35" />
+            <name value="heal" />
+        </effect>
+
+    </effect>
+
+    <cast-time-effect type="graphical-effect">
+        <name value="magic-circle-1"/>
+        <time value="0.40"/>
+    </cast-time-effect>
+
+    <manacost value="20.0" />
+    <casttime value="0.05 + 0.5 / 1.1 ^ (castspeed + 1.0)" />
+    <delay value="0.1 + 1.0 / 1.1 ^ (castspeed + 1.0)" />
+    <cooldown value="0.1 + 4.3 / 1.1 ^ (castspeed + 1.0)" />
+
+</root>

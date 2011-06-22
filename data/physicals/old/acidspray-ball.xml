@@ -1,0 +1,13 @@
+﻿<root type="loot">
+  <genre>acidspray-ball</genre>
+	<name name="$ITEM_ABI_NATURE_ACID_SPRAY" />
+	<level value="1" />
+	<image filename="data/loots/green-ball.png" />
+	<droprate value="0.0005" />
+	<effect type="console">
+		<text>[
+		msg $ITEM_ABI_NATURE_ACID_SPRAY_MSG
+		force-buy-ability player0 nature h
+		]</text>
+	</effect>
+</root>

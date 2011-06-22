@@ -1,0 +1,35 @@
+<root type="ability" class="bullet">
+
+	<name>$ABI_ELEMENTAL_BULLETS</name>
+	<trigger>a</trigger>
+	<description>$ABI_ELEMENTAL_BULLETS_DESC</description>
+
+	<effect type="list">
+		<effect type="damage">
+			<amount calc="1" />
+			<damage-type value="fire"/>
+		</effect>
+		<effect type="knockback">
+			<amount calc="0.5"/>
+		</effect>
+	</effect>
+
+	<manacost value="0" />
+	<range calc="4.0 " />
+	<speed calc="12.0" />
+	<acceleration value="1.0" />
+	<count calc="5" />
+	<width calc="30.0" />
+    <bullet value="data/physicals/bullets/firespark.xml" />
+	<casttime calc="0.05"/>
+	<delay calc="0.4" />
+	<cooldown calc="0.6"/>
+	<filter value="player"/>
+	
+	<ai-hint>
+		<player-distance>5.0</player-distance>
+		<player-angle>30.0</player-angle>
+	</ai-hint>
+ 
+
+</root>

@@ -1,0 +1,15 @@
+﻿<root type="loot">
+  <genre>tutorial4</genre>
+  <name name="$ITEM_TUTORIAL4" />
+  <level value="1" />
+  <image filename="data/loots/star.png" />
+  <droprate value="0.0" />
+  <effect type="console">
+    <text>[
+      start-dialog ryszard4
+      spawn-physical data/physicals/tutorial/tutorial-rat.xml zenek
+      set-physical-position zenek 8 14
+      spawn-physical data/physicals/tutorial/tutorial5.xml 10 6
+      ]</text>
+  </effect>
+</root>

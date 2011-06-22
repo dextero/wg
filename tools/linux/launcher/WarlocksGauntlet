@@ -1,0 +1,17 @@
+#!/bin/bash
+
+WGPATH=`readlink -f "$0"`
+cd "`dirname "$WGPATH"`"
+
+MACHINE=`uname -m`
+if [ "$MACHINE" = x86_64 ]
+then
+    LIBS=./libs64
+    BIN=./bin/WarlocksGauntlet.bin64
+else
+    LIBS=./libs32
+    BIN=./bin/WarlocksGauntlet.bin32
+fi
+
+export LD_LIBRARY_PATH=$LIBS:"$LD_LIBRARY_PATH"
+$BIN $@

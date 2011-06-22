@@ -1,0 +1,47 @@
+<root type="ability" class="export">
+
+  <name>$ABI_FIRE_SCHRAPNEL_MAGIC</name>
+  <icon>data/abilities/fire/firefragm-0.png</icon>
+  <unavailable-icon>data/abilities/fire/firefragm-1.png</unavailable-icon>
+  <description>$ABI_FIRE_SCHRAPNEL_MAGIC_DESC</description>
+
+    <effect type="bullet" tag="schrapnel-magic">
+	<emitter>
+		<speed value="1.5" />
+		<acceleration value="-2.0" />
+		<ttl value="8.0" />
+		<count calc="4+lvl" />
+		<width value="360" />
+		<explode-on-fade value="1" />
+        <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+		<filter value="none" />
+
+		<flight-effect type="non-cumulative">
+			<effect type="recastable">
+				<time calc="0.6 + 0.2 * lvl" />
+				<recast value="0.1"/>
+				<effect type="retarget">
+					<target-chooser>
+						<filter value="hostiles"/>
+						<range calc="0.5 + (0.05 * spellrange)"/>
+						<angle value="360.0"/>
+					</target-chooser>
+					<effect type="list">
+						<effect type="damage">
+							<amount calc="0.5 + 0.4 * lvl + wp*0.2" />
+							<damage-type value="fire"/>
+						</effect>
+						<effect type="chance">
+							<chance calc="0.6"/>
+							<effect type="knockback">
+								<amount calc="0.5 + 0.3 * lvl"/>
+							</effect>
+						</effect>
+					</effect>
+				</effect>
+			</effect>
+		</flight-effect>
+	</emitter>
+    </effect>
+
+</root>

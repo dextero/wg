@@ -1,0 +1,264 @@
+<root type="rpg">
+	<!-- parametry przy obliczaniu wartosci efektow -->
+	<!-- mniej-wiecej wzor: (level + LRV)^2 * aspect / (ANF * (LRV+1)^2)-->
+	<level-reference-value>9</level-reference-value>
+	<aspect-normalisation-factor>10</aspect-normalisation-factor>
+
+	<!-- poziomy -->
+	<level><!-- 2 -->
+		<req-xp>100</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 3 -->
+		<req-xp>250</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 4 -->
+		<req-xp>416</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 5 -->
+		<req-xp>541</req-xp>
+		<attr-points>2</attr-points>
+		<skill-points>2</skill-points>
+	</level>
+	<level><!-- 6 -->
+		<req-xp>795</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 7 -->
+		<req-xp>1137</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 8 -->
+		<req-xp>1674</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 9 -->
+		<req-xp>2246</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 10 -->
+		<req-xp>2932</req-xp>
+		<attr-points>2</attr-points>
+		<skill-points>2</skill-points>
+	</level>
+	<level><!-- 11 -->
+		<req-xp>3777</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 12 -->
+		<req-xp>4828</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 13 -->
+		<req-xp>5800</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 14 -->
+		<req-xp>6959</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 15 -->
+		<req-xp>8159</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 16 -->
+		<req-xp>9300</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 17 -->
+		<req-xp>10600</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 18 -->
+		<req-xp>14000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 19 -->
+		<req-xp>17900</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 20 -->
+		<req-xp>22200</req-xp>
+		<attr-points>2</attr-points>
+		<skill-points>2</skill-points>
+	</level>
+	<level><!-- 21 -->
+		<req-xp>26900</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 22 -->
+		<req-xp>31800</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 23 -->
+		<req-xp>36800</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 24 -->
+		<req-xp>42000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 25 -->
+		<req-xp>47300</req-xp>
+		<attr-points>2</attr-points>
+		<skill-points>2</skill-points>
+	</level>
+	<level><!-- 26 -->
+		<req-xp>53000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 27 -->
+		<req-xp>59200</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 28 -->
+		<req-xp>65000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 29 -->
+		<req-xp>72600</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 30 -->
+		<req-xp>80300</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>2</skill-points>
+	</level>
+	<level><!-- 31 -->
+		<req-xp>88400</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 32 -->
+		<req-xp>96700</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 33 -->
+		<req-xp>105900</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 34 -->
+		<req-xp>115000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 35 -->
+		<req-xp>125000</req-xp>
+		<attr-points>2</attr-points>
+		<skill-points>2</skill-points>
+	</level>
+	<level><!-- 36 -->
+		<req-xp>135000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 37 -->
+		<req-xp>145000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 38 -->
+		<req-xp>155000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 39 -->
+		<req-xp>165000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 40 -->
+		<req-xp>175000</req-xp>
+		<attr-points>2</attr-points>
+		<skill-points>2</skill-points>
+	</level>
+	<level><!-- 41 -->
+		<req-xp>185000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 42 -->
+		<req-xp>195000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 43 -->
+		<req-xp>205000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 44 -->
+		<req-xp>215000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 45 -->
+		<req-xp>225000</req-xp>
+		<attr-points>2</attr-points>
+		<skill-points>2</skill-points>
+	</level>
+	<level><!-- 46 -->
+		<req-xp>235000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 47 -->
+		<req-xp>245000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 48 -->
+		<req-xp>255000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 49 -->
+		<req-xp>266000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 50 -->
+		<req-xp>277000</req-xp>
+		<attr-points>2</attr-points>
+		<skill-points>2</skill-points>
+	</level>
+	<level><!-- 51 -->
+		<req-xp>288000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+	<level><!-- 52 -->
+		<req-xp>300000</req-xp>
+		<attr-points>1</attr-points>
+		<skill-points>1</skill-points>
+	</level>
+</root>
+

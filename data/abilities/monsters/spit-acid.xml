@@ -1,0 +1,65 @@
+<root type="ability" class="bullet">
+
+  <explosion type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/splatter.ogg" />
+    </effect>
+    <effect type="graphical-effect">
+      <time value="0.8" />
+      <name value="green-explosion-mini" />
+    </effect>
+  </explosion>
+  <effect type="list">
+    <effect type="damage">
+      <damage-type value="poison"/>
+      <amount calc="1.0 * poisonous"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="colorize-green" /> 
+      <time calc="2.0" /> 
+    </effect>
+    <effect type="graphical-effect">
+      <name value="acid" />
+      <time value="0.15" />
+    </effect>
+    <effect type="non-cumulative">
+      <effect type="timed">
+      <time value="2.0" />
+        <effect type="damage">
+          <damage-type value="poison"/>
+          <amount calc="1.0 * poisonous" />
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.0" />
+  </cast-time-effect>
+  <delay-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.0" />
+  </delay-effect>
+  
+  <range value="12.0" />
+  <speed calc="6.0" />
+  <acceleration value="1.0" />
+  <explode-on-fade value="1" />
+  <count value="1" />
+  <width calc="0.5 " />
+  <ttl value="1.0" />
+  <bullet value="data/physicals/bullets/acid-drop.xml" />
+  <filter value="player,wall,door"/>
+
+  <manacost calc="1" />
+  <casttime value="0.3" />
+  <delay value="0.1" />
+  <cooldown value="0.8" />
+
+  <ai-hint>
+    <player-distance>5.0</player-distance>
+    <player-angle>9.0</player-angle>
+  </ai-hint>
+  
+</root>

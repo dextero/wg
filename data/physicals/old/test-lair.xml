@@ -1,0 +1,21 @@
+<root type="lair">
+  
+  <spawnLimit min="2" max="3" />
+  <spawnRate min="0.2" max="0.2" />
+
+  <spawnPosition x="0.0f" y="0.0f" />
+  
+  <spawnSound filename="data/physicals/lair-spawn.ogg" />
+
+  <scale min="1" max="1.5" />
+  <radius min="0.5" max="0.75" />
+
+  <anim name="test/anim/lair/default" type="default" />
+  <anim name="test/anim/lair/spawn" type="attack" />
+  
+  <monster filename="data/physicals/cacodemon.xml" />
+  <monster filename="data/physicals/ogr.xml" />
+  <monster filename="data/physicals/szczur.xml" />
+  <monster filename="data/physicals/chityniak.xml" />
+
+</root>

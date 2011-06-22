@@ -1,0 +1,34 @@
+show-particles
+load-map data/test.map
+spawn-enemy john
+set-physical-category john monster 
+set-physical-position john 3.5 2.5
+set-physical-image john data/physicals/player.png
+set-ai-scheme john  stupidchaser
+set-speed john 0.8
+spawn-enemy bob
+set-physical-category bob monster 
+set-physical-position bob 1.5 4.5
+set-physical-image bob data/physicals/mag_s.tga
+set-ai-scheme bob localwanderer
+set-speed bob 2.5
+spawn-enemy bobik
+set-physical-category bobik monster 
+set-physical-position bob 3.5 4.5
+#set-physical-image bob data/maps/brick2.png
+set-physical-animation bob cacodemon/all.anim
+set-ai-scheme bob stupidchaser
+set-speed bob 0.6
+new-player 0
+set-physical-position player0 0.5 0.5
+set-physical-animation player0 hero/move/south.anim
+set-speed player0 1.8
+trail-physical player0
+spawn-lair lair
+set-physical-category lair lair
+set-physical-position lair 5.5 5.5
+set-physical-image lair data/physicals/lair.png
+clock-info
+toggle-fx mode shd
+toggle-fx fade in
+load-playlist data/music/testpl.xml

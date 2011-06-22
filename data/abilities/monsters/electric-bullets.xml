@@ -1,0 +1,69 @@
+<root type="ability" class="bullet">
+
+  <self-effect type="sound">
+    <name value="data/sounds/wzzzz.ogg" />
+  </self-effect>
+
+  <explosion type="list">
+    <effect type="sound">
+      <name value="data/sounds/sparks.ogg" /> 
+    </effect>
+    <effect type="graphical-effect">
+      <name value="shield" />
+      <time calc="0.1"/>
+    </effect>
+  </explosion>
+
+  <effect type="list">
+    <effect type="damage">
+      <damage-type value="lightning"/>
+      <amount calc="1 * intelligence" />
+    </effect>
+    <effect type="knockback">
+      <amount calc="0.5"/>
+    </effect>
+  </effect>
+
+  <flight-effect type="graphical-effect">
+    <name value="trail" />
+    <time calc="10.0"/>
+  </flight-effect>
+
+  <cast-time-effect type="list"> 
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.65"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="shield"/>
+      <time value="0.4"/>
+    </effect>
+    <effect type="modify">    
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </cast-time-effect>
+  <delay-effect type="list"> 
+    <effect type="modify">    
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </delay-effect>
+  
+  <range calc="6.0 " />
+  <speed calc="4.0" />
+  <width calc="33" />
+  <count calc="3" />
+  <bullet value="data/physicals/bullets/smallspark.xml" />
+  <filter value="player, wall"/>
+
+  <manacost value="8" />
+  <casttime calc="0.65"/>
+  <delay calc="0.4" />
+  <cooldown calc="6.6"/>
+    
+    <ai-hint>
+        <player-distance>6.0</player-distance>
+        <player-angle>10.0</player-angle>
+    </ai-hint>
+</root>

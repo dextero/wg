@@ -1,0 +1,26 @@
+<root type="ability" class="passive">
+
+  <name>$ABI_NATURE_POWER_OF_NATURE</name>
+  <icon>data/player/power-of-nature.png</icon>
+  <unavailable-icon>data/player/power-of-nature-grey.png</unavailable-icon>
+  <description>$ABI_NATURE_POWER_OF_NATURE_DESC</description>
+
+  <effect type="list">
+    <effect type="modify">
+      <aspect value="strength" />
+      <amount value="1.25" modifiers="log,level" />        
+    </effect>
+    <effect type="modify">
+      <aspect value="maxhp" />
+      <amount value="1.1" modifiers="strength,intelligence" linear-gain="0.1" />
+    </effect>
+    <effect type="heal">
+      <amount value="2" modifiers="strength,intelligence" linear-gain="0.5" />        
+    </effect>
+    <effect type="modify">
+      <aspect value="size" /> <!-- czemu nie :) -->
+      <amount value="1.01" modifiers="log,level" />        
+    </effect>
+  </effect>
+  
+</root>

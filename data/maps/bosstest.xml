@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?><map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <version>
+    3
+  </version>
+  <width>
+    12
+  </width>
+  <height>
+    8
+  </height>
+  <tiletype code="a" image="data/maps/themes/test/rsand_sand_1_0.png" />
+  <tiles>
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+    a a a a a a a a a a a a
+  </tiles>
+<!--  <sprite file="data/maps/doodahs/tree2.png"   x="8.0" y="2.0" z="foreground" scale="1.6" rot="60"  /> -->
+
+  <objtype code="a" file="data/physicals/troll.xml" />
+  <objtype code="b" file="data/physicals/rat.xml" />
+  <objtype code="c" file="data/physicals/bee.xml" />
+  <obj code="a" x="13.0" y="1.2" name="t" />
+  <obj code="b" x="13.0" y="2.2" name="r" />
+  <obj code="c" x="13.0" y="3.2" name="b" />
+  <region name="exit" x="0.5" y="0.5">
+    <next-map>data/maps/atlastest.xml</next-map>
+    <next-map-region>entry</next-map-region>
+    <cond check="is">
+      <type>region-triggered</type>
+      <param>entry</param>
+    </cond>
+  </region>
+  <region name="entry" x="0.5" y="3.5" />
+</map>

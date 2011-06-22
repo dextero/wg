@@ -1,0 +1,26 @@
+<root type="lair">
+  
+  <genre>ogre-lair</genre>
+
+  <spawnLimit min="3" max="8" />
+  <spawnRate min="0.125" max="0.125" />
+  <spawnPosition x="0.5f" y="0.5f" />
+  <spawnSound filename="data/sounds/EL/imp01.ogg" />
+  <grouping-hint>1</grouping-hint>
+  
+  <maxhp min="300.0" max="330.0" />
+  <xp min="140.0" max="145.0" />
+
+  <radius min="0.45" max="0.5" />
+  <scale min="0.9" max="1.0" />
+
+  <anim name="test/anim/lair/default" type="default" />
+  <anim name="test/anim/lair/spawn" type="attack" />
+  <anim name="test/anim/lair/death" type="death" />
+  
+  <!-- to specjalnie, zeby zmienic rozklad losowan -->
+  <monster filename="data/physicals/monsters/defs/ogre.xml" />
+  <monster filename="data/physicals/monsters/defs/ogre.xml" />
+  <monster filename="data/physicals/monsters/defs/ogrillion.xml" /> 
+  
+</root>

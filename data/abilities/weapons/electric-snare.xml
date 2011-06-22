@@ -1,0 +1,104 @@
+<root type="ability" class="bullet">
+
+  <name>Electric snare</name>
+  <description>
+Sends a bomb that draws nearby enemies into a vortex of electricity, dealing damage and keeping them in check.
+
+Bonus for this spell depends:
+  heavily on choleric rune
+  barely on melancholic rune
+  extremely on sanguine rune
+  barely on phlegmatic rune
+  </description>
+  <icon>data/abilities/weapons/electric-snare-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/electric-snare-1.png</unavailable-icon>
+
+  <!-- power = 3x cho, 1x mel, 4x san, 1x phl -->
+  <power calc="0.2 * dot(3, choleric, 1, melancholic, 4, sanguine, 1, phlegmatic)"/>
+
+  <explosion type="bullet">
+    <emitter>  
+      <speed value="0.0" />
+      <ttl value="2.8" />
+      <count value="1" />
+      <width value="0" />
+      <bullet value="data/physicals/bullets/electron.xml" />
+      <bullet-angular-speed value="820"/>
+      <filter value="none" />
+      <flight-effect type="delayed">
+        <time value="0.5" />
+        <effect type="recastable">
+          <recast value="0.17" />
+          <time value="2.0" />
+          <effect type="list">
+            <effect type="sound">
+              <name value="data/sounds/EL/thunder1.ogg" />
+              <name value="data/sounds/EL/thunder2.ogg" />
+              <name value="data/sounds/EL/thunder3.ogg" />
+              <name value="data/sounds/EL/thunder4.ogg" />
+              <name value="data/sounds/EL/thunder5.ogg" />
+              <name value="data/sounds/EL/thunder6.ogg" />
+              <name value="data/sounds/EL/thunder7.ogg" />
+            </effect>
+            <effect type="retarget">
+              <target-chooser>
+                <filter value="hostiles,obstacle" />
+                <range calc="1.4" />
+                <angle value="360.0" />
+                <aim-at-ground value="1"/>
+                <count calc="3" />
+              </target-chooser>
+              <effect type="list">
+                <effect type="linked-graphical-effect">
+                  <time value="0.25" />
+                  <name value="lightning" />
+                </effect>
+                <effect type="damage">
+                  <damage-type value="lightning" />
+                  <amount calc="14 * (1 + power)" />
+                </effect>
+                <effect type="knockback">
+                   <amount value="-15" />
+                </effect>
+              </effect>
+            </effect>
+          </effect> 
+        </effect>
+      </flight-effect>
+  </emitter>
+  </explosion>  
+
+  <cast-time-effect type="list">
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.50"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.20"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+    </effect>
+  </cast-time-effect>
+
+  <range calc="6.0" />
+  <speed value="8.0" />
+  <speed-fuzziness value="0.15" />
+  <acceleration value="-15.0" />
+  <count value="1" />
+  <width value="5" />
+  <speed-fuzziness value="0.10" />
+  <ttl calc="0.5" />
+  <explode-on-fade value="1" />
+  <bullet value="data/physicals/bullets/electron.xml" />
+  <extra-offset value="0.2"/>
+  <bullet-angular-speed value="820"/>
+  <filter value="wall,obstacle" />
+
+  <manacost calc="18.0 * (1 + 0.66 * power)" />
+  <casttime calc="0.33" />
+  <delay calc="0.05" />
+  <cooldown calc="1.8" />
+</root>

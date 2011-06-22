@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <version>3</version>
+  <width>16</width>
+  <height>16</height>
+  <tiletype code="a"  image="data/maps/themes/green_forest/grass1.png" />
+  <tiletype code="b"  image="data/maps/themes/green_forest/grass.png" />
+  <tiletype code="c"  image="data/maps/themes/green_forest/grass.png" />
+  <tiletype code="d"  image="data/maps/themes/green_forest/grass.png" />
+  <tiletype code="e"  image="data/maps/themes/green_forest/grass.png" />
+  <tiletype code="f"  image="data/maps/themes/green_forest/grass.png" />
+  <tiletype code="ab" image="data/maps/themes/green_forest/rock.png" />
+  <tiles>
+a a a b c a b f a a a a a a a a
+a a f c d a a d a a a a d d a a
+a a a f e d d a a b a a f a a a
+a a a a a f ab b a d d d d a a a
+b a a f c a f a a d a a d a a a
+a f a c a a a a ab b a a ab a a a
+a a a e a b a d d d f d f e f a
+a a a a a a ab ab ab a a a ab a a a
+c a a a e a f a e a b f ab a a a
+a a e ab ab a ab a a ab a c a a d a
+a a a a a a a a a a a a a d a a
+a f a a a a a a a c a a a b a a
+a e b c e a c f ab ab a a a e d a
+a d a ab a c f b a a ab f f c c a
+a d a a a a f a a a a a a ab e a
+a a a a a a a e d f d b a b d a
+</tiles>
+  <objtype code="a" file="data/physicals/lairs/rat-lair.xml" />
+  <objtype code="b" file="data/physicals/lairs/ogre-lair.xml" />
+  <objtype code="c" file="data/physicals/lairs/chit-lair.xml" />
+  <objtype code="d" file="data/physicals/old/caco-lair.xml" />
+
+  <objtype code="e" file="data/physicals/chityniak.xml" />
+
+  <objtype code="f" file="data/physicals/simple-wall.xml" />
+
+  <obj code="a" x="3" y="6" />
+  <obj code="b" x="1" y="8" />
+  <obj code="c" x="14" y="15" />
+  <obj code="c" x="5" y="7" />
+  <obj code="d" x="10" y="1" />
+
+  <obj code="e" x="0.5" y="1" />
+
+  <obj code="f" x="-0.5" y="0.5" />
+  <obj code="f" x="-0.5" y="1.5" />
+  <obj code="f" x="-0.5" y="2.5" />
+  <obj code="f" x="-0.5" y="3.5" />
+  <obj code="f" x="-0.5" y="4.5" />
+  <obj code="f" x="-0.5" y="5.5" />
+  <obj code="f" x="-0.5" y="6.5" />
+</map>

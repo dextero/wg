@@ -1,0 +1,104 @@
+<root type="ability" class="self">
+
+  <name>Forked lightning</name>
+  <description>
+Multiple lightning bolts shot in the directions of several separate targets.
+
+Bonus for this spell depends:
+  barely on choleric rune
+  heavily on melancholic rune
+  mildly on sanguine rune
+  mildly on phlegmatic rune  
+  </description>
+  <icon>data/abilities/weapons/forked-lightning-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/forked-lightning-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 3x mel, 2x san, 2x phl -->
+  <power calc="0.2 * dot(1, choleric, 3, melancholic, 2, sanguine, 2, phlegmatic)"/>
+
+  <effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/EL/thunder1.ogg" />
+      <name value="data/sounds/EL/thunder2.ogg" />
+      <name value="data/sounds/EL/thunder3.ogg" />
+      <name value="data/sounds/EL/thunder4.ogg" />
+      <name value="data/sounds/EL/thunder5.ogg" />
+      <name value="data/sounds/EL/thunder6.ogg" />
+      <name value="data/sounds/EL/thunder7.ogg" />
+    </effect>
+
+    <effect type="retarget">
+      <target-chooser>
+        <filter value="hostiles, obstacle"/>
+        <range calc="3.2" />
+        <angle value="90.0"/>
+        <aim-at-ground value="1"/>
+        <count calc="1.0"/>
+      </target-chooser>
+      <effect type="list">
+        <effect type="damage">
+          <damage-type value="lightning"/>
+          <amount calc="18 * (1 + power)" />
+        </effect>
+        <effect type="knockback">
+          <amount value="2.0" />
+        </effect>
+        <effect type="linked-graphical-effect">
+          <name value="lightning" />
+          <offset-x value="-0.25"/>
+          <offset-y value="0.5"/>
+          <time value="0.25" />
+        </effect>
+      </effect>
+    </effect>
+    <effect type="retarget">
+      <target-chooser>
+        <filter value="hostiles, obstacle"/>
+        <range calc="3.2" />
+        <angle value="90.0"/>
+        <aim-at-ground value="0"/>
+        <count calc="4.0"/>
+      </target-chooser>
+      <effect type="list">
+        <effect type="damage">
+          <damage-type value="lightning"/>
+          <amount calc="18 * (1 + power)" />
+        </effect>
+        <effect type="knockback">
+          <amount value="2.0" />
+        </effect>
+        <effect type="linked-graphical-effect">
+          <name value="lightning" />
+          <offset-x value="-0.25"/>
+          <offset-y value="0.5"/>
+          <time value="0.25" />
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list" >
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.3"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-1"/>
+      <time value="0.4"/>
+    </effect>
+  </cast-time-effect>
+  <delay-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.2" />
+  </delay-effect>
+
+  <manacost calc="22 * (1 + 0.66 * power)" />
+  <casttime calc="0.30" />
+  <delay calc="0.50" />
+  <cooldown calc="0.50" />
+
+</root>

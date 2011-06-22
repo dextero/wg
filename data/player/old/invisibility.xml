@@ -1,0 +1,17 @@
+<root type="ability" class="self">
+
+  <name>$ABI_NONE_INVISIBILITY</name>
+  <trigger>ccba</trigger>
+<!--  niepodpieta -->
+
+  <effect type="graphical-effect">
+    <time value="3.0" />
+    <name value="colorize-invisible" />
+  </effect>
+  
+  <manacost value="20.0" />
+  <casttime value="0.5" />
+  <delay value="1.0" />
+  <cooldown value="4.0" />
+  
+</root>

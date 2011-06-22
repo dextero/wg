@@ -1,0 +1,74 @@
+<root type="ability" class="self">
+
+  <name>Hibernation</name>
+  <description>
+For a short period of time you can't move nor cast spell, but your body quickly regenerates. Use with care.
+
+Bonus for this spell depends:
+  mildly on choleric rune
+  heavily on melancholic rune
+  barely on sanguine rune
+  heavily on phlegmatic rune  
+  </description>
+  <icon>data/abilities/weapons/hibernation-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/hibernation-1.png</unavailable-icon>
+
+  <!-- power = 2x cho, 3x mel, 1x san, 3x phl -->
+  <power calc="0.2 * dot(2, choleric, 3, melancholic, 1, sanguine, 3, phlegmatic)"/>
+  
+  <effect type="list">
+    <effect type="graphical-effect">
+      <name value="hibernate" />
+      <time value="5.0"/>
+  	</effect>
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/consolesuccess.ogg" />
+    </effect>
+    <effect type="timed">
+      <time value="5.0" />
+      <effect type="list">
+        <effect type="heal">
+	      <amount calc="5.0 * (1 + power)"/>
+        </effect>
+        <effect type="modify">
+          <aspect value="speed" />
+          <amount value="0.0" />
+        </effect>
+        <effect type="modify">
+          <aspect value="turnspeed" />
+          <amount value="0.0" />
+        </effect>
+      </effect>
+  	</effect>
+  </effect>
+
+  <cast-time-effect type="list">
+    <effect type="delayed">
+      <time calc="0.30"/>
+      <effect type="graphical-effect">
+        <name value="magic-circle-2"/>
+        <time value="0.30"/>
+      </effect> 
+	</effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.60"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-4"/>
+      <time value="0.40"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.25" />
+    </effect>
+  </cast-time-effect>
+  
+  <manacost calc="3.0" />
+  <casttime value="0.6" />
+  <delay value="0.05" />
+  <cooldown value="3.0" />
+
+  <focus-mana-cost calc="13.0 * (1 + 0.66 * power)" />
+  <focus-max-duration value="5.0" />
+</root>

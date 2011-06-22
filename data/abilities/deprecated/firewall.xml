@@ -1,0 +1,139 @@
+<root type="ability" class="bullet">
+
+	<name>$ABI_FIRE_FIREWALL</name>
+	<trigger></trigger>
+	<icon>data/abilities/fire/firewall-0.png</icon>
+	<unavailable-icon>data/abilities/fire/firewall-1.png</unavailable-icon>
+	<description>$ABI_FIRE_FIREWALL_DESC</description>
+
+	<explosion type="list">
+		<effect type="sound">
+			<name value="data/sounds/Lugaro/fireend.ogg" />
+		</effect>
+
+		<effect type="bullet">
+		<emitter>
+			<speed value="0.0" />
+			<acceleration value="0.0" />
+			<ttl value="8.0" />
+			<count value="2" />
+			<width value="0" />
+			<explode-on-fade value="1" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+			<filter value="none" />
+
+			<flight-effect type="list" tag="firewall-blaze">
+				<effect type="graphical-effect">
+					<time value="5" />
+					<name value="flames" />
+				</effect>
+				<effect type="recastable">
+					<time value="20" />
+					<recast value="5"/>
+					<effect type="graphical-effect">
+						<time value="5" />
+						<name value="flames" />
+					</effect>
+				</effect>
+				<effect type="recastable">
+					<time value="20" />
+					<recast value="0.4"/>
+					<effect type="area">
+						<filter value="hostiles,friendly" />
+						<area calc="0.4 + 0.04 * spellrange" />
+						<effect type="list">
+							<effect type="damage">
+								<amount calc="1+lvl*2+0.1*wp"/>
+								<damage-type value="fire"/>
+							</effect>
+							<effect type="knockback">
+								<amount calc="2.33" />
+							</effect>
+							<effect type="chance">
+								<chance calc="ignite*0.1"/>
+								<effect type="inject">
+									<tree value="fire"/>
+									<code value="k"/>
+									<name value="igniting-magic"/>
+								</effect>
+							</effect>
+						</effect>
+					</effect>
+				</effect>
+			</flight-effect>
+		</emitter>
+		</effect>
+
+		<effect type="bullet">
+		<emitter>
+			<speed value="1.5" />
+			<acceleration value="-2.0" />
+			<ttl value="8.0" />
+			<count value="2" />
+			<width value="180" />
+			<explode-on-fade value="1" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+			<filter value="none" />
+
+			<flight-effect type="non-cumulative">
+				<effect type="jump">
+					<name value="firewall-blaze"/>
+				</effect>
+			</flight-effect>
+		</emitter>
+		</effect>
+
+		<effect type="bullet">
+		<emitter>
+			<speed value="2.3" />
+			<acceleration value="-2.0" />
+			<ttl value="8.0" />
+			<count value="2" />
+			<width value="180" />
+			<explode-on-fade value="1" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+			<filter value="none" />
+
+			<flight-effect type="jump">
+				<name value="firewall-blaze"/>
+			</flight-effect>
+		</emitter>
+		</effect>
+
+		<effect type="bullet">
+		<emitter>
+			<speed value="3.0" />
+			<acceleration value="-2.0" />
+			<ttl value="8.0" />
+			<count value="2" />
+			<width value="180" />
+			<explode-on-fade value="1" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+			<filter value="none" />
+
+			<flight-effect type="jump">
+				<name value="firewall-blaze"/>
+			</flight-effect>
+		</emitter>
+		</effect>
+    </explosion>
+
+    <cast-time-effect type="graphical-effect">
+        <name value="magic-circle-3"/>
+        <time value="0.60"/>
+    </cast-time-effect>
+
+	<manacost calc="(23 + 4*lvl) * (0.80^fm)" />
+	<range calc="12.0 + (1.2 * spellrange)" />
+	<speed calc="8.0" />
+	<acceleration value="-1.0" />
+	<explode-on-fade value="1" />
+	<count value="1" />
+	<width calc="0.0" />
+	<ttl value="0.5" />
+    <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+	<casttime calc="0.22 + 0.38 / (castspeed + 1.0)" />
+	<delay calc="0.02 + 0.38 / (castspeed + 1.0)" />
+	<cooldown calc="0.6 + 0.72 / (castspeed + 1.0)" />
+
+</root>

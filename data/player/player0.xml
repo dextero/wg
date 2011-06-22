@@ -1,0 +1,96 @@
+<root type="player">
+
+  <speed min="2.5" max="2.5" />
+  <turnspeed min="360.0" max="360.0" />
+  <strength min="10.0" max="10.0" />
+  <willpower min="10.0" max="10.0" />
+  <intelligence min="10.0" max="10.0" />  
+
+  <physresist min="1.0" max="1.0"/>
+  <fireresist min="1.0" max="1.0"/>
+  <iceresist min="1.0" max="1.0"/>
+  <lightningresist min="1.0" max="1.0"/>
+  <poisonresist min="1.0" max="1.0"/>
+  
+  <maxhp min="100.0" max="100.0" />
+  <maxmana min="50.0" max="50.0" />
+
+  <sound type="level-up" filename="data/sounds/levelup.wav" />
+
+  <scale min="1.0" max="1.0" />
+  <radius min="0.45" max="0.45" />
+  <mass min="2.5" max="2.5" />
+  <shadow-offset min="0.12" max="0.12" />
+  
+  <anim name="core/anim/hero/stand" type="default" />
+  <anim name="core/anim/hero/cast" type="attack" />
+  <anim name="core/anim/hero/cast-onehand" type="2" />
+  <anim name="core/anim/hero/cast-forward" type="3" />
+  <anim name="core/anim/hero/move" type="move" />
+  <anim name="test/anim/hero/death" type="death" />
+  <anim name="core/anim/hero/strafe" type="strafe" />
+  
+  <manaregen min="4.0" max="4.0" />
+  
+  <trigger-effects>data/player/trigger-effects0.xml</trigger-effects>
+  
+  <ability-tree code="adom">data/player/action-adom-tree.xml</ability-tree>
+  <ability-tree code="adom-hidden">data/player/action-adom-tree-hidden.xml</ability-tree>
+  <!--<ability-tree code="electricity">data/player/electricity-tree.xml</ability-tree>-->
+  <!--<ability-tree code="support">data/player/support-tree.xml</ability-tree>-->
+  <!--<ability-tree code="special">data/player/special-tree.xml</ability-tree>-->
+  <!--<ability-tree code="nature">data/player/nature-tree.xml</ability-tree>-->
+
+  <!--<ability name="data/player/electron.xml" />  -->
+  <!--<ability name="data/player/electrostatics.xml" />-->
+  <!--<ability name="data/player/lightning-strike.xml" />  -->
+  <!--<ability name="data/player/electric-snare.xml" />  -->
+  <!--<ability name="data/player/chain-lightning.xml" />  -->
+  <!--<ability name="data/player/forked-lightning.xml" />  -->
+  <!--<ability name="data/player/ball-lightning.xml" />  -->
+  <!--<ability name="data/player/devolution.xml" />  -->
+  <!--<ability name="data/player/transfusion.xml" />  -->  
+  <!--<ability name="data/player/laser.xml" />-->
+  <!--<ability name="data/player/electricution.xml" />-->
+  <!--<ability name="data/player/debuff-mastery.xml" />-->
+  <!--<ability name="data/player/electricity-mastery.xml" />-->
+  <!--<ability name="data/player/eorwils-resonator.xml" /> -->
+  
+  <!--<ability name="data/player/elemental-revenge.xml" /> -->
+  <!--<ability name="data/player/sparkrain.xml" /> -->
+  
+  <!--<ability name="data/player/sacrifice.xml" /> -->
+  <!--<ability name="data/player/exploding-corpse.xml" />  -->
+  <!--<ability name="data/player/charged-spell.xml" /> -->
+  <!--<ability name="data/player/firewall.xml" /> -->
+  <!--<ability name="data/player/blazingfeet.xml" /> -->
+  <!--<ability name="data/player/firepits.xml" />-->
+  <!--<ability name="data/player/fireball.xml" />-->
+  <!-- <ability name="data/player/flaming-mantle.xml" /> -->
+  
+  <!--<ability name="data/player/quickshot.xml" /> -->
+  <!--<ability name="data/player/firecircle.xml" /> -->
+  <!--<ability name="data/player/firearrow.xml" anim="attack" />-->
+
+  <hud>
+    <bg path="data/GUI/hud_bkg.png" />
+    <fg path="data/GUI/hud_frg.png" />
+    <fg-flared path="data/GUI/hud_frg_flared.png" />
+    <circle1 path="data/GUI/circle-bkg.png" />
+    <circle2 path="data/GUI/circle-i.png" />
+    <circle3 path="data/GUI/circle-o.png" />
+    <avatar0 path="data/GUI/mag0.png" />
+    <avatar1 path="data/GUI/mag1.png" />
+    <avatar2 path="data/GUI/mag2.png" />
+    <avatar3 path="data/GUI/mag3.png" />
+    <avatar4 path="data/GUI/mag4.png" />
+    <hp path="data/GUI/hud_hp.png" />
+    <mana path="data/GUI/hud_mana.png" />
+    <mana-flared path="data/GUI/hud_mana_flared.png" />
+    <xp path="data/GUI/hud_xp.png" />
+    <seq-q path="data/GUI/HUD-seq-Q.png" />
+    <seq-w path="data/GUI/HUD-seq-W.png" />
+    <seq-e path="data/GUI/HUD-seq-E.png" />
+    <seq-r path="data/GUI/HUD-seq-R.png" />
+  </hud>
+</root>

@@ -1,0 +1,109 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_FIRE_FIREBALL</name>
+  <trigger></trigger>
+  <icon>data/abilities/fire/fireball-0.png</icon>
+  <unavailable-icon>data/abilities/fire/fireball-0.png</unavailable-icon>
+  <description>$ABI_FIRE_FIREBALL_DESC</description>
+
+  <explosion type="list" tag="fireball-explosion-tag">
+  	<effect type="graphical-effect">
+  	  <time value="0.8" />
+      <name value="bullet-explosion" />
+  	</effect>
+	<effect type="sound">
+		<name value="data/sounds/Lugaro/firestart.ogg" />
+	</effect>
+    <effect type="area">
+      <area calc="0.5 + 0.1 * expl + 0.05 * spellrange" />
+      <filter value="hostiles,obstacle" />
+      <effect type="list" tag="fireball-dmg">
+        <effect type="damage">
+          <amount calc="4.0 + (3.0 * lvl)" />
+          <damage-type value="fire"/>
+        </effect>
+        <effect type="knockback">
+          <amount calc="1.0 + lvl"/>
+        </effect>
+		<effect type="chance">
+			<chance calc="(int / 100 + 0.1) * ignite"/>
+			<effect type="list" >
+				<effect type="non-cumulative">
+					<effect type="timed">
+						<time value="10.0"/>
+						<effect type="damage">
+							<amount calc="5.0 + lvl + wp/10"/>
+							<damage-type value="fire"/>
+						</effect>
+					</effect>
+				</effect>
+                <effect type="graphical-effect">
+					<time value="5" />
+					<name value="flames" />
+				</effect>
+				<effect type="sound">
+					<name value="data/sounds/Lugaro/fire.ogg" />
+				</effect>
+				<effect type="non-cumulative">
+					<effect type="recastable">
+						<time value="10.0" />
+						<recast value="5"/>
+						<effect type="graphical-effect">
+							<time value="5" />
+							<name value="flames" />
+						</effect>
+					</effect>
+				</effect>
+            </effect>
+        </effect>
+      </effect>
+  </effect>
+
+  <!--
+    <effect type="area">
+      <area calc="1.0 + 0.1 * spellrange" />
+      <filter value="player" />
+      <effect type="damage"  tag="fireball-player-dmg">
+        <amount calc="3.0 + lvl" />
+        <damage-type value="fire"/>
+      </effect>
+    </effect>
+    -->
+    <effect type="chance">
+		<chance calc="0.1 * expl"/>
+		<effect type="list">
+		    <effect type="area">
+				<area calc="1.0 + 0.2 * expl + 0.1 * spellrange" />
+				<filter value="hostiles,obstacle" />
+				<effect type="jump">
+					<name value="fireball-dmg"/>
+				</effect>
+			</effect>
+			<!--<effect type="area">
+				<area calc="1.0 + 0.1 * spellrange" />
+				<filter value="player" />
+				<effect type="jump">
+					<name value="fireball-player-dmg"/>
+				</effect>
+			</effect>-->
+			<effect type="graphical-effect">
+				<time value="0.1" />
+				<name value="smallfireball" />
+			</effect>
+		</effect>
+    </effect>
+  </explosion>
+
+  <manacost calc="(2.0 + (2.0 * lvl)) * (0.80^fm)" />
+  <range calc="12.0 + (1.2 * spellrange)" />
+  <speed value="6.0" />
+  <acceleration value="1.0" />
+  <explode-on-fade value="1" />
+  <ttl value="0.6" />
+  <bullet value="data/physicals/bullets/fireball.xml" />
+  <!--<bullet-angular-speed value="-1440" />-->
+  <casttime calc="0.02 + 0.07 / (castspeed + 1.0)" />
+  <delay calc="0.15 + 0.40 / (castspeed + 1.0)" />
+  <cooldown value="0.02" />
+
+</root>

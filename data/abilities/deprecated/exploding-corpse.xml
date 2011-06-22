@@ -1,0 +1,73 @@
+<root type="ability" class="self">
+
+  <name>$ABI_FIRE_EXPLODING_CORPSE</name>
+  <trigger></trigger>
+  <icon>data/abilities/fire/corpseboom-0.png</icon>
+  <unavailable-icon>data/abilities/fire/corpseboom-1.png</unavailable-icon>
+  <description>$ABI_FIRE_EXPLODING_CORPSE_DESC</description>
+
+  <effect type="recastable" >
+  	<recast value="0.2" modifiers="level,inv" />
+    <time value="5.0" /> <!--  ustawiamy na 0, zeby wspolpracowalo z umiejetnoscia
+    	"passive" - czas bedzie ustawiony na +INF przez CEffectManagera -->
+    <effect type="retarget">
+      <target-chooser>
+        <filter value="hostiles"/>
+      	<range calc="7.0 + (0.7 * spellrange)"/>
+      	<angle value="110.0"/>
+		<aim-at-ground value="0" />
+		<dead-bodies value="1"/>
+      </target-chooser>
+      <effect type="list">
+  	    <effect type="graphical-effect">
+    	  <time value="0.8" />
+          <name value="bullet-explosion" />
+  	    </effect>
+        <effect type="graphical-effect">
+    	  <time value="0.1" />
+          <name value="smallfireball" />
+        </effect>
+		<effect type="annihilate"/>
+        <effect type="area">
+			<area calc="1.0 + 0.2 * expl + 0.1 * spellrange" />
+			<filter value="hostiles,obstacle" />
+			<effect type="list">
+				<effect type="damage">
+					<amount calc="9.0 + 21*lvl + wp" />
+					<damage-type value="fire"/>
+				</effect>
+				<effect type="knockback">
+					<amount calc="2.0*lvl"/>
+				</effect>
+				<effect type="chance">
+					<chance calc="ignite*0.2"/>
+					<effect type="inject">
+						<tree value="fire"/>
+						<code value="k"/>
+						<name value="igniting-magic"/>
+					</effect>
+				</effect>
+			</effect>
+		</effect>
+	   </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.1" />
+  </delay-effect>
+
+  <manacost calc="2.0 * (0.80^fm)" />
+  <casttime calc="0.02 + 0.08 / (castspeed + 1.0)" />
+  <delay calc="0.5 + 0.8 / (castspeed + 1.0)" />
+  <cooldown value="0.0" />
+
+  <focus-mana-cost value="10.0 * (0.80^fm)" />
+  <focus-max-duration value="5.0" />
+</root>

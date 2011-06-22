@@ -1,0 +1,25 @@
+<root type="lair">
+  
+  <genre>chitiniac-lair</genre>
+
+  <spawnLimit min="3" max="5" />
+  <spawnRate min="0.4" max="0.4" />
+  <spawnPosition x="0.0f" y="0.0f" />
+  <spawnSound filename="data/sounds/EL/imp01.ogg" />
+  <grouping-hint>1</grouping-hint>
+  
+  <maxhp min="64.0" max="80.0" />
+  <xp min="30.0" max="35.0" />
+
+  <radius min="0.4" max="0.5" />
+  <scale min="0.8" max="1.0" />
+
+  <anim name="test/anim/lair/default" type="default" />
+  <anim name="test/anim/lair/spawn" type="attack" />
+  <anim name="test/anim/lair/death" type="death" />
+  
+  <monster filename="data/physicals/monsters/defs/chitiniac.xml" />
+  <monster filename="data/physicals/monsters/defs/chitiniac.xml" />
+  <monster filename="data/physicals/monsters/defs/chitiniac-acid.xml" />
+
+</root>

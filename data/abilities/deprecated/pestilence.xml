@@ -1,0 +1,70 @@
+<root type="ability" class="passive">
+
+  <name>$ABI_NATURE_PESTILENCE</name>
+  <icon>data/player/pestilence.png</icon>
+  <unavailable-icon>data/player/pestilence-grey.png</unavailable-icon>
+  <description>$ABI_NATURE_PESTILENCE_DESC</description>
+
+  <effect type="recastable">
+	<time value="0.0"/>
+	<recast value="3.0" />
+	<effect type="retarget">
+		<target-chooser>
+			<filter value="hostiles"/>
+			<range value="0.75"/>
+			<angle value="360.0"/>
+		</target-chooser>
+		<effect type="delayed">
+			<time value="0.5"/>
+			<effect type="non-cumulative" tag="pestilence-tag">
+				<effect type="list">
+					<effect type="timed">
+						<time value="20.0"/>
+						<effect type="damage">
+							<amount value="1.0" modifiers="level" level-gain="0.5"/>
+							<damage-type value="poison"/>
+						</effect>
+					</effect>
+					<effect type="timed">
+						<time value="20.0"/>
+						<effect type="modify">
+							<aspect value="speed"/>
+							<amount value="0.95" modifiers="log,level"/>
+						</effect>
+					</effect>
+					<effect type="graphical-effect">
+						<time value="5" />
+						<name value="green-cloud" />
+					</effect>
+					<effect type="recastable">
+						<time value="20" />
+						<recast value="5"/>
+						<effect type="graphical-effect">
+							<time value="5" />
+							<name value="green-cloud" />
+						</effect>
+					</effect>
+					<effect type="recastable">
+						<time value="20.0"/>
+						<recast value="0.5" />
+						<effect type="retarget">
+							<target-chooser>
+								<filter value="hostiles"/>
+								<range value="1"/>
+								<angle value="360.0"/>
+							</target-chooser>
+							<effect type="chance">
+								<chance value="0.8"/>
+								<effect type="jump">
+									<name value="pestilence-tag"/>
+								</effect>
+							</effect>
+						</effect>
+					</effect>
+				</effect>
+			</effect>
+		</effect>
+	</effect>
+  </effect>
+  
+</root>

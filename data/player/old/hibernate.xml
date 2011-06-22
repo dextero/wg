@@ -1,0 +1,40 @@
+<root type="ability" class="self">
+
+  <name>$ABI_NATURE_HIBERNATE</name>
+  <trigger>cbcbcb</trigger>
+  <icon>data/player/hibernate.png</icon>
+  <unavailable-icon>data/player/hibernate-grey.png</unavailable-icon>
+  <description>$ABI_NATURE_HIBERNATE_DESC</description>
+
+  <effect type="list">
+  	<effect type="timed">
+  		<time value="5.0"/>
+		<effect type="list">
+			<effect type="heal">
+				<amount value="12.0" modifiers="intelligence" linear-gain="1" square-gain="0.1" />
+			</effect>
+			<effect type="stun"/>
+		</effect>
+	</effect>
+  	<effect type="graphical-effect">
+		<time value="5.5" linear-gain="-0.25"/>
+  		<name value="hibernate" />
+  	</effect>
+	<effect type="sound">
+		<name value="data/sounds/Lugaro/consolesuccess.ogg" />
+	</effect>
+  </effect>
+
+  <cast-time-effect type="modify">
+  	<aspect value="speed" />
+  	<amount value="0.5" />
+  </cast-time-effect>
+
+  <manacost value="5.0" />
+  <casttime value="0.1" />
+  <delay value="5.0" />
+  <cooldown value="0.0" />
+  
+  <focus-mana-cost value="0.0" />
+  <focus-max-duration value="5.0" />
+</root>

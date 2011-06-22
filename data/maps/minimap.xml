@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?><map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <version>
+    3
+  </version>
+  <width>
+    12
+  </width>
+  <height>
+    8
+  </height>
+  <tiletype code="a" image="data/maps/themes/grassland/jf_grassland_a.png" index="0" />
+  <tiletype code="b" image="data/maps/themes/grassland/jf_grassland_a.png" index="1" />
+  <tiletype code="c" image="data/maps/themes/grassland/jf_grassland_a.png" index="2" />
+  <tiletype code="d" image="data/maps/themes/grassland/jf_grassland_a.png" index="3" />
+  <tiletype code="e" image="data/maps/themes/grassland/jf_grassland_a.png" index="4" />
+  <tiletype code="f" image="data/maps/themes/grassland/jf_grassland_a.png" index="5" />
+  <tiletype code="g" image="data/maps/themes/grassland/jf_grassland_a.png" index="6" />
+  <tiletype code="h" image="data/maps/themes/grassland/jf_grassland_a.png" index="7" />
+  <tiletype code="i" image="data/maps/themes/grassland/jf_grassland_a.png" index="8" />
+  <tiletype code="j" image="data/maps/themes/grassland/jf_grassland_a.png" index="9" />
+  <tiletype code="k" image="data/maps/themes/grassland/jf_grassland_a.png" index="10" />
+  <tiletype code="l" image="data/maps/themes/grassland/jf_grassland_a.png" index="11" />
+  <tiletype code="m" image="data/maps/themes/grassland/jf_grassland_a.png" index="12" />
+  <tiletype code="n" image="data/maps/themes/grassland/jf_grassland_a.png" index="13" />
+  <tiletype code="o" image="data/maps/themes/grassland/jf_grassland_a.png" index="14" />
+  <tiletype code="p" image="data/maps/themes/grassland/jf_grassland_a.png" index="15" />
+  <tiletype code="q" image="data/maps/themes/grassland/jf_grassland_a.png" index="16" />
+  <tiletype code="r" image="data/maps/themes/grassland/jf_grassland_a.png" index="17" />
+  <tiletype code="s" image="data/maps/themes/grassland/jf_grassland_a.png" index="18" />
+  <tiletype code="t" image="data/maps/themes/grassland/jf_grassland_a.png" index="19" />
+  <tiletype code="u" image="data/maps/themes/grassland/jf_grassland_a.png" index="20" />
+  <tiletype code="v" image="data/maps/themes/grassland/jf_grassland_a.png" index="21" />
+  <tiletype code="w" image="data/maps/themes/grassland/jf_grassland_a.png" index="22" />
+  <tiletype code="x" image="data/maps/themes/grassland/jf_grassland_a.png" index="23" />
+  <tiletype code="y" image="data/maps/themes/grassland/jf_grassland_a.png" index="24" />
+  <tiletype code="z" image="data/maps/themes/grassland/jf_grassland_a.png" index="25" />
+  <tiletype code="A" image="data/maps/themes/green_forest/grass.png" />
+  <tiletype code="B" image="data/maps/themes/grassland/jf_grassland_a.png" index="26" />
+  <tiletype code="C" image="data/maps/themes/grassland/jf_grassland_a.png" index="27" />
+  <tiles>
+    i j x x x k s t u v q k
+h p q x w x a d e x z a
+l j x x x a y j w a d g
+h p x e q g o p a y j m
+u v x x k s u v s C p s
+x x k x x w q x q g B c
+b c b c d e x z a y r h
+h h h h j x k x s t C n
+
+  </tiles>
+  <objtype code="a" file="data/physicals/lairs/rat-lair.xml" />
+  <objtype code="b" file="data/physicals/lairs/ogre-lair.xml" />
+  <objtype code="c" file="data/physicals/lairs/chit-lair.xml" />
+  <objtype code="d" file="data/physicals/troll.xml" />
+  <objtype code="e" file="data/physicals/wolfbeast.xml" />
+  <objtype code="f" file="data/physicals/simple-wall.xml" />
+  <objtype code="g" file="data/physicals/walls/test-barrier.xml" />
+  <obj code="c" x="2.8" y="1.2" />
+  <obj code="b" x="10.1" y="6.3" />
+  <obj code="d" x="5.5" y="3.4" />
+  <obj code="e" x="9.5" y="6.4" />
+  <obj code="g" x="0.5" y="1.5">
+    <cond check="is">
+      <type>
+        clear
+      </type>
+      <param>
+        hostiles
+      </param>
+    </cond>
+  </obj>
+  <region name="exit" x="0.5" y="0.5">
+    <next-map>
+      data/maps/atlastest.xml
+    </next-map>
+    <next-map-region>
+      entry
+    </next-map-region>
+    <cond check="is">
+      <type>
+        region-triggered
+      </type>
+      <param>
+        entry
+      </param>
+    </cond>
+  </region>
+  <region name="entry" x="0.5" y="3.5" />
+  <obj code="f" x="1.5" y="0.5" />
+  <obj code="f" x="1.5" y="1.5" />
+  <obj code="f" x="10.5" y="0.5" />
+  <obj code="f" x="11.5" y="0.5" />
+  <obj code="f" x="11.5" y="6.5" />
+  <obj code="f" x="11.5" y="7.5" />
+  <obj code="f" x="10.5" y="7.5" />
+  <sprite file="data/maps/flora/foliage1.png" x="4.0" y="4.0" z="foreground" rot="20" />
+</map>

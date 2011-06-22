@@ -1,0 +1,44 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_NATURE_STING</name>
+  <trigger>cdb</trigger>
+  <icon>data/player/sting.png</icon>
+  <unavailable-icon>data/player/sting-grey.png</unavailable-icon>
+  <description>$ABI_NATURE_STING_DESC</description>
+
+  <effect type="non-cumulative">
+	<effect type="list">
+		<effect type="damage">
+			<amount value="0.5" modifiers="willpower" linear-gain="0.5" />
+			<damage-type value="poison"/>
+		</effect>
+		<effect type="timed">
+			<time value="2.0" linear-gain="2.0" />
+			<effect type="damage">
+				<amount value="2.25" modifiers="willpower" linear-gain="0.5"/>
+				<damage-type value="poison"/>
+			</effect>
+		</effect>
+
+		<effect type="check-level">
+			<amount value="5.0"/>
+			<effect type="timed">
+				<time value="-0.7" linear-gain="0.2"/>
+				<effect type="stun"/>     
+			</effect>
+		</effect>  
+	</effect>	
+  </effect>
+
+  <manacost value="9.0" />
+  <range value="12.0" />
+  <speed value="11.0" />
+  <acceleration value="1.0" />
+  <explode-on-fade value="0" />
+  <ttl value="0.6" />
+  <bullet value="data/physicals/bullets/sting.xml" />
+  <casttime value="0.1" />
+  <delay value="0.28" />
+  <cooldown value="0.3" />
+  
+</root>

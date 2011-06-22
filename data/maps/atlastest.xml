@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<map xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <version>3</version>
+  <width>16</width>
+  <height>16</height>
+  <tiletype code="a" image="data/maps/themes/grassland/jf_grassland_a.png" index="0" />
+  <tiletype code="b" image="data/maps/themes/grassland/jf_grassland_a.png" index="1" />
+  <tiletype code="c" image="data/maps/themes/grassland/jf_grassland_a.png" index="2" />
+  <tiletype code="d" image="data/maps/themes/grassland/jf_grassland_a.png" index="3" />
+  <tiletype code="e" image="data/maps/themes/grassland/jf_grassland_a.png" index="4" />
+  <tiletype code="f" image="data/maps/themes/grassland/jf_grassland_a.png" index="5" />
+  <tiletype code="g" image="data/maps/themes/grassland/jf_grassland_a.png" index="6" />
+  <tiletype code="h" image="data/maps/themes/grassland/jf_grassland_a.png" index="7" />
+  <tiletype code="i" image="data/maps/themes/grassland/jf_grassland_a.png" index="8" />
+  <tiletype code="j" image="data/maps/themes/grassland/jf_grassland_a.png" index="9" />
+  <tiletype code="k" image="data/maps/themes/grassland/jf_grassland_a.png" index="10" />
+  <tiletype code="l" image="data/maps/themes/grassland/jf_grassland_a.png" index="11" />
+  <tiletype code="m" image="data/maps/themes/grassland/jf_grassland_a.png" index="12" />
+  <tiletype code="n" image="data/maps/themes/grassland/jf_grassland_a.png" index="13" />
+  <tiletype code="o" image="data/maps/themes/grassland/jf_grassland_a.png" index="14" />
+  <tiletype code="p" image="data/maps/themes/grassland/jf_grassland_a.png" index="15" />
+  <tiletype code="q" image="data/maps/themes/grassland/jf_grassland_a.png" index="16" />
+  <tiletype code="r" image="data/maps/themes/grassland/jf_grassland_a.png" index="17" />
+  <tiletype code="s" image="data/maps/themes/grassland/jf_grassland_a.png" index="18" />
+  <tiletype code="t" image="data/maps/themes/grassland/jf_grassland_a.png" index="19" />
+  <tiletype code="u" image="data/maps/themes/grassland/jf_grassland_a.png" index="20" />
+  <tiletype code="v" image="data/maps/themes/grassland/jf_grassland_a.png" index="21" />
+  <tiletype code="w" image="data/maps/themes/grassland/jf_grassland_a.png" index="22" />
+  <tiletype code="x" image="data/maps/themes/grassland/jf_grassland_a.png" index="23" />
+  <tiletype code="y" image="data/maps/themes/grassland/jf_grassland_a.png" index="24" />
+  <tiletype code="z" image="data/maps/themes/grassland/jf_grassland_a.png" index="25" />
+  <tiletype code="A" image="data/maps/themes/green_forest/grass.png" />
+  <tiletype code="B" image="data/maps/themes/grassland/jf_grassland_a.png" index="26" />
+  <tiletype code="C" image="data/maps/themes/grassland/jf_grassland_a.png" index="27" />
+  <tiles>
+i j x x x k s t u v m f r p x s
+h p q x w x a d x w g h i j k x
+l j x x x a y j q z m n o p q x
+h p x e q g o p x x s t u v w x
+u v x x k s u v x k x x a c d x
+x x k x x w q x x a b c y r j x
+b c b c d e x z x g o h n h p q
+h h h h j x k x e m h h h f B c
+h h r h B c d x a y h f h o h h
+o h h f h l j x g f h h h h i h
+u t u C o h p k m h o n h r h h
+x q x s t u v x s t u C r h h l
+a b c d e x w a b c d s t u t u
+h h h j x k x g h l j w x x e x
+f h i B c d q m f h p k x x x x
+n h h o h j x s t u v x x q x x
+</tiles>
+  <objtype code="a" file="data/physicals/lairs/rat-lair.xml" />
+  <objtype code="b" file="data/physicals/lairs/ogre-lair.xml" />
+  <objtype code="c" file="data/physicals/lairs/chit-lair.xml" />
+  
+  <objtype code="d" file="data/physicals/ogre-wife.xml" />
+  <objtype code="e" file="data/physicals/chityniak.xml" />
+  <objtype code="i" file="data/physicals/shaggy.xml" />
+  <objtype code="I" file="data/physicals/shaggy.xml" />
+  
+  <objtype code="f" file="data/physicals/simple-wall.xml" />
+  
+  <objtype code="g" file="data/physicals/walls/test-barrier.xml" />
+  
+  <objtype code="h" file="data/loots/1k-xp.xml" />
+  <objtype code="j" file="data/physicals/lairs/bee-lair.xml" />
+  
+  <obj code="I" x="3" y="15" />
+  <obj code="i" x="4" y="15" />
+  <obj code="I" x="5" y="15" />
+  
+  <obj code="a" x="3.1" y="5.4">
+    <monster-count>25</monster-count>
+  </obj>
+  <obj code="c" x="12.1" y="1.4" />
+  <obj code="d" x="11" y="1" /> 
+  <obj code="b" x="3" y="15" rot="90">
+    <monster-count>3</monster-count>
+  </obj>
+  <obj code="j" x="4" y="10" rot="25">
+    <monster-count>20</monster-count>
+    <cond check="is">
+  	  <type>time-elapsed</type>
+  	  <param>20.0f</param>
+  	</cond>
+  </obj> 
+ 
+  <obj code="g" x="1.5" y="12.5">
+  	<cond check="is">
+  	  <type>clear</type>
+  	  <param>hostiles</param>
+  	</cond>
+  	<effect-on-open type="console">
+  	  <text>[
+  	  	freeze
+  	  	camera-sway-to 1.5 12.5 1
+  	  	delay 1
+  	  	trail-physical player0 sway 1
+  	  	delay 1
+  	  	unfreeze
+  	  	]
+  	  	</text>
+  	 </effect-on-open>
+  </obj>
+  
+  <obj code="h" x="1.4" y="12.2"/>
+  <obj code="h" x="1.7" y="12.4"/>
+  <obj code="h" x="1.2" y="12.7"/>
+  
+  <region name="entry" x="5" y="4" />
+  <region name="exit" x="0.5" y="12.5">
+  	<next-map>data/maps/atlastest2.xml</next-map>
+  	<next-map-region>entry</next-map-region>
+  </region>
+  
+  <obj code="f" x="6.5" y="0.5"/>
+  <obj code="f" x="7.5" y="0.5"/>
+  <obj code="f" x="8.5" y="0.5"/>
+  <obj code="f" x="9.5" y="0.5"/>
+  <obj code="f" x="14.5" y="0.5"/>
+  <obj code="f" x="15.5" y="0.5"/>
+  <obj code="f" x="6.5" y="1.5"/>
+  <obj code="f" x="7.5" y="1.5"/>
+  <obj code="f" x="8.5" y="1.5"/>
+  <obj code="f" x="9.5" y="1.5"/>
+  <obj code="f" x="7.5" y="2.5"/>
+  <obj code="f" x="7.5" y="3.5"/>
+  <obj code="f" x="14.5" y="6.5"/>
+  <obj code="f" x="15.5" y="6.5"/>
+  <obj code="f" x="14.5" y="7.5"/>
+  <obj code="f" x="15.5" y="7.5"/>
+  <obj code="f" x="0.5" y="10.5"/>
+  <obj code="f" x="1.5" y="10.5"/>
+  <obj code="f" x="14.5" y="8.5"/>
+  <obj code="f" x="15.5" y="8.5"/>
+  <obj code="f" x="0.5" y="11.5"/>
+  <obj code="f" x="1.5" y="11.5"/>
+  <obj code="f" x="14.5" y="9.5"/>
+  <obj code="f" x="15.5" y="9.5"/>
+  <obj code="f" x="8.5" y="10.5"/>
+  <obj code="f" x="9.5" y="10.5"/>
+  <obj code="f" x="10.5" y="10.5"/>
+  <obj code="f" x="8.5" y="11.5"/>
+  <obj code="f" x="9.5" y="11.5"/>
+  <obj code="f" x="10.5" y="11.5"/>
+  <obj code="f" x="6.5" y="12.5"/>
+  <obj code="f" x="7.5" y="12.5"/>
+  <obj code="f" x="8.5" y="12.5"/>
+  <obj code="f" x="9.5" y="12.5"/>
+  <obj code="f" x="6.5" y="13.5"/>
+  <obj code="f" x="7.5" y="13.5"/>
+  <obj code="f" x="8.5" y="13.5"/>
+  <obj code="f" x="9.5" y="13.5"/>
+  <obj code="f" x="0.5" y="13.5"/>
+  <obj code="f" x="1.5" y="13.5"/>
+  <obj code="f" x="0.5" y="14.5"/>
+  <obj code="f" x="1.5" y="14.5"/>
+  <obj code="f" x="6.5" y="14.5"/>
+  <obj code="f" x="7.5" y="14.5"/>
+  <obj code="f" x="8.5" y="14.5"/>
+  <obj code="f" x="9.5" y="14.5"/>
+  <obj code="f" x="14.5" y="14.5"/>
+  <obj code="f" x="15.5" y="14.5"/>
+  <obj code="f" x="0.5" y="15.5"/>
+  <obj code="f" x="1.5" y="15.5"/>
+  <obj code="f" x="6.5" y="15.5"/>
+  <obj code="f" x="7.5" y="15.5"/>
+  <obj code="f" x="8.5" y="15.5"/>
+  <obj code="f" x="9.5" y="15.5"/>
+  <obj code="f" x="14.5" y="15.5"/>
+  <obj code="f" x="15.5" y="15.5"/> 
+</map>

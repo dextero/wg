@@ -1,0 +1,83 @@
+﻿<root type="ability" class="bullet">
+
+  <name>Acidspray</name>
+  <description>
+From the tips of your fingers spring out acid fumes that quickly destroy anything colliding.
+
+Bonus for this spell depends:
+  barely on choleric rune
+  not at all on melancholic rune
+  totally on sanguine rune
+  mildly on phlegmatic rune
+  </description>
+  <icon>data/abilities/weapons/acidspray-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/acidspray-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 0x mel, 5x san, 2x phl -->
+  <power calc="0.2 * dot(1, choleric, 0, melancholic, 5, sanguine, 2, phlegmatic)"/>
+  
+  <effect type="list">
+    <effect type="graphical-effect">
+      <name value="colorize-green" />
+      <time calc="2.0 + (0.01 * power)" />
+    </effect>    
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/splatter.ogg" />
+    </effect>
+    <effect type="non-cumulative" >
+      <effect type="timed">
+        <time calc="2.0 + (0.01 * power)" />
+        <effect type="damage">
+          <damage-type value="poison"/>
+          <amount calc="7.5 + (0.02 * power)" />
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+  
+  <explosion type="list">
+    <effect type="graphical-effect">
+      <name value="green-explosion-mini" />
+      <time value="0.8" />
+    </effect>  
+    <effect type="area">
+      <area value="0.4" />
+      <filter value="hostiles,obstacle" />
+      <effect type="list">
+        <effect type="graphical-effect">
+          <name value="acid" />
+          <time value="0.5" />
+        </effect>
+        <effect type="damage">
+          <damage-type value="poison"/>
+          <amount calc="4.0 * (1 + power)" />
+        </effect>
+      </effect>
+    </effect>
+  </explosion>
+  
+  <bullet-angular-speed value="720" />
+  <range value="12.0" />
+  <explode-on-fade value="1" />  
+  <speed value="3.0" />
+  <ttl value="0.8" />
+  <count value="6" />
+  <width value="60" />
+  <bullet value="data/physicals/bullets/acidball.xml" />
+
+  <cast-time-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.4" />
+  </cast-time-effect>
+  
+  <delay-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.6" />
+  </delay-effect>
+  
+  <manacost calc="10.0 * (1 + 0.66 * power)" />
+  <casttime value="0.09" />
+  <delay value="0.05" />
+  <cooldown value="0.52" />
+  
+</root>

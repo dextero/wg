@@ -1,0 +1,41 @@
+﻿<root type="ability-tree">
+	<name>$ABITREE_FIRE</name>
+    <background>data/GUI/skills-bkg-fire.jpg</background>
+
+	<ability code="a">
+        <name>data/abilities/passive/vitality.xml</name>
+        <row>0</row>
+	</ability>
+    <ability code="b">
+        <name>data/abilities/passive/mana.xml</name>
+        <row>0</row>
+    </ability>
+    <ability code="c">
+        <name>data/abilities/export/melancholic-rune.xml</name>
+        <row>2</row>
+        <export>
+            <name>melancholic</name>
+        </export>
+    </ability>
+    <ability code="d">
+        <name>data/abilities/export/choleric-rune.xml</name>
+        <row>3</row>
+        <export>
+            <name>choleric</name>
+        </export>
+    </ability>
+    <ability code="e">
+        <name>data/abilities/export/phlegmatic-rune.xml</name>
+        <row>3</row>
+        <export>
+            <name>phlegmatic</name>
+        </export>
+    </ability>
+    <ability code="f">
+        <name>data/abilities/export/sanguine-rune.xml</name>
+        <row>4</row>
+        <export>
+            <name>sanguine</name>
+        </export>
+    </ability>
+</root>

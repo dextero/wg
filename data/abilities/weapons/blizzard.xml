@@ -1,0 +1,106 @@
+<root type="ability" class="self">
+
+  <name>Blizzard</name>
+  <description>
+Ice mages have many spells which slow down and freeze enemies. This particular spell is very effective when you get surrounded by enemy hordes.
+
+Bonus for this spell depends:
+  heavily on choleric rune
+  mildly on melancholic rune
+  barely on sanguine rune
+  mildly on phlegmatic rune
+  </description>
+  <icon>data/abilities/weapons/blizzard-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/blizzard-1.png</unavailable-icon>
+
+  <!-- power = 3x cho, 2x mel, 1x san, 2x phl -->
+  <power calc="0.2 * dot(3, choleric, 2, melancholic, 1, sanguine, 2, phlegmatic)"/>
+
+  <effect type="list">
+    <effect type="graphical-effect">
+      <name value="blue-explosion" />
+      <time value="0.8" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="ice-circle-shockwave" />
+      <time value="0.5" />
+    </effect>
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/whoosh.ogg" />
+    </effect>
+    <effect type="area">
+      <area calc="1.4" />
+      <filter value="hostiles" />
+      <effect type="list">
+        <effect type="damage">
+          <damage-type value="ice"/>
+          <amount calc="15 * (1 + power)" />
+        </effect>
+        <effect type="graphical-effect">
+          <name value="frost" />
+          <time calc="0.550 + (0.04 * power)" />
+        </effect>
+        <effect type="timed">
+          <effect type="stun" />
+          <time calc="1.0 + (0.04 * power)"  />
+        </effect>
+      </effect>
+    </effect>
+	<effect type="delayed" >
+	  <time value="0.09" />
+        <effect type="area">
+          <area calc="2.5" />
+          <filter value="hostiles" />
+          <effect type="list">
+            <effect type="damage">
+              <damage-type value="ice"/>
+              <amount calc="30 * (1 + power)" />
+            </effect>
+            <effect type="graphical-effect">
+              <name value="colorize-blue" />
+              <time calc="1.5 + (0.04 * power)" />
+            </effect>
+            <effect type="non-cumulative">
+              <effect type="timed">
+                <time calc="1.5 + (0.04 * power)" />
+                <effect type="modify">
+                  <aspect value="speed"/>
+                  <amount value="0.5"/>
+                </effect>
+              </effect>
+            </effect>
+          </effect>
+        </effect>
+      </effect>		
+    <effect type="timed">
+      <time value="0.50"/>
+      <effect type="drain-mana">
+        <amount value="10.0"/>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list">
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.40"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.20"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.2" />
+    </effect>
+    <effect type="drain-mana">
+      <amount value="2.0"/>
+    </effect>
+  </cast-time-effect>
+  
+  <manacost calc="25 * (1 + 0.66 * power)" />
+  <casttime calc="0.20" />
+  <delay calc="0.50" />
+  <cooldown calc="1.20" />
+
+</root>

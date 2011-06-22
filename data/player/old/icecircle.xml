@@ -1,0 +1,99 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_WATER_ICECIRCLE</name>
+  <trigger>cacd</trigger>
+  <icon>data/player/freezebomb.png</icon>
+  <unavailable-icon>data/player/freezebomb-grey.png</unavailable-icon>
+  <description>$ABI_WATER_ICECIRCLE_DESC</description>
+
+  <explosion type="list">
+    <effect type="graphical-effect">
+      <name value="blue-explosion" />
+      <time value="0.8" />
+    </effect>
+
+    <effect type="area">
+      <area value="0.5" modifiers="willpower,level"/>
+      <filter value="hostiles"/>
+      <effect type="list">
+        <effect type="damage" >
+          <amount value="12.0" modifiers="willpower" linear-gain="24.0" />
+          <damage-type value="ice"/>
+        </effect>
+        <effect type="graphical-effect">
+          <time value="2.50" />
+          <name value="frost" />
+        </effect>
+        <effect type="non-cumulative">
+          <effect type="timed">
+            <time value="3.0"/>
+            <effect type="stun"/>
+          </effect>
+        </effect>
+	  </effect>
+    </effect>
+
+<!-- fajnie by tu bylo wrzucic delay'a chwilowego... ale chyba nie da sie
+     podpiac opoznienia pomiedzy explosion a bullet -->
+      <effect type="bullet">
+        <emitter>
+<!-- to jest dokladnia (minus to, ze zwiekszylem startowa moc)
+     kopia czaru sopel, jakbysmy mieli mozliwosc tak jak
+     w diablo kumulowania mocy *roznych* umiejetnosci to tutaj bym wlasnie
+     tak zwiekszal moc tych pociskow wzgledem mocy czaru sopel -->
+          <explosion type="list">
+            <effect type="graphical-effect">
+              <name value="blue-explosion-mini" />
+              <time value="0.8" />
+            </effect>
+
+            <effect type="area" >            
+              <area value="0.5" />
+              <filter value="hostiles,obstacle"/>
+              <effect type="list">
+                <effect type="damage">
+                  <amount value="15.0" modifiers="willpower" linear-gain="13.0" />
+            	  <damage-type value="ice"/>
+                </effect>
+                <effect type="non-cumulative">
+                  <effect type="timed">
+                    <time value="2.75" linear-gain="0.25" />
+                    <effect type="modify">
+                      <amount value="0.66" modifiers="level,inv" />
+                      <aspect value="speed" />
+                    </effect>
+                  </effect>
+                </effect>
+                <effect type="graphical-effect">
+                  <time value="2.75" linear-gain="0.25" />
+                  <name value="colorize-blue" />
+                </effect>
+              </effect>
+            </effect>
+
+          </explosion>
+
+          <extra-offset value="0.3"/>
+          <range value="12.0" />
+          <speed value="5.0" />
+          <ttl value="1.6" />
+          <count value="15" />
+          <width value="345" />
+          <bullet value="data/physicals/icicle.xml" />
+        </emitter>
+      </effect>
+  </explosion>
+      
+  <manacost value="20.0" />
+  <range value="12.0" />
+  <speed value="10.0" />
+  <acceleration value="-13.5"/>
+  <ttl value="1.0" />
+  <explode-on-fade value="1" />
+  <bullet value="data/physicals/freezebomb-armed.xml" />
+  <bullet-angular-speed value="360" />
+  <casttime value="0.1" />
+  <delay value="0.18" />
+  <cooldown value="0.4" />
+  
+</root>

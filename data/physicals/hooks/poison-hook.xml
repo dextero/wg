@@ -1,0 +1,22 @@
+<root type="hook">
+	<effect type="list">
+		<effect type="graphical-effect">
+			<time value="10000.0" />
+			<name value="green-cloud" />
+		</effect>
+			
+		<effect type="area">
+			<area value="1.3" />
+			<filter value="player,hostiles" />
+			<effect type="non-cumulative">
+				<effect type="timed">
+					<time value="4.0" />
+					<effect type="damage">
+						<amount value="15.0" />
+						<damage-type value="poison" />
+					</effect>
+				</effect>
+			</effect>
+		</effect>
+	</effect>
+</root>

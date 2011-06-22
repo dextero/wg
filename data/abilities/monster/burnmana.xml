@@ -1,0 +1,34 @@
+<root type="ability" class="melee">
+
+  <effect type="list">
+    <effect type="knockback">
+      <amount value="1.0"/>
+    </effect>
+    <effect type="damage">
+      <amount value="10.0" modifiers="strength" />
+    </effect>
+    <effect type="timed">
+      <time value="3.0"/>
+      <effect type="drain-mana">
+      	<amount value="3.0"/>
+      </effect>
+    </effect>
+  </effect>
+  
+  <cast-time-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+  </cast-time-effect>
+  
+  <delay-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+  </delay-effect>
+  
+  <casttime value="0.4" />
+  <range value="0.8" />
+  <width value="90.0" />
+  <delay value="0.4" />
+  <cooldown value="2.5" />
+  
+</root>

@@ -1,0 +1,89 @@
+﻿<root type="ability" class="bullet">
+
+  <name>$ABI_NATURE_ACID_CIRCUS</name>
+  <trigger>dcdaad</trigger>
+  <icon>data/abilities/special/acircus-0.png</icon>
+  <unavailable-icon>data/abilities/special/acircus-1.png</unavailable-icon>
+  <description>$ABI_NATURE_ACID_CIRCUS_DESC</description>
+
+  <effect type="timed">
+  	<time value="3.0" />
+  	<effect type="damage">
+  		<amount value="25.0" modifiers="level,willpower" />
+  	</effect>
+  </effect>
+  <flight-effect type="recastable" >
+  	<recast value="0.1" />
+    <time value="3.0" />
+    <effect type="bullet">
+      <emitter>
+        <effect type="list">
+          <effect type="timed">
+            <time value="3.0" />
+            <effect type="damage">
+              <amount value="7" modifiers="willpower" linear-gain="2.5" />
+          	  <damage-type value="poison"/>
+            </effect>
+          </effect>
+  	      <effect type="graphical-effect">
+            <time value="2.5" />
+            <name value="acid" />
+  	      </effect>
+          <effect type="graphical-effect">
+    	    <time value="0.8" />
+            <name value="green-explosion" />
+  	      </effect>
+		  <effect type="sound">
+				<name value="data/sounds/Lugaro/splatter.ogg" />
+			</effect>
+        </effect>
+
+        <explosion type="list">
+          <effect type="area">
+            <area calc="0.4 + 0.05 * lv + 0.04 * spellrange" />
+            <filter value="hostiles" />
+            <effect type="damage">
+              <amount value="9.0" modifiers="level" linear-gain="3.5" />
+          	  <damage-type value="poison"/>
+            </effect>
+          </effect>
+        </explosion>
+
+        <bullet-angular-speed value="0" />
+        <range calc="12.0" />
+        <speed value="5.0" />
+        <ttl value="0.8" />
+        <count value="3" />
+        <width value="360" />
+        <bullet value="data/physicals/bullets/acid-drop.xml" />
+      </emitter>
+    </effect>
+  </flight-effect>
+  <explosion type="graphical-effect">
+    <time value="0.8" />
+    <name value="green-explosion" />
+  </explosion>
+
+  <cast-time-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.4" />
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.6" />
+  </delay-effect>
+
+  <manacost value="16.0" />
+  <bullet-angular-speed value="720" />
+  <range calc="12.0" />
+  <speed value="3.0" />
+  <ttl value="3.0" />
+  <bullet value="data/physicals/bullets/acidball.xml" />
+  <filter value="wall" />
+  <casttime calc="0.04 + 0.16 / (castspeed + 1)" />
+  <delay calc="0.06 + 0.24 / (castspeed + 1)" />
+  <cooldown value="0.0" />
+  <no-buy />
+
+</root>

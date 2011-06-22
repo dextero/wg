@@ -1,0 +1,2 @@
+load-map data/maps/monstertest.xml
+god-mode on

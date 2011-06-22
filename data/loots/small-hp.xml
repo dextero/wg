@@ -1,0 +1,18 @@
+<root type="loot">
+    <name name="$ITEM_HP_SMALL" />
+    <genre>small-hp</genre>
+    <level value="1" />
+    <image filename="data/loots/hp_mik.png" />
+    <droprate value="0.15" />
+    <effect type="list">
+        <effect type="console">
+            <text>[
+                msg $MSG_FOUND $ITEM_HP_SMALL
+                ]</text>
+        </effect>
+        <effect type="heal">
+            <amount value="15" />
+            <show-amount />
+        </effect>
+    </effect>
+</root>

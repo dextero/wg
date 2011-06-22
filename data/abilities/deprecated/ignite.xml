@@ -1,0 +1,85 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_FIRE_IGNITE</name>
+  <trigger>dcbdcb</trigger>
+  <icon>data/player/fire/ignite-0.png</icon>
+  <unavailable-icon>data/player/fire/ignite-1.png</unavailable-icon>
+  <description>$ABI_FIRE_IGNITE_DESC</description>
+
+	<effect type="list">
+		<effect type="graphical-effect">
+			<time value="0.1" />
+			<name value="smallfireball" />
+		</effect>
+		<effect type="non-cumulative" tag="ignite-tag">
+		<effect type="list" >
+			<effect type="damage">
+				<amount value="1.0" modifiers="level" level-gain="3"/>
+            	<damage-type value="fire"/>
+			</effect>
+			<effect type="non-cumulative">
+				<effect type="timed">
+					<time value="20.0"/>
+					<effect type="damage">
+						<amount value="2.0" modifiers="level" level-gain="7"/>
+            			<damage-type value="fire"/>
+					</effect>
+				</effect>
+			</effect>
+			<effect type="graphical-effect">
+				<time value="5" />
+				<name value="flames" />
+			</effect>
+			<effect type="sound">
+				<name value="data/sounds/Lugaro/fire.ogg" />
+			</effect>
+			<effect type="non-cumulative">
+				<effect type="recastable">
+					<time value="20" />
+					<recast value="5"/>
+					<effect type="graphical-effect">
+						<time value="5" />
+						<name value="flames" />
+					</effect>
+				</effect>
+			</effect>
+			<effect type="non-cumulative">
+				<effect type="recastable">
+					<time value="20.0"/>
+					<recast value="1.0" />
+                    <effect type="list" >
+    					<effect type="retarget">
+	    					<target-chooser>
+		    					<filter value="hostiles"/>
+			    				<range value="1.25"/>
+				    			<angle value="360.0"/>
+					    	</target-chooser>
+						    <effect type="chance">
+	    						<chance value="0.95"/>
+								<effect type="list">
+									<effect type="jump">
+										<name value="ignite-tag"/>
+									</effect>
+								</effect>
+				    		</effect>
+                        </effect>
+					</effect>
+				</effect>
+			</effect>
+		</effect>
+		</effect>
+	</effect>
+  
+  <manacost value="20.0" />
+  <range value="12.0" />
+  <speed value="11.0" />
+  <acceleration value="1.0" />
+  <explode-on-fade value="1" />
+  <ttl value="0.6" />
+  <bullet value="data/physicals/bullets/fireball.xml" />
+  <bullet-angular-speed value="-1440" />
+  <casttime value="0.1" />
+  <delay value="0.28" />
+  <cooldown value="0.0" />
+  
+</root>

@@ -1,0 +1,51 @@
+<root type="ability" class="melee">
+
+  <name>Powerslash</name>
+  <description>
+A basic melee attack which knocks opponents back.
+
+Bonus for this spell depends:
+  barely on choleric rune
+  mildly on melancholic rune
+  barely on sanguine rune
+  extremely on phlegmatic rune  
+  </description>
+  <icon>data/abilities/weapons/description-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/description-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 2x mel, 1x san, 4x phl -->
+  <power calc="0.2 * dot(1, choleric, 2, melancholic, 1, sanguine, 4, phlegmatic)"/>
+  
+  <effect type="list">
+    <effect type="damage">
+      <amount calc="7.5 * (1 + power)" />
+    </effect>
+    <effect type="knockback">
+      <amount calc="8.5"/>
+    </effect>
+  </effect>
+
+  <self-effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/EL/whoosh-punch01.ogg" />
+      <name value="data/sounds/EL/whoosh-punch02.ogg" />
+      <name value="data/sounds/EL/whoosh-punch03.ogg" />
+      <name value="data/sounds/EL/whoosh-punch04.ogg" />
+      <name value="data/sounds/EL/whoosh-punch05.ogg" />
+      <name value="data/sounds/EL/whoosh-punch06.ogg" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.35"/>
+    </effect>
+  </self-effect>  
+  
+  <range value="1.2" />
+  <width value="80.0" />
+
+  <manacost calc="3.0 * (1 + 0.66 * power)" />
+  <casttime value="0.09" />
+  <delay value="0.05" />
+  <cooldown value="0.40" />
+  
+</root>

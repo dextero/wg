@@ -1,0 +1,70 @@
+﻿<root type="ability" class="self">
+
+  <name>Resonator</name>
+  <description>
+This spell was discovered by Siolan, a junior third class battlemage, while he was running away from hordes of mountain trolls. It&apos;s quite simple - the more monsters are near the caster, the stronger the caster is pushed away, giving him a fair chance to run away. Battlemages despise this spell, calling it a &quot;coward&apos;s trick&quot; - on the other hand, Siolan was one of the few battlemages who lived to the retirement age...
+
+Bonus for this spell depends:
+  barely on choleric rune
+  extremely on melancholic rune
+  not at all on sanguine rune
+  extremely on phlegmatic rune  
+  </description>
+  <icon>data/abilities/weapons/resonator-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/resonator-1.png</unavailable-icon>
+
+  <!-- power = 1x cho, 4x mel, 0x san, 4x phl -->
+  <power calc="0.2 * dot(1, choleric, 4, melancholic, 0, sanguine, 4, phlegmatic)"/>
+  
+  <effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/consolesuccess.ogg" />
+    </effect>
+    <effect type="area">
+      <area calc="2.2"  />
+      <filter value="hostiles" />
+      <effect type="area">
+        <area calc="2.2"  />
+        <filter value="player" />
+        <effect type="knockback">
+           <amount calc="0.3 * (1 + power)"/>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="area">
+      <area calc="2.7"  />
+      <filter value="hostiles" />
+      <effect type="area">
+        <area calc="2.7"  />
+        <filter value="player" />
+        <effect type="knockback">
+           <amount calc="0.6 * (1 + power)"/>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="area">
+      <area calc="3.2"  />
+      <filter value="hostiles" />
+      <effect type="area">
+        <area calc="3.2"  />
+        <filter value="player" />
+        <effect type="knockback">
+           <amount calc="1.2 * (1 + power)"/>
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list"> 
+    <effect type="graphical-effect">
+      <name value="magic-circle-1"/>
+      <time value="0.20"/>
+    </effect>
+  </cast-time-effect>
+  
+  <manacost calc="3.0 * (1 + 0.66 * power)" />
+  <casttime calc="0.10" />
+  <delay value="0.05" />
+  <cooldown calc="0.15" />
+
+</root>

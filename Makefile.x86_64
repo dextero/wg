@@ -1,0 +1,52 @@
+GAMENAME = WarlocksGauntlet
+
+ARCH = "x86_64"
+
+BINARY = $(GAMENAME).bin64
+
+-include Makefile.sources
+
+CPPFLAGS = -I"build/includes/SFML-1.6/include" -I"build/includes" -DPLATFORM_LINUX
+
+LDFLAGS = -L"./libs64"
+
+LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+
+#default:
+CXXFLAGS = -g -Wall -m64
+
+#release:
+#release: CXXFLAGS = -O3 -ffast-math
+#powyzsze -O3 powodowalo:
+#http://img183.imageshack.us/img183/8780/gameplay.png
+
+release: CXXFLAGS = -O2 -static-libgcc -m64
+#release: OTHER_OBJECTS = /usr/lib/gcc/i486-linux-gnu/4.4.1/libstdc++.a
+
+CXX = g++
+
+########################
+
+Debug: all
+
+Release: all
+
+all: $(BINARY)
+
+$(BINARY): $(OBJECTS)
+	$(CXX) -o $@ $(OBJECTS) $(CXXFLAGS) $(CPPFLAGS) $(LDFLAGS) $(LIBS) $(OTHER_OBJECTS)
+
+%.d: %.cpp
+	-$(CXX) -E $(CXXFLAGS)  $(CPPFLAGS) -MM -MP -MF $@ -MQ $(@:.d=.s) -MQ $(@:.d=.o) -MQ $@ $<
+
+clean:
+	$(warning Cleaning...)
+	@rm -f $(OBJECTS)
+	@rm -f $(SOURCES:.cpp=.d)
+
+release: all
+
+ifeq ($(findstring clean,$(MAKECMDGOALS)),)
+-include $(SOURCES:.cpp=.d)
+endif
+

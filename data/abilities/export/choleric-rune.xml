@@ -1,0 +1,20 @@
+<root type="ability" class="passive">
+
+  <name>Choleric rune</name>
+  <description>
+A magic rune defining your skills in choleric spells. The more skilled in this rune you are the more powerful are your spells combining explosiveness, agression, variability, impulseviness and activity.
+
+Also by increasing this ability your character will be moving a little bit faster.
+  </description>
+  <icon>data/abilities/export/choleric-rune-0.png</icon>
+  <unavailable-icon>data/abilities/export/choleric-rune-1.png</unavailable-icon>
+
+  <max-level value="100"/> 
+
+  <!-- brzydki hak, zeby sie przeliczyl 'faster-movement.xml' po podbiciu tej runy -->
+  <effect type="modify">
+    <aspect value="speed"/>
+    <amount calc="1.0"/>
+  </effect>
+  
+</root>

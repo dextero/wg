@@ -1,0 +1,8 @@
+exec pre-new-game
+new-player 0
+set-slot-ability 0 0 fire a
+set-slot-ability 0 1 electricity a
+set-ability player0 data/abilities/fire/fireball.xml 0
+set-ability player0 data/abilities/electric/electron.xml 1
+load-map data/maps/tutorial.xml entry
+exec post-new-game
