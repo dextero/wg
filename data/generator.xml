@@ -231,7 +231,7 @@
         <loot file="data/loots/weapon.xml" minLevel="1" maxLevel="99" />
       
         <!-- le boss -->
-        <boss file="data/physicals/monsters/defs/rat.xml" minLevel="1" maxLevel="5" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-small.xml" />
+        <boss file="data/physicals/monsters/defs/final-boss.xml" minLevel="1" maxLevel="99" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-small.xml" />
       
         <!-- drzwi. todo: rozwazyc przeniesienie do <set> -->
         <door file="data/physicals/doors/gate.xml" />
