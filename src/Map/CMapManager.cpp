@@ -237,10 +237,7 @@ namespace Map{
         desc.level = mLevel; // todo: inkrementowac
         desc.minMonsterDist = 10.f;
         desc.narrowPathsPercent = (float)gRand.Rnd(40, 60);
-        bool jestemDexter = false;
-        if (jestemDexter) {
-            desc.mapType = SRandomMapDesc::MAP_BOSS;
-        }
+        //desc.mapType = SRandomMapDesc::MAP_BOSS;
         bool result = gRandomMapGenerator.GenerateRandomMap(filename, desc);
         fprintf(stderr, "Generating map %s: %s", filename.c_str(), (result ? "OK!" : "FAILED!"));
 

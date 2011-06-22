@@ -43,6 +43,7 @@ private:
     static const unsigned int REGION  = 1 << 1;
     static const unsigned int LAIR    = 1 << 2;
     static const unsigned int LOOT    = 1 << 3;
+    static const unsigned int DOOR    = 1 << 4;
 
     struct SPartSet
     {
@@ -132,6 +133,7 @@ private:
     bool PlaceRegions();    // entry & exit - koniecznie przed PlaceLairs/Monsters, bo inaczej potwory moga sie spawnowac na glowie gracza
                             // poniewaz PlaceRegions "kopie" przejscie naokolo teleportu, musi byc przed PlaceWalls
     bool PlaceDoodahs();
+    bool PlaceBossDoors();  // drzwi otwierajace sie po zabiciu bossa. opcjonalne, ale jesli wywolywac, to najlepiej przed potworami/gniazdami/itemami
     bool PlaceLairs();
     bool PlaceMonsters();
     bool PlaceLoots();
