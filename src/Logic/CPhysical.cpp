@@ -249,7 +249,7 @@ void CPhysical::SetAnimation( const std::string& newValue )
     CheckDisplayable();
 
 	if (mDisplayable)
-		mDisplayable->SetAnimation( mAnimation );
+		mDisplayable->SetAnimation(newValue);
     mAnimation = mDisplayable->GetAnimationState()->animation;
     if (mShadow)
         mShadow->SetAnimation(newValue);

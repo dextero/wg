@@ -90,6 +90,8 @@ void CActor::UpdateAnimations(float dt){
             mAnimationTimeLeft = mAnimationTime = GetDisplayable()->GetAnimationState()->animation->TotalLength();
             GetDisplayable()->GetAnimationState()->isLooped = false;
             GetDisplayable()->GetAnimationState()->RewindTo(0.0f);
+            GetShadow()->GetAnimationState()->isLooped = false;
+            GetShadow()->GetAnimationState()->RewindTo(0.0f);
         } else if (mAbilityPerformer.GetAbilityState() == CAbilityPerformer::asIdle){
             switch(mMoveState){
                 case msStrafing:
