@@ -123,7 +123,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP8&#x0D;&#x0A;"
+				AdditionalOptions="/MP8"
 				Optimization="3"
 				InlineFunctionExpansion="2"
 				FavorSizeOrSpeed="1"
@@ -147,7 +147,7 @@
 			/>
 			<Tool
 				Name="VCLinkerTool"
-				AdditionalOptions="/NODEFAULTLIB:LIBCMT"
+				AdditionalOptions="/NODEFAULTLIB:LIBCMT&#x0D;&#x0A;"
 				AdditionalDependencies="sfml-graphics-s.lib sfml-window-s.lib sfml-audio-s.lib sfml-system-s.lib"
 				OutputFile="$(OutDir)\WarlocksGauntlet.exe"
 				LinkIncremental="0"
@@ -166,7 +166,7 @@
 			/>
 			<Tool
 				Name="VCManifestTool"
-				EmbedManifest="false"
+				EmbedManifest="true"
 			/>
 			<Tool
 				Name="VCXDCMakeTool"
