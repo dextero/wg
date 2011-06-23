@@ -853,6 +853,9 @@ bool CRandomMapGenerator::PlaceBossDoors()
                      << "\t\t\t<type>killed</type>\n"
                      << "\t\t\t<param>boss</param>\n"   // zakladamy, ze boss ma id "boss"
                      << "\t\t</cond>\n"
+                     << "\t\t<effect-on-open type=\"console\">\n"
+                     << "\t\t\t<text>load-playlist data/music/testpl.xml</text>\n"
+                     << "\t\t</effect-on-open>\n"
                      << "\t</obj>\n";
 
             mCurrent[x][i] = DOOR;
