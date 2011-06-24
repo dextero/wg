@@ -42,7 +42,7 @@ public:
 	void LoadGame(const std::string & name);
 
     void SetGameThumbnail(const sf::Image & thumbnail);
-	void PrepareToSaveGame(bool savePlayerPos = true);
+    void PrepareToSaveGame(const std::string & filename, bool savePlayerPos = true);
 	bool CanLoadGame(const std::string & name);
     std::wstring GetGameInfo(const std::string & name);
 
