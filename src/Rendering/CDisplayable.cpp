@@ -113,6 +113,7 @@ void CDisplayable::SetStaticImage(CImage *img, int number, float extraPixels)
 
     mSFSprite->FlipX( false );
 	if (img != NULL) {
+        img->SetSmooth(false);
         mSFSprite->SetImage( *img );
 		sf::IntRect rect = img->GetRect(number);
 		rect.Left += (int) extraPixels;		rect.Top += (int) extraPixels;
