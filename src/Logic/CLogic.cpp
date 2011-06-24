@@ -42,6 +42,8 @@
 #include <fstream>
 #include <sstream>
 
+#include <boost/filesystem.hpp>
+
 template<> CLogic* CSingleton<CLogic>::msSingleton = 0;
 
 CLogic::CLogic() :
@@ -314,7 +316,7 @@ void CLogic::SetGameThumbnail(const sf::Image & thumbnail)
     mGameThumbnail = thumbnail;
 }
 
-void CLogic::PrepareToSaveGame(bool savePlayerPos)
+void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
 {
 	if (mState == L"death")
 		return;
@@ -327,6 +329,19 @@ void CLogic::PrepareToSaveGame(bool savePlayerPos)
 
     if (gMapManager.GetCurrent() == NULL)
         return;
+
+    if (filename.size() < 5)
+        return;
+
+    // zapisz mape w folderze z sejwami, pod nazwa map[numer_slota].xml
+    std::string savedMapFile = filename.substr(0, filename.find_last_of("/\\") + 1) + "map" + filename.substr(filename.size() - 6, 1) + ".xml";
+
+    // hm, jesli ktos wczyta gre i ja od razu zapisze na tej samej mapie, to mogloby skasowac plik i kopiowac nicosc
+    if (savedMapFile != gMapManager.GetCurrent()->GetFilename())
+    {
+        std::remove(savedMapFile.c_str());
+        boost::filesystem::copy_file(gMapManager.GetCurrent()->GetFilename(), savedMapFile);
+    }
 
 	float xp = 0.0f;
 	std::ostringstream ss("");
@@ -402,7 +417,7 @@ void CLogic::PrepareToSaveGame(bool savePlayerPos)
 	ss << "add-xp " << xp << " ignore-skill-points silent\n";
     ss << "set-difficulty-factor " << mDifficultyFactor << "\n";
     ss << "set-score " << mScore << "\n";
-	ss << "preload-map " << gMapManager.GetCurrent()->GetFilename() << " entry false\n";
+	ss << "preload-map " << savedMapFile << " entry false\n";
 
     // flagi do questow
     for (std::map<std::wstring, bool>::const_iterator i = gQuestManager.GetFlags().begin(); i != gQuestManager.GetFlags().end(); ++i)
@@ -456,7 +471,7 @@ void CLogic::PrepareToSaveGame(bool savePlayerPos)
 
 void CLogic::SaveGame(const std::string & name, bool thumbnail, bool savePlayerPos){
     // dex: wrzucam wywolanie tutaj
-    PrepareToSaveGame(savePlayerPos);
+    PrepareToSaveGame(name, savePlayerPos);
 
 	remove(name.c_str());
 	FILE *outfile = fopen(name.c_str(), "w");
