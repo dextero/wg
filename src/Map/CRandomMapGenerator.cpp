@@ -823,6 +823,46 @@ bool CRandomMapGenerator::PlaceDoodahs()
             }
         }
 
+    // doodahy pod nogami
+    if (set.doodahsOnGround.size() > 0)
+    {
+        unsigned int doodahsCount = rand() % 3 + 2; // 2-4 doodahy
+
+        for (unsigned int i = 0; i < doodahsCount; ++i)
+        {
+            sf::Vector2i pos;
+            do {
+                pos = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
+            } while (mCurrent[pos.x][pos.y] != FREE);
+
+            // copypasta :x
+            size_t doodahNum = rand() % set.doodahsOnGround.size();     // ktory doodah?
+            float offsetX = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // offsety, zeby nie staly tak bardzo jednolicie
+            float offsetY = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // + 0.5, zeby wycentrowac na kaflach
+            float scale = ((float)rand() / RAND_MAX + 3.3f) / 3.f;      // skala doodaha: 1.1 - ~1.4 (rand() zwraca signed int)
+            int rot = rand() % 360;                                     // jeszcze obrot do tego
+
+            if ((pos.x > 0 && mCurrent[pos.x - 1][pos.y] != BLOCKED) ||
+                ((unsigned int)pos.x < mDesc.sizeX - 1 && mCurrent[pos.x + 1][pos.y] != BLOCKED) ||
+                (pos.y > 0 && mCurrent[pos.x][pos.y - 1] != BLOCKED) ||
+                ((unsigned int)pos.y < mDesc.sizeY - 1 && mCurrent[pos.x][pos.y + 1] != BLOCKED))
+                scale = Maths::Clamp(scale, 0.f, 1.1f);
+
+            scale *= set.doodahsOnGround[doodahNum].scale;
+
+            mXmlText << "\t<sprite file=\"" << set.doodahsOnGround[doodahNum].file
+                << "\" x=\"" << (float)pos.x + offsetX
+                << "\" y=\"" << (float)pos.y + offsetY
+                << "\" scale=\"" << scale
+                << "\" rot=\"" << rot
+                << "\" z=\"" << (set.doodahsOnGround[doodahNum].isInForeground ? "foreground" : "background")
+                << "\" />\n";
+
+            // dobrze, zeby na tym polu juz nic nie ladowalo
+            mCurrent[pos.x][pos.y] = DOODAH;
+        }
+    }
+
     return true;
 }
 
@@ -1149,7 +1189,10 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
         // doodahy
         if (xml.GetChild(n, "doodahs"))
             for (rapidxml::xml_node<>* doodah = xml.GetChild(xml.GetChild(n, "doodahs"), "doodah"); doodah; doodah = xml.GetSibl(doodah, "doodah"))
-                set.doodahs.push_back(SPartSet::SDoodah(xml.GetString(doodah, "file"), !!(xml.GetString(doodah, "z") == "foreground"), xml.GetFloat(doodah, "scale", 1.0f)));
+                if (xml.GetInt(doodah, "underfoot") > 0)   // do postawienia pod nogami
+                    set.doodahsOnGround.push_back(SPartSet::SDoodah(xml.GetString(doodah, "file"), !!(xml.GetString(doodah, "z") == "foreground"), xml.GetFloat(doodah, "scale", 1.0f)));
+                else
+                    set.doodahs.push_back(SPartSet::SDoodah(xml.GetString(doodah, "file"), !!(xml.GetString(doodah, "z") == "foreground"), xml.GetFloat(doodah, "scale", 1.0f)));
         
         // i przynajmniej jednego doodaha
         if (!set.doodahs.size())

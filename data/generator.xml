@@ -271,6 +271,9 @@
             <doodah file="data/maps/doodahs/tree9.png" z="foreground" />
             <doodah file="data/maps/doodahs/tree-strange.png" z="foreground" />
             <doodah file="data/maps/doodahs/ancientblocks.png" z="background" />
+          
+            <!-- "lezace na ziemi" -->
+            <doodah file="data/maps/doodahs/bonefire_one.png" z="background" underfoot="1" />
         </doodahs>
     </set>
     <set name="desert">

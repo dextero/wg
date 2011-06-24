@@ -44,6 +44,7 @@ private:
     static const unsigned int LAIR    = 1 << 2;
     static const unsigned int LOOT    = 1 << 3;
     static const unsigned int DOOR    = 1 << 4;
+    static const unsigned int DOODAH  = 1 << 5; // doodahy lezace pod nogami, przez ktore mozna przejsc
 
     struct SPartSet
     {
@@ -58,6 +59,7 @@ private:
 
         std::vector<std::string> tiles;
         std::vector<SDoodah> doodahs;
+        std::vector<SDoodah> doodahsOnGround; // doodahy lezace pod nogami, przez ktore mozna przejsc
     };
 
 public:    
