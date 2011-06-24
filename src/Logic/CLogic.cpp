@@ -5,6 +5,7 @@
 #include "CPlayer.h"
 #include "Collisions.h"
 #include "CBestiary.h"
+#include "Items/CItem.h"
 #include "../CGame.h"
 #include "../CGameOptions.h"
 #include "../Console/CConsole.h"
@@ -387,7 +388,17 @@ void CLogic::PrepareToSaveGame(bool savePlayerPos)
             }
 		}
 	}
-	ss << "set-ability player0 data/abilities/fire/fireball.xml 0\n";// taka proba
+	//ss << "set-ability player0 data/abilities/fire/fireball.xml 0\n";// taka proba
+
+    // umiejki-bronie
+	for (unsigned int i = 0; i < gPlayerManager.GetPlayerCount(); i++)
+	{
+        if (CPlayer* player = gPlayerManager.GetPlayerByNumber(i))
+            for (unsigned int j = 0; j < 4; ++j)
+                if (player->GetItem(j))
+                    ss << "set-ability player0 " << player->GetItem(j)->GetAbility() << " " << j << " " << player->GetItem(j)->mLevel << "\n";
+    }
+
 	ss << "add-xp " << xp << " ignore-skill-points silent\n";
     ss << "set-difficulty-factor " << mDifficultyFactor << "\n";
     ss << "set-score " << mScore << "\n";
