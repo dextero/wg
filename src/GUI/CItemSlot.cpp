@@ -59,6 +59,8 @@ bool CItemSlot::OnMouseEvent( float x, float y, mouseEvent e )
                 slot->UpdateSprites(0.f);
                 if (slot->mItemIcon && slot->mSelectedItem)
                     slot->SetDraggable(true);
+
+                slot->UpdateTooltipText(mSelectedItem ? mSelectedItem->GetAbility() : "");
             }
 
             mSelectedItem = mDraggedItem;
