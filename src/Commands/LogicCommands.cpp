@@ -40,6 +40,8 @@
 #include "../Logic/Achievements/CAchievementManager.h"
 #include "../Logic/CBestiary.h"
 
+#include "../Logic/Loots/CLoot.h"
+
 #include <SFML/Graphics/Image.hpp>
 
 #include <sstream>
@@ -59,6 +61,7 @@ CCommands::SCommandPair LogicCommands [] =
     {L"spawn-physical"                      , "$MAN_SPAWN_PHYSICAL"             , CommandSpawnPhysical           },
     {L"spawn-physical-rot"                  , "$MAN_SPAWN_PHYSICAL"             , CommandSpawnPhysicalRot        },
     {L"spawn-raw-physical"                  , "$MAN_SPAWN_RAW_PHYSICAL"         , CommandSpawnRawPhysical        },
+    {L"spawn-weapon"                        , "$MAN_SPAWN_WEAPON"               , CommandSpawnWeapon             },
     {L"destroy-physical"                    , "$MAN_DESTROY_PHYSICAL"           , CommandDestroyPhysical         },
     {L"set-ai-scheme"                       , "$MAN_SET_AI_SCHEME"              , CommandSetEnemyAIScheme        },
     {L"new-player"                          , "$MAN_NEW_PLAYER"                 , CommandNewPlayer               },
@@ -166,6 +169,33 @@ void CommandSpawnRawPhysical(size_t argc, const std::vector<std::wstring> &argv)
         id =  argv[1];
 
     gPhysicalManager.CreatePhysical( id );
+}
+
+void CommandSpawnWeapon(size_t argc, const std::vector<std::wstring> &argv)
+{
+    if (argc < 4)
+    {
+        gConsole.Printf(L"usage: %ls weapon.xml x y", argv[0].c_str());
+        return;
+    }
+
+    std::string lootTplFile = "data/loots/weapon.xml";
+    CPhysicalTemplate* lootTpl = gResourceManager.GetPhysicalTemplate(lootTplFile);
+    if (!lootTpl)
+    {
+        gConsole.Printf(L"Error: couldn't load physical template %s", lootTplFile.c_str());
+        return;
+    }
+
+    CLoot* loot = (CLoot*)lootTpl->Create();
+    if (!loot)
+    {
+        gConsole.Printf(L"Error: couldn't create loot");
+        return;
+    }
+
+    loot->SetPosition(sf::Vector2f(StringUtils::Parse<float>(argv[2]), StringUtils::Parse<float>(argv[3])), true);
+    loot->SetAbility(StringUtils::ConvertToString(argv[1]));
 }
 
 void CommandDestroyPhysical(size_t argc, const std::vector<std::wstring> &argv)
