@@ -420,6 +420,7 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
     ss << "set-difficulty-factor " << mDifficultyFactor << "\n";
     ss << "set-score " << mScore << "\n";
 	ss << "preload-map " << savedMapFile << " entry false\n";
+    ss << "set-map-level " << gMapManager.GetLevel() << "\n";
 
     // flagi do questow
     for (std::map<std::wstring, bool>::const_iterator i = gQuestManager.GetFlags().begin(); i != gQuestManager.GetFlags().end(); ++i)
