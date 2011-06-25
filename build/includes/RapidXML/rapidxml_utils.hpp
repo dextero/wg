@@ -44,6 +44,8 @@ namespace rapidxml
             m_data.resize(size + 1);
             fread(&m_data.front(), 1, size, stream);
             m_data[size] = 0;
+
+            fclose(stream);
         }
 
         //! Loads file into the memory. Data will be automatically destroyed by the destructor
