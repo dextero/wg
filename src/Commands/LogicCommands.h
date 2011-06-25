@@ -9,6 +9,7 @@ extern CCommands::SCommandPair LogicCommands[];
 void CommandSpawnPhysical(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSpawnPhysicalRot(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSpawnRawPhysical(size_t argc, const std::vector<std::wstring> &argv);
+void CommandSpawnWeapon(size_t argc, const std::vector<std::wstring> &argv);
 void CommandDestroyPhysical(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSetPhysicalCategory(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSetPhysicalImage(size_t argc, const std::vector<std::wstring> &argv);

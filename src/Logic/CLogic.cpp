@@ -6,6 +6,7 @@
 #include "Collisions.h"
 #include "CBestiary.h"
 #include "Items/CItem.h"
+#include "Loots/CLoot.h"
 #include "../CGame.h"
 #include "../CGameOptions.h"
 #include "../Console/CConsole.h"
@@ -23,6 +24,7 @@
 #include "Conditions/CConditionManager.h"
 #include "../Logic/Abilities/CAbilityTree.h"
 #include "../Logic/Quests/CQuestManager.h"
+
 #include "../Editor/CEditor.h"
 #include "../GUI/Cutscene/CCutscenePlayer.h"
 #include "../GUI/Dialogs/CDialogDisplayer.h"
@@ -438,19 +440,28 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
             continue;
 
 		std::string filename;
-        if ((*it)->GetCategory() == PHYSICAL_MONSTER ||
-            (*it)->GetCategory() == PHYSICAL_LAIR ||
-            (*it)->GetCategory() == PHYSICAL_OBSTACLE ||
-			(*it)->GetCategory() == PHYSICAL_LOOT)
+        switch ((*it)->GetCategory())
         {
+        case PHYSICAL_MONSTER:
+        case PHYSICAL_LAIR:
+        case PHYSICAL_OBSTACLE:
             filename = (*it)->GetTemplate()->GetFilename();
+            ss << "spawn-physical-rot " << filename << " " << StringUtils::ConvertToString((*it)->GetUniqueId()) << " " 
+			    << (*it)->GetPosition().x << " " << (*it)->GetPosition().y << " " << (*it)->GetRotation() << "\n";
+            break;
+        case PHYSICAL_LOOT:
+            {
+                CLoot* loot = (CLoot*)(*it);
+                if (loot->GetItem())
+                    ss << "spawn-weapon " << loot->GetItem()->GetAbility() << " " << loot->GetPosition().x << " " << loot->GetPosition().y << "\n";
+                else
+                    ss << "spawn-physical-rot " << loot->GetTemplate()->GetFilename() << " " << StringUtils::ConvertToString((*it)->GetUniqueId()) << " " 
+			            << (*it)->GetPosition().x << " " << (*it)->GetPosition().y << " " << (*it)->GetRotation() << "\n";
+                break;
+            }
+        default:
+            break;
         }
-        else
-            continue;
-
-
-        ss << "spawn-physical-rot " << filename << " " << StringUtils::ConvertToString((*it)->GetUniqueId()) << " " 
-			<< (*it)->GetPosition().x << " " << (*it)->GetPosition().y << " " << (*it)->GetRotation() << "\n";
     }
 
     // zyjace bossy
