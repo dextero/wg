@@ -34,7 +34,8 @@ namespace Map{
 		m_sceneManager( new CQuadTreeSceneManager() ),
 		m_collisionMap( new CCollisionMap() ),
         mCurrentMapTimeElapsed( 0.0f ),
-        mHideLoadingScreen( false )
+        mHideLoadingScreen( false ),
+        mLevel(0)
 	{
 		fprintf( stderr, "CMapManager::CMapManager()\n");
 		gGame.AddFrameListener(this);

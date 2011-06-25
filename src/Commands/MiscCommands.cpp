@@ -121,6 +121,8 @@ void CommandExec(size_t argc, const std::vector<std::wstring> &argv)
 		fgets(line, 1024, f); 
         gCommands.ParseCommand( StringUtils::ReinterpretFromUTF8( line ) );
     }
+
+    fclose(f);
 }
 
 void CommandPrintScreen(size_t argc, const std::vector<std::wstring> &argv)

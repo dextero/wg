@@ -101,6 +101,7 @@ CConsole::CConsole() :
         }
     }
 
+    fclose(infile);
 }
 
 CConsole::~CConsole()

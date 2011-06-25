@@ -327,19 +327,21 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
         return;
     }
 
-    if (gMapManager.GetCurrent() == NULL)
+    if (gMapManager.GetCurrent() == NULL || gMapManager.GetCurrent()->GetFilename().size() == 0) // zabezpieczenie przed save po niepoprawnym zaladowaniu mapy
         return;
 
-    if (filename.size() < 5)
+    if (filename.size() < 6)
         return;
 
     // zapisz mape w folderze z sejwami, pod nazwa map[numer_slota].xml
-    std::string savedMapFile = filename.substr(0, filename.find_last_of("/\\") + 1) + "map" + filename.substr(filename.size() - 6, 1) + ".xml";
+    std::string savedMapFile = filename.substr(0, filename.find_last_of("/\\") + 1) + "map" +
+        (filename[filename.size() - 6] >= '0' && filename[filename.size() - 6] <= '9' ? filename.substr(filename.size() - 6, 1) : "") + ".xml";
+    std::string currentMapFile = gMapManager.GetCurrent()->GetFilename();
 
     // hm, jesli ktos wczyta gre i ja od razu zapisze na tej samej mapie, to mogloby skasowac plik i kopiowac nicosc
     if (savedMapFile != gMapManager.GetCurrent()->GetFilename())
     {
-        std::remove(savedMapFile.c_str());
+        boost::filesystem::remove(savedMapFile);
         boost::filesystem::copy_file(gMapManager.GetCurrent()->GetFilename(), savedMapFile);
     }
 
@@ -530,6 +532,7 @@ std::wstring CLogic::GetGameInfo( const std::string & name )
 
     char buf[4096];
 	std::string info(fgets(buf, 4096, infile) != NULL ? buf : "");
+    fclose(infile);
 
     if (info.length() >= 13)
     {
