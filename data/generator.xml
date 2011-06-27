@@ -278,8 +278,8 @@
             <doodah file="data/maps/doodahs/foliage8.png" z="background" underfoot="1" />
             <doodah file="data/maps/doodahs/foliage9.png" z="background" underfoot="1" />
             <doodah file="data/maps/doodahs/foliage9.png" z="background" underfoot="1" scale="0.5"/>
-            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.75" />
-            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.5" />
+            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.8" />
         </doodahs>
     </set>
     <set name="desert">

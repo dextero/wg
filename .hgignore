@@ -19,3 +19,4 @@ WarlocksGauntlet.bin*
 tools/windows/cygwin-autobuild/workDir/.*
 tools/windows/cygwin-autobuild/WG-VC2005.*
 tools/windows/cygwin-autobuild/build.log
+WarsztatGame\.exe\.manifest$
