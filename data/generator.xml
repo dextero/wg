@@ -274,6 +274,12 @@
           
             <!-- "lezace na ziemi" -->
             <doodah file="data/maps/doodahs/bonefire_one.png" z="background" underfoot="1" />
+            <doodah file="data/maps/doodahs/bonefire_four.png" z="background" underfoot="1" />
+            <doodah file="data/maps/doodahs/foliage8.png" z="background" underfoot="1" />
+            <doodah file="data/maps/doodahs/foliage9.png" z="background" underfoot="1" />
+            <doodah file="data/maps/doodahs/foliage9.png" z="background" underfoot="1" scale="0.5"/>
+            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.75" />
+            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.5" />
         </doodahs>
     </set>
     <set name="desert">
@@ -323,6 +329,21 @@
             <doodah file="data/maps/doodahs/palmtree4.png" z="foreground" />
             <doodah file="data/maps/doodahs/palmtree5.png" z="foreground" />
             <doodah file="data/maps/doodahs/palmtree6.png" z="foreground" />
+			
+            <doodah file="data/maps/doodahs/bonefire_three.png" z="background" underfoot="1" />
+            <doodah file="data/maps/doodahs/bonefire_two.png" z="background" underfoot="1" />
+            <doodah file="data/maps/doodahs/bones1.png" z="background" underfoot="1" scale="0.5"/>
+            <doodah file="data/maps/doodahs/desert/bones.png" z="background" underfoot="1"/>
+            <doodah file="data/maps/doodahs/desert/bones2.png" z="background" underfoot="1"/>
+            <doodah file="data/maps/doodahs/desert/skeleton1.png" z="background" underfoot="1"/>
+            <doodah file="data/maps/doodahs/desert/skeleton2.png" z="background" underfoot="1"/>
+            <doodah file="data/maps/doodahs/desert/broken_wheel_1.png" z="background" underfoot="1"/>
+            <doodah file="data/maps/doodahs/desert/broken_wheel_2.png" z="background" underfoot="1"/>
+            <doodah file="data/maps/doodahs/desert/bucket.png" z="background" underfoot="1" scale="0.75"/>
+            <doodah file="data/maps/doodahs/desert/grass1.png" z="background" underfoot="1"/>
+            <doodah file="data/maps/doodahs/desert/grass2.png" z="background" underfoot="1"/>
+            <doodah file="data/maps/doodahs/desert/green_bottle.png" z="background" underfoot="1"/>
+            <doodah file="data/maps/doodahs/desert/leaf.png" z="background" underfoot="1"/>
         </doodahs>
     </set>
 </root>
