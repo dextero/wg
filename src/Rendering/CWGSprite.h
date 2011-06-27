@@ -1,6 +1,7 @@
 #ifndef __CWGSPRITE_H__
 #define __CWGSPRITE_H__
 
+#include <cstddef>
 #include <SFML/Graphics/Sprite.hpp>
 
 class CWGSprite : public sf::Sprite
