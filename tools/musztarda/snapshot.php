@@ -7,8 +7,10 @@ $platform = $_GET["platform"];
 if (empty($platform)) exit("error, empty platform");
 
 $newestLookup = array(
-	"win_pl" => "http://students.mimuw.edu.pl/~sk236086/WG/paczki/newest.php",
-	"win_en" => "http://students.mimuw.edu.pl/~sk236086/WG/paczki/newest.php",
+#	"win_pl" => "http://students.mimuw.edu.pl/~sk236086/WG/paczki/newest.php",
+#	"win_en" => "http://students.mimuw.edu.pl/~sk236086/WG/paczki/newest.php",
+	"win_pl" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/win32/en/latest.php",
+	"win_en" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/win32/en/latest.php",
 	"lin_pl" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/pl/latest.php",
 	"lin_en" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/latest.php",
 #	"lin_pl" => "http://students.mimuw.edu.pl/~ps209499/wg/snapshots/linux/pl/latest.php",
@@ -22,8 +24,10 @@ $url = trim(getRemoteFile($newestLookup[$key]), " \t\n");
 if (empty($url)) exit("error, url is empty");
 
 $newestStorage = array(
-	"win_pl" => "http://students.mimuw.edu.pl/~sk236086/WG/paczki/",
-	"win_en" => "http://students.mimuw.edu.pl/~sk236086/WG/paczki/",
+#	"win_pl" => "http://students.mimuw.edu.pl/~sk236086/WG/paczki/",
+#	"win_en" => "http://students.mimuw.edu.pl/~sk236086/WG/paczki/",
+	"win_pl" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/win32/en/",
+	"win_en" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/win32/en/",
 	"lin_pl" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/pl/",
 	"lin_en" => "http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/",
 #	"lin_pl" => "http://students.mimuw.edu.pl/~ps209499/wg/snapshots/linux/pl/",
