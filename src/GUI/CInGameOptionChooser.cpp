@@ -27,11 +27,11 @@ CInGameOptionChooser::CInGameOptionChooser() :
         mTitle(NULL),
         mRadius(0.f),
         mOptionHandler(NULL) {
-    fprintf(stderr, "CInGameOptionChooser()");
+    fprintf(stderr, "CInGameOptionChooser()\n");
 }
 
 CInGameOptionChooser::~CInGameOptionChooser() {
-    fprintf(stderr, "~CInGameOptionChooser()");
+    fprintf(stderr, "~CInGameOptionChooser()\n");
     while (mButtons.size() > 0) {
         mButtons.back()->Remove();
         mButtons.pop_back();
