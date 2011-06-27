@@ -24,6 +24,7 @@
 #include "Conditions/CConditionManager.h"
 #include "../Logic/Abilities/CAbilityTree.h"
 #include "../Logic/Quests/CQuestManager.h"
+#include "../ResourceManager/CResourceManager.h"
 
 #include "../Editor/CEditor.h"
 #include "../GUI/Cutscene/CCutscenePlayer.h"
@@ -345,6 +346,9 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
     {
         boost::filesystem::remove(savedMapFile);
         boost::filesystem::copy_file(gMapManager.GetCurrent()->GetFilename(), savedMapFile);
+
+        // poniewaz zmienila sie mapa, trzeba wymusic jej reload w ResourceManagerze
+        gResourceManager.DropResource(savedMapFile);
     }
 
 	float xp = 0.0f;
