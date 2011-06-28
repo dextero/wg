@@ -24,6 +24,8 @@ using namespace sf;
 
 #endif
 
+#define GL_CLAMP_TO_EDGE    0x812F
+
 
 ////////////////////////////////////////////////////////////
 /// Check the last OpenGL error
@@ -111,6 +113,8 @@ void CWGSprite::Render(RenderTarget&) const
 	{
 		// Set the texture
 		GetImage()->Bind();
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
 
 		// Calculate the texture coordinates
 		bool flipX = false, flipY = false; // TODO
