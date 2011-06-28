@@ -245,7 +245,7 @@
         <tile-mask file="data/maps/tile_mask/mask5.png" />
     </tile-masks>
 
-    <set name="forest">
+    <set name="forest" level="0">
         <tiles>
             <tile image="data/maps/themes/test/rgrass.png" />
             <tile image="data/maps/themes/test/rgrass_1.png" />
@@ -280,9 +280,76 @@
             <doodah file="data/maps/doodahs/foliage9.png" z="background" underfoot="1" scale="0.5"/>
             <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="1.0" />
             <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.8" />
+            <doodah file="data/maps/doodahs/jungle/sticks3.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/stick1.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/stick2.png" z="background" underfoot="1" scale="1.0" />
         </doodahs>
     </set>
-    <set name="desert">
+	
+    <set name="jungle" level="5">
+        <tiles>
+            <tile image="data/maps/themes/test/rgrass.png" />
+            <tile image="data/maps/themes/test/rgrass_1.png" />
+            <tile image="data/maps/themes/test/rswamp.png" />
+            <tile image="data/maps/themes/test/rsand_1.png" />
+        </tiles>
+        <doodahs>
+            <doodah file="data/maps/doodahs/jungle/bush1.png" z="foreground" />
+            <doodah file="data/maps/doodahs/jungle/bush2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/jungle/bush3.png" z="foreground" />
+            <doodah file="data/maps/doodahs/jungle/bush1.png" z="foreground" />
+            <doodah file="data/maps/doodahs/jungle/bush2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/jungle/bush3.png" z="foreground" />
+            <doodah file="data/maps/doodahs/jungle/bush4.png" z="foreground" />
+            <doodah file="data/maps/doodahs/jungle/treebark1.png" z="background" />
+            <doodah file="data/maps/doodahs/jungle/treebark2.png" z="background" />
+            <doodah file="data/maps/doodahs/jungle/sponge.png" z="background" />
+            <doodah file="data/maps/doodahs/jungle/purchl.png" z="background" />
+            <doodah file="data/maps/doodahs/jungle/hole.png" z="background" />
+	
+            <doodah file="data/maps/doodahs/foliage2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/foliage5.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree1.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree2.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree3.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree4.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree5.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree6.png" z="foreground" />
+            <doodah file="data/maps/doodahs/tree-strange.png" z="foreground" />
+            <doodah file="data/maps/doodahs/ancientblocks.png" z="background" />
+            <doodah file="data/maps/doodahs/beast_skull_small.png" z="background" />
+          
+            <!-- "lezace na ziemi" -->
+            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.8" />
+            <doodah file="data/maps/doodahs/jungle/conopy.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush01.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush02.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush03.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush04.png" z="background" underfoot="1" scale="1.0" />
+            <!--<doodah file="data/maps/doodahs/jungle/flatbush05.png" z="background" underfoot="1" scale="1.0" />-->
+            <doodah file="data/maps/doodahs/jungle/flatbush06.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush07.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush08.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush09.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush10.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush11.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush12.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush13.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/leaves1.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/leaves2.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/leaves3.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/stick1.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/stick2.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/sticks1.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/sticks2.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/sticks3.png" z="background" underfoot="1" scale="1.0" />
+        </doodahs>
+		<min-doodahs-on-ground value="30"/>
+		<max-doodahs-on-ground value="50"/>
+    </set>
+	
+    <set name="desert" level="9">
         <tiles>
             <tile image="data/maps/themes/sand/tilesets_sand_a_12.png" />
             <tile image="data/maps/themes/oblique_way/tileset_scheme_b_a7.png" />
