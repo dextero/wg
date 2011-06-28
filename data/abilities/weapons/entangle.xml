@@ -31,10 +31,10 @@ Bonus for this spell depends:
           <effect type="list">
             <effect type="graphical-effect">
               <name value="entangle" />
-              <time calc="3.5" />
+              <time calc="3.0 * (1 + 0.5 * ln(1 + power))" />
             </effect>
             <effect type="timed">
-              <time calc="3.5" />
+              <time calc="3.0 * (1 + 0.5 * ln(1 + power))" />
               <effect type="list">
                 <effect type="modify">
                   <aspect value="speed" />
@@ -52,10 +52,10 @@ Bonus for this spell depends:
       <effect type="retarget">
         <target-chooser>
           <filter value="hostiles"/>
-          <range calc="0.02 + (0.5 * ln(1 + power))"/>
+          <range calc="0.02 + (1.66 * ln(0.5 + power))"/>
           <angle value="360.0"/>
           <aim-at-ground value="0"/>
-          <count calc="ln(1 + (2 * power))"/>
+          <count calc="6 * ln(1 + (0.33 * power))"/>
         </target-chooser>
         <effect type="jump">
           <name value="entangle-tag"/>
