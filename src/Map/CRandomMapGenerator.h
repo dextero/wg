@@ -60,6 +60,8 @@ private:
         std::vector<std::string> tiles;
         std::vector<SDoodah> doodahs;
         std::vector<SDoodah> doodahsOnGround; // doodahy lezace pod nogami, przez ktore mozna przejsc
+		unsigned int minDoodahsOnGround, maxDoodahsOnGround;
+		unsigned int fromLevel;
     };
 
 public:    
@@ -153,6 +155,8 @@ public:
     bool GenerateRandomMap(const std::string& filename, const SRandomMapDesc& desc);
 
     std::string GetRandomWeaponFile(int level);
+
+	std::string GetSetForLevel(unsigned int level);
 
 //  std::string GenerateNextFinding(bool isLootFromDyingMonster);
 
