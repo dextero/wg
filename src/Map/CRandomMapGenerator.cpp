@@ -826,7 +826,7 @@ bool CRandomMapGenerator::PlaceDoodahs()
     // doodahy pod nogami
     if (set.doodahsOnGround.size() > 0)
     {
-        unsigned int doodahsCount = rand() % 3 + 2; // 2-4 doodahy
+		unsigned int doodahsCount = rand() % (set.maxDoodahsOnGround - set.minDoodahsOnGround) + set.minDoodahsOnGround; // troche doodahow
 
         for (unsigned int i = 0; i < doodahsCount; ++i)
         {
@@ -1134,6 +1134,21 @@ void CRandomMapGenerator::ReleaseCurrent()
     mXmlText.str("");
 }
 
+std::string CRandomMapGenerator::GetSetForLevel(unsigned int level)
+{
+	std::string best = "";
+	unsigned int bestValue = 0;
+	std::map<std::string, SPartSet>::iterator iterator = this->mPartSets.begin();
+	for (; iterator != this->mPartSets.end(); iterator++)
+	{
+		if (iterator->second.fromLevel <= level && iterator->second.fromLevel >= bestValue){
+			best = iterator->first;
+			bestValue = iterator->second.fromLevel;
+		}
+	}
+	return best;
+}
+
 // -----------------------------------
 
 CRandomMapGenerator::CRandomMapGenerator():
@@ -1193,6 +1208,10 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
                     set.doodahsOnGround.push_back(SPartSet::SDoodah(xml.GetString(doodah, "file"), !!(xml.GetString(doodah, "z") == "foreground"), xml.GetFloat(doodah, "scale", 1.0f)));
                 else
                     set.doodahs.push_back(SPartSet::SDoodah(xml.GetString(doodah, "file"), !!(xml.GetString(doodah, "z") == "foreground"), xml.GetFloat(doodah, "scale", 1.0f)));
+
+		set.maxDoodahsOnGround = xml.GetInt(xml.GetChild(n, "max-doodahs-on-ground"), "value", 5);
+		set.minDoodahsOnGround = xml.GetInt(xml.GetChild(n, "min-doodahs-on-ground"), "value", 2);
+		set.fromLevel = xml.GetInt(n, "level");
         
         // i przynajmniej jednego doodaha
         if (!set.doodahs.size())

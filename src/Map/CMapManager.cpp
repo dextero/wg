@@ -222,11 +222,7 @@ namespace Map{
         // todo: robic w katalogu usera:
 		std::string filename = gGameOptions.GetUserDir() + "/generated_maps/rnd" + StringUtils::ToString(r) + ".xml";
         SRandomMapDesc desc;
-        if (mLevel <= 9) {
-            desc.set = "forest";
-        } else {
-            desc.set = "desert";
-        }
+		desc.set = gRandomMapGenerator.GetSetForLevel(mLevel);
         desc.sizeX = 32;
         desc.sizeY = 32;
         desc.obstaclesAreaPercent = (float)gRand.Rnd(40, 60);
