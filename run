@@ -1,3 +1,11 @@
 #!/bin/bash
-export LD_LIBRARY_PATH=libs32
-./WarlocksGauntlet.bin32 $*
+MACHINE=`uname -m`
+if [ "$MACHINE" = x86_64 ]
+then
+  ARCH="64"
+else
+  ARCH="32"
+fi
+
+export LD_LIBRARY_PATH=libs$ARCH
+./WarlocksGauntlet.bin$ARCH $*
