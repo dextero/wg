@@ -771,6 +771,9 @@ bool CRandomMapGenerator::PlaceRegions()
     // te 2 regiony "zapychaja" pola
     mPassableLeft -= 2;
 
+    mCurrent[entry.x][entry.y] = REGION;
+    mCurrent[exit.x][exit.y] = REGION;
+
     return true;
 }
 
