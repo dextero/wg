@@ -1,6 +1,6 @@
 #ifndef __SAFE_FUNCTIONS_H__
 #define __SAFE_FUNCTIONS_H__
-
+#include <cstddef>
 #include <vector>
 
 template <class T>
