@@ -350,7 +350,10 @@ namespace Map{
         for (node=xml.GetChild(0,"obj"); node; node=xml.GetSibl(node,"obj") ){
             str = xml.GetString(node,"code");
             const std::string templateFile = xml.GetString(node,"templateFile");
-            CPhysicalTemplate * physicalTemplate = gResourceManager.GetPhysicalTemplate(templateFile);
+            CPhysicalTemplate * physicalTemplate = NULL;
+            if (templateFile != ""){
+        	physicalTemplate = gResourceManager.GetPhysicalTemplate(templateFile);
+    	    }
             int i = GetMapObjectTypeIndex(str);
             if (i < 0 && physicalTemplate == NULL) {
                 return false;
