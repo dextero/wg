@@ -1,3 +1,4 @@
+#include <cstddef>
 #include "CWaypoint.h"
 
 CWaypoint::CWaypoint(

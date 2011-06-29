@@ -10,7 +10,7 @@ CPPFLAGS = -I"build/includes/SFML-1.6/include" -I"build/includes" -DPLATFORM_LIN
 
 LDFLAGS = -L"./libs64"
 
-LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio
+LIBS = -lsfml-graphics -lsfml-window -lsfml-system -lsfml-audio -lopenal
 
 #default:
 CXXFLAGS = -g -Wall -m64
