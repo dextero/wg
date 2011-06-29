@@ -500,8 +500,10 @@ void CEffectManager::Perform(CPhysical *physical, CAppliedEffectPtr ae,float dt)
                 if (stats!=NULL)
                     stats->DoHeal(v);
             break;
+        case etNoEffect:
+    	    break;
         default:
-            fprintf(stderr,"WARNING: monster %ls - performing unknown effect \"%d\" at offset %d\n",physical->GetUniqueId().c_str(),et,ae->offset);
+            fprintf(stderr,"WARNING: monster %ls - performing unknown effect \"%d\" at offset %d loaded from file %s\n",physical->GetUniqueId().c_str(),et,ae->offset, effectNodes[ae->offset].debugInfo.c_str());
             break;
     }
 }
