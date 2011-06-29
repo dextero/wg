@@ -99,9 +99,8 @@ CConsole::CConsole() :
                 continue;
             AddCommandToHistory( StringUtils::ConvertToWString( line ) );
         }
+	fclose(infile);
     }
-
-    fclose(infile);
 }
 
 CConsole::~CConsole()
