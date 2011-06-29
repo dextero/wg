@@ -126,18 +126,18 @@ void CHud::Init(unsigned int playerNumber)
 	mHudFGText->SetColor(sf::Color::Green);
 	mHudFGText->SetVisible(false);
 
-	for ( unsigned i = 0; i < 10; i++ )
-	{
-		CImageBox* img = mHud->CreateImageBox( prefix + "seq-" + StringUtils::ToString(i) );
-		img->SetVisible( false );
+	//for ( unsigned i = 0; i < 10; i++ )
+	//{
+	//	CImageBox* img = mHud->CreateImageBox( prefix + "seq-" + StringUtils::ToString(i) );
+	//	img->SetVisible( false );
 
-		img->AddImageToSequence( hudDesc.path[HUDDESC_SEQ_Q] );
-		img->AddImageToSequence( hudDesc.path[HUDDESC_SEQ_W] );
-        img->AddImageToSequence( hudDesc.path[HUDDESC_SEQ_E] );
-        img->AddImageToSequence( hudDesc.path[HUDDESC_SEQ_R] );
+	//	img->AddImageToSequence( hudDesc.path[HUDDESC_SEQ_Q] );
+	//	img->AddImageToSequence( hudDesc.path[HUDDESC_SEQ_W] );
+ //       img->AddImageToSequence( hudDesc.path[HUDDESC_SEQ_E] );
+ //       img->AddImageToSequence( hudDesc.path[HUDDESC_SEQ_R] );
 
-		mSeqViewer.push_back( img );
-	}
+	//	mSeqViewer.push_back( img );
+	//}
 }
 
 void CHud::Update(float dt)
@@ -227,7 +227,7 @@ void CHud::Show()
 {
     UpdatePosition();
 	mHud->SetVisible( true );
-	ResetSequences();
+	//ResetSequences();
 }
 
 void CHud::Hide()

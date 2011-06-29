@@ -25,15 +25,13 @@ namespace GUI
 		void Hide();
         void UpdatePosition();
 
-		inline void ResetSequences() { mSeq.clear(); }
+		//inline void ResetSequences() { mSeq.clear(); }
 	private:
 		unsigned		mPlayerNumber;
 		CGUIObject *	mHud;
 		CProgressBar *	mHP, *mMana, *mManaFlr, *mXP;
 		CImageBox *		mAvatar, *mHudFg;
 		CTextArea *		mHudFGText;
-		std::vector<CImageBox*>	mSeqViewer;
-		std::vector<int>		mSeq;
 
 		float mManaFlaringTime;
 	};
