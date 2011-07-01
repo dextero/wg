@@ -8,7 +8,7 @@ void main()
 	vec4 color = texture2D(tex, gl_TexCoord[0].st);
 	
 	if (color.a == 0.0)
-		color.rgb = vec3(0.2, 0.2, 0.4);	// nie wiedziec czemu przy alfie 100% reszta skladnikow ma 1.0
+		color.rgb = vec3(0.0, 0.0, 0.0);	// nie wiedziec czemu przy alfie 100% reszta skladnikow ma 1.0
 	
 	gl_FragColor = color;
 	
@@ -19,8 +19,8 @@ void main()
 	float iceSize = 0.1;
 	
 	// modf dla ubogich
-	while (delta.x > imageSize.x) delta.x -= imageSize.x;
-	while (delta.y > imageSize.y) delta.y -= imageSize.y;
+	delta.x = mod(delta.x, imageSize.x);
+	delta.y = mod(delta.y, imageSize.y);
 	
 	// lewy gorny rog klatki
 	texCoord.x -= delta.x;
