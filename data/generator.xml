@@ -263,7 +263,7 @@
             <doodah file="data/maps/doodahs/boulders/icy-stone1.png" z="background" scale="0.65"/>
             <doodah file="data/maps/doodahs/boulders/icy-stone2.png" z="background" scale="0.65"/>
             <doodah file="data/maps/doodahs/boulders/icy-stone3.png" z="background" />
-            <doodah file="data/maps/doodahs/boulders/icy-stone4.png" z="background" scale="0.65"/>
+            <doodah file="data/maps/doodahs/boulders/icy-stone0.png" z="background" scale="0.65"/>
 		</doodahs>
 	</set>
 	
