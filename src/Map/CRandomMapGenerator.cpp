@@ -842,7 +842,7 @@ bool CRandomMapGenerator::PlaceDoodahs()
             size_t doodahNum = rand() % set.doodahsOnGround.size();     // ktory doodah?
             float offsetX = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // offsety, zeby nie staly tak bardzo jednolicie
             float offsetY = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // + 0.5, zeby wycentrowac na kaflach
-            float scale = ((float)rand() / RAND_MAX + 3.3f) / 3.f;      // skala doodaha: 1.1 - ~1.4 (rand() zwraca signed int)
+            float scale = ((float)rand() / RAND_MAX + 3.3f) / 3.f - 0.4;// skala doodaha: 0.6 - ~1.0 (rand() zwraca signed int)
             int rot = rand() % 360;                                     // jeszcze obrot do tego
 
             if ((pos.x > 0 && mCurrent[pos.x - 1][pos.y] != BLOCKED) ||
