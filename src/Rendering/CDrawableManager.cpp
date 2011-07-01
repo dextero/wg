@@ -8,6 +8,7 @@
 #include "ZIndexVals.h"
 
 #include "../CGame.h"
+#include <SFML/Graphics/Image.hpp>
 
 template<> CDrawableManager* CSingleton<CDrawableManager>::msSingleton = 0;
 
@@ -141,6 +142,10 @@ void CDrawableManager::DrawFrame(sf::RenderWindow* wnd)
 #ifdef WG_SHADERS
 			if (drawable->GetZIndex() == Z_PLAYER){
 				gShaderManager.activate("test");
+                const sf::Image* img = ((CDisplayable*)drawable)->GetSFSprite()->GetImage();
+                if (img)
+                    gShaderManager.setUniform("uTexSize", sf::Vector2f(img->GetWidth(), img->GetHeight()));
+                gShaderManager.setUniform("uImageSize", 64.f);
 			}
 #endif /* WG_SHADERS */
             if (drawable->IsVisible())
