@@ -127,6 +127,7 @@
 				Optimization="3"
 				InlineFunctionExpansion="2"
 				FavorSizeOrSpeed="1"
+				WholeProgramOptimization="false"
 				AdditionalIncludeDirectories="&quot;..\includes\SFML-1.6\include&quot;;..\includes;..\includes\Audiere\"
 				PreprocessorDefinitions="_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1;_CRT_SECURE_NO_WARNINGS=1;PLATFORM_WINDOWS"
 				BasicRuntimeChecks="0"
@@ -2158,6 +2159,14 @@
 				</File>
 				<File
 					RelativePath="..\..\src\Rendering\CMultiColorString.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Rendering\CShaderManager.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Rendering\CShaderManager.h"
 					>
 				</File>
 				<File
