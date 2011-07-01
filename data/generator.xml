@@ -260,16 +260,10 @@
             <doodah file="data/maps/doodahs/snow/flatbush3.png" z="background" underfoot="1" scale="0.8" />
             <doodah file="data/maps/doodahs/snow/flatbush4.png" z="background" underfoot="1" scale="0.8" />
 			
-            <doodah file="data/maps/doodahs/boulders/ice-rock01.png" z="background" scale="0.65"/>
-            <doodah file="data/maps/doodahs/boulders/ice-rock02.png" z="background" scale="0.65"/>
-            <doodah file="data/maps/doodahs/boulders/ice-rock03.png" z="background" />
-            <doodah file="data/maps/doodahs/boulders/ice-rock04.png" z="background" scale="0.65"/>
-            <doodah file="data/maps/doodahs/boulders/ice-rock05.png" z="background" scale="0.65"/>
-            <doodah file="data/maps/doodahs/boulders/ice-rock06.png" z="background" scale="0.75"/>
-            <doodah file="data/maps/doodahs/boulders/ice-rock07.png" z="background" scale="0.75"/>
-            <doodah file="data/maps/doodahs/boulders/ice-rock08.png" z="background" scale="0.75"/>
-            <doodah file="data/maps/doodahs/boulders/ice-rock09.png" z="background" />
-            <doodah file="data/maps/doodahs/boulders/ice-rock10.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/boulders/icy-stone1.png" z="background" scale="0.65"/>
+            <doodah file="data/maps/doodahs/boulders/icy-stone2.png" z="background" scale="0.65"/>
+            <doodah file="data/maps/doodahs/boulders/icy-stone3.png" z="background" />
+            <doodah file="data/maps/doodahs/boulders/icy-stone4.png" z="background" scale="0.65"/>
 		</doodahs>
 	</set>
 	
