@@ -35,6 +35,47 @@ void CShaderManager::activate(std::string const & programName){
 	}
 }
 
+bool CShaderManager::setUniform(const std::string& name, float value)
+{
+    GLint location = glGetUniformLocation(this->my_program, name.c_str());
+    if (location < 0) {
+        fprintf(stderr, "shader error: couldn't get uniform location: %s\n", name.c_str());
+        return false;
+    }
+    
+    glUniform1f(location, value);
+    return true;
+}
+
+bool CShaderManager::setUniform(const std::string& name, sf::Vector2f value)
+{
+    GLint location = glGetUniformLocation(this->my_program, name.c_str());
+    if (location < 0) {
+        fprintf(stderr, "shader error: couldn't get uniform location: %s\n", name.c_str());
+        return false;
+    }
+    
+    glUniform2fv(location, 1, &value.x);
+    return true;
+}
+
+bool CShaderManager::setUniform(const std::string& name, sf::Color value)
+{
+    GLint location = glGetUniformLocation(this->my_program, name.c_str());
+    if (location < 0) {
+        fprintf(stderr, "shader error: couldn't get uniform location: %s\n", name.c_str());
+        return false;
+    }
+    
+    float col[4] = {
+        (float)value.r / 255.f,
+        (float)value.g / 255.f,
+        (float)value.b / 255.f,
+        (float)value.a / 255.f
+    };
+    glUniform4fv(location, 1, col);
+    return true;
+}
 
 // TODO - copied from WGSprite.cpp
 

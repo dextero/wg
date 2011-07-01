@@ -10,6 +10,9 @@
 #include "../Utils/CSingleton.h"
 #include "ZIndexVals.h"
 
+#include <SFML/Graphics/Color.hpp>
+#include <SFML/System/Vector2.hpp>
+
 namespace sf {
 	class RenderWindow;
 }
@@ -30,6 +33,9 @@ public:
     ~CShaderManager();
 	
 	void activate(std::string const & programName);
+    bool setUniform(const std::string& name, float value);
+    bool setUniform(const std::string& name, sf::Vector2f value);
+    bool setUniform(const std::string& name, sf::Color value);
 private:
 	void load(std::string const & fragmentShaderName, std::string const & vertexShaderName, std::string const & programName);
 
