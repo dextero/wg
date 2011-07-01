@@ -7,7 +7,6 @@
 #include "CDisplayable.h"
 
 #include "IDrawable.h"
-#include "ZIndexVals.h"
 
 #include "../CGame.h"
  
@@ -20,7 +19,8 @@ CShaderManager::CShaderManager():
 	my_program(NULL)
 {
     fprintf(stderr,"CShaderManager::CShaderManager()\n");
-	this->load("data/effects/blue.frag", "data/effects/default.vert", "test");
+	this->reloadAll();
+    gGame.AddKeyListener( this );
 }
 
 CShaderManager::~CShaderManager(){
@@ -75,6 +75,16 @@ bool CShaderManager::setUniform(const std::string& name, sf::Color value)
     };
     glUniform4fv(location, 1, col);
     return true;
+}
+
+void CShaderManager::KeyReleased( const sf::Event::KeyEvent &e ){
+	if (e.Code == sf::Key::F9){
+		this->reloadAll();
+	}
+}
+
+void CShaderManager::reloadAll(){
+	this->load("data/effects/blue.frag", "data/effects/default.vert", "test");
 }
 
 // TODO - copied from WGSprite.cpp
