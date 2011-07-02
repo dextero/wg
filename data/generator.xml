@@ -146,13 +146,21 @@
 
         <monster file="data/physicals/monsters/defs/ogrillion.xml" minLevel="13" maxLevel="18" />
         <monster file="data/physicals/monsters/defs/ogre.xml" minLevel="13" maxLevel="18" />
-        <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="13" maxLevel="18" frequency="0.1" />
-        <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="13" maxLevel="99" frequency="0.06" />
+        <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="13" maxLevel="17" frequency="0.1" />
+        <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="13" maxLevel="17" frequency="0.06" />
         <monster file="data/physicals/monsters/defs/troll.xml" minLevel="13" maxLevel="14" frequency="0.125" />
         <monster file="data/physicals/monsters/defs/ugonoth.xml" minLevel="13" maxLevel="14" frequency="0.125" />
 
         <monster file="data/physicals/monsters/defs/ugonoth.xml" minLevel="15" maxLevel="18" frequency="0.25" />
+        <monster file="data/physicals/monsters/defs/cockroach.xml" minLevel="15" maxLevel="17" frequency="0.15" />
+
         <lair    file="data/physicals/lairs/ugonoth-lair.xml" minLevel="16" maxLevel="18" frequency="0.1" />
+
+        <lair    file="data/physicals/lairs/fafmycel-lair.xml" minLevel="17" maxLevel="18" frequency="0.1" />
+
+        <monster file="data/physicals/monsters/defs/cockroach.xml" minLevel="18" maxLevel="18" frequency="0.3" />
+        <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="18" maxLevel="18" frequency="0.175" />
+        <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="18" maxLevel="18" frequency="0.10" />
 		
 		<!-- -->
 
@@ -232,6 +240,7 @@
       
         <!-- le boss -->
         <boss file="data/physicals/monsters/defs/gargant-boss.xml" minLevel="9" maxLevel="9" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-small.xml" />
+        <boss file="data/physicals/monsters/defs/baldurian.xml" minLevel="18" maxLevel="18" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-small.xml" />
       
         <!-- drzwi. todo: rozwazyc przeniesienie do <set> -->
         <door file="data/physicals/doors/gate.xml" />
@@ -244,31 +253,8 @@
         <tile-mask file="data/maps/tile_mask/mask4.png" />
         <tile-mask file="data/maps/tile_mask/mask5.png" />
     </tile-masks>
-
 	
-    <set name="arctic" level="0">
-        <tiles>
-            <tile image="data/maps/tiles/arctic/ice1.png" />
-            <tile image="data/maps/tiles/arctic/ice2.png" />
-            <tile image="data/maps/tiles/arctic/rock.png" />
-            <tile image="data/maps/tiles/arctic/snow1.png" />
-            <tile image="data/maps/tiles/arctic/snow2.png" />
-        </tiles>
-        <doodahs>
-            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.8" />
-            <doodah file="data/maps/doodahs/snow/flatbush1.png" z="background" underfoot="1" scale="0.8" />
-            <doodah file="data/maps/doodahs/snow/flatbush2.png" z="background" underfoot="1" scale="0.8" />
-            <doodah file="data/maps/doodahs/snow/flatbush3.png" z="background" underfoot="1" scale="0.8" />
-            <doodah file="data/maps/doodahs/snow/flatbush4.png" z="background" underfoot="1" scale="0.8" />
-			
-            <doodah file="data/maps/doodahs/boulders/icy-stone0.png" z="background" scale="0.75"/>
-            <doodah file="data/maps/doodahs/boulders/icy-stone1.png" z="background" scale="0.75"/>
-            <doodah file="data/maps/doodahs/boulders/icy-stone2.png" z="background" scale="0.75"/>
-            <doodah file="data/maps/doodahs/boulders/icy-stone3.png" z="background" scale="0.75"/>
-		</doodahs>
-	</set>
-	
-    <set name="forest" level="3">
+    <set name="forest" level="0">
         <tiles>
             <tile image="data/maps/tiles/forest/grass.png" />
             <tile image="data/maps/tiles/forest/grass2.png" />
@@ -311,7 +297,7 @@
         </doodahs>
     </set>
 	
-    <set name="jungle" level="5">
+    <set name="jungle" level="99">
         <tiles>
             <tile image="data/maps/tiles/forest/grass.png" />
             <tile image="data/maps/tiles/forest/forest.png" />
@@ -375,7 +361,7 @@
 		<max-doodahs-on-ground value="50"/>
     </set>
 	
-    <set name="desert" level="9">
+    <set name="desert" level="10">
         <tiles>
             <tile image="data/maps/tiles/desert/rock.png" />
             <tile image="data/maps/tiles/desert/rock1.png" />
@@ -438,4 +424,25 @@
             <doodah file="data/maps/doodahs/palmtree6.png" z="foreground" />
         </doodahs>
     </set>
+    <set name="arctic" level="19">
+        <tiles>
+            <tile image="data/maps/tiles/arctic/ice1.png" />
+            <tile image="data/maps/tiles/arctic/ice2.png" />
+            <tile image="data/maps/tiles/arctic/rock.png" />
+            <tile image="data/maps/tiles/arctic/snow1.png" />
+            <tile image="data/maps/tiles/arctic/snow2.png" />
+        </tiles>
+        <doodahs>
+            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.8" />
+            <doodah file="data/maps/doodahs/snow/flatbush1.png" z="background" underfoot="1" scale="0.8" />
+            <doodah file="data/maps/doodahs/snow/flatbush2.png" z="background" underfoot="1" scale="0.8" />
+            <doodah file="data/maps/doodahs/snow/flatbush3.png" z="background" underfoot="1" scale="0.8" />
+            <doodah file="data/maps/doodahs/snow/flatbush4.png" z="background" underfoot="1" scale="0.8" />
+			
+            <doodah file="data/maps/doodahs/boulders/icy-stone0.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/boulders/icy-stone1.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/boulders/icy-stone2.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/boulders/icy-stone3.png" z="background" scale="0.75"/>
+		</doodahs>
+	</set>
 </root>
