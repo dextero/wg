@@ -246,12 +246,13 @@
     </tile-masks>
 
 	
-    <set name="snow" level="0">
+    <set name="arctic" level="0">
         <tiles>
-            <tile image="data/maps/themes/snow/snow1.png" />
-            <tile image="data/maps/themes/snow/snow2.png" />
-            <tile image="data/maps/themes/snow/ice1.png" />
-            <tile image="data/maps/themes/snow/ice2.png" />
+            <tile image="data/maps/tiles/arctic/ice1.png" />
+            <tile image="data/maps/tiles/arctic/ice2.png" />
+            <tile image="data/maps/tiles/arctic/rock.png" />
+            <tile image="data/maps/tiles/arctic/snow1.png" />
+            <tile image="data/maps/tiles/arctic/snow2.png" />
         </tiles>
         <doodahs>
             <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.8" />
@@ -269,9 +270,11 @@
 	
     <set name="forest" level="3">
         <tiles>
-            <tile image="data/maps/themes/test/rgrass.png" />
-            <tile image="data/maps/themes/test/rgrass_1.png" />
-            <tile image="data/maps/themes/test/rswamp.png" />
+            <tile image="data/maps/tiles/forest/grass.png" />
+            <tile image="data/maps/tiles/forest/grass2.png" />
+            <tile image="data/maps/tiles/forest/forest.png" />
+            <tile image="data/maps/tiles/forest/forest2.png" />
+            <tile image="data/maps/tiles/forest/swamp.png" />
         </tiles>
         <doodahs>
             <!-- "lezace na ziemi" -->
@@ -310,10 +313,10 @@
 	
     <set name="jungle" level="5">
         <tiles>
-            <tile image="data/maps/themes/test/rgrass.png" />
-            <tile image="data/maps/themes/test/rgrass_1.png" />
-            <tile image="data/maps/themes/test/rswamp.png" />
-            <tile image="data/maps/themes/test/rsand_1.png" />
+            <tile image="data/maps/tiles/forest/grass.png" />
+            <tile image="data/maps/tiles/forest/forest.png" />
+            <tile image="data/maps/tiles/forest/swamp.png" />
+            <tile image="data/maps/tiles/jungle/sand.png" />
         </tiles>
         <doodahs>          
             <!-- "lezace na ziemi" -->
@@ -374,14 +377,13 @@
 	
     <set name="desert" level="9">
         <tiles>
-            <tile image="data/maps/themes/sand/tilesets_sand_a_12.png" />
-            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_a7.png" />
-            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_a14.png" />
-            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_b14.png" />
-            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_c4.png" />
-            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_d4.png" />
-            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_c14.png" />
-            <tile image="data/maps/themes/oblique_way/tileset_scheme_b_e7.png" />
+            <tile image="data/maps/tiles/desert/rock.png" />
+            <tile image="data/maps/tiles/desert/rock1.png" />
+            <tile image="data/maps/tiles/desert/rock2.png" />
+            <tile image="data/maps/tiles/desert/rock3.png" />
+            <tile image="data/maps/tiles/desert/sand.png" />
+            <tile image="data/maps/tiles/desert/sand2.png" />
+            <tile image="data/maps/tiles/desert/sand3.png" />
         </tiles>
         <doodahs>			
             <doodah file="data/maps/doodahs/bonefire_three.png" z="background" underfoot="1" />
