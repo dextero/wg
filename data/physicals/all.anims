@@ -3504,27 +3504,33 @@ core/anim/scarab/move
 	0.10 "data/physicals/monsters/scarab.png" 96 32 128 64
 }
 
-################################ entangler
+################################ murion
 
-core/anim/entangler/default
+core/anim/murion/default
 {
-	0.10 "data/physicals/monsters/entangler.png" 0 0 25 25
+	0.10 "data/physicals/monsters/gfx/murion.png" 0 0 25 25
 }
 
-core/anim/entangler/move
+core/anim/murion/move
 {
-	0.20 "data/physicals/monsters/entangler.png" 0 0 25 25
-	0.30 "data/physicals/monsters/entangler.png" 25 0 50 25
-	0.20 "data/physicals/monsters/entangler.png" 0 0 25 25
-	0.30 "data/physicals/monsters/entangler.png" 50 0 75 25
+	0.40 "data/physicals/monsters/gfx/murion.png" 0 0 25 25
+	0.60 "data/physicals/monsters/gfx/murion.png" 25 0 50 25
+	0.40 "data/physicals/monsters/gfx/murion.png" 0 0 25 25
+	0.60 "data/physicals/monsters/gfx/murion.png" 50 0 75 25
 }
 
-core/anim/entangler/attack
+core/anim/murion/attack
 {
-	0.20 "data/physicals/monsters/entangler.png" 0 25 25 50
-	0.20 "data/physicals/monsters/entangler.png" 25 25 50 50
-	0.20 "data/physicals/monsters/entangler.png" 50 25 75 50
-	0.20 "data/physicals/monsters/entangler.png" 25 25 50 50
+	0.10 "data/physicals/monsters/gfx/murion.png" 0 25 25 50
+	0.10 "data/physicals/monsters/gfx/murion.png" 25 25 50 50
+	0.20 "data/physicals/monsters/gfx/murion.png" 50 25 75 50
+	0.05 "data/physicals/monsters/gfx/murion.png" 25 25 50 50
+	0.80 "data/physicals/monsters/gfx/murion.png" 0 25 25 50
+}
+
+core/anim/murion/death
+{
+	2.50 "data/physicals/monsters/gfx/murion.png" 0 0 25 25
 }
 
 ####### czerwony demon ########
