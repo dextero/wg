@@ -22,7 +22,6 @@
   <radius min="0.65" max="0.65" />
   <scale min="1.30" max="1.3" />
   <shadow-offset min="0.12" max="0.12" />
-  <!--  <color r="0.5" g="0.2" b="0.01" a="1.0" /> -->
 
   <animset>
     <anim name="core/anim/demon/default" type="default" />
@@ -41,7 +40,7 @@
 
   <ability name="data/abilities/monsters/melee-with-stun.xml" default="1" />
   <ability name="data/abilities/monsters/fireburst.xml" />
-  <ability name="data/abilities/monsters/electric-bullets.xml" />
+  <ability name="data/abilities/monsters/fire-bullets.xml" />
   <ability name="data/abilities/monsters/firestream.xml" />
   <ability name="data/abilities/monsters/firearrows.xml" />
   <ability name="data/abilities/monsters/meteor.xml" />

@@ -1,0 +1,69 @@
+<root type="ability" class="bullet">
+
+  <self-effect type="sound">
+    <name value="data/sounds/Lugaro/fireend.ogg" />
+  </self-effect>
+
+  <explosion type="list">
+    <effect type="graphical-effect">
+      <name value="bullet-explosion-mini" />
+      <time value="0.8" />
+    </effect>
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/firestart.ogg" />
+    </effect>
+  </explosion>  
+  
+  <effect type="list">
+    <effect type="damage">
+      <damage-type value="fire"/>
+      <amount calc="1 * intelligence" />
+    </effect>
+    <effect type="knockback">
+      <amount calc="0.5"/>
+    </effect>
+  </effect>
+
+  <flight-effect type="graphical-effect">
+    <name value="heal" />
+    <time calc="10.0"/>
+  </flight-effect>
+
+  <cast-time-effect type="list"> 
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.65"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="shield"/>
+      <time value="0.4"/>
+    </effect>
+    <effect type="modify">    
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </cast-time-effect>
+  <delay-effect type="list"> 
+    <effect type="modify">    
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </delay-effect>
+  
+  <range calc="8.0 " />
+  <speed calc="5.0" />
+  <width calc="50" />
+  <count calc="5" />
+  <bullet value="data/physicals/bullets/flameball.xml" />
+  <filter value="player,wall"/>
+
+  <manacost value="10" />
+  <casttime calc="0.65"/>
+  <delay calc="0.4" />
+  <cooldown calc="6.6"/>
+    
+  <ai-hint>
+    <player-distance>7.0</player-distance>
+    <player-angle>12.0</player-angle>
+  </ai-hint>
+</root>
