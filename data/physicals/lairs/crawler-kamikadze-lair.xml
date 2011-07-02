@@ -1,24 +1,22 @@
 <root type="lair">
   
+  <genre>crawler-kamikadze-lair</genre>
+
   <spawnLimit min="3" max="6" />
-  <spawnRate min="0.2" max="0.2" />
-  <grouping-hint>3</grouping-hint>
-  <genre>sick-lair</genre>
-  
-  <maxhp min="90.0" max="90.0" />
-  
-  <xp min="100.0" max="100.0" />
-
+  <spawnRate min="0.3" max="0.3" />
   <spawnPosition x="0.0f" y="0.0f" />
+  <spawnSound filename="data/sounds/EL/imp01.ogg" />
+  <grouping-hint>3</grouping-hint>
   
-  <spawnSound filename="data/physicals/lairs/lair-spawn.ogg" />
+  <maxhp min="90.0" max="100.0" />
+  <xp min="55.0" max="59.0" />
 
-  <scale min="0.7" max="0.7" />
-  <radius min="0.3" max="0.3" />
+  <radius min="0.3" max="0.35" />
+  <scale min="0.6" max="0.7" />
 
-  <anim name="core/anim/carapace-lair-red/default" type="default" />
-  <anim name="core/anim/carapace-lair-red/spawn" type="attack" />
-  <anim name="core/anim/carapace-lair-red/death" type="death" />
+  <anim name="test/anim/lair/default" type="default" />
+  <anim name="test/anim/lair/spawn" type="attack" />
+  <anim name="test/anim/lair/death" type="death" />
   
-  <monster filename="data/physicals/monsters/crawler-kamikadze.xml" />
+  <monster filename="data/physicals/monsters/defs/crawler-kamikadze.xml" />
 </root>
