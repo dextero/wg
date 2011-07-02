@@ -1,0 +1,42 @@
+<root type="ability" class="self">
+
+  <effect type="list">
+    <effect type="sound">
+     <name value="data/sounds/Lugaro/break.ogg" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="fire-circle-shockwave" />
+      <time value="0.3" />
+    </effect>
+    <effect type="damage">
+      <amount calc="1000" />
+    </effect>
+    <effect type="area">
+      <area value="0.65"  />
+      <filter value="player,obstacle" />
+      <effect type="list">
+        <effect type="damage">
+          <damage-type value="fire"/>
+          <amount value="30.0" />
+        </effect>
+        <effect type="knockback">
+          <amount value="8.5"/>
+        </effect>
+        <effect type="graphical-effect">
+          <time value="0.5" />
+          <name value="flames" />
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <casttime value="0.5" />
+  <delay value="0.1" />
+  <cooldown value="0.8" />
+
+  <ai-hint>
+    <player-distance>0.8</player-distance>
+    <player-angle>30.0</player-angle>
+  </ai-hint>
+
+</root>

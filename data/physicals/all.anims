@@ -541,18 +541,6 @@ test/anim/crawler/move
     0.09  "data/physicals/monsters/gfx/crawler-move.png"                  560   0   640  80
 }
 
-test/anim/crawler/explode
-{
-    0.10  "data/physicals/monsters/crawler-move.png"                  0   0   80  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  80   0   160  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  160   0   240  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  240   0   320  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  320   0   400  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  400   0   480  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  480   0   560  80
-    0.10  "data/physicals/monsters/crawler-move.png"                  560   0   640  80
-}
-
 test/anim/crawler/attack
 {
     0.10  "data/physicals/monsters/gfx/crawler-attack.png"                  0     0    80  80

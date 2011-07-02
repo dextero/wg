@@ -123,6 +123,7 @@
         <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="7" maxLevel="12" frequency="0.03" />
         <lair    file="data/physicals/lairs/hornet-lair.xml" minLevel="7" maxLevel="8" frequency="0.1" />
         <monster file="data/physicals/monsters/defs/hornet.xml" minLevel="7" maxLevel="12" frequency="0.4" />
+        <lair file="data/physicals/lairs/crawler-lair.xml" minLevel="7" maxLevel="15" frequency="0.1" />
 
         <monster file="data/physicals/monsters/defs/crawler.xml" minLevel="8" maxLevel="13" frequency="0.3" />
         <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="7" maxLevel="12" frequency="0.05" />
@@ -139,12 +140,14 @@
         <monster file="data/physicals/monsters/defs/gargant-lord.xml" minLevel="10" maxLevel="12" frequency="0.05" />
         <monster file="data/physicals/monsters/defs/gargant-berserker.xml" minLevel="10" maxLevel="12" frequency="0.05" />
         <monster file="data/physicals/monsters/defs/ogrillion.xml" minLevel="10" maxLevel="12" frequency="0.2" />
-        <lair    file="data/physicals/lairs/desert-pincer-lair.xml" minLevel="10" maxLevel="16" frequency="10.6" />
-        <monster file="data/physicals/monsters/defs/desert-pincer.xml" minLevel="10" maxLevel="14" frequency="10.3" />
+        <lair    file="data/physicals/lairs/desert-pincer-lair.xml" minLevel="10" maxLevel="16" frequency="0.6" />
+        <monster file="data/physicals/monsters/defs/desert-pincer.xml" minLevel="10" maxLevel="14" frequency="0.3" />
 
         <monster file="data/physicals/monsters/defs/ogre.xml" minLevel="11" maxLevel="12" frequency="0.2" />
+        <monster file="data/physicals/monsters/defs/crawler-kamikadze.xml" minLevel="11" maxLevel="17" frequency="0.08" />
 		
         <lair    file="data/physicals/lairs/ogre-lair.xml" minLevel="12" maxLevel="18" />
+        <lair    file="data/physicals/lairs/crawler-kamikadze-lair.xml" minLevel="12" maxLevel="17" frequency="0.1" />
 
         <monster file="data/physicals/monsters/defs/ogrillion.xml" minLevel="13" maxLevel="18" />
         <monster file="data/physicals/monsters/defs/ogre.xml" minLevel="13" maxLevel="18" />
