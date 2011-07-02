@@ -14,6 +14,10 @@
 #include <cstdio>
 #include <cstring>
 
+#ifndef PLATFORM_LINUX
+#   include <windows.h>
+#endif /* PLATFORM_LINUX */
+
 int main( int argc, char* argv[] ){
 	CSingletonCleaner cleaner;
 
@@ -74,6 +78,14 @@ int main( int argc, char* argv[] ){
 			}
 		}
     }
+
+    std::string userDir = FileUtils::GetUserDir();
+    std::freopen((userDir + "/stdout.log").c_str(), "w", stdout);
+    std::freopen((userDir + "/stderr.log").c_str(), "w", stderr);
+
+#ifndef PLATFORM_LINUX
+    ::FreeConsole();
+#endif /* PLATFORM_LINUX */
 
     gGame.Run();
 
