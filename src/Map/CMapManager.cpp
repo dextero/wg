@@ -210,13 +210,12 @@ namespace Map{
     void CMapManager::NextMap() {
         fprintf(stderr, "NextMap()\n");
         mLevel++;
-
-        if (mLevel == 18) {
-            return ScheduleSetMap("data/maps/final-arena.xml", true, "entry");
-        }
+		fprintf(stderr, "Map level = %d\n", mLevel);
 
         int r = 0;
-        if (m_map && m_map->GetFilename()[m_map->GetFilename().size() - 5] == '0') // 5? "0.xml" == 5 znakow
+		//@dex, a co jesli m_map->GetFilename().size jest mniejsze od 5? wtedy gdzies po pamieci sobie pojezdzimy...
+        //if (m_map && m_map->GetFilename()[m_map->GetFilename().size() - 5] == '0') // 5? "0.xml" == 5 znakow
+        if (m_map && m_map->GetFilename().size() >= 5 && m_map->GetFilename()[m_map->GetFilename().size() - 5] == '0') // 5? "0.xml" == 5 znakow
             r = 1;
 
         // todo: robic w katalogu usera:
@@ -239,6 +238,11 @@ namespace Map{
             desc.mapType = SRandomMapDesc::MAP_BOSS;
             desc.monsters = gRand.Rnd(5, 10);
             desc.lairs = gRand.Rnd(1, 4);
+		}
+		if (mLevel == 18) {
+            desc.mapType = SRandomMapDesc::MAP_BOSS;
+            desc.monsters = gRand.Rnd(10, 15);
+            desc.lairs = gRand.Rnd(2, 5);
 		}
 
         bool result = gRandomMapGenerator.GenerateRandomMap(filename, desc);
