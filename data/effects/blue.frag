@@ -33,6 +33,6 @@ void main()
 	vec4 colorOutside = texture2D(tex, texCoord.xy);
 	
 	if (colorOutside.a > 0.0) // nie ma alphy - jestesmy w powiekszeniu
-		gl_FragColor += vec4(0.4, 0.5, 0.8, 0.5);
+		gl_FragColor += vec4(0.6, 0.7, 1.0, 0.5);
 }
 	
