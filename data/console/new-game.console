@@ -5,7 +5,7 @@ set-ability player0 data/abilities/weapons/firebolt.xml 0
 #set-ability player0 data/abilities/weapons/gorgon-shards.xml 1
 #set-ability player0 data/abilities/weapons/exploding-corpse.xml 2
 #set-ability player0 data/abilities/weapons/transfusion.xml 3
-set-map-level 9
+set-map-level 17
 next-map
 #load-map data/maps/level01.xml entry
 #play-cutscene data/cutscene/cutscene1.xml
