@@ -167,6 +167,17 @@
         <monster file="data/physicals/monsters/defs/cockroach.xml" minLevel="18" maxLevel="18" frequency="0.3" />
         <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="18" maxLevel="18" frequency="0.175" />
         <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="18" maxLevel="18" frequency="0.10" />
+
+
+        <monster file="data/physicals/monsters/defs/cockroach.xml" minLevel="19" maxLevel="25" frequency="0.6" />
+        <monster file="data/physicals/monsters/defs/ugonoth.xml" minLevel="19" maxLevel="25" frequency="0.3" />
+        <monster file="data/physicals/monsters/defs/ogre.xml" minLevel="19" maxLevel="25" frequency="0.6" />
+        <monster file="data/physicals/monsters/defs/kliver.xml" minLevel="19" maxLevel="25" frequency="0.08" />
+        <lair    file="data/physicals/lairs/ogre-lair.xml" minLevel="19" maxLevel="25" />
+        <lair    file="data/physicals/lairs/cockroach-lair.xml" minLevel="19" maxLevel="25" />
+        <monster file="data/physicals/monsters/defs/murion.xml" minLevel="19" maxLevel="25" frequency="0.5" />
+        <lair    file="data/physicals/lairs/murion-lair.xml" minLevel="19" maxLevel="25" frequency="0.5" />
+
 		
 		<!-- -->
 

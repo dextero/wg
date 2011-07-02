@@ -1,0 +1,23 @@
+<root type="lair">
+  
+  <genre>murion-lair</genre>
+
+  <spawnLimit min="8" max="12" />
+  <spawnRate min="0.4" max="0.4" />
+  <spawnPosition x="0.0f" y="0.0f" />
+  <spawnSound filename="data/sounds/EL/imp01.ogg" />
+  <grouping-hint>3</grouping-hint>
+  
+  <maxhp min="68.0" max="72.0" />
+  <xp min="51.0" max="54.0" />
+
+  <radius min="0.25" max="0.25" />
+  <scale min="0.5" max="0.5" />
+
+  <anim name="test/anim/lair/default" type="default" />
+  <anim name="test/anim/lair/spawn" type="attack" />
+  <anim name="test/anim/lair/death" type="death" />
+  
+  <monster filename="data/physicals/monsters/defs/murion.xml" />
+
+</root>
