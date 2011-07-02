@@ -1,0 +1,22 @@
+<root type="lair">
+  
+  <genre>desert-pincer-lair</genre>
+
+  <spawnLimit min="12" max="17" />
+  <spawnRate min="0.5" max="0.5" />
+  <spawnPosition x="0.0f" y="0.0f" />
+  <spawnSound filename="data/sounds/EL/imp01.ogg" />
+  <grouping-hint>4</grouping-hint>
+  
+  <maxhp min="50.0" max="60.0" />
+  <xp min="43.0" max="48.0" />
+
+  <radius min="0.3" max="0.3" />
+  <scale min="0.7" max="0.7" />
+
+  <anim name="core/anim/carapace-lair/default" type="default" />
+  <anim name="core/anim/carapace-lair/spawn" type="attack" />
+  <anim name="core/anim/effects/test-explosions/mini/1" type="death" />
+  
+  <monster filename="data/physicals/monsters/defs/desert-pincer.xml" />
+</root>

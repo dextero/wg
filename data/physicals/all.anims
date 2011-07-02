@@ -3345,29 +3345,36 @@ core/anim/fire-elemental/default
 	0.10 "data/physicals/monsters/fire-elemental.png" 0 0 92 92
 }
 
-############################# BLIND PINCER
+############################# DESERT PINCER
 
-core/anim/blind-pincer/default
+core/anim/desert-pincer/default
 {
-	0.10 "data/physicals/monsters/blind-pincer.png" 0 6 26 40
+	0.10 "data/physicals/monsters/gfx/desert-pincer.png" 50 6 71 40
 }
 
-core/anim/blind-pincer/move
+core/anim/desert-pincer/move
 {
-	0.40 "data/physicals/monsters/blind-pincer.png" 0 6 26 40
-	0.20 "data/physicals/monsters/blind-pincer.png" 26 7 50 41
-	0.10 "data/physicals/monsters/blind-pincer.png" 26 8 50 42
-	0.20 "data/physicals/monsters/blind-pincer.png" 26 7 50 41
-	0.40 "data/physicals/monsters/blind-pincer.png" 0 6 26 40
+	0.60 "data/physicals/monsters/gfx/desert-pincer.png" 50 6 71 40
+	0.60 "data/physicals/monsters/gfx/desert-pincer.png" 26 6 50 40
+	0.60 "data/physicals/monsters/gfx/desert-pincer.png" 0 6 26 40
+	0.60 "data/physicals/monsters/gfx/desert-pincer.png" 26 6 50 40
 }
 
-core/anim/blind-pincer/attack
+core/anim/desert-pincer/attack
 {
-	0.20 "data/physicals/monsters/blind-pincer.png" 0 6 26 40
-	0.20 "data/physicals/monsters/blind-pincer.png" 26 6 50 40
-	0.20 "data/physicals/monsters/blind-pincer.png" 50 6 71 40
-	0.20 "data/physicals/monsters/blind-pincer.png" 26 6 50 40
-	0.20 "data/physicals/monsters/blind-pincer.png" 0 6 26 40
+	0.03 "data/physicals/monsters/gfx/desert-pincer.png" 50 6 71 40
+	0.03 "data/physicals/monsters/gfx/desert-pincer.png" 26 6 50 40
+	0.03 "data/physicals/monsters/gfx/desert-pincer.png" 0 6 26 40
+	0.03 "data/physicals/monsters/gfx/desert-pincer.png" 1 7 25 39
+	0.03 "data/physicals/monsters/gfx/desert-pincer.png" 2 8 24 38
+	0.03 "data/physicals/monsters/gfx/desert-pincer.png" 3 9 23 37
+	0.10 "data/physicals/monsters/gfx/desert-pincer.png" 27 6 49 39
+	0.80 "data/physicals/monsters/gfx/desert-pincer.png" 0 6 26 40
+}
+
+core/anim/desert-pincer/death
+{
+	2.50 "data/physicals/monsters/gfx/desert-pincer.png" 0 6 26 40
 }
 
 ############################# WINGED PINCER

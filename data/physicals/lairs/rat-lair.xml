@@ -2,7 +2,7 @@
   
   <genre>rat-lair</genre>
 
-  <spawnLimit min="15" max="15" />
+  <spawnLimit min="10" max="15" />
   <spawnRate min="0.5" max="0.5" />
   <spawnPosition x="0.0f" y="0.0f" />
   <spawnSound filename="data/sounds/EL/imp01.ogg" />
