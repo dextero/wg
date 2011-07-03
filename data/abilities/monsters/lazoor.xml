@@ -1,0 +1,59 @@
+<root type="ability" class="self">
+
+  <effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/firestart.ogg" />
+    </effect>
+    <effect type="linked-graphical-effect">
+      <name value="laser" />
+      <time value="0.2" />
+      <offset-x value="0"/>
+      <offset-y value="0.5"/>
+    </effect>
+    <effect type="ray">
+      <area calc="10.0" />
+      <filter value="player"/>
+      <offset-x value="0"/>
+      <offset-y value="0.5"/>
+      <effect type="list">
+        <effect type="graphical-effect">
+          <name value="smoke" />
+          <time value="0.5" />
+        </effect>
+        <effect type="damage">
+          <damage-type value="lightning" />
+          <amount calc="1 * intelligence" />
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list">
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </cast-time-effect>
+ 
+  <delay-effect type="list">
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+    <effect type="modify">
+      <aspect value="turnspeed" />
+      <amount value="0.0" />
+    </effect>
+  </delay-effect>
+  
+  <manacost calc="0" />
+  <casttime value="0.8" />
+  <delay value="1.0" />
+  <cooldown value="1.5" />
+
+  <ai-hint>
+    <player-distance>8.0</player-distance>
+    <player-angle>3.0</player-angle>
+  </ai-hint>
+ 
+</root>

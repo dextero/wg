@@ -1,0 +1,39 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="Beholder" />
+    <desc value="Beholder description" />
+  </bestiary>
+  <genre>beholder</genre>
+
+  <maxhp min="80.0" max="92.0" />
+  <speed min="1.4" max="1.5" />
+  <turnspeed min="120.0" max="120.0" />
+  <strength min="0.0" max="0.0" />
+  <intelligence min="18.0" max="24.0" />
+  <fireresist min="3.0" max="5.0" />
+  <lightningresist min="3.0" max="5.0" />
+  <iceresist min="3.0" max="5.0" />
+  <xp min="53.0" max="58.0" />
+
+  <mass min="4.0" max="4.2" />
+  <radius min="0.45" max="0.5" />
+  <scale min="0.9" max="1.0" />
+  <shadow-offset min="0.12" max="0.12" />
+
+  <anim name="core/anim/beholder/default" type="default" />
+  <anim name="core/anim/beholder/move" type="move" />
+  <anim name="core/anim/beholder/attack" type="attack" />
+  <anim name="core/anim/effects/test-explosions/1" type="death" />
+
+  <ai name="ranged-caster" />
+
+  <ability name="data/abilities/monsters/lazoor.xml" default="1" />
+  <ability name="data/abilities/monsters/summon-murions.xml" default="1" />
+
+  <sound type="attack" filename="data/sounds/Lugaro/Growl.ogg" />
+  <sound type="damaged" filename="data/sounds/Lugaro/Snarl.ogg" />
+  <sound type="death" filename="data/sounds/Lugaro/hawk.ogg" />
+  <sound type="spawn" filename="data/sounds/0AD/horse_11.ogg" />
+
+</root>

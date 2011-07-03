@@ -177,6 +177,7 @@
         <lair    file="data/physicals/lairs/cockroach-lair.xml" minLevel="19" maxLevel="25" />
         <monster file="data/physicals/monsters/defs/murion.xml" minLevel="19" maxLevel="25" frequency="0.5" />
         <lair    file="data/physicals/lairs/murion-lair.xml" minLevel="19" maxLevel="25" frequency="0.5" />
+        <monster file="data/physicals/monsters/defs/beholder.xml" minLevel="19" maxLevel="25" frequency="0.2" />
 
 		
 		<!-- -->
