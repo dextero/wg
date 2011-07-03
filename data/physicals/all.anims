@@ -3296,34 +3296,34 @@ core/anim/bullet/wizzing-missile
 	0.10 "data/physicals/bullets/wizzing-missile.png" 32 0 48 16
 }
 
-################################## EYEBRAIN
+################################## BEHOLDER
 
-core/anim/eyebrain/default
+core/anim/beholder/default
 {
-	0.10 "data/physicals/monsters/eyebrain.png"	0 0 84 84
+	0.10 "data/physicals/monsters/gfx/beholder.png"	0 0 84 84
 }
 
-core/anim/eyebrain/move
+core/anim/beholder/move
 {
-	0.2 "data/physicals/monsters/eyebrain.png" 0 0 84 84
-	0.2 "data/physicals/monsters/eyebrain.png" 1 0 85 84
-	0.2 "data/physicals/monsters/eyebrain.png" 2 0 86 84
-	0.2 "data/physicals/monsters/eyebrain.png" 1 0 85 84
-	0.2 "data/physicals/monsters/eyebrain.png" 0 0 84 84
-	0.2 "data/physicals/monsters/eyebrain.png" -1 0 83 84
-	0.2 "data/physicals/monsters/eyebrain.png" -2 0 82 84
-	0.2 "data/physicals/monsters/eyebrain.png" -1 0 83 84
+	0.2 "data/physicals/monsters/gfx/beholder.png" 0 0 84 84
+	0.2 "data/physicals/monsters/gfx/beholder.png" 1 0 85 84
+	0.2 "data/physicals/monsters/gfx/beholder.png" 2 0 86 84
+	0.2 "data/physicals/monsters/gfx/beholder.png" 1 0 85 84
+	0.2 "data/physicals/monsters/gfx/beholder.png" 0 0 84 84
+	0.2 "data/physicals/monsters/gfx/beholder.png" -1 0 83 84
+	0.2 "data/physicals/monsters/gfx/beholder.png" -2 0 82 84
+	0.2 "data/physicals/monsters/gfx/beholder.png" -1 0 83 84
 }
 
-core/anim/eyebrain/attack
+core/anim/beholder/attack
 {
-	0.20 "data/physicals/monsters/eyebrain.png"	0 0 84 84
-	0.30 "data/physicals/monsters/eyebrain.png"	84 0 168 84
-	0.30 "data/physicals/monsters/eyebrain.png"	168 0 252 84
-	0.40 "data/physicals/monsters/eyebrain.png"	252 0 336 84
-	0.30 "data/physicals/monsters/eyebrain.png"	168 0 252 84
-	0.30 "data/physicals/monsters/eyebrain.png"	84 0 168 84
-	0.20 "data/physicals/monsters/eyebrain.png"	0 0 84 84
+	0.15 "data/physicals/monsters/gfx/beholder.png"	0 0 84 84
+	0.20 "data/physicals/monsters/gfx/beholder.png"	84 0 168 84
+	0.20 "data/physicals/monsters/gfx/beholder.png"	168 0 252 84
+	0.30 "data/physicals/monsters/gfx/beholder.png"	252 0 336 84
+	0.20 "data/physicals/monsters/gfx/beholder.png"	168 0 252 84
+	0.20 "data/physicals/monsters/gfx/beholder.png"	84 0 168 84
+	1.15 "data/physicals/monsters/gfx/beholder.png"	0 0 84 84
 }
 
 ############################# FIRE ELEMENTAL
