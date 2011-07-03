@@ -3753,33 +3753,38 @@ core/anim/minelayer/default
 
 ###################################### Skeleton warrior
 
-core/anim/skeleton-warrior/default
+core/anim/skeleton/default
 {
-	0.20 "data/physicals/monsters/skeleton-warrior.png"	0 0 64 64
+	0.20 "data/physicals/monsters/gfx/skeleton.png"	0 0 64 64
 }
 
-core/anim/skeleton-warrior/move
+core/anim/skeleton/move
 {
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	0 0 64 64
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	64 0 128 64
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	128 0 192 64
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	192 0 256 64
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	0 64 64 128
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	64 64 128 128
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	128 64 192 128
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	192 64 256 128
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	0 0 64 64
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	64 0 128 64
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	128 0 192 64
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	192 0 256 64
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	0 64 64 128
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	64 64 128 128
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	128 64 192 128
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	192 64 256 128
 }
 
-core/anim/skeleton-warrior/attack
+core/anim/skeleton/attack
 {
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	0 128 64 192
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	64 128 128 192
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	128 128 192 192
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	192 128 256 192
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	0 192 64 256
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	64 192 128 256
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	128 192 192 256
-	0.10 "data/physicals/monsters/skeleton-warrior.png"	192 192 256 256
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	0 128 64 192
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	64 128 128 192
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	128 128 192 192
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	192 128 256 192
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	0 192 64 256
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	64 192 128 256
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	128 192 192 256
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	192 192 256 256
+}
+
+core/anim/skeleton/death
+{
+	2.50 "data/physicals/monsters/gfx/skeleton.png"	0 0 64 64
 }
 
 ###################################### Skeleton mage
