@@ -1,7 +1,7 @@
 <root type="enemy">
 
   <bestiary>
-    <name value="$BESTIARY_SKELETON_MAGE_NAME" />
+    <name value="Skeleton mage" />
     <desc value="$BESTIARY_SKELETON_MAGE_DESC" />
   </bestiary>
   <genre>skeleton-mage</genre>
@@ -30,4 +30,9 @@
 
   <ability name="data/abilities/monster/wizzing-missile.xml" default="1" />
 
+  <sound type="attack" filename="data/sounds/Lugaro/Growl.ogg" />
+  <sound type="damaged" filename="data/sounds/Lugaro/Snarl.ogg" />
+  <sound type="death" filename="data/sounds/Lugaro/hawk.ogg" />
+  <sound type="spawn" filename="data/sounds/0AD/horse_11.ogg" />
+  
 </root>
