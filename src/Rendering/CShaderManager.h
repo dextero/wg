@@ -4,6 +4,7 @@
 #ifdef WG_SHADERS
 
 #include <vector>
+#include <string>
 
 #include <GL/glew.h>
 
