@@ -131,22 +131,26 @@ void CInventoryDisplayer::UpdateSprites( float secondsPassed ){
                 mBar->SetSlotItem(i, player->GetItem(i), false);
         }
 
-        if (mAbiTreeDisplayer && player){
-            for (int i = 0; i < 4; ++i){
-                GUI::CTextArea* xp = (GUI::CTextArea*) mAbiTreeDisplayer->FindObject("xptext");
-                std::wstringstream s;
-                s << gLocalizator.GetText("UI_XP").c_str() << (int)(player->GetTotalXP()) << "/" << (int)(player->XPRequired());
-                xp->SetText(s.str());
+        if (mAbiTreeDisplayer) {
+            mAbiTreeDisplayer->ForceReload();
 
-                GUI::CTextArea* sp = (GUI::CTextArea*) mAbiTreeDisplayer->FindObject("skill-points");
-                s.str(L"");
-                s << gLocalizator.GetText("UI_POINTS").c_str() << (int)(player->GetSkillPoints());
-                sp->SetText(s.str());
+            if (player) {
+                for (int i = 0; i < 4; ++i) {
+                    GUI::CTextArea* xp = (GUI::CTextArea*) mAbiTreeDisplayer->FindObject("xptext");
+                    std::wstringstream s;
+                    s << gLocalizator.GetText("UI_XP").c_str() << (int)(player->GetTotalXP()) << "/" << (int)(player->XPRequired());
+                    xp->SetText(s.str());
 
-                GUI::CTextArea* lvl = (GUI::CTextArea*) mAbiTreeDisplayer->FindObject("player-level");
-                s.str(L"");
-                s << gLocalizator.GetText("UI_LEVEL").c_str() << player->GetLevel();
-                lvl->SetText(s.str());
+                    GUI::CTextArea* sp = (GUI::CTextArea*) mAbiTreeDisplayer->FindObject("skill-points");
+                    s.str(L"");
+                    s << gLocalizator.GetText("UI_POINTS").c_str() << (int)(player->GetSkillPoints());
+                    sp->SetText(s.str());
+
+                    GUI::CTextArea* lvl = (GUI::CTextArea*) mAbiTreeDisplayer->FindObject("player-level");
+                    s.str(L"");
+                    s << gLocalizator.GetText("UI_LEVEL").c_str() << player->GetLevel();
+                    lvl->SetText(s.str());
+                }
             }
         }
     }
