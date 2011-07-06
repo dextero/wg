@@ -54,5 +54,10 @@ bool CanCreateWindowInFullScreenOnLinux()
     return (status == 0);
 }
 
+void ShowMessageBox(const wchar_t * title, const wchar_t * message)
+{
+    // TODO
+}
+
 #endif // !PLATFORM_OSX
 #endif //PLATFORM_LINUX

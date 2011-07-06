@@ -43,4 +43,9 @@ bool AskForFullscreen(const wchar_t * title, const wchar_t * message, int maxw, 
 	return IDOK == MessageBoxW(0, message2, title, MB_OKCANCEL | MB_ICONQUESTION);
 }
 
+void ShowMessageBox(const wchar_t * title, const wchar_t * message)
+{
+    MessageBoxW(0, message, title, MB_OK | MB_ICONERROR);
+}
+
 #endif //PLATFORM_WINDOWS

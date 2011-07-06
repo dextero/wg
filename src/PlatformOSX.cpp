@@ -30,5 +30,11 @@ bool AskForFullscreen(const wchar_t * title, const wchar_t * message, int maxw, 
 {
 	return (bool)AskForFullscreen_OSX(title, message, maxw, maxh);
 }
+
+void ShowMessageBox(const wchar_t * title, const wchar_t * message)
+{
+    // TODO
+}
+
 #endif // iphone
 #endif //PLATFORM_MACOSX
