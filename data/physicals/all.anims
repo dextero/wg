@@ -3784,7 +3784,14 @@ core/anim/skeleton/attack
 
 core/anim/skeleton/death
 {
-	2.50 "data/physicals/monsters/gfx/skeleton.png"	0 0 64 64
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	0 256 64 320
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	64 256 128 320
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	128 256 192 320
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	192 256 256 320
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	0 320 64 384
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	64 320 128 384
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	128 320 192 384
+	0.10 "data/physicals/monsters/gfx/skeleton.png"	192 320 256 384
 }
 
 ###################################### Skeleton mage

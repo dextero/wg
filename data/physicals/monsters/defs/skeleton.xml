@@ -22,7 +22,7 @@
   <anim name="core/anim/skeleton/default" type="default" />
   <anim name="core/anim/skeleton/move" type="move" />
   <anim name="core/anim/skeleton/attack" type="attack" />
-  <anim name="core/anim/skeleton/death" type="death" /> <!-- no death anim :( -->
+  <anim name="core/anim/skeleton/death" type="death" />
 
   <ai name="melee-chaser" />
 

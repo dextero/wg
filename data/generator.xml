@@ -87,7 +87,7 @@
 -->
 
         <monster file="data/physicals/monsters/defs/rat.xml" minLevel="1" maxLevel="3" />
-        <monster file="data/physicals/monsters/defs/skeleton.xml" minLevel="1" maxLevel="1" frequency="0.3" />
+        <monster file="data/physicals/monsters/defs/bandit.xml" minLevel="1" maxLevel="1" frequency="0.3" />
 
         <monster file="data/physicals/monsters/defs/rat.xml" minLevel="2" maxLevel="3" />
         <monster file="data/physicals/monsters/defs/chitiniac.xml" minLevel="2" maxLevel="2" frequency="0.2" />
@@ -178,6 +178,8 @@
         <monster file="data/physicals/monsters/defs/murion.xml" minLevel="19" maxLevel="25" frequency="0.5" />
         <lair    file="data/physicals/lairs/murion-lair.xml" minLevel="19" maxLevel="25" frequency="0.5" />
         <monster file="data/physicals/monsters/defs/beholder.xml" minLevel="19" maxLevel="25" frequency="0.2" />
+        <monster file="data/physicals/monsters/defs/skeleton.xml" minLevel="21" maxLevel="23" frequency="0.75" />
+        <monster file="data/physicals/monsters/defs/skeleton.xml" minLevel="22" maxLevel="22" frequency="0.25" />
 
 		
 		<!-- -->
