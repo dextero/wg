@@ -215,6 +215,7 @@ namespace Map{
         int r = 0;
 		//@dex, a co jesli m_map->GetFilename().size jest mniejsze od 5? wtedy gdzies po pamieci sobie pojezdzimy...
         //if (m_map && m_map->GetFilename()[m_map->GetFilename().size() - 5] == '0') // 5? "0.xml" == 5 znakow
+        // dex: oj tam oj tam...
         if (m_map && m_map->GetFilename().size() >= 5 && m_map->GetFilename()[m_map->GetFilename().size() - 5] == '0') // 5? "0.xml" == 5 znakow
             r = 1;
 

@@ -27,7 +27,7 @@ public:
 
 	CDoor* Create(std::wstring id = L"");
 
-    virtual bool CoreMapObject() const { return true; }
+    virtual bool CoreMapObject() const { return false; }
 
 protected:
     float mClosingTime, mOpeningTime;

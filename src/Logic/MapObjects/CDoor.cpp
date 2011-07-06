@@ -62,7 +62,7 @@ bool CDoor::GetOpened(){
 
 void CDoor::SetOpened(bool opened){
     mAuto = false;
-    mState = dsOpen;
+    mState = opened ? dsOpen : dsClosed; // dsOpen; - haha, bardzo smieszne...
 }
 
 void CDoor::SetOpenedAuto(){

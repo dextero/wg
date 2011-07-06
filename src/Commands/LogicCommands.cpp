@@ -23,6 +23,7 @@
 
 #include "../ResourceManager/CResourceManager.h"
 #include "../Logic/Factory/CPhysicalTemplate.h"
+#include "../Logic/Factory/CDoorTemplate.h"
 #include "../Logic/CPlayerManager.h"
 
 #include "../Input/CInputHandler.h"
@@ -62,6 +63,7 @@ CCommands::SCommandPair LogicCommands [] =
     {L"spawn-physical-rot"                  , "$MAN_SPAWN_PHYSICAL"             , CommandSpawnPhysicalRot        },
     {L"spawn-raw-physical"                  , "$MAN_SPAWN_RAW_PHYSICAL"         , CommandSpawnRawPhysical        },
     {L"spawn-weapon"                        , "$MAN_SPAWN_WEAPON"               , CommandSpawnWeapon             },
+    {L"spawn-door"                          , "$MAN_SPAWN_DOOR"                 , CommandSpawnDoor               },
     {L"destroy-physical"                    , "$MAN_DESTROY_PHYSICAL"           , CommandDestroyPhysical         },
     {L"set-ai-scheme"                       , "$MAN_SET_AI_SCHEME"              , CommandSetEnemyAIScheme        },
     {L"new-player"                          , "$MAN_NEW_PLAYER"                 , CommandNewPlayer               },
@@ -196,6 +198,26 @@ void CommandSpawnWeapon(size_t argc, const std::vector<std::wstring> &argv)
 
     loot->SetPosition(sf::Vector2f(StringUtils::Parse<float>(argv[2]), StringUtils::Parse<float>(argv[3])), true);
     loot->SetAbility(StringUtils::ConvertToString(argv[1]));
+}
+
+void CommandSpawnDoor(size_t argc, const std::vector<std::wstring> &argv)
+{
+    if (argc < 4)
+    {
+        gConsole.Printf(L"usage: %ls door.xml x y [opened|true|false(default)]", argv[0].c_str());
+        return;
+    }
+
+    CDoorTemplate* doorTpl = dynamic_cast<CDoorTemplate*>(gResourceManager.GetPhysicalTemplate(StringUtils::ConvertToString(argv[1])));
+    if (!doorTpl)
+    {
+        gConsole.Printf(L"invalid door xml file");
+        return;
+    }
+
+    CDoor* door = doorTpl->Create();
+    door->SetPosition(sf::Vector2f(StringUtils::Parse<float>(argv[2]), StringUtils::Parse<float>(argv[3])), true);
+    door->SetOpened(argc > 4 && (argv[4] == L"opened" || argv[4] == L"true"));
 }
 
 void CommandDestroyPhysical(size_t argc, const std::vector<std::wstring> &argv)
