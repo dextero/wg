@@ -18,6 +18,8 @@
 #   include <windows.h>
 #endif /* PLATFORM_LINUX */
 
+void ShowMessageBox(const wchar_t * title, const wchar_t * message);
+
 int main( int argc, char* argv[] ){
 	CSingletonCleaner cleaner;
 
@@ -80,14 +82,23 @@ int main( int argc, char* argv[] ){
     }
 
     std::string userDir = FileUtils::GetUserDir();
-    std::freopen((userDir + "/stdout.log").c_str(), "w", stdout);
-    std::freopen((userDir + "/stderr.log").c_str(), "w", stderr);
+    if (std::freopen((userDir + "/stdout.log").c_str(), "w", stdout) &&
+        std::freopen((userDir + "/stderr.log").c_str(), "w", stderr)) {
 
 #ifndef PLATFORM_LINUX
-    ::FreeConsole();
+        ::FreeConsole();
 #endif /* PLATFORM_LINUX */
 
-    gGame.Run();
+        gGame.Run();
+    } else {
+        fprintf(stderr, "Fatal error: couldn't reopen stdout and/or stderr! Aborting...\n");
+
+        // TODO: multi-platform msgbox - wersje pod linuksa i macosa
+        std::wstring msg = L"Error: couldn't reopen stdout and/or stderr. Ensure that you have write permissions for directory: ";
+        msg += StringUtils::ConvertToWString(userDir);
+        msg += L" and files stdout.log and stderr.log inside it.";
+        ShowMessageBox(L"Fatal error", msg.c_str());
+    }
 
     return 0;
 }
