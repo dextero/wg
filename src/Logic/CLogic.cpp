@@ -7,6 +7,7 @@
 #include "CBestiary.h"
 #include "Items/CItem.h"
 #include "Loots/CLoot.h"
+#include "MapObjects/CDoor.h"
 #include "../CGame.h"
 #include "../CGameOptions.h"
 #include "../Console/CConsole.h"
@@ -461,6 +462,13 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
                 else
                     ss << "spawn-physical-rot " << loot->GetTemplate()->GetFilename() << " " << StringUtils::ConvertToString((*it)->GetUniqueId()) << " " 
 			            << (*it)->GetPosition().x << " " << (*it)->GetPosition().y << " " << (*it)->GetRotation() << "\n";
+                break;
+            }
+        case PHYSICAL_DOOR:
+            {
+                CDoor* door = (CDoor*)(*it);
+                ss << "spawn-door " << door->GetTemplate()->GetFilename() << " " << door->GetPosition().x << " " << door->GetPosition().y << " "
+                    << (door->GetOpened() ? "true\n" : "false\n");
                 break;
             }
         default:
