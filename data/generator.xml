@@ -418,20 +418,32 @@
             <tile image="data/maps/tiles/arctic/ice1.png" />
             <tile image="data/maps/tiles/arctic/ice2.png" />
             <tile image="data/maps/tiles/arctic/rock.png" />
-            <tile image="data/maps/tiles/arctic/snow1.png" />
-            <tile image="data/maps/tiles/arctic/snow2.png" />
+            <tile image="data/maps/tiles/arctic/snow.png" />
+            <tile image="data/maps/tiles/arctic/snow.png" />
+			<tile image="data/maps/tiles/arctic/snow.png" />
         </tiles>
         <doodahs>
             <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.8" />
             <doodah file="data/maps/doodahs/snow/flatbush1.png" z="background" underfoot="1" scale="0.8" />
             <doodah file="data/maps/doodahs/snow/flatbush2.png" z="background" underfoot="1" scale="0.8" />
+			<doodah file="data/maps/doodahs/snow/flatbush3.png" z="background" underfoot="1" scale="0.8" />
             <doodah file="data/maps/doodahs/snow/flatbush3.png" z="background" underfoot="1" scale="0.8" />
             <doodah file="data/maps/doodahs/snow/flatbush4.png" z="background" underfoot="1" scale="0.8" />
+			<doodah file="data/maps/doodahs/snow/flatbush4.png" z="background" underfoot="1" scale="0.8" />
+			<doodah file="data/maps/doodahs/snow/flatbush4.png" z="background" underfoot="1" scale="0.8" />
+			<doodah file="data/maps/doodahs/snow/flatbush5.png" z="background" underfoot="1" scale="0.8" />
 			
-            <doodah file="data/maps/doodahs/boulders/icy-stone0.png" z="background" scale="0.75"/>
-            <doodah file="data/maps/doodahs/boulders/icy-stone1.png" z="background" scale="0.75"/>
-            <doodah file="data/maps/doodahs/boulders/icy-stone2.png" z="background" scale="0.75"/>
-            <doodah file="data/maps/doodahs/boulders/icy-stone3.png" z="background" scale="0.75"/>
+            <doodah file="data/maps/doodahs/boulders/snowy-rock1.png" z="background" scale="0.7"/>
+			<doodah file="data/maps/doodahs/boulders/snowy-rock2.png" z="background" scale="0.7"/>
+			<doodah file="data/maps/doodahs/boulders/snowy-rock3.png" z="background" scale="0.7"/>
+			<doodah file="data/maps/doodahs/boulders/snowy-stone1.png" z="background" scale="0.65"/>
+			<doodah file="data/maps/doodahs/boulders/snowy-stone2.png" z="background" scale="0.65"/>
+			<doodah file="data/maps/doodahs/boulders/snowy-stone3.png" z="background" scale="0.65"/>
+			<doodah file="data/maps/doodahs/boulders/icy-stone1.png" z="background" scale="0.6"/>
+			<doodah file="data/maps/doodahs/boulders/icy-stone2.png" z="background" scale="0.6"/>
+			<doodah file="data/maps/doodahs/boulders/icy-stone3.png" z="background" scale="0.6"/>
 		</doodahs>
+		<min-doodahs-on-ground value="30"/>
+		<max-doodahs-on-ground value="50"/>
 	</set>
 </root>
