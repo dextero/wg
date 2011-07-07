@@ -442,6 +442,8 @@
 			<doodah file="data/maps/doodahs/boulders/icy-stone1.png" z="background" scale="0.6"/>
 			<doodah file="data/maps/doodahs/boulders/icy-stone2.png" z="background" scale="0.6"/>
 			<doodah file="data/maps/doodahs/boulders/icy-stone3.png" z="background" scale="0.6"/>
+			<doodah file="data/maps/doodahs/snow/arctic-tree1.png" z="foreground" scale="0.7"/>
+			<doodah file="data/maps/doodahs/snow/arctic-tree2.png" z="foreground" scale="0.7"/>
 		</doodahs>
 		<min-doodahs-on-ground value="30"/>
 		<max-doodahs-on-ground value="50"/>
