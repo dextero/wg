@@ -73,7 +73,6 @@
         <lair file="data/physicals/lairs/cockroach-lair.xml" level="90" />
         <lair file="data/physicals/lairs/crawler-kamikadze-lair.xml" level="90" />
         <lair file="data/physicals/lairs/early-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/fire-elemental-lair.xml" level="90" />
         <lair file="data/physicals/lairs/grim-lair.xml" level="90" />
         <lair file="data/physicals/lairs/mantis-lair.xml" level="90" />
         <lair file="data/physicals/lairs/ogre-lair.xml" level="90" />
@@ -196,22 +195,13 @@
         <monster file="data/physicals/monsters/troll.xml" minLevel="98" maxLevel="8" />
         <lair    file="data/physicals/lairs/troll-lair.xml" minLevel="98" maxLevel="8" />
 
-        <monster file="data/physicals/monsters/blind-pincer.xml" level="99" />
         <monster file="data/physicals/monsters/easter-eggs/carrot.xml" level="99" />
         <monster file="data/physicals/monsters/easter-eggs/cow.xml" level="99" />
         <monster file="data/physicals/monsters/crawler-kamikadze.xml" level="99" />
         <monster file="data/physicals/monsters/demon.xml" level="99" />
-        <monster file="data/physicals/monsters/entangler.xml" level="99" />
-        <monster file="data/physicals/monsters/eyebrain.xml" level="99" />
-        <monster file="data/physicals/monsters/fire-elemental.xml" level="99" />
         <monster file="data/physicals/monsters/flying-fish.xml" level="99" />
         <monster file="data/physicals/monsters/frost-demon.xml" level="99" />
-        <monster file="data/physicals/monsters/healer-ghost.xml" level="99" />
-        <monster file="data/physicals/monsters/lion-turret.xml" level="99" />
-        <monster file="data/physicals/monsters/minelayer.xml" level="99" />
         <monster file="data/physicals/monsters/scarab.xml" level="99" />
-        <monster file="data/physicals/monsters/skeleton-mage.xml" level="99" />
-        <monster file="data/physicals/monsters/skeleton-warrior.xml" level="99" />
         <monster file="data/physicals/monsters/surger.xml" level="99" />
         <monster file="data/physicals/monsters/warlock.xml" level="99" />
         <monster file="data/physicals/monsters/winged-pincer.xml" level="99" />

@@ -4,7 +4,7 @@ BINARY = $(GAMENAME).bin32
 
 -include Makefile.sources
 
-CPPFLAGS = -I"build/includes/SFML-1.6/include" -I"build/includes" -DPLATFORM_LINUX
+CPPFLAGS = -I"build/includes/SFML-1.6/include" -I"build/includes" -DPLATFORM_LINUX -DWG_SHADERS
 
 LDFLAGS = -L"./libs32"
 
