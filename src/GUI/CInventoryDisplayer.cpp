@@ -52,7 +52,7 @@ CInventoryDisplayer::CInventoryDisplayer( const std::string& name, CGUIObject* p
     
     mBar = new CItemSlotsBar();
     // dobrze, jesli te ustawienia sa przed Init, bo wtedy nie trzeba recznie wywolywac UpdatePosition()
-    mBar->SetBarPosPix(sf::Vector2f(100.f, 300.f));
+    mBar->SetBarPosPercent(sf::Vector2f(10.f, 50.f));
     mBar->SetBarSizePix(sf::Vector2f(150.f, 150.f));
             
     sf::Vector2f slotPos[CItemSlotsBar::ITEM_SLOTS_COUNT] = {
@@ -125,6 +125,8 @@ CInventoryDisplayer::~CInventoryDisplayer(){
 void CInventoryDisplayer::UpdateSprites( float secondsPassed ){
     if (mForceReload) {
         mForceReload = false;
+        mBar->UpdatePosition();
+
         CPlayer* player = gPlayerManager.GetPlayerByNumber(mPlayer);
         if (player) {
             for (size_t i = 0; i < CItemSlotsBar::ITEM_SLOTS_COUNT; ++i)
