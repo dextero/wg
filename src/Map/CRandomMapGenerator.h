@@ -26,7 +26,8 @@ struct SRandomMapDesc
     float narrowPathsPercent; // ile % sciezek bedzie waskich w "grafowych" mapach (2x2), reszta 3x3 [0.f - 100.f]
     enum EMapType {
         MAP_NORMAL,     // zwykla mapa, bez udziwnien
-        MAP_BOSS        // arena z bossem
+        MAP_BOSS,       // arena z bossem
+        MAP_FINAL_BOSS  // finalowa arena z bossem - po jego zabiciu wyswietla sie ekran victory
     } mapType;
 
     SRandomMapDesc(): sizeX(0), sizeY(0), obstaclesAreaPercent(0.f), lairs(0), monsters(0), loots(0),
@@ -141,6 +142,7 @@ private:
     bool PlaceLairs();
     bool PlaceMonsters();
     bool PlaceLoots();
+    bool PlaceMiscEffects();    // inne efekty, niepowiazane z konkretnym obiektem - np. ekran victory po zabiciu bossa
 
     void ReleaseCurrent();
 

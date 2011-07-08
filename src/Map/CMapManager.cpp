@@ -240,11 +240,17 @@ namespace Map{
             desc.monsters = gRand.Rnd(5, 10);
             desc.lairs = gRand.Rnd(1, 4);
 		}
-		if (mLevel == 18) {
+		else if (mLevel == 18) {
             desc.mapType = SRandomMapDesc::MAP_BOSS;
             desc.monsters = gRand.Rnd(10, 15);
             desc.lairs = gRand.Rnd(2, 5);
 		}
+        else if (mLevel == 27) {
+            // finalowy boss, a po nim ekran victory
+            desc.mapType = SRandomMapDesc::MAP_FINAL_BOSS;
+            desc.monsters = gRand.Rnd(15, 20);
+            desc.lairs = gRand.Rnd(2, 5);
+        }
 
         bool result = gRandomMapGenerator.GenerateRandomMap(filename, desc);
         fprintf(stderr, "Generating map %s: %s", filename.c_str(), (result ? "OK!" : "FAILED!"));
