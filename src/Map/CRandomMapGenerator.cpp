@@ -176,6 +176,10 @@ bool CRandomMapGenerator::GenerateTunnelsBossArena()
     sf::Vector2i entry(0, rand() % (mDesc.sizeY - tunnelSize - 2 * minDistFromMapEdge) + minDistFromMapEdge),                // lewa
                  exit(mDesc.sizeX - 1, rand() % (mDesc.sizeY - tunnelSize - 2 * minDistFromMapEdge) + minDistFromMapEdge);   // prawa
 
+    // na ostatnim bossie nie ma wyjscia z mapy, ustawiamy exit na srodek
+    if (mDesc.mapType == SRandomMapDesc::MAP_FINAL_BOSS)
+        exit = sf::Vector2i(mDesc.sizeX / 2, mDesc.sizeY / 2);
+
     // zapewniamy polaczenie miedzy tymi dwoma
     mPassableLeft = mDesc.sizeX * mDesc.sizeY - GenerateStraightTunnel(entry, exit, tunnelSize);
 
@@ -503,10 +507,14 @@ bool CRandomMapGenerator::GenerateMap()
     mDesc.obstaclesAreaPercent = Maths::Clamp(mDesc.obstaclesAreaPercent, 0.f, 100.f);
     mDesc.narrowPathsPercent = Maths::Clamp(mDesc.narrowPathsPercent, 0.f, 100.f);
 
-    if (mDesc.mapType == SRandomMapDesc::MAP_BOSS)
+    switch (mDesc.mapType)
+    {
+    case SRandomMapDesc::MAP_BOSS:
+    case SRandomMapDesc::MAP_FINAL_BOSS:
         return GenerateTunnelsBossArena();
-    else
+    default:
         return GenerateTunnelsGraph();
+    }
 }
 
 bool CRandomMapGenerator::PlaceTiles()
@@ -697,24 +705,19 @@ bool CRandomMapGenerator::PlaceWalls()
 bool CRandomMapGenerator::PlaceRegions()
 {
     CTimer timer("- regions: ");
+
+    // ostatni boss ma wejscie, ale wyjscia juz nie
+    unsigned int regionsToPlace = (mDesc.mapType == SRandomMapDesc::MAP_FINAL_BOSS ? 1 : 2);
     
-    // za malo miejsca, zeby postawic chociazby regiony wejscia i wyjscia..
-    if (mPassableLeft < 2) return false;
+    // za malo miejsca, zeby postawic chociazby region wejscia (i ew. wyjscia)..
+    if (mPassableLeft < regionsToPlace) return false;
     
     sf::Vector2i entry, exit;
+    unsigned int first, last;   // uzywane przy wyznaczaniu pozycji wejscia.wyjscia na mapach z bossami
 
-    // w przypadku bossa regiony sa na krawedziach - wejscie po lewej, wyjscie po prawej
-    if (mDesc.mapType == SRandomMapDesc::MAP_BOSS)
+    switch (mDesc.mapType)
     {
-        unsigned int first, last;
-        for (first = 0; first < mDesc.sizeY && mCurrent[0][first] == BLOCKED; ++first);     // poczatek wejscia
-        for (last = first; last < mDesc.sizeY && mCurrent[0][last] == FREE; ++last);        // koniec wejscia
-
-        if (first == mDesc.sizeY && last == mDesc.sizeY) // nie ma wejscia
-            return false;
-    
-        entry = sf::Vector2i(0, (last + first) / 2);    // srodek tunelu
-
+    case SRandomMapDesc::MAP_BOSS:
         for (first = 0; first < mDesc.sizeY && mCurrent[mDesc.sizeX - 1][first] == BLOCKED; ++first);     // poczatek wyjscia
         for (last = first; last < mDesc.sizeY && mCurrent[mDesc.sizeX - 1][last] == FREE; ++last);        // koniec wyjscia
 
@@ -722,57 +725,74 @@ bool CRandomMapGenerator::PlaceRegions()
             return false;
 
         exit = sf::Vector2i(mDesc.sizeX - 1, (last + first) / 2);
-    }
-    else    // jesli to nie mapa z bossem, to regiony moga byc gdzie im sie podoba
-    {
-        unsigned int dist = 0;
+        // bez break, bo 'zwykly' boss potrzebuje wejscia i wyjscia, 'finalowy' - tylko wejscia
 
-        for (size_t i = 0; i < 100; ++i)
+    case SRandomMapDesc::MAP_FINAL_BOSS:
+        for (first = 0; first < mDesc.sizeY && mCurrent[0][first] == BLOCKED; ++first);     // poczatek wejscia
+        for (last = first; last < mDesc.sizeY && mCurrent[0][last] == FREE; ++last);        // koniec wejscia
+
+        if (first == mDesc.sizeY && last == mDesc.sizeY) // nie ma wejscia
+            return false;
+    
+        entry = sf::Vector2i(0, (last + first) / 2);    // srodek tunelu
+        break;
+
+    default:
         {
-            sf::Vector2i newEntry, newExit;
-            // do skutku, az bedzie na "przejezdnym"
-            do
-                newEntry = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
-            while (mCurrent[newEntry.x][newEntry.y] != FREE);
-            do
-                newExit = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
-            while (mCurrent[newExit.x][newExit.y] != FREE);
+            // jesli to nie mapa z bossem, to regiony moga byc gdzie im sie podoba
+            unsigned int dist = 0;
 
-            // odslaniamy okolice wyjscia
-            for (int x = std::max<int>(newExit.x - 1, 0); x < std::min<int>(newExit.x + 2, mDesc.sizeX); ++x)
-                for (int y = std::max<int>(newExit.y - 1, 0); y < std::min<int>(newExit.y + 2, mDesc.sizeY); ++y)
-                    if (!mCurrent[x][y]) // == BLOCKED?
-                    {
-                        mCurrent[x][y] = FREE;
-                        ++mPassableLeft;
-                    }
-
-            // wybieramy najdluzsza droge
-            unsigned int newDist = DistanceDijkstra(newEntry, newExit);
-            if (newDist != (unsigned int)-1 && newDist > dist)
+            for (size_t i = 0; i < 100; ++i)
             {
-                mEntryPos = entry = newEntry;
-                exit = newExit;
-                dist = newDist;
+                sf::Vector2i newEntry, newExit;
+                // do skutku, az bedzie na "przejezdnym"
+                do
+                    newEntry = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
+                while (mCurrent[newEntry.x][newEntry.y] != FREE);
+                do
+                    newExit = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
+                while (mCurrent[newExit.x][newExit.y] != FREE);
+
+                // odslaniamy okolice wyjscia
+                for (int x = std::max<int>(newExit.x - 1, 0); x < std::min<int>(newExit.x + 2, mDesc.sizeX); ++x)
+                    for (int y = std::max<int>(newExit.y - 1, 0); y < std::min<int>(newExit.y + 2, mDesc.sizeY); ++y)
+                        if (!mCurrent[x][y]) // == BLOCKED?
+                        {
+                            mCurrent[x][y] = FREE;
+                            ++mPassableLeft;
+                        }
+
+                // wybieramy najdluzsza droge
+                unsigned int newDist = DistanceDijkstra(newEntry, newExit);
+                if (newDist != (unsigned int)-1 && newDist > dist)
+                {
+                    mEntryPos = entry = newEntry;
+                    exit = newExit;
+                    dist = newDist;
+                }
             }
         }
     }
 
-    mXmlText << "\t<region name=\"entry\" x=\"" << entry.x + 0.5f << "\" y=\"" << entry.y + 0.5f << "\" rot=\"0\" scale=\"1\"></region>\n"
-        << "\t<region name=\"exit\" x=\"" << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" rot=\"0\" scale=\"1\">\n"
-        << "\t\t<next-map>" << mDesc.nextMap << "</next-map>\n"
-//            << "\t\t<next-map>data/maps/level01.xml</next-map>\n"
-//            << "\t\t<next-map-region>entry</next-map-region>\n"
-        << "\t</region>\n"
-        // tlo pod wyjscie - portal
-        << "\t<objtype code=\"exit-portal\" file=\"data/physicals/walls/test-barrier.xml\" />\n"
-        << "\t<obj code=\"exit-portal\" x=\"" << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" />\n";
-
-    // te 2 regiony "zapychaja" pola
-    mPassableLeft -= 2;
-
+    // wejscie
+    mXmlText << "\t<region name=\"entry\" x=\"" << entry.x + 0.5f << "\" y=\"" << entry.y + 0.5f << "\" rot=\"0\" scale=\"1\"></region>\n";
     mCurrent[entry.x][entry.y] = REGION;
-    mCurrent[exit.x][exit.y] = REGION;
+    
+    if (mDesc.mapType != SRandomMapDesc::MAP_FINAL_BOSS) {
+        // wyjscie
+        mXmlText << "\t<region name=\"exit\" x=\"" << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" rot=\"0\" scale=\"1\">\n"
+            << "\t\t<next-map>" << mDesc.nextMap << "</next-map>\n"
+    //            << "\t\t<next-map>data/maps/level01.xml</next-map>\n"
+    //            << "\t\t<next-map-region>entry</next-map-region>\n"
+            << "\t</region>\n"
+            // tlo pod wyjscie - portal
+            << "\t<objtype code=\"exit-portal\" file=\"data/physicals/walls/test-barrier.xml\" />\n"
+            << "\t<obj code=\"exit-portal\" x=\"" << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" />\n";
+        mCurrent[exit.x][exit.y] = REGION;
+    }
+
+    // regiony "zapychaja" pola
+    mPassableLeft -= regionsToPlace;
 
     return true;
 }
@@ -873,6 +893,7 @@ bool CRandomMapGenerator::PlaceBossDoors()
 {
     CTimer timer("- boss doors: ");
 
+    // finalowy boss nie ma wyjscia, mozna olac MAP_FINAL_BOSS
     if (mDesc.mapType != SRandomMapDesc::MAP_BOSS)
         return true;    // nie potrzeba drzwi
 
@@ -962,7 +983,7 @@ bool CRandomMapGenerator::PlaceMonsters()
 {
     CTimer timer("- monsters: ");
 
-    if (mDesc.mapType == SRandomMapDesc::MAP_BOSS)
+    if (mDesc.mapType == SRandomMapDesc::MAP_BOSS || mDesc.mapType == SRandomMapDesc::MAP_FINAL_BOSS)
     {
         PhysicalsVector bosses = FilterByLevel(FilterByType(mPhysicals, "boss"), mDesc.level);
         if (bosses.empty())
@@ -1119,6 +1140,37 @@ bool CRandomMapGenerator::PlaceLoots()
         // odejmujemy, ile dodalismy...
         mPassableLeft -= std::min(mPassableLeft, mDesc.loots);
     }
+
+    return true;
+}
+
+// inne efekty, niepowiazane z konkretnym obiektem - np. ekran victory po zabiciu bossa
+bool CRandomMapGenerator::PlaceMiscEffects()
+{
+    // na razie inne efekty sa tylko na ostatniej mapie
+    if (mDesc.mapType != SRandomMapDesc::MAP_FINAL_BOSS)
+        return true;
+
+    // niewidzialne drzwi, uzuwane przez wszystkie 
+    mXmlText << "\t<objtype code=\"invisible-door\" file=\"data/physicals/doors/invisible-door.xml\" />\n";
+
+    // ostatnia mapa: cutscenka po zabiciu bossa
+    mXmlText << "\t<obj code=\"invisible-door\" x=\"-5\" y=\"-5\">\n"
+        << "\t\t<cond check=\"once\">\n"
+        << "\t\t\t<type>killed</type>\n"
+        << "\t\t\t<param>boss</param>\n"
+        << "\t\t</cond>\n"
+        << "\t\t<effect-on-open type=\"console\">\n"
+        << "\t\t\t<text>[\n"
+        << "\t\t\t\tdelay 3\n"
+        << "\t\t\t\tclear-physicals\n"
+        << "\t\t\t\tclear-logic\n"
+        << "\t\t\t\tunload-map\n"
+        << "\t\t\t\texit-to-main-menu\n"
+        << "\t\t\t\tplay-cutscene data/cutscene/enddemo.xml\n"
+        << "\t\t\t]</text>\n"
+        << "\t\t</effect-on-open>\n"
+        << "\t</obj>\n";
 
     return true;
 }
@@ -1293,15 +1345,16 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
         << "\t<height>" << mDesc.sizeY << "</height>\n";
 
 
-    if (!GenerateMap())     return false;
-    if (!PlaceTiles())      return false;
-    if (!PlaceRegions())    return false;
-    if (!PlaceWalls())      return false;
-    if (!PlaceDoodahs())    return false;
-    if (!PlaceBossDoors())  return false;   // zwraca true, jesli nie ma bossa na mapie
-    if (!PlaceLoots())      return false;
-    if (!PlaceMonsters())   return false;
-    if (!PlaceLairs())      return false;
+    if (!GenerateMap())         return false;
+    if (!PlaceTiles())          return false;
+    if (!PlaceRegions())        return false;
+    if (!PlaceWalls())          return false;
+    if (!PlaceDoodahs())        return false;
+    if (!PlaceBossDoors())      return false;   // zwraca true, jesli nie ma bossa na mapie
+    if (!PlaceLoots())          return false;
+    if (!PlaceMonsters())       return false;
+    if (!PlaceLairs())          return false;
+    if (!PlaceMiscEffects())    return false;
 
     // koniec
     mXmlText << "</map>";
