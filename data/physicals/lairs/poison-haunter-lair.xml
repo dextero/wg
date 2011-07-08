@@ -1,0 +1,23 @@
+<root type="lair">
+  
+  <genre>poison-haunter-lair</genre>
+
+  <spawnLimit min="5" max="8" />
+  <spawnRate min="0.05" max="0.1" />
+  <spawnPosition x="0.0f" y="0.0f" />
+  <spawnSound filename="data/sounds/EL/imp01.ogg" />
+  <grouping-hint>2</grouping-hint>
+  
+  <maxhp min="90.0" max="120.0" />
+  <xp min="85.0" max="100.0" />
+
+  <radius min="0.25" max="0.25" />
+  <scale min="0.5" max="0.5" />
+  <color r="0.5" g="1.0" b="0.5" a="1.0" />
+
+  <anim name="test/anim/lair/default" type="default" />
+  <anim name="test/anim/lair/spawn" type="attack" />
+  <anim name="test/anim/lair/death" type="death" />
+  
+  <monster filename="data/physicals/monsters/defs/poison-haunter.xml" />
+</root>

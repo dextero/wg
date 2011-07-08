@@ -1,0 +1,78 @@
+<root type="ability" class="self">
+<!-- similar to charge.xml, but modified - no knockback. Perhaps one day we can use tags and jumps to reuse this code -->
+  <effect type="list">
+    <effect type="graphical-effect">
+      <name value="heal"/>
+      <time value="1.0"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="turnspeed" />
+      <amount value="0.25" />
+    </effect>
+    <effect type="delayed">
+      <time value="0.0" />
+      <effect type="timed">
+        <time value="0.1"/>
+        <effect type="modify">
+          <aspect value="speed" />
+          <amount value="2.00" />
+        </effect>
+      </effect>
+    </effect>
+    <effect type="delayed">
+      <time value="0.1" />
+      <effect type="timed">
+        <time value="1.00"/>
+        <effect type="modify">
+          <aspect value="speed" />
+          <amount value="3.0" />
+        </effect>
+      </effect>
+    </effect>
+    <effect type="delayed">
+      <time value="1.10" />
+      <effect type="timed">
+        <time value="0.10"/>
+        <effect type="modify">
+          <aspect value="speed" />
+          <amount value="2.25" />
+        </effect>
+      </effect>
+    </effect>
+    <effect type="delayed">
+      <time value="1.20" />
+      <effect type="timed">
+        <time value="0.10"/>
+        <effect type="modify">
+          <aspect value="speed" />
+          <amount value="1.75" />
+        </effect>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list"> 
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.65"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="heal"/>
+      <time value="0.65"/>
+    </effect>
+    <effect type="modify">    
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </cast-time-effect>
+ 
+  <manacost value="0.0" />
+  <casttime value="0.65" />
+  <delay value="0" />
+  <cooldown calc="6.0 + rnd(1, 4.5)" />
+    
+  <ai-hint>
+    <player-distance>5.0</player-distance>
+    <player-angle>8.0</player-angle>
+  </ai-hint>
+</root>
