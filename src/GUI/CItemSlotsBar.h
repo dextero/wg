@@ -38,7 +38,7 @@ namespace GUI
 
         void SetSlotItem(unsigned int slot, CItem* item, bool updatePlayer = true);
         
-        void SetBarPosPix(sf::Vector2f pos) { mBarPosPix = pos; }
+        void SetBarPosPercent(sf::Vector2f pos) { mBarPosPercent = pos; }
         void SetBarSizePix(sf::Vector2f size) { mBarSizePix = size; }
         void SetSlotPosPercent(unsigned int slot, sf::Vector2f pos) { if (slot < ITEM_SLOTS_COUNT) mSlotPosPercent[slot] = pos; }
         void SetSlotSizePercent(sf::Vector2f size) { mSlotSizePercent = size; }
@@ -50,7 +50,7 @@ namespace GUI
         CTextArea*      mBindKey[ITEM_SLOTS_COUNT];
         CItemSlot*      mSlot[ITEM_SLOTS_COUNT];
         
-        sf::Vector2f    mBarPosPix, mBarSizePix;
+        sf::Vector2f    mBarPosPercent, mBarSizePix;
         sf::Vector2f    mSlotPosPercent[ITEM_SLOTS_COUNT], mSlotSizePercent;
     };
 } // namespace GUI

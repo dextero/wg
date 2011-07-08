@@ -19,7 +19,7 @@ using namespace GUI;
 
 CItemSlotsBar::CItemSlotsBar():
     mBar(NULL),
-    mBarPosPix(100.f, 300.f),
+    mBarPosPercent(10.f, 50.f),
     mBarSizePix(150.f, 150.f),
     mSlotSizePercent(33.33f, 33.33f)
 {
@@ -116,7 +116,10 @@ void CItemSlotsBar::Hide()
 
 void CItemSlotsBar::UpdatePosition()
 {
-    mBar->SetPosition(mBarPosPix.x, mBarPosPix.y, mBarSizePix.x, mBarSizePix.y, UNIT_PIXEL);
+    sf::Vector2f screenSize = gGUI.ConvertToGlobalPosition(sf::Vector2f(1.f, 1.f));
+    mBarSizePix.x = mBarSizePix.y = std::min(screenSize.x, screenSize.y) * 0.3f;    // hardkodowany rozmiar - 30% mniejszej wspolrzednej ekranu
+
+    mBar->SetPosition(mBarPosPercent.x / 100.f * screenSize.x, mBarPosPercent.y / 100.f * screenSize.y, mBarSizePix.x, mBarSizePix.y, UNIT_PIXEL);
     for (unsigned int i = 0; i < ITEM_SLOTS_COUNT; ++i)
         if (mSlotBg[i])
             mSlotBg[i]->SetPosition(mSlotPosPercent[i].x, mSlotPosPercent[i].y, mSlotSizePercent.x, mSlotSizePercent.y, UNIT_PERCENT);
