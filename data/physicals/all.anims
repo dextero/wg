@@ -3466,23 +3466,23 @@ core/anim/fafmycel/attack
 }
 
 
-############################## flying fish
+############################## poison haunter
 
-test/anim/flying-fish/default
+test/anim/poison-haunter/default
 {
-	0.10 "data/physicals/monsters/flying-fish.png" 0 0 32 32
+	0.10 "data/physicals/monsters/gfx/poison-haunter.png" 0 0 32 32
 }
 
-test/anim/flying-fish/move
+test/anim/poison-haunter/move
 {
-	0.10 "data/physicals/monsters/flying-fish.png" 0 0 32 32
-	0.10 "data/physicals/monsters/flying-fish.png" 32 0 64 32
-	0.10 "data/physicals/monsters/flying-fish.png" 64 0 96 32
-	0.10 "data/physicals/monsters/flying-fish.png" 96 0 128 32
-	0.10 "data/physicals/monsters/flying-fish.png" 128 0 160 32
-	0.10 "data/physicals/monsters/flying-fish.png" 160 0 192 32
-	0.10 "data/physicals/monsters/flying-fish.png" 192 0 224 32
-	0.10 "data/physicals/monsters/flying-fish.png" 224 0 256 32
+	0.10 "data/physicals/monsters/gfx/poison-haunter.png" 0 0 32 32
+	0.10 "data/physicals/monsters/gfx/poison-haunter.png" 32 0 64 32
+	0.10 "data/physicals/monsters/gfx/poison-haunter.png" 64 0 96 32
+	0.10 "data/physicals/monsters/gfx/poison-haunter.png" 96 0 128 32
+	0.10 "data/physicals/monsters/gfx/poison-haunter.png" 128 0 160 32
+	0.10 "data/physicals/monsters/gfx/poison-haunter.png" 160 0 192 32
+	0.10 "data/physicals/monsters/gfx/poison-haunter.png" 192 0 224 32
+	0.10 "data/physicals/monsters/gfx/poison-haunter.png" 224 0 256 32
 }
 
 ############################## scarab

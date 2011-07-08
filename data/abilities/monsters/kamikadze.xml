@@ -2,15 +2,13 @@
 
   <effect type="list">
     <effect type="sound">
-     <name value="data/sounds/Lugaro/break.ogg" />
+		<name value="data/sounds/Lugaro/break.ogg" />
     </effect>
     <effect type="graphical-effect">
       <name value="fire-circle-shockwave" />
       <time value="0.3" />
     </effect>
-    <effect type="damage">
-      <amount calc="1000" />
-    </effect>
+    <effect type="annihilate"/>
     <effect type="area">
       <area value="0.65"  />
       <filter value="player,obstacle" />

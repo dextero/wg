@@ -1,0 +1,32 @@
+﻿<root type="enemy">
+
+  <bestiary>
+    <name value="Poison haunter" />
+    <desc value="These pesky green birds are distant cousins of penguins, however they have been tainted with dark elemental magic. They will nose-dive and explode in a burst of acid whenever they feel endangered, irritated or bored." />
+  </bestiary>
+  <genre>poison-haunter</genre>
+
+  <maxhp min="20.0" max="30.0" />
+  <speed min="2.2" max="2.6" />
+  <turnspeed min="240.0" max="240.0" />
+  <strength min="3.0" max="4.0" />
+  <lightningresist min="10.0" max="12.0" />
+  <iceresist min="10.0" max="12.0" />
+  <poisonresist min="12.0" max="12.0" />
+  <xp min="56.0" max="64.0" />
+
+  <scale min="0.5" max="0.5" />
+  <radius min="0.165" max="0.22" />
+  <mass min="0.6" max="1.0" />
+
+  <anim name="test/anim/poison-haunter/default" type="default" />
+  <anim name="test/anim/poison-haunter/move" type="move" />
+  <anim name="test/anim/poison-haunter/default" type="attack" />
+  <anim name="test/anim/poison-haunter/default" type="death" />
+
+  <ai name="boid-chaser" />
+
+  <ability name="data/abilities/monsters/poison-kamikadze.xml"/>
+  <ability name="data/abilities/monsters/charge-passive.xml" default="1" />
+
+</root>
