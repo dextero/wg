@@ -9,6 +9,8 @@
 #include "IDrawable.h"
 
 #include "../CGame.h"
+#include "../ResourceManager/CResourceManager.h"
+#include "CDisplayable.h"
  
 #include <iostream>
 #include <cstdio>
@@ -59,6 +61,17 @@ bool CShaderManager::setUniform(const std::string& name, sf::Vector2f value)
     return true;
 }
 
+bool CShaderManager::setUniform(const std::string& name, sf::Vector3f value){	
+    GLint location = glGetUniformLocation(this->my_program, name.c_str());
+    if (location < 0) {
+        fprintf(stderr, "shader error: couldn't get uniform location: %s\n", name.c_str());
+        return false;
+    }
+    
+    glUniform3fv(location, 1, &value.x);
+    return true;
+}
+
 bool CShaderManager::setUniform(const std::string& name, sf::Color value)
 {
     GLint location = glGetUniformLocation(this->my_program, name.c_str());
@@ -84,7 +97,7 @@ void CShaderManager::KeyReleased( const sf::Event::KeyEvent &e ){
 }
 
 void CShaderManager::reloadAll(){
-	this->load("data/effects/blue.frag", "data/effects/default.vert", "test");
+	this->load("data/effects/normal.frag", "data/effects/default.vert", "test");
 }
 
 // TODO - copied from WGSprite.cpp

@@ -13,6 +13,7 @@
 
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/System/Vector2.hpp>
+#include <SFML/System/Vector3.hpp>
 
 namespace sf {
 	class RenderWindow;
@@ -37,6 +38,7 @@ public:
 
     bool setUniform(const std::string& name, float value);
     bool setUniform(const std::string& name, sf::Vector2f value);
+    bool setUniform(const std::string& name, sf::Vector3f value);
     bool setUniform(const std::string& name, sf::Color value);
 	
     virtual void KeyPressed( const sf::Event::KeyEvent &e ) {};
