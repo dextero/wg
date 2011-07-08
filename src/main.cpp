@@ -23,6 +23,8 @@ void ShowMessageBox(const wchar_t * title, const wchar_t * message);
 int main( int argc, char* argv[] ){
 	CSingletonCleaner cleaner;
 
+	bool attemptHideConsole = true;
+
 	for (int i = 1; i < argc; i++){
 		if (strcmp (argv[i], "-mod") == 0){
 			if (i >= argc-1){
@@ -78,27 +80,33 @@ int main( int argc, char* argv[] ){
 				gGame.SetMapToLoadAtInit(new std::string(argv[i+1]));
 				i++;
 			}
+		} else if (strcmp(argv[i], "--show-console") == 0){
+			attemptHideConsole = false;
 		}
     }
 
-    std::string userDir = FileUtils::GetUserDir();
-    if (std::freopen((userDir + "/stdout.log").c_str(), "w", stdout) &&
-        std::freopen((userDir + "/stderr.log").c_str(), "w", stderr)) {
+	if (attemptHideConsole){
+		std::string userDir = FileUtils::GetUserDir();
+		if (std::freopen((userDir + "/stdout.log").c_str(), "w", stdout) &&
+			std::freopen((userDir + "/stderr.log").c_str(), "w", stderr)) {
 
-#ifndef PLATFORM_LINUX
-        ::FreeConsole();
-#endif /* PLATFORM_LINUX */
+	#ifndef PLATFORM_LINUX
+			::FreeConsole();
+	#endif /* PLATFORM_LINUX */
 
-        gGame.Run();
-    } else {
-        fprintf(stderr, "Fatal error: couldn't reopen stdout and/or stderr! Aborting...\n");
+			gGame.Run();
+		} else {
+			fprintf(stderr, "Fatal error: couldn't reopen stdout and/or stderr! Aborting...\n");
 
-        // TODO: multi-platform msgbox - wersje pod linuksa i macosa
-        std::wstring msg = L"Error: couldn't reopen stdout and/or stderr. Ensure that you have write permissions for directory: ";
-        msg += StringUtils::ConvertToWString(userDir);
-        msg += L" and files stdout.log and stderr.log inside it.";
-        ShowMessageBox(L"Fatal error", msg.c_str());
-    }
+			// TODO: multi-platform msgbox - wersje pod linuksa i macosa
+			std::wstring msg = L"Error: couldn't reopen stdout and/or stderr. Ensure that you have write permissions for directory: ";
+			msg += StringUtils::ConvertToWString(userDir);
+			msg += L" and files stdout.log and stderr.log inside it.";
+			ShowMessageBox(L"Fatal error", msg.c_str());
+		}
+	} else {
+		gGame.Run();
+	}
 
     return 0;
 }
