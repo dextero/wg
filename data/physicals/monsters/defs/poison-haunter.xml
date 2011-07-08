@@ -29,4 +29,5 @@
   <ability name="data/abilities/monsters/poison-kamikadze.xml"/>
   <ability name="data/abilities/monsters/charge-passive.xml" default="1" />
 
+  <sound type="death" filename="data/sounds/EL/rat01.ogg" />
 </root>
