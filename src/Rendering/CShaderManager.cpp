@@ -11,14 +11,18 @@
 #include "../CGame.h"
 #include "../ResourceManager/CResourceManager.h"
 #include "CDisplayable.h"
- 
+#include <SFML/Graphics/Image.hpp>
+#include "ZIndexVals.h"
+#include "../Utils/Maths.h"
+
+#include "GLCheck.h"
+
 #include <iostream>
 #include <cstdio>
 
 template<> CShaderManager* CSingleton<CShaderManager>::msSingleton = 0;
 
-CShaderManager::CShaderManager():
-	my_program(NULL)
+CShaderManager::CShaderManager()
 {
     fprintf(stderr,"CShaderManager::CShaderManager()\n");
 	this->reloadAll();
@@ -29,19 +33,59 @@ CShaderManager::~CShaderManager(){
     fprintf(stderr,"CShaderManager::~CShaderManager()\n");
 }
 
-void CShaderManager::activate(std::string const & programName){
+void CShaderManager::prepareToDraw(IDrawable * drawable){
+	int z = drawable->GetZIndex();
+	CDisplayable * displayable = dynamic_cast<CDisplayable *>(drawable);
+	bool useNM = false;
+	if (displayable != NULL){
+		const sf::Image * img = ((CDisplayable*)drawable)->GetSFSprite()->GetImage();
+		bool useNM = (img != NULL) && ((z <= Z_TILE && z > Z_PLAYER && z != Z_SHADOWS) || z == Z_MAPSPRITE_FG);
+		if (useNM){
+			int id = this->activate("normal-sobel");
+			if (id >= 0){
+				this->setUniform(id, "uTexSize", sf::Vector2f(img->GetWidth(), img->GetHeight()));
+				float rot = displayable->GetRotation();
+				this->setUniform(id, "lpos", sf::Vector3f(
+					Maths::Rotate(Maths::VectorUp(), rot).x, 
+					-Maths::Rotate(Maths::VectorUp(), rot).y, 
+					0.5f)
+				);
+				this->setUniform(id, "lcolor", sf::Color(255,255,255,255));
+				float normalStrength = 1.0f;
+				if (z == Z_PHYSICAL) normalStrength = 3.0f;
+				else if (z == Z_TILE) normalStrength = 0.5f;
+				this->setUniform(id, "normalStrength", normalStrength);
+			}
+		} else if (z == Z_PLAYER && img != NULL) {
+			int id = this->activate("freeze");
+			if (id >= 0){
+				this->setUniform(id, "uTexSize", sf::Vector2f(img->GetWidth(), img->GetHeight()));
+				this->setUniform(id, "uImageSize", 64.f);
+			}
+		}
+	} 
+}
+
+int CShaderManager::activate(std::string const & programName){
 	if (programName.empty()){
 		glUseProgram(0);
+		return -1;
 	} else {
-		glUseProgram(this->my_program);
+		int id = getProgramId(programName);
+		if (id >= 0){
+			glUseProgram(this->programs[id]);
+		} else {
+			fprintf(stderr, "shader ERROR: couldn't get program id during activate: %s\n", programName.c_str());
+		}
+		return id;
 	}
 }
 
-bool CShaderManager::setUniform(const std::string& name, float value)
+bool CShaderManager::setUniform(int programId, const std::string& name, float value)
 {
-    GLint location = glGetUniformLocation(this->my_program, name.c_str());
+    GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
     if (location < 0) {
-        fprintf(stderr, "shader error: couldn't get uniform location: %s\n", name.c_str());
+        fprintf(stderr, "shader ERROR: couldn't get uniform location: %s\n", name.c_str());
         return false;
     }
     
@@ -49,11 +93,11 @@ bool CShaderManager::setUniform(const std::string& name, float value)
     return true;
 }
 
-bool CShaderManager::setUniform(const std::string& name, sf::Vector2f value)
+bool CShaderManager::setUniform(int programId, const std::string& name, sf::Vector2f value)
 {
-    GLint location = glGetUniformLocation(this->my_program, name.c_str());
+    GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
     if (location < 0) {
-        fprintf(stderr, "shader error: couldn't get uniform location: %s\n", name.c_str());
+        fprintf(stderr, "shader ERROR: couldn't get uniform location: %s\n", name.c_str());
         return false;
     }
     
@@ -61,10 +105,10 @@ bool CShaderManager::setUniform(const std::string& name, sf::Vector2f value)
     return true;
 }
 
-bool CShaderManager::setUniform(const std::string& name, sf::Vector3f value){	
-    GLint location = glGetUniformLocation(this->my_program, name.c_str());
+bool CShaderManager::setUniform(int programId, const std::string& name, sf::Vector3f value){	
+    GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
     if (location < 0) {
-        fprintf(stderr, "shader error: couldn't get uniform location: %s\n", name.c_str());
+        fprintf(stderr, "shader ERROR: couldn't get uniform location: %s\n", name.c_str());
         return false;
     }
     
@@ -72,9 +116,9 @@ bool CShaderManager::setUniform(const std::string& name, sf::Vector3f value){
     return true;
 }
 
-bool CShaderManager::setUniform(const std::string& name, sf::Color value)
+bool CShaderManager::setUniform(int programId, const std::string& name, sf::Color value)
 {
-    GLint location = glGetUniformLocation(this->my_program, name.c_str());
+    GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
     if (location < 0) {
         fprintf(stderr, "shader error: couldn't get uniform location: %s\n", name.c_str());
         return false;
@@ -97,99 +141,8 @@ void CShaderManager::KeyReleased( const sf::Event::KeyEvent &e ){
 }
 
 void CShaderManager::reloadAll(){
-	this->load("data/effects/normal.frag", "data/effects/default.vert", "test");
-}
-
-// TODO - copied from WGSprite.cpp
-
-#ifdef SFML_DEBUG
-
-    // In debug mode, perform a test on every OpenGL call
-    #define GLCheck(Func) ((Func), GLCheckError(__FILE__, __LINE__))
-
-#else
-
-    // Else, we don't add any overhead
-    #define GLCheck(Func) (Func)
-
-#endif
-
-#define GL_CLAMP_TO_EDGE    0x812F
-
-
-////////////////////////////////////////////////////////////
-/// Check the last OpenGL error
-///
-////////////////////////////////////////////////////////////
-inline void GLCheckError(const std::string& File, unsigned int Line)
-{
-    // Get the last error
-    GLenum ErrorCode = glGetError();
-
-    if (ErrorCode != GL_NO_ERROR)
-    {
-        std::string Error = "unknown error";
-        std::string Desc  = "no description";
-
-        // Decode the error code
-        switch (ErrorCode)
-        {
-            case GL_INVALID_ENUM :
-            {
-                Error = "GL_INVALID_ENUM";
-                Desc  = "an unacceptable value has been specified for an enumerated argument";
-                break;
-            }
-
-            case GL_INVALID_VALUE :
-            {
-                Error = "GL_INVALID_VALUE";
-                Desc  = "a numeric argument is out of range";
-                break;
-            }
-
-            case GL_INVALID_OPERATION :
-            {
-                Error = "GL_INVALID_OPERATION";
-                Desc  = "the specified operation is not allowed in the current state";
-                break;
-            }
-
-            case GL_STACK_OVERFLOW :
-            {
-                Error = "GL_STACK_OVERFLOW";
-                Desc  = "this command would cause a stack overflow";
-                break;
-            }
-
-            case GL_STACK_UNDERFLOW :
-            {
-                Error = "GL_STACK_UNDERFLOW";
-                Desc  = "this command would cause a stack underflow";
-                break;
-            }
-
-            case GL_OUT_OF_MEMORY :
-            {
-                Error = "GL_OUT_OF_MEMORY";
-                Desc  = "there is not enough memory left to execute the command";
-                break;
-            }
-
-/*            case GL_INVALID_FRAMEBUFFER_OPERATION_EXT :
-            {
-                Error = "GL_INVALID_FRAMEBUFFER_OPERATION_EXT";
-                Desc  = "the object bound to FRAMEBUFFER_BINDING_EXT is not \"framebuffer complete\"";
-                break;
-            }*/
-        }
-
-        // Log the error
-        std::cerr << "An internal OpenGL call failed in "
-                  << File.substr(File.find_last_of("\\/") + 1) << " (" << Line << ") : "
-                  << Error << ", " << Desc
-                  << std::endl;
-    }
+	this->load("data/effects/normal.frag", "data/effects/default.vert", "normal-sobel");
+	this->load("data/effects/blue.frag", "data/effects/default.vert", "freeze");
 }
 
 void CShaderManager::load(std::string const & fragmentShaderName, std::string const & vertexShaderName, std::string const & programName){
@@ -201,7 +154,7 @@ void CShaderManager::load(std::string const & fragmentShaderName, std::string co
 	}
 
 	// Create Shader And Program Objects
-	this->my_program = glCreateProgram();
+	this->programs.push_back(glCreateProgram());
 	GLenum my_vertex_shader = glCreateShader(GL_VERTEX_SHADER);
 	GLenum my_fragment_shader = glCreateShader(GL_FRAGMENT_SHADER);
 
@@ -224,12 +177,11 @@ void CShaderManager::load(std::string const & fragmentShaderName, std::string co
 		glGetShaderInfoLog(my_vertex_shader, maxLength, &maxLength, vertexInfoLog);
 		fprintf(stderr, "Vertex shader %s compilation failed! Log:\n%s\n", vertexShaderName.c_str(), vertexInfoLog);
  
-		/* Handle the error in an appropriate way such as displaying a message or writing to a log file. */
-		/* In this simple program, we'll just leave */
 		delete [] vertexInfoLog;
 		return;
 	}
 	GLCheck(glCompileShader(my_fragment_shader));
+	glGetShaderiv(my_fragment_shader, GL_COMPILE_STATUS, &isCompiled);
 	if(isCompiled == false)
 	{
 		int maxLength;
@@ -241,18 +193,18 @@ void CShaderManager::load(std::string const & fragmentShaderName, std::string co
 		glGetShaderInfoLog(my_fragment_shader, maxLength, &maxLength, fragmentInfoLog);
 		fprintf(stderr, "Fragment shader %s compilation failed! Log:\n%s\n", fragmentShaderName.c_str(), fragmentInfoLog);
  
-		/* Handle the error in an appropriate way such as displaying a message or writing to a log file. */
-		/* In this simple program, we'll just leave */
 		delete [] fragmentInfoLog;
 		return;
 	}
 
 	// Attach The Shader Objects To The Program Object
-	GLCheck(glAttachShader(this->my_program, my_vertex_shader));
-	GLCheck(glAttachShader(this->my_program, my_fragment_shader));
+	GLCheck(glAttachShader(this->programs.back(), my_vertex_shader));
+	GLCheck(glAttachShader(this->programs.back(), my_fragment_shader));
 
 	// Link The Program Object
-	GLCheck(glLinkProgram(this->my_program));
+	GLCheck(glLinkProgram(this->programs.back()));
+
+	this->programNames[programName] = this->programs.size() - 1;
 
 	delete[] my_fragment_shader_source;
 	delete[] my_vertex_shader_source;
@@ -274,6 +226,15 @@ GLcharARB * CShaderManager::readFile(std::string const & filename){
 	fclose(fp);
 	fprintf(stderr, "read shader file %s\n", filename.c_str());
 	return buf;
+}
+
+int CShaderManager::getProgramId(std::string const & name) 
+{
+	if (this->programNames.count(name) > 0){
+		return this->programNames[name];
+	} else {
+		return -1;
+	}
 }
 
 #endif /* WG_SHADERS */

@@ -123,7 +123,7 @@
 			/>
 			<Tool
 				Name="VCCLCompilerTool"
-				AdditionalOptions="/MP8 -D &quot;WG_SHADERS&quot;"
+				AdditionalOptions="/MP8 "
 				Optimization="3"
 				InlineFunctionExpansion="2"
 				FavorSizeOrSpeed="1"
@@ -2175,6 +2175,10 @@
 				</File>
 				<File
 					RelativePath="..\..\src\Rendering\CWGSprite.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Rendering\GLCheck.h"
 					>
 				</File>
 				<File
