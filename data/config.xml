@@ -7,7 +7,7 @@
 	<locale lang="en"/>
   
   <!-- player1 -->
-  <controlsScheme player="0" name="$CTRL_SET_MOUSE" desc="$CTRL_SET_MOUSE_DESC" menuDesc="$CTRL_SET_MOUSE_MENU_DESC" flags="5">
+  <controlsScheme player="0" name="$CTRL_SET_MOUSE" desc="$CTRL_SET_MOUSE_DESC" menuDesc="$CTRL_SET_MOUSE_MENU_DESC" flags="1">
     <keyBinding name="MoveUp" key="321" />
     <keyBinding name="MoveDown" key="322" />
     <keyBinding name="MoveLeft" key="97" />
@@ -39,21 +39,7 @@
         <override platform="macintosh" key="120" />
       </keyBinding>
   </controlsScheme>
-  <controlsScheme player="0" name="$CTRL_SET_MOUSECAST" desc="$CTRL_SET_MOUSECAST_DESC" menuDesc="$CTRL_SET_MOUSECAST_MENU_DESC" flags="23">
-    <keyBinding name="MoveUpAbs" key="293" />
-    <keyBinding name="MoveDownAbs" key="294" />
-    <keyBinding name="MoveLeftAbs" key="291" />
-    <keyBinding name="MoveRightAbs" key="292" />
-    <keyBinding name="QuickAttack" key="321" />
-    <keyBinding name="SpecialAttack" key="322" />
-      <keyBinding name="Help" key="305" >
-        <override platform="macintosh" key="122" />
-      </keyBinding>
-      <keyBinding name="Abilities" key="306" >
-        <override platform="macintosh" key="120" />
-      </keyBinding>
-  </controlsScheme>
-  <controlsScheme player="0" name="$CTRL_SET_CLASSIC" desc="$CTRL_SET_CLASSIC_DESC" menuDesc="$CTRL_SET_CLASSIC_MENU_DESC" flags="4">
+  <controlsScheme player="0" name="$CTRL_SET_CLASSIC" desc="$CTRL_SET_CLASSIC_DESC" menuDesc="$CTRL_SET_CLASSIC_MENU_DESC" flags="0">
     <keyBinding name="MoveUp" key="293" />
     <keyBinding name="MoveDown" key="294" />
     <keyBinding name="TurnLeft" key="291" />
@@ -102,7 +88,7 @@
   </controlsScheme>
   
   <!-- player2 -->
-  <controlsScheme player="1" name="$CTRL_SET_MOUSE" desc="$CTRL_SET_MOUSE_DESC" menuDesc="$CTRL_SET_MOUSE_MENU_DESC" flags="5">
+  <controlsScheme player="1" name="$CTRL_SET_MOUSE" desc="$CTRL_SET_MOUSE_DESC" menuDesc="$CTRL_SET_MOUSE_MENU_DESC" flags="1">
     <keyBinding name="MoveUp" key="321" />
     <keyBinding name="MoveDown" key="322" />
     <keyBinding name="MoveLeft" key="97" />
@@ -134,21 +120,7 @@
       <override platform="macintosh" key="110" />
     </keyBinding>
   </controlsScheme>
-  <controlsScheme player="1" name="$CTRL_SET_MOUSECAST" desc="$CTRL_SET_MOUSECAST_DESC" menuDesc="$CTRL_SET_MOUSECAST_MENU_DESC" flags="23">
-    <keyBinding name="MoveUpAbs" key="105" />
-    <keyBinding name="MoveDownAbs" key="107" />
-    <keyBinding name="MoveLeftAbs" key="106" />
-    <keyBinding name="MoveRightAbs" key="108" />
-    <keyBinding name="QuickAttack" key="321" />
-    <keyBinding name="SpecialAttack" key="322" />
-    <keyBinding name="Help" key="307">
-      <override platform="macintosh" key="109" />
-    </keyBinding>
-    <keyBinding name="Abilities" key="308">
-      <override platform="macintosh" key="110" />
-    </keyBinding>
-  </controlsScheme>
-  <controlsScheme player="1" name="$CTRL_SET_CLASSIC" desc="$CTRL_SET_CLASSIC_DESC" menuDesc="$CTRL_SET_CLASSIC_MENU_DESC" flags="4">
+  <controlsScheme player="1" name="$CTRL_SET_CLASSIC" desc="$CTRL_SET_CLASSIC_DESC" menuDesc="$CTRL_SET_CLASSIC_MENU_DESC" flags="0">
     <keyBinding name="MoveUp" key="105" />
     <keyBinding name="MoveDown" key="107" />
     <keyBinding name="TurnLeft" key="106" />
@@ -174,7 +146,7 @@
   </controlsScheme>
 
   <!-- default choice (last not-user-defined) -->
-  <controls controls="4" player="0" />
-  <controls controls="3" player="1" />
+  <controls controls="3" player="0" />
+  <controls controls="2" player="1" />
 </root>
 
