@@ -18,7 +18,6 @@ void main()
 	vec2 delta = texCoord.xy;
 	float iceSize = 0.1;
 	
-	// modf dla ubogich
 	delta.x = mod(delta.x, imageSize.x);
 	delta.y = mod(delta.y, imageSize.y);
 	

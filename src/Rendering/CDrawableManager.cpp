@@ -141,29 +141,7 @@ void CDrawableManager::DrawFrame(sf::RenderWindow* wnd)
         {
             IDrawable* drawable = ( *it2 );
 #ifdef WG_SHADERS
-			int z = drawable->GetZIndex();
-			bool useNM = (z <= Z_TILE && z >= Z_PLAYER && z != Z_SHADOWS) || z == Z_MAPSPRITE_FG;
-			if (useNM){
-				gShaderManager.activate("test");
-                const sf::Image* img = ((CDisplayable*)drawable)->GetSFSprite()->GetImage();
-                if (img)
-                    gShaderManager.setUniform("uTexSize", sf::Vector2f(img->GetWidth(), img->GetHeight()));
-				if (dynamic_cast<CDisplayable*>(drawable)){
-					float rot = dynamic_cast<CDisplayable*>(drawable)->GetRotation();
-					gShaderManager.setUniform("lpos", sf::Vector3f(
-						Maths::Rotate(Maths::VectorUp(), rot).x, 
-						-Maths::Rotate(Maths::VectorUp(), rot).y, 
-						0.5f)
-					);
-				} else {
-					gShaderManager.setUniform("lpos", sf::Vector3f(-0.7f, -0.7f, 0.5f));	
-				}
-				gShaderManager.setUniform("lcolor", sf::Color(255,255,255,255));
-				float normalStrength = 1.0f;
-				if (z == Z_PHYSICAL) normalStrength = 3.0f;
-				else if (z == Z_TILE) normalStrength = 0.5f;
-				gShaderManager.setUniform("normalStrength", normalStrength);
-			}
+			gShaderManager.prepareToDraw(drawable);
 #endif /* WG_SHADERS */
             if (drawable->IsVisible())
                 drawable->Draw( wnd );

@@ -5,6 +5,7 @@
 
 #include <vector>
 #include <string>
+#include <map>
 
 #include <GL/glew.h>
 
@@ -34,12 +35,14 @@ public:
     CShaderManager();
     ~CShaderManager();
 	
-	void activate(std::string const & programName);
+	void prepareToDraw(IDrawable *drawable);
+	// returns programId (to allow uniform binding)
+	int activate(std::string const & programName);
 
-    bool setUniform(const std::string& name, float value);
-    bool setUniform(const std::string& name, sf::Vector2f value);
-    bool setUniform(const std::string& name, sf::Vector3f value);
-    bool setUniform(const std::string& name, sf::Color value);
+    bool setUniform(int programId, const std::string& name, float value);
+    bool setUniform(int programId, const std::string& name, sf::Vector2f value);
+    bool setUniform(int programId, const std::string& name, sf::Vector3f value);
+    bool setUniform(int programId, const std::string& name, sf::Color value);
 	
     virtual void KeyPressed( const sf::Event::KeyEvent &e ) {};
     virtual void KeyReleased( const sf::Event::KeyEvent &e );
@@ -50,7 +53,10 @@ private:
 
 	GLcharARB * readFile(std::string const & filename);
 
-	GLenum my_program;
+	std::vector<GLenum> programs;
+
+	int getProgramId(std::string const & name);
+	std::map<std::string, unsigned int> programNames;
 };
 
 #endif /* WG_SHADERS */
