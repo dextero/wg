@@ -83,8 +83,7 @@
         <lair file="data/physicals/lairs/wolfbeast-lair.xml" level="90" />
         <lair file="data/physicals/lairs/bee-lair.xml" level="90" />
         <lair file="data/physicals/lairs/shaggy-lair.xml" level="90" />
--->
-
+-->		
         <monster file="data/physicals/monsters/defs/rat.xml" minLevel="1" maxLevel="3" />
         <monster file="data/physicals/monsters/defs/bandit.xml" minLevel="1" maxLevel="1" frequency="0.3" />
 
@@ -182,6 +181,7 @@
         <monster file="data/physicals/monsters/defs/skeleton.xml" minLevel="21" maxLevel="23" frequency="0.75" />
         <monster file="data/physicals/monsters/defs/skeleton.xml" minLevel="22" maxLevel="22" frequency="0.25" />
 		<monster file="data/physicals/lairs/poison-haunter-lair.xml" minLevel="22" maxLevel="26" />
+		<monster file="data/physicals/monsters/defs/frost-demon.xml" minLevel="21" maxLevel="26" />
 
 		
 		<!-- -->
