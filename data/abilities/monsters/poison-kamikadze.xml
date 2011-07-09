@@ -9,6 +9,14 @@
     <effect type="sound">
       <name value="data/sounds/EL/rat01.ogg" />
     </effect>
+    <effect type="area" tag="poison-cloud-tag">
+      <area value="1.134" />
+      <filter value="player" />
+      <effect type="damage" >
+        <damage-type value="poison"/>
+        <amount calc="1.0 * poisonous"/>
+      </effect>
+    </effect>
     <effect type="bullet">
       <emitter>
         <speed value="0.0" />
