@@ -46,11 +46,11 @@
 	<entry>
 		<key>CTRL_BIND_MOUSECAST</key>
 		<value>Mousecast</value>
-    </entry>
-    <entry>
-        <key>CTRL_BIND_SEPARATE_SEQUENCES</key>
-        <value>Separate sequences</value>
-    </entry>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_SEPARATE_SEQUENCES</key>
+		<value>Separate sequences</value>
+	</entry>
 	<entry>
 		<key>CTRL_HELP_DESC</key>
 		<value>Help screen</value>
@@ -93,7 +93,7 @@
 	</entry>
 	<entry>
 		<key>CTRL_SET_8-K</key>
-		<value>8-k</value>
+		<value>Keyboard</value>
 	</entry>
 	<entry>
 		<key>CTRL_SET_8-K_DESC</key>
@@ -102,7 +102,7 @@ Spell casting: QWER</value>
 	</entry>
 	<entry>
 		<key>CTRL_SET_8-K_MENU_DESC</key>
-        <value>Inspired by the original Gauntlet. Use arrows to move the character towards the edges of the screen, and use the other hand to cast spells with the four keys - QWER.
+		<value>Inspired by the original Gauntlet. Use arrows to move the character towards the edges of the screen, and use the other hand to cast spells with the four keys - QWER.
         </value>
 	</entry>
 	<entry>
@@ -111,7 +111,7 @@ Spell casting: QWER</value>
 	</entry>
 	<entry>
 		<key>CTRL_SET_CLASSIC</key>
-		<value>Classic</value>
+		<value>Keyboard classic</value>
 	</entry>
 	<entry>
 		<key>CTRL_SET_CLASSIC_DESC</key>
@@ -120,12 +120,12 @@ Spell casting: QWER</value>
 	</entry>
 	<entry>
 		<key>CTRL_SET_CLASSIC_MENU_DESC</key>
-        <value>This control set is reminescent of the first game in the GTA series. Up and down arrows move the character forwards and backwards, and left-right are used to turn. Use the other hand to cast spells with the four keys - QWER.
+		<value>This control set is reminescent of the first game in the GTA series. Up and down arrows move the character forwards and backwards, and left-right are used to turn. Use the other hand to cast spells with the four keys - QWER.
         </value>
 	</entry>
 	<entry>
 		<key>CTRL_SET_DAB</key>
-		<value>most true</value>
+		<value>Mouse</value>
 	</entry>
 	<entry>
 		<key>CTRL_SET_DAB_DESC</key>
@@ -144,7 +144,7 @@ You can control your hero with WSAD keys. Use mouse to aim and mouse buttons to 
 	</entry>
 	<entry>
 		<key>CTRL_SET_MOUSE</key>
-		<value>mouse</value>
+		<value>Mouse alternative</value>
 	</entry>
 	<entry>
 		<key>CTRL_SET_MOUSE_DESC</key>
@@ -153,7 +153,7 @@ Spell casting: QWER</value>
 	</entry>
 	<entry>
 		<key>CTRL_SET_MOUSE_MENU_DESC</key>
-        <value>Use the mouse to control the character - move the cursor where he is supposed to look at, and use the buttons to move him forwards and backwards. Use the four keys on the left side of the keyboard to cast spells.
+		<value>Use the mouse to control the character - move the cursor where he is supposed to look at, and use the buttons to move him forwards and backwards. Use the four keys on the left side of the keyboard to cast spells.
         </value>
 	</entry>
 	<entry>
@@ -162,7 +162,7 @@ Spell casting: QWER</value>
 	</entry>
 	<entry>
 		<key>CTRL_SET_MOUSECAST_MENU_DESC</key>
-        <value>A control scheme inspired by Crimsonland and Aquaria. Arrows are used to move the character, and the mouse is used to aim and shoot. Hold the right mouse button to cast combination spells using gestures.
+		<value>A control scheme inspired by Crimsonland and Aquaria. Arrows are used to move the character, and the mouse is used to aim and shoot. Hold the right mouse button to cast combination spells using gestures.
         </value>
 	</entry>
 	<entry>
