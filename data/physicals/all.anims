@@ -1921,6 +1921,11 @@ core/anim/barrel/death
 	0.5 "data/physicals/obstacles/barrel.png"			448	0	512	64
 }
 
+core/anim/iceblock/default
+{
+	0.05 "data/physicals/obstacles/iceblock.png"			0	0	60	60
+}
+
 core/anim/gate/open
 {
 	0.10 "data/maps/doodahs/ancient/blocks-hole2.png"	0	0	128	128
@@ -3611,72 +3616,72 @@ core/anim/demon/death
 
 core/anim/frost-demon/default
 {
-    0.10 "data/physicals/monsters/demon.png" 0 0 64 64
+    0.10 "data/physicals/monsters/gfx/frost-demon.png" 0 0 64 64
 }
 
 core/anim/frost-demon/move
 {
-    0.10  "data/physicals/monsters/frost-demon.png"                  0 128   64 192
-    0.10  "data/physicals/monsters/frost-demon.png"                 64 128  128 192
-    0.10  "data/physicals/monsters/frost-demon.png"                128 128  192 192
-    0.10  "data/physicals/monsters/frost-demon.png"                192 128  256 192
-    0.10  "data/physicals/monsters/frost-demon.png"                256 128  320 192
-    0.10  "data/physicals/monsters/frost-demon.png"                320 128  384 192
-    0.10  "data/physicals/monsters/frost-demon.png"                384 128  448 192
-    0.10  "data/physicals/monsters/frost-demon.png"                448 128  512 192
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                  0 128   64 192
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                 64 128  128 192
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                128 128  192 192
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                192 128  256 192
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                256 128  320 192
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                320 128  384 192
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                384 128  448 192
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                448 128  512 192
 }
 core/anim/frost-demon/move/winged
 {
-    0.10  "data/physicals/monsters/frost-demon.png"                  0 192   64 256
-    0.10  "data/physicals/monsters/frost-demon.png"                 64 192  128 256
-    0.10  "data/physicals/monsters/frost-demon.png"                128 192  192 256
-    0.10  "data/physicals/monsters/frost-demon.png"                192 192  256 256
-    0.10  "data/physicals/monsters/frost-demon.png"                256 192  320 256
-    0.10  "data/physicals/monsters/frost-demon.png"                320 192  384 256
-    0.10  "data/physicals/monsters/frost-demon.png"                384 192  448 256
-    0.10  "data/physicals/monsters/frost-demon.png"                448 192  512 256
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                  0 192   64 256
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                 64 192  128 256
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                128 192  192 256
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                192 192  256 256
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                256 192  320 256
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                320 192  384 256
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                384 192  448 256
+    0.10  "data/physicals/monsters/gfx/frost-demon.png"                448 192  512 256
 }
 
 core/anim/frost-demon/attack
 {
-    0.06  "data/physicals/monsters/frost-demon.png"                  0   0   64  64
-    0.06  "data/physicals/monsters/frost-demon.png"                 64   0  128  64
-    0.06  "data/physicals/monsters/frost-demon.png"                128   0  192  64
-    0.06  "data/physicals/monsters/frost-demon.png"                192   0  256  64
-    0.06  "data/physicals/monsters/frost-demon.png"                256   0  320  64
-    0.08  "data/physicals/monsters/frost-demon.png"                320   0  384  64
-    0.06  "data/physicals/monsters/frost-demon.png"                384   0  448  64
-    0.06  "data/physicals/monsters/frost-demon.png"                448   0  512  64
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                  0   0   64  64
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                 64   0  128  64
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                128   0  192  64
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                192   0  256  64
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                256   0  320  64
+    0.08  "data/physicals/monsters/gfx/frost-demon.png"                320   0  384  64
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                384   0  448  64
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                448   0  512  64
 }
 core/anim/frost-demon/attack/winged
 {
-    0.06  "data/physicals/monsters/frost-demon.png"                  0  64   64 128
-    0.06  "data/physicals/monsters/frost-demon.png"                 64  64  128 128
-    0.06  "data/physicals/monsters/frost-demon.png"                128  64  192 128
-    0.06  "data/physicals/monsters/frost-demon.png"                192  64  256 128
-    0.06  "data/physicals/monsters/frost-demon.png"                256  64  320 128
-    0.08  "data/physicals/monsters/frost-demon.png"                320  64  384 128
-    0.06  "data/physicals/monsters/frost-demon.png"                384  64  448 128
-    0.06  "data/physicals/monsters/frost-demon.png"                448  64  512 128
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                  0  64   64 128
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                 64  64  128 128
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                128  64  192 128
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                192  64  256 128
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                256  64  320 128
+    0.08  "data/physicals/monsters/gfx/frost-demon.png"                320  64  384 128
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                384  64  448 128
+    0.06  "data/physicals/monsters/gfx/frost-demon.png"                448  64  512 128
 }
 
 core/anim/frost-demon/death
 {
-    0.05  "data/physicals/monsters/frost-demon.png"                  0 256   64 320
-    0.05  "data/physicals/monsters/frost-demon.png"                 64 256  128 320
-    0.05  "data/physicals/monsters/frost-demon.png"                128 256  192 320
-    0.05  "data/physicals/monsters/frost-demon.png"                192 256  256 320
-    0.05  "data/physicals/monsters/frost-demon.png"                256 256  320 320
-    0.05  "data/physicals/monsters/frost-demon.png"                320 256  384 320
-    0.05  "data/physicals/monsters/frost-demon.png"                384 256  448 320
-    0.05  "data/physicals/monsters/frost-demon.png"                448 256  512 320
-    0.05  "data/physicals/monsters/frost-demon.png"                  0 320   64 384
-    0.05  "data/physicals/monsters/frost-demon.png"                 64 320  128 384
-    0.05  "data/physicals/monsters/frost-demon.png"                128 320  192 384
-    0.05  "data/physicals/monsters/frost-demon.png"                192 320  256 384
-    0.05  "data/physicals/monsters/frost-demon.png"                256 320  320 384
-    0.05  "data/physicals/monsters/frost-demon.png"                320 320  384 384
-    0.05  "data/physicals/monsters/frost-demon.png"                384 320  448 384
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                  0 256   64 320
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                 64 256  128 320
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                128 256  192 320
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                192 256  256 320
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                256 256  320 320
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                320 256  384 320
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                384 256  448 320
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                448 256  512 320
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                  0 320   64 384
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                 64 320  128 384
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                128 320  192 384
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                192 320  256 384
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                256 320  320 384
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                320 320  384 384
+    0.05  "data/physicals/monsters/gfx/frost-demon.png"                384 320  448 384
 }
 
 ###### zielony smok ######

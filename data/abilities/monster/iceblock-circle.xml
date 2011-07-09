@@ -1,0 +1,47 @@
+<root type="ability" class="bullet">
+
+  <name>$ABI_WARLOCK_LIGHTNING</name>
+  <description>$ABI_WARLOCK_LIGHTNING_DESC</description>
+  <icon>data/player/lightning-strike.png</icon>
+  <unavailable-icon>data/player/lightning-strike-grey.png</unavailable-icon>
+
+	<self-effect type="sound">
+        <effect type="graphical-effect">
+			<name value="magic-circle-1"/>
+			<time value="0.5"/>
+        </effect>
+	</self-effect>
+  
+	<explosion type="list">
+		<effect type="graphical-effect">
+			<name value="blue-explosion"/>
+			<time value="0.6"/>
+		</effect>
+		<effect type="console">
+			<text>spawn-physical data/physicals/obstacles/iceblock.xml $X $Y</text>
+		</effect>
+	</explosion>
+
+  <cast-time-effect type="modify">
+  	<aspect value="speed" />
+  	<amount value="0.2" />
+  </cast-time-effect>
+
+  <range calc="1.5 " />
+  <speed calc="5.0" />
+  <width calc="90" />
+  <count calc="5" />
+  <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+  <filter value="none"/>
+  <explode-on-fade value="1" />  
+  
+  <manacost value="0.0" />
+  <casttime value="0.5" />
+  <delay value="0.28" />
+  <cooldown value="30.0" />
+  
+  <ai-hint>
+	<player-distance>2.0</player-distance>
+	<player-angle>60.0</player-angle>
+  </ai-hint>  
+</root>
