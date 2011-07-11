@@ -1161,15 +1161,8 @@ void CMenuScreens::InitReadmeScreen()
         panel->SetPosition(10.f, 10.f, 80.f, 60.f);
         panel->SetScrollBarY(scroll);
 
-        CTextArea* logo = panel->CreateTextArea("readme-ascii-logo");
-        logo->SetPosition(0.f, 0.f, 100.f, 0.f);
-        logo->SetFont(gLocalizator.GetFont(FONT_CONSOLE), gLocalizator.GetFontSize("README_ASCII_LOGO"));
-        logo->SetText(gLocalizator.GetText("README_ASCII_LOGO"));
-        logo->GetSFString()->SetStyle(sf::String::Bold);
-        logo->SetAutoHeight(true);
-
         CTextArea* text = panel->CreateTextArea("readme-panel-text");
-        text->SetPosition(0.f, 50.f, 100.f, 0.f);
+        text->SetPosition(0.f, 0.f, 100.f, 0.f);
         text->SetFont(gLocalizator.GetFont(FONT_DIALOG), gLocalizator.GetFontSize("README_TEXT"));
         text->SetText(gLocalizator.GetText("README_TEXT"));
         text->SetAutoHeight(true);
