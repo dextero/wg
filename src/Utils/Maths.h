@@ -58,7 +58,7 @@ namespace Maths
 	}
 
     // obrot wektora
-    inline sf::Vector2f Rotate(sf::Vector2f &v, int rot) {
+    inline sf::Vector2f Rotate(sf::Vector2f const &v, int rot) {
         float f = - rot * 2.0f * (float)M_PI / 360.0f;
         sf::Vector2f vectorOut(v.x * cosf(f) - v.y * sinf(f), v.x * sinf(f) + v.y * cosf(f));
         return vectorOut;

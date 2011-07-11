@@ -36,7 +36,6 @@ CShaderManager::~CShaderManager(){
 void CShaderManager::prepareToDraw(IDrawable * drawable){
 	int z = drawable->GetZIndex();
 	CDisplayable * displayable = dynamic_cast<CDisplayable *>(drawable);
-	bool useNM = false;
 	if (displayable != NULL){
 		const sf::Image * img = ((CDisplayable*)drawable)->GetSFSprite()->GetImage();
 		bool useNM = (img != NULL) && ((z <= Z_TILE && z > Z_PLAYER && z != Z_SHADOWS) || z == Z_MAPSPRITE_FG);
@@ -57,6 +56,7 @@ void CShaderManager::prepareToDraw(IDrawable * drawable){
 				this->setUniform(id, "normalStrength", normalStrength);
 			}
 		} else if (z == Z_PLAYER && img != NULL) {
+			fprintf(stderr, "Using freeze\n");
 			int id = this->activate("freeze");
 			if (id >= 0){
 				this->setUniform(id, "uTexSize", sf::Vector2f(img->GetWidth(), img->GetHeight()));
