@@ -22,7 +22,8 @@
 
 template<> CShaderManager* CSingleton<CShaderManager>::msSingleton = 0;
 
-CShaderManager::CShaderManager()
+CShaderManager::CShaderManager():
+	needToClearBoundTextures(false)
 {
     fprintf(stderr,"CShaderManager::CShaderManager()\n");
 	this->reloadAll();
@@ -132,6 +133,32 @@ bool CShaderManager::setUniform(int programId, const std::string& name, sf::Colo
     };
     glUniform4fv(location, 1, col);
     return true;
+}
+
+// program must be active!
+bool CShaderManager::bindTexture(int programId, const std::string & name, sf::Image const * image)
+{
+	GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
+	if (location < 0) {
+		fprintf(stderr, "shader ERROR: couldn't get uniform location: %s\n", name.c_str());
+		return false;
+	}
+	GLCheck(glActiveTexture(GL_TEXTURE1));
+	image->Bind();
+	GLCheck(glActiveTexture(GL_TEXTURE0));
+	GLCheck(glUniform1i(location, 1));
+	this->needToClearBoundTextures = true;
+	return true;
+}
+
+void CShaderManager::clearBoundTextures()
+{
+	if (this->needToClearBoundTextures){
+		this->needToClearBoundTextures = false;
+		GLCheck(glActiveTexture(GL_TEXTURE1));
+		GLCheck(glBindTexture(GL_TEXTURE_2D, 0));
+		GLCheck(glActiveTexture(GL_TEXTURE0));
+	}
 }
 
 void CShaderManager::KeyReleased( const sf::Event::KeyEvent &e ){
