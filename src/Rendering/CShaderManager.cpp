@@ -45,9 +45,9 @@ void CShaderManager::prepareToDraw(IDrawable * drawable){
 				this->setUniform(id, "uTexSize", sf::Vector2f(img->GetWidth(), img->GetHeight()));
 				float rot = displayable->GetRotation();
 				this->setUniform(id, "lpos", sf::Vector3f(
-					Maths::Rotate(Maths::VectorUp(), rot).x, 
-					-Maths::Rotate(Maths::VectorUp(), rot).y, 
-					0.5f)
+					Maths::Rotate(Maths::VectorUp(), -rot).x, 
+					Maths::Rotate(Maths::VectorUp(), -rot).y, 
+					0.3f)
 				);
 				this->setUniform(id, "lcolor", sf::Color(255,255,255,255));
 				float normalStrength = 1.0f;
