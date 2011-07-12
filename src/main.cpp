@@ -87,6 +87,15 @@ int main( int argc, char* argv[] ){
 
 	if (attemptHideConsole){
 		std::string userDir = FileUtils::GetUserDir();
+		
+		if (!FileUtils::FileExists(userDir))
+		{
+			// i tutaj inicjalizacja danych uzytkownika - kopiowanie 'first_game', 'config.xml' itepe itede
+			// mozna tez pomyslec o tym, aby przy uruchamianu WarlocksGauntlet.exe --clean-user-dir 
+			// skasowac katalog uzytkownika i na nowo go tworzyc
+
+			FileUtils::CreateDir(userDir);
+		}
 		if (std::freopen((userDir + "/stdout.log").c_str(), "w", stdout) &&
 			std::freopen((userDir + "/stderr.log").c_str(), "w", stderr)) {
 
