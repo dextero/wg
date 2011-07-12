@@ -4,22 +4,24 @@
     <name value="Frost demon" />
     <desc value="A creature from the frozen depths of hell, made of living ice and frost. " />
   </bestiary>
-  <genre>demon</genre>
-
-  <speed min="1.20" max="1.35" />
-  <strength min="30.0" max="40.0" />
-  <turnspeed min="90.0" max="120.0" />
-  <shadow-offset min="0.12" max="0.12" />
+  <genre>frost-demon</genre>
 
   <maxhp min="200.0" max="250.0" />
-  <maxmana min="30.0" max="50.0" />
-
+  <speed min="1.20" max="1.35" />
+  <turnspeed min="90.0" max="120.0" />
+  <strength min="30.0" max="40.0" />
+  <intelligence min="10.0" max="14.0" />
+  <lightningresist min="6.0" max="8.0" />  
+  <iceresist min="14.0" max="18.0" />  
+  <poisonresist min="6.0" max="8.0" />  
+  <maxmana min="30.0" max="35.0" />
+  <manaregen min="2" max="4"/>
   <xp min="120.0" max="150.0" />
 
-  <scale min="0.9" max="1.0" />
+  <mass min="4.0" max="4.3" />
   <radius min="0.35" max="0.4" />
-  <mass min="20.0" max="20.0" />
-  <!--  <color r="0.5" g="0.2" b="0.01" a="1.0" /> -->
+  <scale min="0.9" max="1.0" />
+  <shadow-offset min="0.12" max="0.12" />
 
   <animset>
       <anim name="core/anim/frost-demon/default" type="default" />
@@ -36,16 +38,13 @@
 
   <ai name="melee-chaser" />
 
-  <ability name="data/abilities/monsters/melee.xml" default="1" />
+  <ability name="data/abilities/monsters/melee-with-swing.xml" default="1" />
   <ability name="data/abilities/monsters/lightning-magnetic.xml" />
   <ability name="data/abilities/monsters/icearrow-volley.xml" />
 
   <sound type="attack" filename="data/sounds/0AD/horse_11.ogg" />
-  <sound type="attack" filename="data/sounds/EL/monster03.ogg" />
-  <sound type="attack" filename="data/sounds/EL/monster04.ogg" />
   <sound type="damaged" filename="data/sounds/EL/monster01.ogg" />
   <sound type="damaged" filename="data/sounds/EL/monster02.ogg" />
-  <sound type="spawn" filename="data/sounds/EL/monster05.ogg" />
   <sound type="spawn" filename="data/sounds/EL/dragon02.ogg" />
   <sound type="death" filename="data/sounds/EL/monster06.ogg" />
 

@@ -184,6 +184,7 @@
 		<monster file="data/physicals/monsters/defs/frost-demon.xml" minLevel="21" maxLevel="26" />
 
 		
+		<lair    file="data/physicals/lairs/frost-demon-lair.xml" minLevel="22" maxLevel="27" frequency="0.4" />
 		<!-- -->
 
         <lair    file="data/physicals/lairs/chit-lair.xml" minLevel="94" maxLevel="3" />
