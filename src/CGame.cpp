@@ -61,15 +61,6 @@ CGame::CGame():
     fprintf( stderr, "CGame::CGame()\n" );
     fflush(stderr);
 
-    if (!FileUtils::FileExists(FileUtils::GetUserDir()))
-    {
-	    // i tutaj inicjalizacja danych uzytkownika - kopiowanie 'first_game', 'config.xml' itepe itede
-        // mozna tez pomyslec o tym, aby przy uruchamianu WarlocksGauntlet.exe --clean-user-dir 
-        // skasowac katalog uzytkownika i na nowo go tworzyc
-
-		FileUtils::CreateDir(FileUtils::GetUserDir());
-    }
-
 #ifndef __EDITOR__
 	
 	/*
