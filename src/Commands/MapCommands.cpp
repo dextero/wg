@@ -78,14 +78,40 @@ void CommandLoadMap(size_t argc, const std::vector<std::wstring> &argv)
 
 void CommandPreloadMap(size_t argc, const std::vector<std::wstring> &argv)
 {
+	// mega-hack to handle absolute file paths with spaces and non-ASCII characters. 
+	// Assuming:
+	// - map file name always ends with '.xml'
+	// - map file name always is the first argument
+	// we can perform the following algorithm
+	// - find the first argument that contains '.xml'; let's call it argX
+	// - merge all the arguments from arg1 to argX into one string, updating argc/argv values
+	int argX = -1;
+	std::vector<std::wstring> argvCopy = argv;
+	for (unsigned int i = 1; i < argvCopy.size(); i++){
+		if (argvCopy[i].find(L".xml") != std::wstring::npos){
+			argX = i;
+			break;
+		}
+	}
+	if (argX >= 0){
+		for (unsigned int i = 2; i <= argX; i++){
+			argvCopy[1] += L" " + argvCopy[i]; // concatenate first argument with next ones
+		}
+		if (argX >= 2){
+			argvCopy.erase(argvCopy.begin() + 2, argvCopy.begin() + argX);
+		}
+	}
+	argc = argvCopy.size();
+	// normal procedure follows
+
     if ( argc < 2)
     {
-        gConsole.Printf( L"usage: %ls folder_name/file_name [region] [saveGame]" , argv[0].c_str() );
+        gConsole.Printf( L"usage: %ls folder_name/file_name [region] [saveGame]" , argvCopy[0].c_str() );
         gConsole.Printf( L"       or file_name [region] [saveGame] if you want to load it from data/maps" );
         return;
     }
 
-    std::wstring mapName(argv[1]);
+    std::wstring mapName(argvCopy[1]);
     if (mapName.find(L"/") == std::wstring::npos)
     {
         mapName.insert(0, L"data/maps/");
@@ -95,9 +121,9 @@ void CommandPreloadMap(size_t argc, const std::vector<std::wstring> &argv)
     if (argc == 2) // zapisz
         gMapManager.ScheduleSetMap(StringUtils::ConvertToString(mapName), loadCompleteMap);
     else if (argc == 3) // zapisz
-        gMapManager.ScheduleSetMap(StringUtils::ConvertToString(mapName),loadCompleteMap, StringUtils::ConvertToString(argv[2]));
+        gMapManager.ScheduleSetMap(StringUtils::ConvertToString(mapName),loadCompleteMap, StringUtils::ConvertToString(argvCopy[2]));
     else // nie zapisuj
-        gMapManager.SetMap(StringUtils::ConvertToString(mapName), loadCompleteMap, StringUtils::ConvertToString(argv[2]));
+        gMapManager.SetMap(StringUtils::ConvertToString(mapName), loadCompleteMap, StringUtils::ConvertToString(argvCopy[2]));
 }
 
 void CommandCreateWall(size_t argc, const std::vector<std::wstring> &argv){
