@@ -28,7 +28,7 @@
             <effect type="sound">
               <name value="data/sounds/Lugaro/whoosh.ogg" />
             </effect>
-		  </explosion>
+          </explosion>
           <effect type="list">
             <effect type="non-cumulative">
               <effect type="timed">
