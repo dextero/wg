@@ -38,14 +38,14 @@ void main()
     dy.r = (dy.r + dy.g + dy.b) * 0.33333333333333;
     
     // tworzenie normalnej:
-    vec3 norm = normalize( vec3(dx.r, 1.0 / normalStrength, dy.r)) ;       
-    norm = (norm-0.5) * 2.0;
+    vec3 norm = normalize( vec3(dx.r, dy.r, 1.0 / normalStrength)) ;       
+    //norm = (norm-0.5) * 2.0;
     
     // normalizacja swiatla (hmm moze by to wywalic...)    
     lpos = normalize(lpos);
     
     // obliczenie jak zmodyfikowac jasnosc (dotproduct zwykly ;p)
-    float dotproduct = max( dot(norm,lpos), 0.7 );
+    float dotproduct = sqrt( max( dot(norm,lpos), 0.1 ) );
     
     // obliczenie wlasciwego koloru
     vec3 diffuse = dotproduct * lcolor * pixel + grayscale * 0.35;
