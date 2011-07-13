@@ -473,6 +473,7 @@ size_t CGameOptions::AddControlScheme( int player, const std::string& name, cons
     gBindManagerByPlayer(player)->SetMouseLook(!!(flags & cfMouseLook));
     gBindManagerByPlayer(player)->SetShowOnFirstGame(!!(flags & cfShowOnFirstGame));
     gBindManagerByPlayer(player)->SetIsAbsolute(!!(flags & cfAbsolute));
+    gBindManagerByPlayer(player)->SetPointNClickMove(!!(flags & cfPointNClick));
 
     if (flags & cfAbsolute)
     {

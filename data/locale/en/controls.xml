@@ -205,4 +205,32 @@ Spell casting: QWER</value>
 		<key>CTRL_TURNRIGHT_DESC</key>
 		<value>Turn right</value>
 	</entry>
+	<entry>
+		<key>CTRL_POINTNCLICK_DESC</key>
+		<value>Point&amp;click movement</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_POINTNCLICK_MOVEMENT</key>
+		<value>Point&amp;click movement</value>
+	</entry>
+	<entry>
+		<key>CTRL_BIND_POINTNCLICK_MOVEMENT_TOOLTIP</key>
+		<value>Point a location on the map with your mouse and click - hero will head towards it.</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_MOUSE_ONLY</key>
+		<value>Mouse only</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_MOUSE_ONLY_DESC</key>
+		<value>Movement: point&amp;click (mouse button)
+Aiming: mouse
+Spell casting: mouse buttons
+</value>
+	</entry>
+	<entry>
+		<key>CTRL_SET_MOUSE_ONLY_MENU_DESC</key>
+		<value>Scheme using mouse for most actions. Click anywhere to move the hero, aim and cast spells with other mouse buttons.
+</value>
+	</entry>
 </root>

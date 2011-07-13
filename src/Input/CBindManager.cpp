@@ -40,10 +40,11 @@ const CBindManager::ActionPair CBindManager::availableActions[] = {
     CBindManager::ActionPair("Slot-1",        CBindManager::agSeparateSeq),
     CBindManager::ActionPair("Slot-2",        CBindManager::agSeparateSeq),
     CBindManager::ActionPair("Help",          CBindManager::agAll),
-    CBindManager::ActionPair("Abilities",     CBindManager::agAll)
+    CBindManager::ActionPair("Abilities",     CBindManager::agAll),
+    CBindManager::ActionPair("PointNClick",   CBindManager::agPointNClick)
 };
 
-const unsigned int CBindManager::availableActionsCount = 25;
+const unsigned int CBindManager::availableActionsCount = 26;
 
 
 void CBindManager::SetActualBindManager(size_t nr, unsigned playerNumber)
@@ -173,6 +174,15 @@ bool CBindManager::GetIsAbsolute()
 	return mIsAbsolute;
 }
 
+void CBindManager::SetPointNClickMove(bool arg)
+{
+    mPointNClickMove = arg;
+}
+bool CBindManager::GetPointNClickMove()
+{
+    return mPointNClickMove;
+}
+
 void CBindManager::SetShowOnFirstGame(bool arg)
 {
     mShowOnFirstGame = arg;
@@ -197,6 +207,7 @@ CBindManager::CBindManager( const std::wstring & id, unsigned playerNumber )
 
 	mMouseLook = false;
     mIsAbsolute = false;
+    mPointNClickMove = false;
     mShowOnFirstGame = false;
 }
 

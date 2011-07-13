@@ -68,6 +68,7 @@ namespace System
             agKeyTurning    = 16,
             agNormalCast    = 32,
             agSeparateSeq   = 64,   // AbiX-* i Slot-* zamiast Abi-*
+            agPointNClick   = 128,  // wskazywanie celu kliknieciem mysza
             agWtf           = 0
         };
         static const ActionPair availableActions[];
@@ -124,6 +125,7 @@ namespace System
 
 			bool mMouseLook;
             bool mIsAbsolute;
+            bool mPointNClickMove;
 
             bool mShowOnFirstGame;
 
@@ -151,6 +153,9 @@ namespace System
 
             bool GetIsAbsolute();
             void SetIsAbsolute(bool arg);
+
+            bool GetPointNClickMove();
+            void SetPointNClickMove(bool arg);
 
             bool GetShowOnFirstGame();
             void SetShowOnFirstGame(bool arg);

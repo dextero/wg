@@ -7,6 +7,8 @@
 #include "../Logic/Effects/CEffectSource.h"
 #include "../Logic/Abilities/EAbilityResult.h"
 
+#include <SFML/System/Vector2.hpp>
+
 const unsigned int ABI_SLOTS_COUNT = 3;
 
 class CPlayer;
@@ -46,6 +48,9 @@ private:
     bool mIsInAbsoluteMovement;
 	bool mMouseLook;
 
+    bool mHasWalkTarget;
+    sf::Vector2f mWalkTarget;
+
     // sloty na czary
     int mSelectedAbilities[ABI_SLOTS_COUNT];
 
@@ -60,6 +65,7 @@ public:
 	void SetRotation(float value);
     void SetWalkingAbsolute(bool north, bool east, bool south, bool west);
 	void SetMouseLook(bool look);
+    void SetWalkTarget(bool walk, sf::Vector2f target = sf::Vector2f(0.f, 0.f));
 
     void AbiKeyPressed(int idx, bool hold);
 	void StartTalk();

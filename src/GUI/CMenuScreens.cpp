@@ -735,10 +735,12 @@ void CMenuScreens::StoreOptions()
         CCheckBox* mouseLook = dynamic_cast<CCheckBox*>(mBindingOptions[i]->FindObject("mouse-look"));
         CCheckBox* mouseCast = dynamic_cast<CCheckBox*>(mBindingOptions[i]->FindObject("mouse-cast"));
         CCheckBox* separateSeq = dynamic_cast<CCheckBox*>(mBindingOptions[i]->FindObject("separate-seq"));
+        CCheckBox* pncMovement = dynamic_cast<CCheckBox*>(mBindingOptions[i]->FindObject("pnc-movement"));
 
         absolute->SetState(System::Input::CBindManager::GetBindManager((i == 0 ? tmpControls0 : tmpControls1))->GetIsAbsolute());
         mouseLook->SetState(System::Input::CBindManager::GetBindManager((i == 0 ? tmpControls0 : tmpControls1))->GetMouseLook());
         mouseCast->SetState(System::Input::CBindManager::GetBindManager((i == 0 ? tmpControls0 : tmpControls1))->GetMouseCaster() != NULL);
+        pncMovement->SetState(System::Input::CBindManager::GetBindManager((i == 0 ? tmpControls0 : tmpControls1))->GetPointNClickMove());
         
         for (size_t b = 0; b < System::Input::CBindManager::GetBindManagersCount(i); ++b)
             if (System::Input::CBindManager::GetBindManagerAt(b, i)->GetName() == (i == 0 ? tmpControls0 : tmpControls1))
@@ -845,7 +847,7 @@ void CMenuScreens::InitBindingOptions()
             CTextArea* absoluteTxt = w->CreateTextArea("absolute-txt");
             absoluteTxt->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
             absoluteTxt->SetText(gLocalizator.GetText("CTRL_BIND_ABS"));
-            absoluteTxt->SetPosition(15.f, 14.f, 15.f, 8.f);
+            absoluteTxt->SetPosition(15.f, 14.f, 11.f, 8.f);
 
             CTextArea* absoluteTooltip = gGUI.CreateTextArea("binding" + StringUtils::ToString(i) + "-absolute_tooltip", true, Z_GUI4);
             absoluteTooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
@@ -861,14 +863,14 @@ void CMenuScreens::InitBindingOptions()
 
             CCheckBox* mouseLook = w->CreateCheckBox("mouse-look");
             mouseLook->SetImage("data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png");
-            mouseLook->SetPosition(30.f, 13.f, 4.f, 5.f);
+            mouseLook->SetPosition(26.f, 13.f, 4.f, 5.f);
             mouseLook->GetEventIntCallback(MOUSE_RELEASED_LEFT)->bind(this, &CMenuScreens::UpdateBindingOptions);
             mouseLook->SetEventIntParam(MOUSE_RELEASED_LEFT, i);
 
             CTextArea* mouseLookTxt = w->CreateTextArea("mouse-look-txt");
             mouseLookTxt->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
             mouseLookTxt->SetText(gLocalizator.GetText("CTRL_BIND_MOUSE_LOOK"));
-            mouseLookTxt->SetPosition(35.f, 14.f, 15.f, 8.f);
+            mouseLookTxt->SetPosition(31.f, 14.f, 11.f, 8.f);
 
             CTextArea* mouseLookTooltip = gGUI.CreateTextArea("binding" + StringUtils::ToString(i) + "-mouse-look_tooltip", true, Z_GUI4);
             mouseLookTooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
@@ -884,14 +886,14 @@ void CMenuScreens::InitBindingOptions()
 
             CCheckBox* mouseCast = w->CreateCheckBox("mouse-cast");
             mouseCast->SetImage("data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png");
-            mouseCast->SetPosition(50.f, 13.f, 4.f, 5.f);
+            mouseCast->SetPosition(42.f, 13.f, 4.f, 5.f);
             mouseCast->GetEventIntCallback(MOUSE_RELEASED_LEFT)->bind(this, &CMenuScreens::UpdateBindingOptions);
             mouseCast->SetEventIntParam(MOUSE_RELEASED_LEFT, i);
 
             CTextArea* mouseCastTxt = w->CreateTextArea("mouse-cast-txt");
             mouseCastTxt->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
             mouseCastTxt->SetText(gLocalizator.GetText("CTRL_BIND_MOUSECAST"));
-            mouseCastTxt->SetPosition(55.f, 14.f, 15.f, 8.f);
+            mouseCastTxt->SetPosition(47.f, 14.f, 11.f, 8.f);
 
             CTextArea* mouseCastTooltip = gGUI.CreateTextArea("binding" + StringUtils::ToString(i) + "-mouse-cast_tooltip", true, Z_GUI4);
             mouseCastTooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
@@ -907,14 +909,14 @@ void CMenuScreens::InitBindingOptions()
 
             CCheckBox* separateSeq = w->CreateCheckBox("separate-seq");
             separateSeq->SetImage("data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png");
-            separateSeq->SetPosition(70.f, 13.f, 4.f, 5.f);
+            separateSeq->SetPosition(58.f, 13.f, 4.f, 5.f);
             separateSeq->GetEventIntCallback(MOUSE_RELEASED_LEFT)->bind(this, &CMenuScreens::UpdateBindingOptions);
             separateSeq->SetEventIntParam(MOUSE_RELEASED_LEFT, i);
 
             CTextArea* separateSeqTxt = w->CreateTextArea("separate-seq-txt");
             separateSeqTxt->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
             separateSeqTxt->SetText(gLocalizator.GetText("CTRL_BIND_SEPARATE_SEQUENCES"));
-            separateSeqTxt->SetPosition(75.f, 14.f, 15.f, 8.f);
+            separateSeqTxt->SetPosition(63.f, 14.f, 11.f, 8.f);
 
             CTextArea* separateSeqTooltip = gGUI.CreateTextArea("binding" + StringUtils::ToString(i) + "-separate-seq_tooltip", true, Z_GUI4);
             separateSeqTooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
@@ -927,6 +929,29 @@ void CMenuScreens::InitBindingOptions()
             separateSeqTooltip->SetOffset(sf::Vector2f(separateSeq->ConvertToGlobalPosition(separateSeq->GetSize() / 100.f).x, 20.f));
 
             separateSeq->SetTooltip(separateSeqTooltip);
+
+            CCheckBox* pointNClickMovement = w->CreateCheckBox("pnc-movement");
+            pointNClickMovement->SetImage("data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png");
+            pointNClickMovement->SetPosition(75.f, 13.f, 4.f, 5.f);
+            pointNClickMovement->GetEventIntCallback(MOUSE_RELEASED_LEFT)->bind(this, &CMenuScreens::UpdateBindingOptions);
+            pointNClickMovement->SetEventIntParam(MOUSE_RELEASED_LEFT, i);
+
+            CTextArea* pointNClickMovementTxt = w->CreateTextArea("pnc-movement-txt");
+            pointNClickMovementTxt->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
+            pointNClickMovementTxt->SetText(gLocalizator.GetText("CTRL_BIND_POINTNCLICK_MOVEMENT"));
+            pointNClickMovementTxt->SetPosition(80.f, 14.f, 11.f, 8.f);
+
+            CTextArea* pointNClickMovementTooltip = gGUI.CreateTextArea("binding" + StringUtils::ToString(i) + "-pnc-movement_tooltip", true, Z_GUI4);
+            pointNClickMovementTooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
+            pointNClickMovementTooltip->SetBackgroundImage("data/GUI/transparent-black.png");
+            pointNClickMovementTooltip->SetVisible(false);
+            pointNClickMovementTooltip->SetAutoHeight(true);
+            pointNClickMovementTooltip->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
+            pointNClickMovementTooltip->SetText(gLocalizator.GetText("CTRL_BIND_POINTNCLICK_MOVEMENT_TOOLTIP"));
+            pointNClickMovementTooltip->SetPadding(20.f, 20.f, 20.f, 20.f, UNIT_PIXEL);
+            pointNClickMovementTooltip->SetOffset(sf::Vector2f(pointNClickMovement->ConvertToGlobalPosition(pointNClickMovement->GetSize() / 100.f).x, 20.f));
+
+            pointNClickMovement->SetTooltip(pointNClickMovementTooltip);
 
 			mBindingOptions[i] = w;
 		}
@@ -961,16 +986,19 @@ void CMenuScreens::UpdateBindingOptions(int playerNumber)
         CCheckBox* mouseLook = dynamic_cast<CCheckBox*>(mBindingOptions[playerNumber]->FindObject("mouse-look"));
         CCheckBox* mouseCast = dynamic_cast<CCheckBox*>(mBindingOptions[playerNumber]->FindObject("mouse-cast"));
         CCheckBox* separateSeq = dynamic_cast<CCheckBox*>(mBindingOptions[playerNumber]->FindObject("separate-seq"));
+        CCheckBox* pncMovement = dynamic_cast<CCheckBox*>(mBindingOptions[playerNumber]->FindObject("pnc-movement"));
         
         // ktore bindingi pokazywac?
         // te uniwersalne
         unsigned int showMask = System::Input::CBindManager::agAll;
 
-        // sterowanie - absolutne czy zwykle
+        // sterowanie - absolutne czy zwykle? a moze point'n'click?
         if (absolute)
         {
             if (absolute->GetState())
                 showMask |= System::Input::CBindManager::agAbsolute;
+            else if (pncMovement && pncMovement->GetState())
+                    showMask |= System::Input::CBindManager::agPointNClick;
             else
             {
                 showMask |= System::Input::CBindManager::agNormal;
@@ -1115,9 +1143,11 @@ void CMenuScreens::SaveBindingOptions(const std::wstring& playerWStr)
         CCheckBox* absolute = dynamic_cast<CCheckBox*>(mBindingOptions[playerNumber]->FindObject("absolute"));
         CCheckBox* mouseLook = dynamic_cast<CCheckBox*>(mBindingOptions[playerNumber]->FindObject("mouse-look"));
         CCheckBox* separateSeq = dynamic_cast<CCheckBox*>(mBindingOptions[playerNumber]->FindObject("separate-seq"));
+        CCheckBox* pncMovement = dynamic_cast<CCheckBox*>(mBindingOptions[playerNumber]->FindObject("pnc-movement"));
 
         bindMgr->SetIsAbsolute(absolute && absolute->GetState());
         bindMgr->SetMouseLook(mouseLook && mouseLook->GetState());
+        bindMgr->SetPointNClickMove(pncMovement && pncMovement->GetState());
 
         // trzeba wrzucic do gameOptions, zeby sie zapisalo
         int flags = 0;
@@ -1129,6 +1159,8 @@ void CMenuScreens::SaveBindingOptions(const std::wstring& playerWStr)
             flags |= CGameOptions::cfMousecast;
         if (separateSeq && separateSeq->GetState())
             flags |= CGameOptions::cfSeparateSeq;
+        if (pncMovement && pncMovement->GetState())
+            flags |= CGameOptions::cfPointNClick;
 
         gGameOptions.SetUserControlsFlags(playerNumber, flags);
 
