@@ -1,0 +1,6 @@
+<root type="bullet">
+  <scale min="0.5" max="0.6" />
+  <radius min="0.25" max="0.3" />
+ 
+  <anim name="core/anim/bullet/purple-ball" />
+</root>

@@ -2,37 +2,37 @@
 
   <bestiary>
     <name value="Skeleton mage" />
-    <desc value="$BESTIARY_SKELETON_MAGE_DESC" />
+    <desc value="Lifeless and soulless, these undead spellcasters throw bolts of death ray at player." />
   </bestiary>
   <genre>skeleton-mage</genre>
 
+  <maxhp min="120.0" max="160.0" />
+  <speed min="1.1" max="1.15" />
+  <turnspeed min="140.0" max="140.0" />
+  <strength min="8.0" max="10.0" />
+  <intelligence min="18.0" max="24.0" />
+  <iceresist min="6.0" max="8.0" />  
+  <poisonresist min="20.0" max="20.0" />  
+  <xp min="58.0" max="62.0" />
 
-  <speed min="1.2" max="1.2" />
-  <strength min="15.0" max="20.0" />
-  <turnspeed min="120.0" max="120.0" />
+  <mass min="2.0" max="2.2" />
+  <radius min="0.475" max="0.525" />
+  <scale min="0.95" max="1.05" />
   <shadow-offset min="0.12" max="0.12" />
-
-  <maxhp min="70.0" max="70.0" />
-  <maxmana min="30.0" max="50.0" />
-
-  <xp min="45.0" max="45.0" />
-
-  <scale min="1.0" max="1.0" />
-  <radius min="0.4" max="0.4" />
-  <mass min="2.0" max="2.0" />
 
   <anim name="core/anim/skeleton-mage/default" type="default" />
   <anim name="core/anim/skeleton-mage/move" type="move" />
   <anim name="core/anim/skeleton-mage/attack" type="attack" />
-  <anim name="core/anim/skeleton-mage/default" type="death" /> <!-- no death anim :( -->
+  <anim name="core/anim/skeleton-mage/death" type="death" />
 
   <ai name="ranged-caster" />
 
-  <ability name="data/abilities/monster/wizzing-missile.xml" default="1" />
+  <ability name="data/abilities/monsters/melee-with-swing.xml" default="1" />
+  <ability name="data/abilities/monsters/purple-ball.xml" />
 
-  <sound type="attack" filename="data/sounds/Lugaro/Growl.ogg" />
-  <sound type="damaged" filename="data/sounds/Lugaro/Snarl.ogg" />
-  <sound type="death" filename="data/sounds/Lugaro/hawk.ogg" />
-  <sound type="spawn" filename="data/sounds/0AD/horse_11.ogg" />
+  <sound type="attack" filename="data/sounds/EL/monster03.ogg" />
+  <sound type="death" filename="data/sounds/EL/monster01.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/monster01.ogg" />
+  <sound type="spawn" filename="data/sounds/EL/monster05.ogg" />
   
 </root>

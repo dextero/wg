@@ -174,15 +174,22 @@
         <lair    file="data/physicals/lairs/ogre-lair.xml" minLevel="19" maxLevel="25" />
         <lair    file="data/physicals/lairs/cockroach-lair.xml" minLevel="19" maxLevel="25" />
 		<monster file="data/physicals/monsters/defs/poison-haunter.xml" minLevel="19" maxLevel="24" frequency="0.5" />
-		<monster file="data/physicals/monsters/defs/poison-haunter.xml" minLevel="23" maxLevel="26" frequency="0.25" />
         <monster file="data/physicals/monsters/defs/murion.xml" minLevel="19" maxLevel="25" frequency="0.5" />
         <lair    file="data/physicals/lairs/murion-lair.xml" minLevel="19" maxLevel="25" frequency="0.5" />
-        <monster file="data/physicals/monsters/defs/beholder.xml" minLevel="19" maxLevel="25" frequency="0.2" />
-        <monster file="data/physicals/monsters/defs/skeleton.xml" minLevel="21" maxLevel="23" frequency="0.75" />
-        <monster file="data/physicals/monsters/defs/skeleton.xml" minLevel="22" maxLevel="22" frequency="0.25" />
-		<monster file="data/physicals/lairs/poison-haunter-lair.xml" minLevel="22" maxLevel="26" />
-		<monster file="data/physicals/monsters/defs/frost-demon.xml" minLevel="21" maxLevel="26" />
+        <monster file="data/physicals/monsters/defs/beholder.xml" minLevel="19" maxLevel="27" frequency="0.2" />
 
+        <monster file="data/physicals/monsters/defs/skeleton.xml" minLevel="21" maxLevel="27" frequency="0.75" />
+		<monster file="data/physicals/monsters/defs/frost-demon.xml" minLevel="21" maxLevel="27" />
+
+        <monster file="data/physicals/monsters/defs/skeleton.xml" minLevel="22" maxLevel="27" frequency="0.25" />
+        <monster file="data/physicals/lairs/poison-haunter-lair.xml" minLevel="22" maxLevel="26" frequency="0.33" />
+
+        <monster file="data/physicals/monsters/defs/skeleton-mage.xml" minLevel="23" maxLevel="27" frequency="0.2" />
+		<monster file="data/physicals/monsters/defs/poison-haunter.xml" minLevel="23" maxLevel="26" frequency="0.25" />
+        <lair    file="data/physicals/lairs/skeleton-lair.xml" minLevel="23" maxLevel="25" frequency="1.0" />
+
+        <monster file="data/physicals/monsters/defs/murion.xml" minLevel="26" maxLevel="26" frequency="0.1" />
+        <lair    file="data/physicals/lairs/skeleton-lair.xml" minLevel="26" maxLevel="27" frequency="1.5" />
 		
 		<lair    file="data/physicals/lairs/frost-demon-lair.xml" minLevel="22" maxLevel="27" frequency="0.4" />
 		<!-- -->
