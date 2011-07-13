@@ -360,6 +360,7 @@ void CGame::Init(sf::RenderWindow* wnd)
         gGame;
 
         gGame.mRenderWindow = wnd;
+        wnd->UseVerticalSync(true);
         gGameOptions.LoadOptions();
         gGameOptions.UpdateWindow();
 
