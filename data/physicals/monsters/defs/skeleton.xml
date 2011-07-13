@@ -2,7 +2,7 @@
 
   <bestiary>
     <name value="Skeleton" />
-    <desc value="Skeleton description" />
+    <desc value="Skeletons are the animated bones of the dead that obey the orders of their evil masters. Skeletons seldom are garbed in anything more than the rotting remnants of any clothing or armor they were wearing when slain." />
   </bestiary>
   <genre>skeleton</genre>
 
