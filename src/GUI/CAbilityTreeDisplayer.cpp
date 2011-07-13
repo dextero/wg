@@ -116,8 +116,7 @@ void CAbilityTreeDisplayer::UpdateSprites( float secondsPassed ){
                     if ((treeIdx >= 0) && (abiIdx >= 0)){
                         EAbilityBuyingResult abr = player->CanBuyAbilityLevel(treeIdx,abiIdx);
 						anm->canBuy = (abr == abrOK);
-                        // zmieniamy ikone w zaleznosci od tego, czy mozna kupic umiejetnosc
-                        // (albo czy juz jest kupiona)
+                        // zmieniamy ikone w zaleznosci od tego, czy umiejetnosc jest juz kupiona
                         bool found = false;
                         for (unsigned int k = 0; k < playerAbis->size(); k++){
                             if (playerAbis->at(k).abiNode == anm->abiNode){
@@ -125,20 +124,12 @@ void CAbilityTreeDisplayer::UpdateSprites( float secondsPassed ){
                                 break;
                             }
                         }
-                        if ((abr == abrOK)||found){
+                        if (found){
                             anm->button->SetImage(anm->abiNode->ability->icon);
 
-                            // drag&drop - czy kupiona?
-                            bool isBought = false;
-					        std::vector<SAbilityInstance> *abis = player->GetAbilityPerformer().GetAbilities();
-                            for (unsigned k = 0; k < abis->size(); k++)
-						        if ((abis->at(k).abiNode == anm->abiNode) && (abis->at(k).level>0)){
-                                    isBought = true;
-                                    break;
-                                }
                             // sprawdzanie typu
                             EAbilityType abiType = anm->abiNode->ability->abilityType;
-                            if (abiType != atNone && abiType != atPassive && abiType != atExport && isBought)
+                            if (abiType != atNone && abiType != atPassive && abiType != atExport)
                                 anm->button->SetDraggable(true);
                             else
                                 anm->button->SetDraggable(false);
