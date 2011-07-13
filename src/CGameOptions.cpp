@@ -72,7 +72,10 @@ bool CGameOptions::LoadOptions()
     {
         // nie ma user/config, stworz plik first_game, zeby gracz wybral sobie sterowanie..
         FILE *first_game = fopen((FileUtils::GetUserDir() + "/first_game").c_str(), "w");
-        fclose(first_game);
+        if (first_game)
+            fclose(first_game);
+        else
+            fprintf(stderr, "FATAL ERROR: couldn't create first_game file in userDir!\n");
 		is_first_game = true;
     }
 
