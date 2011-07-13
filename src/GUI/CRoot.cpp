@@ -108,9 +108,16 @@ void CRoot::MousePressed(const sf::Event::MouseButtonEvent &e)
 	float y = (float) e.Y * gGameOptions.GetHeight() / gGame.GetRenderWindow()->GetHeight();
 
 	mouseEvent eventType;
-	if (e.Button == sf::Mouse::Left)		eventType = MOUSE_PRESSED_LEFT;
-	else if (e.Button == sf::Mouse::Right )	eventType = MOUSE_PRESSED_RIGHT;
-	else return;
+    switch (e.Button)
+    {
+    case sf::Mouse::Left:       eventType = MOUSE_PRESSED_LEFT; break;
+    case sf::Mouse::Right:      eventType = MOUSE_PRESSED_RIGHT; break;
+    case sf::Mouse::Middle:     eventType = MOUSE_PRESSED_MIDDLE; break;
+    case sf::Mouse::XButton1:   eventType = MOUSE_PRESSED_X1; break;
+    case sf::Mouse::XButton2:   eventType = MOUSE_PRESSED_X2; break;
+    default:
+        return;
+    }
 
 	SendMouseEvent( x, y, eventType );
 }
@@ -121,9 +128,16 @@ void CRoot::MouseReleased(const sf::Event::MouseButtonEvent &e)
 	float y = (float) e.Y * (float) gGameOptions.GetHeight() / gGame.GetRenderWindow()->GetHeight();
 
 	mouseEvent eventType;
-	if (e.Button == sf::Mouse::Left)		eventType = MOUSE_RELEASED_LEFT;
-	else if (e.Button == sf::Mouse::Right)	eventType = MOUSE_RELEASED_RIGHT;
-    else return;
+    switch (e.Button)
+    {
+    case sf::Mouse::Left:       eventType = MOUSE_RELEASED_LEFT; break;
+    case sf::Mouse::Right:      eventType = MOUSE_RELEASED_RIGHT; break;
+    case sf::Mouse::Middle:     eventType = MOUSE_RELEASED_MIDDLE; break;
+    case sf::Mouse::XButton1:   eventType = MOUSE_RELEASED_X1; break;
+    case sf::Mouse::XButton2:   eventType = MOUSE_RELEASED_X2; break;
+    default:
+        return;
+    }
 
 	SendMouseEvent( x, y, eventType );
 }

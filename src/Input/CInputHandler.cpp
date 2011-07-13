@@ -16,6 +16,7 @@
 #include "../Commands/CCommands.h"
 #include "../GUI/Localization/CLocalizator.h"
 #include "../GUI/CInGameOptionChooser.h"
+#include "../Map/CMap.h"
 #include <iostream>
 #include <math.h>
 
@@ -72,15 +73,18 @@ void CInputHandler::FrameStarted( float secondsPassed ){
 			west = ((gBindManagerByPlayer(i)->Check("MoveLeftAbs") & keyMask) != 0);
 			pc->SetWalkingAbsolute( north, east, south, west );
 
+            /* ruch point'n'click */
+			const sf::Input& in = gGame.GetRenderWindow()->GetInput();
+			sf::Vector2f cursorPos( (float) in.GetMouseX() / gCamera.GetZoom(), (float) in.GetMouseY() / gCamera.GetZoom() );
+
+            pc->SetWalkTarget((gBindManagerByPlayer(i)->Check("PointNClick") & keyMask) != 0, (gCamera.GetViewTopLeft() + cursorPos) / (float)Map::TILE_SIZE);
+
 			/* obrót mysza */
 
 			pc->SetMouseLook(gBindManagerByPlayer(i)->GetMouseLook());
 
 			if (gBindManagerByPlayer(i)->GetMouseLook())
 			{
-				const sf::Input& in = gGame.GetRenderWindow()->GetInput();
-				sf::Vector2f cursorPos( (float) in.GetMouseX() / gCamera.GetZoom(), (float) in.GetMouseY() / gCamera.GetZoom() );
-
 				if (CMouseCaster* mc = gBindManagerByPlayer(i)->GetMouseCaster())
 				if (gBindManagerByPlayer(i)->GetMouseCaster()->IsVisible())
 				{

@@ -37,7 +37,8 @@ CPlayerController::CPlayerController(CPlayer *player) :
     mAbsoluteMoveY(0.0f),
     mIsInAbsoluteMovement(false),
 	mMouseLook(false),
-    mOptionChooser(NULL)
+    mOptionChooser(NULL),
+    mHasWalkTarget(false)
 {
     fprintf(stderr,"CPlayerController::CPlayerController()\n");
     mySource = new CEffectSource(estCastingAbility,NULL);
@@ -110,6 +111,15 @@ void CPlayerController::SetMouseLook(bool look)
 	mMouseLook = look;
 }
 
+void CPlayerController::SetWalkTarget(bool walk, sf::Vector2f target)
+{
+    // albo ma isc, albo jest w trakcie
+    mHasWalkTarget = (walk || mHasWalkTarget);
+    // bylo klikniecie = zmiana kierunku
+    if (walk)
+        mWalkTarget = target;
+}
+
 void CPlayerController::AbiKeyPressed(int idx, bool hold){
     if (mFocusAbility && mLastKey != idx) {
         mActor->GetAbilityPerformer().BreakFocus();
@@ -141,8 +151,21 @@ void CPlayerController::Update(float dt) {
     // reset stanu
     CActorController::Update(dt);
 
+    // podazanie do celu wskazanego kliknieciem mysza, #1093 by dex
+    if (mHasWalkTarget)
+    {
+        if (Maths::LengthSQ(mActor->GetPosition() - mWalkTarget) > 0.1f)
+        {
+            float speed = mActor->GetStats()->GetCurrAspect(aSpeed);
+            SetMove(1);
+            SetSpeed(speed);
+            mActor->SetVelocity(Maths::Normalize(mWalkTarget - mActor->GetPosition()) * speed);
+        }
+        else
+            mHasWalkTarget = false;
+    }
     // sterowanie 8-k, tox 6 sierpnia
-    if ( mIsInAbsoluteMovement )
+    else if ( mIsInAbsoluteMovement )
     {
         sf::Vector2f move( Maths::Normalize( sf::Vector2f( mAbsoluteMoveX, mAbsoluteMoveY ) ) );
 

@@ -15,7 +15,6 @@
 #include <SFML/Graphics/Font.hpp>
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/Glyph.hpp>
-#include <SFML/Window/Event.hpp>
 
 using namespace GUI;
 
@@ -84,6 +83,16 @@ CKeyReader::~CKeyReader()
 	gDrawableManager.DestroyDrawable( mTextSprite );
 }
 
+void CKeyReader::SetKeyFromMouseButton(sf::Mouse::Button btn)
+{
+	SetKey( sf::Key::Count + btn );
+	gGUI.SetActiveObject( NULL );
+	mActive = false;
+    
+    // popnij zduplikowane binding-options
+    if ( !mClickCallback.empty() )		mClickCallback();
+}
+
 bool CKeyReader::OnMouseEvent( float x, float y, mouseEvent e )
 {
     CGUIObject::OnMouseEvent(x, y, e);
@@ -92,14 +101,7 @@ bool CKeyReader::OnMouseEvent( float x, float y, mouseEvent e )
 	{
 	case MOUSE_PRESSED_LEFT:
 		if ( mActive )
-		{
-			SetKey( sf::Key::Count + sf::Mouse::Left );
-			gGUI.SetActiveObject( NULL );
-			mActive = false;
-
-            // popnij zduplikowane binding-options
-		    if ( !mClickCallback.empty() )		mClickCallback();
-		}
+            SetKeyFromMouseButton(sf::Mouse::Left);
 		else
         {
             mReadyToActive = true;
@@ -109,16 +111,17 @@ bool CKeyReader::OnMouseEvent( float x, float y, mouseEvent e )
         }
 		break;
 	case MOUSE_PRESSED_RIGHT:
-		if ( mActive )
-		{
-			SetKey( sf::Key::Count + sf::Mouse::Right );
-			gGUI.SetActiveObject( NULL );
-			mActive = false;
-            
-            // popnij zduplikowane binding-options
-		    if ( !mClickCallback.empty() )		mClickCallback();
-		}
+        if (mActive) SetKeyFromMouseButton(sf::Mouse::Right);
 		break;
+    case MOUSE_PRESSED_MIDDLE:
+        if (mActive) SetKeyFromMouseButton(sf::Mouse::Middle);
+        break;
+    case MOUSE_PRESSED_X1:
+        if (mActive) SetKeyFromMouseButton(sf::Mouse::XButton1);
+        break;
+    case MOUSE_PRESSED_X2:
+        if (mActive) SetKeyFromMouseButton(sf::Mouse::XButton2);
+        break;
 	case MOUSE_RELEASED_LEFT:
 		if ( mReadyToActive )
 		{
