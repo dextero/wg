@@ -1,0 +1,4 @@
+<root type="nm-desc">
+	<mat tex="data/player/player-move.png" nm="data/effects/normalmaps/player-move_nm.png" />
+	<mat tex="data/player/player-strafe.png" nm="data/effects/normalmaps/player-strafe_nm.png" />
+</root>

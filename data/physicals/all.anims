@@ -3253,6 +3253,13 @@ core/anim/bullet/flaming-arrow
     0.10 "data/physicals/bullets/flaming-arrow.png" 80   0  100 41
 }
 
+core/anim/bullet/purple-ball
+{
+    0.10 "data/physicals/bullets/purple-ball.png"  0  0  42 42
+    0.10 "data/physicals/bullets/purple-ball.png" 42  0  84 42
+    0.10 "data/physicals/bullets/purple-ball.png" 84  0 126 42
+}
+
 core/anim/bullet/engulfing-flame
 {
 	0.20 "data/physicals/bullets/engulfing-flame.png" 0 0 32 32

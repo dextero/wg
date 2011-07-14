@@ -10,8 +10,7 @@ Bonus for this spell depends:
   totally on sanguine rune
   heavily on phlegmatic rune  
   </description>
-  <icon>data/abilities/weapons/ignite-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/ignite-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/ignite.png</icon>
 
   <!-- power = 1x cho, 0x mel, 5x san, 3x phl -->
   <power calc="0.2 * dot(1, choleric, 0, melancholic, 5, sanguine, 3, phlegmatic)"/>

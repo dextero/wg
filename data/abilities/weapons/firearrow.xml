@@ -10,8 +10,7 @@ Bonus for this spell depends:
   heavily on sanguine rune
   mildly on phlegmatic rune
   </description>
-  <icon>data/abilities/weapons/firearrow-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/firearrow-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/firearrow.png</icon>
 
   <!-- power = 3x cho, 0x mel, 3x san, 2x phl -->
   <power calc="0.2 * dot(3, choleric, 0, melancholic, 3, sanguine, 2, phlegmatic)"/>

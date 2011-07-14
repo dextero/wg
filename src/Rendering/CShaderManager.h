@@ -13,6 +13,7 @@
 #include "../IKeyListener.h"
 
 #include <SFML/Graphics/Color.hpp>
+#include <SFML/Graphics/Image.hpp>
 #include <SFML/System/Vector2.hpp>
 #include <SFML/System/Vector3.hpp>
 
@@ -43,11 +44,16 @@ public:
     bool setUniform(int programId, const std::string& name, sf::Vector2f value);
     bool setUniform(int programId, const std::string& name, sf::Vector3f value);
     bool setUniform(int programId, const std::string& name, sf::Color value);
+	// program must be active!
+	// remember to call clearBoundTextures() later on
+	bool bindTexture(int programId, const std::string & name, sf::Image const * image);
+	void clearBoundTextures();
 	
     virtual void KeyPressed( const sf::Event::KeyEvent &e ) {};
     virtual void KeyReleased( const sf::Event::KeyEvent &e );
 
 	void reloadAll();
+	void loadNormalMaps();
 private:
 	void load(std::string const & fragmentShaderName, std::string const & vertexShaderName, std::string const & programName);
 
@@ -57,6 +63,8 @@ private:
 
 	int getProgramId(std::string const & name);
 	std::map<std::string, unsigned int> programNames;
+	
+	bool needToClearBoundTextures;
 };
 
 #endif /* WG_SHADERS */

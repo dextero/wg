@@ -25,6 +25,8 @@ const std::string & FileUtils::GetUserDir()
 		gUserDir = std::string(path) + "\\WarlocksGauntlet";
         fprintf(stderr, "Detected userDir as `%s'\n", gUserDir.c_str());
 
+        CreateDir(gUserDir.c_str());
+
         sInitialized = true;
     }
     return gUserDir;
@@ -33,7 +35,11 @@ const std::string & FileUtils::GetUserDir()
 void FileUtils::CreateDir(const char* filename)
 {
     fprintf(stderr, "Creating directory `%s'...\n", filename);
-	CreateDirectoryA(filename, NULL);
+    
+    if (CreateDirectoryA(filename, NULL) > 0) {
+        if (GetLastError() != ERROR_ALREADY_EXISTS)
+            fprintf(stderr, "Error: couldn't create directory: %s!\n", gUserDir.c_str());
+    }
 }
 
 bool AskForFullscreen(const wchar_t * title, const wchar_t * message, int maxw, int maxh)

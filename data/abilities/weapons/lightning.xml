@@ -10,8 +10,7 @@ Bonus for this spell depends:
   heavily on sanguine rune
   heavily on phlegmatic rune  
   </description>
-  <icon>data/abilities/weapons/lightning-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/lightning-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/lightning.png</icon>
 
   <!-- power = 2x cho, 2x mel, 3x san, 3x phl -->
   <power calc="0.2 * dot(2, choleric, 2, melancholic, 3, sanguine, 3, phlegmatic)"/>

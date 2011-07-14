@@ -68,6 +68,7 @@ namespace System
             agKeyTurning    = 16,
             agNormalCast    = 32,
             agSeparateSeq   = 64,   // AbiX-* i Slot-* zamiast Abi-*
+            agPointNClick   = 128,  // wskazywanie celu kliknieciem mysza
             agWtf           = 0
         };
         static const ActionPair availableActions[];
@@ -113,6 +114,7 @@ namespace System
 
 			virtual void MousePressed( const sf::Event::MouseButtonEvent &e );
 			virtual void MouseReleased( const sf::Event::MouseButtonEvent &e );
+            virtual void MouseWheelMoved( const sf::Event::MouseWheelEvent &e );
 			
 			virtual void JoyButtonPressed( const sf::Event::JoyButtonEvent &e );
 			virtual void JoyButtonReleased( const sf::Event::JoyButtonEvent &e );
@@ -124,6 +126,7 @@ namespace System
 
 			bool mMouseLook;
             bool mIsAbsolute;
+            bool mPointNClickMove;
 
             bool mShowOnFirstGame;
 
@@ -151,6 +154,9 @@ namespace System
 
             bool GetIsAbsolute();
             void SetIsAbsolute(bool arg);
+
+            bool GetPointNClickMove();
+            void SetPointNClickMove(bool arg);
 
             bool GetShowOnFirstGame();
             void SetShowOnFirstGame(bool arg);
