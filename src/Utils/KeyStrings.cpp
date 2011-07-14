@@ -117,6 +117,9 @@ static SKeyString keysArray[] =
     {   sf::Key::Count + sf::Mouse::XButton1,   "XMB1" },
     {   sf::Key::Count + sf::Mouse::XButton2,   "XMB2" },
 
+    {   sf::Key::Count + sf::Mouse::ButtonCount + 0, "WheelDown" },
+    {   sf::Key::Count + sf::Mouse::ButtonCount + 1, "WheelUp" },
+
 	{   -1,					"" }
 };
 

@@ -114,6 +114,7 @@ namespace System
 
 			virtual void MousePressed( const sf::Event::MouseButtonEvent &e );
 			virtual void MouseReleased( const sf::Event::MouseButtonEvent &e );
+            virtual void MouseWheelMoved( const sf::Event::MouseWheelEvent &e );
 			
 			virtual void JoyButtonPressed( const sf::Event::JoyButtonEvent &e );
 			virtual void JoyButtonReleased( const sf::Event::JoyButtonEvent &e );
