@@ -10,8 +10,7 @@ Bonus for this spell depends:
   mildly on sanguine rune
   barely on phlegmatic rune  
   </description>
-  <icon>data/abilities/weapons/freezing-mine-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/freezing-mine-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/freezing-mine.png</icon>
 
   <!-- power = 2x cho, 3x mel, 2x san, 1x phl -->
   <power calc="0.2 * dot(2, choleric, 3, melancholic, 2, sanguine, 1, phlegmatic)"/>

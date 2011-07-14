@@ -10,8 +10,7 @@ Bonus for this spell depends:
   mildly on sanguine rune
   mildly on phlegmatic rune  
   </description>
-  <icon>data/abilities/weapons/icecircle-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/icecircle-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/icecircle.png</icon>
 
   <!-- power = 2x cho, 2x mel, 2x san, 2x phl -->
   <power calc="0.2 * dot(2, choleric, 2, melancholic, 2, sanguine, 2, phlegmatic)"/>

@@ -10,8 +10,7 @@ Bonus for this spell depends:
   extremely on sanguine rune
   barely on phlegmatic rune     
   </description>
-  <icon>data/abilities/weapons/fireburst-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/fireburst-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/fireburst.png</icon>
 
   <!-- power = 4x cho, 1x mel, 4x san, 1x phl -->
   <power calc="0.2 * dot(4, choleric, 1, melancholic, 4, sanguine, 1, phlegmatic)"/>

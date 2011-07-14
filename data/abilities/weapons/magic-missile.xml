@@ -10,8 +10,7 @@ Bonus for this spell depends:
   heavily on sanguine rune
   mildly on phlegmatic rune  
   </description>
-  <icon>data/abilities/weapons/magic-missile-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/magic-missile-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/magic-missile.png</icon>
 
   <!-- power = 2x cho, 1x mel, 3x san, 2x phl -->
   <power calc="0.2 * dot(2, choleric, 1, melancholic, 3, sanguine, 2, phlegmatic)"/>

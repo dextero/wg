@@ -10,8 +10,7 @@ Bonus for this spell depends:
   mildly on sanguine rune
   not at all on phlegmatic rune
   </description>
-  <icon>data/abilities/weapons/burning-hands-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/burning-hands-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/burning-hands.png</icon>
 
   <!-- power = 4x cho, 2x mel, 2x san, 0x phl -->
   <power calc="0.2 * dot(4, choleric, 2, melancholic, 2, sanguine, 0, phlegmatic)"/>

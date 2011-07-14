@@ -10,8 +10,7 @@ Bonus for this spell depends:
   mildly on sanguine rune
   heavily on phlegmatic rune  
   </description>
-  <icon>data/abilities/weapons/poison-cloud-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/poison-cloud-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/poison-cloud.png</icon>
 
   <!-- power = 1x cho, 2x mel, 2x san, 3x phl -->
   <power calc="0.2 * dot(1, choleric, 2, melancholic, 2, sanguine, 3, phlegmatic)"/>
