@@ -1,11 +1,12 @@
 #include "CImage.h"
 #include "CImageAtlas.h"
 #include "../VFS/vfs.h"
+#include "../Utils/FileUtils.h"
 #include "CResourceManager.h"
 
 using namespace System::Resource;
 
-CImage::CImage(): mAtlas(NULL), notified(false){}
+CImage::CImage(): mNormalMap(NULL), mAtlas(NULL), notified(false){}
 
 bool CImage::dontLoadDataHack = false;
 
@@ -78,9 +79,7 @@ bool CImage::Load(std::map<std::string,std::string>& argv)
     std::string name = argv["name"];
     if (name.find_last_of('.') != std::string::npos){
         name.erase(name.find_last_of('.'));
-        name+=".atlas";
-
-        mAtlas = gResourceManager.TryGetAtlas(name);
+        mAtlas = gResourceManager.TryGetAtlas(name + ".atlas");
         if (mAtlas!=NULL)
             mAtlas->SetImage(this);
     }
