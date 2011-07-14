@@ -111,10 +111,10 @@ void CPlayerController::SetMouseLook(bool look)
 	mMouseLook = look;
 }
 
-void CPlayerController::SetWalkTarget(bool walk, sf::Vector2f target)
+void CPlayerController::SetWalkTarget(bool walk, sf::Vector2f target, bool force)
 {
     // albo ma isc, albo jest w trakcie
-    mHasWalkTarget = (walk || mHasWalkTarget);
+    mHasWalkTarget = force ? walk : (walk || mHasWalkTarget);
     // bylo klikniecie = zmiana kierunku
     if (walk)
         mWalkTarget = target;

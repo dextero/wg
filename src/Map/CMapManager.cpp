@@ -8,6 +8,7 @@
 #include "../ResourceManager/CResourceManager.h"
 #include "../Logic/CPlayer.h"
 #include "../Logic/CPlayerManager.h"
+#include "../Input/CPlayerController.h"
 #include <SFML/Graphics/Rect.hpp>
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "../Logic/CLogic.h"
@@ -107,6 +108,13 @@ namespace Map{
 
         // bo segfault przy ominieciu bossa..
         gBossManager.ClearData();
+        // bo problemy ze sterowaniem point&click..
+        for (int i = 0; i < gPlayerManager.GetPlayerCount(); ++i)
+        {
+            // "po prostu przestan isc"
+            if (CPlayer* player = gPlayerManager.GetPlayerByNumber(i))
+                player->GetController()->SetWalkTarget(false, sf::Vector2f(), true);
+        }
 
 		m_map = gResourceManager.GetMap( mapFile );
 		if ( m_map )
