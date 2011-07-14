@@ -34,9 +34,17 @@ namespace GUI
 		MOUSE_OUT = 6,
 		MOUSE_UNCLICK = 7,
         MOUSE_DROP = 8,
-        MOUSE_DBL_CLICK = 9
+        MOUSE_DBL_CLICK = 9,
+        MOUSE_PRESSED_MIDDLE = 10,
+        MOUSE_PRESSED_X1 = 11,
+        MOUSE_PRESSED_X2 = 12,
+        MOUSE_RELEASED_MIDDLE = 13,
+        MOUSE_RELEASED_X1 = 14,
+        MOUSE_RELEASED_X2 = 15,
+        MOUSE_WHEEL_DOWN = 16,
+        MOUSE_WHEEL_UP = 17
 	};
-    const unsigned int MOUSE_EVENT_TYPES = 10;
+    const unsigned int MOUSE_EVENT_TYPES = 18;
 
 	/* wszystkie elementy GUI */
 

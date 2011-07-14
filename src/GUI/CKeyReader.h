@@ -3,6 +3,7 @@
 
 #include "CGUIObject.h"
 #include <SFML/Graphics/Color.hpp>
+#include <SFML/Window/Event.hpp>
 #include <FastDelegate.h>
 #include <string>
 
@@ -36,6 +37,8 @@ namespace GUI
 		virtual ~CKeyReader();
 		virtual bool OnMouseEvent( float x, float y, mouseEvent e );
 		virtual void OnKeyEvent( const sf::Event::KeyEvent& e, bool pressed );
+        
+        void CKeyReader::SetKeyFromMouseButton(int btn);
 
 		bool mMouseOver;
         bool mActive;

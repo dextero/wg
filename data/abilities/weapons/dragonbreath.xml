@@ -10,8 +10,7 @@ Bonus for this spell depends:
   mildly on sanguine rune
   mildly on phlegmatic rune
   </description>
-  <icon>data/abilities/weapons/dragonbreath-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/dragonbreath-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/dragonbreath.png</icon>
 
   <!-- power = 3x cho, 1x mel, 2x san, 2x phl -->
   <power calc="0.2 * dot(3, choleric, 1, melancholic, 2, sanguine, 2, phlegmatic)"/>

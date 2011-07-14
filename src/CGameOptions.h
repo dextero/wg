@@ -96,7 +96,8 @@ public:
         cfMousecast          = 2,
         cfShowOnFirstGame    = 4,
         cfSeparateSeq        = 8,   // AbiX-* + Slot-* zamiast Abi-*
-        cfAbsolute           = 16
+        cfAbsolute           = 16,
+        cfPointNClick        = 32   // poruszanie postacia point&click
     };
 
     CGameOptions();

@@ -76,7 +76,7 @@
   <speed calc="5.0" />
   <acceleration value="3.0" />
   <width calc="10" />
-  
+  <count calc="1" /> 
   <bullet value="data/physicals/bullets/wizzing-missile.xml" />
   <filter value="player,wall"/>
   <explode-on-fade value="1" />

@@ -103,7 +103,7 @@ public:
 	void SetClipRect( int left, int top, int right, int bottom );	/* wspolrzedne bezwzgledne */
 	void SetClipRect( const sf::FloatRect& rect ); 
 
-    sf::Sprite * GetSFSprite();
+    CWGSprite * GetSFSprite();
 private:
     CWGSprite* mSFSprite;
     SAnimationState* mAnimationState;

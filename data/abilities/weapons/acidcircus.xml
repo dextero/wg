@@ -10,8 +10,7 @@ Bonus for this spell depends:
   heavily on sanguine rune
   totally on phlegmatic rune
 </description>
-<icon>data/abilities/weapons/acidcircus-0.png</icon>
-<unavailable-icon>data/abilities/weapons/acidcircus-1.png</unavailable-icon>
+<icon>data/abilities/weapons/acidcircus.png</icon>
 
   <!-- power = 2x cho, 0x mel, 3x san, 5x phl -->
   <power calc="0.2 * dot(2, choleric, 0, melancholic, 3, sanguine, 5, phlegmatic)"/>

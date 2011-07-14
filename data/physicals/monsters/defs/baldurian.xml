@@ -45,10 +45,6 @@
   <ability name="data/abilities/monsters/firearrows.xml" />
   <ability name="data/abilities/monsters/meteor.xml" />
 
-  <!--  <ability name="data/abilities/monster/rage.xml" /> -->
-  <!--  <ability name="data/abilities/monster/summon-warlocks.xml" />  -->
-  <!-- <ability name="data/abilities/monster/summon-kamikadze-crawlers.xml" />  -->
-
   <sound type="attack" filename="data/sounds/EL/monster03.ogg" />
   <sound type="damaged" filename="data/sounds/EL/monster01.ogg" />
   <sound type="damaged" filename="data/sounds/EL/monster02.ogg" />

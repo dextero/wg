@@ -10,8 +10,7 @@ Bonus for this spell depends:
   not at all on sanguine rune
   extremely on phlegmatic rune  
   </description>
-  <icon>data/abilities/weapons/resonator-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/resonator-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/resonator.png</icon>
 
   <!-- power = 1x cho, 4x mel, 0x san, 4x phl -->
   <power calc="0.2 * dot(1, choleric, 4, melancholic, 0, sanguine, 4, phlegmatic)"/>
