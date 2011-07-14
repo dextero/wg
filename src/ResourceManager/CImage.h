@@ -14,6 +14,7 @@ namespace System
 		class CImage: public IResource, public sf::Image
 		{
 		private:
+			CImage* mNormalMap;
             sf::IntRect mRect;
             CImageAtlas *mAtlas;
             bool notified;
@@ -23,8 +24,9 @@ namespace System
 		public:
             CImage();
 
+			inline void SetNormalMap(CImage* nm)	{ mNormalMap = nm; }
+			inline CImage* GetNormalMap() const		{ return mNormalMap; }
             void LoadAtlas(CImageAtlas *atlas);
-
             const sf::IntRect &GetRect(int number) ;
 
 			bool Load(std::map<std::string,std::string>& argv);

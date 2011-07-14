@@ -53,6 +53,7 @@ public:
     virtual void KeyReleased( const sf::Event::KeyEvent &e );
 
 	void reloadAll();
+	void loadNormalMaps();
 private:
 	void load(std::string const & fragmentShaderName, std::string const & vertexShaderName, std::string const & programName);
 

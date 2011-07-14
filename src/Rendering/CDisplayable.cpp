@@ -114,6 +114,7 @@ void CDisplayable::SetStaticImage(CImage *img, int number, float extraPixels)
     mSFSprite->FlipX( false );
 	if (img != NULL) {
         mSFSprite->SetImage( *img );
+		mSFSprite->SetNormalMap( img->GetNormalMap() );
 		sf::IntRect rect = img->GetRect(number);
 		rect.Left += (int) extraPixels;		rect.Top += (int) extraPixels;
 		rect.Right -= (int) extraPixels;	rect.Bottom -= (int) extraPixels;
@@ -145,6 +146,7 @@ void CDisplayable::SetStaticImageFromAtlas(CImagePart *img)
 
     mSFSprite->FlipX( false );
     mSFSprite->SetImage( **img );
+	mSFSprite->SetNormalMap( img->GetImage()->GetNormalMap() );
     mSFSprite->SetSubRect( *img );
     mSFSprite->SetCenter( (img->GetOffset().Right - img->GetOffset().Left) * 0.5f, (img->GetOffset().Bottom - img->GetOffset().Top) * 0.5f );
     mSFSprite->Resize( Map::TILE_SIZE * mScale.x , Map::TILE_SIZE * mScale.y);
@@ -240,7 +242,7 @@ void CDisplayable::Draw( sf::RenderWindow* renderWindow )
         SAnimationFrame frame = mAnimationState->GetCurrentFrame();
 
         
-        sf::Image* img = gResourceManager.GetImage( frame.imageName );
+        CImage* img = gResourceManager.GetImage( frame.imageName );
         if ( !img )
         {
             fprintf( stderr, "warning: CDisplayable::Draw: animation: unable to obtain image `%s'\n", frame.imageName.c_str() );
@@ -256,6 +258,7 @@ void CDisplayable::Draw( sf::RenderWindow* renderWindow )
             }
 
             mSFSprite->SetImage( *img );
+			mSFSprite->SetNormalMap( img->GetNormalMap() );
             mSFSprite->SetSubRect( rect );
             if ( frame.offset.x != 0 || frame.offset.y != 0 ) 
             {                
@@ -318,7 +321,7 @@ bool CDisplayable::GetCanDraw(){
 	return m_canDraw;
 }
 
-sf::Sprite * CDisplayable::GetSFSprite()
+CWGSprite * CDisplayable::GetSFSprite()
 {
     return mSFSprite;
 }

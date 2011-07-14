@@ -146,6 +146,7 @@ void CDrawableManager::DrawFrame(sf::RenderWindow* wnd)
             if (drawable->IsVisible())
                 drawable->Draw( wnd );
 #ifdef WG_SHADERS
+			gShaderManager.clearBoundTextures();
 			gShaderManager.activate("");
 #endif /* WG_SHADERS */
         } 
