@@ -221,6 +221,12 @@ void CBindManager::MouseReleased( const sf::Event::MouseButtonEvent &e )
 	mKeyboard[sf::Key::Count + e.Button].OnKeyRelease();
 }
 
+void CBindManager::MouseWheelMoved( const sf::Event::MouseWheelEvent &e )
+{
+    mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + (e.Delta < 0 ? 0 /* down */ : 1 /* up */)].OnKeyPress();
+    //mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + (e.Delta < 0 ? 0 /* down */ : 1 /* up */)].OnKeyRelease();
+}
+
 void CBindManager::KeyPressed( const sf::Event::KeyEvent &e )
 {
 	mKeyboard[e.Code].OnKeyPress();
@@ -233,17 +239,17 @@ void CBindManager::KeyReleased( const sf::Event::KeyEvent &e )
 
 void CBindManager::JoyButtonPressed( const sf::Event::JoyButtonEvent &e )
 {
-	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + GetJoystickButtonId(e.Button,e.JoystickId)].OnKeyPress();
+	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + 2 /* wheelUp/Down */ + GetJoystickButtonId(e.Button,e.JoystickId)].OnKeyPress();
 }
 
 void CBindManager::JoyButtonReleased( const sf::Event::JoyButtonEvent &e )
 {
-	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + GetJoystickButtonId(e.Button,e.JoystickId)].OnKeyRelease();
+	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + 2 /* wheelUp/Down */ + GetJoystickButtonId(e.Button,e.JoystickId)].OnKeyRelease();
 }
 
 void CBindManager::JoyMoved( const sf::Event::JoyMoveEvent &e )
 {
-	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + GetJoystickAxisId(e.Axis, e.JoystickId, e.Position)].OnKeyPress();
+	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + 2 /* wheelUp/Down */ + GetJoystickAxisId(e.Axis, e.JoystickId, e.Position)].OnKeyPress();
 }
 
 void CBindManager::UpdateKeySyncGroups()
@@ -328,6 +334,24 @@ void CBindManager::FrameStarted(float secondsPassed)
 		SynchrnonizeGroup(*group);
 		group++;
 	}
+
+    // przy kolku myszy trzeba recznie zrobic "zwolnienie klawisza"
+    static int wheelDelay[] = { 0, 0 };
+    for (int k = 0; k < 2; ++k)
+    {
+        int key = sf::Key::Count + sf::Mouse::ButtonCount + k;
+
+        if (mKeyboard[key].GetKeyState() != KEY_FREE)
+        {
+            if (wheelDelay[k] > 5) // niech bedzie 5 klatek
+            {
+                mKeyboard[key].OnKeyRelease();
+                wheelDelay[k] = 0;
+            }
+            else
+                ++wheelDelay[k];
+        }
+    }
 
 	if (mMouseCaster != NULL)
 		mMouseCaster->Update();
