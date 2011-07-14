@@ -10,8 +10,7 @@ Bonus for this spell depends:
   barely on sanguine rune
   mildly on phlegmatic rune
   </description>
-  <icon>data/abilities/weapons/blizzard-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/blizzard-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/blizzard.png</icon>
 
   <!-- power = 3x cho, 2x mel, 1x san, 2x phl -->
   <power calc="0.2 * dot(3, choleric, 2, melancholic, 1, sanguine, 2, phlegmatic)"/>
