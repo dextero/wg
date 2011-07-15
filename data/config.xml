@@ -1,4 +1,4 @@
-<root type="config" version="9">
+<root type="config" version="10">
 	<!-- VideoMode Config -->
 	<video width="800" height="600" fs="1" bpp="32" vsync="0" />
 	<!-- audio config -->
