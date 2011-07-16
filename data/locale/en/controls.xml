@@ -233,4 +233,12 @@ Spell casting: mouse buttons
 		<value>Scheme using mouse for most actions. Click anywhere to move the hero, aim and cast spells with other mouse buttons.
 </value>
 	</entry>
+	<entry>
+		<key>CTRL_NEXTITEM_DESC</key>
+		<value>Next item</value>
+	</entry>
+	<entry>
+		<key>CTRL_PREVITEM_DESC</key>
+		<value>Previous item</value>
+	</entry>
 </root>
