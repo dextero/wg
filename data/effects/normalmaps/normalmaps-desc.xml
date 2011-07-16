@@ -1,4 +1,8 @@
 <root type="nm-desc">
-	<mat tex="data/player/player-move.png" nm="data/effects/normalmaps/player-move_nm.png" />
-	<mat tex="data/player/player-strafe.png" nm="data/effects/normalmaps/player-strafe_nm.png" />
+	<mat tex="data/player/player-move.png" nm="data/effects/normalmaps/player-move.png" />
+	<mat tex="data/player/player-strafe.png" nm="data/effects/normalmaps/player-strafe.png" />
+	
+	<mat tex="data/physicals/monsters/gfx/bandit-move.png" nm="data/effects/normalmaps/bandit-move.png" />
+	<mat tex="data/physicals/monsters/gfx/bandit-attack.png" nm="data/effects/normalmaps/bandit-attack.png" />
+	<mat tex="data/physicals/monsters/gfx/bandit-death.png" nm="data/effects/normalmaps/bandit-death.png" />
 </root>
