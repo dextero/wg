@@ -60,6 +60,7 @@ protected:
     int mSkillPoints, mAttrPoints;
 
     std::vector<CItem*> mItems; 
+    int mCurrentItem;
     std::vector<CAbilityTree*> *mAbilityTrees;
     std::vector<std::string> *mAbiCodes;
 
@@ -86,6 +87,10 @@ public:
     CItem * GetItem(size_t invPos);
     void AddItem(CItem * item, size_t invPos);
     void RemoveItem(CItem * item);
+
+    CItem* GetCurrentItem();
+    void SwitchCurrentItem(bool reverse = false);
+    void InvalidateCurrentItem() { mCurrentItem = 0; }  // resetowanie, taki hack zeby Abi0 po zmianie sterowania strzelalo slotem 0
 
 private:
     void AddAbilityFromTree(const SAbilityNode *an);

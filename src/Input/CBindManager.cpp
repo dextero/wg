@@ -26,7 +26,7 @@ const CBindManager::ActionPair CBindManager::availableActions[] = {
     CBindManager::ActionPair("MoveDownAbs",   CBindManager::agAbsolute),
     CBindManager::ActionPair("MoveLeftAbs",   CBindManager::agAbsolute),
     CBindManager::ActionPair("MoveRightAbs",  CBindManager::agAbsolute),
-    CBindManager::ActionPair("Abi-0",         CBindManager::agNormalCast),
+    CBindManager::ActionPair("Abi-0",         CBindManager::agNormalCast | CBindManager::agPointNClick),
     CBindManager::ActionPair("Abi-1",         CBindManager::agNormalCast),
     CBindManager::ActionPair("Abi-2",         CBindManager::agNormalCast),
     CBindManager::ActionPair("Abi-3",         CBindManager::agNormalCast),
@@ -41,10 +41,12 @@ const CBindManager::ActionPair CBindManager::availableActions[] = {
     CBindManager::ActionPair("Slot-2",        CBindManager::agSeparateSeq),
     CBindManager::ActionPair("Help",          CBindManager::agAll),
     CBindManager::ActionPair("Abilities",     CBindManager::agAll),
-    CBindManager::ActionPair("PointNClick",   CBindManager::agPointNClick)
+    CBindManager::ActionPair("PointNClick",   CBindManager::agPointNClick),
+    CBindManager::ActionPair("NextItem",      CBindManager::agPointNClick),
+    CBindManager::ActionPair("PrevItem",      CBindManager::agPointNClick)
 };
 
-const unsigned int CBindManager::availableActionsCount = 26;
+const unsigned int CBindManager::availableActionsCount = 28;
 
 
 void CBindManager::SetActualBindManager(size_t nr, unsigned playerNumber)

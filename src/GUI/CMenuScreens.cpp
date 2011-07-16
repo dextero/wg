@@ -991,25 +991,7 @@ void CMenuScreens::UpdateBindingOptions(int playerNumber)
         // ktore bindingi pokazywac?
         // te uniwersalne
         unsigned int showMask = System::Input::CBindManager::agAll;
-
-        // sterowanie - absolutne czy zwykle? a moze point'n'click?
-        if (absolute)
-        {
-            if (absolute->GetState())
-                showMask |= System::Input::CBindManager::agAbsolute;
-            else if (pncMovement && pncMovement->GetState())
-                    showMask |= System::Input::CBindManager::agPointNClick;
-            else
-            {
-                showMask |= System::Input::CBindManager::agNormal;
-                
-                // obracanie - mysz, czy klawisze?
-                if (mouseLook && !mouseLook->GetState())
-                    showMask |= System::Input::CBindManager::agKeyTurning;
-            }
-
-        }
-
+       
         // mousecast
         if (mouseCast)
         {
@@ -1022,6 +1004,27 @@ void CMenuScreens::UpdateBindingOptions(int playerNumber)
                 else
                     showMask |= System::Input::CBindManager::agNormalCast;
             }
+        }
+
+        // sterowanie - absolutne czy zwykle? a moze point'n'click?
+        if (absolute)
+        {
+            if (absolute->GetState())
+                showMask |= System::Input::CBindManager::agAbsolute;
+            else if (pncMovement && pncMovement->GetState())
+            {
+                showMask |= System::Input::CBindManager::agPointNClick;
+                showMask &= ~System::Input::CBindManager::agNormalCast; // uzywamy tylko abi0
+            }
+            else
+            {
+                showMask |= System::Input::CBindManager::agNormal;
+                
+                // obracanie - mysz, czy klawisze?
+                if (mouseLook && !mouseLook->GetState())
+                    showMask |= System::Input::CBindManager::agKeyTurning;
+            }
+
         }
 
 		/* Dodaj bindingi zgodne z aktualnym trybem sterowania */
@@ -1165,10 +1168,10 @@ void CMenuScreens::SaveBindingOptions(const std::wstring& playerWStr)
         gGameOptions.SetUserControlsFlags(playerNumber, flags);
 
 		for ( unsigned i = 0; i < mKeyBindings[playerNumber].size(); i++ )
-			gGameOptions.SetKeyBinding(	controlsStr,
-										mKeyBindings[playerNumber][i].name,
-										mKeyBindings[playerNumber][i].keyReader->GetKey(),
-										playerNumber );
+		    gGameOptions.SetKeyBinding(	controlsStr,
+									    mKeyBindings[playerNumber][i].name,
+									    mKeyBindings[playerNumber][i].keyReader->GetKey(),
+									    playerNumber );
 	}
 
 	ShowPrevious();

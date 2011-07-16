@@ -229,6 +229,10 @@ void CPlayerController::Update(float dt) {
 		int res = -1;
 
         CItem * item = ((CPlayer*)mActor)->GetItem(mLastKey);
+        // dex: nie wiem jak to napisac lepiej, zeby nie smiecic niepotrzebnymi flagami
+        if (mLastKey == 0 && ((CPlayer*)mActor)->GetCurrentItem())
+            item = ((CPlayer*)mActor)->GetCurrentItem();
+
         if (item) {
             fprintf(stderr, "item->%s\n", item->GetAbility().c_str());
             res = mActor->GetAbilityPerformer().FindAbilityIndexByInvPos(item->mInvPos);
