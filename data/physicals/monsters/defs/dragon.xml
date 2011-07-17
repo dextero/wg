@@ -1,0 +1,52 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="Dragon" />
+    <desc value="Four-footed, a bat-like winged monsters benevolent to all human race. They use their power to cause disasters for people." />
+  </bestiary>
+  <genre>dragon</genre>
+
+  <maxhp min="5000.0" max="5000.0" />
+  <speed min="1.25" max="1.25" />
+  <turnspeed min="130.0" max="130.0" />
+  <strength min="50.0" max="50.0" />
+  <poisonous min="20" max="20" />
+  <intelligence min="15" max="15" />
+  <fireresist min="8" max="8" />
+  <lightningresist min="8" max="8" />
+  <iceresist min="10" max="10" />
+  <poisonresist min="12" max="12" />
+  <maxmana min="500.0" max="500.0" />
+  <manaregen min="10" max="10"/>
+  <xp min="750.0" max="750.0" />
+
+  <mass min="5.2" max="5.2" />
+  <radius min="1.05" max="1.05" />
+  <scale min="2.20" max="2.20" />
+  <shadow-offset min="0.18" max="0.18" />
+
+  <animset>
+    <anim name="core/anim/dragon/default" type="default" />
+    <anim name="core/anim/dragon/move" type="move" />
+    <anim name="core/anim/dragon/attack" type="attack" />
+    <anim name="core/anim/dragon/death" type="death" />
+  </animset>
+  <animset>
+    <anim name="core/anim/dragon/default/wounded" type="default" />
+    <anim name="core/anim/dragon/move/wounded" type="move" />
+    <anim name="core/anim/dragon/attack/wounded" type="attack" />
+    <anim name="core/anim/dragon/death" type="death" />
+  </animset>
+
+  <ai name="ranged-caster" />
+
+  <ability name="data/abilities/monsters/melee-with-stun.xml" default="1" />
+  <ability name="data/abilities/monsters/poison-storm.xml" />
+
+  <sound type="attack" filename="data/sounds/EL/monster03.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/monster01.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/monster02.ogg" />
+  <sound type="spawn" filename="data/sounds/EL/dragon02.ogg" />
+  <sound type="death" filename="data/sounds/EL/monster06.ogg" />
+
+</root>

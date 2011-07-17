@@ -3704,65 +3704,65 @@ core/anim/frost-demon/death
 
 core/anim/dragon/default
 {
-    1.00  "data/physicals/dragon.png"                 0   0  128 128
+    1.00  "data/physicals/monsters/gfx/dragon.png"                 0   0  128 128
 }
 
 core/anim/dragon/move
 {
-    0.10  "data/physicals/dragon.png"                0    0  128  128
-    0.10  "data/physicals/dragon.png"              128    0  256  128
-    0.10  "data/physicals/dragon.png"              256    0  384  128
-    0.10  "data/physicals/dragon.png"              384    0  512  128
-    0.10  "data/physicals/dragon.png"              512    0  640  128
-    0.10  "data/physicals/dragon.png"              640    0  768  128
-    0.10  "data/physicals/dragon.png"              768    0  896  128
-    0.10  "data/physicals/dragon.png"              896    0 1024  128
+    0.05  "data/physicals/monsters/gfx/dragon.png"                0    0  128  128
+    0.05  "data/physicals/monsters/gfx/dragon.png"              128    0  256  128
+    0.05  "data/physicals/monsters/gfx/dragon.png"              256    0  384  128
+    0.05  "data/physicals/monsters/gfx/dragon.png"              384    0  512  128
+    0.05  "data/physicals/monsters/gfx/dragon.png"              512    0  640  128
+    0.05  "data/physicals/monsters/gfx/dragon.png"              640    0  768  128
+    0.05  "data/physicals/monsters/gfx/dragon.png"              768    0  896  128
+    0.05  "data/physicals/monsters/gfx/dragon.png"              896    0 1024  128
 }
-core/anim/dragon/move/winged
+core/anim/dragon/move/wounded
 {
-    0.10  "data/physicals/dragon.png"                0  128  128  256
-    0.10  "data/physicals/dragon.png"              128  128  256  256
-    0.10  "data/physicals/dragon.png"              256  128  384  256
-    0.10  "data/physicals/dragon.png"              384  128  512  256
-    0.10  "data/physicals/dragon.png"              512  128  640  256
-    0.10  "data/physicals/dragon.png"              640  128  768  256
-    0.10  "data/physicals/dragon.png"              768  128  896  256
-    0.10  "data/physicals/dragon.png"              896  128 1024  256
+    0.05  "data/physicals/monsters/gfx/dragon.png"                0  128  128  256
+    0.05  "data/physicals/monsters/gfx/dragon.png"              128  128  256  256
+    0.05  "data/physicals/monsters/gfx/dragon.png"              256  128  384  256
+    0.05  "data/physicals/monsters/gfx/dragon.png"              384  128  512  256
+    0.05  "data/physicals/monsters/gfx/dragon.png"              512  128  640  256
+    0.05  "data/physicals/monsters/gfx/dragon.png"              640  128  768  256
+    0.05  "data/physicals/monsters/gfx/dragon.png"              768  128  896  256
+    0.05  "data/physicals/monsters/gfx/dragon.png"              896  128 1024  256
 }
 
 core/anim/dragon/attack
 {
-    0.10  "data/physicals/dragon.png"                0  256  128  384
-    0.10  "data/physicals/dragon.png"              128  256  256  384
-    0.10  "data/physicals/dragon.png"              256  256  384  384
-    0.10  "data/physicals/dragon.png"              384  256  512  384
+    0.10  "data/physicals/monsters/gfx/dragon.png"                0  256  128  384
+    0.10  "data/physicals/monsters/gfx/dragon.png"              128  256  256  384
+    0.10  "data/physicals/monsters/gfx/dragon.png"              256  256  384  384
+    0.10  "data/physicals/monsters/gfx/dragon.png"              384  256  512  384
 }
-core/anim/dragon/attack/winged
+core/anim/dragon/attack/wounded
 {
-    0.10  "data/physicals/dragon.png"                0  384  128  512
-    0.10  "data/physicals/dragon.png"              128  384  256  512
-    0.10  "data/physicals/dragon.png"              256  384  384  512
-    0.10  "data/physicals/dragon.png"              384  384  512  512
+    0.10  "data/physicals/monsters/gfx/dragon.png"                0  384  128  512
+    0.10  "data/physicals/monsters/gfx/dragon.png"              128  384  256  512
+    0.10  "data/physicals/monsters/gfx/dragon.png"              256  384  384  512
+    0.10  "data/physicals/monsters/gfx/dragon.png"              384  384  512  512
 }
 
 core/anim/dragon/death
 {
-    0.10  "data/physicals/dragon.png"                0  512  128  640
-    0.10  "data/physicals/dragon.png"              128  512  256  640
-    0.10  "data/physicals/dragon.png"              256  512  384  640
-    0.10  "data/physicals/dragon.png"              384  512  512  640
-    0.10  "data/physicals/dragon.png"              512  512  640  640
-    0.10  "data/physicals/dragon.png"              640  512  768  640
-    0.10  "data/physicals/dragon.png"              768  512  896  640
-    0.10  "data/physicals/dragon.png"              896  512 1024  640
-    0.10  "data/physicals/dragon.png"                0  640  128  768
-    0.10  "data/physicals/dragon.png"              128  640  256  768
-    0.10  "data/physicals/dragon.png"              256  640  384  768
-    0.10  "data/physicals/dragon.png"              384  640  512  768
-    0.10  "data/physicals/dragon.png"              512  640  640  768
-    0.10  "data/physicals/dragon.png"              640  640  768  768
-    0.10  "data/physicals/dragon.png"              768  640  896  768
-    0.10  "data/physicals/dragon.png"              896  640 1024  768
+    0.10  "data/physicals/monsters/gfx/dragon.png"                0  512  128  640
+    0.10  "data/physicals/monsters/gfx/dragon.png"              128  512  256  640
+    0.10  "data/physicals/monsters/gfx/dragon.png"              256  512  384  640
+    0.10  "data/physicals/monsters/gfx/dragon.png"              384  512  512  640
+    0.10  "data/physicals/monsters/gfx/dragon.png"              512  512  640  640
+    0.10  "data/physicals/monsters/gfx/dragon.png"              640  512  768  640
+    0.10  "data/physicals/monsters/gfx/dragon.png"              768  512  896  640
+    2.50  "data/physicals/monsters/gfx/dragon.png"              896  512 1024  640
+    0.10  "data/physicals/monsters/gfx/dragon.png"                0  640  128  768
+    0.10  "data/physicals/monsters/gfx/dragon.png"              128  640  256  768
+    0.10  "data/physicals/monsters/gfx/dragon.png"              256  640  384  768
+    0.10  "data/physicals/monsters/gfx/dragon.png"              384  640  512  768
+    0.10  "data/physicals/monsters/gfx/dragon.png"              512  640  640  768
+    0.10  "data/physicals/monsters/gfx/dragon.png"              640  640  768  768
+    0.10  "data/physicals/monsters/gfx/dragon.png"              768  640  896  768
+    0.10  "data/physicals/monsters/gfx/dragon.png"              896  640 1024  768
 }
 
 ###################################### Minelayer
