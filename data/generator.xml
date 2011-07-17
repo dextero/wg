@@ -238,7 +238,8 @@
       
         <!-- le boss -->
         <boss file="data/physicals/monsters/defs/gargant-boss.xml" minLevel="9" maxLevel="9" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-small.xml" />
-        <boss file="data/physicals/monsters/defs/baldurian.xml" minLevel="18" maxLevel="27" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-small.xml" />
+        <boss file="data/physicals/monsters/defs/baldurian.xml" minLevel="18" maxLevel="18" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-small.xml" />
+        <boss file="data/physicals/monsters/defs/dragon.xml" minLevel="27" maxLevel="27" trigger-radius="10" trigger-ai="ranged-caster" trigger-playlist="data/music/boss-small.xml" />
       
         <!-- drzwi. todo: rozwazyc przeniesienie do <set> -->
         <door file="data/physicals/doors/gate.xml" />
