@@ -3542,7 +3542,16 @@ core/anim/murion/attack
 
 core/anim/murion/death
 {
-	2.50 "data/physicals/monsters/gfx/murion.png" 0 0 25 25
+	0.40 "data/physicals/monsters/gfx/murion.png" 0 0 25 25
+	0.10 "data/physicals/monsters/gfx/murion.png" 25 0 50 25
+	0.20 "data/physicals/monsters/gfx/murion.png" 50 0 75 25
+	0.10 "data/physicals/monsters/gfx/murion.png" 0 25 25 50
+	0.10 "data/physicals/monsters/gfx/murion.png" 50 0 75 25
+	0.10 "data/physicals/monsters/gfx/murion.png" 0 25 25 50
+	0.10 "data/physicals/monsters/gfx/murion.png" 25 25 50 50
+	0.05 "data/physicals/monsters/gfx/murion.png" 50 25 75 50
+	0.05 "data/physicals/monsters/gfx/murion.png" 25 25 50 50
+	2.20 "data/physicals/monsters/gfx/murion.png" 50 25 75 50
 }
 
 ####### czerwony demon ########
