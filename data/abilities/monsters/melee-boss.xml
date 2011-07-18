@@ -47,7 +47,7 @@
       <amount value="0.0" />
   </delay-effect>
   
-  <range value="0.7" />
+  <range value="1.4" />
   <width value="90.0" />
 
   <casttime value="0.2" />
