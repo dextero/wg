@@ -2,7 +2,7 @@
 
   <bestiary>
     <name value="Dragon" />
-    <desc value="Four-footed, a bat-like winged monsters benevolent to all human race. They use their power to cause disasters for people." />
+    <desc value="Four-footed, a bat-like winged monsters malevolent to all human race. They use their power to cause disasters for people." />
   </bestiary>
   <genre>dragon</genre>
 
