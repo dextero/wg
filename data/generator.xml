@@ -85,7 +85,7 @@
         <lair file="data/physicals/lairs/shaggy-lair.xml" level="90" />
 -->		
         <monster file="data/physicals/monsters/defs/rat.xml" minLevel="1" maxLevel="3" />
-        <monster file="data/physicals/monsters/defs/bandit.xml" minLevel="1" maxLevel="1" frequency="0.3" />
+        <monster file="data/physicals/monsters/defs/warlock.xml" minLevel="1" maxLevel="1" frequency="0.3" />
 
         <monster file="data/physicals/monsters/defs/rat.xml" minLevel="2" maxLevel="3" />
         <monster file="data/physicals/monsters/defs/chitiniac.xml" minLevel="2" maxLevel="2" frequency="0.2" />

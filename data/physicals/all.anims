@@ -791,61 +791,61 @@ core/anim/bee/death
 
 #####################
 
-core/anim/warlock/stand
+core/anim/warlock/default
 {
-    0.10  "data/physicals/monsters/warlock-move.png"                256   0  320  64
+    0.10  "data/physicals/monsters/gfx/warlock-move.png"                256   0  320  64
 }
 
 core/anim/warlock/move
 {
-	0.10  "data/physicals/monsters/warlock-wobble.png"                  0   0   64  64
-    0.10  "data/physicals/monsters/warlock-wobble.png"                 64   0  128  64
-    0.10  "data/physicals/monsters/warlock-wobble.png"                128   0  192  64
-    0.10  "data/physicals/monsters/warlock-wobble.png"                192   0  256  64
-    0.10  "data/physicals/monsters/warlock-wobble.png"                256   0  320  64
-    0.10  "data/physicals/monsters/warlock-wobble.png"                320   0  384  64
-    0.10  "data/physicals/monsters/warlock-wobble.png"                384   0  448  64
-    0.10  "data/physicals/monsters/warlock-wobble.png"                448   0  512  64
+	0.10  "data/physicals/monsters/gfx/warlock-move.png"                  0   0   64  64
+    0.10  "data/physicals/monsters/gfx/warlock-move.png"                 64   0  128  64
+    0.10  "data/physicals/monsters/gfx/warlock-move.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/warlock-move.png"                192   0  256  64
+    0.10  "data/physicals/monsters/gfx/warlock-move.png"                256   0  320  64
+    0.10  "data/physicals/monsters/gfx/warlock-move.png"                320   0  384  64
+    0.10  "data/physicals/monsters/gfx/warlock-move.png"                384   0  448  64
+    0.10  "data/physicals/monsters/gfx/warlock-move.png"                448   0  512  64
 }
 
-core/anim/warlock/cast-onehand
+core/anim/warlock/attack
 {
-	0.10  "data/physicals/monsters/warlock-cast-onehand.png"                  0   0   64  64
-    0.10  "data/physicals/monsters/warlock-cast-onehand.png"                 64   0  128  64
-    0.10  "data/physicals/monsters/warlock-cast-onehand.png"                128   0  192  64
-    0.10  "data/physicals/monsters/warlock-cast-onehand.png"                192   0  256  64
-    0.10  "data/physicals/monsters/warlock-cast-onehand.png"                256   0  320  64
-    0.10  "data/physicals/monsters/warlock-cast-onehand.png"                192   0  256  64
-    0.10  "data/physicals/monsters/warlock-cast-onehand.png"                128   0  192  64
-    0.10  "data/physicals/monsters/warlock-cast-onehand.png"                 64   0  128  64
-	0.10  "data/physicals/monsters/warlock-cast-onehand.png"                  0   0   64  64
+	0.10  "data/physicals/monsters/gfx/warlock-attack-0.png"                  0   0   64  64
+    0.10  "data/physicals/monsters/gfx/warlock-attack-0.png"                 64   0  128  64
+    0.10  "data/physicals/monsters/gfx/warlock-attack-0.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/warlock-attack-0.png"                192   0  256  64
+    0.10  "data/physicals/monsters/gfx/warlock-attack-0.png"                256   0  320  64
+    0.10  "data/physicals/monsters/gfx/warlock-attack-0.png"                192   0  256  64
+    0.10  "data/physicals/monsters/gfx/warlock-attack-0.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/warlock-attack-0.png"                 64   0  128  64
+	0.10  "data/physicals/monsters/gfx/warlock-attack-0.png"                  0   0   64  64
 }
 
-core/anim/warlock/cast-forward
+core/anim/warlock/attack-second
 {
-    0.02  "data/physicals/monsters/warlock-cast-forward.png"                 64   0  128  64
-    0.05  "data/physicals/monsters/warlock-cast-forward.png"                128   0  192  64
-    0.10  "data/physicals/monsters/warlock-cast-forward.png"                192   0  256  64
-    0.15  "data/physicals/monsters/warlock-cast-forward.png"                256   0  320  64
-    0.10  "data/physicals/monsters/warlock-cast-forward.png"                192   0  256  64
-    0.05  "data/physicals/monsters/warlock-cast-forward.png"                128   0  192  64
-    0.02  "data/physicals/monsters/warlock-cast-forward.png"                 64   0  128  64
+    0.02  "data/physicals/monsters/gfx/warlock-attack-1.png"                 64   0  128  64
+    0.05  "data/physicals/monsters/gfx/warlock-attack-1.png"                128   0  192  64
+    0.10  "data/physicals/monsters/gfx/warlock-attack-1.png"                192   0  256  64
+    0.15  "data/physicals/monsters/gfx/warlock-attack-1.png"                256   0  320  64
+    0.10  "data/physicals/monsters/gfx/warlock-attack-1.png"                192   0  256  64
+    0.05  "data/physicals/monsters/gfx/warlock-attack-1.png"                128   0  192  64
+    0.02  "data/physicals/monsters/gfx/warlock-attack-1.png"                 64   0  128  64
 }
 
 core/anim/warlock/death
 {
-	0.2  "data/physicals/monsters/warlock-die.png"                  0   0   64  64
-    0.15  "data/physicals/monsters/warlock-die.png"                 64   0  128  64
-    0.1  "data/physicals/monsters/warlock-die.png"                128   0  192  64
-    0.1  "data/physicals/monsters/warlock-die.png"                192   0  256  64
-	0.1 "data/physicals/monsters/warlock-die.png"                 0  64  64  128
-	0.1  "data/physicals/monsters/warlock-die.png"                64   64  128  128
-	0.1  "data/physicals/monsters/warlock-die.png"                128  64  192  128
-	0.1  "data/physicals/monsters/warlock-die.png"                192  64  256  128
-	5.2 "data/physicals/monsters/warlock-die.png"                 0  128  64  192
-	0.1  "data/physicals/monsters/warlock-die.png"                64   128  128  192
-	0.1  "data/physicals/monsters/warlock-die.png"                128  128  192  192
-	0.1  "data/physicals/monsters/warlock-die.png"                192  128  256  192
+	0.2  "data/physicals/monsters/gfx/warlock-death.png"                  0    0   64   64
+    0.15 "data/physicals/monsters/gfx/warlock-death.png"                 64    0  128   64
+    0.1  "data/physicals/monsters/gfx/warlock-death.png"                128    0  192   64
+    0.1  "data/physicals/monsters/gfx/warlock-death.png"                192    0  256   64
+	0.1  "data/physicals/monsters/gfx/warlock-death.png"                  0   64   64  128
+	0.1  "data/physicals/monsters/gfx/warlock-death.png"                 64   64  128  128
+	0.1  "data/physicals/monsters/gfx/warlock-death.png"                128   64  192  128
+	0.1  "data/physicals/monsters/gfx/warlock-death.png"                192   64  256  128
+	2.5  "data/physicals/monsters/gfx/warlock-death.png"                  0  128   64  192
+	0.1  "data/physicals/monsters/gfx/warlock-death.png"                 64  128  128  192
+	0.1  "data/physicals/monsters/gfx/warlock-death.png"                128  128  192  192
+	0.1  "data/physicals/monsters/gfx/warlock-death.png"                192  128  256  192
 }
 
 ########################
