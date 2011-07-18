@@ -1,36 +1,36 @@
 <root type="enemy">
 
   <bestiary>
-    <name value="$BESTIARY_WARLOCK_NAME" />
-    <desc value="$BESTIARY_WARLOCK_DESC" />
+    <name value="Black warlock" />
+    <desc value="The black mantle is a giveaway - this battlemage went over to the wrong side of the force, and now flails bolts of dark energy at his former colleagues. Probably too much mercury fumes." />
   </bestiary>
   <genre>warlock</genre>
   
+  <maxhp min="150.0" max="180.0" />
   <speed min="1.3" max="1.5" />
-  <strength min="5.0" max="10.0" />
   <turnspeed min="90.0" max="120.0" />
+  <strength min="5.0" max="10.0" />
+  <intelligence min="20" max="25" />
+  <maxmana min="50.0" max="50.0" />
+  <manaregen min="3" max="5"/>
+  <xp min="62.0" max="65.0" />
+
+  <mass min="3.0" max="3.0" />
+  <radius min="0.48" max="0.52" />
+  <scale min="0.975" max="1.25" />
   <shadow-offset min="0.12" max="0.12" />
 
-  <maxhp min="50.0" max="80.0" />
-  <maxmana min="50.0" max="50.0" />
-
-  <xp min="12.0" max="15.0" />
-
-  <scale min="0.85" max="0.9" />
-  <radius min="0.425" max="0.5" />
-  <mass min="3.0" max="3.0" />
-
-  <anim name="core/anim/warlock/stand" type="default" />
+  <anim name="core/anim/warlock/default" type="default" />
   <anim name="core/anim/warlock/move" type="move" />
-  <anim name="core/anim/warlock/cast-foreward" type="attack" />
+  <anim name="core/anim/warlock/attack" type="attack" />
+  <anim name="core/anim/warlock/attack-second" type="attack2" />
   <anim name="core/anim/warlock/death" type="death" />
-  <anim name="core/anim/warlock/cast-onehand" type="2" />
 
   <ai name="ranged-caster" />
 
-  <ability name="data/abilities/monster/monsterbash.xml" default="1" />
-  <ability name="data/abilities/monster/warlock-firearrow.xml" default="1" />
-  <ability name="data/abilities/monster/warlock-lightning.xml" anim="2" />
+  <ability name="data/abilities/monsters/melee-with-swing.xml" default="1" />
+  <ability name="data/abilities/monster/warlock-firearrow.xml" />
+  <ability name="data/abilities/monster/warlock-lightning.xml" anim="attack2" />
 
   <sound type="damaged" filename="data/sounds/EL/pain-male01.ogg" />
   <sound type="damaged" filename="data/sounds/EL/pain-male02.ogg" />
