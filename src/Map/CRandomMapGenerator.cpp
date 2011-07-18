@@ -553,14 +553,19 @@ bool CRandomMapGenerator::PlaceTiles()
             corners[i][j] = rand() % set.tiles.size();
     }
 
-    // losujemy co 4 kafel, reszte bedziemy dobierac wg sasiadow
-    // [*][ ][*]
-    // [ ][ ][ ]
-    // [*][ ][*]
-    // [*] - kafel losowany, reszta to "posrednie"
-    for (unsigned int x = 0; x < mDesc.sizeX; x += 2)
-        for (unsigned int y = 0; y < mDesc.sizeY; y += 2)
-            tiles[x][y] = rand() % set.tiles.size();
+	// rAum:
+	// i stosujemy Gaussa - usuwamy w ten sposob wysokie czestotliwosci
+	// stworzone przez losowy rozrzut kafli i calosc bedzie bardziej jednorodna.
+	// -> zamiana na floaty chyba by poprawila jakosc...
+	/// rozmycie Gaussem w OX i w OY
+	for (unsigned int i = 1; i < mDesc.sizeX ; ++i)	
+		for (unsigned int j = 1; j < mDesc.sizeY; ++j)
+			corners[i][j] = ((corners[i][j] << 1) + corners[i][j - 1] + corners[i][j + 1]) >> 2;
+
+	for (unsigned int i = 1; i < mDesc.sizeX ; ++i)	
+		for (unsigned int j = 1; j < mDesc.sizeY; ++j)
+			corners[i][j] = ((corners[i][j] << 1) + corners[i - 1][j] + corners[i + 1][j]) >> 2;
+
 
     // mapa na dobrane kafle, zeby nie duplikowac
     std::map<std::string, unsigned int> generatedTiles;
