@@ -10,7 +10,7 @@ void main()
 	normal = normalize(normal - 0.5);
 	lpos = normalize(lpos);
 	
-	float diffuseStrength = max( dot(normal, lpos), 0.0 ) * 1.2;
-	vec4 diffuse = (diffuseStrength * lcolor + 0.4) * pixel;
+	float diffuseStrength = max( dot(normal, lpos), 0.0 ) * 1.0;
+	vec4 diffuse = (diffuseStrength * lcolor + 0.5) * pixel;
 	gl_FragColor = vec4( diffuse.rgb, pixel.a );
 }
