@@ -546,11 +546,13 @@ bool CRandomMapGenerator::PlaceTiles()
 
     // losujemy rogi
     unsigned int** corners = new unsigned int*[mDesc.sizeX + 1];
+	unsigned int** ncorners = new unsigned int*[mDesc.sizeX + 1];
     for (unsigned int i = 0; i < mDesc.sizeX + 1; ++i)
     {
         corners[i] = new unsigned int[mDesc.sizeY + 1];
+		ncorners[i] = new unsigned int[mDesc.sizeY + 1];
         for (unsigned int j = 0; j < mDesc.sizeY + 1; ++j)
-            corners[i][j] = rand() % set.tiles.size();
+            ncorners[i][j] = corners[i][j] = rand() % set.tiles.size();
     }
 
 	// rAum:
@@ -560,11 +562,16 @@ bool CRandomMapGenerator::PlaceTiles()
 	/// rozmycie Gaussem w OX i w OY
 	for (unsigned int i = 1; i < mDesc.sizeX ; ++i)	
 		for (unsigned int j = 1; j < mDesc.sizeY; ++j)
-			corners[i][j] = ((corners[i][j] << 1) + corners[i][j - 1] + corners[i][j + 1]) >> 2;
+			corners[i][j] = ((ncorners[i][j] << 1) + ncorners[i][j - 1] + ncorners[i][j + 1]) >> 2;
 
 	for (unsigned int i = 1; i < mDesc.sizeX ; ++i)	
 		for (unsigned int j = 1; j < mDesc.sizeY; ++j)
-			corners[i][j] = ((corners[i][j] << 1) + corners[i - 1][j] + corners[i + 1][j]) >> 2;
+			corners[i][j] = ((ncorners[i][j] << 1) + ncorners[i - 1][j] + ncorners[i + 1][j]) >> 2;
+
+	// zwalnianie juz niepotrzebnej pamieci
+	for (unsigned int i = 0; i < mDesc.sizeX + 1; ++i)
+        delete[] ncorners[i];
+    delete[] ncorners;
 
 
     // mapa na dobrane kafle, zeby nie duplikowac
