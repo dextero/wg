@@ -255,11 +255,22 @@
 	
     <set name="forest" level="0">
         <tiles>
-            <tile image="data/maps/tiles/forest/grass.png" />
+		    <tile image="data/maps/tiles/forest/grass.png" />
             <tile image="data/maps/tiles/forest/grass2.png" />
-            <tile image="data/maps/tiles/forest/forest.png" />
+			<tile image="data/maps/tiles/forest/grass2.png" />
+			<tile image="data/maps/tiles/forest/grass.png" />
+			
+			<tile image="data/maps/tiles/forest/forest.png" />
+			<tile image="data/maps/tiles/forest/forest.png" />
             <tile image="data/maps/tiles/forest/forest2.png" />
+			<tile image="data/maps/tiles/forest/forest.png" />
+            <tile image="data/maps/tiles/forest/forest2.png" />
+
             <tile image="data/maps/tiles/forest/swamp.png" />
+			<tile image="data/maps/tiles/forest/swamp.png" />
+			<tile image="data/maps/tiles/forest/swamp.png" />
+			<tile image="data/maps/tiles/forest/swamp.png" />
+			<tile image="data/maps/tiles/forest/swamp.png" />
         </tiles>
         <doodahs>
             <!-- "lezace na ziemi" -->
