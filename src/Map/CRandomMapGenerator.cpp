@@ -544,13 +544,22 @@ bool CRandomMapGenerator::PlaceTiles()
         return false;
     }
 
+    // losujemy rogi
+    unsigned int** corners = new unsigned int*[mDesc.sizeX + 1];
+    for (unsigned int i = 0; i < mDesc.sizeX + 1; ++i)
+    {
+        corners[i] = new unsigned int[mDesc.sizeY + 1];
+        for (unsigned int j = 0; j < mDesc.sizeY + 1; ++j)
+            corners[i][j] = rand() % set.tiles.size();
+    }
+
     // losujemy co 4 kafel, reszte bedziemy dobierac wg sasiadow
     // [*][ ][*]
     // [ ][ ][ ]
     // [*][ ][*]
     // [*] - kafel losowany, reszta to "posrednie"
-    for (unsigned int y = 0; y < mDesc.sizeY; y += 2)
-        for (unsigned int x = 0; x < mDesc.sizeX; x += 2)
+    for (unsigned int x = 0; x < mDesc.sizeX; x += 2)
+        for (unsigned int y = 0; y < mDesc.sizeY; y += 2)
             tiles[x][y] = rand() % set.tiles.size();
 
     // mapa na dobrane kafle, zeby nie duplikowac
@@ -559,55 +568,15 @@ bool CRandomMapGenerator::PlaceTiles()
     std::vector<std::string> tilePaths = set.tiles;
 
     // tu dobieramy reszte tak, zeby pasowaly
-    for (unsigned int y = 0; y < mDesc.sizeY; ++y)
-        for (unsigned int x = 0; x < mDesc.sizeX; ++x)
+    for (unsigned int x = 0; x < mDesc.sizeX; ++x)
+        for (unsigned int y = 0; y < mDesc.sizeY; ++y)
         {
             std::string nameTopLeft, nameTopRight, nameBottomLeft, nameBottomRight;
 
-            // IOCCC mode on
-            // dex: ja to pisalem, mnie mordujcie...
-            // tu ponizej i TYLKO tu ma byc set.tiles, jesli sie pokrzaczy na indeksach,
-            // to znaczy, ze chcialo brac indeks generowanego kafla, a tak byc nie moze
-            // [x] = tu jestes
-            if (x % 2)
-            {
-                if (y % 2)
-                {
-                    // [*][ ][*]
-                    // [ ][x][ ]
-                    // [*][ ][*]
-                    nameTopLeft = set.tiles[tiles[x - 1][y - 1]];
-                    nameTopRight = set.tiles[tiles[(x + 1 < mDesc.sizeX ? x + 1 : x - 1)][y - 1]];
-                    nameBottomLeft = set.tiles[tiles[x - 1][(y + 1 < mDesc.sizeY ? y + 1 : y - 1)]];
-                    nameBottomRight = set.tiles[tiles[(x + 1 < mDesc.sizeX ? x + 1 : x - 1)][(y + 1 < mDesc.sizeY ? y + 1 : y - 1)]];
-                }
-                else
-                {
-                    // [*][x][*]
-                    nameTopLeft = set.tiles[tiles[x - 1][y]];
-                    nameTopRight = set.tiles[tiles[(x + 1 < mDesc.sizeX ? x + 1 : x - 1)][y]];
-                    nameBottomLeft = set.tiles[tiles[x - 1][y]];
-                    nameBottomRight = set.tiles[tiles[(x + 1 < mDesc.sizeX ? x + 1 : x - 1)][y]];
-                }
-            }
-            else
-            {
-                if (y % 2)
-                {
-                    // [*]
-                    // [x]
-                    // [*]
-                    nameTopLeft = set.tiles[tiles[x][y - 1]];
-                    nameTopRight = set.tiles[tiles[x][y - 1]];
-                    nameBottomLeft = set.tiles[tiles[x][(y + 1 < mDesc.sizeY ? y + 1 : y - 1)]];
-                    nameBottomRight = set.tiles[tiles[x][(y + 1 < mDesc.sizeY ? y + 1 : y - 1)]];
-                }
-                else
-                {
-                    // jestesmy na wylosowanym polu
-                    continue;
-                }
-            }
+            nameTopLeft = set.tiles[corners[x][y]];
+            nameTopRight = set.tiles[corners[x + 1][y]];
+            nameBottomLeft = set.tiles[corners[x][y+1]];
+            nameBottomRight = set.tiles[corners[x+1][y+1]];
 
             // losowanie maski
             unsigned int tileMask = (mTileMasks.size() ? (unsigned int)(rand()) % mTileMasks.size() : (unsigned int)-1);

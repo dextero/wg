@@ -42,7 +42,7 @@
 				Name="VCCLCompilerTool"
 				Optimization="0"
 				AdditionalIncludeDirectories="..\includes;&quot;..\includes\SFML-1.6\include&quot;;..\includes\Audiere\"
-				PreprocessorDefinitions="_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1;_CRT_SECURE_NO_WARNINGS=1;PLATFORM_WINDOWS"
+				PreprocessorDefinitions="_CRT_SECURE_CPP_OVERLOAD_STANDARD_NAMES=1;_CRT_SECURE_NO_WARNINGS=1;PLATFORM_WINDOWS;WG_SHADERS"
 				StringPooling="false"
 				MinimalRebuild="true"
 				BasicRuntimeChecks="3"
