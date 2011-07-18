@@ -1,0 +1,201 @@
+<root type="ability" class="self">
+
+  <effect type="list">
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/fireend.ogg" />
+    </effect>
+    <effect type="bullet">
+      <emitter>
+        <explosion type="list" tag="explosion-tag">
+          <effect type="sound">
+            <name value="data/sounds/Lugaro/splatter.ogg" />
+          </effect>
+          <effect type="graphical-effect">
+            <time value="0.8" />
+            <name value="green-explosion-mini" />
+          </effect>
+        </explosion>
+        <effect type="list" tag="hit-tag">
+          <effect type="damage">
+            <damage-type value="poison"/>
+            <amount calc="0.25 * poisonous"/>
+          </effect>
+          <effect type="graphical-effect">
+            <name value="colorize-green" /> 
+            <time calc="2.0" /> 
+          </effect>
+          <effect type="graphical-effect">
+            <name value="acid" />
+            <time value="0.15" />
+          </effect>
+          <effect type="non-cumulative">
+            <effect type="timed">
+              <time value="2.0" />
+              <effect type="damage">
+                <damage-type value="poison"/>
+                <amount calc="1.0 * poisonous" />
+              </effect>
+            </effect>
+          </effect>
+        </effect>
+        <range value="12.0" />
+        <speed calc="6.0" />
+        <acceleration value="1.0" />
+        <explode-on-fade value="1" />
+        <count value="2" />
+        <width calc="80 " />
+        <ttl value="3.0" />
+        <bullet value="data/physicals/bullets/acid-drop.xml" />
+        <filter value="player,wall,door"/>
+        <target-chooser>
+          <filter value="player" />
+          <range value="12.0"  />
+          <angle value="180.0" />
+          <aim-at-ground value="0"/>
+        </target-chooser>
+        <turning-speed value="100"/>
+        <time-for-tracking value="1.0"/>
+
+      </emitter>
+    </effect>
+    <effect type="bullet">
+      <emitter>
+        <explosion type="jump">
+          <name value="explosion-tag"/>
+        </explosion>
+        <effect type="jump">
+          <name value="hit-tag"/>
+        </effect>
+        <range value="12.0" />
+        <speed calc="5.5" />
+        <acceleration value="1.1" />
+        <explode-on-fade value="1" />
+        <count value="2" />
+        <width calc="70 " />
+        <ttl value="3.0" />
+        <bullet value="data/physicals/bullets/acid-drop.xml" />
+        <filter value="player,wall,door"/>
+        <target-chooser>
+          <filter value="player" />
+          <range value="12.0"  />
+          <angle value="180.0" />
+          <aim-at-ground value="0"/>
+        </target-chooser>
+        <turning-speed value="80"/>
+        <time-for-tracking value="1.0"/>
+      </emitter>
+    </effect>
+    <effect type="bullet">
+      <emitter>
+        <explosion type="jump">
+          <name value="explosion-tag"/>
+        </explosion>
+        <effect type="jump">
+          <name value="hit-tag"/>
+        </effect>
+        <range value="12.0" />
+        <speed calc="5.0" />
+        <acceleration value="1.2" />
+        <explode-on-fade value="1" />
+        <count value="2" />
+        <width calc="50 " />
+        <ttl value="3.0" />
+        <bullet value="data/physicals/bullets/acid-drop.xml" />
+        <filter value="player,wall,door"/>
+        <target-chooser>
+          <filter value="player" />
+          <range value="12.0"  />
+          <angle value="180.0" />
+          <aim-at-ground value="0"/>
+        </target-chooser>
+        <turning-speed value="60"/>
+        <time-for-tracking value="1.0"/>
+      </emitter>
+    </effect>
+    <effect type="bullet">
+      <emitter>
+        <explosion type="jump">
+          <name value="explosion-tag"/>
+        </explosion>
+        <effect type="jump">
+          <name value="hit-tag"/>
+        </effect>
+        <range value="12.0" />
+        <speed calc="4.6" />
+        <acceleration value="1.29" />
+        <explode-on-fade value="1" />
+        <count value="2" />
+        <width calc="32 " />
+        <ttl value="3.0" />
+        <bullet value="data/physicals/bullets/acid-drop.xml" />
+        <filter value="player,wall,door"/>
+        <target-chooser>
+          <filter value="player" />
+          <range value="12.0"  />
+          <angle value="180.0" />
+          <aim-at-ground value="0"/>
+        </target-chooser>
+        <turning-speed value="40"/>
+        <time-for-tracking value="1.05"/>
+      </emitter>
+    </effect>
+    <effect type="bullet">
+      <emitter>
+        <explosion type="jump">
+          <name value="explosion-tag"/>
+        </explosion>
+        <effect type="jump">
+          <name value="hit-tag"/>
+        </effect>
+        <range value="12.0" />
+        <speed calc="4.3" />
+        <acceleration value="1.35" />
+        <explode-on-fade value="1" />
+        <count value="2" />
+        <width calc="15 " />
+        <ttl value="3.0" />
+        <bullet value="data/physicals/bullets/acid-drop.xml" />
+        <filter value="player,wall,door"/>
+        <target-chooser>
+          <filter value="player" />
+          <range value="12.0"  />
+          <angle value="180.0" />
+          <aim-at-ground value="0"/>
+        </target-chooser>
+        <turning-speed value="25"/>
+        <time-for-tracking value="1.1"/>
+      </emitter>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list" >
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.3"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-1"/>
+      <time value="0.3"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.0" />
+  </delay-effect>
+
+  <manacost calc="7" />
+  <casttime value="0.3" />
+  <delay value="0.2" />
+  <cooldown value="0.6 + rnd(0,2)" />
+
+  <ai-hint>
+    <player-distance>7.0</player-distance>
+    <player-angle>9.0</player-angle>
+  </ai-hint>
+
+</root>

@@ -62,11 +62,13 @@
   <acceleration value="1.0" />
   <explode-on-fade value="1" />
   <ttl value="3.0" />
+  <count calc="3.0 + rnd(0, 4)"/>
+  <width calc="30 + (10 * rnd(0, 4))"/>
   <bullet value="data/physicals/bullets/fireball.xml" />
   <filter value="wall" />
   <bullet-angular-speed value="-1440" />
 
-  <manacost calc="8.0" />
+  <manacost calc="12" />
   <casttime calc="0.64" />
   <delay calc="0.58" />
   <cooldown calc="3.5 + rnd(0, 5.5)" />

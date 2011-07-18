@@ -38,7 +38,7 @@
 
   <ai name="melee-chaser" />
 
-  <ability name="data/abilities/monsters/melee-with-stun.xml" default="1" />
+  <ability name="data/abilities/monsters/melee-boss.xml" default="1" />
   <ability name="data/abilities/monsters/fireburst.xml" />
   <ability name="data/abilities/monsters/fire-bullets.xml" />
   <ability name="data/abilities/monsters/firestream.xml" />
