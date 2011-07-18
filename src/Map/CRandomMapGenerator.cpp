@@ -641,6 +641,9 @@ bool CRandomMapGenerator::PlaceTiles()
     }
     mXmlText << "\t</tiles>\n";
 
+    for (unsigned int i = 0; i < mDesc.sizeX + 1; ++i)
+        delete[] corners[i];
+    delete[] corners;
     
     for (unsigned int i = 0; i < mDesc.sizeX; ++i)
         delete[] tiles[i];
