@@ -10,10 +10,12 @@
 
 #include "../CGame.h"
 #include "../ResourceManager/CResourceManager.h"
+#include "../ResourceManager/CImage.h"
 #include "CDisplayable.h"
 #include <SFML/Graphics/Image.hpp>
 #include "ZIndexVals.h"
 #include "../Utils/Maths.h"
+#include "../Utils/CXml.h"
 
 #include "GLCheck.h"
 
@@ -27,6 +29,7 @@ CShaderManager::CShaderManager():
 {
     fprintf(stderr,"CShaderManager::CShaderManager()\n");
 	this->reloadAll();
+	this->loadNormalMaps();
     gGame.AddKeyListener( this );
 }
 
@@ -38,10 +41,22 @@ void CShaderManager::prepareToDraw(IDrawable * drawable){
 	int z = drawable->GetZIndex();
 	CDisplayable * displayable = dynamic_cast<CDisplayable *>(drawable);
 	if (displayable != NULL){
-		const sf::Image * img = ((CDisplayable*)drawable)->GetSFSprite()->GetImage();
-		bool useNM = (img != NULL) && ((z <= Z_TILE && z > Z_PLAYER && z != Z_SHADOWS) || z == Z_MAPSPRITE_FG);
+		const sf::Image * img = displayable->GetSFSprite()->GetImage();
+		const sf::Image * normalmap = displayable->GetSFSprite()->GetNormalMap();
+		bool useNM = (img != NULL) && (normalmap != NULL) && ((z <= Z_TILE && z >= Z_PLAYER && z != Z_SHADOWS) || z == Z_MAPSPRITE_FG);
 		if (useNM){
-			int id = this->activate("normal-sobel");
+			int id = this->activate("normal-map");
+			if (id >= 0){
+				float rot = displayable->GetRotation();
+				this->setUniform(id, "lpos", sf::Vector3f(
+					Maths::Rotate(Maths::VectorUp(), -rot).x, 
+					Maths::Rotate(Maths::VectorUp(), -rot).y, 
+					0.5f)
+				);
+				this->setUniform(id, "lcolor", sf::Color(255,255,255,255));
+				this->bindTexture(id, "normalmap", normalmap);
+			}
+			/*int id = this->activate("normal-sobel");
 			if (id >= 0){
 				this->setUniform(id, "uTexSize", sf::Vector2f(img->GetWidth(), img->GetHeight()));
 				float rot = displayable->GetRotation();
@@ -55,7 +70,7 @@ void CShaderManager::prepareToDraw(IDrawable * drawable){
 				if (z == Z_PHYSICAL) normalStrength = 3.0f;
 				else if (z == Z_TILE) normalStrength = 0.5f;
 				this->setUniform(id, "normalStrength", normalStrength);
-			}
+			}*/
 		} else if (z == Z_PLAYER && img != NULL) {
 			fprintf(stderr, "Using freeze\n");
 			int id = this->activate("freeze");
@@ -168,6 +183,7 @@ void CShaderManager::KeyReleased( const sf::Event::KeyEvent &e ){
 }
 
 void CShaderManager::reloadAll(){
+	this->load("data/effects/normalmap.frag", "data/effects/normalmap.vert", "normal-map");
 	this->load("data/effects/normal.frag", "data/effects/default.vert", "normal-sobel");
 	this->load("data/effects/blue.frag", "data/effects/default.vert", "freeze");
 }
@@ -261,6 +277,21 @@ int CShaderManager::getProgramId(std::string const & name)
 		return this->programNames[name];
 	} else {
 		return -1;
+	}
+}
+
+void CShaderManager::loadNormalMaps()
+{
+	CXml xml( "data/effects/normalmaps/normalmaps-desc.xml", "root" );
+	xml_node<>* node;
+	for (node = xml.GetChild(0,"mat"); node; node = xml.GetSibl(node, "mat"))
+	{
+		System::Resource::CImage* img = gResourceManager.GetImage(xml.GetString(node, "tex"));
+		if (img != NULL)
+		{
+			System::Resource::CImage* nm = gResourceManager.GetImage(xml.GetString(node, "nm"));
+			img->SetNormalMap(nm);
+		}
 	}
 }
 

@@ -10,8 +10,7 @@ Bonus for this spell depends:
   barely on sanguine rune
   heavily on phlegmatic rune  
   </description>
-  <icon>data/abilities/weapons/hibernation-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/hibernation-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/hibernation.png</icon>
 
   <!-- power = 2x cho, 3x mel, 1x san, 3x phl -->
   <power calc="0.2 * dot(2, choleric, 3, melancholic, 1, sanguine, 3, phlegmatic)"/>

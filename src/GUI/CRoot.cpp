@@ -156,6 +156,8 @@ void CRoot::MouseMoved(const sf::Event::MouseMoveEvent &e)
 
 void CRoot::MouseWheelMoved( const sf::Event::MouseWheelEvent& e )
 {
+    SendMouseEvent(0.f, (float)e.Delta, (e.Delta < 0 ? GUI::MOUSE_WHEEL_DOWN : GUI::MOUSE_WHEEL_UP));
+
     // wez obiekt spod kursora
     CGUIObject* obj = GetFocusedObject();
     if (obj == NULL)

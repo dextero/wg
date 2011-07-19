@@ -85,7 +85,7 @@
         <lair file="data/physicals/lairs/shaggy-lair.xml" level="90" />
 -->		
         <monster file="data/physicals/monsters/defs/rat.xml" minLevel="1" maxLevel="3" />
-        <monster file="data/physicals/monsters/defs/bandit.xml" minLevel="1" maxLevel="1" frequency="0.3" />
+        <monster file="data/physicals/monsters/defs/warlock.xml" minLevel="1" maxLevel="1" frequency="0.3" />
 
         <monster file="data/physicals/monsters/defs/rat.xml" minLevel="2" maxLevel="3" />
         <monster file="data/physicals/monsters/defs/chitiniac.xml" minLevel="2" maxLevel="2" frequency="0.2" />
@@ -238,7 +238,8 @@
       
         <!-- le boss -->
         <boss file="data/physicals/monsters/defs/gargant-boss.xml" minLevel="9" maxLevel="9" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-small.xml" />
-        <boss file="data/physicals/monsters/defs/baldurian.xml" minLevel="18" maxLevel="27" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-small.xml" />
+        <boss file="data/physicals/monsters/defs/baldurian.xml" minLevel="18" maxLevel="18" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-small.xml" />
+        <boss file="data/physicals/monsters/defs/dragon.xml" minLevel="27" maxLevel="27" trigger-radius="10" trigger-ai="ranged-caster" trigger-playlist="data/music/boss-small.xml" />
       
         <!-- drzwi. todo: rozwazyc przeniesienie do <set> -->
         <door file="data/physicals/doors/gate.xml" />
@@ -254,11 +255,22 @@
 	
     <set name="forest" level="0">
         <tiles>
-            <tile image="data/maps/tiles/forest/grass.png" />
+		    <tile image="data/maps/tiles/forest/grass.png" />
             <tile image="data/maps/tiles/forest/grass2.png" />
-            <tile image="data/maps/tiles/forest/forest.png" />
+			<tile image="data/maps/tiles/forest/grass2.png" />
+			<tile image="data/maps/tiles/forest/grass.png" />
+			
+			<tile image="data/maps/tiles/forest/forest.png" />
+			<tile image="data/maps/tiles/forest/forest.png" />
             <tile image="data/maps/tiles/forest/forest2.png" />
+			<tile image="data/maps/tiles/forest/forest.png" />
+            <tile image="data/maps/tiles/forest/forest2.png" />
+
             <tile image="data/maps/tiles/forest/swamp.png" />
+			<tile image="data/maps/tiles/forest/swamp.png" />
+			<tile image="data/maps/tiles/forest/swamp.png" />
+			<tile image="data/maps/tiles/forest/swamp.png" />
+			<tile image="data/maps/tiles/forest/swamp.png" />
         </tiles>
         <doodahs>
             <!-- "lezace na ziemi" -->

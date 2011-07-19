@@ -17,6 +17,7 @@
 #include "Logic/Achievements/CAchievementManager.h"
 #include "Logic/Quests/CQuestManager.h"
 #include "Logic/CPlayerManager.h"
+#include "Logic/CPlayer.h"
 #include "Logic/CLogic.h"
 #include "GUI/Localization/CLocalizator.h"
 
@@ -354,6 +355,9 @@ void CGameOptions::SetControls(const std::string &controls,int player)
 {
 	mControls[player] = controls;
 	System::Input::CBindManager::SetActualBindManager( StringUtils::ConvertToWString(controls), player );
+    // zmiana scheme'a? reset current-itema
+    if (gPlayerManager.GetPlayerByNumber(player))
+        gPlayerManager.GetPlayerByNumber(player)->InvalidateCurrentItem();
 
     // jesli ktos sobie zmienia sterowanie, to usun first_game
     std::remove( (GetUserDir() + "/first_game").c_str() );
@@ -450,6 +454,10 @@ void CGameOptions::SetKeyBinding(const std::string &controls, const std::string 
 	System::Input::CBindManager* bm = System::Input::CBindManager::GetBindManager( StringUtils::ConvertToWString(controls), player );
 	if ( bm != NULL )
 		bm->Change( name, key, lock );
+
+    // zmiana bindingu? reset current-itema
+    if (gPlayerManager.GetPlayerByNumber(player))
+        gPlayerManager.GetPlayerByNumber(player)->InvalidateCurrentItem();
 }
 
 int CGameOptions::GetKeyBinding(const std::string &controls, const std::string &name, int player)

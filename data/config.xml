@@ -1,4 +1,4 @@
-<root type="config" version="9">
+<root type="config" version="11">
 	<!-- VideoMode Config -->
 	<video width="800" height="600" fs="1" bpp="32" vsync="0" />
 	<!-- audio config -->
@@ -81,11 +81,10 @@
   <controlsScheme player="0" name="$CTRL_SET_MOUSE_ONLY" desc="$CTRL_SET_MOUSE_ONLY_DESC" menuDesc="$CTRL_SET_MOUSE_ONLY_MENU_DESC" flags="37">
     <keyBinding name="Help" key="305" />
     <keyBinding name="Abilities" key="306" />
-    <keyBinding name="PointNClick" key="321" />
     <keyBinding name="Abi-0" key="322" lock="0.1" />
-    <keyBinding name="Abi-1" key="323" lock="0.1" />
-    <keyBinding name="Abi-2" key="324" lock="0.1" />
-    <keyBinding name="Abi-3" key="325" lock="0.1" />
+    <keyBinding name="PointNClick" key="321" />
+    <keyBinding name="NextItem" key="326" />
+    <keyBinding name="PrevItem" key="327" />
   </controlsScheme>
   <controlsScheme player="0" name="$CTRL_SET_USER" desc="$CTRL_SET_USER_DESC" menuDesc="$CTRL_SET_USER_MENU_DESC" flags="0">
       <keyBinding name="Help" key="305" >

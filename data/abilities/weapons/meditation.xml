@@ -10,8 +10,7 @@ Bonus for this spell depends:
   not at all on sanguine rune
   totally on phlegmatic rune  
   </description>
-  <icon>data/abilities/weapons/meditation-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/meditation-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/meditation.png</icon>
 
   <!-- power = 0x cho, 4x mel, 0x san, 5x phl -->
   <power calc="0.2 * dot(0, choleric, 4, melancholic, 0, sanguine, 5, phlegmatic)"/>
