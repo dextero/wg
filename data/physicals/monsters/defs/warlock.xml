@@ -28,9 +28,11 @@
 
   <ai name="ranged-caster" />
 
-  <ability name="data/abilities/monsters/melee-with-swing.xml" default="1" />
-  <ability name="data/abilities/monster/warlock-firearrow.xml" />
-  <ability name="data/abilities/monster/warlock-lightning.xml" anim="attack2" />
+  <ability name="data/abilities/monsters/burning-hands.xml" default="1" />
+  <ability name="data/abilities/monsters/firearrow.xml" />
+  <ability name="data/abilities/monsters/crawling-lightning.xml" anim="attack2" />
+  <ability name="data/abilities/monsters/exploding-mines.xml" />
+  <ability name="data/abilities/monsters/black-blades.xml" />
 
   <sound type="damaged" filename="data/sounds/EL/pain-male01.ogg" />
   <sound type="damaged" filename="data/sounds/EL/pain-male02.ogg" />

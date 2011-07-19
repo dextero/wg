@@ -834,8 +834,8 @@ core/anim/warlock/attack-second
 
 core/anim/warlock/death
 {
-	0.2  "data/physicals/monsters/gfx/warlock-death.png"                  0    0   64   64
-    0.15 "data/physicals/monsters/gfx/warlock-death.png"                 64    0  128   64
+	0.1  "data/physicals/monsters/gfx/warlock-death.png"                  0    0   64   64
+    0.1  "data/physicals/monsters/gfx/warlock-death.png"                 64    0  128   64
     0.1  "data/physicals/monsters/gfx/warlock-death.png"                128    0  192   64
     0.1  "data/physicals/monsters/gfx/warlock-death.png"                192    0  256   64
 	0.1  "data/physicals/monsters/gfx/warlock-death.png"                  0   64   64  128

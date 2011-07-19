@@ -57,7 +57,7 @@ Bonus for this spell depends:
   <count calc="12 + (0.16 * power)" />
   <width calc="36.0" />
   <bullet value="data/physicals/bullets/firespark.xml" />
-  <filter value="wall,hostiles,obstacles"/>
+  <filter value="wall,hostiles,obstacle"/>
   <spread-type value="shotgun"/>
   <speed-fuzziness value="1.0" />
 

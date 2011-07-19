@@ -8,16 +8,16 @@
       <aim-at-ground value="1"/>
     </target-chooser>
     <effect type="list">
-      <effect type="list" tag="crawling-lightning">
-        <effect type="linked-graphical-effect">
-          <offset-x value="0.0"/>
-          <offset-y value="-0.25"/>
-          <name value="lightning" />
-          <time value="0.25" />
-        </effect>
+      <effect type="linked-graphical-effect">
+        <offset-x value="-0.25"/>
+        <offset-y value="0.25"/>
+        <name value="lightning" />
+        <time value="0.25" />
+      </effect>
+      <effect type="list" tag="crawling-lightning-effect">
         <effect type="sound">
           <name value="data/sounds/EL/thunder1.ogg" />
-          <name value="data/sounds/EL/thunder2.ogg" />
+          <name value="data/ssounds/EL/thunder2.ogg" />
           <name value="data/sounds/EL/thunder3.ogg" />
           <name value="data/sounds/EL/thunder4.ogg" />
           <name value="data/sounds/EL/thunder5.ogg" />
@@ -64,9 +64,17 @@
                   <aim-at-ground value="1"/>
                 </target-chooser>
                 <effect type="list">
-                  <effect type="jump">
-                    <name value="crawling-lightning"/>
-                  </effect>
+                  <effect type="list" tag="crawling-lightning">
+                    <effect type="linked-graphical-effect">
+                      <offset-x value="0"/>
+                      <offset-y value="0"/>
+                      <name value="lightning" />
+                      <time value="0.25" />
+                    </effect>
+                    <effect type="jump">
+                      <name value="crawling-lightning-effect"/>
+                    </effect>
+                  </effect>  
                   <effect type="bullet">
                     <emitter>
                       <speed value="0.0" />

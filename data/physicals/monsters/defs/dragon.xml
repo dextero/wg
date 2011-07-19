@@ -47,7 +47,7 @@
   <ability name="data/abilities/monsters/blizzard.xml" />
   <ability name="data/abilities/monsters/electric-nova.xml" /> 
   <ability name="data/abilities/monsters/meteor.xml" />
-  <ability name="data/abilities/monsters/red-ball-lightning-lvl2.xml" />
+  <ability name="data/abilities/monsters/green-ball-lightning.xml" />
 
   <sound type="attack" filename="data/sounds/EL/monster03.ogg" />
   <sound type="damaged" filename="data/sounds/EL/monster01.ogg" />
