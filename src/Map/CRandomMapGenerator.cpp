@@ -718,7 +718,7 @@ bool CRandomMapGenerator::PlaceRegions()
         if (first == mDesc.sizeY && last == mDesc.sizeY) // nie ma wejscia
             return false;
     
-        entry = sf::Vector2i(0, (last + first) / 2);    // srodek tunelu
+        mEntryPos = entry = sf::Vector2i(0, (last + first) / 2);    // srodek tunelu
         break;
 
     default:
@@ -974,10 +974,9 @@ bool CRandomMapGenerator::PlaceMonsters()
             return false; // zadamy mapy z bossem, a takiego nie ma :C
 
         sf::Vector2i pos(mDesc.sizeX / 2, mDesc.sizeY / 2);
-        while (mCurrent[pos.x][pos.y] != FREE) {
-            // ta petla nie powinna sie wykonac, ale niech zostanie dla zabezpieczenia.
+        if (mCurrent[pos.x][pos.y] != FREE) {
             // boss powinien moc sie zespawnowac na srodku mapy, jesli tak nie jest, to niedobrze
-            pos = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
+            fprintf(stderr, "warning: field in the centre [%d][%d] is blocked! (%ud) trying to put the boss there anyway...\n", pos.x, pos.y, mCurrent[pos.x][pos.y]);
         }
 
         SPhysical boss = bosses[rand() % bosses.size()];
