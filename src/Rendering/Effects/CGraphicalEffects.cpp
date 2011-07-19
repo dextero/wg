@@ -737,6 +737,10 @@ SDisplayableEffect * CGraphicalEffects::ShowEffect(
 			red = 0.5f;
 			green = 0.5f;
 			blue = 1.0f;
+		} else if (eps.name == "lightning-green"){
+			red = 0.76f;
+			green = 0.92f;
+			blue = 0.26f;
 		}
 
         if ( !from /* || !to */ )

@@ -1,0 +1,98 @@
+<root type="ability" class="self">
+
+  <effect type="list">
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.20"/>
+    </effect>
+    <effect type="timed">
+      <time value="1.4"/>
+      <effect type="modify">
+        <aspect value="speed" />
+        <amount value="0.0" />
+      </effect>  
+    </effect>
+    <effect type="recastable">
+      <recast value="0.1"/>
+      <time value="1.4"/>
+      <effect type="list">
+        <effect type="sound">
+          <name value="data/sounds/Lugaro/firestart.ogg" />
+        </effect>
+        <effect type="bullet">
+          <emitter>
+            <extra-offset value="0.1"/>
+            <range value="12.0" />
+            <speed value="2.0" />
+            <acceleration value="-4.0" />
+            <ttl value="0.3" />
+            <count value="2" />
+            <width value="35" />
+            <speed-fuzziness value="0.15" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+            <flight-effect type="graphical-effect">
+              <name value="bullet-explosion-mini" />
+              <time value="0.3" />
+            </flight-effect>
+          </emitter>
+        </effect>
+        <effect type="bullet">
+          <emitter>
+            <extra-offset value="0.1"/>
+            <range value="12.0" />
+            <speed value="2.0" />
+            <acceleration value="-4.0" />
+            <ttl value="0.3" />
+            <count value="2" />
+            <width value="55" />
+            <speed-fuzziness value="0.15" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+            <flight-effect type="graphical-effect">
+              <name value="bullet-explosion-mini" />
+              <time value="0.3" />
+            </flight-effect>
+          </emitter>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="recastable">
+      <recast value="0.4"/>
+      <time value="1.4"/>
+      <effect type="retarget" tag="attack">
+        <target-chooser>
+          <filter value="player,obstacle"/>
+          <range calc="1.0"/>
+          <angle value="75.0"/>
+          <count value="2"/>
+          <aim-at-ground value="0"/>
+        </target-chooser>
+        <effect type="list">
+          <effect type="knockback">
+            <amount calc="2.0" />
+          </effect>
+          <effect type="damage">
+            <damage-type value="fire"/>
+            <amount calc="1.0 * intelligence" />
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="delayed">
+      <time value="0.1" />
+      <effect type="jump">
+        <name value="attack"/>
+      </effect>
+    </effect>
+  </effect>	
+
+  <manacost calc="1.0" />
+  <casttime calc="0.05" />
+  <delay calc="1.45" />
+  <cooldown calc="1.45" />
+
+  <ai-hint>
+    <player-distance>1.1</player-distance>
+    <player-angle>40.0</player-angle>
+  </ai-hint>
+
+</root>
