@@ -27,7 +27,7 @@ const CBindManager::ActionPair CBindManager::availableActions[] = {
     CBindManager::ActionPair("MoveDownAbs",   CBindManager::agAbsolute),
     CBindManager::ActionPair("MoveLeftAbs",   CBindManager::agAbsolute),
     CBindManager::ActionPair("MoveRightAbs",  CBindManager::agAbsolute),
-    CBindManager::ActionPair("Abi-0",         CBindManager::agNormalCast),
+    CBindManager::ActionPair("Abi-0",         CBindManager::agNormalCast | CBindManager::agPointNClick),
     CBindManager::ActionPair("Abi-1",         CBindManager::agNormalCast),
     CBindManager::ActionPair("Abi-2",         CBindManager::agNormalCast),
     CBindManager::ActionPair("Abi-3",         CBindManager::agNormalCast),
@@ -42,10 +42,12 @@ const CBindManager::ActionPair CBindManager::availableActions[] = {
     CBindManager::ActionPair("Slot-2",        CBindManager::agSeparateSeq),
     CBindManager::ActionPair("Help",          CBindManager::agAll),
     CBindManager::ActionPair("Abilities",     CBindManager::agAll),
-    CBindManager::ActionPair("PointNClick",   CBindManager::agPointNClick)
+    CBindManager::ActionPair("PointNClick",   CBindManager::agPointNClick),
+    CBindManager::ActionPair("NextItem",      CBindManager::agPointNClick),
+    CBindManager::ActionPair("PrevItem",      CBindManager::agPointNClick)
 };
 
-const unsigned int CBindManager::availableActionsCount = 26;
+const unsigned int CBindManager::availableActionsCount = 28;
 
 
 void CBindManager::SetActualBindManager(size_t nr, unsigned playerNumber)
@@ -228,6 +230,12 @@ void CBindManager::ForceMouseLeftReleased( )
 	mKeyboard[sf::Key::Count + sf::Mouse::Left].mNewKeyState = KEY_FREE;
 }
 
+void CBindManager::MouseWheelMoved( const sf::Event::MouseWheelEvent &e )
+{
+    mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + (e.Delta < 0 ? 0 /* down */ : 1 /* up */)].OnKeyPress();
+    //mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + (e.Delta < 0 ? 0 /* down */ : 1 /* up */)].OnKeyRelease();
+}
+
 void CBindManager::KeyPressed( const sf::Event::KeyEvent &e )
 {
 	mKeyboard[e.Code].OnKeyPress();
@@ -240,17 +248,17 @@ void CBindManager::KeyReleased( const sf::Event::KeyEvent &e )
 
 void CBindManager::JoyButtonPressed( const sf::Event::JoyButtonEvent &e )
 {
-	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + GetJoystickButtonId(e.Button,e.JoystickId)].OnKeyPress();
+	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + 2 /* wheelUp/Down */ + GetJoystickButtonId(e.Button,e.JoystickId)].OnKeyPress();
 }
 
 void CBindManager::JoyButtonReleased( const sf::Event::JoyButtonEvent &e )
 {
-	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + GetJoystickButtonId(e.Button,e.JoystickId)].OnKeyRelease();
+	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + 2 /* wheelUp/Down */ + GetJoystickButtonId(e.Button,e.JoystickId)].OnKeyRelease();
 }
 
 void CBindManager::JoyMoved( const sf::Event::JoyMoveEvent &e )
 {
-	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + GetJoystickAxisId(e.Axis, e.JoystickId, e.Position)].OnKeyPress();
+	mKeyboard[sf::Key::Count + sf::Mouse::ButtonCount + 2 /* wheelUp/Down */ + GetJoystickAxisId(e.Axis, e.JoystickId, e.Position)].OnKeyPress();
 }
 
 void CBindManager::UpdateKeySyncGroups()
@@ -335,6 +343,24 @@ void CBindManager::FrameStarted(float secondsPassed)
 		SynchrnonizeGroup(*group);
 		group++;
 	}
+
+    // przy kolku myszy trzeba recznie zrobic "zwolnienie klawisza"
+    static int wheelDelay[] = { 0, 0 };
+    for (int k = 0; k < 2; ++k)
+    {
+        int key = sf::Key::Count + sf::Mouse::ButtonCount + k;
+
+        if (mKeyboard[key].GetKeyState() != KEY_FREE)
+        {
+            if (wheelDelay[k] > 5) // niech bedzie 5 klatek
+            {
+                mKeyboard[key].OnKeyRelease();
+                wheelDelay[k] = 0;
+            }
+            else
+                ++wheelDelay[k];
+        }
+    }
 
 	if (mMouseCaster != NULL)
 		mMouseCaster->Update();

@@ -1,0 +1,172 @@
+<root type="ability" class="self">
+
+  <effect type="list">
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="2.75"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-4"/>
+      <time value="1.65"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-4"/>
+      <time value="2.75"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-5"/>
+      <time value="2.75"/>
+    </effect>
+    <effect type="timed">
+      <time value="2.5"/>
+      <effect type="modify">
+        <aspect value="speed" />
+        <amount value="0.0" />
+      </effect>  
+    </effect>
+    <effect type="recastable">
+      <recast value="0.05"/>
+      <time value="0.15" />
+      <effect type="bullet" tag="icearrow-volley-tag">    
+        <emitter>
+          <range calc="16.0" />
+          <speed value="6.75" />
+          <ttl value="1.1"/>
+          <acceleration value="-3.0" />
+          <count calc="rnd(1,2)" />
+          <spread-type value="shotgun" />
+          <width calc="80" />
+          <explode-on-fade value="1" />
+          <speed-fuzziness value="0.7"/>
+          <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+          <extra-offset value="0.12"/>      
+          <filter value="wall" />
+
+          <flight-effect type="list">
+            <effect type="recastable">
+              <recast value="0.20"/>
+              <time value="1.0"/>
+              <effect type="bullet">
+                <emitter>
+                  <range calc="16.0" />
+                  <speed value="4.5" />
+                  <ttl calc="2.0 + rnd(0, 1)"/>
+                  <acceleration value="-6.0" />
+                  <count calc="rnd(1,2)" />
+                  <spread-type value="shotgun" />
+                  <width calc="270" />
+                  <explode-on-fade value="1" />
+                  <speed-fuzziness value="0.8"/>
+                  <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+                  <extra-offset value="0.12"/>      
+                  <filter value="wall" />
+                  <flight-effect type="list">
+                    <effect type="recastable">
+                      <recast value="1.50"/>
+                      <time value="2.01"/>
+                      <effect type="graphical-effect">
+                        <name value="storm-cloud"/>
+                        <time value="0.1"/>
+                      </effect>
+                    </effect>
+                    <effect type="recastable">
+                      <recast value="1.00"/>
+                      <time value="2.01"/>
+                      <effect type="graphical-effect">
+                        <name value="shield"/>
+                        <time value="2.0"/>
+                      </effect>
+                    </effect>
+                    <effect type="recastable">
+                      <recast value="1.00"/>
+                      <time value="2.01"/>
+                      <effect type="graphical-effect">
+                        <name value="trail"/>
+                        <time value="2.0"/>
+                      </effect>
+                    </effect>
+                  </flight-effect>
+                  <explosion type="list">
+                    <effect type="sound">
+                      <name value="data/sounds/shotgun.wav" />
+                    </effect>
+                    <effect type="graphical-effect">
+                      <name value="blue-explosion" />
+                      <time value="1.0" />
+                    </effect>
+                    <effect type="bullet">
+                      <emitter>
+                        <extra-offset value="0.2"/>
+                        <range value="12.0" />
+                        <speed value="3.0" />
+                        <ttl value="0.5" />
+                        <count value="15" />
+                        <width value="345" />
+                        <bullet value="data/physicals/bullets/icicle.xml" />
+                        <filter value="player,obstacle,wall" />
+                        <explosion type="list">
+                          <effect type="sound">
+                            <name value="data/sounds/Lugaro/whoosh.ogg" />
+                          </effect>
+                          <effect type="graphical-effect">
+                            <name value="blue-explosion-mini" />
+                            <time value="0.8" />
+                          </effect>
+                        </explosion>
+                        <effect type="list">
+                          <effect type="graphical-effect">
+                            <name value="colorize-blue" />
+                            <time calc="1.75" />
+                          </effect>
+                          <effect type="non-cumulative">
+                            <effect type="timed">
+                              <time calc="1.75" />
+                              <effect type="modify">
+                                <aspect value="speed" />
+                                <amount calc="0.76" />
+                              </effect>
+                            </effect>
+                          </effect>
+                          <effect type="damage">
+                            <damage-type value="ice"/>
+                            <amount calc="1.0 * intelligence" />
+                          </effect>
+                        </effect>
+                      </emitter>
+                    </effect>
+                  </explosion>
+                </emitter>
+              </effect>
+            </effect>
+          </flight-effect>
+
+        </emitter>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list"> 
+    <effect type="graphical-effect">
+      <name value="magic-circle-4"/>
+      <time value="0.75"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-2"/>
+      <time value="0.75"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>  
+  </cast-time-effect>
+
+  <manacost value="10" />
+  <casttime value="0.75" />
+  <delay value="0.45" />
+  <cooldown calc="5.5 + rnd(1, 8)" />
+
+  <ai-hint>
+    <player-distance>7.0</player-distance>
+    <player-angle>25</player-angle>
+  </ai-hint>
+</root>

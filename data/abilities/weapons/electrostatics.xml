@@ -10,8 +10,7 @@ Bonus for this spell depends:
   extremely on sanguine rune
   barely on phlegmatic rune
   </description>
-  <icon>data/abilities/weapons/electrostatics-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/electrostatics-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/electrostatics.png</icon>
 
   <!-- power = 3x cho, 2x mel, 4x san, 1x phl -->
   <power calc="0.2 * dot(3, choleric, 2, melancholic, 4, sanguine, 1, phlegmatic)"/>

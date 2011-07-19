@@ -10,8 +10,7 @@ Bonus for this spell depends:
   not at all on sanguine rune
   barely on phlegmatic rune
   </description>
-  <icon>data/abilities/weapons/basher-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/basher-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/basher.png</icon>
 
   <!-- power = 1x cho, 4x mel, 0x san, 1x phl -->
   <power calc="0.2 * dot(1, choleric, 4, melancholic, 0, sanguine, 1, phlegmatic)"/>

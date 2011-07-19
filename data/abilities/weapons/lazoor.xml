@@ -10,8 +10,7 @@ Bonus for this spell depends:
   mildly on sanguine rune
   mildly on phlegmatic rune  
   </description>
-  <icon>data/abilities/weapons/lazoor-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/lazoor-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/lazoor.png</icon>
 
   <!-- power = 1x cho, 1x mel, 2x san, 2x phl -->
   <power calc="0.2 * dot(1, choleric, 1, melancholic, 2, sanguine, 2, phlegmatic)"/>

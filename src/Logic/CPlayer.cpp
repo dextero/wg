@@ -41,7 +41,8 @@ CPlayer::CPlayer(const std::wstring& uniqueId) :
     mAttrPoints(0),
     mAbilityTrees(NULL),
     mAbiCodes(NULL),
-	mPinned(new CPinnedAbilityBatch(this))
+	mPinned(new CPinnedAbilityBatch(this)),
+    mCurrentItem(0)
 {
     fprintf(stderr,"CPlayer::CPlayer(%ls)\n",uniqueId.c_str());
 
@@ -312,6 +313,27 @@ void CPlayer::RemoveItem(CItem * item) {
             break;
         }
     }
+}
+
+CItem* CPlayer::GetCurrentItem()
+{
+    return GetItem(mCurrentItem);
+}
+
+void CPlayer::SwitchCurrentItem(bool reverse)
+{
+    int loopGuard = 0;
+    do {
+        if (reverse) --mCurrentItem;
+        else ++mCurrentItem;
+        if (mCurrentItem < 0) mCurrentItem = 3;
+        if (mCurrentItem > 3) mCurrentItem = 0;
+
+        ++loopGuard;
+    } while (!GetItem(mCurrentItem) && loopGuard < 4);
+
+    if (loopGuard == 4)
+        fprintf(stderr, "Couldn't switch current item - there's no one in the inventory\n");
 }
 
 

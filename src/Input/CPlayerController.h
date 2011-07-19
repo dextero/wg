@@ -65,7 +65,7 @@ public:
 	void SetRotation(float value);
     void SetWalkingAbsolute(bool north, bool east, bool south, bool west);
 	void SetMouseLook(bool look);
-    void SetWalkTarget(bool walk, sf::Vector2f target = sf::Vector2f(0.f, 0.f));
+    void SetWalkTarget(bool walk, sf::Vector2f target = sf::Vector2f(0.f, 0.f), bool force = false);
 
     void AbiKeyPressed(int idx, bool hold);
 	void StartTalk();

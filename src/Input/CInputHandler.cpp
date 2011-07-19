@@ -180,6 +180,12 @@ void CInputHandler::FrameStarted( float secondsPassed ){
 //				else if (pc->AbilityActivatedJustNow())								mc->Focus();
 
 			}
+
+            /* nastepny/poprzedni item */
+            if (gBindManagerByPlayer(i)->Check("NextItem") & press)
+                p->SwitchCurrentItem();
+            if (gBindManagerByPlayer(i)->Check("PrevItem") & press)
+                p->SwitchCurrentItem(true);
 		}
 	}
 }

@@ -2,9 +2,9 @@
 
   <bestiary>
     <name value="Baldurian" />
-    <desc value="This demon comes from the deepest and least explored reaches of hell. He commands powerful magic that summons multiple minions." />
+    <desc value="This demon comes from the deepest and least explored reaches of hell. He commands highly fiery magic allowing him to cast fire projectiles of any form." />
   </bestiary>
-  <genre>final-boss</genre>
+  <genre>baldurian</genre>
 
   <maxhp min="3000.0" max="3000.0" />
   <speed min="1.25" max="1.25" />
@@ -38,7 +38,7 @@
 
   <ai name="melee-chaser" />
 
-  <ability name="data/abilities/monsters/melee-with-stun.xml" default="1" />
+  <ability name="data/abilities/monsters/melee-boss.xml" default="1" />
   <ability name="data/abilities/monsters/fireburst.xml" />
   <ability name="data/abilities/monsters/fire-bullets.xml" />
   <ability name="data/abilities/monsters/firestream.xml" />

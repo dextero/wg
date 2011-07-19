@@ -111,10 +111,10 @@ void CPlayerController::SetMouseLook(bool look)
 	mMouseLook = look;
 }
 
-void CPlayerController::SetWalkTarget(bool walk, sf::Vector2f target)
+void CPlayerController::SetWalkTarget(bool walk, sf::Vector2f target, bool force)
 {
     // albo ma isc, albo jest w trakcie
-    mHasWalkTarget = (walk || mHasWalkTarget);
+    mHasWalkTarget = force ? walk : (walk || mHasWalkTarget);
     // bylo klikniecie = zmiana kierunku
     if (walk)
         mWalkTarget = target;
@@ -229,6 +229,10 @@ void CPlayerController::Update(float dt) {
 		int res = -1;
 
         CItem * item = ((CPlayer*)mActor)->GetItem(mLastKey);
+        // dex: nie wiem jak to napisac lepiej, zeby nie smiecic niepotrzebnymi flagami
+        if (mLastKey == 0 && ((CPlayer*)mActor)->GetCurrentItem())
+            item = ((CPlayer*)mActor)->GetCurrentItem();
+
         if (item) {
             fprintf(stderr, "item->%s\n", item->GetAbility().c_str());
             res = mActor->GetAbilityPerformer().FindAbilityIndexByInvPos(item->mInvPos);

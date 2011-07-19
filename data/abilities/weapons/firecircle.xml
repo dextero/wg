@@ -10,8 +10,7 @@ Bonus for this spell depends:
   barely on sanguine rune
   heavily on phlegmatic rune     
   </description>
-  <icon>data/abilities/weapons/firecircle-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/firecircle-1.png</unavailable-icon>
+  <icon>data/abilities/weapons/firecircle.png</icon>
 
   <!-- power = 4x cho, 0x mel, 1x san, 3x phl -->
   <power calc="0.2 * dot(4, choleric, 0, melancholic, 1, sanguine, 3, phlegmatic)"/>

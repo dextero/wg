@@ -1,8 +1,8 @@
 exec pre-new-game
 new-player 0
-god-mode
+#god-mode
 set-ability player0 data/abilities/weapons/firebolt.xml 0
-set-ability player0 data/abilities/weapons/hellfire.xml 1
+#set-ability player0 data/abilities/weapons/hellfire.xml 1
 #set-ability player0 data/abilities/weapons/exploding-corpse.xml 2
 #set-ability player0 data/abilities/weapons/transfusion.xml 3
 set-map-level 0
