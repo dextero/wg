@@ -38,7 +38,7 @@ namespace GUI
 		virtual bool OnMouseEvent( float x, float y, mouseEvent e );
 		virtual void OnKeyEvent( const sf::Event::KeyEvent& e, bool pressed );
         
-        void CKeyReader::SetKeyFromMouseButton(sf::Mouse::Button btn);
+        void SetKeyFromMouseButton(sf::Mouse::Button btn);
 
 		bool mMouseOver;
         bool mActive;

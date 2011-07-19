@@ -7,6 +7,7 @@
 #include "../ResourceManager/CImage.h"
 #include "../CGameOptions.h"
 #include "../Audio/CAudioManager.h"
+#include "../Input/CBindManager.h"
 
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/Graphics/Sprite.hpp>
@@ -119,12 +120,16 @@ bool CButton::OnMouseEvent( float x, float y, mouseEvent e )
 	switch ( e )
 	{
 	case MOUSE_PRESSED_LEFT:
+		fprintf(stderr, "mouse pressed left on button!\n");
         mMousePressed = true;
+        System::Input::CBindManager::GetActualBindManager(0 /* TODO player number? */)->ForceMouseLeftReleased();
         gAudioManager.GetSoundPlayer().Play(gResourceManager.GetSound("data/sounds/GUI_klik.ogg"));
 		break;
     case MOUSE_RELEASED_LEFT:
+    	fprintf(stderr, "mouse released left on button!\n");
         if (mMousePressed)
         {
+            System::Input::CBindManager::GetActualBindManager(0 /* TODO player number? */)->ForceMouseLeftReleased();
             gGUI.SetActiveObject( NULL );
 		    if ( !mClickCallback.empty() )		mClickCallback();
 		    if ( !mClickParamCallback.empty() ) mClickParamCallback( mClickCallbackParams );

@@ -49,6 +49,8 @@ public:
 	inline const sf::Vector2i& GetSavedCursorPosition() {return mCursorPos;}
 
     void OptionSelected(int selected);
+    void OptionSelectedThroughMouse(int selected);    
+
     void SetOptionHandler(IOptionChooserHandler * handler);
     void SetPlayer(CPlayer * player);
     CPlayer * GetPlayer();
@@ -70,6 +72,7 @@ private:
     float mOptionFontSize;
 
     IOptionChooserHandler * mOptionHandler;
+    // TODO SafePtr!
     CPlayer * mPlayer; // ja to tak moge sobie przechowywac? Co jak ktos mi zabije tego gracza, wskaznik umrze?
 
 	void UpdatePosition();

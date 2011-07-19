@@ -78,6 +78,7 @@ void CInputHandler::FrameStarted( float secondsPassed ){
 			sf::Vector2f cursorPos( (float) in.GetMouseX() / gCamera.GetZoom(), (float) in.GetMouseY() / gCamera.GetZoom() );
 
             pc->SetWalkTarget((gBindManagerByPlayer(i)->Check("PointNClick") & keyMask) != 0, (gCamera.GetViewTopLeft() + cursorPos) / (float)Map::TILE_SIZE);
+            if (gBindManagerByPlayer(i)->Check("PointNClick") & keyMask != 0) fprintf(stderr, "PointNClick activated!\n");
 
 			/* obrót mysza */
 
