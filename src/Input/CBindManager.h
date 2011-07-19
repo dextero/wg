@@ -74,6 +74,7 @@ namespace System
         static const ActionPair availableActions[];
         static const unsigned int availableActionsCount;
 
+			void ForceMouseLeftReleased();
 		private:
 			class CKey
 			{

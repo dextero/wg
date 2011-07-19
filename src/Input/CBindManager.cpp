@@ -7,6 +7,7 @@
 #include "../GUI/CAbilityTreeDisplayer.h"
 #include "../Logic/CLogic.h"
 #include <iostream>
+#include <SFML/Window/Event.hpp>
 
 using namespace System::Input;
 
@@ -110,7 +111,7 @@ void CBindManager::AddBindManager( const std::wstring & id, unsigned playerNumbe
 
 void CBindManager::NextBindManager( unsigned playerNumber )
 {
-//  warning: operation on �?System::Input::CBindManager::mActual’ may be undefined
+//  warning: operation on �?System::Input::CBindManager::mActual’ may be undefined
 //	mActual = ++mActual % mBindManagers.size();
     mActual[playerNumber] = ( mActual[playerNumber] + 1 ) % mBindManagers[playerNumber].size();
 }
@@ -219,6 +220,12 @@ void CBindManager::MousePressed( const sf::Event::MouseButtonEvent &e )
 void CBindManager::MouseReleased( const sf::Event::MouseButtonEvent &e )
 {
 	mKeyboard[sf::Key::Count + e.Button].OnKeyRelease();
+}
+void CBindManager::ForceMouseLeftReleased( )
+{
+	fprintf(stderr, "ForceMouseLeftReleased()\n");
+	mKeyboard[sf::Key::Count + sf::Mouse::Left].mKeyState = KEY_FREE;
+	mKeyboard[sf::Key::Count + sf::Mouse::Left].mNewKeyState = KEY_FREE;
 }
 
 void CBindManager::KeyPressed( const sf::Event::KeyEvent &e )
