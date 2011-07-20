@@ -2621,22 +2621,22 @@ core/anim/effects/blue-explosions/mini/14
 
 core/anim/effects/green-explosions/1
 {
-	0.05 "data/effects/test-explosions/greenexplode_1.png"              0   0  64  64
-	0.05 "data/effects/test-explosions/greenexplode_1.png"             64   0 128  64
-	0.05 "data/effects/test-explosions/greenexplode_1.png"            128   0 196  64
-	0.05 "data/effects/test-explosions/greenexplode_1.png"            196   0 256  64
-	0.05 "data/effects/test-explosions/greenexplode_1.png"              0  64  64 128
-	0.05 "data/effects/test-explosions/greenexplode_1.png"             64  64 128 128
-	0.05 "data/effects/test-explosions/greenexplode_1.png"            128  64 196 128
-	0.05 "data/effects/test-explosions/greenexplode_1.png"            196  64 256 128
-	0.05 "data/effects/test-explosions/greenexplode_1.png"              0 128  64 196
-	0.05 "data/effects/test-explosions/greenexplode_1.png"             64 128 128 196
-	0.05 "data/effects/test-explosions/greenexplode_1.png"            128 128 196 196
-	0.05 "data/effects/test-explosions/greenexplode_1.png"            196 128 256 196
-	0.05 "data/effects/test-explosions/greenexplode_1.png"              0 196  64 256
-	0.05 "data/effects/test-explosions/greenexplode_1.png"             64 196 128 256
-	0.05 "data/effects/test-explosions/greenexplode_1.png"            128 196 196 256
-	0.05 "data/effects/test-explosions/greenexplode_1.png"            196 196 256 256
+	0.15 "data/effects/test-explosions/greenexplode_1.png"              0   0  64  64
+	0.15 "data/effects/test-explosions/greenexplode_1.png"             64   0 128  64
+	0.15 "data/effects/test-explosions/greenexplode_1.png"            128   0 196  64
+	0.15 "data/effects/test-explosions/greenexplode_1.png"            196   0 256  64
+	0.15 "data/effects/test-explosions/greenexplode_1.png"              0  64  64 128
+	0.15 "data/effects/test-explosions/greenexplode_1.png"             64  64 128 128
+	0.15 "data/effects/test-explosions/greenexplode_1.png"            128  64 196 128
+	0.15 "data/effects/test-explosions/greenexplode_1.png"            196  64 256 128
+	0.15 "data/effects/test-explosions/greenexplode_1.png"              0 128  64 196
+	0.15 "data/effects/test-explosions/greenexplode_1.png"             64 128 128 196
+	0.15 "data/effects/test-explosions/greenexplode_1.png"            128 128 196 196
+	0.15 "data/effects/test-explosions/greenexplode_1.png"            196 128 256 196
+	0.15 "data/effects/test-explosions/greenexplode_1.png"              0 196  64 256
+	0.15 "data/effects/test-explosions/greenexplode_1.png"             64 196 128 256
+	0.15 "data/effects/test-explosions/greenexplode_1.png"            128 196 196 256
+	0.15 "data/effects/test-explosions/greenexplode_1.png"            196 196 256 256
 }
 core/anim/effects/green-explosions/2
 {
@@ -3704,7 +3704,7 @@ core/anim/frost-demon/death
 
 core/anim/dragon/default
 {
-    1.00  "data/physicals/monsters/gfx/dragon.png"                 0   0  128 128
+    0.10  "data/physicals/monsters/gfx/dragon.png"                 0   0  128 128
 }
 
 core/anim/dragon/move
@@ -3747,22 +3747,22 @@ core/anim/dragon/attack/wounded
 
 core/anim/dragon/death
 {
-    0.10  "data/physicals/monsters/gfx/dragon.png"                0  512  128  640
-    0.10  "data/physicals/monsters/gfx/dragon.png"              128  512  256  640
-    0.10  "data/physicals/monsters/gfx/dragon.png"              256  512  384  640
-    0.10  "data/physicals/monsters/gfx/dragon.png"              384  512  512  640
-    0.10  "data/physicals/monsters/gfx/dragon.png"              512  512  640  640
-    0.10  "data/physicals/monsters/gfx/dragon.png"              640  512  768  640
-    0.10  "data/physicals/monsters/gfx/dragon.png"              768  512  896  640
-    2.50  "data/physicals/monsters/gfx/dragon.png"              896  512 1024  640
-    0.10  "data/physicals/monsters/gfx/dragon.png"                0  640  128  768
-    0.10  "data/physicals/monsters/gfx/dragon.png"              128  640  256  768
-    0.10  "data/physicals/monsters/gfx/dragon.png"              256  640  384  768
-    0.10  "data/physicals/monsters/gfx/dragon.png"              384  640  512  768
-    0.10  "data/physicals/monsters/gfx/dragon.png"              512  640  640  768
-    0.10  "data/physicals/monsters/gfx/dragon.png"              640  640  768  768
-    0.10  "data/physicals/monsters/gfx/dragon.png"              768  640  896  768
-    0.10  "data/physicals/monsters/gfx/dragon.png"              896  640 1024  768
+    0.03  "data/physicals/monsters/gfx/dragon.png"                0  512  128  640
+    0.03  "data/physicals/monsters/gfx/dragon.png"              128  512  256  640
+    0.03  "data/physicals/monsters/gfx/dragon.png"              256  512  384  640
+    0.03  "data/physicals/monsters/gfx/dragon.png"              384  512  512  640
+    0.03  "data/physicals/monsters/gfx/dragon.png"              512  512  640  640
+    0.03  "data/physicals/monsters/gfx/dragon.png"              640  512  768  640
+    0.03  "data/physicals/monsters/gfx/dragon.png"              768  512  896  640
+    0.03  "data/physicals/monsters/gfx/dragon.png"              896  512 1024  640
+    0.03  "data/physicals/monsters/gfx/dragon.png"                0  640  128  768
+    0.03  "data/physicals/monsters/gfx/dragon.png"              128  640  256  768
+    0.03  "data/physicals/monsters/gfx/dragon.png"              256  640  384  768
+    0.03  "data/physicals/monsters/gfx/dragon.png"              384  640  512  768
+    0.03  "data/physicals/monsters/gfx/dragon.png"              512  640  640  768
+    0.03  "data/physicals/monsters/gfx/dragon.png"              640  640  768  768
+    0.03  "data/physicals/monsters/gfx/dragon.png"              768  640  896  768
+    0.03  "data/physicals/monsters/gfx/dragon.png"              896  640 1024  768
 }
 
 ###################################### Minelayer
