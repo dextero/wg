@@ -1,4 +1,8 @@
 <root type="locale" name="English" code="en">
+    <entry>
+		<key>ABILITY_IS_FOCUS_ABILITY</key>
+		<value>This item is a 'focus' weapon. You need to keep action key pressed to fully utilize its power.</value>
+    </entry>
 	<entry>
 		<key>ABI_WEAPONS_FIREBALL</key>
 		<value>Fire ball</value>

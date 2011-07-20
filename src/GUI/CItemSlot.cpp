@@ -205,6 +205,11 @@ void CItemSlot::UpdateTooltipText(const std::string& abiName)
     if (abi)
     {
         tooltipText = abi->name + L" (" + gLocalizator.GetText("ITEM_LEVEL") + L" " + StringUtils::ToWString(mSelectedItem->mLevel) + L")";
+        if (abi->isFocus) {
+            tooltipText += CTextArea::GetNextColorString(sf::Color(231, 216, 46)) //Gold
+                    + L"\n\n" + gLocalizator.GetText("ABILITY_IS_FOCUS_ABILITY")
+                    + CTextArea::GetNextColorString(sf::Color::White);
+        }
         tooltipText += L"\n\n" + gLocalizator.GetText("SLOT_DRAG_ITEM_HERE");
         tooltipText += L"\n\n" + abi->description;
         tooltipText += L"\n\n" + gLocalizator.GetText("CURRENT_ITEM_POWER");
