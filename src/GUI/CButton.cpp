@@ -122,14 +122,16 @@ bool CButton::OnMouseEvent( float x, float y, mouseEvent e )
 	case MOUSE_PRESSED_LEFT:
 		fprintf(stderr, "mouse pressed left on button!\n");
         mMousePressed = true;
-        System::Input::CBindManager::GetActualBindManager(0 /* TODO player number? */)->ForceMouseLeftReleased();
+        System::Input::CBindManager::GetActualBindManager(0)->ForceMouseLeftReleased();
+        System::Input::CBindManager::GetActualBindManager(1)->ForceMouseLeftReleased();
         gAudioManager.GetSoundPlayer().Play(gResourceManager.GetSound("data/sounds/GUI_klik.ogg"));
 		break;
     case MOUSE_RELEASED_LEFT:
     	fprintf(stderr, "mouse released left on button!\n");
         if (mMousePressed)
         {
-            System::Input::CBindManager::GetActualBindManager(0 /* TODO player number? */)->ForceMouseLeftReleased();
+            System::Input::CBindManager::GetActualBindManager(0)->ForceMouseLeftReleased();
+            System::Input::CBindManager::GetActualBindManager(1)->ForceMouseLeftReleased();
             gGUI.SetActiveObject( NULL );
 		    if ( !mClickCallback.empty() )		mClickCallback();
 		    if ( !mClickParamCallback.empty() ) mClickParamCallback( mClickCallbackParams );
