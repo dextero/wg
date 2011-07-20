@@ -7,57 +7,7 @@
 	<locale lang="en"/>
   
   <!-- player1 -->
-  <controlsScheme player="0" name="$CTRL_SET_MOUSE" desc="$CTRL_SET_MOUSE_DESC" menuDesc="$CTRL_SET_MOUSE_MENU_DESC" flags="1">
-    <keyBinding name="MoveUp" key="321" />
-    <keyBinding name="MoveDown" key="322" />
-    <keyBinding name="MoveLeft" key="97" />
-    <keyBinding name="MoveRight" key="100" />
-    <keyBinding name="Abi-0" key="113" lock="0.1" />
-    <keyBinding name="Abi-1" key="119" lock="0.1" />
-    <keyBinding name="Abi-2" key="101" lock="0.1" />
-    <keyBinding name="Abi-3" key="114" lock="0.1" />
-    <keyBinding name="Help" key="305" >
-      <override platform="macintosh" key="122" />
-    </keyBinding>
-    <keyBinding name="Abilities" key="306" >
-      <override platform="macintosh" key="120" />
-    </keyBinding>
-  </controlsScheme>
-  <controlsScheme player="0" name="$CTRL_SET_8-K" desc="$CTRL_SET_8-K_DESC" menuDesc="$CTRL_SET_8-K_MENU_DESC" flags="20">
-    <keyBinding name="MoveUpAbs" key="293" />
-    <keyBinding name="MoveDownAbs" key="294" />
-    <keyBinding name="MoveLeftAbs" key="291" />
-    <keyBinding name="MoveRightAbs" key="292" />
-    <keyBinding name="Abi-0" key="113" lock="0.1" />
-    <keyBinding name="Abi-1" key="119" lock="0.1" />
-    <keyBinding name="Abi-2" key="101" lock="0.1" />
-    <keyBinding name="Abi-3" key="114" lock="0.1" />
-      <keyBinding name="Help" key="305" >
-        <override platform="macintosh" key="122" />
-      </keyBinding>
-      <keyBinding name="Abilities" key="306" >
-        <override platform="macintosh" key="120" />
-      </keyBinding>
-  </controlsScheme>
-  <controlsScheme player="0" name="$CTRL_SET_CLASSIC" desc="$CTRL_SET_CLASSIC_DESC" menuDesc="$CTRL_SET_CLASSIC_MENU_DESC" flags="0">
-    <keyBinding name="MoveUp" key="293" />
-    <keyBinding name="MoveDown" key="294" />
-    <keyBinding name="TurnLeft" key="291" />
-    <keyBinding name="TurnRight" key="292" />
-    <keyBinding name="MoveLeft" key="97" />
-    <keyBinding name="MoveRight" key="100" />
-    <keyBinding name="Abi-0" key="113" lock="0.1" />
-    <keyBinding name="Abi-1" key="119" lock="0.1" />
-    <keyBinding name="Abi-2" key="101" lock="0.1" />
-    <keyBinding name="Abi-3" key="114" lock="0.1" />
-      <keyBinding name="Help" key="305" >
-        <override platform="macintosh" key="122" />
-      </keyBinding>
-      <keyBinding name="Abilities" key="306" >
-        <override platform="macintosh" key="120" />
-      </keyBinding>
-  </controlsScheme>
-  <controlsScheme player="0" name="$CTRL_SET_DAB" desc="$CTRL_SET_DAB_DESC" menuDesc="$CTRL_SET_DAB_MENU_DESC" flags="29">
+  <controlsScheme player="0" name="$CTRL_SET_MOUSE_AND_KEYBOARD" desc="$CTRL_SET_MOUSE_AND_KEYBOARD_DESC" menuDesc="$CTRL_SET_MOUSE_AND_KEYBOARD_MENU_DESC" flags="29">
     <keyBinding name="MoveUpAbs" key="119" />
     <keyBinding name="MoveDownAbs" key="115" />
     <keyBinding name="MoveLeftAbs" key="97" />
@@ -78,6 +28,22 @@
         <override platform="macintosh" key="120" />
       </keyBinding>
   </controlsScheme>
+  <controlsScheme player="0" name="$CTRL_SET_KEYBOARD_ONLY" desc="$CTRL_SET_KEYBOARD_ONLY_DESC" menuDesc="$CTRL_SET_KEYBOARD_ONLY_MENU_DESC" flags="20">
+    <keyBinding name="MoveUpAbs" key="293" />
+    <keyBinding name="MoveDownAbs" key="294" />
+    <keyBinding name="MoveLeftAbs" key="291" />
+    <keyBinding name="MoveRightAbs" key="292" />
+    <keyBinding name="Abi-0" key="113" lock="0.1" />
+    <keyBinding name="Abi-1" key="119" lock="0.1" />
+    <keyBinding name="Abi-2" key="101" lock="0.1" />
+    <keyBinding name="Abi-3" key="114" lock="0.1" />
+      <keyBinding name="Help" key="305" >
+        <override platform="macintosh" key="122" />
+      </keyBinding>
+      <keyBinding name="Abilities" key="306" >
+        <override platform="macintosh" key="120" />
+      </keyBinding>
+  </controlsScheme>
   <controlsScheme player="0" name="$CTRL_SET_MOUSE_ONLY" desc="$CTRL_SET_MOUSE_ONLY_DESC" menuDesc="$CTRL_SET_MOUSE_ONLY_MENU_DESC" flags="37">
     <keyBinding name="Help" key="305" />
     <keyBinding name="Abilities" key="306" />
@@ -85,6 +51,24 @@
     <keyBinding name="PointNClick" key="321" />
     <keyBinding name="NextItem" key="326" />
     <keyBinding name="PrevItem" key="327" />
+  </controlsScheme>
+  <controlsScheme player="0" name="$CTRL_SET_KEYBOARD_CLASSIC" desc="$CTRL_SET_KEYBOARD_CLASSIC_DESC" menuDesc="$CTRL_SET_KEYBOARD_CLASSIC_MENU_DESC" flags="0">
+    <keyBinding name="MoveUp" key="293" />
+    <keyBinding name="MoveDown" key="294" />
+    <keyBinding name="TurnLeft" key="291" />
+    <keyBinding name="TurnRight" key="292" />
+    <keyBinding name="MoveLeft" key="97" />
+    <keyBinding name="MoveRight" key="100" />
+    <keyBinding name="Abi-0" key="113" lock="0.1" />
+    <keyBinding name="Abi-1" key="119" lock="0.1" />
+    <keyBinding name="Abi-2" key="101" lock="0.1" />
+    <keyBinding name="Abi-3" key="114" lock="0.1" />
+      <keyBinding name="Help" key="305" >
+        <override platform="macintosh" key="122" />
+      </keyBinding>
+      <keyBinding name="Abilities" key="306" >
+        <override platform="macintosh" key="120" />
+      </keyBinding>
   </controlsScheme>
   <controlsScheme player="0" name="$CTRL_SET_USER" desc="$CTRL_SET_USER_DESC" menuDesc="$CTRL_SET_USER_MENU_DESC" flags="0">
       <keyBinding name="Help" key="305" >
@@ -96,23 +80,28 @@
   </controlsScheme>
   
   <!-- player2 -->
-  <controlsScheme player="1" name="$CTRL_SET_MOUSE" desc="$CTRL_SET_MOUSE_DESC" menuDesc="$CTRL_SET_MOUSE_MENU_DESC" flags="1">
-    <keyBinding name="MoveUp" key="321" />
-    <keyBinding name="MoveDown" key="322" />
-    <keyBinding name="MoveLeft" key="97" />
-    <keyBinding name="MoveRight" key="100" />
-    <keyBinding name="Abi-0" key="99" lock="0.1" />
-    <keyBinding name="Abi-1" key="118" lock="0.1" />
-    <keyBinding name="Abi-2" key="98" lock="0.1" />
-    <keyBinding name="Abi-3" key="110" lock="0.1" />
-    <keyBinding name="Help" key="307">
-      <override platform="macintosh" key="109" />
+  <controlsScheme player="1" name="$CTRL_SET_MOUSE_AND_KEYBOARD" desc="$CTRL_SET_MOUSE_AND_KEYBOARD_DESC" menuDesc="$CTRL_SET_MOUSE_AND_KEYBOARD_MENU_DESC" flags="29">
+    <keyBinding name="MoveUpAbs" key="293" />
+    <keyBinding name="MoveDownAbs" key="294" />
+    <keyBinding name="MoveLeftAbs" key="291" />
+    <keyBinding name="MoveRightAbs" key="292" />
+    <keyBinding name="AbiX-0" key="49" lock="0.1" />
+    <keyBinding name="AbiX-1" key="50" lock="0.1" />
+    <keyBinding name="AbiX-2" key="51" lock="0.1" />
+    <keyBinding name="AbiX-3" key="52" lock="0.1" />
+    <keyBinding name="Slot-0" key="321" />
+    <keyBinding name="Slot-1" key="322" />
+    <keyBinding name="Slot-2" key="323">
+      <override platform="macintosh" key="277" />
     </keyBinding>
-    <keyBinding name="Abilities" key="308">
-      <override platform="macintosh" key="110" />
-    </keyBinding>
+      <keyBinding name="Help" key="305" >
+        <override platform="macintosh" key="122" />
+      </keyBinding>
+      <keyBinding name="Abilities" key="306" >
+        <override platform="macintosh" key="120" />
+      </keyBinding>
   </controlsScheme>
-  <controlsScheme player="1" name="$CTRL_SET_8-K" desc="$CTRL_SET_8-K_DESC" menuDesc="$CTRL_SET_8-K_MENU_DESC" flags="20">
+  <controlsScheme player="1" name="$CTRL_SET_KEYBOARD_ONLY" desc="$CTRL_SET_KEYBOARD_ONLY_DESC" menuDesc="$CTRL_SET_KEYBOARD_ONLY_MENU_DESC" flags="20">
     <keyBinding name="MoveUpAbs" key="105" />
     <keyBinding name="MoveDownAbs" key="107" />
     <keyBinding name="MoveLeftAbs" key="106" />
@@ -128,7 +117,23 @@
       <override platform="macintosh" key="110" />
     </keyBinding>
   </controlsScheme>
-  <controlsScheme player="1" name="$CTRL_SET_CLASSIC" desc="$CTRL_SET_CLASSIC_DESC" menuDesc="$CTRL_SET_CLASSIC_MENU_DESC" flags="0">
+  <controlsScheme player="1" name="$CTRL_SET_MOUSE_ONLY" desc="$CTRL_SET_MOUSE_ONLY_DESC" menuDesc="$CTRL_SET_MOUSE_ONLY_MENU_DESC" flags="1">
+    <keyBinding name="MoveUp" key="321" />
+    <keyBinding name="MoveDown" key="322" />
+    <keyBinding name="MoveLeft" key="97" />
+    <keyBinding name="MoveRight" key="100" />
+    <keyBinding name="Abi-0" key="99" lock="0.1" />
+    <keyBinding name="Abi-1" key="118" lock="0.1" />
+    <keyBinding name="Abi-2" key="98" lock="0.1" />
+    <keyBinding name="Abi-3" key="110" lock="0.1" />
+    <keyBinding name="Help" key="307">
+      <override platform="macintosh" key="109" />
+    </keyBinding>
+    <keyBinding name="Abilities" key="308">
+      <override platform="macintosh" key="110" />
+    </keyBinding>
+  </controlsScheme>
+  <controlsScheme player="1" name="$CTRL_SET_KEYBOARD_CLASSIC" desc="$CTRL_SET_KEYBOARD_CLASSIC_DESC" menuDesc="$CTRL_SET_KEYBOARD_CLASSIC_MENU_DESC" flags="0">
     <keyBinding name="MoveUp" key="105" />
     <keyBinding name="MoveDown" key="107" />
     <keyBinding name="TurnLeft" key="106" />
@@ -154,7 +159,7 @@
   </controlsScheme>
 
   <!-- default choice (last not-user-defined) -->
-  <controls controls="3" player="0" />
-  <controls controls="2" player="1" />
+  <controls controls="0" player="0" />
+  <controls controls="1" player="1" />
 </root>
 
