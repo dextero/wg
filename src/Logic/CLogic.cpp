@@ -420,7 +420,7 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
         if (CPlayer* player = gPlayerManager.GetPlayerByNumber(i))
             for (unsigned int j = 0; j < 4; ++j)
                 if (player->GetItem(j))
-                    ss << "set-ability player0 " << player->GetItem(j)->GetAbility() << " " << j << " " << player->GetItem(j)->mLevel << "\n";
+                    ss << "set-ability player" << i << " " << player->GetItem(j)->GetAbility() << " " << j << " " << player->GetItem(j)->mLevel << "\n";
     }
 
 	ss << "add-xp " << xp << " ignore-skill-points silent\n";
