@@ -933,7 +933,11 @@ bool CRandomMapGenerator::PlaceLairs()
             sf::Vector2i tile;
             do
                 tile = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
-            while (mCurrent[tile.x][tile.y] != FREE ||
+            while (mCurrent[tile.x][tile.y] != FREE ||	// wolne pole
+				(tile.x > 0 && mCurrent[tile.x - 1][tile.y] == BLOCKED) ||	// na przyleglych polach nie ma murow
+				(tile.x < mDesc.sizeX - 1 && mCurrent[tile.x + 1][tile.y] == BLOCKED) ||
+				(tile.y > 0 && mCurrent[tile.x][tile.y - 1] == BLOCKED) ||
+				(tile.y < mDesc.sizeY - 1 && mCurrent[tile.x][tile.y + 1] == BLOCKED) ||
                 ((float)std::min(mDesc.sizeX, mDesc.sizeY) > mDesc.minMonsterDist * 2.f &&     // jesli mapa nie ma rozmiaru przynajmniej 2*minMonsterDist, to olej sprawdzanie odleglosci
                 Maths::LengthSQ(sf::Vector2f((float)(tile.x - mEntryPos.x), (float)(tile.y - mEntryPos.y))) <= mDesc.minMonsterDist * mDesc.minMonsterDist) );
 
