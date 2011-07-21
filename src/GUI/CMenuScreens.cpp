@@ -43,6 +43,8 @@
 
 using namespace GUI;
 
+bool enteredOptionsFromChooseControlsScheme = false;
+
 void CMenuScreens::Show(const std::wstring &menu)
 {
     InitAll();
@@ -67,6 +69,10 @@ void CMenuScreens::Show(const std::wstring &menu)
 	mNewGameOptions->SetVisible( menu == L"new-game-options" );
     mChooseControlsMenu->SetVisible( menu == L"choose-controls-menu" );
 	mOptions->SetVisible( menu == L"options" );
+    if (menu == L"options-from-choose-controls") {
+	    mOptions->SetVisible(true);
+        enteredOptionsFromChooseControlsScheme = true;
+    }
 	mBindingOptions[0]->SetVisible( menu == L"binding-options0" );
 	mBindingOptions[1]->SetVisible( menu == L"binding-options1" );
     mReadmeScreen->SetVisible( menu == L"readme-screen" );
@@ -404,11 +410,25 @@ void GUI::CMenuScreens::InitChooseControlsMenu()
             ++bindsAdded;
         }
 
+        CTextArea* moreSchemesTxt = controls->CreateTextArea("more-schemes-txt");
+        moreSchemesTxt->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
+        moreSchemesTxt->SetText(gLocalizator.GetText("MORE_CONTROL_SCHEMES"));
+        moreSchemesTxt->SetPosition(15.f, 63.f, 55.f, 11.f);
+
+        CButton* options = controls->CreateButton("options");
+        options->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG), 12.f);
+        options->SetText(gLocalizator.GetText("MENU_OPTIONS"));
+		options->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
+        options->SetPosition(69.f, 63.f, 13.f, 6.f);
+        options->SetCenter(true);
+        options->GetClickParamCallback()->bind(this, &CMenuScreens::Show);
+        options->SetClickCallbackParams( L"options-from-choose-controls" );
+
         CButton* ret = controls->CreateButton("return");
         ret->SetFont(gLocalizator.GetFont(GUI::FONT_MENU), 20.f);
         ret->SetText(gLocalizator.GetText("MENU_RETURN"));
 		ret->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
-        ret->SetPosition(30.f, 75.f, 40.f, 10.f);
+        ret->SetPosition(30.f, 80.f, 40.f, 10.f);
         ret->SetCenter(true);
         ret->GetClickCallback()->bind(this, &CMenuScreens::ShowPrevious);
 
@@ -803,12 +823,17 @@ void CMenuScreens::SaveOptions()
 
         StoreOptions();
         ShowPrevious();
+        if (enteredOptionsFromChooseControlsScheme) {
+            enteredOptionsFromChooseControlsScheme = false;
+            ShowPrevious();
+        }
 	}
 }
 
 void CMenuScreens::CancelOptions()
 {
 	UpdateOptions();
+    enteredOptionsFromChooseControlsScheme = false;
     ShowPrevious();
 }
 

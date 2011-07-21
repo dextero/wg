@@ -108,6 +108,10 @@
 		<value>Choose controls scheme</value>
 	</entry>
 	<entry>
+		<key>MORE_CONTROL_SCHEMES</key>
+		<value>More control schemes are available in the options menu. You can also define your own scheme and customise the controls there.</value>
+	</entry>
+	<entry>
 		<key>CLICK_TO_BUY</key>
 		<value>Press left mouse button to buy this ability</value>
 	</entry>
