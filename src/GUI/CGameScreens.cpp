@@ -127,9 +127,11 @@ void CGameScreens::Hide(const std::wstring &menu)
 		//mAbilities[0]->SetVisible( false );
 		//mAbilities[1]->SetVisible( false );
         mInventory[0]->SetVisible(false);
-        mInventory[0]->UpdatePlayerData();
+		if (menu == L"abilities0")
+			mInventory[0]->UpdatePlayerData();
         mInventory[1]->SetVisible(false);
-        mInventory[1]->UpdatePlayerData();
+		if (menu == L"abilities1")
+			mInventory[1]->UpdatePlayerData();
 		//mAbiHelp[0]->SetVisible( false );
 		//mAbiHelp[1]->SetVisible( false );
 		ShowCursor(false);
