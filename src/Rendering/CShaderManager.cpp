@@ -196,6 +196,10 @@ void CShaderManager::load(std::string const & fragmentShaderName, std::string co
 		return;
 	}
 
+	if (glCreateProgram == NULL){
+	    fprintf(stderr, "Warning - attempting to load shader but glCreateProgram not present!\n");
+	}
+
 	// Create Shader And Program Objects
 	this->programs.push_back(glCreateProgram());
 	GLenum my_vertex_shader = glCreateShader(GL_VERTEX_SHADER);
