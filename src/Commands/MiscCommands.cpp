@@ -370,10 +370,10 @@ void CommandPostFx(size_t argc, const std::vector<std::wstring> &argv)
             else if (argv[2] == L"shd")
             {
                 if (gPostProcessing.SetType(pfx::PFX_TYPE::SHADERS))
-                    gConsole.Print(L"Shadery dostepne, uruchamiam!");
+                    gConsole.Print(L"Shaders available, initializing!");
                 else
                 {
-                    gConsole.Print(L"Shadery nie dostepne, uruchamiam Software Effects!");
+                    gConsole.Print(L"Shadery unavailable, falling back to software effects!");
                     gPostProcessing.SetType(pfx::PFX_TYPE::TEXTURE);
                 }
             }
