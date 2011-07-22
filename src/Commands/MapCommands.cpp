@@ -78,6 +78,11 @@ void CommandLoadMap(size_t argc, const std::vector<std::wstring> &argv)
 
 void CommandPreloadMap(size_t argc, const std::vector<std::wstring> &argv)
 {
+	std::string mapFileName;
+	std::string region;
+	bool hasRegion = false;
+	bool hasSaveGame = false;
+
 	// mega-hack to handle absolute file paths with spaces and non-ASCII characters. 
 	// Assuming:
 	// - map file name always ends with '.xml'
@@ -86,44 +91,43 @@ void CommandPreloadMap(size_t argc, const std::vector<std::wstring> &argv)
 	// - find the first argument that contains '.xml'; let's call it argX
 	// - merge all the arguments from arg1 to argX into one string, updating argc/argv values
 	int argX = -1;
-	std::vector<std::wstring> argvCopy = argv;
-	for (unsigned int i = 1; i < argvCopy.size(); i++){
-		if (argvCopy[i].find(L".xml") != std::wstring::npos){
+	std::wstring separator;
+	for (unsigned int i = 1; i < argv.size(); i++){
+		mapFileName += StringUtils::ConvertToString(separator + argv[i]);
+		if (argv[i].find(L".xml") != std::wstring::npos){
 			argX = i;
+			if (i + 1 < argv.size()) {
+				hasRegion = true;
+				region = StringUtils::ConvertToString(argv[i + 1]);
+			}
+			if (i + 2 < argv.size()) {
+				hasSaveGame = true;
+			}
 			break;
 		}
+		separator = L" ";
 	}
-	if (argX >= 0){
-		for (unsigned int i = 2; i <= argX; i++){
-			argvCopy[1] += L" " + argvCopy[i]; // concatenate first argument with next ones
-		}
-		if (argX >= 2){
-			argvCopy.erase(argvCopy.begin() + 2, argvCopy.begin() + argX);
-		}
-	}
-	argc = argvCopy.size();
 	// normal procedure follows
 
     if ( argc < 2)
     {
-        gConsole.Printf( L"usage: %ls folder_name/file_name [region] [saveGame]" , argvCopy[0].c_str() );
+        gConsole.Printf( L"usage: %ls folder_name/file_name [region] [saveGame]" , argv[0].c_str() );
         gConsole.Printf( L"       or file_name [region] [saveGame] if you want to load it from data/maps" );
         return;
     }
 
-    std::wstring mapName(argvCopy[1]);
-    if (mapName.find(L"/") == std::wstring::npos)
+    if (mapFileName.find("/") == std::string::npos)
     {
-        mapName.insert(0, L"data/maps/");
+        mapFileName.insert(0, "data/maps/");
     }
 
     const bool loadCompleteMap = false;
-    if (argc == 2) // zapisz
-        gMapManager.ScheduleSetMap(StringUtils::ConvertToString(mapName), loadCompleteMap);
-    else if (argc == 3) // zapisz
-        gMapManager.ScheduleSetMap(StringUtils::ConvertToString(mapName),loadCompleteMap, StringUtils::ConvertToString(argvCopy[2]));
+    if (!hasRegion && !hasSaveGame) // zapisz
+        gMapManager.ScheduleSetMap(mapFileName, loadCompleteMap);
+    else if (!hasSaveGame) // zapisz
+        gMapManager.ScheduleSetMap(mapFileName, loadCompleteMap, region);
     else // nie zapisuj
-        gMapManager.SetMap(StringUtils::ConvertToString(mapName), loadCompleteMap, StringUtils::ConvertToString(argvCopy[2]));
+        gMapManager.SetMap(mapFileName, loadCompleteMap, region);
 }
 
 void CommandCreateWall(size_t argc, const std::vector<std::wstring> &argv){
