@@ -65,25 +65,7 @@
         <weapon file="data/abilities/deprecated/sacrifice.xml" minLevel="8" maxLevel="99" />
         <weapon file="data/abilities/deprecated/summon-healer-ghost.xml" minLevel="8" maxLevel="99" />
     -->
-<!--
-    	<lair file="data/physicals/lairs/rat-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/baldy-horny-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/chit-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/chityniak-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/cockroach-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/crawler-kamikadze-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/early-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/grim-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/mantis-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/ogre-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/pincer-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/sick-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/surger-entangler-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/troll-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/wolfbeast-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/bee-lair.xml" level="90" />
-        <lair file="data/physicals/lairs/shaggy-lair.xml" level="90" />
--->		
+
         <monster file="data/physicals/monsters/defs/rat.xml" minLevel="1" maxLevel="3" />
         <monster file="data/physicals/monsters/defs/bandit.xml" minLevel="1" maxLevel="1" frequency="0.3" />
 
@@ -195,28 +177,8 @@
 
         <monster file="data/physicals/monsters/defs/murion.xml" minLevel="26" maxLevel="26" frequency="0.1" />
         <lair    file="data/physicals/lairs/skeleton-lair.xml" minLevel="26" maxLevel="27" frequency="1.5" />
+
 		<!-- -->
-
-        <lair    file="data/physicals/lairs/chit-lair.xml" minLevel="94" maxLevel="3" />
-        <monster file="data/physicals/monsters/bee.xml" minLevel="94" maxLevel="6" />
-        <monster file="data/physicals/monsters/hornet.xml" minLevel="94" maxLevel="6" />
-
-        <lair    file="data/physicals/lairs/bee-lair.xml" minLevel="95" maxLevel="6" />
-
-        <monster file="data/physicals/monsters/wolfbeast.xml" minLevel="97" maxLevel="8" />
-        <lair    file="data/physicals/lairs/wolfbeast-lair.xml" minLevel="97" maxLevel="8" />
-
-        <monster file="data/physicals/monsters/troll.xml" minLevel="98" maxLevel="8" />
-        <lair    file="data/physicals/lairs/troll-lair.xml" minLevel="98" maxLevel="8" />
-
-        <monster file="data/physicals/monsters/easter-eggs/carrot.xml" level="99" />
-        <monster file="data/physicals/monsters/easter-eggs/cow.xml" level="99" />
-        <monster file="data/physicals/monsters/crawler-kamikadze.xml" level="99" />
-        <monster file="data/physicals/monsters/demon.xml" level="99" />
-        <monster file="data/physicals/monsters/scarab.xml" level="99" />
-        <monster file="data/physicals/monsters/surger.xml" level="99" />
-        <monster file="data/physicals/monsters/warlock.xml" level="99" />
-        <monster file="data/physicals/monsters/winged-pincer.xml" level="99" />
 
         <!-- hp -->
         <loot file="data/loots/small-hp.xml" minLevel="0" maxLevel="99"/>

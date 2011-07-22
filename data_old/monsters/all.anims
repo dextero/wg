@@ -419,6 +419,55 @@ core/anim/chitiniac/attack
     0.10  "data/physicals/monsters/gfx/chitiniac-attack.png"                448   0  512  64
 }
 
+######################
+# huge-lair
+######################
+
+core/anim/huge-lair/default
+{
+	0.10 "data/physicals/lairs/huge_lair_default.png"					0   0   128  128
+}
+
+core/anim/huge-lair/spawn
+{
+	0.1 "data/physicals/lairs/huge_lair_default.png"					0   0   128  128
+	0.1 "data/physicals/lairs/huge_lair_default.png"					128	0	256	 128
+	0.1 "data/physicals/lairs/huge_lair_default.png"					256 0   384  128
+	0.1 "data/physicals/lairs/huge_lair_default.png"					384 0   512  128
+	0.1 "data/physicals/lairs/huge_lair_default.png"					0   128   128  256
+	0.1 "data/physicals/lairs/huge_lair_default.png"					128	128   256  256
+	0.1 "data/physicals/lairs/huge_lair_default.png"					256 128   384  256
+	0.1 "data/physicals/lairs/huge_lair_default.png"					384 128   512  256
+	0.1 "data/physicals/lairs/huge_lair_default.png"					0   256   128  384
+	0.1 "data/physicals/lairs/huge_lair_default.png"					128	256   256  384
+	0.1 "data/physicals/lairs/huge_lair_default.png"					256 256   384  384
+	0.1 "data/physicals/lairs/huge_lair_default.png"					384 256   512  384
+	0.1 "data/physicals/lairs/huge_lair_default.png"					0   384   128  512
+	0.1 "data/physicals/lairs/huge_lair_default.png"					128	384   256  512
+	0.1 "data/physicals/lairs/huge_lair_default.png"					256 384   384  512
+	0.1 "data/physicals/lairs/huge_lair_default.png"					384 384   512  512
+}
+
+core/anim/huge-lair/death
+{
+	0.1 "data/physicals/lairs/huge_lair_death.png"					0   0   128  128
+	0.1 "data/physicals/lairs/huge_lair_death.png"					128	0	256	 128
+	0.1 "data/physicals/lairs/huge_lair_death.png"					256 0   384  128
+	0.1 "data/physicals/lairs/huge_lair_death.png"					384 0   512  128
+	0.1 "data/physicals/lairs/huge_lair_death.png"					0   128   128  256
+	0.1 "data/physicals/lairs/huge_lair_death.png"					128	128   256  256
+	0.1 "data/physicals/lairs/huge_lair_death.png"					256 128   384  256
+	0.1 "data/physicals/lairs/huge_lair_death.png"					384 128   512  256
+	0.1 "data/physicals/lairs/huge_lair_death.png"					0   256   128  384
+	0.1 "data/physicals/lairs/huge_lair_death.png"					128	256   256  384
+	0.1 "data/physicals/lairs/huge_lair_death.png"					256 256   384  384
+	0.1 "data/physicals/lairs/huge_lair_death.png"					384 256   512  384
+	0.1 "data/physicals/lairs/huge_lair_death.png"					0   384   128  512
+	0.1 "data/physicals/lairs/huge_lair_death.png"					128	384   256  512
+	0.1 "data/physicals/lairs/huge_lair_death.png"					256 384   384  512
+	0.1 "data/physicals/lairs/huge_lair_death.png"					384 384   512  512
+}
+
 ########################
 # lair
 ########################
@@ -3289,6 +3338,13 @@ core/anim/beholder/attack
 	1.15 "data/physicals/monsters/gfx/beholder.png"	0 0 84 84
 }
 
+############################# FIRE ELEMENTAL
+
+core/anim/fire-elemental/default
+{
+	0.10 "data/physicals/monsters/fire-elemental.png" 0 0 92 92
+}
+
 ############################# DESERT PINCER
 
 core/anim/desert-pincer/default
@@ -3319,6 +3375,75 @@ core/anim/desert-pincer/attack
 core/anim/desert-pincer/death
 {
 	2.50 "data/physicals/monsters/gfx/desert-pincer.png" 0 6 26 40
+}
+
+############################# WINGED PINCER
+
+core/anim/winged-pincer/default
+{
+	0.40 "data/physicals/monsters/winged-pincer.png" 0 3 24 33
+	0.20 "data/physicals/monsters/winged-pincer.png" 24 2 48 32
+	0.20 "data/physicals/monsters/winged-pincer.png" 24 1 48 31
+	0.20 "data/physicals/monsters/winged-pincer.png" 24 2 48 32
+}
+
+core/anim/winged-pincer/attack
+{
+	0.40 "data/physicals/monsters/winged-pincer.png" 0 3 24 33
+	0.20 "data/physicals/monsters/winged-pincer.png" 24 2 48 32
+	0.20 "data/physicals/monsters/winged-pincer.png" 24 1 48 31
+	0.40 "data/physicals/monsters/winged-pincer.png" 48 0 72 31
+	0.20 "data/physicals/monsters/winged-pincer.png" 24 1 48 31
+	0.20 "data/physicals/monsters/winged-pincer.png" 24 2 48 32	
+}
+
+############################# CARROT! 
+
+core/anim/carrot/default
+{
+	0.10 "data/physicals/monsters/easter-eggs/carrot.png" 61 0 101 40
+}
+
+core/anim/carrot/move
+{
+	0.20 "data/physicals/monsters/easter-eggs/carrot.png" 61 0 101 40
+	0.20 "data/physicals/monsters/easter-eggs/carrot.png" 28 0 68 40
+	0.40 "data/physicals/monsters/easter-eggs/carrot.png" 0 0 40 40
+	0.20 "data/physicals/monsters/easter-eggs/carrot.png" 28 0 68 40
+	0.20 "data/physicals/monsters/easter-eggs/carrot.png" 61 0 101 40
+	0.20 "data/physicals/monsters/easter-eggs/carrot.png" 95 0 135 40
+	0.40 "data/physicals/monsters/easter-eggs/carrot.png" 132 0 172 40
+	0.20 "data/physicals/monsters/easter-eggs/carrot.png" 95 0 135 40
+}
+core/anim/carrot/attack
+{
+	0.10 "data/physicals/monsters/easter-eggs/carrot-attack.png" 0 0 40 40
+	0.10 "data/physicals/monsters/easter-eggs/carrot-attack.png" 34 0 74 40
+	0.10 "data/physicals/monsters/easter-eggs/carrot-attack.png" 65 0 105 40
+	0.10 "data/physicals/monsters/easter-eggs/carrot-attack.png" 95 0 135 40
+	0.30 "data/physicals/monsters/easter-eggs/carrot-attack.png" 126 0 166 40
+	0.10 "data/physicals/monsters/easter-eggs/carrot-attack.png" 95 0 135 40
+	0.10 "data/physicals/monsters/easter-eggs/carrot-attack.png" 65 0 105 40
+	0.10 "data/physicals/monsters/easter-eggs/carrot-attack.png" 34 0 74 40
+	0.10 "data/physicals/monsters/easter-eggs/carrot-attack.png" 0 0 40 40
+}
+
+############################# Surger
+
+core/anim/surger/default
+{
+	0.10 "data/physicals/monsters/surger.png" 0 0 30 30
+}
+
+core/anim/surger/attack
+{
+	0.10 "data/physicals/monsters/surger.png" 0 0 30 30
+	0.20 "data/physicals/monsters/surger.png" 30 0 60 30
+	0.20 "data/physicals/monsters/surger.png" 60 0 90 30
+	0.50 "data/physicals/monsters/surger.png" 90 0 120 30
+	0.20 "data/physicals/monsters/surger.png" 60 0 90 30
+	0.20 "data/physicals/monsters/surger.png" 30 0 60 30
+	0.10 "data/physicals/monsters/surger.png" 0 0 30 30
 }
 
 ############################# Fafmycel
@@ -3352,6 +3477,7 @@ core/anim/fafmycel/attack
 	0.05 "data/physicals/monsters/gfx/fafmycel-attack.png"  75 0 150 75
 }
 
+
 ############################## poison haunter
 
 test/anim/poison-haunter/default
@@ -3369,6 +3495,25 @@ test/anim/poison-haunter/move
 	0.10 "data/physicals/monsters/gfx/poison-haunter.png" 160 0 192 32
 	0.10 "data/physicals/monsters/gfx/poison-haunter.png" 192 0 224 32
 	0.10 "data/physicals/monsters/gfx/poison-haunter.png" 224 0 256 32
+}
+
+############################## scarab
+
+core/anim/scarab/default
+{
+	0.10 "data/physicals/monsters/scarab.png" 0 0 32 32
+}
+
+core/anim/scarab/move
+{
+	0.20 "data/physicals/monsters/scarab.png" 0 0 32 32
+	0.10 "data/physicals/monsters/scarab.png" 32 0 64 32
+	0.20 "data/physicals/monsters/scarab.png" 64 0 96 32
+	0.10 "data/physicals/monsters/scarab.png" 96 0 128 32
+	0.20 "data/physicals/monsters/scarab.png" 0 32 32 64
+	0.10 "data/physicals/monsters/scarab.png" 32 32 64 64
+	0.20 "data/physicals/monsters/scarab.png" 64 32 96 64
+	0.10 "data/physicals/monsters/scarab.png" 96 32 128 64
 }
 
 ################################ murion
@@ -3618,6 +3763,13 @@ core/anim/dragon/death
     0.03  "data/physicals/monsters/gfx/dragon.png"              640  640  768  768
     0.03  "data/physicals/monsters/gfx/dragon.png"              768  640  896  768
     0.03  "data/physicals/monsters/gfx/dragon.png"              896  640 1024  768
+}
+
+###################################### Minelayer
+
+core/anim/minelayer/default
+{
+	0.10 "data/physicals/monsters/minelayer.png"	0 0 25 25
 }
 
 ###################################### Skeleton warrior
@@ -4098,6 +4250,185 @@ core/anim/scorpion/death
     0.10  "data/physicals/monsters/gfx/scorpion-death-1.png"          448   0  512  64
 }
 
+####################
+# Doodahs:         #
+####################
+core/anim/doodah/animtest
+{
+    0.10  "data/maps/doodahs/animtest.png"            0   0   64  64
+    0.10  "data/maps/doodahs/animtest.png"           64   0  128  64
+    0.10  "data/maps/doodahs/animtest.png"          128   0  192  64
+    0.10  "data/maps/doodahs/animtest.png"          192   0  256  64
+    0.10  "data/maps/doodahs/animtest.png"          258   0  320  64
+}
+
+core/anim/doodahs/oasis
+{
+    0.15 "data/maps/doodahs/oasis/oasis01.png"        0   0  512 512
+    0.15 "data/maps/doodahs/oasis/oasis02.png"        0   0  512 512
+    0.15 "data/maps/doodahs/oasis/oasis03.png"        0   0  512 512
+    0.15 "data/maps/doodahs/oasis/oasis04.png"        0   0  512 512
+    0.15 "data/maps/doodahs/oasis/oasis05.png"        0   0  512 512
+    0.15 "data/maps/doodahs/oasis/oasis06.png"        0   0  512 512
+    0.15 "data/maps/doodahs/oasis/oasis07.png"        0   0  512 512
+    0.15 "data/maps/doodahs/oasis/oasis08.png"        0   0  512 512
+}
+
+####################### sick-lair
+
+core/anim/sick-lair/default
+{
+	0.25 "data/physicals/lairs/sick-lair.png"				0	0	24	24
+}
+
+core/anim/sick-lair/spawn
+{
+	0.25 "data/physicals/lairs/sick-lair.png"				0	0	24	24
+	0.25 "data/physicals/lairs/sick-lair.png"				24	0	48	24
+	0.25 "data/physicals/lairs/sick-lair.png"				48	0	72	24
+	0.25 "data/physicals/lairs/sick-lair.png"				72	0	96	24
+}
+
+core/anim/sick-lair/death
+{
+	0.25 "data/physicals/lairs/sick-lair.png"				0	0	24	24
+}
+
+####################### grim-lair
+
+core/anim/grim-lair/default
+{
+	0.25 "data/physicals/lairs/grim-lair.png"				0	0	172	172
+}
+
+core/anim/grim-lair/spawn
+{
+	0.25 "data/physicals/lairs/grim-lair.png"				0	0	172	172
+}
+
+core/anim/grim-lair/death
+{
+	0.25 "data/physicals/lairs/grim-lair.png"				0	0	172	172
+}
+
+###################### lion-turret
+
+core/anim/lion-turret
+{
+	0.25 "data/physicals/monsters/lion-turret.png"					0	0	64	64
+}
+
+###################### carapace-lair
+
+core/anim/carapace-lair/default
+{
+	1.4 "data/physicals/lairs/carapace_lair.png"			0	0	48	48
+	0.10 "data/physicals/lairs/carapace_lair.png"			1	1	47	47
+	0.10 "data/physicals/lairs/carapace_lair.png"			2	2	46	46
+	0.10 "data/physicals/lairs/carapace_lair.png"			1	1	47	47
+}
+
+core/anim/carapace-lair/spawn
+{
+	0.10 "data/physicals/lairs/carapace_lair.png"			2	2	46	46
+	0.10 "data/physicals/lairs/carapace_lair.png"			3	3	45	45
+	0.10 "data/physicals/lairs/carapace_lair.png"			4	4	44	44
+	0.10 "data/physicals/lairs/carapace_lair.png"			5	5	43	43
+	0.15 "data/physicals/lairs/carapace_lair.png"			6	6	42	42
+	0.10 "data/physicals/lairs/carapace_lair.png"			5	5	43	43
+	0.10 "data/physicals/lairs/carapace_lair.png"			4	4	44	44
+	0.10 "data/physicals/lairs/carapace_lair.png"			3	3	45	45
+	0.10 "data/physicals/lairs/carapace_lair.png"			2	2	46	46
+}
+
+core/anim/carapace-lair-red/default
+{
+	1.5 "data/physicals/lairs/carapace_lair_red.png"			0	0	48	48
+	0.10 "data/physicals/lairs/carapace_lair_red.png"			1	1	47	47
+	0.10 "data/physicals/lairs/carapace_lair_red.png"			2	2	46	46
+	0.10 "data/physicals/lairs/carapace_lair_red.png"			1	1	47	47
+}
+
+core/anim/carapace-lair-red/spawn
+{
+	0.10 "data/physicals/lairs/carapace_lair_red.png"			2	2	46	46
+	0.10 "data/physicals/lairs/carapace_lair_red.png"			3	3	45	45
+	0.10 "data/physicals/lairs/carapace_lair_red.png"			4	4	44	44
+	0.10 "data/physicals/lairs/carapace_lair_red.png"			5	5	43	43
+	0.15 "data/physicals/lairs/carapace_lair_red.png"			6	6	42	42
+	0.10 "data/physicals/lairs/carapace_lair_red.png"			5	5	43	43
+	0.10 "data/physicals/lairs/carapace_lair_red.png"			4	4	44	44
+	0.10 "data/physicals/lairs/carapace_lair_red.png"			3	3	45	45
+	0.10 "data/physicals/lairs/carapace_lair_red.png"			2	2	46	46
+}
+
+core/anim/carapace-lair-green/default
+{
+	1.6 "data/physicals/lairs/carapace_lair_green.png"			0	0	48	48
+	0.10 "data/physicals/lairs/carapace_lair_green.png"			1	1	47	47
+	0.10 "data/physicals/lairs/carapace_lair_green.png"			2	2	46	46
+	0.10 "data/physicals/lairs/carapace_lair_green.png"			1	1	47	47
+}
+
+core/anim/carapace-lair-green/spawn
+{
+	0.10 "data/physicals/lairs/carapace_lair_green.png"			2	2	46	46
+	0.10 "data/physicals/lairs/carapace_lair_green.png"			3	3	45	45
+	0.10 "data/physicals/lairs/carapace_lair_green.png"			4	4	44	44
+	0.10 "data/physicals/lairs/carapace_lair_green.png"			5	5	43	43
+	0.15 "data/physicals/lairs/carapace_lair_green.png"			6	6	42	42
+	0.10 "data/physicals/lairs/carapace_lair_green.png"			5	5	43	43
+	0.10 "data/physicals/lairs/carapace_lair_green.png"			4	4	44	44
+	0.10 "data/physicals/lairs/carapace_lair_green.png"			3	3	45	45
+	0.10 "data/physicals/lairs/carapace_lair_green.png"			2	2	46	46
+}
+
+###################### hard-lair
+
+
+core/anim/hard-lair/default
+{
+	1.7 "data/physicals/lairs/hard_lair.png"			0	0	48	48
+	0.10 "data/physicals/lairs/hard_lair.png"			1	1	47	47
+	0.10 "data/physicals/lairs/hard_lair.png"			2	2	46	46
+	0.10 "data/physicals/lairs/hard_lair.png"			1	1	47	47
+}
+
+core/anim/hard-lair/spawn
+{
+	0.10 "data/physicals/lairs/hard_lair.png"			2	2	46	46
+	0.10 "data/physicals/lairs/hard_lair.png"			3	3	45	45
+	0.10 "data/physicals/lairs/hard_lair.png"			4	4	44	44
+	0.10 "data/physicals/lairs/hard_lair.png"			5	5	43	43
+	0.15 "data/physicals/lairs/hard_lair.png"			6	6	42	42
+	0.10 "data/physicals/lairs/hard_lair.png"			5	5	43	43
+	0.10 "data/physicals/lairs/hard_lair.png"			4	4	44	44
+	0.10 "data/physicals/lairs/hard_lair.png"			3	3	45	45
+	0.10 "data/physicals/lairs/hard_lair.png"			2	2	46	46
+}
+
+
+core/anim/hard-lair-red/default
+{
+	1.8 "data/physicals/lairs/hard_lair_red.png"			0	0	48	48
+	0.10 "data/physicals/lairs/hard_lair_red.png"			1	1	47	47
+	0.10 "data/physicals/lairs/hard_lair_red.png"			2	2	46	46
+	0.10 "data/physicals/lairs/hard_lair_red.png"			1	1	47	47
+}
+
+core/anim/hard-lair-red/spawn
+{
+	0.10 "data/physicals/lairs/hard_lair_red.png"			2	2	46	46
+	0.10 "data/physicals/lairs/hard_lair_red.png"			3	3	45	45
+	0.10 "data/physicals/lairs/hard_lair_red.png"			4	4	44	44
+	0.10 "data/physicals/lairs/hard_lair_red.png"			5	5	43	43
+	0.15 "data/physicals/lairs/hard_lair_red.png"			6	6	42	42
+	0.10 "data/physicals/lairs/hard_lair_red.png"			5	5	43	43
+	0.10 "data/physicals/lairs/hard_lair_red.png"			4	4	44	44
+	0.10 "data/physicals/lairs/hard_lair_red.png"			3	3	45	45
+	0.10 "data/physicals/lairs/hard_lair_red.png"			2	2	46	46
+}
+
 ######################## flower lair
 
 core/anim/flower-lair/default
@@ -4130,4 +4461,32 @@ core/anim/flower-lair/death
 	0.1 "data/physicals/lairs/flower_lair.png"				0	64	64	128
 	0.1 "data/physicals/lairs/flower_lair.png"				64	64	128	128
 	0.1 "data/physicals/lairs/flower_lair.png"				128	64	196	128
+}
+
+core/anim/flower-lair-green/default
+{
+	1.9 "data/physicals/lairs/flower_lair_green.png"				0	0	64	64
+	0.1 "data/physicals/lairs/flower_lair_green.png"				1	1	63	63
+	0.1 "data/physicals/lairs/flower_lair_green.png"				2	2	62	62
+	0.1 "data/physicals/lairs/flower_lair_green.png"				1	1	63	63 
+}
+
+core/anim/flower-lair-green/spawn
+{
+	0.1 "data/physicals/lairs/flower_lair_green.png"				1	1	63	63
+	0.1 "data/physicals/lairs/flower_lair_green.png"				2	2	62	62
+	0.1 "data/physicals/lairs/flower_lair_green.png"				3	3	61	61
+	0.1 "data/physicals/lairs/flower_lair_green.png"				4	4	60	60
+	0.1 "data/physicals/lairs/flower_lair_green.png"				3	3	61	61
+	0.1 "data/physicals/lairs/flower_lair_green.png"				2	2	62	62
+	0.1 "data/physicals/lairs/flower_lair_green.png"				1	1	63	63 
+}
+
+core/anim/flower-lair-green/death
+{
+	0.1 "data/physicals/lairs/flower_lair_green.png"				64	0	128	64
+	0.1 "data/physicals/lairs/flower_lair_green.png"				128	0	196	64
+	0.1 "data/physicals/lairs/flower_lair_green.png"				0	64	64	128
+	0.1 "data/physicals/lairs/flower_lair_green.png"				64	64	128	128
+	0.1 "data/physicals/lairs/flower_lair_green.png"				128	64	196	128
 }

@@ -1,8 +1,8 @@
 load-playlist data/music/main-menu.xml
 add-effect-commands
 effects-init data/effects/effects-config.xml
-toggle-fx mode shd
-toggle-fx light off
-toggle-fx fade in
+#toggle-fx mode shd
+#toggle-fx light off
+#toggle-fx fade in
 show-cursor 1
 show-gui
