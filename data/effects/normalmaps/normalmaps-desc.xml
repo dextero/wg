@@ -85,4 +85,29 @@
 	<mat tex="data/physicals/monsters/gfx/gargant-lord-attack-wounded.png" nm="data/effects/normalmaps/gargant-lord-attack.png" />
 	<mat tex="data/physicals/monsters/gfx/gargant-lord-death-0.png" nm="data/effects/normalmaps/gargant-lord-death-0.png" />
 	<mat tex="data/physicals/monsters/gfx/gargant-lord-death-1.png" nm="data/effects/normalmaps/gargant-lord-death-1.png" />
+	
+	<!-- hornet -->
+	<mat tex="data/physicals/monsters/gfx/hornet-move.png" nm="data/effects/normalmaps/hornet-move.png" />
+	<mat tex="data/physicals/monsters/gfx/hornet-attack.png" nm="data/effects/normalmaps/hornet-attack.png" />
+	<mat tex="data/physicals/monsters/gfx/hornet-move-wounded.png" nm="data/effects/normalmaps/hornet-move-wounded.png" />
+	<mat tex="data/physicals/monsters/gfx/hornet-attack-wounded.png" nm="data/effects/normalmaps/hornet-attack-wounded.png" />
+	<mat tex="data/physicals/monsters/gfx/hornet-death.png" nm="data/effects/normalmaps/hornet-death.png" />
+	
+	<!-- kliver -->
+	<mat tex="data/physicals/monsters/gfx/kliver-move.png" nm="data/effects/normalmaps/kliver-move.png" />
+	<mat tex="data/physicals/monsters/gfx/kliver-attack.png" nm="data/effects/normalmaps/kliver-attack.png" />
+	<mat tex="data/physicals/monsters/gfx/kliver-move-wounded.png" nm="data/effects/normalmaps/kliver-move-wounded.png" />
+	<mat tex="data/physicals/monsters/gfx/kliver-attack-wounded.png" nm="data/effects/normalmaps/kliver-attack-wounded.png" />
+	<mat tex="data/physicals/monsters/gfx/kliver-death.png" nm="data/effects/normalmaps/kliver-death.png" />
+	
+	<!-- murion -->
+	<mat tex="data/physicals/monsters/gfx/murion.png" nm="data/effects/normalmaps/murion.png" />
+	<mat tex="data/physicals/monsters/gfx/murion-death.png" nm="data/effects/normalmaps/murion-death.png" />
+	
+	<!-- ogre -->
+	<mat tex="data/physicals/monsters/gfx/ogre-move.png" nm="data/effects/normalmaps/ogre-move.png" />
+	<mat tex="data/physicals/monsters/gfx/ogre-attack-0.png" nm="data/effects/normalmaps/ogre-attack-0.png" />
+	<mat tex="data/physicals/monsters/gfx/ogre-attack-1.png" nm="data/effects/normalmaps/ogre-attack-1.png" />
+	<mat tex="data/physicals/monsters/gfx/ogre-death.png" nm="data/effects/normalmaps/ogre-death.png" />
+	
 </root>
