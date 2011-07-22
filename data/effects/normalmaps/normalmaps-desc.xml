@@ -110,4 +110,29 @@
 	<mat tex="data/physicals/monsters/gfx/ogre-attack-1.png" nm="data/effects/normalmaps/ogre-attack-1.png" />
 	<mat tex="data/physicals/monsters/gfx/ogre-death.png" nm="data/effects/normalmaps/ogre-death.png" />
 	
+	<!-- ogrillion -->
+	<mat tex="data/physicals/monsters/gfx/ogrillion-move.png" nm="data/effects/normalmaps/ogrillion-move.png" />
+	<mat tex="data/physicals/monsters/gfx/ogrillion-attack.png" nm="data/effects/normalmaps/ogrillion-attack.png" />
+	<mat tex="data/physicals/monsters/gfx/ogrillion-death.png" nm="data/effects/normalmaps/ogrillion-death.png" />
+	
+	<!-- poison-haunter -->
+	<mat tex="data/physicals/monsters/gfx/poison-haunter.png" nm="data/effects/normalmaps/poison-haunter.png" />
+	
+	<!-- scorpion -->
+	<mat tex="data/physicals/monsters/gfx/scorpion-move.png" nm="data/effects/normalmaps/scorpion-move.png" />
+	<mat tex="data/physicals/monsters/gfx/scorpion-attack.png" nm="data/effects/normalmaps/scorpion-attack.png" />
+	<mat tex="data/physicals/monsters/gfx/scorpion-move-wounded.png" nm="data/effects/normalmaps/scorpion-move.png" />
+	<mat tex="data/physicals/monsters/gfx/scorpion-attack-wounded.png" nm="data/effects/normalmaps/scorpion-attack.png" />
+	<mat tex="data/physicals/monsters/gfx/scorpion-death-0.png" nm="data/effects/normalmaps/scorpion-death-0.png" />
+	<mat tex="data/physicals/monsters/gfx/scorpion-death-1.png" nm="data/effects/normalmaps/scorpion-death-1.png" />
+	
+	<!-- skeleton -->
+	<mat tex="data/physicals/monsters/gfx/skeleton.png" nm="data/effects/normalmaps/skeleton.png" />
+	<mat tex="data/physicals/monsters/gfx/skeleton-mage.png" nm="data/effects/normalmaps/skeleton-mage.png" />	
+	
+	<!-- timberman -->
+	<mat tex="data/physicals/monsters/gfx/timberman-move.png" nm="data/effects/normalmaps/timberman-move.png" />
+	<mat tex="data/physicals/monsters/gfx/timberman-attack.png" nm="data/effects/normalmaps/timberman-attack.png" />
+	<mat tex="data/physicals/monsters/gfx/timberman-death.png" nm="data/effects/normalmaps/timberman-death.png" />
+	
 </root>
