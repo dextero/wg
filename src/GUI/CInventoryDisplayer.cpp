@@ -78,24 +78,23 @@ CInventoryDisplayer::CInventoryDisplayer( const std::string& name, CGUIObject* p
     mAbiTreeDisplayer->SetLvlTextFont(gLocalizator.GetFont(GUI::FONT_MESSAGE),20);
     mAbiTreeDisplayer->ForceReload();
     
-    CTextArea * xp = mAbiTreeDisplayer->CreateTextArea("xptext");
-    xp->SetPosition(5.0f,87.0f,25.0f,15.0f);
+    CTextArea * xp = mBackground->CreateTextArea("xptext");
+    xp->SetPosition(23.0f,18.0f,25.0f,10.0f);
     xp->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
     xp->SetText(L"XP: ?");
 
-    CTextArea * sp = mAbiTreeDisplayer->CreateTextArea("skill-points");
-    sp->SetPosition(5.0f,90.0f,25.0f,10.0f);
+    CTextArea * sp = mBackground->CreateTextArea("skill-points");
+    sp->SetPosition(23.0f,21.25f,25.0f,10.0f);
     sp->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
     sp->SetText(L"SP: ?");
 
-    CTextArea * lvl = mAbiTreeDisplayer->CreateTextArea("player-level");
-    lvl->SetPosition(5.0f,93.0f,25.0f,10.0f);
+    CTextArea * lvl = mBackground->CreateTextArea("player-level");
+    lvl->SetPosition(23.0f,24.5f,25.0f,10.0f);
     lvl->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
     lvl->SetText(L"LVL: ?");
 
-    CImageBox* avatar = mAbiTreeDisplayer->CreateImageBox("avatar");
-    avatar->SetPosition(95.0f,5.0f,0.0f,0.0f);
-    avatar->SetPosition(-120.0f,0.0f,120.0f,120.0f,UNIT_PIXEL);
+    CImageBox* avatar = mBackground->CreateImageBox("avatar");
+    avatar->SetPosition(18.0f,22.0f,0.0f,0.0f);
     avatar->SetViewPosition( sf::Vector2f(50.0f,50.0f) );
     avatar->SetViewSize( 50.0f );
     switch(player){
@@ -138,17 +137,17 @@ void CInventoryDisplayer::UpdateSprites( float secondsPassed ){
 
             if (player) {
                 for (int i = 0; i < 4; ++i) {
-                    GUI::CTextArea* xp = (GUI::CTextArea*) mAbiTreeDisplayer->FindObject("xptext");
+                    GUI::CTextArea* xp = (GUI::CTextArea*) mBackground->FindObject("xptext");
                     std::wstringstream s;
                     s << gLocalizator.GetText("UI_XP").c_str() << (int)(player->GetTotalXP()) << "/" << (int)(player->XPRequired());
                     xp->SetText(s.str());
 
-                    GUI::CTextArea* sp = (GUI::CTextArea*) mAbiTreeDisplayer->FindObject("skill-points");
+                    GUI::CTextArea* sp = (GUI::CTextArea*) mBackground->FindObject("skill-points");
                     s.str(L"");
                     s << gLocalizator.GetText("UI_POINTS").c_str() << (int)(player->GetSkillPoints());
                     sp->SetText(s.str());
 
-                    GUI::CTextArea* lvl = (GUI::CTextArea*) mAbiTreeDisplayer->FindObject("player-level");
+                    GUI::CTextArea* lvl = (GUI::CTextArea*) mBackground->FindObject("player-level");
                     s.str(L"");
                     s << gLocalizator.GetText("UI_LEVEL").c_str() << player->GetLevel();
                     lvl->SetText(s.str());
