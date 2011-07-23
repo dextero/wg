@@ -205,19 +205,19 @@
         <loot file="data/loots/1k-xp.xml" minLevel="25" maxLevel="99"/>
 
 		<!-- ofensywne -->		
-        <loot file="data/loots/firestorm1.xml" minLevel="1" frequency="0.5" maxLevel="15" />
-        <loot file="data/loots/firestorm2.xml" minLevel="10" frequency="0.5" maxLevel="25" />
-        <loot file="data/loots/firestorm3.xml" minLevel="20" frequency="0.5" maxLevel="99" />
-        <loot file="data/loots/eye-of-thunder1.xml" minLevel="1" frequency="0.5" maxLevel="15" />
-        <loot file="data/loots/eye-of-thunder2.xml" minLevel="10" frequency="0.5" maxLevel="25" />
-        <loot file="data/loots/eye-of-thunder3.xml" minLevel="20" frequency="0.5" maxLevel="99" />
-        <loot file="data/loots/fireburst1.xml" minLevel="1" frequency="0.5" maxLevel="15" />
-        <loot file="data/loots/fireburst2.xml" minLevel="10" frequency="0.5" maxLevel="25" />
-        <loot file="data/loots/fireburst3.xml" minLevel="20" frequency="0.5" maxLevel="99" />
+        <loot file="data/loots/firestorm1.xml" minLevel="7" frequency="0.2" maxLevel="15" />
+        <loot file="data/loots/firestorm2.xml" minLevel="14" frequency="0.3" maxLevel="25" />
+        <loot file="data/loots/firestorm3.xml" minLevel="22" frequency="0.4" maxLevel="99" />
+        <loot file="data/loots/eye-of-thunder1.xml" minLevel="5" frequency="0.2" maxLevel="15" />
+        <loot file="data/loots/eye-of-thunder2.xml" minLevel="12" frequency="0.3" maxLevel="25" />
+        <loot file="data/loots/eye-of-thunder3.xml" minLevel="20" frequency="0.4" maxLevel="99" />
+        <loot file="data/loots/fireburst1.xml" minLevel="3" frequency="0.2" maxLevel="15" />
+        <loot file="data/loots/fireburst2.xml" minLevel="10" frequency="0.3" maxLevel="25" />
+        <loot file="data/loots/fireburst3.xml" minLevel="20" frequency="0.4" maxLevel="99" />
 		
         <!-- inne -->
         <loot file="data/loots/superspeed.xml" minLevel="1" frequency="0.5" maxLevel="99" />
-        <loot file="data/loots/pendant-of-immortality.xml" minLevel="1" frequency="0.5" maxLevel="99" />
+        <loot file="data/loots/pendant-of-immortality.xml" minLevel="10" frequency="0.5" maxLevel="99" />
 
 		<!-- losowy weapon -->
         <loot file="data/loots/weapon.xml" minLevel="1" maxLevel="99" />
