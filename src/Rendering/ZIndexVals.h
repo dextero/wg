@@ -11,6 +11,7 @@
 const int Z_MAX          = 100;
 
 const int Z_TILE         = 90;
+const int Z_MAPSPRITE_GROUND = 89;
 
 const int Z_BLOOD_SPLATS = 85;
 

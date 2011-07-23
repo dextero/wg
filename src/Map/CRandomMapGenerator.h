@@ -45,17 +45,35 @@ private:
     static const unsigned int LAIR    = 1 << 2;
     static const unsigned int LOOT    = 1 << 3;
     static const unsigned int DOOR    = 1 << 4;
-    static const unsigned int DOODAH  = 1 << 5; // doodahy lezace pod nogami, przez ktore mozna przejsc
+    static const unsigned int DOODAH_ON_GROUND  = 1 << 5; // doodahy lezace pod nogami, przez ktore mozna przejsc
 
+	enum DoodahZ{
+		FOREGROUND = 87, BACKGROUND, ONGROUND
+	};
+	
+	inline std::string doodahZToString(DoodahZ doodahZ){
+		switch(doodahZ){
+		case FOREGROUND: return "foreground";
+		case BACKGROUND: return "background";
+		case ONGROUND: return "onground";
+		}
+		return "UNKNOWN";
+	}
+	inline DoodahZ stringToDoodahZ(std::string string){
+		if(string == "foreground") return FOREGROUND;
+		if(string == "background") return BACKGROUND;
+		return ONGROUND;
+	}
+	
     struct SPartSet
     {
         struct SDoodah
         {
             std::string file;
-            bool isInForeground;
+            DoodahZ doodahZ;
             float scale;
 
-            SDoodah(std::string file, bool isInForeground, float scale = 1.0f): file(file), isInForeground(isInForeground), scale(scale) {}
+            SDoodah(std::string file, DoodahZ doodahZ, float scale = 1.0f): file(file), doodahZ(doodahZ), scale(scale) {}
         };
 
         std::vector<std::string> tiles;
