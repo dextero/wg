@@ -146,7 +146,9 @@ namespace part
 
         void AddParticleSystemTemplate(const std::string &n, SParticleSystemTemplate *t) { AddParticleSystemTemplate( CreateEffectHandle(n), t); }
         SParticleSystemTemplate *GetParticleSystemTemplate(const std::string &n) { return GetParticleSystemTemplate(CreateEffectHandle(n)); }
+	public:
         bool ExistParticleSystemTemplate(const std::string &n) { return ExistParticleSystemTemplate ( CreateEffectHandle(n) ); }
+	private:
 
         //---------affectors-----------
         void AddAffector(EffectHandle handle, affector::IAffector *a) { affectors.insert(std::pair< EffectHandle , affector::IAffector*>(handle,a)); }

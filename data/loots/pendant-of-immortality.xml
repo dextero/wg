@@ -1,0 +1,43 @@
+<root type="loot">
+    <name name="$ITEM_PENDANT_OF_IMMORTALITY" />
+    <genre>medium-mana</genre>
+    <level value="1" />
+    <image filename="data/loots/pendant-of-immortality.png" />
+    <droprate value="0.03" />
+    <effect type="list">
+        <effect type="console">
+            <text>[
+                msg $MSG_FOUND $ITEM_PENDANT_OF_IMMORTALITY
+                ]</text>
+        </effect>
+        <effect type="timed">
+            <time value="10.0" />
+			<effect type="list">
+			 <effect type="modify">
+				<aspect value="fireresist"/>
+				<amount value="100.0"/>
+			  </effect>
+			  <effect type="modify">
+				<aspect value="physresist"/>
+				<amount value="100.0"/>
+			  </effect>
+			  <effect type="modify">
+				<aspect value="iceresist"/>
+				<amount value="100.0"/>
+			  </effect>
+			  <effect type="modify">
+				<aspect value="lightningresist"/>
+				<amount value="100.0"/>
+			  </effect>
+			  <effect type="modify">
+				<aspect value="poisonresist"/>
+				<amount value="100.0"/>
+			  </effect>
+			</effect>
+        </effect>
+        <effect type="graphical-effect">
+            <time value="10.0" />
+            <name value="immortality-blink" />
+        </effect>
+    </effect>
+</root>
