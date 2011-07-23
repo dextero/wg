@@ -1040,8 +1040,17 @@ PhysicalsVector FilterByType(const PhysicalsVector & input, const std::string & 
     return filteredOut;
 }
 
-std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle, float additionalWeaponProbability)
+std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle, float additionalWeaponProbability, const sf::Vector2f & position)
 {
+    // #997, to prevent generating chests and weapons close to the edge of the user screen
+    const static float TRESHOLD = 4.5;
+    if ((position.x < TRESHOLD || position.x > (float)mDesc.sizeX - TRESHOLD) || (position.y < TRESHOLD || position.y > (float)mDesc.sizeY - TRESHOLD)) {
+        canBeObstacle = false;
+        additionalWeaponProbability = -100000;
+    }
+    // /#997 end of hack
+       
+
     if (canBeObstacle && mSpawnedChestsCount < 3 && gRand.Rndf() < 0.25) {
         fprintf(stderr, "Spawning chest!\n");
         return "data/physicals/obstacles/chest.xml";
@@ -1074,9 +1083,9 @@ std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle
     // konkretne weapony poprzez pliki .xml.... uga buga...
 }
 
-CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability)
+CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability, const sf::Vector2f & position)
 {
-    const std::string lootTemplateFile = GenerateNextLootTemplateFile(false, additionalWeaponProbability);
+    const std::string lootTemplateFile = GenerateNextLootTemplateFile(false, additionalWeaponProbability, position);
     if (lootTemplateFile.empty()) return NULL;
 
     CLoot * loot = dynamic_cast<CLootTemplate*>(gResourceManager.GetPhysicalTemplate(lootTemplateFile))->Create();
@@ -1112,7 +1121,7 @@ bool CRandomMapGenerator::PlaceLoots()
             float offsetY = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // + 0.5, zeby wycentrowac na kaflach
             // obrot w przypadku przedmiotow nie ma sensu, skala zadeklarowana w xmlu
 
-            std::string lootTemplateFile = GenerateNextLootTemplateFile(true);
+            std::string lootTemplateFile = GenerateNextLootTemplateFile(true, 0, sf::Vector2f(tile.x + offsetX, tile.y + offsetY));
             // brzydki hak:
             if (lootTemplateFile == "data/loots/weapon.xml") {
                 const std::string ability = GetRandomWeaponFile(mDesc.level);

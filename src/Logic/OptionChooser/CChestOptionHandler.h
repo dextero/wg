@@ -34,7 +34,7 @@ class CChestOptionHandler : public IOptionChooserHandler
                 case 0:
                     gGraphicalEffects.ShowEffect("bullet-explosion", mChest->GetPosition());
                     gAudioManager.PlaySound("data/sounds/Lugaro/break.ogg", mChest->GetPosition());
-                    CLoot * loot = gRandomMapGenerator.GenerateNextLoot(0.50f);
+                    CLoot * loot = gRandomMapGenerator.GenerateNextLoot(0.50f, mChest->GetPosition());
                     if (loot) {
                         loot->SetPosition(mChest->GetPosition());
                     }

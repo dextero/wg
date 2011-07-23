@@ -11,7 +11,7 @@ CLoot * CLootManager::DropLootAt(const sf::Vector2f & pos)
     // algorytm losowy + zwiekszanie prawdopodobienstwa ze graczowi cos jednak wypadnie ;)
     if ( (dropMod) > gRand.Rndf(0.f,1.1f) ) {
         dropMod = 0.f;
-        CLoot * loot = gRandomMapGenerator.GenerateNextLoot();
+        CLoot * loot = gRandomMapGenerator.GenerateNextLoot(0, pos);
         if (!loot) return NULL;
         loot->SetPosition(pos);
         return loot;
