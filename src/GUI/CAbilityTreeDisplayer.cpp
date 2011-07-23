@@ -161,7 +161,7 @@ void CAbilityTreeDisplayer::UpdateSprites( float secondsPassed ){
                 anm.lvlText->SetPosition(
                     anm.holder->GetPosition().x*100.0f-HOLDER_SIZE*0.6f,
                     anm.holder->GetPosition().y*100.0f+HOLDER_SIZE*0.25f,
-                    HOLDER_SIZE*0.6f,
+                    HOLDER_SIZE*1.6f,
                     HOLDER_SIZE*0.5f);
                 int level = 0;
                 for (unsigned int j = 0; j < abiIntances->size(); j++){
