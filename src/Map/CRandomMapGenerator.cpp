@@ -825,7 +825,7 @@ bool CRandomMapGenerator::PlaceDoodahs()
                     << "\" y=\"" << (float)y + offsetY
                     << "\" scale=\"" << scale
                     << "\" rot=\"" << rot
-                    << "\" z=\"" << (set.doodahs[doodahNum].isInForeground ? "foreground" : "background")
+                    << "\" z=\"" << doodahZToString(set.doodahs[doodahNum].doodahZ)
                     << "\" />\n";
             }
         }
@@ -856,17 +856,17 @@ bool CRandomMapGenerator::PlaceDoodahs()
                 scale = Maths::Clamp(scale, 0.f, 1.1f);
 
             scale *= set.doodahsOnGround[doodahNum].scale;
-
+		
             mXmlText << "\t<sprite file=\"" << set.doodahsOnGround[doodahNum].file
                 << "\" x=\"" << (float)pos.x + offsetX
                 << "\" y=\"" << (float)pos.y + offsetY
                 << "\" scale=\"" << scale
                 << "\" rot=\"" << rot
-                << "\" z=\"" << (set.doodahsOnGround[doodahNum].isInForeground ? "foreground" : "background")
+                << "\" z=\"" << doodahZToString(set.doodahsOnGround[doodahNum].doodahZ)
                 << "\" />\n";
 
             // dobrze, zeby na tym polu juz nic nie ladowalo
-            mCurrent[pos.x][pos.y] = DOODAH;
+            mCurrent[pos.x][pos.y] = DOODAH_ON_GROUND;
         }
     }
 
@@ -1254,11 +1254,14 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
 
         // doodahy
         if (xml.GetChild(n, "doodahs"))
-            for (rapidxml::xml_node<>* doodah = xml.GetChild(xml.GetChild(n, "doodahs"), "doodah"); doodah; doodah = xml.GetSibl(doodah, "doodah"))
-                if (xml.GetInt(doodah, "underfoot") > 0)   // do postawienia pod nogami
-                    set.doodahsOnGround.push_back(SPartSet::SDoodah(xml.GetString(doodah, "file"), !!(xml.GetString(doodah, "z") == "foreground"), xml.GetFloat(doodah, "scale", 1.0f)));
-                else
-                    set.doodahs.push_back(SPartSet::SDoodah(xml.GetString(doodah, "file"), !!(xml.GetString(doodah, "z") == "foreground"), xml.GetFloat(doodah, "scale", 1.0f)));
+			for (rapidxml::xml_node<>* doodah = xml.GetChild(xml.GetChild(n, "doodahs"), "doodah"); doodah; doodah = xml.GetSibl(doodah, "doodah")){
+				DoodahZ const doodahZ = stringToDoodahZ(xml.GetString(doodah, "z"));
+				if (doodahZ == ONGROUND){   // do postawienia pod nogami
+                    set.doodahsOnGround.push_back(SPartSet::SDoodah(xml.GetString(doodah, "file"), doodahZ, xml.GetFloat(doodah, "scale", 1.0f)));
+				} else {
+                    set.doodahs.push_back(SPartSet::SDoodah(xml.GetString(doodah, "file"), doodahZ, xml.GetFloat(doodah, "scale", 1.0f)));
+				}
+			}
 
 		set.maxDoodahsOnGround = xml.GetInt(xml.GetChild(n, "max-doodahs-on-ground"), "value", 5);
 		set.minDoodahsOnGround = xml.GetInt(xml.GetChild(n, "min-doodahs-on-ground"), "value", 2);

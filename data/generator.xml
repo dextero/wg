@@ -260,16 +260,16 @@
         </tiles>
         <doodahs>
             <!-- "lezace na ziemi" -->
-            <doodah file="data/maps/doodahs/bonefire_one.png" z="background" underfoot="1" />
-            <doodah file="data/maps/doodahs/bonefire_four.png" z="background" underfoot="1" />
-            <doodah file="data/maps/doodahs/foliage8.png" z="background" underfoot="1" />
-            <doodah file="data/maps/doodahs/foliage9.png" z="background" underfoot="1" />
-            <doodah file="data/maps/doodahs/foliage9.png" z="background" underfoot="1" scale="0.5"/>
-            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.8" />
-            <doodah file="data/maps/doodahs/jungle/sticks3.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/stick1.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/stick2.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/bonefire_one.png" z="onground" />
+            <doodah file="data/maps/doodahs/bonefire_four.png" z="onground" />
+            <doodah file="data/maps/doodahs/foliage8.png" z="onground" />
+            <doodah file="data/maps/doodahs/foliage9.png" z="onground" />
+            <doodah file="data/maps/doodahs/foliage9.png" z="onground" scale="0.5"/>
+            <doodah file="data/maps/doodahs/skeleton.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/skeleton.png" z="onground" scale="0.8" />
+            <doodah file="data/maps/doodahs/jungle/sticks3.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/stick1.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/stick2.png" z="onground" scale="1.0" />
 			
             <doodah file="data/maps/doodahs/tree1.png" z="foreground" />
             <doodah file="data/maps/doodahs/tree2.png" z="foreground" />
@@ -302,30 +302,30 @@
         </tiles>
         <doodahs>          
             <!-- "lezace na ziemi" -->
-            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.8" />
-            <doodah file="data/maps/doodahs/jungle/conopy.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/flatbush01.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/flatbush02.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/flatbush03.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/flatbush04.png" z="background" underfoot="1" scale="1.0" />
-            <!--<doodah file="data/maps/doodahs/jungle/flatbush05.png" z="background" underfoot="1" scale="1.0" />-->
-            <doodah file="data/maps/doodahs/jungle/flatbush06.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/flatbush07.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/flatbush08.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/flatbush09.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/flatbush10.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/flatbush11.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/flatbush12.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/flatbush13.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/leaves1.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/leaves2.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/leaves3.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/stick1.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/stick2.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/sticks1.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/sticks2.png" z="background" underfoot="1" scale="1.0" />
-            <doodah file="data/maps/doodahs/jungle/sticks3.png" z="background" underfoot="1" scale="1.0" />
+            <doodah file="data/maps/doodahs/skeleton.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/skeleton.png" z="onground" scale="0.8" />
+            <doodah file="data/maps/doodahs/jungle/conopy.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush01.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush02.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush03.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush04.png" z="onground" scale="1.0" />
+            <!--<doodah file="data/maps/doodahs/jungle/flatbush05.png" z="onground" scale="1.0" />-->
+            <doodah file="data/maps/doodahs/jungle/flatbush06.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush07.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush08.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush09.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush10.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush11.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush12.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/flatbush13.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/leaves1.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/leaves2.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/leaves3.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/stick1.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/stick2.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/sticks1.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/sticks2.png" z="onground" scale="1.0" />
+            <doodah file="data/maps/doodahs/jungle/sticks3.png" z="onground" scale="1.0" />
 
             <doodah file="data/maps/doodahs/jungle/bush1.png" z="foreground" />
             <doodah file="data/maps/doodahs/jungle/bush2.png" z="foreground" />
@@ -368,20 +368,20 @@
             <tile image="data/maps/tiles/desert/sand3.png" />
         </tiles>
         <doodahs>			
-            <doodah file="data/maps/doodahs/bonefire_three.png" z="background" underfoot="1" />
-            <doodah file="data/maps/doodahs/bonefire_two.png" z="background" underfoot="1" />
-            <doodah file="data/maps/doodahs/bones1.png" z="background" underfoot="1" scale="0.5"/>
-            <doodah file="data/maps/doodahs/desert/bones.png" z="background" underfoot="1"/>
-            <doodah file="data/maps/doodahs/desert/bones2.png" z="background" underfoot="1"/>
-            <doodah file="data/maps/doodahs/desert/skeleton1.png" z="background" underfoot="1"/>
-            <doodah file="data/maps/doodahs/desert/skeleton2.png" z="background" underfoot="1"/>
-            <doodah file="data/maps/doodahs/desert/broken_wheel_1.png" z="background" underfoot="1"/>
-            <doodah file="data/maps/doodahs/desert/broken_wheel_2.png" z="background" underfoot="1"/>
-            <doodah file="data/maps/doodahs/desert/bucket.png" z="background" underfoot="1" scale="0.75"/>
-            <doodah file="data/maps/doodahs/desert/grass1.png" z="background" underfoot="1"/>
-            <doodah file="data/maps/doodahs/desert/grass2.png" z="background" underfoot="1"/>
-            <doodah file="data/maps/doodahs/desert/green_bottle.png" z="background" underfoot="1"/>
-            <doodah file="data/maps/doodahs/desert/leaf.png" z="background" underfoot="1"/>
+            <doodah file="data/maps/doodahs/bonefire_three.png" z="onground" />
+            <doodah file="data/maps/doodahs/bonefire_two.png" z="onground" />
+            <doodah file="data/maps/doodahs/bones1.png" z="onground" scale="0.5"/>
+            <doodah file="data/maps/doodahs/desert/bones.png" z="onground"/>
+            <doodah file="data/maps/doodahs/desert/bones2.png" z="onground"/>
+            <doodah file="data/maps/doodahs/desert/skeleton1.png" z="onground"/>
+            <doodah file="data/maps/doodahs/desert/skeleton2.png" z="onground"/>
+            <doodah file="data/maps/doodahs/desert/broken_wheel_1.png" z="onground"/>
+            <doodah file="data/maps/doodahs/desert/broken_wheel_2.png" z="onground"/>
+            <doodah file="data/maps/doodahs/desert/bucket.png" z="onground" scale="0.75"/>
+            <doodah file="data/maps/doodahs/desert/grass1.png" z="onground"/>
+            <doodah file="data/maps/doodahs/desert/grass2.png" z="onground"/>
+            <doodah file="data/maps/doodahs/desert/green_bottle.png" z="onground"/>
+            <doodah file="data/maps/doodahs/desert/leaf.png" z="onground"/>
 			
             <doodah file="data/maps/doodahs/desert/desert_rock1.png" z="background" scale="0.75"/>
             <doodah file="data/maps/doodahs/desert/desert_rock2.png" z="background" scale="0.75"/>
@@ -430,15 +430,15 @@
 			<tile image="data/maps/tiles/arctic/snow.png" />
         </tiles>
         <doodahs>
-            <doodah file="data/maps/doodahs/skeleton.png" z="background" underfoot="1" scale="0.8" />
-            <doodah file="data/maps/doodahs/snow/flatbush1.png" z="background" underfoot="1" scale="0.8" />
-            <doodah file="data/maps/doodahs/snow/flatbush2.png" z="background" underfoot="1" scale="0.8" />
-			<doodah file="data/maps/doodahs/snow/flatbush3.png" z="background" underfoot="1" scale="0.8" />
-            <doodah file="data/maps/doodahs/snow/flatbush3.png" z="background" underfoot="1" scale="0.8" />
-            <doodah file="data/maps/doodahs/snow/flatbush4.png" z="background" underfoot="1" scale="0.8" />
-			<doodah file="data/maps/doodahs/snow/flatbush4.png" z="background" underfoot="1" scale="0.8" />
-			<doodah file="data/maps/doodahs/snow/flatbush4.png" z="background" underfoot="1" scale="0.8" />
-			<doodah file="data/maps/doodahs/snow/flatbush5.png" z="background" underfoot="1" scale="0.8" />
+            <doodah file="data/maps/doodahs/skeleton.png" z="onground" scale="0.8" />
+            <doodah file="data/maps/doodahs/snow/flatbush1.png" z="onground" scale="0.8" />
+            <doodah file="data/maps/doodahs/snow/flatbush2.png" z="onground" scale="0.8" />
+			<doodah file="data/maps/doodahs/snow/flatbush3.png" z="onground" scale="0.8" />
+            <doodah file="data/maps/doodahs/snow/flatbush3.png" z="onground" scale="0.8" />
+            <doodah file="data/maps/doodahs/snow/flatbush4.png" z="onground" scale="0.8" />
+			<doodah file="data/maps/doodahs/snow/flatbush4.png" z="onground" scale="0.8" />
+			<doodah file="data/maps/doodahs/snow/flatbush4.png" z="onground" scale="0.8" />
+			<doodah file="data/maps/doodahs/snow/flatbush5.png" z="onground" scale="0.8" />
 			
             <doodah file="data/maps/doodahs/boulders/snowy-rock1.png" z="background" scale="0.7"/>
 			<doodah file="data/maps/doodahs/boulders/snowy-rock2.png" z="background" scale="0.7"/>

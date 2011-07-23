@@ -399,7 +399,9 @@ namespace Map{
 			doodah->file = /*std::string("data/maps/") + */ xml.GetString(node,"file");
 			doodah->x = xml.GetFloat(node,"x");
 			doodah->y = xml.GetFloat(node,"y");
-			doodah->zindex = ( xml.GetString(node,"z") == "foreground" ? Z_MAPSPRITE_FG : Z_MAPSPRITE_BG );
+			std::string const zVal = xml.GetString(node,"z");
+			doodah->zindex = ( zVal == "foreground" ? Z_MAPSPRITE_FG :
+				( zVal == "background" ? Z_MAPSPRITE_BG : Z_MAPSPRITE_GROUND));
             doodah->anim = xml.GetString(node,"animname");
 
             // damork : extremely temp (szybka zmiana zindexow)
@@ -590,7 +592,8 @@ namespace Map{
         for (unsigned int i = 0; i < mDoodahDescriptors.size(); i++){
             out << "\t<sprite file=\"" << mDoodahDescriptors[i]->file << "\" x=\"" << mDoodahDescriptors[i]->x
                 << "\" y=\"" << mDoodahDescriptors[i]->y << "\" z=\""
-                << (mDoodahDescriptors[i]->zindex == Z_MAPSPRITE_FG ? "foreground" : "background")
+                << (mDoodahDescriptors[i]->zindex == Z_MAPSPRITE_FG ? "foreground" : 
+					(mDoodahDescriptors[i]->zindex == Z_MAPSPRITE_BG ? "background" : "onground"))
                 << "\" scale=\"" << mDoodahDescriptors[i]->scale << "\" rot=\"" << mDoodahDescriptors[i]->rotation << "\"/>\n";
         }
         out << "</map>";

@@ -272,8 +272,10 @@ void CGUIObject::UpdateChilds( float secondsPassed )
 		child->mInternalRect.Right =	child->mGlobalPosition.x + child->mGlobalSize.x - child->mGlobalPadding.Right;
 		child->mInternalRect.Bottom =	child->mGlobalPosition.y + child->mGlobalSize.y - child->mGlobalPadding.Bottom;
 
-		if ( mChildsClipping )	child->mClippingRect = mInternalRect;
-		else					child->mClippingRect = mClippingRect;
+		if ( mChildsClipping )
+			child->mClippingRect = mInternalRect;
+		else
+			child->mClippingRect = mClippingRect;
 
         child->UpdateSprites( secondsPassed );
 		child->UpdateChilds( secondsPassed );
