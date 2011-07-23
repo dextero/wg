@@ -23,6 +23,8 @@
 // tymczasem zeby to chociaz dzialalo to zrobie na lapu-capu
 // a najwyzej ktos inny potem bedzie to przerabiac na particle
 
+using namespace part;
+
 struct SDisplayableEffectFrame {
     float duration;
     float scale;
@@ -216,7 +218,30 @@ bool CGraphicalEffects::Initialize(const std::string & configFile)
     animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 270.0f ) );
     animation.push_back( SDisplayableEffectFrame( 0.000f, 0.000f, 0.000f, 360.0f ) );
     gsAnimations[ "loot-circle" ] = animation;
-
+	
+	animation.clear();
+    animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.600f, 0.000f ) );
+	animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.800f, 0.000f ) );
+    animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.600f, 0.000f ) );
+	animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.000f, 0.000f ) );
+    animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.600f, 0.000f ) );
+	animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.800f, 0.000f ) );
+    animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.600f, 0.000f ) );
+	animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.000f, 0.000f ) );
+    animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.600f, 0.000f ) );
+	animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.800f, 0.000f ) );
+    animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.600f, 0.000f ) );
+	animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.000f, 0.000f ) );
+    animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.600f, 0.000f ) );
+	animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.800f, 0.000f ) );
+    animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.600f, 0.000f ) );
+	animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.000f, 0.000f ) );
+    animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.600f, 0.000f ) );
+	animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.800f, 0.000f ) );
+    animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.600f, 0.000f ) );
+	animation.push_back( SDisplayableEffectFrame( 0.300f, 1.000f, 0.000f, 0.000f ) );
+	animation.push_back( SDisplayableEffectFrame( 0.000f, 1.000f, 1.000f, 0.000f ) );
+    gsAnimations[ "immortality-blink" ] = animation;
 
     return true;
 }
@@ -495,24 +520,7 @@ SEffectParamSet CGraphicalEffects::Prepare( const std::string & templateName )
     {
 		eps.duration = 0.50f;
 	}
-    else if ( templateName == "acid" ||
-              templateName == "acid-cloud" ||
-              templateName == "storm-cloud" ||
-			  templateName == "acid-spray" ||
-              templateName == "bloodsplatter" ||
-              templateName == "firearrow-trail" ||
-              templateName == "frost" ||
-              templateName == "heal" ||
-              templateName == "iceball" ||
-              templateName == "shield" ||
-              templateName == "smallfireball" ||
-              templateName == "stars" ||
-              templateName == "tinyfireball" ||
-              templateName == "green-cloud" ||
-              templateName == "flames" ||
-              templateName == "trail" ||
-			  templateName == "smoke" ||
-			  templateName == "lightball" )
+	else if ( gParticleManager.ExistParticleSystemTemplate(templateName))
     {
         eps.duration = 0.01f;
         eps.particle = templateName;
@@ -548,6 +556,10 @@ SEffectParamSet CGraphicalEffects::Prepare( const std::string & templateName )
         eps.alpha = 1.0f;
         eps.effectAnimation = "shockwave";
     }
+	else if (templateName == "immortality-blink"){
+        eps.image = "data/effects/immortality-circle.png";
+        eps.effectAnimation = "immortality-blink";
+	}
     else // shockwave
     {
         //gConsole.Printf( L"CGraphicalEffects::Prepare: unable to prepare `%s' - not found,"

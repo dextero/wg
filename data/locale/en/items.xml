@@ -17,6 +17,14 @@
 	</entry>
 	<entry>
 		<key>ITEM_MANA_MEDIUM</key>
+		<value>Mana potiom</value>
+	</entry>
+	<entry>
+		<key>ITEM_MANA_BIG</key>
+		<value>Mana potion</value>
+	</entry>
+	<entry>
+		<key>ITEM_MANA_REGENERATION</key>
 		<value>Managenerator</value>
 	</entry>
 	<entry>
@@ -38,5 +46,21 @@
 	<entry>
 		<key>ITEM_XP</key>
 		<value>Experience points</value>
+	</entry>
+	<entry>
+		<key>ITEM_PENDANT_OF_IMMORTALITY</key>
+		<value>Pendant of immortality</value>
+	</entry>
+	<entry>
+		<key>ITEM_FIRESTORM</key>
+		<value>Firestorm</value>
+	</entry>
+	<entry>
+		<key>ITEM_EYE_OF_THUNDER</key>
+		<value>Eye of thunder</value>
+	</entry>
+	<entry>
+		<key>ITEM_FIREBURST</key>
+		<value>Fireburst</value>
 	</entry>
 </root>
