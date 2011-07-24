@@ -107,19 +107,6 @@ void CActorTemplate::Fill(CActor *actor, float f)
     float shadow =      Lerp( mMinShadowOffset, mMaxShadowOffset, f);
 
     CStats minStats = *mMinStats, maxStats = *mMaxStats;
-    
-    // arcade mode, tutaj, bo to tylko tymczasowe
-    // reszta zmian do arcade-mode: CMenuScreens::UpdateArcadeMode
-    if (gLogic.IsInArcadeMode())
-    {
-        // mana * 2
-        minStats.SetBaseAspect(aMaxMana, minStats.GetBaseAspect(aMaxMana) * 2.f);
-        maxStats.SetBaseAspect(aMaxMana, maxStats.GetBaseAspect(aMaxMana) * 2.f);
-
-        // mana-regen / 2
-        minStats.SetBaseAspect(aManaRegen, minStats.GetBaseAspect(aManaRegen) * 0.5f);
-        maxStats.SetBaseAspect(aManaRegen, maxStats.GetBaseAspect(aManaRegen) * 0.5f);
-    }
 
     actor->GetStats()->LerpContent(&minStats,&maxStats,f);
     actor->GetStats()->SetMana(actor->GetStats()->GetBaseAspect(aMaxMana)); // mana na max
