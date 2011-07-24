@@ -105,7 +105,7 @@ void GUI::CSaveScreen::SlotPressed( const std::wstring & params )
     }
     else
     {
-		std::string filename = StringUtils::ConvertToString(params);
+		/*std::string filename = StringUtils::ConvertToString(params);
 		if (FileUtils::FileExists(filename))
         {
 			std::string str = FileUtils::ReadFromFile(filename);
@@ -124,7 +124,7 @@ void GUI::CSaveScreen::SlotPressed( const std::wstring & params )
                 str.replace(at, end - at, StringUtils::ToString(gLogic.GetDifficultyFactor()));
 				FileUtils::WriteToFile(filename, str);
             }
-        }
+        }*/
 
         gLogic.LoadGame(StringUtils::ConvertToString(params));
     }
@@ -136,8 +136,8 @@ void GUI::CSaveScreen::UpdateSlots( bool save )
     int currentSlot = 0;
 
     // pasek zmiany trudnosci i button "laduj" tylko przy loadzie
-    if (mDiffTxt)   mDiffTxt->SetVisible(!mSave);
-    if (mDiffBar)   mDiffBar->SetVisible(!mSave);
+    if (mDiffTxt)   mDiffTxt->SetVisible(false); //mDiffTxt->SetVisible(!mSave);
+    if (mDiffBar)   mDiffBar->SetVisible(false); //mDiffBar->SetVisible(!mSave);
     if (mLoadButton)
     {
         mLoadButton->SetVisible(!mSave);
@@ -182,6 +182,7 @@ void GUI::CSaveScreen::SetVisible( bool visible /*= true*/ )
 
 void GUI::CSaveScreen::UpdateDifficultyBar(int hoveredBtnNum)
 {
+	// aktualnie nieuzywane, bo wykomentowane jest w SelectSlot
     std::string saveName = gGameOptions.GetUserDir() + std::string("/game") + (((unsigned)hoveredBtnNum > 0) ? StringUtils::ToString((unsigned)hoveredBtnNum - 1) : "") + ".save";
 
     if (!mSaveScreen || mSave)
@@ -286,5 +287,5 @@ void GUI::CSaveScreen::SelectSlot(int slotNum)
         }
     }
 
-    UpdateDifficultyBar(slotNum);
+    //UpdateDifficultyBar(slotNum);
 }
