@@ -234,7 +234,6 @@ void CPlayerController::Update(float dt) {
             item = ((CPlayer*)mActor)->GetCurrentItem();
 
         if (item) {
-            fprintf(stderr, "item->%s\n", item->GetAbility().c_str());
             res = mActor->GetAbilityPerformer().FindAbilityIndexByInvPos(item->mInvPos);
         }
 
