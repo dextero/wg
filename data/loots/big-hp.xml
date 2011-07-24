@@ -1,9 +1,7 @@
 <root type="loot">
     <name name="$ITEM_HP_BIG" />
     <genre>big-hp</genre>
-    <level value="1" />
     <image filename="data/loots/hp_mik3.png" />
-    <droprate value="0.0001" />
     <effect type="list">
         <effect type="console">
             <text>[
