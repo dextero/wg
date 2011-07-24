@@ -15,7 +15,7 @@
                     <amount value="7.0" />
                 </effect>
             </effect>
-		</efect>
+		</effect>
         <effect type="graphical-effect">
             <time value="3.0" />
             <name value="trail" />

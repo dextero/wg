@@ -9,7 +9,8 @@ hg archive -I ../../../src -I ../../../build "$WORK_DIR"
 echo "Creating output directory..."
 CURRENT_DIR=$(pwd)
 #REVISION=$(svn info "$WORK_DIR" | grep Revision: | cut -d" " -f2 | cut -c1-4)
-REVISION=$(hg id -i)
+#REVISION=$(hg id -i)
+REVISION=$(hg describe -l 10000)
 MY_OUTPUT_FOLDER_NAME="$OUTPUT_FOLDER_NAME-"$(date "+%d-%m-%Y")"-$REVISION"
 OUTPUT_DIR="$CURRENT_DIR/$MY_OUTPUT_FOLDER_NAME"
 echo "Output dir is $OUTPUT_DIR"
