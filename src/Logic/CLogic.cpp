@@ -55,7 +55,7 @@ CLogic::CLogic() :
 	mSaveGameStr(""),
     mDifficultyFactor(1.f),
     mScore(0u),
-    mArcadeMode(false)
+    mArcadeMode(true)
 {
     fprintf( stderr, "CLogic::CLogic()\n" );
 
