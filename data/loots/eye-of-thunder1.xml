@@ -1,9 +1,7 @@
 <root type="loot">
     <name name="$ITEM_EYE_OF_THUNDER" />
-    <genre>regeneration</genre>
-    <level value="5" />
+    <genre>eye-of-thunder</genre>
     <image filename="data/loots/eye-of-thunder.png" />
-    <droprate value="0.000001" />
     <effect type="list">
         <effect type="console">
             <text>[

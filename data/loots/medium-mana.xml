@@ -1,9 +1,7 @@
 <root type="loot">
     <name name="$ITEM_MANA_MEDIUM" />
     <genre>medium-mana</genre>
-    <level value="1" />
     <image filename="data/loots/medium-mana.png" />
-    <droprate value="0.03" />
     <effect type="list">
         <effect type="console">
             <text>[

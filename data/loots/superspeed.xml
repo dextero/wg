@@ -1,9 +1,7 @@
 <root type="loot">
   <name name="$ITEM_SUPERSPEED" />
   <genre>superspeed</genre>
-  <level value="5" />
   <image filename="data/loots/superspeed_powerup.png" />
-  <droprate value="0.00002" />
   <effect type="list">
       <effect type="console">
           <text>[
@@ -11,13 +9,19 @@
               ]</text>
       </effect>
 
-      <effect type="timed">
-          <time value="10.0" />
-          <effect type="modify">
-              <aspect value="speed" />
-              <amount value="1.6" />
-          </effect>
+      <effect type="sound">
+          <name value="data/sounds/Lugaro/jump.ogg" />
       </effect>
+	  
+	  <effect type="non-cumulative">
+          <effect type="timed">
+              <time value="10.0" />
+              <effect type="modify">
+                  <aspect value="speed" />
+                  <amount value="1.6" />
+              </effect>
+          </effect>
+	  </effect>
 
       <effect type="graphical-effect">
           <time value="10.0" />

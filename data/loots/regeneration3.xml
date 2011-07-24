@@ -1,19 +1,19 @@
 <root type="loot">
     <name name="$ITEM_REGENERATION" />
     <genre>regeneration</genre>
-    <level value="5" />
     <image filename="data/loots/art.png" />
-    <droprate value="0.000001" />
     <effect type="list">
         <effect type="console">
             <text>[
                 msg $MSG_FOUND $ITEM_REGENERATION
                 ]</text>
         </effect>
-        <effect type="timed">
-            <time value="20.0" />
-            <effect type="heal">
-                <amount value="12.0" />
+        <effect type="non-cumulative">
+            <effect type="timed">
+                <time value="20.0" />
+                <effect type="heal">
+                    <amount value="12.0" />
+                </effect>
             </effect>
         </effect>
         <effect type="graphical-effect">

@@ -1,9 +1,7 @@
 <root type="loot">
     <name name="$ITEM_FIRESTORM" />
-    <genre>regeneration</genre>
-    <level value="5" />
+    <genre>firestorm</genre>
     <image filename="data/loots/firestorm.png" />
-    <droprate value="0.000001" />
     <effect type="list">
         <effect type="console">
             <text>[
