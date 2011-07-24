@@ -327,7 +327,7 @@ void CMenuScreens::InitNewGameOptions()
 		returnButton->SetCenter( true );
 		returnButton->GetClickCallback()->bind( this, &CMenuScreens::ShowPrevious );
 
-        CTextArea* diffTxt = options->CreateTextArea("difficulty-string");
+        /*CTextArea* diffTxt = options->CreateTextArea("difficulty-string");
         diffTxt->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
         diffTxt->SetText(gLocalizator.GetText("DIFFICULTY") + gLocalizator.GetText("DIFFICULTY_1"));
         diffTxt->SetPosition(15.f, 23.f, 30.f, 4.f);
@@ -349,7 +349,7 @@ void CMenuScreens::InitNewGameOptions()
         CTextArea* arcadeTxt = options->CreateTextArea("arcade-txt");
         arcadeTxt->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
         arcadeTxt->SetText(gLocalizator.GetText("ARCADE_MODE"));
-        arcadeTxt->SetPosition(75.f, 23.f, 15.f, 8.f);
+        arcadeTxt->SetPosition(75.f, 23.f, 15.f, 8.f);*/
 
 		mNewGameOptions = options;
 	}
@@ -1543,7 +1543,7 @@ void CMenuScreens::TryStartGame(const std::wstring& runMode)
 }
 
 void CMenuScreens::UpdateDifficultyString(void* control, unsigned state)
-{
+{	// aktualnie nieuzywane, bo wykomentowany jest suwaczek w InitNewGameOptions
     CTextArea* txt = NULL;
     if ((txt = dynamic_cast<CTextArea*>((CGUIObject*)control)) != NULL)
     {
@@ -1554,9 +1554,7 @@ void CMenuScreens::UpdateDifficultyString(void* control, unsigned state)
 }
 
 void CMenuScreens::UpdateArcadeMode()
-{
-    // zmiana many gracza: CPlayerTemplate::Fill
-
+{	// aktualnie nieuzywane, bo wykomentowany jest przycisk w InitNewGameOptions
     CGUIObject* obj = gGUI.FindObject("ng-options");
     if (obj)
     {
