@@ -296,13 +296,13 @@ void CMenuScreens::InitNewGameOptions()
 		options->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
 		options->SetBackgroundImage( "data/GUI/bg-options.jpg" );
 
-		CButton* tutorialButton = options->CreateButton( "single-player-button" );
-        tutorialButton->SetText( gLocalizator.Get("MENU_1_PLAYER_TUTORIAL"), gLocalizator.GetFont(GUI::FONT_MENU) );
-		tutorialButton->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
-		tutorialButton->SetPosition( 25.0f, 30.0f, 50.0f, 10.0f );
-		tutorialButton->SetCenter( true );
-		tutorialButton->GetClickParamCallback()->bind( this, &CMenuScreens::TryStartGame );
-		tutorialButton->SetClickCallbackParams( L"new-game-tutorial" );
+//		CButton* tutorialButton = options->CreateButton( "single-player-button" );
+//      tutorialButton->SetText( gLocalizator.Get("MENU_1_PLAYER_TUTORIAL"), gLocalizator.GetFont(GUI::FONT_MENU) );
+//		tutorialButton->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
+//		tutorialButton->SetPosition( 25.0f, 30.0f, 50.0f, 10.0f );
+//		tutorialButton->SetCenter( true );
+//		tutorialButton->GetClickParamCallback()->bind( this, &CMenuScreens::TryStartGame );
+//		tutorialButton->SetClickCallbackParams( L"new-game-tutorial" );
 
 		CButton* singleButton = options->CreateButton( "single-player-button" );
         singleButton->SetText( gLocalizator.Get("MENU_1_PLAYER"), gLocalizator.GetFont(GUI::FONT_MENU) );
