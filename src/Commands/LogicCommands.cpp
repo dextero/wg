@@ -50,6 +50,7 @@
 
 void CommandClearPhysicals(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSetAbility(size_t argc, const std::vector<std::wstring> &argv);
+void CommandSpawnLoot(size_t argc, const std::vector<std::wstring> &argv);
 
 // na koncu musi byc {0,0,0}, bo sie wszystko ***
 CCommands::SCommandPair LogicCommands [] =
@@ -59,6 +60,7 @@ CCommands::SCommandPair LogicCommands [] =
     {L"set-physical-animation"              , "$MAN_SET_PHYSICAL_ANIMATION"     , CommandSetPhysicalAnimation    },
     {L"set-physical-position"               , "$MAN_SET_PHYSICAL_POSITION"      , CommandSetPhysicalPosition     },
     {L"set-physical-velocity"               , "$MAN_SET_PHYSICAL_VELOCITY"      , CommandSetPhysicalVelocity     },
+    {L"spawn-loot"                          , "$MAN_SPAWN_LOOT"                 , CommandSpawnLoot               },
     {L"spawn-physical"                      , "$MAN_SPAWN_PHYSICAL"             , CommandSpawnPhysical           },
     {L"spawn-physical-rot"                  , "$MAN_SPAWN_PHYSICAL"             , CommandSpawnPhysicalRot        },
     {L"spawn-raw-physical"                  , "$MAN_SPAWN_RAW_PHYSICAL"         , CommandSpawnRawPhysical        },
@@ -118,6 +120,21 @@ void spawnPhysical(std::string &templName, std::wstring &id, float x, float y, i
         physical->SetPosition( sf::Vector2f( x, y ) );
 		physical->SetRotation( rot );
 	}
+}
+
+#include "../Map/CRandomMapGenerator.h"
+
+void CommandSpawnLoot(size_t argc, const std::vector<std::wstring> &argv){
+	if (argc < 3) {
+        gConsole.Printf( L"usage: %ls x y" , argv[0].c_str() );
+		return;
+	}
+    float x = StringUtils::Parse<float>( StringUtils::ConvertToString( argv[1] ) );
+    float y = StringUtils::Parse<float>( StringUtils::ConvertToString( argv[2] ) );
+	sf::Vector2f pos(x, y);
+    CLoot * loot = gRandomMapGenerator.GenerateNextLoot(0, pos);
+    if (!loot) return;
+	loot->SetPosition(pos);
 }
 
 void CommandSpawnPhysical(size_t argc, const std::vector<std::wstring> &argv){

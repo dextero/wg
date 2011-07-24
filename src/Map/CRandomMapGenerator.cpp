@@ -1044,21 +1044,19 @@ std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle
 {
     // #997, to prevent generating chests and weapons close to the edge of the user screen
     const static float TRESHOLD = 4.5;
+	float closeToScreenEdgePenalty = 0;
     if ((position.x < TRESHOLD || position.x > (float)mDesc.sizeX - TRESHOLD) || (position.y < TRESHOLD || position.y > (float)mDesc.sizeY - TRESHOLD)) {
         canBeObstacle = false;
-        additionalWeaponProbability = -100000;
+        closeToScreenEdgePenalty = -100000;
     }
     // /#997 end of hack
-       
 
     if (canBeObstacle && mSpawnedChestsCount < 3 && gRand.Rndf() < 0.25) {
-        fprintf(stderr, "Spawning chest!\n");
         return "data/physicals/obstacles/chest.xml";
     }
     float realWeaponSpawnProbability = mSpawnWeaponProbability + (additionalWeaponProbability * (3 - mSpawnedWeaponsCount));
-    fprintf(stderr, "realWeaponSpawnProbability = %f\n", realWeaponSpawnProbability);
+	realWeaponSpawnProbability += closeToScreenEdgePenalty;
     if (gRand.Rndf() < realWeaponSpawnProbability) {
-        fprintf(stderr, "Spawning weapon!\n");
         mSpawnedWeaponsCount++;
         mSpawnWeaponProbability = 0.25f - (mSpawnedWeaponsCount * 0.30f);
         return "data/loots/weapon.xml";
@@ -1079,8 +1077,6 @@ std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle
     
     return loot.file;
 
-    // o kurczaki, trzeba bedzie jakis mechanizm dorobic, zeby dalo sie przepychac
-    // konkretne weapony poprzez pliki .xml.... uga buga...
 }
 
 CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability, const sf::Vector2f & position)
@@ -1091,7 +1087,6 @@ CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability,
     CLoot * loot = dynamic_cast<CLootTemplate*>(gResourceManager.GetPhysicalTemplate(lootTemplateFile))->Create();
     if (loot->GetGenre() == L"weapon") { //a moze "random weapon" ?
         const std::string ability = GetRandomWeaponFile(mDesc.level);
-        fprintf(stderr, "Generated random weapon: %s\n", ability.c_str());
         loot->SetAbility(ability);
     }
     return loot;
@@ -1125,7 +1120,6 @@ bool CRandomMapGenerator::PlaceLoots()
             // brzydki hak:
             if (lootTemplateFile == "data/loots/weapon.xml") {
                 const std::string ability = GetRandomWeaponFile(mDesc.level);
-                fprintf(stderr, "Generated random weapon: %s\n", ability.c_str());
 
                 mXmlText << "\t<obj templateFile=\"" << lootTemplateFile << "\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" ><ability>" << ability << "</ability></obj>\n";
             } else {
