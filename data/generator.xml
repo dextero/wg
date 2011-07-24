@@ -219,8 +219,8 @@
         <loot file="data/loots/superspeed.xml" minLevel="1" frequency="0.5" maxLevel="99" />
         <loot file="data/loots/pendant-of-immortality.xml" minLevel="10" frequency="0.5" maxLevel="99" />
 
-		<!-- losowy weapon -->
-        <loot file="data/loots/weapon.xml" minLevel="1" maxLevel="99" />
+		<!-- losowy weapon, tworzenie jest obslugiwane bezposrednio w kodzie -->
+        <!--<loot file="data/loots/weapon.xml" minLevel="1" maxLevel="99" />-->
       
         <!-- le boss -->
         <boss file="data/physicals/monsters/defs/gargant-boss.xml" minLevel="9" maxLevel="9" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-small.xml" />
