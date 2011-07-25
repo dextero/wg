@@ -27,6 +27,7 @@
 #include <GL/gl.h>
 #endif
 #include "Utils/HRTimer.h"
+#include "Map/CMapManager.h"
 
 #include "VFS/vfs.h"
 
@@ -323,7 +324,7 @@ void CGame::MainLoopStep()
     if (mShowFps)
         if (cTime > lastFPSDisplay + 1.0f){
             std::wstringstream s;
-            s << "FPS: " << gClock.GetFPS() << "\nAverageFPS: " << gClock.GetAverageFPS();
+            s << "FPS: " << gClock.GetFPS() << "\nAverageFPS: " << gClock.GetAverageFPS() << "\nCurrentMap: " << gMapManager.GetLevel();
 
 #ifdef __I_AM_TOXIC__
             CPhysical * player = gPhysicalManager.GetPhysicalById( L"player0" );
