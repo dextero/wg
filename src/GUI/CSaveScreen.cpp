@@ -36,7 +36,7 @@ CSaveScreen::CSaveScreen(CScreens * parent)
     saveScreen->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
     saveScreen->SetBackgroundImage( "data/GUI/bg-options.jpg" );
 
-    CTextArea* diffTxt = saveScreen->CreateTextArea("difficulty-string");
+    /*CTextArea* diffTxt = saveScreen->CreateTextArea("difficulty-string");
     diffTxt->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
     diffTxt->SetText(gLocalizator.GetText("DIFFICULTY") + gLocalizator.GetText("DIFFICULTY_1"));
     diffTxt->SetPosition(15.f, 73.f, 30.f, 4.f);
@@ -50,7 +50,7 @@ CSaveScreen::CSaveScreen(CScreens * parent)
     diff->SetHandleSize(16.0f);
     diff->GetSlideParamCallback()->bind(gLogic.GetMenuScreens(), &CMenuScreens::UpdateDifficultyString);
     diff->SetSlideCallbackParams(diffTxt);
-    mDiffBar = diff;
+    mDiffBar = diff;*/
 
     CButton* loadBtn = saveScreen->CreateButton("load-button");
     loadBtn->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
@@ -136,8 +136,8 @@ void GUI::CSaveScreen::UpdateSlots( bool save )
     int currentSlot = 0;
 
     // pasek zmiany trudnosci i button "laduj" tylko przy loadzie
-    if (mDiffTxt)   mDiffTxt->SetVisible(false); //mDiffTxt->SetVisible(!mSave);
-    if (mDiffBar)   mDiffBar->SetVisible(false); //mDiffBar->SetVisible(!mSave);
+    //if (mDiffTxt)   mDiffTxt->SetVisible(false); mDiffTxt->SetVisible(!mSave);
+    //if (mDiffBar)   mDiffBar->SetVisible(false); mDiffBar->SetVisible(!mSave);
     if (mLoadButton)
     {
         mLoadButton->SetVisible(!mSave);
