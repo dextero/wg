@@ -393,7 +393,7 @@ void GUI::CMenuScreens::InitChooseControlsMenu()
                 tooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
                 tooltip->SetBackgroundImage("data/GUI/transparent-black.png");
                 tooltip->SetVisible(false);
-                //tooltip->SetCenter(true); // ³eeee³oooo³eeee³oooo bug alert, nie centrowac
+                //tooltip->SetCenter(true); // ï¿½eeeeï¿½ooooï¿½eeeeï¿½oooo bug alert, nie centrowac
                 tooltip->SetAutoHeight(true);
                 tooltip->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
                 tooltip->SetText(System::Input::CBindManager::GetBindManagerAt(i)->GetControlsMenuDescription()
@@ -560,7 +560,7 @@ void CMenuScreens::InitOptions()
                 tooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
                 tooltip->SetBackgroundImage("data/GUI/transparent-black.png");
                 tooltip->SetVisible(false);
-                //tooltip->SetCenter(true); // ³eeee³oooo³eeee³oooo bug alert, nie centrowac
+                //tooltip->SetCenter(true); // ï¿½eeeeï¿½ooooï¿½eeeeï¿½oooo bug alert, nie centrowac
                 tooltip->SetAutoHeight(true);
                 tooltip->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
                 tooltip->SetText(System::Input::CBindManager::GetBindManagerAt(i, 0)->GetControlsMenuDescription()
@@ -607,7 +607,7 @@ void CMenuScreens::InitOptions()
                 tooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
                 tooltip->SetBackgroundImage("data/GUI/transparent-black.png");
                 tooltip->SetVisible(false);
-                //tooltip->SetCenter(true); // ³eeee³oooo³eeee³oooo bug alert, nie centrowac
+                //tooltip->SetCenter(true); // ï¿½eeeeï¿½ooooï¿½eeeeï¿½oooo bug alert, nie centrowac
                 tooltip->SetAutoHeight(true);
                 tooltip->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
                 tooltip->SetText(System::Input::CBindManager::GetBindManagerAt(i, 1)->GetControlsMenuDescription()
@@ -1542,7 +1542,7 @@ void CMenuScreens::TryStartGame(const std::wstring& runMode)
         gLogic.StartNewGame(runMode);
 }
 
-void CMenuScreens::UpdateDifficultyString(void* control, unsigned state)
+/*void CMenuScreens::UpdateDifficultyString(void* control, unsigned state)
 {	// aktualnie nieuzywane, bo wykomentowany jest suwaczek w InitNewGameOptions
     CTextArea* txt = NULL;
     if ((txt = dynamic_cast<CTextArea*>((CGUIObject*)control)) != NULL)
@@ -1551,9 +1551,9 @@ void CMenuScreens::UpdateDifficultyString(void* control, unsigned state)
         txt->SetText(diffTxt);
         gLogic.SetDifficultyLevel(state);
     }
-}
+}*/
 
-void CMenuScreens::UpdateArcadeMode()
+/*void CMenuScreens::UpdateArcadeMode()
 {	// aktualnie nieuzywane, bo wykomentowany jest przycisk w InitNewGameOptions
     CGUIObject* obj = gGUI.FindObject("ng-options");
     if (obj)
@@ -1566,7 +1566,7 @@ void CMenuScreens::UpdateArcadeMode()
                 gCommands.ParseCommand(std::wstring(L"set-arcade-mode ") + (cb->GetState() ? L"on" : L"off"));
         }
     }
-}
+}*/
 
 CMenuScreens::CMenuScreens()
 :	mMainMenu( NULL ),

@@ -71,7 +71,7 @@ namespace GUI
 
         void ShowBindingOptions(const std::wstring & menu);
 
-        void UpdateDifficultyString(void* control, unsigned state);
+        //void UpdateDifficultyString(void* control, unsigned state);
 
 	protected:
 		inline std::wstring GenVideoMode( int width, int height, int bpp ) {
@@ -114,7 +114,7 @@ namespace GUI
         void ChooseControls(const std::wstring& controls);
         void TryStartGame(const std::wstring& runMode);
 
-        void UpdateArcadeMode();    // sprawdza checkboxa i ew. przyspiesza gre
+        //void UpdateArcadeMode();    // sprawdza checkboxa i ew. przyspiesza gre
 
         //ustawienia 'dirty', czyli jeszcze nie zapisane, ale juz ruszane przez usera
         int tmpWidth;

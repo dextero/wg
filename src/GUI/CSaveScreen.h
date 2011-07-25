@@ -30,7 +30,8 @@ namespace GUI
 
         CGUIObject * mSaveScreen;
         std::vector< CWindow * > mSlots;
-        CGUIObject * mDiffTxt, * mDiffBar, * mLoadButton;
+        // CGUIObject * mDiffTxt, * mDiffBar;
+        CGUIObject * mLoadButton;
         bool mSave;
     };
 
