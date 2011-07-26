@@ -67,8 +67,8 @@ public:
     void ScoreGained(unsigned score);
 
     // arcade mode == 2x mana, 0.5x mana-regen
-    inline void SetArcadeMode(bool arcade = true) { mArcadeMode = arcade; }
-    inline bool IsInArcadeMode() { return mArcadeMode; }
+    //inline void SetArcadeMode(bool arcade = true) { mArcadeMode = arcade; }
+    //inline bool IsInArcadeMode() { return mArcadeMode; }
 
 #ifdef __EDITOR__
     void UpdateRegions(float secondsPassed);
@@ -88,7 +88,7 @@ private:
     float mDifficultyFactor;
     std::map<float, unsigned> mDifficultyLevels;
     unsigned mScore;
-    bool mArcadeMode;
+    //bool mArcadeMode;
 };
 
 #endif//__CLOGIC_H__
