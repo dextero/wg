@@ -44,7 +44,6 @@ void CStats::Load(CXml &xml,const std::string &attr){
 
 void CStats::SetCurrAspect(EAspect a, float v)
 { 
-    mCurrAspects.Set(a, v);
     switch(a){
 		case aScale:
 			if (mAttached != NULL)
@@ -57,8 +56,22 @@ void CStats::SetCurrAspect(EAspect a, float v)
             if (mAttached != NULL)
                 mAttached->SetBoundingCircle(v); 
             break;
-        case aMaxHP: if (mHP > v) mHP = v; break;
-        case aMaxMana: if (mMana > v) mMana = v; break;
+        case aMaxHP:
+        	if (mCurrAspects[a] < v){
+        		mHP += v - mCurrAspects[a]; // increase HP if maxHP increases
+        	}
+        	if (mHP > v){
+        		mHP = v;
+        	}
+        	break;
+        case aMaxMana:
+        	if (mCurrAspects[a] < v){
+        		mMana += v - mCurrAspects[a]; // increase Mana if maxMana increases
+        	}
+        	if (mMana > v){
+        		mMana = v;
+        	}
+        	break;
         case aSpeed: 
             if (mAttached != NULL)
                 if (Maths::Length(mAttached->GetVelocity()) > v) 
@@ -70,6 +83,7 @@ void CStats::SetCurrAspect(EAspect a, float v)
         default:
             break;
     }
+    mCurrAspects.Set(a, v);
 }
 
 void CStats::DoDamage(float dmg){

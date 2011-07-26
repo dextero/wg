@@ -77,9 +77,26 @@ void CAbilityPerformer::AdvanceAbilityLevel(int id){
 	mAbilityData[id].context->values.Set(aLevel,(float)(mAbilities->at(id).level));
 	if (abi->abilityType == atPassive){
 		CAppliedEffectContainer *aec = mAttached->GetAppliedEffectContainer();
+		// compensating for possible max mana and max hp increases
+		float const oldHP = mAttached->GetStats()->GetHP();
+		float const oldMaxHP = mAttached->GetStats()->GetCurrAspect(aMaxHP);
+		float const oldMana = mAttached->GetStats()->GetMana();
+		float const oldMaxMana = mAttached->GetStats()->GetCurrAspect(aMaxMana);
+
 		if (aec!=NULL)
 			aec->RemoveEffects(ad.source);
         gEffectManager.ApplyPermanent(mAttached,abi->effect->GetOffset(),ad.source,ad.context);
+
+		float const newMaxHP = mAttached->GetStats()->GetCurrAspect(aMaxHP);
+		float const newMaxMana = mAttached->GetStats()->GetCurrAspect(aMaxMana);
+
+		if (newMaxHP > oldMaxHP){
+			mAttached->GetStats()->SetHP(oldHP + (newMaxHP - oldMaxHP));
+		}
+
+		if (newMaxMana > oldMaxMana){
+			mAttached->GetStats()->SetMana(oldMana + (newMaxMana - oldMaxMana));
+		}
 	}
 }
 
@@ -104,13 +121,6 @@ EAbilityResult CAbilityPerformer::PerformAbility(SAbilityInstance &abi, bool ign
     if (mAbilityStateDelayLeft > 0.0f) return arDelay;
     CStats *stats = mAttached->GetStats();
     ExecutionContextPtr context;
-    /*CActor* source = 0; // TODO: WTF, czemu nie poprostu mAttached ?
-	// testowo przelacze na mAttached...
-    if ((size_t)mActiveAbilityIndex < mAbilityData.size())
-    {
-        if (mAbilityData[mActiveAbilityIndex].source.operator ->())
-            source = dynamic_cast<CActor*>(mAbilityData[mActiveAbilityIndex].source->DeterminePhysicalSource());
-    }*/
 	context = GetContext(data);
 	context->abilityPower = abi.ability->mPower.Evaluate(context);
 	float manaCost = abi.ability->mManaCost.Evaluate(context);
@@ -123,11 +133,13 @@ EAbilityResult CAbilityPerformer::PerformAbility(SAbilityInstance &abi, bool ign
             return arNoMana;
         }
 		if (!(mAttached->GetHealthcast())){ // moze rzucamy za pomoca zdrowia...
-			if (!(stats->TryDrainMana(manaCost)))
-                if (stats->GetCurrAspect(aMaxMana) == stats->GetMana()) // jesli jest max many, to wszystko ok, mozna rzucac 
+			if (!(stats->TryDrainMana(manaCost))){
+                if (stats->GetCurrAspect(aMaxMana) == stats->GetMana()){ // jesli jest max many, to wszystko ok, mozna rzucac
                     stats->SetMana(stats->GetMana() - manaCost);
-                else
+                } else {
 				    return arNoMana;
+                }
+			}
 		} else {
 			if (!(stats->TryDrainHealth(manaCost)))
 				return arNoHealth;
