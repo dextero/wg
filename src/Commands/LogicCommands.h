@@ -49,7 +49,7 @@ void CommandSetDifficultyFactor(size_t argc, const std::vector<std::wstring> &ar
 void CommandSetScore(size_t argc, const std::vector<std::wstring> &argv);
 void CommandShowScore(size_t argc, const std::vector<std::wstring> &argv);
 void CommandAddScore(size_t argc, const std::vector<std::wstring> &argv);
-void CommandSetArcadeMode(size_t argc, const std::vector<std::wstring> &argv);
+//void CommandSetArcadeMode(size_t argc, const std::vector<std::wstring> &argv);
 void CommandBestiaryAdd(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSetBoss(size_t argc, const std::vector<std::wstring> &argv);
 

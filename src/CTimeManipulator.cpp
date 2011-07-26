@@ -11,7 +11,7 @@ CTimeManipulator::CTimeManipulator() :
         mRealDelta(0), 
         mDeltaMod(1.0f), 
         mMaxDt(0.1f),
-        mTimeMode(Time::NORMAL_TIME)
+        mTimeMode(Time::SHIFT_TIME)
 {
 	fprintf(stderr,"CTimeManipulator::CTimeManipulator()\n");
 }

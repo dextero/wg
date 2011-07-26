@@ -54,8 +54,8 @@ CLogic::CLogic() :
     mState(L"main-menu"),
 	mSaveGameStr(""),
     mDifficultyFactor(1.f),
-    mScore(0u),
-    mArcadeMode(true)
+    mScore(0u)
+	//, mArcadeMode(true)
 {
     fprintf( stderr, "CLogic::CLogic()\n" );
 
@@ -357,8 +357,8 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
     ss << "#" << gClock.GenerateTimestamp() << "\n";
 	ss << "exec pre-new-game\n";
 
-    // to MUSI byc przed stawianiem graczy na mape
-    ss << "set-arcade-mode " << (mArcadeMode ? "on" : "off") << "\n";
+    /*// to powinno byc przed stawianiem graczy na mape
+    ss << "set-arcade-mode " << (mArcadeMode ? "on" : "off") << "\n";*/
 
 	for (unsigned i = 0; i < gPlayerManager.GetPlayerCount(); i++)
 	{

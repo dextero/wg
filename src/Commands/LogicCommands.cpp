@@ -101,7 +101,7 @@ CCommands::SCommandPair LogicCommands [] =
     {L"set-score"                           , "$MAN_SET_SCORE"                  , CommandSetScore                },
     {L"show-score"                          , "$MAN_SHOW_SCORE"                 , CommandShowScore               },
     {L"add-score"                           , "$MAN_ADD_SCORE"                  , CommandAddScore                },
-    {L"set-arcade-mode"                     , "$MAN_SET_ARCADE_MODE"            , CommandSetArcadeMode           },
+    //{L"set-arcade-mode"                     , "$MAN_SET_ARCADE_MODE"            , CommandSetArcadeMode           },
     {L"bestiary-add"                        , "$MAN_BESTIARY_ADD"               , CommandBestiaryAdd             },
     {L"set-boss"                            , "$MAN_SET_BOSS"                   , CommandSetBoss                 },
     {0,0,0}
@@ -985,7 +985,7 @@ void CommandAddScore(size_t argc, const std::vector<std::wstring> &argv)
     gLogic.ScoreGained(StringUtils::Parse<unsigned>(argv[1]));
 }
 
-void CommandSetArcadeMode(size_t argc, const std::vector<std::wstring> &argv)
+/*void CommandSetArcadeMode(size_t argc, const std::vector<std::wstring> &argv)
 {
     if (argc < 2)
         gConsole.Printf(L"usage: %s [on|off]", argv[0].c_str());
@@ -997,7 +997,7 @@ void CommandSetArcadeMode(size_t argc, const std::vector<std::wstring> &argv)
 
     gTimeManipulator.SetMode(gLogic.IsInArcadeMode() ? Time::SHIFT_TIME : Time::NORMAL_TIME);
     gConsole.Printf(L"Arcade mode %ls", (gLogic.IsInArcadeMode() ? L"ON" : L"OFF"));
-}
+}*/
 
 void CommandBestiaryAdd(size_t argc, const std::vector<std::wstring> &argv)
 {
