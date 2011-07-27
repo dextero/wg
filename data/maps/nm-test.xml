@@ -35,7 +35,7 @@ aa ma ca ca ca ca ca ca ka aa aa aa aa ea ja aa
 aa aa aa aa aa aa aa aa aa aa aa aa aa ea ja aa </tiles>
 
 <objtype code="door" file="data/physicals/doors/invisible-door.xml" />
-<objtype code="potwor" file="data/physicals/monsters/defs/dragon.xml"/>
+<objtype code="potwor" file="data/physicals/monsters/defs/bee.xml"/>
 <obj code="potwor" x="10" y="2.5"/>
 <obj code="potwor" x="10" y="4.5"/>
 <obj code="potwor" x="10" y="6.5"/>
