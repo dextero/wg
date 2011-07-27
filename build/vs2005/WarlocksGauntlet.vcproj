@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8,00"
-	Name="WarsztatGame"
+	Name="WarlocksGauntlet"
 	ProjectGUID="{3D83327A-9949-4747-85F4-1DD4ADA9A874}"
-	RootNamespace="WarsztatGame"
+	RootNamespace="WarlocksGauntlet"
 	Keyword="Win32Proj"
 	>
 	<Platforms>
@@ -2550,7 +2550,7 @@
 			>
 		</File>
 		<File
-			RelativePath=".\WarsztatGame.rc"
+			RelativePath=".\WarlocksGauntlet.rc"
 			>
 		</File>
 		<File
