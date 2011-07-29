@@ -216,7 +216,6 @@ void CInGameOptionChooser::OptionSelectedThroughMouse(int selected)
 
 void CInGameOptionChooser::OptionSelected(int selected)
 {
-    fprintf(stderr, "OptionSelected(%d)\n", selected);
     if (selected >= (int)mButtons.size()) // cos tu nie gra 
         return;
     if (mOptionHandler) {
@@ -263,12 +262,12 @@ void CInGameOptionChooser::UpdateButtons()
                     GUI::UNIT_PIXEL
             );
         }
-		for (size_t i = 0; i < mButtons.size(); i++) {
-    		if (mIsVisible && (gGUI.GetFocusedObject() == (GUI::CGUIObject*) mButtons[i]) )
-            {
-                fprintf(stderr, "InGameOptionChooser: %d\n", i);
-            }
-        }
+//		for (size_t i = 0; i < mButtons.size(); i++) {
+//    		if (mIsVisible && (gGUI.GetFocusedObject() == (GUI::CGUIObject*) mButtons[i]) )
+//            {
+//                // fprintf(stderr, "InGameOptionChooser: %d\n", i);
+//            }
+//        }
 	}
 }
 
