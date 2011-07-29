@@ -225,7 +225,6 @@ void CBindManager::MouseReleased( const sf::Event::MouseButtonEvent &e )
 }
 void CBindManager::ForceMouseLeftReleased( )
 {
-	fprintf(stderr, "ForceMouseLeftReleased()\n");
 	mKeyboard[sf::Key::Count + sf::Mouse::Left].mKeyState = KEY_FREE;
 	mKeyboard[sf::Key::Count + sf::Mouse::Left].mNewKeyState = KEY_FREE;
 }

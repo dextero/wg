@@ -8,4 +8,4 @@ else
 fi
 
 export LD_LIBRARY_PATH=libs$ARCH
-./WarlocksGauntlet.bin$ARCH $*
+./WarlocksGauntlet.bin$ARCH --show-console $*

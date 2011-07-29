@@ -67,6 +67,13 @@ void CDynamicRegion::Update(float dt){
 
 
 void CDynamicRegion::Trigger(CPlayer *player){
+
+    //tox, robie obejscie na gazomierzu: jesli ten trigger byl odpalany w ciagu ostatnich
+    //0.5 sekundy, to nie probuj go nawet odpalic ponownie. Patrz #1122
+    if (mTriggerTime > 0.0f) {
+        return;
+    }
+
     // najpierw sprawdzamy warunek...
     if (mCond != NULL){
         if (!mCond->SpecificCheck()) // warunek na aktywnosc nie spelniony 
@@ -94,12 +101,12 @@ void CDynamicRegion::Trigger(CPlayer *player){
 }
 
 bool CDynamicRegion::IsTriggered(){ 
-    if( mTriggerTime == 0.0f) 
+    if (mTriggerTime == 0.0f) {
         return false;
-    else{
-        if (mCond!=NULL)
-            if(!mCond->SpecificCheck())
-                return false;
+    } else {
+        if (mCond != NULL && !mCond->SpecificCheck()) {
+            return false;
+        }
         return true;
     }
 }
