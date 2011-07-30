@@ -3490,6 +3490,11 @@ core/anim/frost-demon/default
     0.10 "data/physicals/monsters/gfx/frost-demon.png" 0 0 64 64
 }
 
+core/anim/frost-demon/default/wounded
+{
+    0.10 "data/physicals/monsters/gfx/frost-demon.png"                  0 192   64 256
+}
+
 core/anim/frost-demon/move
 {
     0.10  "data/physicals/monsters/gfx/frost-demon.png"                  0 128   64 192
@@ -3501,7 +3506,7 @@ core/anim/frost-demon/move
     0.10  "data/physicals/monsters/gfx/frost-demon.png"                384 128  448 192
     0.10  "data/physicals/monsters/gfx/frost-demon.png"                448 128  512 192
 }
-core/anim/frost-demon/move/winged
+core/anim/frost-demon/move/wounded
 {
     0.10  "data/physicals/monsters/gfx/frost-demon.png"                  0 192   64 256
     0.10  "data/physicals/monsters/gfx/frost-demon.png"                 64 192  128 256
@@ -3524,7 +3529,7 @@ core/anim/frost-demon/attack
     0.06  "data/physicals/monsters/gfx/frost-demon.png"                384   0  448  64
     0.06  "data/physicals/monsters/gfx/frost-demon.png"                448   0  512  64
 }
-core/anim/frost-demon/attack/winged
+core/anim/frost-demon/attack/wounded
 {
     0.06  "data/physicals/monsters/gfx/frost-demon.png"                  0  64   64 128
     0.06  "data/physicals/monsters/gfx/frost-demon.png"                 64  64  128 128
