@@ -28,6 +28,9 @@ public:
 	// dodaje nowy typ potwora do produkcji
 	void AddEnemyType( std::string enemy );
 
+	// przypina danego potwora spowrotem do gniazda (po zaladowaniu stanu gry z dysku)
+	void RegisterMonsterAsSpawned(CEnemy * enemy);
+
 	// w update moze nastapic wytworzenie i rejestracja potwora
 	virtual void Update(float dt);
 protected:

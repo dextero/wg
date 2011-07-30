@@ -357,9 +357,6 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
     ss << "#" << gClock.GenerateTimestamp() << "\n";
 	ss << "exec pre-new-game\n";
 
-    /*// to powinno byc przed stawianiem graczy na mape
-    ss << "set-arcade-mode " << (mArcadeMode ? "on" : "off") << "\n";*/
-
 	for (unsigned i = 0; i < gPlayerManager.GetPlayerCount(); i++)
 	{
 		if (CPlayer* player = gPlayerManager.GetPlayerByNumber(i))
@@ -412,7 +409,6 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
             }
 		}
 	}
-	//ss << "set-ability player0 data/abilities/fire/fireball.xml 0\n";// taka proba
 
     // umiejki-bronie
 	for (unsigned int i = 0; i < gPlayerManager.GetPlayerCount(); i++)
@@ -435,6 +431,10 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
             ss << "define-quest-flag " << StringUtils::ConvertToString(i->first) << "\n";
 
     // physicale
+    std::map<CEnemy*, int> monstersIndex;
+    std::map<CLair*, int> lairsIndex;
+    int monstersVisited = 0;
+    int lairsVisited = 0;
     const std::vector< CPhysical *>& physicals = gPhysicalManager.GetPhysicals();
     for (std::vector< CPhysical * >::const_iterator it = physicals.begin();
          it != physicals.end(); ++it)
@@ -452,7 +452,13 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
         case PHYSICAL_OBSTACLE:
             filename = (*it)->GetTemplate()->GetFilename();
             ss << "spawn-physical-rot " << filename << " " << StringUtils::ConvertToString((*it)->GetUniqueId()) << " " 
-			    << (*it)->GetPosition().x << " " << (*it)->GetPosition().y << " " << (*it)->GetRotation() << "\n";
+                << (*it)->GetPosition().x << " " << (*it)->GetPosition().y << " " << (*it)->GetRotation() << "\n";
+            if ((*it)->GetCategory() == PHYSICAL_MONSTER) {
+                monstersIndex[(CEnemy*)(*it)] = monstersVisited++;
+            }
+            if ((*it)->GetCategory() == PHYSICAL_LAIR) {
+                lairsIndex[(CLair*)(*it)] = lairsVisited++;
+            }
             break;
         case PHYSICAL_LOOT:
             {
@@ -473,6 +479,12 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
             }
         default:
             break;
+        }
+    }
+    for (std::map<CEnemy*, int>::iterator it = monstersIndex.begin(); it != monstersIndex.end(); it++) {
+        CLair * monsterLair = it->first->GetLair();
+        if (monsterLair) {
+            ss << "register-monster-at-lair " << it->second << " " << lairsIndex[monsterLair] << "\n";
         }
     }
 

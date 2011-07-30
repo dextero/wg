@@ -159,3 +159,9 @@ void CLair::Ready(){
     mTimeSinceSpawn = (0.5f/mSpawnRate) - gRand.Rndf(0.0f,1.0f/mSpawnRate);
 }
 
+void CLair::RegisterMonsterAsSpawned(CEnemy * enemy) {
+    mSpawnCount++;
+    mSpawned.push_back(enemy);
+    enemy->GetCallbackDispatcher()->RegisterEventDeath(SpawneeDeath, this, NULL);
+    enemy->SetLair( this );
+}
