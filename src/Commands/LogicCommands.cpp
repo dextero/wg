@@ -15,11 +15,11 @@
 #include "../Logic/Abilities/CAbilityTree.h"
 #include "../Logic/Abilities/CAbility.h"
 #include "../Logic/Abilities/CPinnedAbilityBatch.h"
-
 #include "../Logic/AI/CActorAI.h"
 #include "../Logic/AI/CWandererScheme.h"
 #include "../Logic/AI/CAISchemeManager.h"
 #include "../Logic/Stats/EAspect.h"
+#include "../Logic/Conditions/CCondition.h"
 
 #include "../ResourceManager/CResourceManager.h"
 #include "../Logic/Factory/CPhysicalTemplate.h"
@@ -221,7 +221,7 @@ void CommandSpawnDoor(size_t argc, const std::vector<std::wstring> &argv)
 {
     if (argc < 4)
     {
-        gConsole.Printf(L"usage: %ls door.xml x y [opened|true|false(default)]", argv[0].c_str());
+        gConsole.Printf(L"usage: %ls door.xml x y [opened|true|false(default)] [console-friendly serialized conditional]", argv[0].c_str());
         return;
     }
 
@@ -235,6 +235,16 @@ void CommandSpawnDoor(size_t argc, const std::vector<std::wstring> &argv)
     CDoor* door = doorTpl->Create();
     door->SetPosition(sf::Vector2f(StringUtils::Parse<float>(argv[2]), StringUtils::Parse<float>(argv[3])), true);
     door->SetOpened(argc > 4 && (argv[4] == L"opened" || argv[4] == L"true"));
+			door->SetOpenedAuto();
+
+	if (argc > 5)
+	{
+		CCondition* cond = new CCondition();
+		if (cond->LoadConsoleFriendly(StringUtils::ConvertToString(argv[5])))
+			door->SetCondition(cond);
+		else
+			delete cond;
+	}
 }
 
 void CommandDestroyPhysical(size_t argc, const std::vector<std::wstring> &argv)

@@ -107,6 +107,8 @@ std::string ToUpper(const std::string& s);
 
 std::string FloatToString(float num, unsigned precision);
 std::wstring FloatToWString(float num, unsigned precision);
+
+std::vector<std::string> Explode(const std::string& str, const std::string& separator);
 }
 
 // hack - kompatybilnosc minGW - g++

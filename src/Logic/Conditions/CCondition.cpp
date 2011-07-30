@@ -119,6 +119,40 @@ void CCondition::Serialize(std::ostream &out, int indent){
     out << "</cond>\n";
 }
 
+bool CCondition::LoadConsoleFriendly(const std::string& data)
+{
+	std::vector<std::string> exploded = StringUtils::Explode(data, ";");
+	if (exploded.size() < 2)
+		return false;
+
+	SetSpecificCheckType(ParseSpecificCheckType(exploded[0]));
+	SetType(ParseConditionType(exploded[1]));
+
+	if (exploded.size() > 2)
+		LoadParam(exploded[2]);
+
+    if ((mSct == sctOnce) || (mSct == sctNever))
+        Register();
+
+	return true;
+}
+
+const std::string CCondition::SerializeConsoleFriendly()
+{
+	std::stringstream ss;
+	ss << SpecificCheckTypeNames[(int)mSct] << ";" << ConditionTypeNames[(int)mType];
+	switch (mType)
+	{
+	case ctClear: ss << ";" << SerializePhysicalFilter(mParam); break;
+	case ctTimeElapsed: ss << ";" << mfParam; break;
+	case ctRegionTriggered:
+	case ctEnemyKilled: ss << ";" << msParam; break;
+	default: break;
+	}
+
+	return ss.str();
+}
+
 bool CCondition::IsTriggered(){
     if (mIndex < 0)
         Check();

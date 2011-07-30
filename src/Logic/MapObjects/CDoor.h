@@ -51,6 +51,7 @@ public:
     bool LetThrough();
 
     void SetOnOpened(CEffectHandle *effect);
+	CEffectHandle* GetOnOpened() { return mOnOpened; }
 };
 
 #endif /*CDOOR_H_*/

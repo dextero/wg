@@ -6,6 +6,8 @@
 #include "../Conditions/CCondition.h"
 #include "../Effects/CEffectHandle.h"
 
+#include <sstream>
+
 CDoor::CDoor(const std::wstring& uniqueId) :
 CPhysical(uniqueId),
 mState(dsClosed),
@@ -72,4 +74,3 @@ void CDoor::SetOpenedAuto(){
 void CDoor::SetOnOpened(CEffectHandle *effect){
     mOnOpened = effect;
 }
-

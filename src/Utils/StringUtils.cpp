@@ -319,4 +319,23 @@ std::wstring FloatToWString(float num, unsigned precision)
     return ret.substr(0, std::max(lastNonZero ? lastNonZero : 1, ret.size() - precision - 1));
 }
 
+std::vector<std::string> Explode(const std::string& str, const std::string& separator)
+{
+	std::vector<std::string> ret;
+
+	if (str.size() > 0 && separator.size() > 0)
+	{
+		size_t prev = 0, at = str.find(separator, 0);
+		for (; prev != std::string::npos; at = str.find(separator, at + 1))
+		{
+			ret.push_back(str.substr(prev, at - prev));
+			prev = at;
+			if (prev != std::string::npos)
+				prev += separator.size();
+		}
+	}
+
+	return ret;
+}
+
 } // namespace StringUtils
