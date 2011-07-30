@@ -9,6 +9,8 @@
 #include "../Logic/CPhysicalManager.h"
 #include "../Logic/MapObjects/CRegion.h"
 #include "../Logic/CLogic.h"
+#include "../Logic/CLair.h"
+#include "../Logic/CEnemy.h"
 
 class CPhysical;
 
@@ -16,6 +18,7 @@ using namespace Map;
 
 void CommandNextMap(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSetMapLevel(size_t argc, const std::vector<std::wstring> &argv);
+void CommandRegisterMonsterAtLair(size_t argc, const std::vector<std::wstring> &argv);
 
  // na koncu musi byc {0,0,0}, bo sie wszystko ***
 CCommands::SCommandPair MapCommands [] =
@@ -33,6 +36,7 @@ CCommands::SCommandPair MapCommands [] =
 	{L"save-empty-map"					, "$MAN_SAVE_EMPTY_MAP"     , CommandSaveEmptyMap},
     {L"delete-region"                   , "$MAN_DELETE_REGION"      , CommandDeleteRegion},
     {L"generate-random-map"             , "$MAN_GENERATE_RANDOM_MAP", CommandGenerateRandomMap},
+    {L"register-monster-at-lair"        , "$MAN_REGISTER_MONSTER_AT_LAIR", CommandRegisterMonsterAtLair},
     {0,0,0}
 };
 
@@ -290,3 +294,35 @@ void CommandSetMapLevel(size_t argc, const std::vector<std::wstring> &argv)
     gMapManager.SetLevel(newLevel);
 }
 
+void CommandRegisterMonsterAtLair(size_t argc, const std::vector<std::wstring> &argv)
+{
+    if (argc < 3) {
+        gConsole.Printf(L"usage: %ls monsterIndex lairIndex", argv[0].c_str());
+        return;
+    }
+    int monsterIndex = StringUtils::Parse<int>(argv[1]);
+    int lairIndex = StringUtils::Parse<int>(argv[2]);
+    CEnemy * monster;
+    CLair * lair;
+    const std::vector< CPhysical *>& physicals = gPhysicalManager.GetPhysicals();
+    for (std::vector< CPhysical * >::const_iterator it = physicals.begin();
+         it != physicals.end(); ++it)
+    {
+        switch ((*it)->GetCategory())
+        {
+        case PHYSICAL_MONSTER:
+            if (monsterIndex-- == 0) {
+                monster = (CEnemy*)(*it);
+            }
+            break;
+        case PHYSICAL_LAIR:
+            if (lairIndex-- == 0) {
+                lair = (CLair*)(*it);
+            }
+        default:
+            break;
+        }
+    }
+    if ( !lair || !monster ) return;
+    lair->RegisterMonsterAsSpawned(monster);	
+}
