@@ -4131,3 +4131,26 @@ core/anim/flower-lair/death
 	0.1 "data/physicals/lairs/flower_lair.png"				64	64	128	128
 	0.1 "data/physicals/lairs/flower_lair.png"				128	64	196	128
 }
+
+###################### carapace-lair
+
+core/anim/carapace-lair/default
+{
+	1.4 "data/physicals/lairs/carapace_lair.png"			0	0	48	48
+	0.10 "data/physicals/lairs/carapace_lair.png"			1	1	47	47
+	0.10 "data/physicals/lairs/carapace_lair.png"			2	2	46	46
+	0.10 "data/physicals/lairs/carapace_lair.png"			1	1	47	47
+}
+
+core/anim/carapace-lair/spawn
+{
+	0.10 "data/physicals/lairs/carapace_lair.png"			2	2	46	46
+	0.10 "data/physicals/lairs/carapace_lair.png"			3	3	45	45
+	0.10 "data/physicals/lairs/carapace_lair.png"			4	4	44	44
+	0.10 "data/physicals/lairs/carapace_lair.png"			5	5	43	43
+	0.15 "data/physicals/lairs/carapace_lair.png"			6	6	42	42
+	0.10 "data/physicals/lairs/carapace_lair.png"			5	5	43	43
+	0.10 "data/physicals/lairs/carapace_lair.png"			4	4	44	44
+	0.10 "data/physicals/lairs/carapace_lair.png"			3	3	45	45
+	0.10 "data/physicals/lairs/carapace_lair.png"			2	2	46	46
+}

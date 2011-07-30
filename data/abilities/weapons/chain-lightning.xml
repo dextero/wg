@@ -27,7 +27,7 @@ Bonus for this spell depends:
     </effect>
     <effect type="retarget">
       <target-chooser>
-        <filter value="hostiles, obstacle"/>
+        <filter value="hostiles,obstacle"/>
         <range calc="5.2" />
         <angle value="30.0"/>
         <aim-at-ground value="1"/>
@@ -51,7 +51,7 @@ Bonus for this spell depends:
           <time value="0.17" />
           <effect type="retarget">
             <target-chooser>
-              <filter value="hostiles, obstacle"/>
+              <filter value="hostiles,obstacle"/>
               <range calc="2.0" />
               <angle value="360.0"/>
               <aim-at-ground value="0"/>
@@ -73,7 +73,7 @@ Bonus for this spell depends:
                 <time value="0.17" />
                 <effect type="retarget">
                   <target-chooser>
-                    <filter value="hostiles, obstacle"/>
+                    <filter value="hostiles,obstacle"/>
                     <range calc="2.0" />
                     <angle value="360.0"/>
                     <aim-at-ground value="0"/>
@@ -95,7 +95,7 @@ Bonus for this spell depends:
                       <time value="0.17" />
                         <effect type="retarget">
                           <target-chooser>
-                            <filter value="hostiles, obstacle"/>
+                            <filter value="hostiles,obstacle"/>
                             <range calc="2.0" />
                             <angle value="360.0"/>
                             <aim-at-ground value="0"/>
