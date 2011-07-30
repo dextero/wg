@@ -16,6 +16,7 @@
 #include "CBossHud.h"
 #include "CAbiSlotsBar.h"
 #include "CInventoryDisplayer.h"
+#include "CInGameOptionChooser.h"
 #include "../Logic/CLogic.h"
 #include "../Logic/CPlayerManager.h"
 #include "../Logic/CPlayer.h"
@@ -118,6 +119,12 @@ void CGameScreens::Hide(const std::wstring &menu)
 		mHud[1]->Hide();
 		mCompass->Hide();
         mBossHud->Hide();
+        for (int i = 0; i < 2; i++) {
+            CPlayer * player = gPlayerManager.GetPlayerByNumber(i);
+            if (player) {
+                player->GetController()->GetOptionChooser()->Hide();
+            }
+        }
 	}
     else if ( menu == L"abilities0" || menu == L"abilities1" )
 	{
