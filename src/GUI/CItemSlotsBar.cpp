@@ -24,7 +24,7 @@ CItemSlotsBar::CItemSlotsBar():
     mSlotSizePercent(33.33f, 33.33f)
 {
     memset(mSlotBg, 0, ITEM_SLOTS_COUNT * sizeof(CWindow*));
-    memset(mSlot, 0, ITEM_SLOTS_COUNT * sizeof(CAbilitySlot*));
+    memset(mSlot, 0, ITEM_SLOTS_COUNT * sizeof(CItemSlot*));
     
     mSlotPosPercent[0] = sf::Vector2f(33.33f, 0.f);     // gora
     mSlotPosPercent[1] = sf::Vector2f(66.67f, 33.33f);  // prawo
