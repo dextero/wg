@@ -30,9 +30,9 @@
       <anim name="core/anim/frost-demon/death" type="death" />
   </animset>
   <animset>
-      <anim name="core/anim/frost-demon/default/winged" type="default" />
-      <anim name="core/anim/frost-demon/move/winged" type="move" />
-      <anim name="core/anim/frost-demon/attack/winged" type="attack" />
+      <anim name="core/anim/frost-demon/default/wounded" type="default" />
+      <anim name="core/anim/frost-demon/move/wounded" type="move" />
+      <anim name="core/anim/frost-demon/attack/wounded" type="attack" />
       <anim name="core/anim/frost-demon/death" type="death" />
   </animset>
 
