@@ -1,4 +1,5 @@
 <!-- ponizej type musi miec wartosc playlist -->
 <root random="true" type="playlist" >
-  <song name="data/music/The_Siege-guitarplaya1990.ogg"/>
+	<!-- lista piosenek -->
+  <song name="data/music/BattleTheme-hugoleo777.ogg"/>
 </root>

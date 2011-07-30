@@ -1,5 +1,0 @@
-<!-- ponizej type musi miec wartosc playlist -->
-<root random="true" type="playlist" >
-	<!-- lista piosenek -->
-  <song name="data/music/BattleTheme-hugoleo777.ogg"/>
-</root>
