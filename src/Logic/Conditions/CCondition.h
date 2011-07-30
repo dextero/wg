@@ -74,6 +74,8 @@ public:
 
     void Load(CXml &xml, rapidxml::xml_node<> *node);
     void Serialize(std::ostream &out, int indent = 2);
+	bool LoadConsoleFriendly(const std::string& data);
+	const std::string SerializeConsoleFriendly();
 
     bool IsTriggered();
     inline bool WasEverTriggered(){

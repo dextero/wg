@@ -474,7 +474,7 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
             {
                 CDoor* door = (CDoor*)(*it);
                 ss << "spawn-door " << door->GetTemplate()->GetFilename() << " " << door->GetPosition().x << " " << door->GetPosition().y << " "
-                    << (door->GetOpened() ? "true\n" : "false\n");
+					<< (door->GetOpened() ? "true" : "false") << " " << (door->GetCondition() ? door->GetCondition()->SerializeConsoleFriendly() : "") << "\n";
                 break;
             }
         default:
