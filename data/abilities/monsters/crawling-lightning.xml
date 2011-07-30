@@ -17,7 +17,7 @@
       <effect type="list" tag="crawling-lightning-effect">
         <effect type="sound">
           <name value="data/sounds/EL/thunder1.ogg" />
-          <name value="data/ssounds/EL/thunder2.ogg" />
+          <name value="data/sounds/EL/thunder2.ogg" />
           <name value="data/sounds/EL/thunder3.ogg" />
           <name value="data/sounds/EL/thunder4.ogg" />
           <name value="data/sounds/EL/thunder5.ogg" />

@@ -6,7 +6,7 @@ template<> CQuestManager* CSingleton<CQuestManager>::msSingleton = 0;
 
 CQuestManager::CQuestManager()
 {
-	LoadQuest( "data/plot/test-quest.xml" );
+//	LoadQuest( "data/plot/test-quest.xml" );
 }
 
 CQuestManager::~CQuestManager()
