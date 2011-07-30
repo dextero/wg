@@ -391,6 +391,7 @@ void CAbilityTreeDisplayer::CAbilityNodeMirror::AddAbilityCallback(){
     if ((treeIdx >= 0) && (abiIdx >= 0)){
 		if (pl->TryBuyAbilityLevel(treeIdx,abiIdx) == abrOK){
 			atd->mForceReload=true;
+			gLogic.GetGameScreens()->GetInventoryDisplayer(atd->mPlayer)->UpdatePlayerData();
             gLogic.GetGameScreens()->GetInventoryDisplayer(atd->mPlayer)->ForceReload();
 		}
     }

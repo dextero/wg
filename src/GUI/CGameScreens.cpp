@@ -37,6 +37,7 @@ using namespace GUI;
 
 // rAum, 29.08 - taka funkcja coby brzydko ale skutecznie wlaczyc pokazywanie kursora przy sterowaniu
 // myszkowym. Trzeba to kiedyś poprawić, na razie to z powodu deadline na jutro.
+// tox, 30.07.11 - ciekawe w ktorym roku powyzszy komentarz byl pisany
 void ShowCursor(bool show=true)
 {
     if (show)								gGUI.ShowCursor(true);
