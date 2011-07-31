@@ -25,6 +25,7 @@
 #include "Conditions/CConditionManager.h"
 #include "../Logic/Abilities/CAbilityTree.h"
 #include "../Logic/Quests/CQuestManager.h"
+#include "../Logic/Effects/CEffectHandle.h"
 #include "../ResourceManager/CResourceManager.h"
 
 #include "../Editor/CEditor.h"
@@ -474,7 +475,11 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
             {
                 CDoor* door = (CDoor*)(*it);
                 ss << "spawn-door " << door->GetTemplate()->GetFilename() << " " << door->GetPosition().x << " " << door->GetPosition().y << " "
-					<< (door->GetOpened() ? "true" : "false") << " " << (door->GetCondition() ? door->GetCondition()->SerializeConsoleFriendly() : "") << "\n";
+					<< (door->GetOpened() ? "true" : "false");
+				if (door->GetCondition())
+					ss << " " << door->GetCondition()->SerializeConsoleFriendly()
+						<< " " << (door->GetOnOpened() ? door->GetOnOpened()->SerializeConsoleFriendly() : "");
+				ss << "\n";
                 break;
             }
         default:

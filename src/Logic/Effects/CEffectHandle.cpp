@@ -33,3 +33,8 @@ void CEffectHandle::PerformAt(const sf::Vector2f &pos, EffectSourcePtr source,Ex
 void CEffectHandle::Serialize(std::ostream &out, int indent){
     gEffectManager.Serialize(offset,out,indent);
 }
+
+const std::string CEffectHandle::SerializeConsoleFriendly()
+{
+	return gEffectManager.SerializeConsoleFriendly(offset);
+}
