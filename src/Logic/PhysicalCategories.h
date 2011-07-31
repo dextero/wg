@@ -47,4 +47,32 @@ const int PHYSICAL_ANY = (1 << PHYSICAL_CATEGORIES_COUNT) - 1;
 int ParsePhysicalFilter(const std::string &input);
 std::string SerializePhysicalFilter(int filter);
 
+// versus mode experiment
+enum ESide
+{
+	SIDE_ENV, // environment - everything hostile or neutral
+	SIDE_PL_A, // player A
+	SIDE_PL_B // player B (if versus mode)
+};
+
+inline physCategory ReinterpretCategoryForVersusMode(ESide casterSide, ESide victimSide, physCategory victimCategory){
+	if (casterSide == SIDE_PL_A || casterSide == SIDE_PL_B){
+		if (victimSide != SIDE_ENV && victimSide != casterSide){
+			if (victimCategory == PHYSICAL_PLAYER){
+				// perform reinterpret
+				return PHYSICAL_MONSTER;
+			}
+		} 
+	}
+	return victimCategory;
+}
+
+struct SideAndCategory
+{
+	SideAndCategory(ESide side, physCategory category): side(side), category(category){}
+
+	ESide const side;
+	physCategory const category;
+};
+
 #endif /* __PHYSICALCATEGORIES_H__ */

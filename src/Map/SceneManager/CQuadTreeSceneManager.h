@@ -6,6 +6,7 @@
 #include <SFML/System/Vector2.hpp>
 #include "../../Console/CConsole.h"
 #include "CQuadTreeNode.h"
+#include "../../Logic/PhysicalCategories.h"
 
 class CQuadTreeSceneManager
 {
@@ -21,7 +22,7 @@ public:
 	void UpdateScene();	
 	void CullVisibility( const sf::FloatRect & viewRectangle);
     void SceneStats( int & currentDrawObjectsCount, int & totalObjectsCount );
-	void GetPhysicalsInRadius( const sf::Vector2f& pos, float radius, int category, std::vector<CPhysical*>& outPhysicals );
+	void GetPhysicalsInRadius( const sf::Vector2f& pos, float radius, int category, ESide side, std::vector<CPhysical*>& outPhysicals );
 	void GetPhysicalsBetweenPoints( const sf::Vector2f& a, const sf::Vector2f& b, float tolerance, int category, std::vector<CPhysical*>& outPhysicals );
 	bool ContainsPhysicals( int category );
 	CSceneNode* GetDisplayableAt( const sf::Vector2f& v );

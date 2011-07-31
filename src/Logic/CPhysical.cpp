@@ -19,6 +19,7 @@ CPhysical::CPhysical(const std::wstring& uniqueId) :
     mUseShadow(false),
 	mUseDisplayable(true),
     mTemplate(NULL), 
+	mSide(SIDE_ENV),
     mUniqueId(uniqueId),
     mRotation(0),
 	mCollisionShape( SHAPE_CIRCLE ),
@@ -93,8 +94,8 @@ const std::wstring& CPhysical::GetGenre() {
 	return mGenre; 
 }
 
-physCategory CPhysical::GetCategory() {
-    return mCategory;
+SideAndCategory CPhysical::GetSideAndCategory() const{
+    return SideAndCategory(this->mSide, this->mCategory);
 }
 
 void CPhysical::SetCategory( physCategory newValue ) {
@@ -102,7 +103,7 @@ void CPhysical::SetCategory( physCategory newValue ) {
 }
 
 void CPhysical::SetCategory( const std::wstring& newValue ) {
-	if ( newValue == L"detector" )
+	if ( newValue == L"detector" ) // FIXME should be synchronized/unified with parsePhysicalFilter
 		mCategory = PHYSICAL_DETECTOR;
 	else if ( newValue == L"player" )
         mCategory = PHYSICAL_PLAYER;
@@ -116,6 +117,10 @@ void CPhysical::SetCategory( const std::wstring& newValue ) {
         mCategory = PHYSICAL_LOOT;
     else 
         fprintf(stderr,"unrecognised physical category: %ls for physical %ls\n",newValue.c_str(),GetUniqueId().c_str());
+}
+
+void CPhysical::SetSide( ESide side){
+	this->mSide = side;
 }
 
 const sf::Vector2f& CPhysical::GetVelocity() const {

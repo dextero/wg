@@ -85,7 +85,7 @@ void CTargetChooser::Perform(CPhysical *emiter, int offset, EffectSourcePtr sour
 
 CPhysical *CTargetChooser::Choose(CPhysical *emiter, ExecutionContextPtr context){
     work.clear();
-	gMapManager.GetSceneManager().GetPhysicalsInRadius(emiter->GetPosition(),range.Evaluate(context),filter,work);
+	gMapManager.GetSceneManager().GetPhysicalsInRadius(emiter->GetPosition(),range.Evaluate(context),filter,emiter->GetSideAndCategory().side, work); 
 	std::vector<CPhysical*> result;
     ChooseFromList(emiter,work,result,emiter,context);
 	if (result.size() == 0)
@@ -96,7 +96,7 @@ CPhysical *CTargetChooser::Choose(CPhysical *emiter, ExecutionContextPtr context
 
 void CTargetChooser::ChooseMultiple(CPhysical *emiter, std::vector<CPhysical*> &result, ExecutionContextPtr context){
     work.clear();
-	gMapManager.GetSceneManager().GetPhysicalsInRadius(emiter->GetPosition(),range.Evaluate(context),filter,work);
+	gMapManager.GetSceneManager().GetPhysicalsInRadius(emiter->GetPosition(),range.Evaluate(context),filter,emiter->GetSideAndCategory().side, work); 
     ChooseFromList(emiter,work,result,emiter,context);
 }
 
@@ -151,7 +151,7 @@ sf::Vector2f CTargetChooser::ChoosePos(CPhysical *emiter, ExecutionContextPtr co
     if (rot >= 360) rot -= 360;
     if (rot < 0) rot += 360;
 	float r = range.Evaluate(context);
-	float dist = 0.85 * r + 0.4 * r * rnd;
+	float dist = 0.85f * r + 0.4f * r * rnd;
     fprintf(stderr, "dist = %f\n", dist);
 	sf::Vector2f v = RotationToVector((float)rot)*dist;
 	float x = emiter->GetPosition().x + v.x;

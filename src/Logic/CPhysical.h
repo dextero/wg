@@ -48,9 +48,10 @@ public:
 	void SetGenre( const std::wstring& g );
 	const std::wstring& GetGenre();
 
-    physCategory GetCategory();
+    SideAndCategory GetSideAndCategory() const;
     void SetCategory( physCategory newValue );
     void SetCategory( const std::wstring& newValue );
+	void SetSide( ESide side);
 
     const sf::Vector2f& GetOldPosition() const;
 
@@ -95,6 +96,7 @@ public:
     void SetShadowOffset(float shadowOffset);
 protected:
     physCategory mCategory;
+	ESide mSide;
     std::wstring mUniqueId;
 	std::wstring mGenre;
     sf::Vector2f mOldPosition;

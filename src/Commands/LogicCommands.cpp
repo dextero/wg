@@ -504,7 +504,7 @@ void CommandKillAll(size_t argc, const std::vector<std::wstring> &argv){
     int filter = ParsePhysicalFilter(StringUtils::ConvertToString(argv[1]));
     const std::vector<CPhysical *> &phys = gPhysicalManager.GetPhysicals();
     for (unsigned int i = 0; i < phys.size(); i++){
-        if (phys[i]->GetCategory() & filter){
+        if (phys[i]->GetSideAndCategory().category & filter){
             phys[i]->Kill();
         }
     }

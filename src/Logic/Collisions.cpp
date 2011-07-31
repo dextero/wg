@@ -30,8 +30,8 @@ bool Collisions::NeedToCheckCollision( CPhysical* physicalA, CPhysical* physical
 {
 	if ( physicalA == NULL || physicalB == NULL )
 		return false;
-	physCategory catA = physicalA->GetCategory();
-	physCategory catB = physicalB->GetCategory();
+	physCategory catA = physicalA->GetSideAndCategory().category;
+	physCategory catB = physicalB->GetSideAndCategory().category;
 
 	if (( catA & PHYSICAL_MOVING ) &&
 		//( !(catA == PHYSICAL_PLAYER && catB == PHYSICAL_BULLET) ) &&
@@ -46,8 +46,8 @@ bool Collisions::NeedToCheckCollision( CPhysical* physicalA, CPhysical* physical
 void Collisions::LogicalResponse( CPhysical* physicalA, CPhysical* physicalB, bool& makePhysicalResponse )
 {
 	makePhysicalResponse = true;
-	physCategory catA = physicalA->GetCategory();
-	physCategory catB = physicalB->GetCategory();
+	physCategory catA = physicalA->GetSideAndCategory().category;
+	physCategory catB = physicalB->GetSideAndCategory().category;
 
     if ( (catA & PHYSICAL_ACTORS) && (catB & PHYSICAL_MOVING) )
         if (dynamic_cast<CActor*>(physicalA)->GetSpawnState() == CActor::ssDying){
@@ -127,7 +127,7 @@ void Collisions::LogicalResponse( CPhysical* physicalA, CPhysical* physicalB, bo
 
 void Collisions::PhysicalResponse( CPhysical* physicalA, CPhysical* physicalB, const sf::Vector2f& separateVector )
 {
-	if ( physicalB->GetCategory() & PHYSICAL_MOVING ) 
+	if ( physicalB->GetSideAndCategory().category & PHYSICAL_MOVING ) 
 	{
 		sf::Vector2f vectorAB = physicalB->GetPosition() - physicalA->GetPosition();
 		float velA = Dot( vectorAB, physicalA->GetVelocity() ); if ( velA <= 0.0f ) velA = 0.01f;
@@ -147,7 +147,7 @@ void Collisions::CheckCollision( CPhysical* _physicalA, CPhysical* _physicalB )
 	CPhysical * physicalA = _physicalA;
 	CPhysical * physicalB = _physicalB;
 
-	if ( physicalA->GetCategory() > physicalB->GetCategory() )
+	if ( physicalA->GetSideAndCategory().category > physicalB->GetSideAndCategory().category )
 		swap( physicalA, physicalB );
 
 	if ( !NeedToCheckCollision( physicalA, physicalB ) )
@@ -261,19 +261,19 @@ void Collisions::CheckAllCollisions()
 				sf::Vector2f position = physical->GetPosition();
 				sf::Vector2f halfRect = physical->GetRectSize() * 0.5f;
 
-				if ( physical->GetCategory() == PHYSICAL_BULLET )
+				if ( physical->GetSideAndCategory().category == PHYSICAL_BULLET )
 				{
 					if ( !sceneRect.Contains(position.x,position.y) )
 						dynamic_cast<CBullet*>(physical)->HandleCollision(NULL);
 				}
-                else if ( ! (physical->GetCategory() == PHYSICAL_DETECTOR ))
+                else if ( ! (physical->GetSideAndCategory().category == PHYSICAL_DETECTOR ))
 				{
 					position.x = Clamp( position.x, sceneRect.Left + halfRect.x, sceneRect.Right - halfRect.x );
 					position.y = Clamp( position.y, sceneRect.Top + halfRect.y, sceneRect.Bottom - halfRect.y );
 					physical->SetPosition( position );
 				}
 
-				if ( physical->GetCategory() == PHYSICAL_PLAYER && gCamera.GetCameraTask() == CCamera::TRAIL_PLAYERS )
+				if ( physical->GetSideAndCategory().category == PHYSICAL_PLAYER && gCamera.GetCameraTask() == CCamera::TRAIL_PLAYERS )
 				{
 					sf::FloatRect cameraRect = gCamera.GetViewRectInGame();
 					position.x = Clamp( position.x, cameraRect.Left + halfRect.x, cameraRect.Right - halfRect.x );

@@ -141,7 +141,7 @@ void CPlayerController::StartTalk()
 	CDetector * npcChooser = gPhysicalManager.CreateDetector();
 	npcChooser->SetPosition( mActor->GetPosition() );
 	npcChooser->SetBoundingCircle( 2.0f );
-	npcChooser->SetCollidingPhysicals( PHYSICAL_NPC );
+	npcChooser->SetCollidingPhysicalsAndCasterSide( PHYSICAL_NPC, mActor->GetSideAndCategory().side );
 	npcChooser->SetBehaviour( CHOOSE_NPC_TO_TALK );
 	npcChooser->SetFramesToDeath( 1 );
 }

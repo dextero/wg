@@ -256,7 +256,7 @@ void CEditor::FrameStarted( float secondsPassed ){
         // modyfikacja tyczy sie zarowno doodahow, jak i physicali
         // odsiewamy invisible-walle, jesli nie sa wyswietlane
         std::vector<CPhysical*> nodes;
-	    gScene.GetPhysicalsInRadius(GetMousePosInWorld(), 0.02f, PHYSICAL_ANY, nodes);
+	    gScene.GetPhysicalsInRadius(GetMousePosInWorld(), 0.02f, PHYSICAL_ANY, SIDE_ENV, nodes);
         CSceneNode* node = NULL;
 
         for (std::vector<CPhysical*>::iterator it = nodes.begin(); it != nodes.end(); ++it)

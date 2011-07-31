@@ -347,7 +347,7 @@ void CEffectManager::Perform(CPhysical *physical, CAppliedEffectPtr ae,float dt)
                 actor->SetHealthcast(true);
             break;
         case betKnockback:
-            if ((source != NULL)&&(source->IsValid())&&(physical->GetCategory() & PHYSICAL_MOVING)){
+            if ((source != NULL)&&(source->IsValid())&&(physical->GetSideAndCategory().category & PHYSICAL_MOVING)){
                 tmp = (int)false; // nie chce mi sie deklarowac nowej zmiennej ;)
                 if (!(source->IsValid())){
                     fprintf(stderr,"WARNING: knockback effect at offset %d with an invalid source - unable to execute, aborting\n",ae->offset);
@@ -563,7 +563,7 @@ void CEffectManager::PerformAt(const sf::Vector2f &pos, int offset, EffectSource
 		r = GetParamNode(offset,ptArea).fValue.Evaluate(context);
 		detector->SetBoundingCircle( r );
         victimCategory = effectNodes[offset+paramOffset(etAreaEffect,ptFilter)].iParam;
-		detector->SetCollidingPhysicals( victimCategory );
+		detector->SetCollidingPhysicalsAndCasterSide( victimCategory, source->DeterminePhysicalSource()->GetSideAndCategory().side ); // FIXME I think this can explode // versus
 		detector->SetBehaviour( APPLY_EFFECT );
 		detector->SetEffectOffset( offset + paramOffset(etAreaEffect,ptSubEffect) );
 		detector->SetFramesToDeath( 1 );

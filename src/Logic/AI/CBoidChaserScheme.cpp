@@ -250,7 +250,7 @@ void CBoidChaserScheme::Rule4_AvoidObstacles(CActorAI* ai, sf::Vector2f& out, fl
 	CActor *actor = ai->GetActor();
 	mWork.clear();
 	int filter = PHYSICAL_PATHBLOCKER;
-	gMapManager.GetSceneManager().GetPhysicalsInRadius(actor->GetPosition(),actor->GetCircleRadius() * minDist,filter,mWork);
+	gMapManager.GetSceneManager().GetPhysicalsInRadius(actor->GetPosition(),actor->GetCircleRadius() * minDist,filter,actor->GetSideAndCategory().side, mWork);
 	for (unsigned int i = 0; i < mWork.size(); i++)
     {
 		CPhysical *phys = mWork[i];
