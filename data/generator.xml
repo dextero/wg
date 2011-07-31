@@ -103,10 +103,10 @@
         <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="7" maxLevel="12" frequency="0.03" />
         <lair    file="data/physicals/lairs/hornet-lair.xml" minLevel="7" maxLevel="8" frequency="0.1" />
         <monster file="data/physicals/monsters/defs/hornet.xml" minLevel="7" maxLevel="12" frequency="0.4" />
-        <lair file="data/physicals/lairs/crawler-lair.xml" minLevel="7" maxLevel="15" frequency="0.1" />
+        <lair    file="data/physicals/lairs/crawler-lair.xml" minLevel="7" maxLevel="15" frequency="0.1" />
+        <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="7" maxLevel="12" frequency="0.05" />
 
         <monster file="data/physicals/monsters/defs/crawler.xml" minLevel="8" maxLevel="13" frequency="0.3" />
-        <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="7" maxLevel="12" frequency="0.05" />
 
         <lair    file="data/physicals/lairs/hornet-lair.xml" minLevel="9" maxLevel="12" frequency="0.3" />
         <lair    file="data/physicals/lairs/troll-lair.xml" minLevel="9" maxLevel="9" frequency="0.05" />
@@ -155,7 +155,7 @@
         <monster file="data/physicals/monsters/defs/kliver.xml" minLevel="19" maxLevel="26" frequency="0.08" />
         <lair    file="data/physicals/lairs/ogre-lair.xml" minLevel="19" maxLevel="25" />
         <lair    file="data/physicals/lairs/cockroach-lair.xml" minLevel="19" maxLevel="25" />
-        <monster file="data/physicals/monsters/defs/poison-haunter.xml" minLevel="19" maxLevel="24" frequency="0.5" />
+        <lair    file="data/physicals/monsters/defs/poison-haunter.xml" minLevel="19" maxLevel="24" frequency="0.5" />
         <monster file="data/physicals/monsters/defs/murion.xml" minLevel="19" maxLevel="25" frequency="0.5" />
         <lair    file="data/physicals/lairs/murion-lair.xml" minLevel="19" maxLevel="25" frequency="0.5" />
         <monster file="data/physicals/monsters/defs/beholder.xml" minLevel="19" maxLevel="27" frequency="0.2" />
