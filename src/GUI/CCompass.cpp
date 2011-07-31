@@ -108,7 +108,10 @@ void CCompass::PointExit()
 	mPos1.y /= Map::TILE_SIZE;
 
 //  pobieranie pozycji gracza pierwszego - nowe
-	mPos = gPlayerManager.GetPlayerByNumber(0)->GetPosition();
+    CPlayer * player = gPlayerManager.GetPlayerByNumber(0);
+    if (player) {
+        mPos = gPlayerManager.GetPlayerByNumber(0)->GetPosition();
+    }
 
 	float dx = mPos.x - mPos1.x;
 	float dy = mPos.y - mPos1.y;
