@@ -9,6 +9,8 @@
 
 #include "../CGame.h"
 #include <SFML/Graphics/Image.hpp>
+#include "CShaderManager.h"
+#include "../Utils/Maths.h"
 
 template<> CDrawableManager* CSingleton<CDrawableManager>::msSingleton = 0;
 
@@ -123,11 +125,6 @@ CDisplayable* CDrawableManager::CreateDisplayable( int zIndex )
     return displayable;
 }
 
-#ifdef WG_SHADERS
-#include "CShaderManager.h"
-#include "../Utils/Maths.h"
-#endif /* WG_SHADERS */
-
 void CDrawableManager::DrawFrame(sf::RenderWindow* wnd)
 {
 	// do edytora
@@ -140,15 +137,11 @@ void CDrawableManager::DrawFrame(sf::RenderWindow* wnd)
         for ( DrawableList::const_iterator it2 = list.begin() ; it2 != list.end() ; it2++ )
         {
             IDrawable* drawable = ( *it2 );
-#ifdef WG_SHADERS
 			gShaderManager.prepareToDraw(drawable);
-#endif /* WG_SHADERS */
             if (drawable->IsVisible())
                 drawable->Draw( wnd );
-#ifdef WG_SHADERS
 			gShaderManager.clearBoundTextures();
 			gShaderManager.activate("");
-#endif /* WG_SHADERS */
         } 
     }
 }

@@ -1,5 +1,3 @@
-#ifdef WG_SHADERS
-
 #include "CShaderManager.h"
 
 #include "CHudSprite.h"
@@ -13,6 +11,7 @@
 #include "../ResourceManager/CImage.h"
 #include "CDisplayable.h"
 #include <SFML/Graphics/Image.hpp>
+#include <SFML/Graphics.hpp>
 #include "ZIndexVals.h"
 #include "../Utils/Maths.h"
 #include "../Utils/CXml.h"
@@ -35,6 +34,10 @@ CShaderManager::CShaderManager():
 
 CShaderManager::~CShaderManager(){
     fprintf(stderr,"CShaderManager::~CShaderManager()\n");
+}
+
+bool CShaderManager::shadersAvailable(){
+	return glCreateProgram != NULL && sf::PostFX::CanUsePostFX();
 }
 
 void CShaderManager::prepareToDraw(IDrawable * drawable){
@@ -196,8 +199,9 @@ void CShaderManager::load(std::string const & fragmentShaderName, std::string co
 		return;
 	}
 
-	if (glCreateProgram == NULL){
+	if (!this->shadersAvailable()){
 	    fprintf(stderr, "Warning - attempting to load shader but glCreateProgram not present!\n");
+		return;
 	}
 
 	// Create Shader And Program Objects
@@ -210,37 +214,13 @@ void CShaderManager::load(std::string const & fragmentShaderName, std::string co
 	GLCheck(glShaderSource(my_fragment_shader, 1, &my_fragment_shader_source, NULL));
 
 	// Compile The Shaders
-	int isCompiled;
 	GLCheck(glCompileShader(my_vertex_shader));
-	glGetShaderiv(my_vertex_shader, GL_COMPILE_STATUS, &isCompiled);
-	if(isCompiled == false)
-	{
-		int maxLength;
-		glGetShaderiv(my_vertex_shader, GL_INFO_LOG_LENGTH, &maxLength);
- 
-		/* The maxLength includes the NULL character */
-		char * vertexInfoLog = new char[maxLength];
- 
-		glGetShaderInfoLog(my_vertex_shader, maxLength, &maxLength, vertexInfoLog);
-		fprintf(stderr, "Vertex shader %s compilation failed! Log:\n%s\n", vertexShaderName.c_str(), vertexInfoLog);
- 
-		delete [] vertexInfoLog;
+	if (!this->verifyShaderCompiled(my_vertex_shader, vertexShaderName)){
 		return;
 	}
+	
 	GLCheck(glCompileShader(my_fragment_shader));
-	glGetShaderiv(my_fragment_shader, GL_COMPILE_STATUS, &isCompiled);
-	if(isCompiled == false)
-	{
-		int maxLength;
-		glGetShaderiv(my_fragment_shader, GL_INFO_LOG_LENGTH, &maxLength);
- 
-		/* The maxLength includes the NULL character */
-		char * fragmentInfoLog = new char[maxLength];
- 
-		glGetShaderInfoLog(my_fragment_shader, maxLength, &maxLength, fragmentInfoLog);
-		fprintf(stderr, "Fragment shader %s compilation failed! Log:\n%s\n", fragmentShaderName.c_str(), fragmentInfoLog);
- 
-		delete [] fragmentInfoLog;
+	if (!this->verifyShaderCompiled(my_fragment_shader, fragmentShaderName)){
 		return;
 	}
 
@@ -275,6 +255,28 @@ GLcharARB * CShaderManager::readFile(std::string const & filename){
 	return buf;
 }
 
+bool CShaderManager::verifyShaderCompiled(GLenum shader, const std::string & shaderName)
+{
+	int isCompiled;
+	glGetShaderiv(shader, GL_COMPILE_STATUS, &isCompiled);
+	if(isCompiled == false)
+	{
+		int maxLength;
+		glGetShaderiv(shader, GL_INFO_LOG_LENGTH, &maxLength);
+ 
+		/* The maxLength includes the NULL character */
+		char * infoLog = new char[maxLength];
+ 
+		glGetShaderInfoLog(shader, maxLength, &maxLength, infoLog);
+		fprintf(stderr, "Shader %s compilation failed! Log:\n%s\n", shaderName.c_str(), infoLog);
+
+		delete[] infoLog;
+		return false;
+	} else {
+		return true;
+	}
+}
+
 int CShaderManager::getProgramId(std::string const & name) 
 {
 	if (this->programNames.count(name) > 0){
@@ -299,4 +301,3 @@ void CShaderManager::loadNormalMaps()
 	}
 }
 
-#endif /* WG_SHADERS */

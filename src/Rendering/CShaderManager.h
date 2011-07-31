@@ -1,8 +1,6 @@
 #ifndef CSHADERMANAGER_H_
 #define CSHADERMANAGER_H_
 
-#ifdef WG_SHADERS
-
 #include <vector>
 #include <string>
 #include <map>
@@ -35,6 +33,8 @@ class CShaderManager: public CSingleton<CShaderManager>, public IKeyListener {
 public:
     CShaderManager();
     ~CShaderManager();
+
+	bool shadersAvailable();
 	
 	void prepareToDraw(IDrawable *drawable);
 	// returns programId (to allow uniform binding)
@@ -58,6 +58,7 @@ private:
 	void load(std::string const & fragmentShaderName, std::string const & vertexShaderName, std::string const & programName);
 
 	GLcharARB * readFile(std::string const & filename);
+	bool verifyShaderCompiled(GLenum shader, const std::string & shaderName);
 
 	std::vector<GLenum> programs;
 
@@ -66,7 +67,5 @@ private:
 	
 	bool needToClearBoundTextures;
 };
-
-#endif /* WG_SHADERS */
 
 #endif /*CSPRITEMANAGER_H_*/
