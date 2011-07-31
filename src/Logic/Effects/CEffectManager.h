@@ -111,8 +111,10 @@ public:
         ExecutionContextPtr context = ExecutionContextPtr(NULL), FocusObjectPtr focus = FocusObjectPtr(NULL));
 
     CEffectHandle *LoadEffect(CXml &xml, xml_node<> *node);
+	CEffectHandle *LoadConsoleFriendly(const std::string& str);
 
     void Serialize(int offset, std::ostream &out, int indent);
+	const std::string SerializeConsoleFriendly(int offset);
 };
 
 #endif /*__CEFFECTAPPLIER_H__*/

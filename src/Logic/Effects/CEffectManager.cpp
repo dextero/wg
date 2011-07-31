@@ -846,6 +846,20 @@ CEffectHandle *CEffectManager::LoadEffect(CXml &xml, rapidxml::xml_node<> *node)
     }
 }
 
+CEffectHandle *CEffectManager::LoadConsoleFriendly(const std::string& str)
+{
+	std::string s = StringUtils::ReplaceAllOccurrences(str, "~", " ");
+
+	if (s.find(';') != std::string::npos)
+		s = "[\n" + StringUtils::ReplaceAllOccurrences(s, ";", "\n") + "]";
+
+	s = "<effect type=\"console\"><text>" + s + "</text></effect>";
+
+	CXml xml(s);
+	CEffectHandle* ret = LoadEffect(xml, xml.GetChild(NULL, "effect"));
+	return ret;
+}
+
 const SEffectNode &CEffectManager::GetParamNode(int offset, ParamType pt){
 	EffectType et = effectNodes[offset].effectType;
 	return effectNodes[offset+paramOffset(et,pt)];
@@ -868,4 +882,40 @@ void CEffectManager::Serialize(int offset, std::ostream &out, int indent){
         default:
             out << indentString << "<!-- CCondition::Serialize is not fully implemented! -->\n";
     }
+}
+
+const std::string CEffectManager::SerializeConsoleFriendly(int offset)
+{
+	std::string str;
+	EffectType et = effectNodes[offset].effectType;
+
+    switch(et){
+        case betConsole:
+			{
+				for (int i = 1; i < effectNodes[offset+1].iParam - 1; i++)
+					str += StringUtils::ConvertToString(*(effectNodes[offset+2].wsParam+i)) + "\n";
+
+				if (str.size() == 0)
+					str = StringUtils::ConvertToString(*effectNodes[offset+2].wsParam);
+
+				str = StringUtils::TrimWhiteSpaces(str);
+				if (str.size() > 0)
+				{
+					if (str[0] == '[')
+						str = str.substr(1); // obciecie []
+					if (str[str.size() - 1] == ']')
+						str = str.substr(0, str.size() - 1);
+					str = StringUtils::TrimWhiteSpaces(str);
+					str = StringUtils::ReplaceAllOccurrences(str, " ", "~");
+					str = StringUtils::ReplaceAllOccurrences(str, "\t", "");
+					str = StringUtils::ReplaceAllOccurrences(str, "\n", ";");
+					// linia1;linia2~ze~spacjami;linia3
+				}
+			}
+            break;
+        default:
+			fprintf(stderr, "warning: trying to serialize effect of non-console type (not implemented)\n");
+    }
+
+	return str;
 }

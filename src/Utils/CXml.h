@@ -13,6 +13,7 @@ class CXml
 {
 public:
 	CXml( std::string filename, std::string root );
+	CXml( const std::string& text );
 	~CXml();
 
 	/* pobierz wezel dokumentu xml */

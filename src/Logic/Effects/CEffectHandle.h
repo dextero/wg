@@ -52,6 +52,7 @@ public:
 	virtual std::string GetType();
 
     void Serialize(std::ostream &out, int indent);
+	const std::string SerializeConsoleFriendly();
 };
 
 #endif /*__CEFFECTHANDLE_H__*/

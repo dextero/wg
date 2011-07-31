@@ -25,6 +25,7 @@
 #include "../Logic/Factory/CPhysicalTemplate.h"
 #include "../Logic/Factory/CDoorTemplate.h"
 #include "../Logic/CPlayerManager.h"
+#include "../Logic/Effects/CEffectManager.h"
 
 #include "../Input/CInputHandler.h"
 #include "../Input/CBindManager.h"
@@ -221,7 +222,7 @@ void CommandSpawnDoor(size_t argc, const std::vector<std::wstring> &argv)
 {
     if (argc < 4)
     {
-        gConsole.Printf(L"usage: %ls door.xml x y [opened|true|false(default)] [console-friendly serialized conditional]", argv[0].c_str());
+        gConsole.Printf(L"usage: %ls door.xml x y [opened|true|false(default)] [console-friendly serialized conditional] [console-friendly serialized effect-on-open]", argv[0].c_str());
         return;
     }
 
@@ -241,7 +242,12 @@ void CommandSpawnDoor(size_t argc, const std::vector<std::wstring> &argv)
 	{
 		CCondition* cond = new CCondition();
 		if (cond->LoadConsoleFriendly(StringUtils::ConvertToString(argv[5])))
+		{
 			door->SetCondition(cond);
+
+			if (argc > 6)
+				door->SetOnOpened(gEffectManager.LoadConsoleFriendly(StringUtils::ConvertToString(argv[6])));
+		}
 		else
 			delete cond;
 	}

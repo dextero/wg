@@ -338,4 +338,29 @@ std::vector<std::string> Explode(const std::string& str, const std::string& sepa
 	return ret;
 }
 
+const std::string ReplaceAllOccurrences(const std::string& str, const std::string& replaceWhat, const std::string& replaceTo)
+{
+	std::stringstream ret;
+
+	if (str.size() > 0 && replaceWhat.size() > 0)
+	{
+		size_t prev = 0, at = str.find(replaceWhat, 0);
+		for (; prev != std::string::npos; at = str.find(replaceWhat, at + 1))
+		{
+			if (at - prev > replaceWhat.size())
+				ret << str.substr(prev, at - prev);
+
+			prev = at;
+
+			if (prev != std::string::npos)
+			{
+				ret << replaceTo;
+				prev += replaceWhat.size();
+			}
+		}
+	}
+
+	return ret.str();
+}
+
 } // namespace StringUtils

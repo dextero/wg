@@ -109,6 +109,7 @@ std::string FloatToString(float num, unsigned precision);
 std::wstring FloatToWString(float num, unsigned precision);
 
 std::vector<std::string> Explode(const std::string& str, const std::string& separator);
+const std::string ReplaceAllOccurrences(const std::string& str, const std::string& replaceWhat, const std::string& replaceTo);
 }
 
 // hack - kompatybilnosc minGW - g++

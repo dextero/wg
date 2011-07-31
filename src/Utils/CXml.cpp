@@ -24,6 +24,19 @@ CXml::CXml(std::string filename, std::string root)
     }
 }
 
+CXml::CXml( const std::string& text )
+: mXmlRoot( NULL ), mFilename("*runtime*"), mFile( NULL )
+{
+	char* c = new char[text.size() + 1];
+	c[text.size()] = '\0';
+	memcpy(c, text.c_str(), text.size());
+
+	mXmlDoc.parse< parse_declaration_node >(mXmlDoc.allocate_string(c));
+	mXmlRoot = mXmlDoc.first_node();
+
+	delete[] c;
+}
+
 CXml::~CXml()
 {
     if (mFile != NULL)
