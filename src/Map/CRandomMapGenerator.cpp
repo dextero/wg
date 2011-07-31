@@ -80,7 +80,11 @@ CRandomMapGenerator::SPhysical ChooseRandomlyRegardingFrequency(const PhysicalsV
             return CRandomMapGenerator::SPhysical(*it);
         }
     }
-    return CRandomMapGenerator::SPhysical();
+    if (input.empty()) {
+        return CRandomMapGenerator::SPhysical();
+    } else {
+        return CRandomMapGenerator::SPhysical(input.back());
+    }
 }
 
 std::string CRandomMapGenerator::GetRandomWeaponFile(int level) {
@@ -1019,6 +1023,10 @@ bool CRandomMapGenerator::PlaceMonsters()
         // skala zadeklarowana w xmlu
 
         SPhysical monster = ChooseRandomlyRegardingFrequency(monsters);
+        if (monster.file.empty()) {
+            fprintf(stderr, "warning: CRandomMapGenerator::PlaceMonsters: monster.file is empty, skipping!\n");
+            continue;
+        }
 		if (mapPhysicalToObjTypeCode.find(monster.file) == mapPhysicalToObjTypeCode.end()) {
 			mapPhysicalToObjTypeCode[monster.file] = objTypesCount;
             mXmlText << "\t<objtype code=\"monster" << StringUtils::ToString(objTypesCount) << "\" file=\"" << monster.file << "\" />\n";
