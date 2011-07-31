@@ -445,7 +445,7 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
             continue;
 
 		std::string filename;
-        switch ((*it)->GetCategory())
+        switch ((*it)->GetSideAndCategory().category)
         {
         case PHYSICAL_MONSTER:
         case PHYSICAL_LAIR:

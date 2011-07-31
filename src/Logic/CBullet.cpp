@@ -131,7 +131,8 @@ CBullet::~CBullet()
 void CBullet::HandleCollision(CPhysical *phys){
     if (phys)
     {
-        if (!(phys->GetCategory() & filter))
+		physCategory const victimCategory = ReinterpretCategoryForVersusMode(this->mSide, phys->GetSideAndCategory().side, phys->GetSideAndCategory().category);
+        if (!(victimCategory & filter))
             return;
     }
 

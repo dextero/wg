@@ -68,14 +68,14 @@ void CCollisionMap::UpdatePhysicals(int category)
     const std::vector< CPhysical* > &physicals = gPhysicalManager.GetPhysicals();
     for ( unsigned i = 0; i < physicals.size(); i++ )
     {
-        if (physicals[i]->GetCategory() & category)
+        if (physicals[i]->GetSideAndCategory().category & category)
             UpdatePhysical( physicals[i], true );
     }
 }
 
 void CCollisionMap::UpdatePhysical(CPhysical *physical, bool collision)
 {
-	if ( !(physical->GetCategory() & PHYSICAL_PATHBLOCKER) )	return;
+	if ( !(physical->GetSideAndCategory().category & PHYSICAL_PATHBLOCKER) )	return;
 	if ( ! gMapManager.GetCurrent() )							return;
 
 	// pobierz rozmiar mapy, aby poprawnie zeskalowac wspolrzedne

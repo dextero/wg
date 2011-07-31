@@ -78,7 +78,7 @@ int CSummoner::Summon(CPhysical *caster, ExecutionContextPtr context){
         range = 1.0f + 1.0f * iter;
         if (range < minRadius)
             continue;
-        gMapManager.GetSceneManager().GetPhysicalsInRadius(caster->GetPosition(),range,PHYSICAL_SUMMONBLOCKER,physicals);
+		gMapManager.GetSceneManager().GetPhysicalsInRadius(caster->GetPosition(),range,PHYSICAL_SUMMONBLOCKER,caster->GetSideAndCategory().side, physicals);
         // pokrywamy otoczenie siatka
         pos = caster->GetPosition();
         freeSpots = FillGrid(pos,physicals,grid,summRadius,range,minRadius);

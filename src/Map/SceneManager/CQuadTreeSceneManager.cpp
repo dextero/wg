@@ -85,7 +85,7 @@ void CQuadTreeSceneManager::UpdateScene(){
 		{
 			CSceneNode * currentNode = (*nodes)[j];
 
-			if ( (currentNode->GetPhysical() && (currentNode->GetPhysical()->GetCategory()&PHYSICAL_MOVING)) || (!m_quadTreeNodes[i].Contains(currentNode)) )
+			if ( (currentNode->GetPhysical() && (currentNode->GetPhysical()->GetSideAndCategory().category & PHYSICAL_MOVING)) || (!m_quadTreeNodes[i].Contains(currentNode)) )
 			{
 				int newQtNodeId = GetNodeIdContaining( currentNode );
 
@@ -107,12 +107,12 @@ void CQuadTreeSceneManager::UpdateScene(){
 		nodes = m_quadTreeNodes[i].GetMovingPhysicals();
 		for ( unsigned j = 0; j < nodes->size(); j++ )
 			if ( (*nodes)[j]->GetPhysical() )
-				++m_physicalCount[ GetPhysicalCategoryId( (*nodes)[j]->GetPhysical()->GetCategory() ) ];
+				++m_physicalCount[ GetPhysicalCategoryId( (*nodes)[j]->GetPhysical()->GetSideAndCategory().category ) ];
 
 		nodes = m_quadTreeNodes[i].GetNonMovingPhysicals();
 		for ( unsigned j = 0; j < nodes->size(); j++ )
 			if ( (*nodes)[j]->GetPhysical() )
-				++m_physicalCount[ GetPhysicalCategoryId( (*nodes)[j]->GetPhysical()->GetCategory() ) ];
+				++m_physicalCount[ GetPhysicalCategoryId( (*nodes)[j]->GetPhysical()->GetSideAndCategory().category ) ];
 	}
 }
 
@@ -148,7 +148,7 @@ void CQuadTreeSceneManager::SceneStats( int & currentDrawObjectsCount, int & tot
 	totalObjectsCount = m_totalObjectsCount;
 }
 
-void CQuadTreeSceneManager::GetPhysicalsInRadius(const sf::Vector2f& pos, float radius, int category, std::vector<CPhysical*>& outPhysicals)
+void CQuadTreeSceneManager::GetPhysicalsInRadius(const sf::Vector2f& pos, float radius, int category, ESide side, std::vector<CPhysical*>& outPhysicals)
 {
 	outPhysicals.clear();
 
@@ -172,8 +172,9 @@ void CQuadTreeSceneManager::GetPhysicalsInRadius(const sf::Vector2f& pos, float 
 				for ( unsigned i = 0; i < m_quadTreeNodes[ nodeId ].GetMovingPhysicalsR().size(); i++ )
 				{
 					physical = m_quadTreeNodes[ nodeId ].GetMovingPhysicalsR()[ i ]->GetPhysical();
-
-					if (( physical->GetCategory() & category ) && 
+					
+					physCategory const victimCategory = ReinterpretCategoryForVersusMode(side, physical->GetSideAndCategory().side, physical->GetSideAndCategory().category);
+					if (( victimCategory  & category ) && 
 						( Maths::Length( physical->GetPosition() - pos ) < physical->GetCircleRadius() + radius ) )
 					{
 						outPhysicals.push_back( physical );
@@ -185,7 +186,7 @@ void CQuadTreeSceneManager::GetPhysicalsInRadius(const sf::Vector2f& pos, float 
 				{
 					physical = m_quadTreeNodes[ nodeId ].GetNonMovingPhysicalsR()[ i ]->GetPhysical();
 					
-					if (( physical->GetCategory() & category ) &&
+					if (( physical->GetSideAndCategory().category & category ) &&
 						( Maths::Length( physical->GetPosition() - pos ) < physical->GetCircleRadius() + radius ) )
 					{
 						outPhysicals.push_back( physical );
@@ -228,7 +229,7 @@ void CQuadTreeSceneManager::GetPhysicalsBetweenPoints(const sf::Vector2f& a, con
 				{
 					physical = m_quadTreeNodes[ nodeId ].GetMovingPhysicalsR()[ i ]->GetPhysical();
 
-					if (( physical->GetCategory() & category ) && 
+					if (( physical->GetSideAndCategory().category & category ) && 
 						( Maths::PointToSegment(physical->GetPosition(), a, b) < physical->GetCircleRadius() + tolerance ))
 					{
 						outPhysicals.push_back( physical );
@@ -240,7 +241,7 @@ void CQuadTreeSceneManager::GetPhysicalsBetweenPoints(const sf::Vector2f& a, con
 				{
 					physical = m_quadTreeNodes[ nodeId ].GetNonMovingPhysicalsR()[ i ]->GetPhysical();
 					
-					if (( physical->GetCategory() & category ) &&
+					if (( physical->GetSideAndCategory().category & category ) &&
 						( Maths::PointToSegment(physical->GetPosition(), a, b) < physical->GetCircleRadius() + tolerance ))
 					{
 						outPhysicals.push_back( physical );

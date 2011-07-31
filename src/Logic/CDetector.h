@@ -31,13 +31,13 @@ private:
 	friend class CPhysicalManager;
 
 public:
-	void SetCollidingPhysicals( int category );
 	void SetBehaviour( int behaviour );
 	void SetFramesToDeath( int frames );
     void SetTimeToDeath(float ttd);
 	void SetEffectOffset( int effectOffset );
     void SetSource( EffectSourcePtr source );
     void SetExecutionContext( ExecutionContextPtr context );
+	void SetCollidingPhysicalsAndCasterSide(int category, ESide side);
     void SetMeleeAngle(float angle);
 
 	inline bool GetCollisionFlag()								{ return mOldCollision; }

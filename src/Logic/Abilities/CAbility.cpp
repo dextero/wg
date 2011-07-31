@@ -179,9 +179,9 @@ void CAbility::PerformMelee(CActor *actor,ExecutionContextPtr context, FocusObje
     detector->SetPosition( actor->GetPosition() );
 	detector->SetBoundingCircle( range.Evaluate(context) );
     int victimCategory = PHYSICAL_HOSTILES;
-    if (actor->GetCategory() == PHYSICAL_MONSTER)
+	if (actor->GetSideAndCategory().category == PHYSICAL_MONSTER) // FIXME could use some side-based trick here to // versus
         victimCategory = PHYSICAL_PLAYER;
-	detector->SetCollidingPhysicals( victimCategory );
+	detector->SetCollidingPhysicalsAndCasterSide( victimCategory, actor->GetSideAndCategory().side );
 	detector->SetBehaviour( CHECK_MELEE_RANGE | APPLY_EFFECT );
 	detector->SetMeleeAngle(angularWidth);
     detector->SetRotation(actor->GetRotation());

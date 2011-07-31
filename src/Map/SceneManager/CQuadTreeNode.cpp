@@ -23,7 +23,7 @@ CQuadTreeSceneNode::~CQuadTreeSceneNode(){
 void CQuadTreeSceneNode::ReleaseResources(){
 
 	for ( unsigned i = 0; i < m_movingPhysicals.size(); i++ )
-		if ( m_movingPhysicals[i]->GetPhysical() != NULL && m_movingPhysicals[i]->GetPhysical()->GetCategory() != PHYSICAL_PLAYER ) {
+		if ( m_movingPhysicals[i]->GetPhysical() != NULL && m_movingPhysicals[i]->GetPhysical()->GetSideAndCategory().category != PHYSICAL_PLAYER ) {
 			m_movingPhysicals[i]->SetParentNodeId( -1 );
 			m_movingPhysicals[i]->GetPhysical()->MarkForDelete();
 		}
@@ -79,7 +79,7 @@ void CQuadTreeSceneNode::Add(CSceneNode * node) {
 
 	node->SetParentNodeId( m_nodeId );
 
-	if ( node->GetPhysical() != NULL && (node->GetPhysical()->GetCategory() & PHYSICAL_MOVING) != 0 )
+	if ( node->GetPhysical() != NULL && (node->GetPhysical()->GetSideAndCategory().category & PHYSICAL_MOVING) != 0 )
 		m_movingPhysicals.push_back( node );
 	else if ( node->GetPhysical() != NULL )
 		m_nonMovingPhysicals.push_back( node );

@@ -103,6 +103,7 @@ CBullet* CBulletEmitter::CreateBullet(ExecutionContextPtr context, EffectSourceP
 	float range = mRange.Evaluate(context);
 	float acceleration = mAcceleration.Evaluate(context);
     CBullet *bullet = mBulletTemplate->Create();
+	bullet->SetSide(source->DeterminePhysicalSource()->GetSideAndCategory().side); // FIXME probably can explode // versus
     bullet->SetEffect(mEffect);
     bullet->SetExplosionEffect(mExplosion);
     bullet->range=range;

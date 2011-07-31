@@ -25,7 +25,7 @@ public:
 
 	/* ========= */
 
-	CBullet* Create(std::wstring id = L"");
+	virtual CBullet* Create(std::wstring id = L"");
 
     virtual bool CoreMapObject() const { return false; }
 

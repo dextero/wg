@@ -56,9 +56,10 @@ void CDetector::SetExecutionContext( ExecutionContextPtr context ){
     mContext = context;
 }
 
-void CDetector::SetCollidingPhysicals(int category)
+void CDetector::SetCollidingPhysicalsAndCasterSide(int category, ESide side)
 {
 	mPhysicalsCategory = category;
+	this->SetSide(side);
 }
 
 void CDetector::SetBehaviour(int behaviour)
@@ -139,7 +140,8 @@ void CDetector::Update(float dt)
 
 void CDetector::HandleCollision(CPhysical *physical)
 {
-	if ( mEnabled && (physical->GetCategory() & mPhysicalsCategory) != 0 )
+	physCategory const victimCategory = ReinterpretCategoryForVersusMode(this->mSide, physical->GetSideAndCategory().side, physical->GetSideAndCategory().category);
+	if ( mEnabled && (victimCategory & mPhysicalsCategory) != 0 )
 	{
         if ( (mBehaviour & CHECK_MELEE_RANGE ) != 0)
         {
@@ -167,7 +169,7 @@ void CDetector::HandleCollision(CPhysical *physical)
 			gEffectManager.ApplyOnce(physical, mEffectOffset,mMeAsSource,mContext );
 		}
 
-		if ( (mBehaviour & CHOOSE_NPC_TO_TALK) != 0 && physical->GetCategory() == PHYSICAL_NPC )
+		if ( (mBehaviour & CHOOSE_NPC_TO_TALK) != 0 && physical->GetSideAndCategory().category == PHYSICAL_NPC )
 		{
 			mNPC = physical;
 		}

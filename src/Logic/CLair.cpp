@@ -36,7 +36,7 @@ CLair::CLair(const std::wstring& uniqueId): CActor(uniqueId), mCurrentGroup(0){
 	
 	mCollisionDetector = gPhysicalManager.CreateDetector();
 	mCollisionDetector->SetCategory( PHYSICAL_DETECTOR );
-	mCollisionDetector->SetCollidingPhysicals( PHYSICAL_PLAYER | PHYSICAL_MONSTER );
+	mCollisionDetector->SetCollidingPhysicalsAndCasterSide( PHYSICAL_PLAYER | PHYSICAL_MONSTER, SIDE_ENV );
 	mCollisionDetector->SetBehaviour( SET_COLLISION_FLAG );
     mCollisionDetector->GetCallbackDispatcher()->RegisterEventDeath(DetectorDestroyed,this,NULL);
 }

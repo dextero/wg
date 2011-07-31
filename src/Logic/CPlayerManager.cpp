@@ -41,6 +41,7 @@ void CPlayerManager::RegisterPlayer(CPlayer *player, unsigned int number)
 	{
 		UnregisterPlayer(number);
 		player->SetNumber(number);
+		player->SetSide(number == 1 ? SIDE_PL_B : SIDE_PL_A); // TODO #ifdef or something
 		mPlayers.push_back(player);
 	}
 }
