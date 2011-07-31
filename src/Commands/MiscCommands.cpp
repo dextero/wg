@@ -365,7 +365,7 @@ void CommandPostFx(size_t argc, const std::vector<std::wstring> &argv)
             if (argv[2] == L"rtt")
             {
                 gPostProcessing.SetType(pfx::PFX_TYPE::TEXTURE);
-                gConsole.Print(L"Uruchamiam Software Effects!");
+                gConsole.Print(L"Launching Software Effects!");
             }
             else if (argv[2] == L"shd")
             {
@@ -380,7 +380,7 @@ void CommandPostFx(size_t argc, const std::vector<std::wstring> &argv)
             else if (argv[2] == L"non")
             {
                 gPostProcessing.SetType(pfx::PFX_TYPE::NONE);
-                gConsole.Print(L"Wylaczone wszystkie efekty.");
+                gConsole.Print(L"Disabled all effecs.");
             }
             else
                 gConsole.Print(L"usage: toggle-fx mode <type: rtt, shd or non>");
