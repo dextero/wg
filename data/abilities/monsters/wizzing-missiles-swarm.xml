@@ -54,7 +54,26 @@
             <range calc="2.5"/>
             <angle value="180.0"/>
           </target-chooser>
-        
+		  
+          <explosion type="list" tag="wizzing-spark-explosion">
+			<effect type="sound">
+			  <name value="data/sounds/sparks.ogg" /> 
+			</effect>
+			<effect type="graphical-effect">
+			  <name value="shield" />
+			  <time calc="0.1"/>
+			</effect>
+		  </explosion>
+		  <effect type="list" tag="wizzing-spark-hit">
+		    <effect type="graphical-effect">
+			  <name value="shield" />
+			  <time value="0.1" />          
+		    </effect>
+		    <effect type="damage">
+			  <damage-type value="lightning"/>
+			  <amount calc="0.75 * intelligence"/>
+		    </effect>
+		  </effect>
           <flight-effect type="delayed">
             <time calc="1.3 + rnd(0, 0.1)"/>
             <effect type="bullet">
@@ -75,34 +94,15 @@
                 </target-chooser>
                 <time-for-tracking calc="0.15"/>
                 <turning-speed calc="960.0"/>
-                <explosion type="list" tag="wizzing-spark-explosion">
-                  <effect type="sound">
-                    <name value="data/sounds/sparks.ogg" /> 
-                  </effect>
-                  <effect type="graphical-effect">
-                    <name value="shield" />
-                    <time calc="0.1"/>
-                  </effect>
-                </explosion>
-                <effect type="list" tag="wizzing-spark-hit">
-                  <effect type="graphical-effect">
-                    <name value="shield" />
-                    <time value="0.1" />          
-                  </effect>
-                  <effect type="damage">
-                    <damage-type value="lightning"/>
-                    <amount calc="0.75 * intelligence"/>
-                  </effect>
-                </effect>
+			    <explosion type="jump">
+				  <name value="wizzing-spark-explosion"/>
+			    </explosion>
+			    <effect type="jump">
+				  <name value="wizzing-spark-hit"/>
+			    </effect>
               </emitter>  
             </effect>
           </flight-effect>
-          <explosion type="jump">
-            <jump value="wizzing-spark-explosion"/>
-          </explosion>
-          <effect type="jump">
-            <jump value="wizzing-spark-hit"/>
-          </effect>
         </emitter>
       </effect>
     </effect>

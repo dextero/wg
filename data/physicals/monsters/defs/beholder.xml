@@ -28,7 +28,7 @@
 
   <ai name="ranged-caster" />
 
-  <ability name="data/abilities/monsters/lazoor.xml" default="1" />
+  <ability name="data/abilities/monsters/lazoor.xml" />
   <ability name="data/abilities/monsters/summon-murions.xml" default="1" />
 
   <sound type="attack" filename="data/sounds/Lugaro/Growl.ogg" />
