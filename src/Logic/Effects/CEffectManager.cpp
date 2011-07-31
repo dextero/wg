@@ -851,12 +851,12 @@ CEffectHandle *CEffectManager::LoadConsoleFriendly(const std::string& str)
 	std::string s = StringUtils::ReplaceAllOccurrences(str, "~", " ");
 
 	if (s.find(';') != std::string::npos)
-		s = "[\n" + StringUtils::ReplaceAllOccurrences(s, ";", "\n") + "]";
+		s = "[\n" + StringUtils::ReplaceAllOccurrences(s, ";", "\n") + "\n]";
 
 	s = "<effect type=\"console\"><text>" + s + "</text></effect>";
 
 	CXml xml(s);
-	CEffectHandle* ret = LoadEffect(xml, xml.GetChild(NULL, "effect"));
+	CEffectHandle* ret = LoadEffect(xml, xml.GetRootNode());
 	return ret;
 }
 
