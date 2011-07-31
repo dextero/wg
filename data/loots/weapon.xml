@@ -2,4 +2,6 @@
     <name name="$ITEM_WEAPON" />
     <genre>weapon</genre>
     <image filename="data/loots/book.png" />
+	
+	<effect type="noEffect"/>
 </root>

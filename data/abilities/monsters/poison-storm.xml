@@ -135,7 +135,7 @@
   <count calc="3" />
   <width calc="90" />
   <bullet value="data/physicals/bullets/invisible-bullet.xml" />
-  <filter value="nothing" />
+  <filter value="none" />
   <bullet-angular-speed value="-1440" />
   
   <manacost calc="30.0" />

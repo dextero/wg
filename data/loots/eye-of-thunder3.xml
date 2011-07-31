@@ -37,7 +37,7 @@
 					</effect>						
 					<effect type="retarget">
 					  <target-chooser>
-						<filter value="hostiles, obstacle"/>
+						<filter value="hostiles,obstacle"/>
 						<range calc="5.2" />
 						<angle value="360.0"/>
 						<aim-at-ground value="1"/>

@@ -19,7 +19,7 @@
                 <amount value="1.66" />
               </effect>
               <effect type="modify">
-                <aspect value="physicalresist" />
+                <aspect value="physresist" />
                 <amount value="1.66" />
               </effect>
               <effect type="modify">

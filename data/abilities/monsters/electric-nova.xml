@@ -44,7 +44,7 @@
               <filter value="player" />
               <effect type="list">
                 <effect type="damage">
-                  <damage-type value="electric"/>
+                  <damage-type value="lightning"/>
                   <amount calc="1.1" />
                 </effect>
                 <effect type="knockback">

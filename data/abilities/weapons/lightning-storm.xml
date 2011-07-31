@@ -28,7 +28,7 @@ Bonus for this spell depends:
           <count calc="3" />
           <width calc="120" />
           <bullet value="data/physicals/bullets/invisible-bullet.xml" />
-          <filter value="nothing" />
+          <filter value="none" />
           <bullet-angular-speed value="-1440" />
 
           <flight-effect type="list" >

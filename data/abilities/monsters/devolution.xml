@@ -24,7 +24,7 @@
       </effect>
     </effect>
     <effect type="jump">
-      <jump value="devolution-strike"/>
+      <name value="devolution-strike"/>
     </effect>
     <effect type="delayed">
       <time value="0.14"/>

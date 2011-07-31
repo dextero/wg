@@ -373,7 +373,7 @@
             <doodah file="data/maps/doodahs/bones1.png" z="onground" scale="0.5"/>
             <doodah file="data/maps/doodahs/desert/bones.png" z="onground"/>
             <doodah file="data/maps/doodahs/desert/bones2.png" z="onground"/>
-            <doodah file="data/maps/doodahs/desert/skeleton1.png" z="onground"/>
+            <doodah file="data/maps/doodahs/desert/skeleton.png" z="onground"/>
             <doodah file="data/maps/doodahs/desert/skeleton2.png" z="onground"/>
             <doodah file="data/maps/doodahs/desert/broken_wheel_1.png" z="onground"/>
             <doodah file="data/maps/doodahs/desert/broken_wheel_2.png" z="onground"/>
