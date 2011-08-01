@@ -9,7 +9,7 @@ include("header.php");
 		case 'en' :
 			print("<h1>Introduction</h1>"
 					."<p>Warlock's Gauntlet is an Open-Source community project,"
-					." created by users from gamedev.pl - a polish game development"
+					." created by users from warsztat.gd - a polish game development"
 					." site known as Warsztat (the Workshop).</p>"
 					."<p> On this page you can download our latest demo - a stable and"
 					." tested version that should provide at least two hours of"
@@ -20,7 +20,7 @@ include("header.php");
 		case 'pl' :
 			print("<h1>Informacje</h1>"
 					."<p>Warsztat Game to w wielkim skrócie projekt społecznościowy"
-					." Open Source tworzony w zamyśle przez osoby związane z portalem gamedev.pl.</p>"
+					." Open Source tworzony w zamyśle przez osoby związane z portalem warsztat.gd.</p>"
 					."<p>Demo, do którego linki znajdziesz poniżej, zostało przygotowane tak,"
 					." aby zapewnić około 2 godzin gry i jest uznane za kandydata na wersję \"stabilną\"."
 					." Jeśli jednak lubisz trochę ryzyka, na samym <a href=\"#snapshots\">końcu</a>"

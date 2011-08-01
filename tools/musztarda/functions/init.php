@@ -19,7 +19,7 @@
 	}
 
 #stale ;-P	
-	$gameVersion = "1.0";
+	$gameVersion = "1.1";
 	
 	switch ($lang) {
 		case 'en' : $gameTitle = "Warlock's Gauntlet"; break;
