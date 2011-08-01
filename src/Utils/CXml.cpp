@@ -2,7 +2,7 @@
 #include "StringUtils.h"
 #include <iostream>
 #include "../CGameOptions.h"
-#include <string>
+#include <string.h>
 #include "FileUtils.h"
 
 using namespace StringUtils;
