@@ -6,22 +6,16 @@
 #   URL
 #
 
+# 1.1
+en lin 1.1              http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/wg_linux_1.1_en.tar.gz
+pl lin 1.1              http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/wg_linux_1.1_en.tar.gz
+en lin 1.1(.deb)        http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/WarlocksGauntlet-1.1.deb
+pl lin 1.1(.deb)        http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/WarlocksGauntlet-1.1.deb
+
 # 1.0 - lin z r1952, win z r1956, mac z r1957
 en  win 1.0             http://students.mimuw.edu.pl/~sk236086/WG/paczki/WG-VC2008-30-12-2010-r1956-en.zip
 pl  win 1.0             http://students.mimuw.edu.pl/~sk236086/WG/paczki/WG-VC2008-30-12-2010-r1956.zip
-#en  lin 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/wg_linux_1.0_en.tar.gz
-#pl  lin 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/pl/wg_linux_1.0_pl.tar.gz
 #redirecty do 1.0.1
-en  lin 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/wg_linux_1.0.1_en.tar.gz
-pl  lin 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/pl/wg_linux_1.0.1_pl.tar.gz
 en  mac 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/mac/wg_osx_1.0_en.zip
 pl  mac 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/mac/wg_osx_1.0_pl.zip
-
-#1.0-5-4f9768ac8e2e
-#en  lin .deb            http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/WarlocksGauntlet-1.0.0.deb
-
-# 1.0.1 - pod linuksem wsparcie dla x86_64 + SFML 1.6
-en  lin 1.0.1           http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/wg_linux_1.0.1_en.tar.gz
-pl  lin 1.0.1           http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/pl/wg_linux_1.0.1_pl.tar.gz
-en  lin .deb            http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/WarlocksGauntlet-1.0.1.deb
 
