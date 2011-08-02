@@ -15,17 +15,7 @@
 #include <SFML/System/Vector2.hpp>
 #include <SFML/System/Vector3.hpp>
 
-namespace sf {
-	class RenderWindow;
-}
-
 class IDrawable;
-class CHudSprite;
-class CHudStaticText;
-class CDisplayable;
-
-typedef std::vector< IDrawable* > DrawableList;
-typedef std::vector< DrawableList > DrawableLists;
 
 #define gShaderManager CShaderManager::GetSingleton()
 
@@ -34,11 +24,13 @@ public:
     CShaderManager();
     ~CShaderManager();
 
-	bool shadersAvailable();
+	inline bool shadersAvailable() {
+		return GLEW_VERSION_2_0 != NULL;
+	}
 	
-	void prepareToDraw(IDrawable *drawable);
 	// returns programId (to allow uniform binding)
 	int activate(std::string const & programName);
+	void activateDefault();
 
     bool setUniform(int programId, const std::string& name, float value);
     bool setUniform(int programId, const std::string& name, sf::Vector2f value);
@@ -59,12 +51,12 @@ private:
 
 	GLcharARB * readFile(std::string const & filename);
 	bool verifyShaderCompiled(GLenum shader, const std::string & shaderName);
+	int getProgramId(std::string const & name);
 
+	std::map<std::string, unsigned int> programNames;
 	std::vector<GLenum> programs;
 
-	int getProgramId(std::string const & name);
-	std::map<std::string, unsigned int> programNames;
-	
+	int currentProgram;
 	bool needToClearBoundTextures;
 };
 

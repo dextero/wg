@@ -1,32 +1,36 @@
 #include "CShaderManager.h"
-
-#include "CHudSprite.h"
-#include "CHudStaticText.h"
-#include "CDisplayable.h"
-
 #include "IDrawable.h"
 
 #include "../CGame.h"
 #include "../ResourceManager/CResourceManager.h"
 #include "../ResourceManager/CImage.h"
 #include "CDisplayable.h"
-#include <SFML/Graphics/Image.hpp>
-#include <SFML/Graphics.hpp>
+
 #include "ZIndexVals.h"
 #include "../Utils/Maths.h"
 #include "../Utils/CXml.h"
 
 #include "GLCheck.h"
 
+#include <SFML/Graphics.hpp>
 #include <iostream>
 #include <cstdio>
 
 template<> CShaderManager* CSingleton<CShaderManager>::msSingleton = 0;
 
 CShaderManager::CShaderManager():
-	needToClearBoundTextures(false)
+	needToClearBoundTextures(false),
+	currentProgram(0)
 {
     fprintf(stderr,"CShaderManager::CShaderManager()\n");
+
+	/* damork, UWAGA
+	 * W tym miejscu powinnismy inicjalizowaæ GLEW - glewInit(), ale SFML ju¿ to robi w kilku miejscach.
+	 * Problem w tym, ¿e jesli uruchomimy shader, zanim program dotrze do ktoregos z tych miejsc
+	 * to program wybucha. SFML nie wyciaga jednak na zewnatrz zadnej informacji czy glew ju¿ jest 
+	 * zainicjalizowany, a ja nie wiem na ten moment, czy kilkukrotna inicjalizacja moze cos zepsuc, wiec
+	 * na razie tylko sobie pisze */
+
 	this->reloadAll();
 	this->loadNormalMaps();
     gGame.AddKeyListener( this );
@@ -36,10 +40,7 @@ CShaderManager::~CShaderManager(){
     fprintf(stderr,"CShaderManager::~CShaderManager()\n");
 }
 
-bool CShaderManager::shadersAvailable(){
-	return glCreateProgram != NULL && sf::PostFX::CanUsePostFX();
-}
-
+/* damork, zostawiam to tu na razie, ¿eby nikt nie mia³ do mnie ¿alu, ¿e mu freeze wyrzucam, a mi tu zawadza ;) 
 void CShaderManager::prepareToDraw(IDrawable * drawable){
 	int z = drawable->GetZIndex();
 	CDisplayable * displayable = dynamic_cast<CDisplayable *>(drawable);
@@ -59,21 +60,7 @@ void CShaderManager::prepareToDraw(IDrawable * drawable){
 				this->setUniform(id, "lcolor", sf::Color(255,255,255,255));
 				this->bindTexture(id, "normalmap", normalmap);
 			}
-			/*int id = this->activate("normal-sobel");
-			if (id >= 0){
-				this->setUniform(id, "uTexSize", sf::Vector2f(img->GetWidth(), img->GetHeight()));
-				float rot = displayable->GetRotation();
-				this->setUniform(id, "lpos", sf::Vector3f(
-					Maths::Rotate(Maths::VectorUp(), -rot).x, 
-					Maths::Rotate(Maths::VectorUp(), -rot).y, 
-					0.3f)
-				);
-				this->setUniform(id, "lcolor", sf::Color(255,255,255,255));
-				float normalStrength = 1.0f;
-				if (z == Z_PHYSICAL) normalStrength = 3.0f;
-				else if (z == Z_TILE) normalStrength = 0.5f;
-				this->setUniform(id, "normalStrength", normalStrength);
-			}*/
+			
 		} else if (z == Z_PLAYER && img != NULL) {
 			fprintf(stderr, "Using freeze\n");
 			int id = this->activate("freeze");
@@ -83,20 +70,31 @@ void CShaderManager::prepareToDraw(IDrawable * drawable){
 			}
 		}
 	} 
+}*/
+
+int CShaderManager::activate(std::string const & programName)
+{
+	int id = getProgramId(programName);
+	if (id >= 0){
+		if (programs[id] != currentProgram)
+		{
+			currentProgram = programs[id];
+			glUseProgram(currentProgram);
+		}
+	} else {
+		fprintf(stderr, "shader ERROR: couldn't get program id during activate: %s\n", programName.c_str());
+		activateDefault();
+	}
+	return id;
 }
 
-int CShaderManager::activate(std::string const & programName){
-	if (programName.empty()){
-		glUseProgram(0);
-		return -1;
-	} else {
-		int id = getProgramId(programName);
-		if (id >= 0){
-			glUseProgram(this->programs[id]);
-		} else {
-			fprintf(stderr, "shader ERROR: couldn't get program id during activate: %s\n", programName.c_str());
-		}
-		return id;
+void CShaderManager::activateDefault()
+{	
+	if (currentProgram != 0)
+	{
+		currentProgram = 0;
+		if (shadersAvailable())
+			glUseProgram(0);
 	}
 }
 
@@ -187,22 +185,36 @@ void CShaderManager::KeyReleased( const sf::Event::KeyEvent &e ){
 
 void CShaderManager::reloadAll(){
 	this->load("data/effects/normalmap.frag", "data/effects/normalmap.vert", "normal-map");
-	this->load("data/effects/normal.frag", "data/effects/default.vert", "normal-sobel");
 	this->load("data/effects/blue.frag", "data/effects/default.vert", "freeze");
 }
 
+void CShaderManager::loadNormalMaps()
+{
+	CXml xml( "data/effects/normalmaps/normalmaps-desc.xml", "root" );
+	xml_node<>* node;
+	for (node = xml.GetChild(0,"mat"); node; node = xml.GetSibl(node, "mat"))
+	{
+		System::Resource::CImage* img = gResourceManager.GetImage(xml.GetString(node, "tex"));
+		if (img != NULL)
+		{
+			System::Resource::CImage* nm = gResourceManager.GetImage(xml.GetString(node, "nm"));
+			img->SetNormalMap(nm);
+		}
+	}
+}
+
 void CShaderManager::load(std::string const & fragmentShaderName, std::string const & vertexShaderName, std::string const & programName){
+	if (!this->shadersAvailable()){
+	    fprintf(stderr, "Warning - attempting to load shader but glCreateProgram not present!\n");
+		return;
+	}
+	
 	const GLcharARB * my_fragment_shader_source = readFile(fragmentShaderName);
 	const GLcharARB * my_vertex_shader_source = readFile(vertexShaderName);
 	
 	if (!my_fragment_shader_source || !my_vertex_shader_source){
 		return;
-	}
-
-	if (!this->shadersAvailable()){
-	    fprintf(stderr, "Warning - attempting to load shader but glCreateProgram not present!\n");
-		return;
-	}
+	}	
 
 	// Create Shader And Program Objects
 	this->programs.push_back(glCreateProgram());
@@ -285,19 +297,3 @@ int CShaderManager::getProgramId(std::string const & name)
 		return -1;
 	}
 }
-
-void CShaderManager::loadNormalMaps()
-{
-	CXml xml( "data/effects/normalmaps/normalmaps-desc.xml", "root" );
-	xml_node<>* node;
-	for (node = xml.GetChild(0,"mat"); node; node = xml.GetSibl(node, "mat"))
-	{
-		System::Resource::CImage* img = gResourceManager.GetImage(xml.GetString(node, "tex"));
-		if (img != NULL)
-		{
-			System::Resource::CImage* nm = gResourceManager.GetImage(xml.GetString(node, "nm"));
-			img->SetNormalMap(nm);
-		}
-	}
-}
-
