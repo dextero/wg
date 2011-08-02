@@ -3,18 +3,23 @@
 #include "CHudSprite.h"
 #include "CHudStaticText.h"
 #include "CDisplayable.h"
+#include "SLight.h"
 
 #include "IDrawable.h"
 #include "ZIndexVals.h"
 
 #include "../CGame.h"
-#include <SFML/Graphics/Image.hpp>
 #include "CShaderManager.h"
 #include "../Utils/Maths.h"
 
+#include <SFML/Graphics/Image.hpp>
+#include <SFML/System/Vector3.hpp>
+
 template<> CDrawableManager* CSingleton<CDrawableManager>::msSingleton = 0;
 
-CDrawableManager::CDrawableManager(){
+CDrawableManager::CDrawableManager() :
+	mLightingEnabled(true)
+{
     fprintf(stderr,"CDrawableManager::CDrawableManager()\n");
     mLayers.resize( Z_MAX + 1 );
     gGame.AddFrameListener( this );
@@ -131,19 +136,113 @@ void CDrawableManager::DrawFrame(sf::RenderWindow* wnd)
 	if (wnd == NULL)
 		wnd = gGame.GetRenderWindow();
 
+	bool shaderLighting = mLightingEnabled && gShaderManager.shadersAvailable();
+	bool fixedPipelineLighting = mLightingEnabled && !shaderLighting;
+
+	if (fixedPipelineLighting)
+	{
+		// damork, TODO: kod renderujacy do tekstury quady ze swiatlami
+	}
+
     for ( DrawableLists::reverse_iterator it1 = mLayers.rbegin() ; it1 != mLayers.rend() ; it1++ )
     {
         const DrawableList& list = ( *it1 );
         for ( DrawableList::const_iterator it2 = list.begin() ; it2 != list.end() ; it2++ )
         {
             IDrawable* drawable = ( *it2 );
-			gShaderManager.prepareToDraw(drawable);
-            if (drawable->IsVisible())
-                drawable->Draw( wnd );
-			gShaderManager.clearBoundTextures();
-			gShaderManager.activate("");
+			if (drawable->IsVisible())
+			{
+				int z = drawable->GetZIndex();
+				CDisplayable * displayable = dynamic_cast<CDisplayable *>(drawable);
+				
+				if (shaderLighting && displayable != NULL && displayable->GetSFSprite()->GetImage() != NULL && 
+					z >= Z_MAPSPRITE_FG && z != Z_SHADOWS && z != Z_PARTICLE)
+				{
+					const sf::Image * normalmap = displayable->GetSFSprite()->GetNormalMap();
+					if (normalmap != NULL)	DrawWithNormalMapping(wnd, displayable, normalmap);
+					else					DrawWithPhongLighting(wnd, displayable);
+				}
+				else
+				{
+					gShaderManager.activateDefault();
+					drawable->Draw( wnd );
+				}
+			}
         } 
     }
 }
 
+SLight* CDrawableManager::CreateLight()
+{
+	SLight* light = new SLight();
+	mLights.push_back(light);
+	return light;
+}
+ 
+void CDrawableManager::DestroyLight(SLight *light)
+{
+	for (unsigned i = 0; i < mLights.size(); i++)
+	if (mLights[i] == light)
+	{
+		std::swap(mLights[i], mLights[mLights.size()-1]);
+		mLights.pop_back();
+		return;
+	}
+}
+
+inline float lenSQ(const sf::Vector2f& p1, const sf::Vector3f& p2) {
+	return (p1.x-p2.x)*(p1.x-p2.x) + (p1.y-p2.y)*(p1.y-p2.y) + (p2.z)*(p2.z);
+}
+
+void CDrawableManager::GetStrongestLights(SLight** out, unsigned count, const sf::Vector2f& pos)
+{
+	if (mLights.size() <= count)
+	{
+		unsigned i = 0;
+		for (;i < mLights.size(); i++)	out[i] = mLights[i];
+		for (;i < count; i++)			out[i] = SLight::BLACK_LIGHT();
+	}
+	else
+	{
+		unsigned i = 0;
+		for (;i < count; i++)	out[i] = mLights[i];
+		for (;i < mLights.size(); i++)
+		{
+			for (unsigned j = 0; j < count; j++)
+			{
+				if (lenSQ(pos,mLights[i]->mPosition) * out[j]->mRadius < 
+					lenSQ(pos,out[j]->mPosition) * mLights[i]->mRadius)
+				{
+					out[j] = mLights[i];
+				}
+			}
+		}
+	}
+}
+
+void CDrawableManager::DrawWithNormalMapping(sf::RenderWindow* wnd, CDisplayable* displayable, const sf::Image* normalmap)
+{
+	// damork, TODO: dopisaæ obs³ugê wielu swiate³
+	int id = gShaderManager.activate("normal-map");
+	if (id >= 0)
+	{
+		float rot = displayable->GetRotation();
+		gShaderManager.setUniform(id, "lpos", sf::Vector3f(
+			Maths::Rotate(Maths::VectorUp(), -rot).x, 
+			Maths::Rotate(Maths::VectorUp(), -rot).y, 
+			0.5f)
+		);
+		gShaderManager.setUniform(id, "lcolor", sf::Color(255,255,255,255));
+		gShaderManager.bindTexture(id, "normalmap", normalmap);
+	}
+	displayable->Draw(wnd);
+	gShaderManager.clearBoundTextures();
+}
+
+void CDrawableManager::DrawWithPhongLighting(sf::RenderWindow *wnd, CDisplayable *displayable)
+{
+	// damork, TODO: dopisaæ obs³ugê shadera phonga
+	gShaderManager.activateDefault();
+	displayable->Draw(wnd);
+}
 

@@ -7,6 +7,7 @@
  */
 
 #include <vector>
+#include <SFML/System/Vector2.hpp>
 
 #include "../IFrameListener.h"
 #include "../Utils/CSingleton.h"
@@ -14,12 +15,14 @@
 
 namespace sf {
 	class RenderWindow;
+	class Image;
 }
 
 class IDrawable;
 class CHudSprite;
 class CHudStaticText;
 class CDisplayable;
+class SLight;
 
 typedef std::vector< IDrawable* > DrawableList;
 typedef std::vector< DrawableList > DrawableLists;
@@ -43,13 +46,26 @@ public:
     // derejestruje drawable bez usuwania
     void UnregisterDrawable( IDrawable *drawable );
 
+	SLight* CreateLight();
+	void DestroyLight(SLight* light);
+
+	inline void SetLighting(bool lighting)	{ mLightingEnabled = lighting; }
+	inline bool LightingEnabled()			{ return mLightingEnabled; }
+
     virtual void FrameStarted(float secondsPassed) {};
 	void DrawFrame( sf::RenderWindow* wnd = NULL );
 
     virtual bool FramesDuringPause(EPauseVariant pv){ return true; }
 private:
+	/* Znajdz [count] najmocniej swiecacych w punkcie [pos] swiatel
+	 * i umiesc je w tablicy out */
+	void GetStrongestLights(SLight** out, unsigned count, const sf::Vector2f& pos);
+	void DrawWithNormalMapping(sf::RenderWindow* wnd, CDisplayable* displayable, const sf::Image* normalmap);
+	void DrawWithPhongLighting(sf::RenderWindow* wnd, CDisplayable* displayable);
 
     DrawableLists mLayers;
+	std::vector<SLight*> mLights;
+	bool mLightingEnabled;
 };
 
 #endif /*CSPRITEMANAGER_H_*/
