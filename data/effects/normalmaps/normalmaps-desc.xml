@@ -135,4 +135,31 @@
 	<mat tex="data/physicals/monsters/gfx/timberman-attack.png" nm="data/effects/normalmaps/timberman-attack.png" />
 	<mat tex="data/physicals/monsters/gfx/timberman-death.png" nm="data/effects/normalmaps/timberman-death.png" />
 	
+	<!-- troll -->
+	<mat tex="data/physicals/monsters/gfx/troll-move.png" nm="data/effects/normalmaps/troll-move.png" />
+	<mat tex="data/physicals/monsters/gfx/troll-attack.png" nm="data/effects/normalmaps/troll-attack.png" />
+	<mat tex="data/physicals/monsters/gfx/troll-move-wounded.png" nm="data/effects/normalmaps/troll-move.png" />
+	<mat tex="data/physicals/monsters/gfx/troll-attack-wounded.png" nm="data/effects/normalmaps/troll-attack.png" />
+	<mat tex="data/physicals/monsters/gfx/troll-death.png" nm="data/effects/normalmaps/troll-death.png" />
+	
+	<!-- ugonoth -->
+	<mat tex="data/physicals/monsters/gfx/ugonoth-move.png" nm="data/effects/normalmaps/ugonoth-move.png" />
+	<mat tex="data/physicals/monsters/gfx/ugonoth-attack.png" nm="data/effects/normalmaps/ugonoth-attack.png" />
+	<mat tex="data/physicals/monsters/gfx/ugonoth-move-wounded.png" nm="data/effects/normalmaps/ugonoth-move.png" />
+	<mat tex="data/physicals/monsters/gfx/ugonoth-attack-wounded.png" nm="data/effects/normalmaps/ugonoth-attack.png" />
+	<mat tex="data/physicals/monsters/gfx/ugonoth-death.png" nm="data/effects/normalmaps/ugonoth-death.png" />
+	
+	<!-- warlock -->
+	<mat tex="data/physicals/monsters/gfx/warlock-move.png" nm="data/effects/normalmaps/warlock-move.png" />
+	<mat tex="data/physicals/monsters/gfx/warlock-attack-0.png" nm="data/effects/normalmaps/warlock-attack-0.png" />
+	<mat tex="data/physicals/monsters/gfx/warlock-attack-1.png" nm="data/effects/normalmaps/warlock-attack-1.png" />
+	<mat tex="data/physicals/monsters/gfx/warlock-death.png" nm="data/effects/normalmaps/warlock-death.png" />
+	
+	<!-- wolfbeast -->
+	<mat tex="data/physicals/monsters/gfx/wolfbeast-move.png" nm="data/effects/normalmaps/wolfbeast-move.png" />
+	<mat tex="data/physicals/monsters/gfx/wolfbeast-attack.png" nm="data/effects/normalmaps/wolfbeast-attack.png" />
+	<mat tex="data/physicals/monsters/gfx/wolfbeast-move-wounded.png" nm="data/effects/normalmaps/wolfbeast-move.png" />
+	<mat tex="data/physicals/monsters/gfx/wolfbeast-attack-wounded.png" nm="data/effects/normalmaps/wolfbeast-attack.png" />
+	<mat tex="data/physicals/monsters/gfx/wolfbeast-death.png" nm="data/effects/normalmaps/wolfbeast-death.png" />
+	
 </root>
