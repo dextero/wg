@@ -3,6 +3,7 @@
 package_name=$1
 if [ -n "$package_name" ]
 then
+    revision=$package_name
     package_name="WarlocksGauntlet-$package_name"
 else
     revision=`hg describe -l 10000`
@@ -17,7 +18,8 @@ mkdir deb/opt
 GAMEDIR=deb/opt/WarlocksGauntlet
 
 cp -rf deploy $GAMEDIR
-sed -e "s@<locale lang=\"pl\"/>@<locale lang=\"en\"/>@" "deploy/data/config.xml" > "$GAMEDIR/data/config.xml"
+SIZE=`du $GAMEDIR -s | cut -f1`
+sed -e "s/"'${version}'"/$revision/g" -e "s/"'${size}'"/$SIZE/g" tools/deb_image/DEBIAN/control > deb/DEBIAN/control
 
 mv deb "$package_name"
 
