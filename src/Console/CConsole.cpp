@@ -28,7 +28,16 @@
 #define CONSOLE_HEIGHT 15
 #define CONSOLE_FONT_SIZE 18
 
+#ifndef SCM_REVISION
+#define SCM_REVISION dev-snapshot
+#endif
+
+#define STR_EXPAND(tok) #tok
+#define STR(tok) STR_EXPAND(tok)
+ 
+static const std::string revision(STR(SCM_REVISION));
 const unsigned int CConsole::msCommandHistoryCount = 10;
+static unsigned currentFontSize = 0;
 
 template<> CConsole* CSingleton<CConsole>::msSingleton = 0;
 
@@ -38,7 +47,7 @@ CConsole::CConsole() :
     fprintf( stderr, "CConsole::CConsole()\n" );
 
     gCommands;
-	mFontSize = unsigned( (float) CONSOLE_FONT_SIZE * std::min( (float) gGameOptions.GetWidth() / 800.0f, (float) gGameOptions.GetHeight() / 600.0f ) );
+	currentFontSize = unsigned( (float) CONSOLE_FONT_SIZE * std::min( (float) gGameOptions.GetWidth() / 800.0f, (float) gGameOptions.GetHeight() / 600.0f ) );
 	mWidth = CONSOLE_WIDTH;
 	mHeight = CONSOLE_HEIGHT;
     
@@ -55,28 +64,37 @@ CConsole::CConsole() :
         mHudSprite->GetSFSprite()->Resize( (float)gGame.GetRenderWindow()->GetWidth(), (float)gGame.GetRenderWindow()->GetHeight() * 0.5f );
     }
 
-    mHudStaticText = gDrawableManager.CreateHudStaticText( Z_CONSOLE_TEXT );
-    if ( mHudStaticText )
-    {
-        std::map<std::string, std::string> args;
-        args["name"] = gLocalizator.GetFont(GUI::FONT_CONSOLE);
-        args["charsize"] = StringUtils::ToString( mFontSize );
-        gResourceManager.LoadFont(args);
-
-        sf::Font* font = gResourceManager.GetFont( gLocalizator.GetFont(GUI::FONT_CONSOLE) );
-        if ( !font )
-        {
-            fprintf( stderr, "error: CConsole::CConsole(): Unable to load font, continuing anyway\n" );
-        }
-        else
-		{
-            mHudStaticText->GetSFString()->SetFont( *font );
-		}
-        mHudStaticText->GetSFString()->SetSize( (float)mFontSize );
-        mHudStaticText->GetSFString()->SetPosition( 0, 0 );
+    std::map<std::string, std::string> args;
+    args["name"] = gLocalizator.GetFont(GUI::FONT_CONSOLE);
+    args["charsize"] = StringUtils::ToString(currentFontSize);
+    gResourceManager.LoadFont(args);
+    sf::Font* font = gResourceManager.GetFont(gLocalizator.GetFont(GUI::FONT_CONSOLE));
+    if (!font) {
+        fprintf(stderr, "error: CConsole::CConsole(): Unable to load font, continuing anyway\n");
     }
 
-    gGame.AddFrameListener( this );
+    mHudStaticText = gDrawableManager.CreateHudStaticText(Z_CONSOLE_TEXT);
+    if (mHudStaticText) {
+        sf::Font* font = gResourceManager.GetFont(gLocalizator.GetFont(GUI::FONT_CONSOLE));
+        if (font) {
+            mHudStaticText->GetSFString()->SetFont(*font);
+		}
+        mHudStaticText->GetSFString()->SetSize((float)currentFontSize);
+        mHudStaticText->GetSFString()->SetPosition(0, 0);
+        mHudStaticText->GetSFString()->SetColor(sf::Color::Black);
+    }
+
+    mVersionStaticText = gDrawableManager.CreateHudStaticText(Z_CONSOLE_TEXT);
+    if (mVersionStaticText) {
+        if (font) {
+            mVersionStaticText->GetSFString()->SetFont( *font );
+		}
+        mVersionStaticText->GetSFString()->SetSize((float)currentFontSize);
+        mVersionStaticText->GetSFString()->SetText(StringUtils::ConvertToWString(revision));
+        mVersionStaticText->GetSFString()->SetColor(sf::Color(128, 128, 128));
+    }
+
+	gGame.AddFrameListener( this );
     gGame.AddKeyListener( this );
 
 	Print( gLocalizator.GetText("CONSOLE_WELCOME"));
@@ -139,6 +157,15 @@ void CConsole::Cleanup()
 
 void CConsole::FrameStarted( float secondsPassed )
 {
+	unsigned newFontSize = unsigned( (float) CONSOLE_FONT_SIZE * std::min( (float) gGameOptions.GetWidth() / 800.0f, (float) gGameOptions.GetHeight() / 600.0f ) );
+    if (newFontSize != currentFontSize) {
+        currentFontSize = newFontSize;
+        mHudStaticText->GetSFString()->SetSize((float)currentFontSize);
+        mVersionStaticText->GetSFString()->SetSize((float)currentFontSize);
+    }
+    float fontHeight = (float)gGameOptions.GetHeight() / (float)mHeight;
+    float fontWidth = (float)gGameOptions.GetWidth() / (float)mWidth;
+
     float currY = mHudSprite->GetSFSprite()->GetPosition().y;
 	float spriteHeight = mHudSprite->GetSFSprite()->GetSize().y;
     if ( !mVisible )
@@ -199,12 +226,12 @@ void CConsole::FrameStarted( float secondsPassed )
     if (truncated % 2)
         text += L"_";
 
-	mFontSize = unsigned( (float) CONSOLE_FONT_SIZE * std::min( (float) gGameOptions.GetWidth() / 800.0f, (float) gGameOptions.GetHeight() / 600.0f ) );
-	mHudStaticText->GetSFString()->SetText( text );
-    mHudStaticText->GetSFString()->SetColor(sf::Color::Black);
-    mHudStaticText->GetSFString()->SetPosition( mHudSprite->GetSFSprite()->GetPosition() );
-	mHudStaticText->GetSFString()->SetSize( (float)mFontSize );
+    mHudStaticText->GetSFString()->SetText( text );
+
 	mHudSprite->GetSFSprite()->Resize( (float)gGameOptions.GetWidth(), (float) gGameOptions.GetHeight() * 0.5f );
+    mHudStaticText->GetSFString()->SetPosition( mHudSprite->GetSFSprite()->GetPosition() );
+    float halfWindowHeight = (float)gGame.GetRenderWindow()->GetHeight() * 0.5f;
+    mVersionStaticText->GetSFString()->SetPosition(gGameOptions.GetWidth() - (revision.size() * fontWidth), (currentFontSize * mHeight) + currY);
 }
 
 bool CConsole::GetVisible()

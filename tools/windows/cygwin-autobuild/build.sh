@@ -20,7 +20,8 @@ echo "Building..."
 WG_BINARY_NAME="WarlocksGauntlet.exe"
 mkdir "$SLN_PATH/$SLN_CONFIG"
 rm -f "$SLN_PATH/$SLN_CONFIG/$WG_BINARY_NAME"
-echo "\"$DEVENV_PATH\"" "$SLN_PATH/$SLN_NAME" /build "$SLN_CONFIG" /out "build.log" > bat.bat
+echo "SET CL=/DSCM_REVISION#$REVISION" > bat.bat
+echo "\"$DEVENV_PATH\"" "$SLN_PATH/$SLN_NAME" /build "$SLN_CONFIG" /out "build.log" >> bat.bat
 cmd.exe "/C bat.bat" 
 
 echo "Exporting..."

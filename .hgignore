@@ -19,5 +19,7 @@ WarlocksGauntlet.bin*
 tools/windows/cygwin-autobuild/workDir/.*
 tools/windows/cygwin-autobuild/wg_win32.*
 tools/windows/cygwin-autobuild/build.log
-WarlocksGauntlet\.exe\.manifest$
+tools/windows/cygwin-autobuild/bat.bat
+WarlocksGauntlet.*\.exe\.manifest$
+WarlocksGauntlet.*\.ilk$
 .directory
