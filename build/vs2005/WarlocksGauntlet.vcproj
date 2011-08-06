@@ -63,7 +63,7 @@
 			<Tool
 				Name="VCLinkerTool"
 				AdditionalDependencies="sfml-audio-s-d.lib sfml-graphics-s-d.lib sfml-window-s-d.lib sfml-system-s-d.lib user32.lib gdi32.lib"
-				OutputFile="..\..\$(ProjectName).exe"
+				OutputFile="..\..\$(ProjectName)-d.exe"
 				LinkIncremental="2"
 				AdditionalLibraryDirectories="libs\SFML-1.6\lib"
 				IgnoreAllDefaultLibraries="false"

@@ -46,11 +46,11 @@ private:
 
 	unsigned mWidth;
 	unsigned mHeight;
-	unsigned mFontSize;
     bool mVisible;
 
     CHudSprite* mHudSprite;
     CHudStaticText* mHudStaticText;
+	CHudStaticText* mVersionStaticText;
 
     std::wstring mPrompt;
 
