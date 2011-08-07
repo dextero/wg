@@ -1,7 +1,7 @@
 <root type="player">
 
   <speed min="2.5" max="2.5" />
-  <turnspeed min="360.0" max="360.0" />
+  <turnspeed min="240.0" max="240.0" />
   <strength min="10.0" max="10.0" />
   <willpower min="10.0" max="10.0" />
   <intelligence min="10.0" max="10.0" />  
