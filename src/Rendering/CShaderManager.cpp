@@ -184,7 +184,8 @@ void CShaderManager::KeyReleased( const sf::Event::KeyEvent &e ){
 }
 
 void CShaderManager::reloadAll(){
-	this->load("data/effects/normalmap.frag", "data/effects/normalmap.vert", "normal-map");
+	this->load("data/effects/normalmapping.frag", "data/effects/normalmapping.vert", "normalmapping");
+	this->load("data/effects/perpixel-lighting.frag", "data/effects/perpixel-lighting.vert", "perpixel-lighting");
 	this->load("data/effects/blue.frag", "data/effects/default.vert", "freeze");
 }
 
