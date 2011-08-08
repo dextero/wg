@@ -8,6 +8,7 @@
 
 #include <vector>
 #include <SFML/System/Vector2.hpp>
+#include <SFML/Graphics/Color.hpp>
 
 #include "../IFrameListener.h"
 #include "../Utils/CSingleton.h"
@@ -52,6 +53,12 @@ public:
 	inline void SetLighting(bool lighting)	{ mLightingEnabled = lighting; }
 	inline bool LightingEnabled()			{ return mLightingEnabled; }
 
+	inline void SetAmbient(const sf::Color& a)	{ mAmbient = a; }
+	inline const sf::Color& GetAmbient()		{ return mAmbient; }
+
+	inline void SetNormalMappingAmbient(const sf::Color& a)	{ mNormalMappingAmbient = a; }
+	inline const sf::Color& GetNormalMappingAmbient()		{ return mNormalMappingAmbient; }
+
     virtual void FrameStarted(float secondsPassed) {};
 	void DrawFrame( sf::RenderWindow* wnd = NULL );
 
@@ -61,10 +68,12 @@ private:
 	 * i umiesc je w tablicy out */
 	void GetStrongestLights(SLight** out, unsigned count, const sf::Vector2f& pos);
 	void DrawWithNormalMapping(sf::RenderWindow* wnd, CDisplayable* displayable, const sf::Image* normalmap);
-	void DrawWithPhongLighting(sf::RenderWindow* wnd, CDisplayable* displayable);
+	void DrawWithPerPixelLighting(sf::RenderWindow* wnd, CDisplayable* displayable);
 
     DrawableLists mLayers;
 	std::vector<SLight*> mLights;
+	sf::Color mAmbient;
+	sf::Color mNormalMappingAmbient;
 	bool mLightingEnabled;
 };
 

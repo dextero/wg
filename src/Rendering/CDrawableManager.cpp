@@ -160,7 +160,7 @@ void CDrawableManager::DrawFrame(sf::RenderWindow* wnd)
 				{
 					const sf::Image * normalmap = displayable->GetSFSprite()->GetNormalMap();
 					if (normalmap != NULL)	DrawWithNormalMapping(wnd, displayable, normalmap);
-					else					DrawWithPhongLighting(wnd, displayable);
+					else					DrawWithPerPixelLighting(wnd, displayable);
 				}
 				else
 				{
@@ -223,7 +223,7 @@ void CDrawableManager::GetStrongestLights(SLight** out, unsigned count, const sf
 void CDrawableManager::DrawWithNormalMapping(sf::RenderWindow* wnd, CDisplayable* displayable, const sf::Image* normalmap)
 {
 	// damork, TODO: dopisaæ obs³ugê wielu swiate³
-	int id = gShaderManager.activate("normal-map");
+	int id = gShaderManager.activate("normalmapping");
 	if (id >= 0)
 	{
 		float rot = displayable->GetRotation();
@@ -239,9 +239,27 @@ void CDrawableManager::DrawWithNormalMapping(sf::RenderWindow* wnd, CDisplayable
 	gShaderManager.clearBoundTextures();
 }
 
-void CDrawableManager::DrawWithPhongLighting(sf::RenderWindow *wnd, CDisplayable *displayable)
+void CDrawableManager::DrawWithPerPixelLighting(sf::RenderWindow *wnd, CDisplayable *displayable)
 {
-	// damork, TODO: dopisaæ obs³ugê shadera phonga
+	/*
+	mAmbient = sf::Color(100, 100, 100, 255);
+
+	int id = gShaderManager.activate("perpixel-lighting");
+	if (id >= 0)
+	{
+		gShaderManager.setUniform(id, "ambient", mAmbient);
+		gShaderManager.setUniform(id, "lpos1", sf::Vector3f(400.0f, 400.0f, 0.0f));
+		gShaderManager.setUniform(id, "lpos2", sf::Vector3f(1000.0f, 400.0f, 0.0f));
+		gShaderManager.setUniform(id, "lpos3", sf::Vector3f(400.0f, 1300.0f, 0.0f));
+		gShaderManager.setUniform(id, "lcolor1", sf::Color(255,255,255,255));
+		gShaderManager.setUniform(id, "lcolor2", sf::Color(255,155,255,255));
+		gShaderManager.setUniform(id, "lcolor3", sf::Color(255,155,155,255));
+		gShaderManager.setUniform(id, "lradius1", 500.0f);
+		gShaderManager.setUniform(id, "lradius2", 600.0f);
+		gShaderManager.setUniform(id, "lradius3", 1400.0f);
+	}
+	displayable->Draw(wnd);*/
+
 	gShaderManager.activateDefault();
 	displayable->Draw(wnd);
 }
