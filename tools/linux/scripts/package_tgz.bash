@@ -1,16 +1,21 @@
 #!/bin/bash
 
-package_name=$1
+package_version=$1
+scm_revision=$2
 
 gamename="WarlocksGauntlet"
 
-if [ -n "$package_name" ]
+if [ -z "$scm_revision" ]
 then
-    package_name="wg_linux_$package_name"
+    scm_revision=`hg describe -l 10000`
+fi
+
+if [ -n "$package_version" ]
+then
+    package_name="wg_linux_$package_version"
 else
-    revision=`hg describe -l 10000`
     DATE=`date +%F_%H-%M-%S`
-    package_name="wg_linux_"$revision"_"$DATE
+    package_name="wg_linux_"$scm_revision"_"$DATE
 fi
 
 for lang in "pl" "en"

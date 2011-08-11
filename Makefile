@@ -5,6 +5,9 @@ BINARY = $(GAMENAME).bin32
 -include Makefile.sources
 
 CPPFLAGS = -I"build/includes/SFML-1.6/include" -I"build/includes" -DPLATFORM_LINUX
+ifdef SCM_REVISION
+    CPPFLAGS += -DSCM_REVISION="$(SCM_REVISION)"
+endif
 
 LDFLAGS = -L"./libs32"
 

@@ -7,7 +7,12 @@ function fail()
     exit 1
 }
 
-package_name=$1
+if [ -n "$1" ]
+then
+    revision="$1"
+else
+    revision=`hg describe -l 10000`
+fi
 
 gamename="WarlocksGauntlet"
 
@@ -18,7 +23,7 @@ rm $binary64
 rm deploy -rf
 
 make clean || fail
-make release || fail
+make release SCM_REVISION="$revision" || fail
 
 test -f $binary32 || fail "$binary32 not found, exiting"
 
@@ -45,7 +50,7 @@ cp tools/linux/check_fullscreen/check_fullscreen deploy/bin
 #bit64 version:
 
 make clean || fail
-make -f Makefile.x86_64 release || fail
+make -f Makefile.x86_64 release SCM_REVISION="$revision" || fail
 test -f $binary64 || fail "$binary64 not found, exiting"
 g++ -m64 tools/linux/check_fullscreen/main.cpp -o deploy/bin/check_fullscreen.bin64 -static-libgcc -O2 -I"build/includes/SFML-1.6/include" -L"./libs64" -lsfml-graphics -lsfml-window -lsfml-system || fail
 
