@@ -1,14 +1,18 @@
 #!/bin/bash
 
-package_name=$1
-if [ -n "$package_name" ]
+package_version=$1
+scm_revision=$2
+if [ -z "$scm_revision" ]
 then
-    revision=$package_name
-    package_name="WarlocksGauntlet-$package_name"
+    scm_revision=`hg describe -l 10000`
+fi
+
+if [ -n "$package_version" ]
+then
+    package_name="WarlocksGauntlet-$package_version"
 else
-    revision=`hg describe -l 10000`
     DATE=`date +%F_%H-%M-%S`
-    package_name="WarlocksGauntlet-"$revision"_"$DATE
+    package_name="WarlocksGauntlet-"$scm_revision"_"$DATE
 fi
 
 rm -rf deb
@@ -19,7 +23,7 @@ GAMEDIR=deb/opt/WarlocksGauntlet
 
 cp -rf deploy $GAMEDIR
 SIZE=`du $GAMEDIR -s | cut -f1`
-sed -e "s/"'${version}'"/$revision/g" -e "s/"'${size}'"/$SIZE/g" tools/deb_image/DEBIAN/control > deb/DEBIAN/control
+sed -e "s/"'${version}'"/$scm_revision/g" -e "s/"'${size}'"/$SIZE/g" tools/deb_image/DEBIAN/control > deb/DEBIAN/control
 
 mv deb "$package_name"
 
