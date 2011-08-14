@@ -15,7 +15,7 @@ void main()
 	gl_TexCoord[0] = gl_TextureMatrix[0] * gl_MultiTexCoord0;
 	
 	// Oblicz odleglosc wierzcholka od zrodel swiatla
-	vec3 vertexPos = gl_ModelViewMatrix * gl_Vertex;
+	vec3 vertexPos = (gl_ModelViewMatrix * gl_Vertex).xyz;
 	ldist1 = length(vertexPos - lpos1);
 	ldist2 = length(vertexPos - lpos2);
 	ldist3 = length(vertexPos - lpos3);

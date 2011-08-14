@@ -13,6 +13,7 @@
 #include "GLCheck.h"
 
 #include <SFML/Graphics.hpp>
+#include <SFML/Graphics/Matrix3.hpp>
 #include <iostream>
 #include <cstdio>
 
@@ -110,7 +111,7 @@ bool CShaderManager::setUniform(int programId, const std::string& name, float va
     return true;
 }
 
-bool CShaderManager::setUniform(int programId, const std::string& name, sf::Vector2f value)
+bool CShaderManager::setUniform(int programId, const std::string& name, const sf::Vector2f& value)
 {
     GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
     if (location < 0) {
@@ -122,7 +123,7 @@ bool CShaderManager::setUniform(int programId, const std::string& name, sf::Vect
     return true;
 }
 
-bool CShaderManager::setUniform(int programId, const std::string& name, sf::Vector3f value){	
+bool CShaderManager::setUniform(int programId, const std::string& name, const sf::Vector3f& value){	
     GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
     if (location < 0) {
         fprintf(stderr, "shader ERROR: couldn't get uniform location: %s\n", name.c_str());
@@ -133,7 +134,7 @@ bool CShaderManager::setUniform(int programId, const std::string& name, sf::Vect
     return true;
 }
 
-bool CShaderManager::setUniform(int programId, const std::string& name, sf::Color value)
+bool CShaderManager::setUniform(int programId, const std::string& name, const sf::Color& value)
 {
     GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
     if (location < 0) {
@@ -149,6 +150,18 @@ bool CShaderManager::setUniform(int programId, const std::string& name, sf::Colo
     };
     glUniform4fv(location, 1, col);
     return true;
+}
+
+bool CShaderManager::setUniform(int programId, const std::string& name, const sf::Matrix3& value)
+{
+	GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
+	if (location < 0) {
+        fprintf(stderr, "shader error: couldn't get uniform location: %s\n", name.c_str());
+        return false;
+    }
+
+	glUniformMatrix4fv(location, 1, GL_FALSE, value.Get4x4Elements());
+	return true;
 }
 
 // program must be active!
