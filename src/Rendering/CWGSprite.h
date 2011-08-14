@@ -3,6 +3,7 @@
 
 #include <cstddef>
 #include <SFML/Graphics/Sprite.hpp>
+#include <SFML/Graphics/Matrix3.hpp>
 
 namespace sf { class Image; }
 
@@ -14,6 +15,8 @@ private:
 public:
 	inline sf::Image* GetNormalMap()		{ return normalMap; }
 	inline void SetNormalMap(sf::Image* nm)	{ normalMap = nm; }
+	inline const sf::Matrix3& GetInverseMatrix() const { 
+		return sf::Sprite::GetInverseMatrix(); }
 	virtual void Render(sf::RenderTarget &renderTarget) const;
 };
 

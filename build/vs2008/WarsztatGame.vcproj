@@ -2162,6 +2162,14 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\src\Rendering\CShaderManager.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Rendering\CShaderManager.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\src\Rendering\CWGSprite.cpp"
 					>
 				</File>
@@ -2179,6 +2187,10 @@
 				</File>
 				<File
 					RelativePath="..\..\src\Rendering\IDrawable.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Rendering\SLight.h"
 					>
 				</File>
 				<File
