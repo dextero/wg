@@ -16,6 +16,7 @@
 #include <SFML/System/Vector3.hpp>
 
 class IDrawable;
+namespace sf { class Matrix3; }
 
 #define gShaderManager CShaderManager::GetSingleton()
 
@@ -33,9 +34,10 @@ public:
 	void activateDefault();
 
     bool setUniform(int programId, const std::string& name, float value);
-    bool setUniform(int programId, const std::string& name, sf::Vector2f value);
-    bool setUniform(int programId, const std::string& name, sf::Vector3f value);
-    bool setUniform(int programId, const std::string& name, sf::Color value);
+    bool setUniform(int programId, const std::string& name, const sf::Vector2f& value);
+    bool setUniform(int programId, const std::string& name, const sf::Vector3f& value);
+    bool setUniform(int programId, const std::string& name, const sf::Color& value);
+	bool setUniform(int programId, const std::string& name, const sf::Matrix3& value);
 	// program must be active!
 	// remember to call clearBoundTextures() later on
 	bool bindTexture(int programId, const std::string & name, sf::Image const * image);
