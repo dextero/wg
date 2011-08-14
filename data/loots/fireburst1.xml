@@ -8,6 +8,9 @@
                 msg $MSG_FOUND $ITEM_FIREBURST
                 ]</text>
         </effect>
+        <effect type="sound">
+            <name value="data/sounds/Lugaro/break.ogg" />
+        </effect>
 		<effect type="bullet">
 			<emitter>	
 			  <range calc="12.0" />
