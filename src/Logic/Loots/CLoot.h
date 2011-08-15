@@ -31,12 +31,16 @@ public:
 
     void SetItem(CItem * item) { mItem = item; }
     CItem * GetItem() { return mItem; }
+
+    void SetLevel(int level) { mLevel = level; }
+    int GetLevel() { return mLevel; } 
 protected:
     SLootTemplate *obj;  
 
 private:
     IOptionChooserHandler * mOptionHandler;
     CItem * mItem;
+    int mLevel;
 };
 
 #endif //__CLOOT_H__//
