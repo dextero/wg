@@ -302,7 +302,7 @@ unsigned int CRandomMapGenerator::GenerateIrregularCave(const sf::IntRect& outsi
     for (int y = outsideRect.Top; y < outsideRect.Bottom; ++y)
         for (int x = outsideRect.Left; x < outsideRect.Right; ++x)
         {
-            unsigned int i, j;
+            size_t i, j;
             bool c = false;
 
             for (i = 0, j = points.size() - 1; i < points.size(); j = i++)
@@ -850,7 +850,7 @@ bool CRandomMapGenerator::PlaceDoodahs()
             size_t doodahNum = rand() % set.doodahsOnGround.size();     // ktory doodah?
             float offsetX = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // offsety, zeby nie staly tak bardzo jednolicie
             float offsetY = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // + 0.5, zeby wycentrowac na kaflach
-            float scale = ((float)rand() / RAND_MAX + 3.3f) / 3.f - 0.4;// skala doodaha: 0.6 - ~1.0 (rand() zwraca signed int)
+            float scale = ((float)rand() / RAND_MAX + 3.3f) / 3.f - 0.4f;// skala doodaha: 0.6 - ~1.0 (rand() zwraca signed int)
             int rot = rand() % 360;                                     // jeszcze obrot do tego
 
             if ((pos.x > 0 && mCurrent[pos.x - 1][pos.y] != BLOCKED) ||
@@ -1048,7 +1048,7 @@ PhysicalsVector FilterByType(const PhysicalsVector & input, const std::string & 
     return filteredOut;
 }
 
-std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle, float additionalWeaponProbability, const sf::Vector2f & position)
+CRandomMapGenerator::SPhysical CRandomMapGenerator::GenerateNextLootDef(bool canBeObstacle, float additionalWeaponProbability, const sf::Vector2f & position)
 {
     // #997, to prevent generating chests and weapons close to the edge of the user screen
     const static float TRESHOLD = 4.5;
@@ -1060,21 +1060,21 @@ std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle
     // /#997 end of hack
 
     if (canBeObstacle && mSpawnedChestsCount < 3 && gRand.Rndf() < 0.25) {
-        return "data/physicals/obstacles/chest.xml";
+        return SPhysical("obstacle", "data/physicals/obstacles/chest.xml");
     }
     float realWeaponSpawnProbability = mSpawnWeaponProbability + (additionalWeaponProbability * (3 - mSpawnedWeaponsCount));
 	realWeaponSpawnProbability += closeToScreenEdgePenalty;
     if (gRand.Rndf() < realWeaponSpawnProbability) {
         mSpawnedWeaponsCount++;
         mSpawnWeaponProbability = 0.25f - (mSpawnedWeaponsCount * 0.30f);
-        return "data/loots/weapon.xml";
+        return SPhysical("loot", "data/loots/weapon.xml");
     } else {
         mSpawnWeaponProbability += 0.05f - (mSpawnedWeaponsCount * 0.02f);
     }
 
     PhysicalsVector loots = FilterByLevel(FilterByType(mPhysicals, "loot"), mDesc.level);
     if (loots.empty()) {
-        return "";
+        return SPhysical();
     }
     SPhysical loot = ChooseRandomlyRegardingFrequency(loots);
     
@@ -1083,13 +1083,14 @@ std::string CRandomMapGenerator::GenerateNextLootTemplateFile(bool canBeObstacle
     // * jak dawno temu byla wylosowana bron?
     // tak zeby zrownowazyc :) wypadanie ciekawych rzeczy
     
-    return loot.file;
+    return loot;
 
 }
 
 CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability, const sf::Vector2f & position)
 {
-    const std::string lootTemplateFile = GenerateNextLootTemplateFile(false, additionalWeaponProbability, position);
+    SPhysical lootDef = GenerateNextLootDef(false, additionalWeaponProbability, position);
+    const std::string lootTemplateFile = lootDef.file;
     if (lootTemplateFile.empty()) return NULL;
 
     CLoot * loot = dynamic_cast<CLootTemplate*>(gResourceManager.GetPhysicalTemplate(lootTemplateFile))->Create();
@@ -1097,7 +1098,18 @@ CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability,
         const std::string ability = GetRandomWeaponFile(mDesc.level);
         loot->SetAbility(ability);
     }
+    if (!lootDef.lootLevel.empty()) {
+        loot->SetLevel(CalculateLootLevel(lootDef.lootLevel));
+    }
     return loot;
+}
+
+int CRandomMapGenerator::CalculateLootLevel(const std::string & lootLevel) {
+    if (lootLevel.empty()) return 0;
+    if (lootLevel == "$level") return mDesc.level;
+    int ret;
+    StringUtils::FromString<int>(lootLevel, ret);
+    return ret;
 }
 
 bool CRandomMapGenerator::PlaceLoots()
@@ -1124,14 +1136,20 @@ bool CRandomMapGenerator::PlaceLoots()
             float offsetY = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // + 0.5, zeby wycentrowac na kaflach
             // obrot w przypadku przedmiotow nie ma sensu, skala zadeklarowana w xmlu
 
-            std::string lootTemplateFile = GenerateNextLootTemplateFile(true, 0, sf::Vector2f(tile.x + offsetX, tile.y + offsetY));
+            SPhysical lootDef = GenerateNextLootDef(true, 0, sf::Vector2f(tile.x + offsetX, tile.y + offsetY));
+            std::string lootTemplateFile = lootDef.file;
+            int lootLevel = CalculateLootLevel(lootDef.lootLevel);
             // brzydki hak:
             if (lootTemplateFile == "data/loots/weapon.xml") {
                 const std::string ability = GetRandomWeaponFile(mDesc.level);
-
                 mXmlText << "\t<obj templateFile=\"" << lootTemplateFile << "\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" ><ability>" << ability << "</ability></obj>\n";
             } else {
-                mXmlText << "\t<obj templateFile=\"" << lootTemplateFile << "\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" />\n";
+                mXmlText << "\t<obj templateFile=\"" << lootTemplateFile << "\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\"";
+                if (lootLevel != 0) {
+                    mXmlText << "><level>" << lootLevel << "</level></obj>\n";
+                } else {
+                    mXmlText << "/>\n";
+                }
             }
         }
 
@@ -1288,6 +1306,7 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
             if (level != 0) {
                 minLevel = maxLevel = level;
             }
+            std::string lootLevel = xml.GetString(n, "lootLevel");
             float frequency = xml.GetFloat(n, "frequency", 1.0f);
             std::string file = xml.GetString(n, "file");
             // opcjonalne, tycza sie tylko bossow
@@ -1295,7 +1314,7 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
             std::string bossTriggerAI = xml.GetString(n, "trigger-ai");
             std::string bossPlaylist = xml.GetString(n, "trigger-playlist");
 
-            mPhysicals.push_back(SPhysical(type, file, minLevel, maxLevel, frequency, bossTriggerRadius, bossTriggerAI, bossPlaylist));
+            mPhysicals.push_back(SPhysical(type, file, minLevel, maxLevel, lootLevel, frequency, bossTriggerRadius, bossTriggerAI, bossPlaylist));
         }
     }
 

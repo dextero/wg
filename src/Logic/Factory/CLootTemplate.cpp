@@ -63,9 +63,15 @@ CLoot* CLootTemplate::Create(std::wstring id)
 
 CTemplateParam * CLootTemplate::ReadParam(CXml & xml, rapidxml::xml_node<> * node, CTemplateParam * orig) {
     if (orig == NULL) orig = new CTemplateParam();
-    std::string ability = xml.GetString(xml.GetChild(node, "ability"));
+    std::string ability = xml.GetString(node, "ability");
     if (!ability.empty())
         orig->stringValues["ability"] = ability;
+    int level = xml.GetInt(node, "level");
+    if (level != 0) {
+        int * levelPtr = new int;
+        *levelPtr = level;
+        orig->values["level"] = levelPtr;
+    }
 
     return CPhysicalTemplate::ReadParam(xml,node,orig);
 }
@@ -74,6 +80,11 @@ void CLootTemplate::Parametrise(CPhysical * phys, CTemplateParam * param) {
     CLoot * loot = (CLoot*)phys;
     if (param->stringValues.count("ability") > 0) {
         loot->SetAbility(param->stringValues["ability"]);
+    }
+    if (param->values.count("level") > 0) {
+        int * levelPtr = (int*) param->values["level"];
+        loot->SetLevel(*levelPtr);
+        delete levelPtr;
     }
     CPhysicalTemplate::Parametrise(loot, param);
 }

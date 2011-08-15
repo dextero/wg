@@ -467,8 +467,10 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
                 if (loot->GetItem())
                     ss << "spawn-weapon " << loot->GetItem()->GetAbility() << " " << loot->GetPosition().x << " " << loot->GetPosition().y << "\n";
                 else
-                    ss << "spawn-physical-rot " << loot->GetTemplate()->GetFilename() << " " << StringUtils::ConvertToString((*it)->GetUniqueId()) << " " 
-			            << (*it)->GetPosition().x << " " << (*it)->GetPosition().y << " " << (*it)->GetRotation() << "\n";
+                    ss << "spawn-loot " << loot->GetTemplate()->GetFilename() << " "  
+			            << loot->GetPosition().x << " " << loot->GetPosition().y << " "
+                        << (loot->GetLevel() != 0 ? StringUtils::ToString(loot->GetLevel()) : "")
+                        << "\n";
                 break;
             }
         case PHYSICAL_DOOR:
@@ -548,7 +550,7 @@ void CLogic::LoadGame(const std::string & name)
 
     gCommands.ParseCommand( L"exec " + StringUtils::ConvertToWString(name) );
 
-    for (size_t i = 0; i < gPlayerManager.GetPlayerCount(); ++i)
+    for (int i = 0; i < (int)gPlayerManager.GetPlayerCount(); ++i)
     {
         // dex: powinno wystarczyc, chocby playera stratowal kon i przejechal walec, pare razy
         gPlayerManager.GetPlayerByNumber(i)->GetStats()->DoHeal(gPlayerManager.GetPlayerByNumber(i)->GetStats()->GetBaseAspect(aMaxHP));

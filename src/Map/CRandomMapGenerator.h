@@ -90,6 +90,7 @@ public:
         std::string file;
         int minLevel;
         int maxLevel;
+        std::string lootLevel;
         float frequency;
         float bossTriggerRadius;
 
@@ -99,17 +100,18 @@ public:
                 std::string file = "",
                 int minLevel = 0,
                 int maxLevel = 0,
+                const std::string & lootLevel = "",
                 float frequency = 0.0f,
                 float bossTriggerRadius = 0.f,
                 std::string bossTriggerAI = "",
                 std::string bossPlaylist = ""
                 ) :            
-            type(type), file(file), minLevel(minLevel), maxLevel(maxLevel), frequency(frequency),
+            type(type), file(file), minLevel(minLevel), maxLevel(maxLevel), lootLevel(lootLevel), frequency(frequency),
             bossPlaylist(bossPlaylist), bossTriggerRadius(bossTriggerRadius), bossTriggerAI(bossTriggerAI) {}
     };
     typedef std::vector<SPhysical> PhysicalsVector;
 private:
-
+    int CalculateLootLevel(const std::string & lootLevel); 
     std::map<std::string, SPartSet> mPartSets;
     PhysicalsVector mPhysicals;
     std::vector<std::string> mTileMasks;
@@ -164,7 +166,7 @@ private:
 
     void ReleaseCurrent();
 
-    std::string GenerateNextLootTemplateFile(bool canBeObstacle = false, float additionalWeaponProbability = 0.0f, const sf::Vector2f & position = sf::Vector2f(0,0));
+    SPhysical GenerateNextLootDef(bool canBeObstacle = false, float additionalWeaponProbability = 0.0f, const sf::Vector2f & position = sf::Vector2f(0,0));
 
 public:
     CRandomMapGenerator();
