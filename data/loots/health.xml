@@ -1,15 +1,15 @@
 <root type="loot">
-    <name name="$ITEM_HP_SMALL" />
-    <genre>small-hp</genre>
-    <image filename="data/loots/hp_mik.png" />
+    <name name="$ITEM_HEALTH" />
+    <genre>health</genre>
+    <image filename="data/loots/health.png" />
     <effect type="list">
         <effect type="console">
             <text>[
-                msg $MSG_FOUND $ITEM_HP_SMALL
+                msg $MSG_FOUND $ITEM_HEALTH
                 ]</text>
         </effect>
         <effect type="heal">
-            <amount value="15" />
+            <amount calc="10 + (5 * level)" />
             <show-amount />
         </effect>
     </effect>

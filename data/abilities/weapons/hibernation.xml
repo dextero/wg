@@ -27,7 +27,7 @@ Bonus for this spell depends:
       <time value="5.0" />
       <effect type="list">
         <effect type="heal">
-	      <amount calc="5.0 * (1 + power)"/>
+	      <amount calc="7.5 * (1 + 2 * power)"/>
         </effect>
         <effect type="modify">
           <aspect value="speed" />
