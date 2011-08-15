@@ -2,6 +2,7 @@
 #include "../../Rendering/ZIndexVals.h"
 #include "../CPlayer.h"
 #include "../Effects/CEffectHandle.h"
+#include "../Effects/CExecutionContext.h"
 #include "../OptionChooser/CLootItemOptionHandler.h"
 //#include "../OptionChooser/CSimpleOptionHandler.h"
 #include "../../Input/CPlayerController.h"
@@ -54,9 +55,8 @@ void CLoot::HandleCollision(CPlayer * player)
 
     if (obj->effect) {
         if (mLevel != 0) {
-            fprintf(stderr, "loot effect of level %d\n", mLevel);
             EffectSourcePtr source = EffectSourcePtr(NULL);
-            ExecutionContextPtr context = ExecutionContextPtr(NULL);
+            ExecutionContextPtr context = CExecutionContext::Alloc(player->GetSafePointer(),player,mLevel,player->GetPinnedAbilityBatch());    //CHECK
             obj->effect->Apply(player, source, context);
         } else {
             obj->effect->Apply(player);

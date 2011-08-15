@@ -65,18 +65,21 @@ float CXml::GetFloat(xml_node<> *parent, const std::string &attrName, float def)
 	float out = def;
 	xml_node<>* realParent = parent ? parent : mXmlRoot;
     std::string attrValue;
-    if (realParent){
-        if (attrName == ""){
-            if (realParent->first_node()){
+    if (realParent) {
+        if (attrName == "") {
+            if (realParent->first_node()) {
                 attrValue = realParent->first_node()->value();
                 FromString( attrValue, out );
             }
-        }
-        else
-            if ( xml_attribute<>* attr = realParent->first_attribute(attrName.c_str()) ) {
-                attrValue = attr->value();
-                FromString( attrValue, out );
+        } else if ( xml_attribute<>* attr = realParent->first_attribute(attrName.c_str()) ) {
+            attrValue = attr->value();
+            FromString( attrValue, out );
+        } else {
+            xml_node<>* child = realParent->first_node(attrName.c_str());
+            if (child) {
+                FromString(child->first_node()->value(), out);
             }
+        }
     }
 	return out;
 }
@@ -87,17 +90,20 @@ int CXml::GetInt(xml_node<> *parent, const std::string &attrName, int def)
 	xml_node<>* realParent = parent ? parent : mXmlRoot;
     std::string attrValue;
     if (realParent) {
-        if (attrName == ""){
-            if (realParent->first_node()){
+        if (attrName == "") {
+            if (realParent->first_node()) {
                 attrValue = realParent->first_node()->value();
                 FromString( attrValue, out );
             }
-        }
-        else
-            if ( xml_attribute<>* attr = realParent->first_attribute(attrName.c_str()) ) {
-                attrValue = attr->value();
-                FromString( attrValue, out );
+        } else if ( xml_attribute<>* attr = realParent->first_attribute(attrName.c_str()) ) {
+            attrValue = attr->value();
+            FromString( attrValue, out );
+        } else {
+            xml_node<>* child = realParent->first_node(attrName.c_str());
+            if (child) {
+                FromString(child->first_node()->value(), out);
             }
+        }
     }
     return out;
 }
@@ -114,6 +120,11 @@ std::string CXml::GetString(xml_node<> *parent, const std::string &attrName)
         else if ( xml_attribute<>* attr = realParent->first_attribute(attrName.c_str()) ) {
             std::string out = attr->value();
             return out;
+        } else {
+            xml_node<>* child = realParent->first_node(attrName.c_str());
+            if (child) {
+                return child->first_node()->value();
+            }
         }
     }
     // tox, 16 sierpnia: jest sens zwracac stringa z pustym znakiem zamiast pustego stringa?
@@ -125,14 +136,17 @@ EAspect CXml::GetAspect(xml_node<> *parent, const std::string &attrName)
 {
     xml_node<>* realParent = parent ? parent : mXmlRoot;
     std::string out = "";
-    if (realParent){
-        if (attrName == ""){
-            if (realParent->first_node())
+    if (realParent) {
+        if (attrName == "") {
+            if (realParent->first_node()) {
                 out = realParent->first_node()->value();
-        }
-        else{
-            if ( xml_attribute<>* attr = realParent->first_attribute(attrName.c_str()) ) {
+            }
+        } else if ( xml_attribute<>* attr = realParent->first_attribute(attrName.c_str()) ) {
                 out = attr->value();
+        } else {
+            xml_node<>* child = realParent->first_node(attrName.c_str());
+            if (child) {
+                out = child->first_node()->value();
             }
         }
     }
