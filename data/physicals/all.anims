@@ -3190,9 +3190,9 @@ core/anim/effects/meditation
 
 core/anim/bullet/firebolt
 {
-    0.10 "data/physicals/bullets/firebolt.png"  0   0  25 24
-    0.10 "data/physicals/bullets/firebolt.png"  0  25  25 48
-    0.10 "data/physicals/bullets/firebolt.png"  0  52  25 72
+    0.10 "data/physicals/bullets/firebolt.png"  0   0  24 24
+    0.10 "data/physicals/bullets/firebolt.png"  0  25  24 48
+    0.10 "data/physicals/bullets/firebolt.png"  0  52  24 72
 }
 
 core/anim/bullet/flaming-arrow
