@@ -467,8 +467,8 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
                 if (loot->GetItem())
                     ss << "spawn-weapon " << loot->GetItem()->GetAbility() << " " << loot->GetPosition().x << " " << loot->GetPosition().y << "\n";
                 else
-                    ss << "spawn-loot " << loot->GetTemplate()->GetFilename() << " " << StringUtils::ConvertToString(loot->GetUniqueId()) << " " 
-			            << loot->GetPosition().x << " " << loot->GetPosition().y << " " << loot->GetRotation()
+                    ss << "spawn-loot " << loot->GetTemplate()->GetFilename() << " "  
+			            << loot->GetPosition().x << " " << loot->GetPosition().y << " "
                         << (loot->GetLevel() != 0 ? StringUtils::ToString(loot->GetLevel()) : "")
                         << "\n";
                 break;
