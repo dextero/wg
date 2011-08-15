@@ -55,7 +55,6 @@ CExecutionContext *CExecutionContext::Alloc(Memory::CSafePtr<CActor> caster, CPh
 CExecutionContext *CExecutionContext::Alloc(Memory::CSafePtr<CActor> caster, CPhysical *physical, int abiLevel, CPinnedAbilityBatch *pinned){
     CExecutionContext *context = xcPool.Alloc();
     context->Init(caster, physical, NULL, pinned);
-	//warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
 	context->values.Set(aLevel, (float)abiLevel);
     return context;
 }

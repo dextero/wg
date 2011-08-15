@@ -1,15 +1,15 @@
 <root type="loot">
-    <name name="$ITEM_MANA_MEDIUM" />
-    <genre>medium-mana</genre>
-    <image filename="data/loots/medium-mana.png" />
+    <name name="$ITEM_MANA" />
+    <genre>mana</genre>
+    <image filename="data/loots/mana.png" />
     <effect type="list">
         <effect type="console">
             <text>[
-                msg $MSG_FOUND $ITEM_MANA_MEDIUM
+                msg $MSG_FOUND $ITEM_MANA
                 ]</text>
         </effect>
         <effect type="restore-mana">
-            <amount value="35" />
+            <amount calc="35 + (5 * level)" />
         </effect>
     </effect>
 </root>

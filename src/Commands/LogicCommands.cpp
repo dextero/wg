@@ -23,6 +23,7 @@
 
 #include "../ResourceManager/CResourceManager.h"
 #include "../Logic/Factory/CPhysicalTemplate.h"
+#include "../Logic/Factory/CLootTemplate.h"
 #include "../Logic/Factory/CDoorTemplate.h"
 #include "../Logic/CPlayerManager.h"
 #include "../Logic/Effects/CEffectManager.h"
@@ -125,7 +126,37 @@ void spawnPhysical(std::string &templName, std::wstring &id, float x, float y, i
 
 #include "../Map/CRandomMapGenerator.h"
 
-void CommandSpawnLoot(size_t argc, const std::vector<std::wstring> &argv){
+void CommandSpawnLoot(size_t argc, const std::vector<std::wstring> &argv) {
+    float x = 0;
+    float y = 0;
+    int level = 0;
+	if (argc == 4) {
+        x = StringUtils::Parse<float>(StringUtils::ConvertToString(argv[2]));
+        y = StringUtils::Parse<float>(StringUtils::ConvertToString(argv[3]));
+	} else if (argc == 5) {
+        x = StringUtils::Parse<float>(StringUtils::ConvertToString(argv[2]));
+        y = StringUtils::Parse<float>(StringUtils::ConvertToString(argv[3]));
+		level = StringUtils::Parse<int>(StringUtils::ConvertToString(argv[4]));
+	} else {
+        gConsole.Printf(L"usage: %ls filename x y [level]", argv[0].c_str());
+        return;
+	}
+	std::string templName = StringUtils::ConvertToString(argv[1]);
+    CLootTemplate* templ = dynamic_cast<CLootTemplate*>(gResourceManager.GetPhysicalTemplate(templName));
+
+    if (templ == NULL) {
+        gConsole.Printf(L"Couldn't find template %ls.\n",templName.c_str());
+        return;
+    }
+
+    CLoot * loot = templ->Create();
+	if (loot) {
+        loot->SetPosition(sf::Vector2f(x, y));
+        loot->SetLevel(level);
+	}
+}
+
+void CommandSpawnRandomLoot(size_t argc, const std::vector<std::wstring> &argv){
 	if (argc < 3) {
         gConsole.Printf( L"usage: %ls x y" , argv[0].c_str() );
 		return;
@@ -175,7 +206,7 @@ void CommandSpawnPhysicalRot(size_t argc, const std::vector<std::wstring> &argv)
         y = StringUtils::Parse<float>( StringUtils::ConvertToString( argv[4] ) );
 		rot = StringUtils::Parse<int>( StringUtils::ConvertToString( argv[5] ) );
 	} else {
-        gConsole.Printf( L"usage: %ls scheme [id] x y rot" , argv[0].c_str() );
+        gConsole.Printf( L"usage: %ls templateName [id] x y rot" , argv[0].c_str() );
         return;
 	}
 	std::string templName = StringUtils::ConvertToString( argv[1]);
