@@ -24,32 +24,6 @@ CDrawableManager::CDrawableManager() :
     fprintf(stderr,"CDrawableManager::CDrawableManager()\n");
     mLayers.resize( Z_MAX + 1 );
     gGame.AddFrameListener( this );
-
-	//temp
-	this->SetLighting(true);
-	this->SetAmbient(sf::Color(100,100,100,255));
-	this->SetNormalMappingAmbient(sf::Color(150,150,150,255));
-	this->SetNormalMappingContrast(1.3f);
-	SLight* l = this->CreateLight();
-	l->mColor = sf::Color::White;
-	l->mPosition = sf::Vector3f(300,300,30);
-	l->mRadius = 200;
-	l = this->CreateLight();
-	l->mColor = sf::Color::Red;
-	l->mPosition = sf::Vector3f(300,900,30);
-	l->mRadius = 700;
-	l = this->CreateLight();
-	l->mColor = sf::Color::Green;
-	l->mPosition = sf::Vector3f(800,600,30);
-	l->mRadius = 500;
-	l = this->CreateLight();
-	l->mColor = sf::Color::Blue;
-	l->mPosition = sf::Vector3f(1200,300,30);
-	l->mRadius = 500;
-	l = this->CreateLight();
-	l->mColor = sf::Color::Cyan;
-	l->mPosition = sf::Vector3f(1300,700,30);
-	l->mRadius = 500;
 }
 
 CDrawableManager::~CDrawableManager(){
@@ -213,8 +187,16 @@ void CDrawableManager::DestroyLight(SLight *light)
 	{
 		std::swap(mLights[i], mLights[mLights.size()-1]);
 		mLights.pop_back();
+		delete light;
 		return;
 	}
+}
+
+void CDrawableManager::DestroyAllLights()
+{
+	for (unsigned i = 0; i < mLights.size(); i++)
+		delete mLights[i];
+	mLights.clear();
 }
 
 inline float lenSQ(const sf::Vector2f& p1, const sf::Vector3f& p2) {
