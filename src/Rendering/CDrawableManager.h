@@ -49,6 +49,7 @@ public:
 
 	SLight* CreateLight();
 	void DestroyLight(SLight* light);
+	void DestroyAllLights();
 
 	inline void SetLighting(bool lighting)	{ mLightingEnabled = lighting; }
 	inline bool LightingEnabled()			{ return mLightingEnabled; }
