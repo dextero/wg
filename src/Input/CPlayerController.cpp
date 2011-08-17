@@ -17,7 +17,7 @@
 #include "CBindManager.h"
 #include "../Logic/Items/CItem.h"
 
-const float CPlayerController::TurningTimeThreshold = 0.15f; // zeby dodac odrobine precyzji do obrotu
+const float CPlayerController::TurningTimeThreshold = 0.45f; // zeby dodac odrobine precyzji do obrotu
 
 CPlayerController::CPlayerController(CPlayer *player) :
     CActorController(player),
