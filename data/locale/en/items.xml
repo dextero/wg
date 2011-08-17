@@ -4,24 +4,12 @@
 		<value>You just found one of ancient spell</value>
 	</entry>
 	<entry>
-		<key>ITEM_HP_BIG</key>
-		<value>Big health elixir</value>
+		<key>ITEM_HEALTH</key>
+		<value>Health elixir</value>
 	</entry>
 	<entry>
-		<key>ITEM_HP_MEDIUM</key>
-		<value>Medium health elixir</value>
-	</entry>
-	<entry>
-		<key>ITEM_HP_SMALL</key>
-		<value>Small health elixir</value>
-	</entry>
-	<entry>
-		<key>ITEM_MANA_MEDIUM</key>
+		<key>ITEM_MANA</key>
 		<value>Mana potiom</value>
-	</entry>
-	<entry>
-		<key>ITEM_MANA_BIG</key>
-		<value>Mana potion</value>
 	</entry>
 	<entry>
 		<key>ITEM_MANA_REGENERATION</key>
