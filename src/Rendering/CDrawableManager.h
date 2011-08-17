@@ -59,6 +59,10 @@ public:
 	inline void SetNormalMappingAmbient(const sf::Color& a)	{ mNormalMappingAmbient = a; }
 	inline const sf::Color& GetNormalMappingAmbient()		{ return mNormalMappingAmbient; }
 
+	// Domyslnie 1.0f
+	inline void SetNormalMappingContrast(float contrast)	{ mNormalMappingContrast = contrast; }
+	inline float GetNormalMappingContrast()					{ return mNormalMappingContrast; }
+
     virtual void FrameStarted(float secondsPassed) {};
 	void DrawFrame( sf::RenderWindow* wnd = NULL );
 
@@ -74,6 +78,7 @@ private:
 	std::vector<SLight*> mLights;
 	sf::Color mAmbient;
 	sf::Color mNormalMappingAmbient;
+	float mNormalMappingContrast;
 	bool mLightingEnabled;
 };
 

@@ -3,6 +3,7 @@
 uniform sampler2D tex;
 uniform sampler2D normalmap;
 uniform vec4 ambient;
+uniform float nmcontrast;
 
 uniform float lradius1;
 uniform float lradius2;
@@ -28,13 +29,14 @@ void main()
 	
 	// Oblicz kolor swiatla diffuse (to 1 - min.... to zanik swiatla - interpolacja liniowa)
 	float diffuseStrength = max( dot(normal, normalize(ldir1)), 0.0 );
-	vec4 diffuse = lcolor1 * diffuseStrength * 1.5 * (1.0 - min(ldist1/lradius1, 1.0));
+	vec4 diffuse = lcolor1 * diffuseStrength * nmcontrast * (1.0 - min(ldist1/lradius1, 1.0));
 	
 	diffuseStrength = max( dot(normal, normalize(ldir2)), 0.0 ); 
-	diffuse += lcolor2 * diffuseStrength * 1.5 * (1.0 - min(ldist2/lradius2, 1.0));
+	diffuse += lcolor2 * diffuseStrength * nmcontrast * (1.0 - min(ldist2/lradius2, 1.0));
 	
 	diffuseStrength = max( dot(normal, normalize(ldir3)), 0.0 ); 
-	diffuse += lcolor3 * diffuseStrength * 1.5 * (1.0 - min(ldist3/lradius3, 1.0));
+	diffuse += lcolor3 * diffuseStrength * nmcontrast * (1.0 - min(ldist3/lradius3, 1.0));
 	
 	gl_FragColor = (diffuse + ambient) * texColor;
+	gl_FragColor.a = texColor.a;
 }
