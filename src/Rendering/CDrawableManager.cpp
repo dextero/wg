@@ -203,6 +203,10 @@ inline float lenSQ(const sf::Vector2f& p1, const sf::Vector3f& p2) {
 	return (p1.x-p2.x)*(p1.x-p2.x) + (p1.y-p2.y)*(p1.y-p2.y) + (p2.z)*(p2.z);
 }
 
+inline bool strongerLight(const sf::Vector2f& pos, SLight* l1, SLight* l2) {
+	return lenSQ(pos,l1->mPosition) * l2->mRadius < lenSQ(pos,l2->mPosition) * l1->mRadius;
+}
+
 void CDrawableManager::GetStrongestLights(SLight** out, unsigned count, const sf::Vector2f& pos)
 {
 	if (mLights.size() <= count)
@@ -213,18 +217,24 @@ void CDrawableManager::GetStrongestLights(SLight** out, unsigned count, const sf
 	}
 	else
 	{
-		unsigned i = 0;
-		for (;i < count; i++)	out[i] = mLights[i];
-		for (;i < mLights.size(); i++)
+		SLight* current;
+		unsigned last = 0;
+
+		out[0] = mLights[0];
+		for (unsigned i = 1; i < mLights.size(); i++)
 		{
-			for (unsigned j = 0; j < count; j++)
+			current = mLights[i];
+
+			if (last < count - 1)
+				out[++last] = current;
+			else if (strongerLight(pos, current, out[last]))
+				out[last] = current;
+			else continue;
+
+			for (unsigned j = last; j > 0 && strongerLight(pos, current, out[j-1]); j--)
 			{
-				if (lenSQ(pos,mLights[i]->mPosition) * out[j]->mRadius < 
-					lenSQ(pos,out[j]->mPosition) * mLights[i]->mRadius)
-				{
-					out[j] = mLights[i];
-					break;
-				}
+				out[j] = out[j-1];
+				out[j-1] = current;
 			}
 		}
 	}
