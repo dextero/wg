@@ -1,0 +1,9 @@
+set-lighting true
+set-ambient 100, 100, 100
+set-nm-ambient 150, 150, 150
+set-nm-contrast 1.3
+create-light 300 300 30 200 255 255 255
+create-light 900 400 30 400 255 50 50
+create-light 200 800 30 600 50 255 50
+create-light 1300 600 30 500 50 50 255
+create-light 500 1200 30 700 255 255 50
