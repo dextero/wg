@@ -124,6 +124,7 @@ namespace Map{
 			m_sceneManager->Initialize( m_map->GetSize() );
             m_map->RespawnMapObjects(loadCompleteMap);
 			m_map->RespawnDoodahs();
+			m_map->RespawnLights();
 			m_collisionMap->Initialize( m_map->GetSize() * 4 );
 
 			for ( unsigned i = 0; i < gPlayerManager.GetPlayerCount(); i++ )
