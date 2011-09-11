@@ -22,6 +22,7 @@ namespace Map{
     class CTile;
     class CMapObjectDescriptor;
 	class CDoodahDescriptor;
+	class CLightDescriptor;
 	class CRegionDescriptor;
     // definiowane w CMap.cpp:
     class CMapTileType;
@@ -54,6 +55,7 @@ namespace Map{
 
         void RespawnMapObjects(bool loadCompleteMap);
 		void RespawnDoodahs();
+		void RespawnLights();
 		void CullVisibility( const sf::FloatRect &  viewRectangle );
 
         const std::string &GetOrCreateTileCode(const std::string &path);
@@ -100,6 +102,7 @@ namespace Map{
 
         std::vector<CMapObjectDescriptor *> mMapObjectDescriptors;
 		std::vector<CDoodahDescriptor *> mDoodahDescriptors;
+		std::vector<CLightDescriptor *> mLightDescriptors;
         std::vector<CRegionDescriptor *> mRegionDescriptors;
 
 		std::string mMapFilename;
@@ -112,6 +115,7 @@ namespace Map{
         void ClearTiles();
 		void ClearMapObjects();
 		void ClearDoodahs();
+		void ClearLights();
 
         int GetTileTypeIndex(const std::string &str);
         int GetMapObjectTypeIndex(const std::string &str);

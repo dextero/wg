@@ -20,6 +20,7 @@
 #include "CTile.h"
 #include "CMapObjectDescriptor.h"
 #include "CDoodahDescriptor.h"
+#include "CLightDescriptor.h"
 #include "CRegionDescriptor.h"
 #include "../Logic/MapObjects/CRegion.h"
 
@@ -93,6 +94,7 @@ namespace Map{
         ClearTiles();
 		ClearMapObjects();
 		ClearDoodahs();
+        ClearLights();
 
 		delete this;
 	}
@@ -432,6 +434,24 @@ namespace Map{
 			mDoodahDescriptors.push_back( doodah );
 		}
 
+        // lights
+        CLightDescriptor * light;
+        for (node=xml.GetChild(0, "light"); node; node=xml.GetSibl(node, "light")){
+            light = new CLightDescriptor();
+            light->x = xml.GetFloat(node, "x");
+            light->y = xml.GetFloat(node, "y");
+            light->radius = xml.GetFloat(node, "radius");
+            std::vector<std::string> colors = StringUtils::Explode(xml.GetString(node, "color"), " ");
+            if (colors.size() != 3) {
+                fprintf(stderr, "warning, <light> has invalid color attribute: %s\n", xml.GetString(node, "color").c_str());
+                light->color = sf::Color::White;
+            } else {
+                light->color = sf::Color(StringUtils::Parse<int>(colors[0]), StringUtils::Parse<int>(colors[1]),
+                    StringUtils::Parse<int>(colors[2]));
+            }
+            mLightDescriptors.push_back(light);
+        }
+
         return true;
     }
 
@@ -452,6 +472,11 @@ namespace Map{
 	void CMap::RespawnDoodahs(){
 		for (unsigned int i = 0; i < mDoodahDescriptors.size(); i++)
 			mDoodahDescriptors[i]->Create();
+	}
+
+	void CMap::RespawnLights(){
+		for (unsigned int i = 0; i < mLightDescriptors.size(); i++)
+			mLightDescriptors[i]->Create();
 	}
 
 	void CMap::CullVisibility( const sf::FloatRect &  viewRectangle ) {
@@ -495,6 +520,12 @@ namespace Map{
 		for (unsigned i = 0; i < mDoodahDescriptors.size(); i++)
 			delete mDoodahDescriptors[i];
 		mDoodahDescriptors.clear();
+	}
+
+	void CMap::ClearLights(){
+		for (unsigned i = 0; i < mLightDescriptors.size(); i++)
+			delete mLightDescriptors[i];
+		mLightDescriptors.clear();
 	}
 
     int CMap::GetTileTypeIndex(const std::string &str){
@@ -596,6 +627,16 @@ namespace Map{
 					(mDoodahDescriptors[i]->zindex == Z_MAPSPRITE_BG ? "background" : "onground"))
                 << "\" scale=\"" << mDoodahDescriptors[i]->scale << "\" rot=\"" << mDoodahDescriptors[i]->rotation << "\"/>\n";
         }
+
+        //lights
+        // <light x="200" y="800" radius="600" color="50 255 50" />
+        for (unsigned int i = 0; i < mLightDescriptors.size(); i++){
+            out << "\t<light x=\"" << mLightDescriptors[i]->x << "\" y=\"" << mLightDescriptors[i]->y
+                << "\" radius=\"" << mLightDescriptors[i]->radius 
+                << "\" color=\"" << mLightDescriptors[i]->color.r << " " << mLightDescriptors[i]->color.g
+                << " " << mLightDescriptors[i]->color.b << "\"/>\n";
+        }
+
         out << "</map>";
     }
 
