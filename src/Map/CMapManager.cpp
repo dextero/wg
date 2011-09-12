@@ -109,7 +109,7 @@ namespace Map{
         // bo segfault przy ominieciu bossa..
         gBossManager.ClearData();
         // bo problemy ze sterowaniem point&click..
-        for (int i = 0; i < gPlayerManager.GetPlayerCount(); ++i)
+        for (unsigned int i = 0; i < gPlayerManager.GetPlayerCount(); ++i)
         {
             // "po prostu przestan isc"
             if (CPlayer* player = gPlayerManager.GetPlayerByNumber(i))
