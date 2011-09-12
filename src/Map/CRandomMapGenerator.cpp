@@ -877,6 +877,41 @@ bool CRandomMapGenerator::PlaceDoodahs()
     return true;
 }
 
+bool CRandomMapGenerator::PlaceLights()
+{
+    CTimer timer("- lights: ");
+
+    static const unsigned int LIGHT_COUNT = 13;
+
+    for (unsigned int i = 0; i < LIGHT_COUNT; ++i) {
+        // znalezienie wolnego pola
+        sf::Vector2i pos;
+        do
+            pos = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
+        while (mCurrent[pos.x][pos.y] != FREE ||
+                (std::min(mDesc.sizeX, mDesc.sizeY) > mDesc.minMonsterDist * 2.f &&     // jesli mapa nie ma rozmiaru przynajmniej 2*minMonsterDist, to olej sprawdzanie odleglosci
+                Maths::LengthSQ(sf::Vector2f((float)(pos.x - mEntryPos.x), (float)(pos.y - mEntryPos.y))) <= mDesc.minMonsterDist * mDesc.minMonsterDist) );
+
+        //todo: generowac pole z dala od juz wygenerowanych swiatel...
+
+        // i teraz pasowaloby cos tu postawic..
+        float offsetX = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // offsety, zeby nie staly tak bardzo jednolicie
+        float offsetY = ((float)rand() / RAND_MAX + 0.5f) / 2.f;    // + 0.5, zeby wycentrowac na kaflach
+
+        int red = gRand.Rnd(60, 255);
+        int green = gRand.Rnd(50, 255);
+        int blue = gRand.Rnd(40, 255);
+        float radius = gRand.Rndf(3.0f, 10.0f);
+
+        mXmlText << "\t<light x=\"" << (float)pos.x + offsetX
+                    << "\" y=\"" << (float)pos.y + offsetY
+                    << "\" radius=\"" << radius
+                    << "\" color=\"" << red << " " << green << " " << blue
+                    << "\" />\n";
+    }
+    return true;
+}
+
 bool CRandomMapGenerator::PlaceBossDoors()
 {
     CTimer timer("- boss doors: ");
@@ -1370,6 +1405,7 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
     if (!PlaceRegions())        return false;
     if (!PlaceWalls())          return false;
     if (!PlaceDoodahs())        return false;
+    if (!PlaceLights())         return false;
     if (!PlaceBossDoors())      return false;   // zwraca true, jesli nie ma bossa na mapie
     if (!PlaceLoots())          return false;
     if (!PlaceMonsters())       return false;

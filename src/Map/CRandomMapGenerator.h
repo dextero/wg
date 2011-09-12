@@ -107,7 +107,7 @@ public:
                 std::string bossPlaylist = ""
                 ) :            
             type(type), file(file), minLevel(minLevel), maxLevel(maxLevel), lootLevel(lootLevel), frequency(frequency),
-            bossPlaylist(bossPlaylist), bossTriggerRadius(bossTriggerRadius), bossTriggerAI(bossTriggerAI) {}
+            bossTriggerRadius(bossTriggerRadius), bossTriggerAI(bossTriggerAI), bossPlaylist(bossPlaylist) {}
     };
     typedef std::vector<SPhysical> PhysicalsVector;
 private:
@@ -156,8 +156,9 @@ private:
     bool PlaceTiles();
     bool PlaceWalls();      // invisible-walls
     bool PlaceRegions();    // entry & exit - koniecznie przed PlaceLairs/Monsters, bo inaczej potwory moga sie spawnowac na glowie gracza
-                            // poniewaz PlaceRegions "kopie" przejscie naokolo teleportu, musi byc przed PlaceWalls
+                            // poniewaz PlaceRegions "kopie" przejscie naokolo teleportu, musi byc przed PlaceWalls <-- tox, 12 Sep 2011, a co to za komentarz w tej linijce?
     bool PlaceDoodahs();
+    bool PlaceLights();
     bool PlaceBossDoors();  // drzwi otwierajace sie po zabiciu bossa. opcjonalne, ale jesli wywolywac, to najlepiej przed potworami/gniazdami/itemami
     bool PlaceLairs();
     bool PlaceMonsters();
