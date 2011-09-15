@@ -133,6 +133,7 @@ namespace Map{
 			m_sceneManager->Initialize( m_map->GetSize() );
             m_map->RespawnMapObjects(loadCompleteMap);
 			m_map->RespawnDoodahs();
+            gDrawableManager.DestroyAllLights();
 			m_map->RespawnLights();
 			m_collisionMap->Initialize( m_map->GetSize() * 4 );
 
