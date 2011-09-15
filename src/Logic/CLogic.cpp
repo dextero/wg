@@ -263,6 +263,8 @@ void CLogic::StartNewGame( const std::wstring& startFile )
         for (unsigned int i = 0; i < ABI_SLOTS_COUNT; ++i)
             mGameScreens.SetSlotAbility(player, i, NULL);
 
+    gMapManager.SetWorld(gClock.GenerateTimestamp());
+
 	gCommands.ParseCommand( std::wstring(L"exec ") + startFile );
     if (ToxicUtils::isGameInCrimsonMode) {
         gCommands.ParseCommand(L"exec crimson-mode");
@@ -423,6 +425,7 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
 	ss << "add-xp " << xp << " ignore-skill-points silent\n";
     ss << "set-difficulty-factor " << mDifficultyFactor << "\n";
     ss << "set-score " << mScore << "\n";
+    ss << "set-world " << gMapManager.GetWorld() << "\n";
 	ss << "preload-map " << savedMapFile << " entry false\n";
     ss << "set-map-level " << gMapManager.GetLevel() << "\n";
 
