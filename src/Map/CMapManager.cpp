@@ -20,6 +20,8 @@
 #include "../Utils/CRand.h"
 #include "CRandomMapGenerator.h"
 
+#include <boost/filesystem.hpp>
+
 template<> Map::CMapManager* CSingleton<Map::CMapManager>::msSingleton = 0;
 
 
@@ -36,7 +38,8 @@ namespace Map{
 		m_collisionMap( new CCollisionMap() ),
         mCurrentMapTimeElapsed( 0.0f ),
         mHideLoadingScreen( false ),
-        mLevel(0)
+        mLevel(0),
+        mWorld("default")
 	{
 		fprintf( stderr, "CMapManager::CMapManager()\n");
 		gGame.AddFrameListener(this);
@@ -73,6 +76,9 @@ namespace Map{
 	{
 		if ( m_map != NULL )
 		{
+            // zapisz stan mapy, jesli juz z niej wychodzimy
+            gLogic.SaveMapStateToFile(m_map->GetFilename() + ".console");
+
 			gEditor.SetSelectedToErase( NULL );
 			m_sceneManager->ClearScene();
 
@@ -236,7 +242,7 @@ namespace Map{
             r = 1;
 
         // todo: robic w katalogu usera:
-		std::string filename = gGameOptions.GetUserDir() + "/generated_maps/rnd" + StringUtils::ToString(r) + ".xml";
+        std::string filename = GetWorldPath() + "level" + StringUtils::ToString(mLevel) + ".xml";
         SRandomMapDesc desc;
 		desc.set = gRandomMapGenerator.GetSetForLevel(mLevel);
         desc.sizeX = 32;
@@ -273,5 +279,20 @@ namespace Map{
 
 		gResourceManager.DropResource(filename); // wymusza reload mapy z dysku
         ScheduleSetMap(filename, true, "entry");
+    }
+
+    void CMapManager::SetWorld(const std::string& world)
+    {
+        mWorld = world;
+
+        // upewniamy sie, ze folder na mapy istnieje, bo inaczej bedzie kuku
+        std::string path = GetWorldPath();
+        if (boost::filesystem::exists(path))
+            boost::filesystem::create_directories(path);
+    }
+
+    const std::string CMapManager::GetWorldPath()
+    {
+        return gGameOptions.GetUserDir() + "/world/" + mWorld + "/";
     }
 }
