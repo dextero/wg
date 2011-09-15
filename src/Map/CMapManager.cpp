@@ -163,6 +163,11 @@ namespace Map{
             fprintf(stderr, "Map %s loaded in %.4fs, will %s loading screen\n", mapFile.c_str(), time, (time < LOADING_TOO_SLOW ? "hide" : "show"));
             mHideLoadingScreen = (time < LOADING_TOO_SLOW);
 
+            gDrawableManager.SetLighting(true);
+            gDrawableManager.SetAmbient(sf::Color(100, 100, 100));
+            gDrawableManager.SetNormalMappingAmbient(sf::Color(150, 150, 150));
+            gDrawableManager.SetNormalMappingContrast(1.3f);
+
 			return true;
 		}
 
