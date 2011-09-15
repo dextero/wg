@@ -37,6 +37,7 @@ namespace Map{
         bool mHideLoadingScreen;
 
         int mLevel; // ktora to juz plansza?
+        std::string mWorld;
 
 	public:
 		void SetMapFromData(const void *data);
@@ -68,6 +69,10 @@ namespace Map{
 
         bool SaveMap(const std::string &mapFile);
 		void SaveEmptyMap(const std::string& filename, const sf::Vector2i& size);
+
+        void SetWorld(const std::string& world);
+        const std::string& GetWorld() { return mWorld; }
+        const std::string GetWorldPath(); // zwraca sciezke do folderu, w ktorym sa mapy skladajace sie na 'swiat', z / na koncu
 	};
 }
 #endif /*__CMAPMANAGER_H__*/
