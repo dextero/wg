@@ -43,6 +43,8 @@ public:
 
     void SetGameThumbnail(const sf::Image & thumbnail);
     void PrepareToSaveGame(const std::string & filename, bool savePlayerPos = true);
+    void SaveMapState(std::ostream & out);
+    void SaveMapStateToFile(const std::string& file);
 	bool CanLoadGame(const std::string & name);
     std::wstring GetGameInfo(const std::string & name);
 

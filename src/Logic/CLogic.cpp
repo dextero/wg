@@ -431,6 +431,21 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
         if (i->second)
             ss << "define-quest-flag " << StringUtils::ConvertToString(i->first) << "\n";
 
+    SaveMapState(ss);
+
+    // pozycje graczy
+    if (savePlayerPos)
+        for (unsigned i = 0; i < gPlayerManager.GetPlayerCount(); i++)
+	        if (CPlayer* player = gPlayerManager.GetPlayerByNumber(i))
+                ss << "set-physical-position player" << i << " " << player->GetPosition().x << " " << player->GetPosition().y << "\n";
+
+	ss << "exec post-new-game\n";
+    //tox, 27 maja: todo: uwzgledniac crimson-mode
+	mSaveGameStr = ss.str();
+}
+
+void CLogic::SaveMapState(std::ostream & out)
+{
     // physicale
     std::map<CEnemy*, int> monstersIndex;
     std::map<CLair*, int> lairsIndex;
@@ -452,7 +467,7 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
         case PHYSICAL_LAIR:
         case PHYSICAL_OBSTACLE:
             filename = (*it)->GetTemplate()->GetFilename();
-            ss << "spawn-physical-rot " << filename << " " << StringUtils::ConvertToString((*it)->GetUniqueId()) << " " 
+            out << "spawn-physical-rot " << filename << " " << StringUtils::ConvertToString((*it)->GetUniqueId()) << " " 
                 << (*it)->GetPosition().x << " " << (*it)->GetPosition().y << " " << (*it)->GetRotation() << "\n";
             if ((*it)->GetCategory() == PHYSICAL_MONSTER) {
                 monstersIndex[(CEnemy*)(*it)] = monstersVisited++;
@@ -465,9 +480,9 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
             {
                 CLoot* loot = (CLoot*)(*it);
                 if (loot->GetItem())
-                    ss << "spawn-weapon " << loot->GetItem()->GetAbility() << " " << loot->GetPosition().x << " " << loot->GetPosition().y << "\n";
+                    out << "spawn-weapon " << loot->GetItem()->GetAbility() << " " << loot->GetPosition().x << " " << loot->GetPosition().y << "\n";
                 else
-                    ss << "spawn-loot " << loot->GetTemplate()->GetFilename() << " "  
+                    out << "spawn-loot " << loot->GetTemplate()->GetFilename() << " "  
 			            << loot->GetPosition().x << " " << loot->GetPosition().y << " "
                         << (loot->GetLevel() != 0 ? StringUtils::ToString(loot->GetLevel()) : "")
                         << "\n";
@@ -476,12 +491,12 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
         case PHYSICAL_DOOR:
             {
                 CDoor* door = (CDoor*)(*it);
-                ss << "spawn-door " << door->GetTemplate()->GetFilename() << " " << door->GetPosition().x << " " << door->GetPosition().y << " "
+                out << "spawn-door " << door->GetTemplate()->GetFilename() << " " << door->GetPosition().x << " " << door->GetPosition().y << " "
 					<< (door->GetOpened() ? "true" : "false");
 				if (door->GetCondition())
-					ss << " " << door->GetCondition()->SerializeConsoleFriendly()
+					out << " " << door->GetCondition()->SerializeConsoleFriendly()
 						<< " " << (door->GetOnOpened() ? door->GetOnOpened()->SerializeConsoleFriendly() : "");
-				ss << "\n";
+				out << "\n";
                 break;
             }
         default:
@@ -491,27 +506,29 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
     for (std::map<CEnemy*, int>::iterator it = monstersIndex.begin(); it != monstersIndex.end(); it++) {
         CLair * monsterLair = it->first->GetLair();
         if (monsterLair) {
-            ss << "register-monster-at-lair " << it->second << " " << lairsIndex[monsterLair] << "\n";
+            out << "register-monster-at-lair " << it->second << " " << lairsIndex[monsterLair] << "\n";
         }
     }
 
     // zyjace bossy
-    ss << gBossManager.SerializeLivingBosses();
+    out << gBossManager.SerializeLivingBosses();
 
     // to na razie nie..
     /*CEnemy* boss = gBossManager.GetBoss();
     if (boss)
-        ss << "start-boss-fight " << StringUtils::ConvertToString(boss->GetUniqueId()) << "\n";*/
+        out << "start-boss-fight " << StringUtils::ConvertToString(boss->GetUniqueId()) << "\n";*/
+}
 
-    // pozycje graczy
-    if (savePlayerPos)
-        for (unsigned i = 0; i < gPlayerManager.GetPlayerCount(); i++)
-	        if (CPlayer* player = gPlayerManager.GetPlayerByNumber(i))
-                ss << "set-physical-position player" << i << " " << player->GetPosition().x << " " << player->GetPosition().y << "\n";
-
-	ss << "exec post-new-game\n";
-    //tox, 27 maja: todo: uwzgledniac crimson-mode
-	mSaveGameStr = ss.str();
+void CLogic::SaveMapStateToFile(const std::string& file)
+{
+    std::ofstream f(file.c_str());
+    if (f.is_open())
+    {
+        SaveMapState(f);
+        f.close();
+    }
+    else
+        fprintf(stderr, "Error: couldn't save map state to file \"%s\"\n", file.c_str());
 }
 
 void CLogic::SaveGame(const std::string & name, bool thumbnail, bool savePlayerPos){

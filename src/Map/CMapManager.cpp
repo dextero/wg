@@ -116,6 +116,9 @@ namespace Map{
                 player->GetController()->SetWalkTarget(false, sf::Vector2f(), true);
         }
 
+        // jesli istnieje plik z zapisanym stanem mapy, to nie laduj calej mapy, tylko przywroc to co bylo
+        loadCompleteMap = loadCompleteMap && !FileUtils::FileExists(mapFile + ".console");
+
 		m_map = gResourceManager.GetMap( mapFile );
 		if ( m_map )
 		{
@@ -144,6 +147,10 @@ namespace Map{
 
             gLogic.GetGameScreens()->ResetCompass();
             gLogic.GetGameScreens()->Show(L"hud");
+
+            // odpal skrypt zawierajacy zapisany stan mapy, jesli taki istnieje (i jest taka potrzeba)
+            if (!loadCompleteMap && FileUtils::FileExists(mapFile + ".console"))
+                gCommands.ParseCommand(L"exec " + StringUtils::ConvertToWString(mapFile) + L".console");
 
             // jak stoimy z czasem? oplaca sie pokazywac loading screena czy nie?
             float time = timer.GetElapsedTime();

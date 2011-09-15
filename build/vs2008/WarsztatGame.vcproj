@@ -426,6 +426,14 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\src\Map\CLightDescriptor.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Map\CLightDescriptor.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\src\Map\CMap.cpp"
 					>
 				</File>
