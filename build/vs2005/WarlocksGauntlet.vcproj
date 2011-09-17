@@ -1590,6 +1590,14 @@
 				RelativePath="..\..\src\Map\CTile.h"
 				>
 			</File>
+			<File
+				RelativePath="..\..\src\Map\CWorldGraph.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\Map\CWorldGraph.h"
+				>
+			</File>
 			<Filter
 				Name="SceneManager"
 				>

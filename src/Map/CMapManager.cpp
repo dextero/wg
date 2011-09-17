@@ -19,6 +19,7 @@
 #include "../Utils/FileUtils.h"
 #include "../Utils/CRand.h"
 #include "CRandomMapGenerator.h"
+#include "CWorldGraph.h"
 
 #include <boost/filesystem.hpp>
 
@@ -39,11 +40,14 @@ namespace Map{
         mCurrentMapTimeElapsed( 0.0f ),
         mHideLoadingScreen( false ),
         mLevel(0),
-        mWorld("default")
+        mWorld("default"),
+        mWorldGraph(NULL)
 	{
 		fprintf( stderr, "CMapManager::CMapManager()\n");
 		gGame.AddFrameListener(this);
 		m_visitedMaps.clear();
+        mWorldGraph = new CWorldGraph();
+        mWorldGraph->LoadFromFile("data/maps/world-graph.xml");
 	}
 
 	CMapManager::~CMapManager()
@@ -56,6 +60,7 @@ namespace Map{
 		for ( unsigned i = 0; i < m_visitedMaps.size(); i++ )
 			gResourceManager.DropResource( m_visitedMaps[i]->GetFilename() );
 
+        delete mWorldGraph;
 		m_visitedMaps.clear();
 	}
 
@@ -234,6 +239,13 @@ namespace Map{
 		
 		FileUtils::WriteToFile(filename, ss.str().c_str());
 	}
+
+    void CMapManager::LoadStartingMap() {
+        const std::string & map = mWorldGraph->startingMap;
+        const std::string & region = mWorldGraph->startingRegion;
+        fprintf(stderr, "LoadingStartingMap: %s %s\n", map.c_str(), region.c_str());
+        ScheduleSetMap(map, true, region.empty() ? "entry" : region);
+    }
 
     void CMapManager::NextMap() {
         fprintf(stderr, "NextMap()\n");

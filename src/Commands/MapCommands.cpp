@@ -19,6 +19,7 @@ class CPhysical;
 using namespace Map;
 
 void CommandNextMap(size_t argc, const std::vector<std::wstring> &argv);
+void CommandLoadStartingMap(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSetMapLevel(size_t argc, const std::vector<std::wstring> &argv);
 void CommandRegisterMonsterAtLair(size_t argc, const std::vector<std::wstring> &argv);
 
@@ -27,6 +28,7 @@ CCommands::SCommandPair MapCommands [] =
 {
     {L"load-map"                        , "$MAN_LOAD_MAP"           , CommandLoadMap },
     {L"next-map"                        , "$MAN_NEXT_MAP"           , CommandNextMap },
+    {L"load-starting-map"               , "$MAN_LOAD_STARTING_MAP"  , CommandLoadStartingMap },
     {L"set-map-level"                   , "$MAN_SET_MAP_LEVEL"      , CommandSetMapLevel },
     {L"preload-map"                     , "$MAN_PRELOAD_MAP"        , CommandPreloadMap },
 	{L"unload-map"                      , "$MAN_UNLOAD_MAP"         , CommandUnloadMap },
@@ -284,6 +286,11 @@ void CommandGenerateRandomMap(size_t argc, const std::vector<std::wstring> &argv
 void CommandNextMap(size_t argc, const std::vector<std::wstring> &argv)
 {
     gMapManager.NextMap();
+}
+
+void CommandLoadStartingMap(size_t argc, const std::vector<std::wstring> &argv)
+{
+    gMapManager.LoadStartingMap();
 }
 
 void CommandSetMapLevel(size_t argc, const std::vector<std::wstring> &argv)
