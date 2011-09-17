@@ -3,7 +3,7 @@ new-player 0
 set-ability player0 data/abilities/weapons/firebolt.xml 0
 new-player 1
 set-ability player1 data/abilities/weapons/firebolt.xml 0
-next-map
+load-starting-map
 #load-map data/maps/level01.xml entry
 #play-cutscene data/cutscene/cutscene1.xml
 exec post-new-game

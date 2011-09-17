@@ -1,0 +1,24 @@
+<root type="worldGraph">
+    <startingMap>data/maps/town.xml</startingMap>
+	<startingRegion>entry</startingRegion>
+	
+    <map id="forest1" scheme="forest" level="1">
+	    <exit toMap="data/maps/town.xml" onBorder="west" />
+	    <exit toMap="forest2" onBorder="east" />
+	</map>
+    <map id="forest2" scheme="forest" level="2">
+        <exit toMap="forest1" onBorder="west" />
+	    <exit toMap="arctic1" onBorder="east" />
+	    <exit toMap="desert1" onBorder="north" />
+	</map>
+    <map id="desert1" scheme="desert" level="10">
+	    <exit toMap="forest2" onBorder="south" />
+	</map>
+    <map id="arctic1" scheme="arctic" level="20">
+	    <exit toMap="forest2" onBorder="west" />
+	    <exit toMap="arctic2" onBorder="east" />
+	</map>
+    <map id="arctic2" scheme="arctic" level="27" final-boss="data/physicals/monsters/defs/baldurian.xml">
+	    <exit toMap="arctic1" onBorder="west" />
+	</map>
+</root>

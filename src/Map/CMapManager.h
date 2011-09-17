@@ -16,6 +16,8 @@
 #include <string>
 #include <vector>
 
+struct CWorldGraph;
+
 #define gMapManager Map::CMapManager::GetSingleton()
 #define gScene Map::CMapManager::GetSingleton().GetSceneManager()
 
@@ -38,6 +40,7 @@ namespace Map{
 
         int mLevel; // ktora to juz plansza?
         std::string mWorld;
+        CWorldGraph * mWorldGraph; 
 
 	public:
 		void SetMapFromData(const void *data);
@@ -61,6 +64,7 @@ namespace Map{
 		void SetCurrentMapAsVisited();
         bool SetMap( const std::string &mapFile, bool loadCompleteMap, const std::string &region = "");
         void NextMap();
+        void LoadStartingMap();
         void SetLevel(int newLevel) { mLevel = newLevel; }
         int GetLevel() { return mLevel; }
 
