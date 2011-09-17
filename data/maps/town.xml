@@ -1,0 +1,1205 @@
+<map>
+	<version>3</version>
+	<width>32</width>
+	<height>32</height>
+	<tiletype code="a" image="data/maps/tiles/forest/grass.png"/>
+	<tiletype code="b" image="data/maps/tiles/forest/grass2.png"/>
+	<tiletype code="c" image="data/maps/tiles/forest/grass2.png"/>
+	<tiletype code="d" image="data/maps/tiles/forest/grass.png"/>
+	<tiletype code="e" image="data/maps/tiles/forest/forest.png"/>
+	<tiletype code="f" image="data/maps/tiles/forest/forest.png"/>
+	<tiletype code="g" image="data/maps/tiles/forest/forest2.png"/>
+	<tiletype code="h" image="data/maps/tiles/forest/forest.png"/>
+	<tiletype code="i" image="data/maps/tiles/forest/forest2.png"/>
+	<tiletype code="j" image="data/maps/tiles/forest/swamp.png"/>
+	<tiletype code="k" image="data/maps/tiles/forest/swamp.png"/>
+	<tiletype code="l" image="data/maps/tiles/forest/swamp.png"/>
+	<tiletype code="m" image="data/maps/tiles/forest/swamp.png"/>
+	<tiletype code="n" image="data/maps/tiles/forest/swamp.png"/>
+	<!-- to bedzie zabawne, te wszystkie generated_tiles.... -->
+	<tiletype code="o" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17100407614600630311_3.png"/>
+	<tiletype code="p" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3350933816898038404_1.png"/>
+	<tiletype code="q" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/141912533432111149_1.png"/>
+	<tiletype code="r" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14897165583939799738_0.png"/>
+	<tiletype code="s" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1183081372006974695_3.png"/>
+	<tiletype code="t" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14923521272820653805_3.png"/>
+	<tiletype code="u" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15508426610200666621_1.png"/>
+	<tiletype code="v" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8797706897584840844_0.png"/>
+	<tiletype code="w" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7626353670527190006_1.png"/>
+	<tiletype code="x" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8731130614906013278_0.png"/>
+	<tiletype code="y" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3229109383285344144_3.png"/>
+	<tiletype code="ab" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11886662862899032585_3.png"/>
+	<tiletype code="bb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/803190920820753103_2.png"/>
+	<tiletype code="cb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6227620616058192491_2.png"/>
+	<tiletype code="db" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7704500215235695501_2.png"/>
+	<tiletype code="eb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5371732625919905194_3.png"/>
+	<tiletype code="fb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8742994783891402420_0.png"/>
+	<tiletype code="gb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11805741872058868100_0.png"/>
+	<tiletype code="hb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9245271722674040763_2.png"/>
+	<tiletype code="ib" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7101529929882487189_2.png"/>
+	<tiletype code="jb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12578141665554940780_1.png"/>
+	<tiletype code="kb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/287133914451367922_1.png"/>
+	<tiletype code="lb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16719650251018236011_4.png"/>
+	<tiletype code="mb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15327654302579666711_4.png"/>
+	<tiletype code="nb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14404511421093895051_0.png"/>
+	<tiletype code="ob" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3524763894595694010_4.png"/>
+	<tiletype code="pb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4699560124435360331_3.png"/>
+	<tiletype code="qb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14964987864519184409_1.png"/>
+	<tiletype code="rb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/921629548964556434_3.png"/>
+	<tiletype code="sb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2191234174460414088_1.png"/>
+	<tiletype code="tb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9245271722674040763_0.png"/>
+	<tiletype code="ub" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2580697393312513660_4.png"/>
+	<tiletype code="vb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14703210863879490487_0.png"/>
+	<tiletype code="wb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15553319851899123980_3.png"/>
+	<tiletype code="xb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7804637371217100144_4.png"/>
+	<tiletype code="yb" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/18152321852131928474_0.png"/>
+	<tiletype code="ac" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7101529929882487189_4.png"/>
+	<tiletype code="bc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9859561495505187739_2.png"/>
+	<tiletype code="cc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9025159543946751829_2.png"/>
+	<tiletype code="dc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3277115381231511078_1.png"/>
+	<tiletype code="ec" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16690876935569558971_0.png"/>
+	<tiletype code="fc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12473427041565860880_0.png"/>
+	<tiletype code="gc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1521949822439987959_0.png"/>
+	<tiletype code="hc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8078298903227650417_1.png"/>
+	<tiletype code="ic" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5439516928501866337_2.png"/>
+	<tiletype code="jc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2025661319767326270_4.png"/>
+	<tiletype code="kc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17827683747954439057_2.png"/>
+	<tiletype code="lc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7804637371217100144_3.png"/>
+	<tiletype code="mc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8731130614906013278_4.png"/>
+	<tiletype code="nc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16664087150139894509_0.png"/>
+	<tiletype code="oc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5654265058317771524_2.png"/>
+	<tiletype code="pc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10137894445191617341_3.png"/>
+	<tiletype code="qc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12123362942499514456_0.png"/>
+	<tiletype code="rc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5419879091048049619_4.png"/>
+	<tiletype code="sc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/250495434895799480_1.png"/>
+	<tiletype code="tc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9159591334353780537_0.png"/>
+	<tiletype code="uc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6860580241089124339_2.png"/>
+	<tiletype code="vc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8260883765250938303_3.png"/>
+	<tiletype code="wc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1234843729241644441_1.png"/>
+	<tiletype code="xc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11924371974105618887_1.png"/>
+	<tiletype code="yc" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15686452043618974565_1.png"/>
+	<tiletype code="ad" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3619063254581866614_1.png"/>
+	<tiletype code="bd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17100407614600630311_2.png"/>
+	<tiletype code="cd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7972755824439776874_3.png"/>
+	<tiletype code="dd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15201708354164169869_2.png"/>
+	<tiletype code="ed" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5419879091048049619_3.png"/>
+	<tiletype code="fd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/18152321852131928474_3.png"/>
+	<tiletype code="gd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7101529929882487189_1.png"/>
+	<tiletype code="hd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1183081372006974695_4.png"/>
+	<tiletype code="id" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1978032838588411177_2.png"/>
+	<tiletype code="jd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7906558645904421536_3.png"/>
+	<tiletype code="kd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16394689252376640164_4.png"/>
+	<tiletype code="ld" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7362208581182984644_0.png"/>
+	<tiletype code="md" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7972755824439776874_1.png"/>
+	<tiletype code="nd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2804626960263011837_4.png"/>
+	<tiletype code="od" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17827683747954439057_0.png"/>
+	<tiletype code="pd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6362784691002529103_0.png"/>
+	<tiletype code="qd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3952717741306555726_0.png"/>
+	<tiletype code="rd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12036226253656892756_1.png"/>
+	<tiletype code="sd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4934870742334703844_3.png"/>
+	<tiletype code="td" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9940346147182464331_4.png"/>
+	<tiletype code="ud" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16394689252376640164_3.png"/>
+	<tiletype code="vd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1521949822439987959_1.png"/>
+	<tiletype code="wd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12105126815010804982_1.png"/>
+	<tiletype code="xd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5899070901680101618_4.png"/>
+	<tiletype code="yd" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2490565618582201017_2.png"/>
+	<tiletype code="ae" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5994521172185053851_1.png"/>
+	<tiletype code="be" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3532592220668014145_0.png"/>
+	<tiletype code="ce" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13599935003580613933_0.png"/>
+	<tiletype code="de" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/835826661511104157_1.png"/>
+	<tiletype code="ee" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11530109723585202086_4.png"/>
+	<tiletype code="fe" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8543630651606792042_2.png"/>
+	<tiletype code="ge" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8357768050634125306_3.png"/>
+	<tiletype code="he" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14897165583939799738_4.png"/>
+	<tiletype code="ie" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1183081372006974695_1.png"/>
+	<tiletype code="je" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3238487065679143346_3.png"/>
+	<tiletype code="ke" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4897040495457924686_4.png"/>
+	<tiletype code="le" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2422843526738133272_2.png"/>
+	<tiletype code="me" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13599935003580613933_4.png"/>
+	<tiletype code="ne" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5514388124715441388_2.png"/>
+	<tiletype code="oe" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12695594360684844686_0.png"/>
+	<tiletype code="pe" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15201708354164169869_3.png"/>
+	<tiletype code="qe" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5419879091048049619_1.png"/>
+	<tiletype code="re" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17970139776342909132_3.png"/>
+	<tiletype code="se" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16281716040130536619_2.png"/>
+	<tiletype code="te" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3807854111539444646_1.png"/>
+	<tiletype code="ue" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11806450928904241935_0.png"/>
+	<tiletype code="ve" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10956606075692881830_3.png"/>
+	<tiletype code="we" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6174085645270364874_1.png"/>
+	<tiletype code="xe" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/921629548964556434_0.png"/>
+	<tiletype code="ye" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5180607537390953190_1.png"/>
+	<tiletype code="af" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2030738529102024912_0.png"/>
+	<tiletype code="bf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17827683747954439057_3.png"/>
+	<tiletype code="cf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7972755824439776874_2.png"/>
+	<tiletype code="df" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17744276993179726235_2.png"/>
+	<tiletype code="ef" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15192189065623021943_3.png"/>
+	<tiletype code="ff" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/82226937837339582_3.png"/>
+	<tiletype code="gf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17527392765545592454_4.png"/>
+	<tiletype code="hf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4699560124435360331_2.png"/>
+	<tiletype code="if" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5659341531386804317_2.png"/>
+	<tiletype code="jf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7003347287705619765_3.png"/>
+	<tiletype code="kf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12220067211379431621_0.png"/>
+	<tiletype code="lf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5778421431821440227_1.png"/>
+	<tiletype code="mf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13401720582178711418_4.png"/>
+	<tiletype code="nf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1968360403542596097_3.png"/>
+	<tiletype code="of" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9859561495505187739_0.png"/>
+	<tiletype code="pf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1521949822439987959_4.png"/>
+	<tiletype code="qf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4699560124435360331_4.png"/>
+	<tiletype code="rf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2992571064176512230_1.png"/>
+	<tiletype code="sf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15704623355108704154_3.png"/>
+	<tiletype code="tf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12237943785845684343_2.png"/>
+	<tiletype code="uf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3952741192484427071_3.png"/>
+	<tiletype code="vf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3222772118508497887_0.png"/>
+	<tiletype code="wf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13009982485768412658_0.png"/>
+	<tiletype code="xf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9813035889428540410_2.png"/>
+	<tiletype code="yf" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10782583587815700892_3.png"/>
+	<tiletype code="ag" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3952717741306555726_2.png"/>
+	<tiletype code="bg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14284198207495943502_0.png"/>
+	<tiletype code="cg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12664598714918360020_2.png"/>
+	<tiletype code="dg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6362784691002529103_2.png"/>
+	<tiletype code="eg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15266165847228989546_3.png"/>
+	<tiletype code="fg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6589586277694620405_4.png"/>
+	<tiletype code="gg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2422843526738133272_3.png"/>
+	<tiletype code="hg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7101529929882487189_3.png"/>
+	<tiletype code="ig" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1183081372006974695_2.png"/>
+	<tiletype code="jg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5394148113161891545_1.png"/>
+	<tiletype code="kg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15462540035595243359_4.png"/>
+	<tiletype code="lg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12123362942499514456_3.png"/>
+	<tiletype code="mg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12664598714918360020_3.png"/>
+	<tiletype code="ng" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1234843729241644441_0.png"/>
+	<tiletype code="og" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15715309635908800909_4.png"/>
+	<tiletype code="pg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16664087150139894509_4.png"/>
+	<tiletype code="qg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14796004056366418096_4.png"/>
+	<tiletype code="rg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2804626960263011837_1.png"/>
+	<tiletype code="sg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14279826914636308898_2.png"/>
+	<tiletype code="tg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3222772118508497887_3.png"/>
+	<tiletype code="ug" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2060644725907922429_4.png"/>
+	<tiletype code="vg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6589586277694620405_2.png"/>
+	<tiletype code="wg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5899070901680101618_3.png"/>
+	<tiletype code="xg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13388800245043430821_2.png"/>
+	<tiletype code="yg" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/962467127116105664_3.png"/>
+	<tiletype code="ah" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14897165583939799738_1.png"/>
+	<tiletype code="bh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3238487065679143346_4.png"/>
+	<tiletype code="ch" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8637668093187562024_1.png"/>
+	<tiletype code="dh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10518474889010203376_2.png"/>
+	<tiletype code="eh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2191234174460414088_0.png"/>
+	<tiletype code="fh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16516350723022115813_3.png"/>
+	<tiletype code="gh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14796004056366418096_0.png"/>
+	<tiletype code="hh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2201247952883157395_1.png"/>
+	<tiletype code="ih" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2471107700140520190_4.png"/>
+	<tiletype code="jh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17929404745784397446_4.png"/>
+	<tiletype code="kh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1521949822439987959_2.png"/>
+	<tiletype code="lh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/18152321852131928474_4.png"/>
+	<tiletype code="mh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14106670129636815121_3.png"/>
+	<tiletype code="nh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13095528882332333201_2.png"/>
+	<tiletype code="oh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14964987864519184409_2.png"/>
+	<tiletype code="ph" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8637668093187562024_4.png"/>
+	<tiletype code="qh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11964042278195305513_3.png"/>
+	<tiletype code="rh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12045219859757513417_3.png"/>
+	<tiletype code="sh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6589586277694620405_3.png"/>
+	<tiletype code="th" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13084977482160249711_2.png"/>
+	<tiletype code="uh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16196332672518359223_4.png"/>
+	<tiletype code="vh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/18368021654687569450_3.png"/>
+	<tiletype code="wh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2201247952883157395_2.png"/>
+	<tiletype code="xh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2625406345219994835_0.png"/>
+	<tiletype code="yh" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8742994783891402420_3.png"/>
+	<tiletype code="ai" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13640201895259755890_4.png"/>
+	<tiletype code="bi" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14730832075560072220_3.png"/>
+	<tiletype code="ci" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6396441323792702489_4.png"/>
+	<tiletype code="di" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3619063254581866614_4.png"/>
+	<tiletype code="ei" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15331739852548319877_4.png"/>
+	<tiletype code="fi" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1978032838588411177_4.png"/>
+	<tiletype code="gi" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11889168699895212963_0.png"/>
+	<tiletype code="hi" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3990201196782313834_1.png"/>
+	<tiletype code="ii" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12662527927095455633_4.png"/>
+	<tiletype code="ji" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/141912533432111149_4.png"/>
+	<tiletype code="ki" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14244315008480989108_0.png"/>
+	<tiletype code="li" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15199605340514979755_2.png"/>
+	<tiletype code="mi" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2804626960263011837_3.png"/>
+	<tiletype code="ni" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6409758607509511673_2.png"/>
+	<tiletype code="oi" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3532592220668014145_3.png"/>
+	<tiletype code="pi" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6500393942688895765_4.png"/>
+	<tiletype code="qi" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8504876868733121769_3.png"/>
+	<tiletype code="ri" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13640201895259755890_0.png"/>
+	<tiletype code="si" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14730832075560072220_4.png"/>
+	<tiletype code="ti" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17970139776342909132_2.png"/>
+	<tiletype code="ui" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13401720582178711418_1.png"/>
+	<tiletype code="vi" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17100407614600630311_0.png"/>
+	<tiletype code="wi" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17756587659729845893_4.png"/>
+	<tiletype code="xi" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15095385734683969319_2.png"/>
+	<tiletype code="yi" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12664598714918360020_4.png"/>
+	<tiletype code="aj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7804637371217100144_2.png"/>
+	<tiletype code="bj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17970139776342909132_1.png"/>
+	<tiletype code="cj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/803190920820753103_1.png"/>
+	<tiletype code="dj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/984876104046606504_0.png"/>
+	<tiletype code="ej" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9634172719810711444_3.png"/>
+	<tiletype code="fj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10305086152614409469_2.png"/>
+	<tiletype code="gj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2172565872379054324_4.png"/>
+	<tiletype code="hj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14897165583939799738_2.png"/>
+	<tiletype code="ij" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6396441323792702489_3.png"/>
+	<tiletype code="jj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6409758607509511673_1.png"/>
+	<tiletype code="kj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3532592220668014145_4.png"/>
+	<tiletype code="lj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13599935003580613933_2.png"/>
+	<tiletype code="mj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12123362942499514456_4.png"/>
+	<tiletype code="nj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12676358174957724717_1.png"/>
+	<tiletype code="oj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2559730037749292746_3.png"/>
+	<tiletype code="pj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4934870742334703844_2.png"/>
+	<tiletype code="qj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14897165583939799738_3.png"/>
+	<tiletype code="rj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8637668093187562024_2.png"/>
+	<tiletype code="sj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6881603489357464364_1.png"/>
+	<tiletype code="tj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12948175617509431168_3.png"/>
+	<tiletype code="uj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3222772118508497887_4.png"/>
+	<tiletype code="vj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1521949822439987959_3.png"/>
+	<tiletype code="wj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5419879091048049619_0.png"/>
+	<tiletype code="xj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2580697393312513660_1.png"/>
+	<tiletype code="yj" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12664598714918360020_0.png"/>
+	<tiletype code="ak" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15484717075207222121_1.png"/>
+	<tiletype code="bk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11181386673938301863_1.png"/>
+	<tiletype code="ck" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12211227392083243568_0.png"/>
+	<tiletype code="dk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16546667813479376020_4.png"/>
+	<tiletype code="ek" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6936520697453913060_4.png"/>
+	<tiletype code="fk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5229931822031777275_3.png"/>
+	<tiletype code="gk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12237943785845684343_3.png"/>
+	<tiletype code="hk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5371732625919905194_1.png"/>
+	<tiletype code="ik" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14106670129636815121_0.png"/>
+	<tiletype code="jk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17199356135596456381_0.png"/>
+	<tiletype code="kk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12860216874671601147_3.png"/>
+	<tiletype code="lk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4875244916433446025_1.png"/>
+	<tiletype code="mk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16284853360339341405_1.png"/>
+	<tiletype code="nk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2380282161089473908_3.png"/>
+	<tiletype code="ok" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12057539619979370636_1.png"/>
+	<tiletype code="pk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8637668093187562024_0.png"/>
+	<tiletype code="qk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/18368021654687569450_1.png"/>
+	<tiletype code="rk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3666881657100445904_3.png"/>
+	<tiletype code="sk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7626353670527190006_2.png"/>
+	<tiletype code="tk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8731130614906013278_3.png"/>
+	<tiletype code="uk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14964987864519184409_4.png"/>
+	<tiletype code="vk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17970139776342909132_0.png"/>
+	<tiletype code="wk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11018659376482858679_4.png"/>
+	<tiletype code="xk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5778421431821440227_0.png"/>
+	<tiletype code="yk" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17830369169898110266_1.png"/>
+	<tiletype code="al" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2201247952883157395_4.png"/>
+	<tiletype code="bl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3222772118508497887_2.png"/>
+	<tiletype code="cl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6881603489357464364_0.png"/>
+	<tiletype code="dl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2580697393312513660_0.png"/>
+	<tiletype code="el" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5419879091048049619_2.png"/>
+	<tiletype code="fl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1090947132809986303_3.png"/>
+	<tiletype code="gl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1406948478737555297_2.png"/>
+	<tiletype code="hl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15553319851899123980_4.png"/>
+	<tiletype code="il" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2422843526738133272_0.png"/>
+	<tiletype code="jl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/835826661511104157_3.png"/>
+	<tiletype code="kl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7362208581182984644_3.png"/>
+	<tiletype code="ll" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5439516928501866337_3.png"/>
+	<tiletype code="ml" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2541708064333370303_3.png"/>
+	<tiletype code="nl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5461348625881299788_3.png"/>
+	<tiletype code="ol" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10137894445191617341_4.png"/>
+	<tiletype code="pl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12664598714918360020_1.png"/>
+	<tiletype code="ql" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1234843729241644441_3.png"/>
+	<tiletype code="rl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10260032868043671501_1.png"/>
+	<tiletype code="sl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6881603489357464364_2.png"/>
+	<tiletype code="tl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/18152321852131928474_1.png"/>
+	<tiletype code="ul" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10476372876603103435_1.png"/>
+	<tiletype code="vl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2210848663104162787_2.png"/>
+	<tiletype code="wl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6872644801626150220_1.png"/>
+	<tiletype code="xl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14284198207495943502_4.png"/>
+	<tiletype code="yl" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/973622330354629532_4.png"/>
+	<tiletype code="am" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7003347287705619765_1.png"/>
+	<tiletype code="bm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9403436323673047009_0.png"/>
+	<tiletype code="cm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6881603489357464364_4.png"/>
+	<tiletype code="dm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10956606075692881830_4.png"/>
+	<tiletype code="em" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16394689252376640164_2.png"/>
+	<tiletype code="fm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11964042278195305513_2.png"/>
+	<tiletype code="gm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3277115381231511078_4.png"/>
+	<tiletype code="hm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7972755824439776874_4.png"/>
+	<tiletype code="im" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15201708354164169869_1.png"/>
+	<tiletype code="jm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10224608293494317483_3.png"/>
+	<tiletype code="km" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4897040495457924686_2.png"/>
+	<tiletype code="lm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7972755824439776874_0.png"/>
+	<tiletype code="mm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14527764643478602314_2.png"/>
+	<tiletype code="nm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8190457441191661916_2.png"/>
+	<tiletype code="om" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15982589078962496833_3.png"/>
+	<tiletype code="pm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17727693046114581649_4.png"/>
+	<tiletype code="qm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4897040495457924686_0.png"/>
+	<tiletype code="rm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11058562722841055614_0.png"/>
+	<tiletype code="sm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1433384777946409633_0.png"/>
+	<tiletype code="tm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6047873987675945076_2.png"/>
+	<tiletype code="um" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2541708064333370303_1.png"/>
+	<tiletype code="vm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/442956631967562849_0.png"/>
+	<tiletype code="wm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12237943785845684343_0.png"/>
+	<tiletype code="xm" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2580697393312513660_2.png"/>
+	<tiletype code="ym" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/442956631967562849_3.png"/>
+	<tiletype code="an" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4029005779876430372_0.png"/>
+	<tiletype code="bn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10224608293494317483_4.png"/>
+	<tiletype code="cn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/526556300575611949_4.png"/>
+	<tiletype code="dn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4843525001941857604_1.png"/>
+	<tiletype code="en" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5540736843146478092_1.png"/>
+	<tiletype code="fn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15715309635908800909_3.png"/>
+	<tiletype code="gn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13263276440863334018_3.png"/>
+	<tiletype code="hn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12695594360684844686_3.png"/>
+	<tiletype code="in" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/75073953375486127_0.png"/>
+	<tiletype code="jn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11043942545943140616_3.png"/>
+	<tiletype code="kn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7891755671239574476_3.png"/>
+	<tiletype code="ln" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15986163354104015612_1.png"/>
+	<tiletype code="mn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/803190920820753103_4.png"/>
+	<tiletype code="nn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1968360403542596097_0.png"/>
+	<tiletype code="on" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4796714584021968294_4.png"/>
+	<tiletype code="pn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2172565872379054324_0.png"/>
+	<tiletype code="qn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15095385734683969319_0.png"/>
+	<tiletype code="rn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/921629548964556434_1.png"/>
+	<tiletype code="sn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13401720582178711418_3.png"/>
+	<tiletype code="tn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/921629548964556434_4.png"/>
+	<tiletype code="un" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12695594360684844686_2.png"/>
+	<tiletype code="vn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2201247952883157395_0.png"/>
+	<tiletype code="wn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10782583587815700892_4.png"/>
+	<tiletype code="xn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12900475884169733444_2.png"/>
+	<tiletype code="yn" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11557264204289152933_4.png"/>
+	<tiletype code="ao" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/18152321852131928474_2.png"/>
+	<tiletype code="bo" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6500393942688895765_0.png"/>
+	<tiletype code="co" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/141912533432111149_2.png"/>
+	<tiletype code="do" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3802899876296343841_4.png"/>
+	<tiletype code="eo" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2884091259703691911_3.png"/>
+	<tiletype code="fo" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8481028853631420536_0.png"/>
+	<tiletype code="go" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6936520697453913060_0.png"/>
+	<tiletype code="ho" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/962467127116105664_0.png"/>
+	<tiletype code="io" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5371732625919905194_4.png"/>
+	<tiletype code="jo" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8357768050634125306_2.png"/>
+	<tiletype code="ko" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2580697393312513660_3.png"/>
+	<tiletype code="lo" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/442956631967562849_2.png"/>
+	<tiletype code="mo" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3277115381231511078_0.png"/>
+	<tiletype code="no" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1234843729241644441_2.png"/>
+	<tiletype code="oo" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15686452043618974565_3.png"/>
+	<tiletype code="po" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6362784691002529103_1.png"/>
+	<tiletype code="qo" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11172540247925479269_4.png"/>
+	<tiletype code="ro" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1978032838588411177_3.png"/>
+	<tiletype code="so" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15686452043618974565_2.png"/>
+	<tiletype code="to" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2422843526738133272_4.png"/>
+	<tiletype code="uo" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14106670129636815121_1.png"/>
+	<tiletype code="vo" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12716509524981135032_0.png"/>
+	<tiletype code="wo" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2025661319767326270_3.png"/>
+	<tiletype code="xo" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11964042278195305513_4.png"/>
+	<tiletype code="yo" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2025661319767326270_2.png"/>
+	<tiletype code="ap" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1406948478737555297_1.png"/>
+	<tiletype code="bp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11058562722841055614_4.png"/>
+	<tiletype code="cp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1433384777946409633_2.png"/>
+	<tiletype code="dp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10905266509527246153_3.png"/>
+	<tiletype code="ep" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3964111424459488397_1.png"/>
+	<tiletype code="fp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1716505154382396901_0.png"/>
+	<tiletype code="gp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1333666691968058154_4.png"/>
+	<tiletype code="hp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7101529929882487189_0.png"/>
+	<tiletype code="ip" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9940346147182464331_0.png"/>
+	<tiletype code="jp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12695594360684844686_1.png"/>
+	<tiletype code="kp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10224608293494317483_0.png"/>
+	<tiletype code="lp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2060644725907922429_1.png"/>
+	<tiletype code="mp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6174085645270364874_3.png"/>
+	<tiletype code="np" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13599935003580613933_1.png"/>
+	<tiletype code="op" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11964042278195305513_0.png"/>
+	<tiletype code="pp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12237943785845684343_1.png"/>
+	<tiletype code="qp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1968360403542596097_2.png"/>
+	<tiletype code="rp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4654104898323896299_0.png"/>
+	<tiletype code="sp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15508426610200666621_0.png"/>
+	<tiletype code="tp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9364714405153684474_3.png"/>
+	<tiletype code="up" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5514388124715441388_3.png"/>
+	<tiletype code="vp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17756587659729845893_0.png"/>
+	<tiletype code="wp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15095385734683969319_1.png"/>
+	<tiletype code="xp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7724324262998531454_0.png"/>
+	<tiletype code="yp" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/141912533432111149_3.png"/>
+	<tiletype code="aq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8742994783891402420_2.png"/>
+	<tiletype code="bq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10782583587815700892_1.png"/>
+	<tiletype code="cq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4699560124435360331_0.png"/>
+	<tiletype code="dq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7516085640715996785_3.png"/>
+	<tiletype code="eq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5728956242008117885_0.png"/>
+	<tiletype code="fq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1601897306318146818_4.png"/>
+	<tiletype code="gq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17827683747954439057_4.png"/>
+	<tiletype code="hq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6396441323792702489_0.png"/>
+	<tiletype code="iq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14730832075560072220_1.png"/>
+	<tiletype code="jq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5461348625881299788_2.png"/>
+	<tiletype code="kq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9025159543946751829_0.png"/>
+	<tiletype code="lq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7967248125776130621_2.png"/>
+	<tiletype code="mq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6409758607509511673_0.png"/>
+	<tiletype code="nq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8190457441191661916_4.png"/>
+	<tiletype code="oq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3199350409501684262_3.png"/>
+	<tiletype code="pq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12860216874671601147_4.png"/>
+	<tiletype code="qq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4934870742334703844_4.png"/>
+	<tiletype code="rq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3952741192484427071_1.png"/>
+	<tiletype code="sq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3990201196782313834_0.png"/>
+	<tiletype code="tq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3619063254581866614_2.png"/>
+	<tiletype code="uq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7324699548934504866_1.png"/>
+	<tiletype code="vq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16796086334586293501_1.png"/>
+	<tiletype code="wq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16695786528215709178_4.png"/>
+	<tiletype code="xq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17300243030564168016_2.png"/>
+	<tiletype code="yq" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8357768050634125306_4.png"/>
+	<tiletype code="ar" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12345015180829034213_2.png"/>
+	<tiletype code="br" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6396441323792702489_2.png"/>
+	<tiletype code="cr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7724324262998531454_1.png"/>
+	<tiletype code="dr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15936331886802586819_3.png"/>
+	<tiletype code="er" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11172540247925479269_2.png"/>
+	<tiletype code="fr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13401720582178711418_2.png"/>
+	<tiletype code="gr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6419159472825536696_4.png"/>
+	<tiletype code="hr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3964111424459488397_2.png"/>
+	<tiletype code="ir" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3339012990206439382_1.png"/>
+	<tiletype code="jr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2804626960263011837_0.png"/>
+	<tiletype code="kr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10318517364651430573_3.png"/>
+	<tiletype code="lr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17756587659729845893_3.png"/>
+	<tiletype code="mr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7362208581182984644_1.png"/>
+	<tiletype code="nr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3199350409501684262_1.png"/>
+	<tiletype code="or" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8432164572623219468_3.png"/>
+	<tiletype code="pr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6227620616058192491_3.png"/>
+	<tiletype code="qr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9490075043265307459_2.png"/>
+	<tiletype code="rr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8190457441191661916_0.png"/>
+	<tiletype code="sr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7804637371217100144_1.png"/>
+	<tiletype code="tr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14244315008480989108_1.png"/>
+	<tiletype code="ur" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5221742169208348704_3.png"/>
+	<tiletype code="vr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15199605340514979755_1.png"/>
+	<tiletype code="wr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6860580241089124339_0.png"/>
+	<tiletype code="xr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14498449407160363024_1.png"/>
+	<tiletype code="yr" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15705502357958307883_1.png"/>
+	<tiletype code="as" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10476372876603103435_0.png"/>
+	<tiletype code="bs" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9859561495505187739_1.png"/>
+	<tiletype code="cs" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16719650251018236011_1.png"/>
+	<tiletype code="ds" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9025159543946751829_4.png"/>
+	<tiletype code="es" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2840905572176023033_4.png"/>
+	<tiletype code="fs" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11482157524011030972_3.png"/>
+	<tiletype code="gs" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6872644801626150220_0.png"/>
+	<tiletype code="hs" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3229109383285344144_2.png"/>
+	<tiletype code="is" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12036226253656892756_4.png"/>
+	<tiletype code="js" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8078298903227650417_4.png"/>
+	<tiletype code="ks" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/75073953375486127_4.png"/>
+	<tiletype code="ls" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3619063254581866614_0.png"/>
+	<tiletype code="ms" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1968360403542596097_1.png"/>
+	<tiletype code="ns" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15201708354164169869_0.png"/>
+	<tiletype code="os" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8654061429160153977_3.png"/>
+	<tiletype code="ps" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5529140218655597867_2.png"/>
+	<tiletype code="qs" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13263276440863334018_4.png"/>
+	<tiletype code="rs" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6174085645270364874_2.png"/>
+	<tiletype code="ss" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8357768050634125306_0.png"/>
+	<tiletype code="ts" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16516350723022115813_4.png"/>
+	<tiletype code="us" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14796004056366418096_1.png"/>
+	<tiletype code="vs" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4796714584021968294_3.png"/>
+	<tiletype code="ws" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11654605787519036339_4.png"/>
+	<tiletype code="xs" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/73464788888240971_2.png"/>
+	<tiletype code="ys" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/892822950278551207_3.png"/>
+	<tiletype code="at" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5461348625881299788_0.png"/>
+	<tiletype code="bt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10460476221283193351_3.png"/>
+	<tiletype code="ct" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8710443035604607043_0.png"/>
+	<tiletype code="dt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4897040495457924686_3.png"/>
+	<tiletype code="et" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1183081372006974695_0.png"/>
+	<tiletype code="ft" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12662527927095455633_1.png"/>
+	<tiletype code="gt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9159591334353780537_4.png"/>
+	<tiletype code="ht" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3576122279647894683_2.png"/>
+	<tiletype code="it" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12860216874671601147_0.png"/>
+	<tiletype code="jt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2191234174460414088_2.png"/>
+	<tiletype code="kt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14244315008480989108_3.png"/>
+	<tiletype code="lt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16546667813479376020_3.png"/>
+	<tiletype code="mt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7324699548934504866_4.png"/>
+	<tiletype code="nt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10260032868043671501_4.png"/>
+	<tiletype code="ot" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16719650251018236011_3.png"/>
+	<tiletype code="pt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6396441323792702489_1.png"/>
+	<tiletype code="qt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17100407614600630311_1.png"/>
+	<tiletype code="rt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14034056743455910420_2.png"/>
+	<tiletype code="st" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/24149602643961816_0.png"/>
+	<tiletype code="tt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4934870742334703844_1.png"/>
+	<tiletype code="ut" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9859561495505187739_4.png"/>
+	<tiletype code="vt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12948175617509431168_0.png"/>
+	<tiletype code="wt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7804637371217100144_0.png"/>
+	<tiletype code="xt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10607276288140156765_4.png"/>
+	<tiletype code="yt" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5371732625919905194_0.png"/>
+	<tiletype code="au" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10912546065481627058_2.png"/>
+	<tiletype code="bu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2840905572176023033_1.png"/>
+	<tiletype code="cu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13967226549019082151_0.png"/>
+	<tiletype code="du" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12345015180829034213_0.png"/>
+	<tiletype code="eu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15201708354164169869_4.png"/>
+	<tiletype code="fu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16690876935569558971_2.png"/>
+	<tiletype code="gu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11806450928904241935_1.png"/>
+	<tiletype code="hu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4796714584021968294_0.png"/>
+	<tiletype code="iu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9634172719810711444_0.png"/>
+	<tiletype code="ju" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/835826661511104157_2.png"/>
+	<tiletype code="ku" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17970139776342909132_4.png"/>
+	<tiletype code="lu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3576122279647894683_3.png"/>
+	<tiletype code="mu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12860216874671601147_1.png"/>
+	<tiletype code="nu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2422843526738133272_1.png"/>
+	<tiletype code="ou" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5461348625881299788_4.png"/>
+	<tiletype code="pu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10137894445191617341_2.png"/>
+	<tiletype code="qu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14730832075560072220_0.png"/>
+	<tiletype code="ru" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1333666691968058154_1.png"/>
+	<tiletype code="su" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17727693046114581649_2.png"/>
+	<tiletype code="tu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6218598230123369484_2.png"/>
+	<tiletype code="uu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1772767242054016364_4.png"/>
+	<tiletype code="vu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13804438674722965004_1.png"/>
+	<tiletype code="wu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8432164572623219468_1.png"/>
+	<tiletype code="xu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6881603489357464364_3.png"/>
+	<tiletype code="yu" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15462540035595243359_2.png"/>
+	<tiletype code="av" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12350322697160364384_1.png"/>
+	<tiletype code="bv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10518474889010203376_0.png"/>
+	<tiletype code="cv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17100407614600630311_4.png"/>
+	<tiletype code="dv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12152217801190729037_4.png"/>
+	<tiletype code="ev" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8731130614906013278_2.png"/>
+	<tiletype code="fv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8084225342375558296_1.png"/>
+	<tiletype code="gv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9364714405153684474_1.png"/>
+	<tiletype code="hv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10912546065481627058_3.png"/>
+	<tiletype code="iv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2025661319767326270_1.png"/>
+	<tiletype code="jv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11058993054807500343_3.png"/>
+	<tiletype code="kv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/962467127116105664_1.png"/>
+	<tiletype code="lv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15095385734683969319_3.png"/>
+	<tiletype code="mv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17756587659729845893_1.png"/>
+	<tiletype code="nv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2840905572176023033_2.png"/>
+	<tiletype code="ov" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1433384777946409633_1.png"/>
+	<tiletype code="pv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5654265058317771524_4.png"/>
+	<tiletype code="qv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14964987864519184409_0.png"/>
+	<tiletype code="rv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8260883765250938303_0.png"/>
+	<tiletype code="sv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3181423037343344074_1.png"/>
+	<tiletype code="tv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1552560243073153168_2.png"/>
+	<tiletype code="uv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/835826661511104157_4.png"/>
+	<tiletype code="vv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7362208581182984644_2.png"/>
+	<tiletype code="wv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6227620616058192491_1.png"/>
+	<tiletype code="xv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10497697584722096147_4.png"/>
+	<tiletype code="yv" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13640201895259755890_2.png"/>
+	<tiletype code="aw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4875244916433446025_3.png"/>
+	<tiletype code="bw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/18321560563024646559_1.png"/>
+	<tiletype code="cw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12237943785845684343_4.png"/>
+	<tiletype code="dw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4796714584021968294_2.png"/>
+	<tiletype code="ew" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12057539619979370636_2.png"/>
+	<tiletype code="fw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10224608293494317483_1.png"/>
+	<tiletype code="gw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11018659376482858679_3.png"/>
+	<tiletype code="hw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10318517364651430573_1.png"/>
+	<tiletype code="iw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15715309635908800909_0.png"/>
+	<tiletype code="jw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7003347287705619765_0.png"/>
+	<tiletype code="kw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5778421431821440227_4.png"/>
+	<tiletype code="lw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/526556300575611949_0.png"/>
+	<tiletype code="mw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/13321407904410253760_4.png"/>
+	<tiletype code="nw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12473427041565860880_4.png"/>
+	<tiletype code="ow" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5371732625919905194_2.png"/>
+	<tiletype code="pw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1772767242054016364_2.png"/>
+	<tiletype code="qw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12105126815010804982_2.png"/>
+	<tiletype code="rw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14993967423955439967_3.png"/>
+	<tiletype code="sw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10905266509527246153_1.png"/>
+	<tiletype code="tw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11889168699895212963_1.png"/>
+	<tiletype code="uw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4961459099511991400_3.png"/>
+	<tiletype code="vw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/7798743241808988701_2.png"/>
+	<tiletype code="ww" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1968360403542596097_4.png"/>
+	<tiletype code="xw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2541708064333370303_2.png"/>
+	<tiletype code="yw" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/534097447481056518_3.png"/>
+	<tiletype code="ax" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12362425152567618997_3.png"/>
+	<tiletype code="bx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5394148113161891545_4.png"/>
+	<tiletype code="cx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/75073953375486127_1.png"/>
+	<tiletype code="dx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17493910949671502445_1.png"/>
+	<tiletype code="ex" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6400502710313538112_4.png"/>
+	<tiletype code="fx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1552560243073153168_3.png"/>
+	<tiletype code="gx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11058993054807500343_4.png"/>
+	<tiletype code="hx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/1401609257305861560_0.png"/>
+	<tiletype code="ix" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2541708064333370303_4.png"/>
+	<tiletype code="jx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4875244916433446025_0.png"/>
+	<tiletype code="kx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16664087150139894509_2.png"/>
+	<tiletype code="lx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3199350409501684262_2.png"/>
+	<tiletype code="mx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16695786528215709178_0.png"/>
+	<tiletype code="nx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3576122279647894683_0.png"/>
+	<tiletype code="ox" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12900475884169733444_0.png"/>
+	<tiletype code="px" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8499453431681325058_1.png"/>
+	<tiletype code="qx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8078298903227650417_0.png"/>
+	<tiletype code="rx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5394148113161891545_3.png"/>
+	<tiletype code="sx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/962467127116105664_2.png"/>
+	<tiletype code="tx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/9940346147182464331_1.png"/>
+	<tiletype code="ux" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17865965260233357923_3.png"/>
+	<tiletype code="vx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17830369169898110266_2.png"/>
+	<tiletype code="wx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/15199605340514979755_0.png"/>
+	<tiletype code="xx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4793961341676638537_1.png"/>
+	<tiletype code="yx" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8078298903227650417_2.png"/>
+	<tiletype code="ay" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12473427041565860880_3.png"/>
+	<tiletype code="by" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14106670129636815121_4.png"/>
+	<tiletype code="cy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3389588296786289025_2.png"/>
+	<tiletype code="dy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14923521272820653805_1.png"/>
+	<tiletype code="ey" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/8742994783891402420_1.png"/>
+	<tiletype code="fy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/921629548964556434_2.png"/>
+	<tiletype code="gy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5180607537390953190_4.png"/>
+	<tiletype code="hy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/14748694135777829903_3.png"/>
+	<tiletype code="iy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16516350723022115813_0.png"/>
+	<tiletype code="jy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5673108656248954148_3.png"/>
+	<tiletype code="ky" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16284853360339341405_2.png"/>
+	<tiletype code="ly" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/16866147658824352789_2.png"/>
+	<tiletype code="my" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2943173543656837078_3.png"/>
+	<tiletype code="ny" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/6409758607509511673_4.png"/>
+	<tiletype code="oy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10827987015610735717_2.png"/>
+	<tiletype code="py" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/3504281707118795001_3.png"/>
+	<tiletype code="qy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/17419534558391075568_2.png"/>
+	<tiletype code="ry" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/2030738529102024912_2.png"/>
+	<tiletype code="sy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/12123362942499514456_1.png"/>
+	<tiletype code="ty" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11924371974105618887_0.png"/>
+	<tiletype code="uy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/5540736843146478092_0.png"/>
+	<tiletype code="vy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/10956606075692881830_2.png"/>
+	<tiletype code="wy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/11172540247925479269_0.png"/>
+	<tiletype code="xy" image="C:\Documents and Settings\toxic\Dane aplikacji\WarlocksGauntlet/generated_tiles/4934870742334703844_0.png"/>
+	<tiles>
+	o ub bd fe lf lg oh ci mj kk bl rl mm mn fo fp vp mq gr sk wj tt kc qp hp qv r xb ed r pj wr 
+	p vb cd ge mf mg ph cf qe lc cl sl nm nn hg km wp nq am ao vk xj aj el he bd xj cv dl vi ph ky 
+	q wb dd he he ng kh mi ti ph dl he om on go dg xp oq hr js dt ut dl vi dl hv cr qw hh wt sj tw 
+	r xb ed ie yb og qh pi nj mb rc r pm pn ho gp yp gj ir ai sr vt hu uu ut gh bw rw dx ox ao ly 
+	s yb fd je nf pg rh qi oj gf lh tl ti ph io tl fd tk ci ks tl fq iu vu sl rc cw ru vg px hg my 
+	t ac gd ke of qg sh ri pj kc nf ib qm qn jo hp ib pq md nq qp bf am ao ev qj he qt hm qe bd xm 
+	u ub hd le pf rg th dd hj aj el uf rm el ah qj he ql jr ls qe lc gi dj fv r ah au ex yt gg rg 
+	v bc id me qf sg uh hh qj o ch ul sm rn r ah hj qq kr hb re io fq wu ps he bd sw fx oi lj ce 
+	w cc jd ne rf tg vh si rj cf sj qe tm u ko r qj bd lr ms sn rr ju ju gv ch md tw gx qx gq ny 
+	x dc kd oe sf ug wh lc sj lk ek vl um sn lo ip rb lc mr ns ah wt sj xu sj vt dw uw hx yf to oy 
+	y ec ld pe tf vg xh ti ph mk fl wl vm tn mo jp eh rq nr os hj hd ku ko qj rv ew vw ix qh yx py 
+	ab fc md qe uf wd yh ui tj nk gl xl wm sb no kp dl sq or ps et jg lu rc ie le nd tq el mo ay ml 
+	bb gc nd re vf wg ai vi uj ok hl bc xm qj oo wk in bh pr qs ft xt mu ch um od nn mu ch cf sj lk 
+	cb hc od se wf xg wh wc vj nd il yl ym td po lp aq km qr rs gt li hq xi pl fe fw cf xu qe he qy 
+	db ic pd te q yg bi wi nf bf jl am an un qo mp bq tq rr ni ht wj hq ns hv sv gw dd he ig yb wo 
+	eb jc qd ue mc ah ci xi wj xb kl bm yk cg ro np cq qb sr ss it yt nu mi iv tv kh mi lh rx by cb 
+	fb kc y ve xf s di yi xj qj aj cm yj nl mj op dq uq tr r aj yq bf yu jv js hp gq nf hp cy ry 
+	gb lc rd we yf bh bg aj yj pk xj o md cm wj pp eq vq ur hj hj qj hq av kv sb qj wt jx go dy hp 
+	hb mc sd ib ib mf ei bj ak xg hh wc bn xj ie ao fq wq vr ts rb vi ou eu r ig ao x pm sx iq hk 
+	ib nc td xe o ch fi cj bk qk ll dm cn vn so qp gq xq bn us jt br cs ns hj pj hw hb x hj ci sy 
+	jb oc ud ye pd dh gi dj ck yi oc em dn wn to rp lc yq wr vs kt ci pu nd lh fd iw ac kk dl lc wj 
+	kb pc vd af ag eh hi ej dk xb sj cl en lj uo xl o kn xr ws lt au aq gq ju uv jw fd di mg io tl 
+	lb qc gd bf bg fh ii fj ek rb ig yb fn hg vo wh hq ar yr xs mt bu qu nl lv vv bm ww kx dg ey kr 
+	mb rc bd cf cg gh ji gj fk rk ml fm gn xn wo sp md cg as ys nt cu pd bv ei il kw ns cw ru sb ty 
+	nb sc wd df dg hh r hj gk sk rc gm hn yn xo cn hh br bs at ot du ru qu mv wv lw hh fh tx fy yc 
+	ob tc xd ef eg ih ki o hk tk qj ci in ao yo qd iq nl cs wp kl pe ah sr ds xv mw ue yo ux gy dg 
+	pb uc yd ff fg jh li ij mj uk o hm jn bo ap tp jq qn ds hh pt eu rq uq nv vg nw xw bf vx hy dn 
+	qb vc ae gf gg kh mi le mi vk nl im gk co hl qn kq cr es eh aj el su pn ov ec mr yw lx os aj uy 
+	rb wc be hf hg ib od jj ik wk ol jm kn sc bp ed lq dr fs dl qt xj hj cv pv yv lc ax mx wx iy vy 
+	sb xc ce if ig lh gg kj cj xk qc km ln do cp rb gk er gs ym ec mg rj hm xu pl ow bx nx el wm wy 
+	x yc de jf jg mh ni lj ik yk pl lm cm mg dp wn lh bh hs bt rt fu kl eu qt lm rr qp qb r r xy 
+	tb ad ee kf kg nh oi ce jk al ql rg tl eo ep up hc fr is ct st gu tu dv tq aw pw cx ku xx jy ev 
+	</tiles>
+	<region name="entry" x="6.5" y="7.5" rot="0" scale="1"></region>
+	<region name="exit" x="27.5" y="25.5" rot="0" scale="1">
+		<next-map>forest1</next-map>
+		<next-map-region>from_east</next-map-region>
+	</region>
+	<objtype code="exit-portal" file="data/physicals/walls/test-barrier.xml" />
+	<obj code="exit-portal" x="27.5" y="25.5" />
+	<objtype code="iw" file="data/physicals/walls/invisible-wall.xml" />
+	<obj code="iw" x="10.5" y="2.5" />
+	<obj code="iw" x="11.5" y="2.5" />
+	<obj code="iw" x="12.5" y="2.5" />
+	<obj code="iw" x="16.5" y="2.5" />
+	<obj code="iw" x="17.5" y="2.5" />
+	<obj code="iw" x="18.5" y="2.5" />
+	<obj code="iw" x="19.5" y="2.5" />
+	<obj code="iw" x="20.5" y="2.5" />
+	<obj code="iw" x="21.5" y="2.5" />
+	<obj code="iw" x="22.5" y="2.5" />
+	<obj code="iw" x="23.5" y="2.5" />
+	<obj code="iw" x="24.5" y="2.5" />
+	<obj code="iw" x="25.5" y="2.5" />
+	<obj code="iw" x="26.5" y="2.5" />
+	<obj code="iw" x="27.5" y="2.5" />
+	<obj code="iw" x="28.5" y="2.5" />
+	<obj code="iw" x="9.5" y="3.5" />
+	<obj code="iw" x="13.5" y="3.5" />
+	<obj code="iw" x="15.5" y="3.5" />
+	<obj code="iw" x="29.5" y="3.5" />
+	<obj code="iw" x="4.5" y="4.5" />
+	<obj code="iw" x="5.5" y="4.5" />
+	<obj code="iw" x="6.5" y="4.5" />
+	<obj code="iw" x="7.5" y="4.5" />
+	<obj code="iw" x="8.5" y="4.5" />
+	<obj code="iw" x="13.5" y="4.5" />
+	<obj code="iw" x="14.5" y="4.5" />
+	<obj code="iw" x="15.5" y="4.5" />
+	<obj code="iw" x="29.5" y="4.5" />
+	<obj code="iw" x="3.5" y="5.5" />
+	<obj code="iw" x="8.5" y="5.5" />
+	<obj code="iw" x="24.5" y="5.5" />
+	<obj code="iw" x="25.5" y="5.5" />
+	<obj code="iw" x="30.5" y="5.5" />
+	<obj code="iw" x="3.5" y="6.5" />
+	<obj code="iw" x="17.5" y="6.5" />
+	<obj code="iw" x="18.5" y="6.5" />
+	<obj code="iw" x="19.5" y="6.5" />
+	<obj code="iw" x="24.5" y="6.5" />
+	<obj code="iw" x="30.5" y="6.5" />
+	<obj code="iw" x="3.5" y="7.5" />
+	<obj code="iw" x="12.5" y="7.5" />
+	<obj code="iw" x="13.5" y="7.5" />
+	<obj code="iw" x="17.5" y="7.5" />
+	<obj code="iw" x="19.5" y="7.5" />
+	<obj code="iw" x="30.5" y="7.5" />
+	<obj code="iw" x="3.5" y="8.5" />
+	<obj code="iw" x="12.5" y="8.5" />
+	<obj code="iw" x="14.5" y="8.5" />
+	<obj code="iw" x="15.5" y="8.5" />
+	<obj code="iw" x="16.5" y="8.5" />
+	<obj code="iw" x="17.5" y="8.5" />
+	<obj code="iw" x="18.5" y="8.5" />
+	<obj code="iw" x="19.5" y="8.5" />
+	<obj code="iw" x="20.5" y="8.5" />
+	<obj code="iw" x="31.5" y="8.5" />
+	<obj code="iw" x="2.5" y="9.5" />
+	<obj code="iw" x="13.5" y="9.5" />
+	<obj code="iw" x="14.5" y="9.5" />
+	<obj code="iw" x="15.5" y="9.5" />
+	<obj code="iw" x="31.5" y="9.5" />
+	<obj code="iw" x="1.5" y="10.5" />
+	<obj code="iw" x="31.5" y="10.5" />
+	<obj code="iw" x="1.5" y="11.5" />
+	<obj code="iw" x="31.5" y="11.5" />
+	<obj code="iw" x="0.5" y="12.5" />
+	<obj code="iw" x="30.5" y="12.5" />
+	<obj code="iw" x="30.5" y="13.5" />
+	<obj code="iw" x="31.5" y="14.5" />
+	<obj code="iw" x="6.5" y="15.5" />
+	<obj code="iw" x="7.5" y="15.5" />
+	<obj code="iw" x="31.5" y="15.5" />
+	<obj code="iw" x="6.5" y="16.5" />
+	<obj code="iw" x="8.5" y="16.5" />
+	<obj code="iw" x="31.5" y="16.5" />
+	<obj code="iw" x="7.5" y="17.5" />
+	<obj code="iw" x="8.5" y="17.5" />
+	<obj code="iw" x="9.5" y="17.5" />
+	<obj code="iw" x="31.5" y="17.5" />
+	<obj code="iw" x="9.5" y="18.5" />
+	<obj code="iw" x="31.5" y="18.5" />
+	<obj code="iw" x="0.5" y="19.5" />
+	<obj code="iw" x="1.5" y="19.5" />
+	<obj code="iw" x="25.5" y="19.5" />
+	<obj code="iw" x="2.5" y="20.5" />
+	<obj code="iw" x="3.5" y="21.5" />
+	<obj code="iw" x="4.5" y="21.5" />
+	<obj code="iw" x="5.5" y="22.5" />
+	<obj code="iw" x="6.5" y="22.5" />
+	<obj code="iw" x="7.5" y="22.5" />
+	<obj code="iw" x="8.5" y="23.5" />
+	<obj code="iw" x="9.5" y="23.5" />
+	<obj code="iw" x="10.5" y="24.5" />
+	<obj code="iw" x="11.5" y="24.5" />
+	<obj code="iw" x="11.5" y="25.5" />
+	<obj code="iw" x="12.5" y="26.5" />
+	<obj code="iw" x="13.5" y="26.5" />
+	<obj code="iw" x="14.5" y="26.5" />
+	<obj code="iw" x="15.5" y="26.5" />
+	<obj code="iw" x="16.5" y="26.5" />
+	<obj code="iw" x="16.5" y="27.5" />
+	<obj code="iw" x="17.5" y="28.5" />
+	<obj code="iw" x="17.5" y="29.5" />
+	<obj code="iw" x="28.5" y="29.5" />
+	<obj code="iw" x="29.5" y="29.5" />
+	<obj code="iw" x="30.5" y="29.5" />
+	<obj code="iw" x="31.5" y="29.5" />
+	<obj code="iw" x="17.5" y="30.5" />
+	<obj code="iw" x="25.5" y="30.5" />
+	<obj code="iw" x="26.5" y="30.5" />
+	<obj code="iw" x="27.5" y="30.5" />
+	<obj code="iw" x="17.5" y="31.5" />
+	<obj code="iw" x="24.5" y="31.5" />
+	<sprite file="data/maps/doodahs/tree8.png" x="0.405171" y="0.398366" scale="1.16678" rot="46" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage6.png" x="1.34485" y="0.597865" scale="1.39068" rot="216" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="2.72089" y="0.40482" scale="1.36169" rot="81" z="foreground" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="3.28236" y="0.377308" scale="1.39167" rot="22" z="background" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="4.40716" y="0.366581" scale="1.31655" rot="219" z="background" />
+	<sprite file="data/maps/doodahs/tree4.png" x="5.42219" y="0.607784" scale="1.1689" rot="264" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="6.73442" y="0.334033" scale="1.39498" rot="261" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="7.56487" y="0.424459" scale="1.1493" rot="214" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="8.3805" y="0.618892" scale="1.30382" rot="7" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="9.383" y="0.571162" scale="1.25953" rot="227" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="10.6716" y="0.698424" scale="1.3644" rot="320" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="11.2893" y="0.446493" scale="1.19936" rot="106" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="12.5577" y="0.744324" scale="1.21114" rot="299" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="13.7238" y="0.659055" scale="1.16626" rot="180" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="14.3585" y="0.292573" scale="1.30203" rot="32" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="15.6742" y="0.270829" scale="1.42162" rot="70" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage6.png" x="16.3451" y="0.485817" scale="1.12823" rot="202" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="17.3651" y="0.554804" scale="1.13129" rot="286" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="18.507" y="0.460486" scale="1.39379" rot="329" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="19.5159" y="0.68231" scale="1.39829" rot="223" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="20.7129" y="0.383" scale="1.24171" rot="80" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="21.456" y="0.605266" scale="1.37455" rot="245" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="22.7108" y="0.420247" scale="1.37154" rot="257" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="23.745" y="0.316973" scale="1.16793" rot="358" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="24.3481" y="0.626614" scale="1.16765" rot="255" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="25.342" y="0.476783" scale="1.32324" rot="142" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="26.3369" y="0.402394" scale="1.27835" rot="332" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="27.3742" y="0.381245" scale="1.32904" rot="176" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="28.6475" y="0.390614" scale="1.32906" rot="240" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="29.7151" y="0.269318" scale="1.25869" rot="319" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="30.5154" y="0.49218" scale="1.15869" rot="192" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="31.4782" y="0.274125" scale="1.33694" rot="44" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="0.380299" y="1.65756" scale="1.34705" rot="310" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="1.70952" y="1.2917" scale="1.30761" rot="89" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage6.png" x="2.68159" y="1.31667" scale="1.3927" rot="75" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="3.59686" y="1.44118" scale="1.33778" rot="62" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="4.59768" y="1.30243" scale="1.24772" rot="265" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="5.4591" y="1.45099" scale="1.20483" rot="197" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="6.37253" y="1.46719" scale="1.22633" rot="11" z="foreground" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="7.70111" y="1.53787" scale="1.38352" rot="163" z="background" />
+	<sprite file="data/maps/doodahs/tree2.png" x="8.61741" y="1.45133" scale="1.12025" rot="73" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="9.3828" y="1.4594" scale="1.42128" rot="117" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="10.7317" y="1.29765" scale="1.21615" rot="30" z="foreground" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="11.6139" y="1.73056" scale="1.3713" rot="125" z="background" />
+	<sprite file="data/maps/doodahs/foliage6.png" x="12.6619" y="1.37983" scale="1.3616" rot="64" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="13.713" y="1.31163" scale="1.41757" rot="92" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="14.4249" y="1.48966" scale="1.1411" rot="195" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="15.525" y="1.71356" scale="1.21804" rot="74" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="16.4774" y="1.46717" scale="1.14311" rot="101" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="17.5324" y="1.7359" scale="1.28372" rot="224" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="18.4203" y="1.52468" scale="1.43296" rot="7" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="19.4919" y="1.26988" scale="1.28038" rot="272" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="20.5135" y="1.47169" scale="1.2347" rot="261" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="21.3362" y="1.57156" scale="1.19198" rot="286" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="22.3359" y="1.45409" scale="1.34454" rot="244" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="23.5661" y="1.45425" scale="1.19717" rot="179" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="24.4893" y="1.64328" scale="1.15502" rot="44" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="25.383" y="1.2769" scale="1.25662" rot="190" z="foreground" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="26.3077" y="1.60784" scale="1.24092" rot="231" z="background" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="27.4364" y="1.72609" scale="1.1649" rot="177" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="28.4264" y="1.43816" scale="1.11675" rot="125" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="29.3529" y="1.51969" scale="1.22755" rot="56" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="30.5809" y="1.63197" scale="1.23247" rot="136" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="31.729" y="1.61105" scale="1.15649" rot="196" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="0.474952" y="2.35205" scale="1.40207" rot="246" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="1.57513" y="2.55393" scale="1.27854" rot="158" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="2.27867" y="2.49613" scale="1.20169" rot="199" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="3.35601" y="2.71892" scale="1.4272" rot="106" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="4.61265" y="2.63702" scale="1.30395" rot="327" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage6.png" x="5.34439" y="2.33592" scale="1.31682" rot="164" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="6.55032" y="2.36122" scale="1.10945" rot="68" z="foreground" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="7.55192" y="2.69598" scale="1.15132" rot="2" z="background" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="8.54311" y="2.41764" scale="1.26858" rot="171" z="background" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="9.58844" y="2.5827" scale="1.40788" rot="341" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="10.5524" y="2.4482" scale="1.1" rot="103" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="11.4895" y="2.44027" scale="1.1" rot="279" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="12.3731" y="2.47248" scale="1.1" rot="23" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="13.4043" y="2.72584" scale="1.40935" rot="231" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage6.png" x="14.4662" y="2.29826" scale="1.35155" rot="10" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="15.6152" y="2.65745" scale="1.23932" rot="353" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="16.3961" y="2.69594" scale="1.1" rot="347" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="17.7285" y="2.46418" scale="1.1" rot="17" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="18.5045" y="2.56552" scale="1.1" rot="235" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="19.5953" y="2.5858" scale="1.1" rot="129" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="20.5602" y="2.50654" scale="1.1" rot="246" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="21.6561" y="2.36797" scale="1.1" rot="36" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="22.6105" y="2.73231" scale="1.1" rot="45" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="23.5121" y="2.46809" scale="1.1" rot="5" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="24.4489" y="2.71721" scale="1.1" rot="334" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="25.6754" y="2.73817" scale="1.1" rot="87" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="26.3021" y="2.3881" scale="1.1" rot="209" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="27.7032" y="2.59893" scale="1.1" rot="92" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="28.3531" y="2.63282" scale="1.1" rot="192" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage6.png" x="29.333" y="2.67358" scale="1.19472" rot="79" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="30.3657" y="2.46244" scale="1.22764" rot="240" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="31.3815" y="2.52511" scale="1.25729" rot="332" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="0.261032" y="3.39122" scale="1.26325" rot="165" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="1.59516" y="3.54922" scale="1.39079" rot="151" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="2.35067" y="3.55268" scale="1.31964" rot="52" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="3.4291" y="3.72768" scale="1.37548" rot="50" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="4.34622" y="3.31284" scale="1.35021" rot="149" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="5.421" y="3.35891" scale="1.39557" rot="243" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="6.56916" y="3.73701" scale="1.35271" rot="144" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="7.50417" y="3.36328" scale="1.27379" rot="209" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="8.28026" y="3.27475" scale="1.31823" rot="95" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="9.31349" y="3.62523" scale="1.1" rot="242" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="13.5542" y="3.51347" scale="1.1" rot="84" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="14.352" y="3.39364" scale="1.13396" rot="334" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="15.4489" y="3.3749" scale="1.1" rot="225" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="29.3634" y="3.32999" scale="1.1" rot="269" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="30.6783" y="3.2556" scale="1.27557" rot="5" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="31.4608" y="3.6803" scale="1.41329" rot="123" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="0.399586" y="4.40171" scale="1.34052" rot="84" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="1.55221" y="4.5684" scale="1.26182" rot="19" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="2.3872" y="4.3253" scale="1.31463" rot="92" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="3.45304" y="4.37375" scale="1.27512" rot="90" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="4.59872" y="4.37537" scale="1.1" rot="307" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="5.32897" y="4.37986" scale="1.1" rot="135" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="6.74977" y="4.73352" scale="1.1" rot="221" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="7.35247" y="4.67454" scale="1.1" rot="252" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="8.32631" y="4.67567" scale="1.1" rot="246" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="13.728" y="4.45879" scale="1.1" rot="3" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="14.2796" y="4.48939" scale="1.1" rot="195" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="15.6179" y="4.29433" scale="1.1" rot="274" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="29.2868" y="4.52258" scale="1.1" rot="114" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="30.5414" y="4.69836" scale="1.30875" rot="77" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="31.7299" y="4.52862" scale="1.13743" rot="249" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="0.584178" y="5.69568" scale="1.36401" rot="179" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="1.2636" y="5.32495" scale="1.24739" rot="186" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="2.31366" y="5.27034" scale="1.40877" rot="315" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="3.31415" y="5.36144" scale="1.1" rot="339" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="8.70102" y="5.43781" scale="1.1" rot="223" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="24.3957" y="5.66304" scale="1.1" rot="163" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="25.6724" y="5.69436" scale="1.1" rot="171" z="foreground" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="30.5586" y="5.33095" scale="1.1" rot="166" z="background" />
+	<sprite file="data/maps/doodahs/tree7.png" x="31.7103" y="5.70741" scale="1.16571" rot="74" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="0.404683" y="6.42028" scale="1.22401" rot="100" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="1.26221" y="6.59933" scale="1.39242" rot="94" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="2.73572" y="6.62249" scale="1.38772" rot="277" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="3.65257" y="6.36177" scale="1.1" rot="156" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="17.3498" y="6.33037" scale="1.1" rot="324" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="18.2965" y="6.63057" scale="1.1" rot="246" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="19.5853" y="6.41454" scale="1.1" rot="213" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="24.343" y="6.56294" scale="1.1" rot="329" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="30.7395" y="6.45478" scale="1.1" rot="24" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="31.4929" y="6.70543" scale="1.28298" rot="28" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="0.273972" y="7.31197" scale="1.15664" rot="107" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="1.70796" y="7.33068" scale="1.33974" rot="148" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="2.57798" y="7.35662" scale="1.42779" rot="293" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="3.40868" y="7.57076" scale="1.1" rot="110" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="12.2974" y="7.45196" scale="1.1" rot="68" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="13.6226" y="7.59275" scale="1.1" rot="177" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="17.6738" y="7.48655" scale="1.1" rot="106" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="18.4403" y="7.36522" scale="1.3671" rot="264" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="19.2781" y="7.42353" scale="1.1" rot="156" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="30.6398" y="7.56001" scale="1.1" rot="82" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="31.2895" y="7.54601" scale="1.12621" rot="217" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="0.50454" y="8.6396" scale="1.22854" rot="66" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="1.36141" y="8.39118" scale="1.25718" rot="115" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="2.25131" y="8.50515" scale="1.12839" rot="81" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="3.46076" y="8.3438" scale="1.1" rot="175" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="12.6654" y="8.53825" scale="1.1" rot="355" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="13.6639" y="8.56317" scale="1.28355" rot="340" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="14.5723" y="8.2728" scale="1.1" rot="304" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="15.5615" y="8.41135" scale="1.1" rot="9" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="16.7228" y="8.59484" scale="1.1" rot="12" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="17.4762" y="8.39513" scale="1.1" rot="287" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="18.5884" y="8.59906" scale="1.1" rot="221" z="foreground" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="19.4453" y="8.39242" scale="1.1" rot="217" z="background" />
+	<sprite file="data/maps/doodahs/tree5.png" x="20.5294" y="8.34543" scale="1.1" rot="295" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="31.6738" y="8.6699" scale="1.1" rot="297" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="0.358173" y="9.56892" scale="1.23943" rot="17" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="1.73939" y="9.47283" scale="1.12859" rot="257" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="2.55024" y="9.71214" scale="1.1" rot="193" z="foreground" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="13.5393" y="9.34357" scale="1.1" rot="162" z="background" />
+	<sprite file="data/maps/doodahs/tree5.png" x="14.3088" y="9.28938" scale="1.1" rot="1" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="15.6205" y="9.36596" scale="1.1" rot="255" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="31.4307" y="9.36022" scale="1.1" rot="5" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="0.448691" y="10.2991" scale="1.26926" rot="135" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="1.51832" y="10.6066" scale="1.1" rot="38" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage6.png" x="31.6499" y="10.6194" scale="1.1" rot="2" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="0.589656" y="11.4823" scale="1.21574" rot="210" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="1.62519" y="11.3976" scale="1.1" rot="209" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="31.6234" y="11.445" scale="1.1" rot="355" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="0.496803" y="12.2584" scale="1.1" rot="11" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="30.6026" y="12.7119" scale="1.1" rot="304" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="31.4133" y="12.468" scale="1.27088" rot="93" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="30.7435" y="13.5967" scale="1.1" rot="29" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="31.6266" y="13.5324" scale="1.14304" rot="54" z="foreground" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="31.3895" y="14.6209" scale="1.1" rot="78" z="background" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="6.27661" y="15.6264" scale="1.1" rot="5" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="7.56271" y="15.5391" scale="1.1" rot="263" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="31.2838" y="15.2789" scale="1.1" rot="107" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="6.47552" y="16.502" scale="1.1" rot="151" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage6.png" x="7.47283" y="16.5642" scale="1.20194" rot="110" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="8.45899" y="16.6092" scale="1.1" rot="61" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage6.png" x="31.3471" y="16.6722" scale="1.1" rot="351" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="7.33686" y="17.391" scale="1.1" rot="190" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="8.6078" y="17.6973" scale="1.1" rot="139" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="9.32225" y="17.6121" scale="1.1" rot="112" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="31.3842" y="17.37" scale="1.1" rot="248" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="9.60066" y="18.5322" scale="1.1" rot="358" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="31.5233" y="18.316" scale="1.1" rot="169" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="0.451361" y="19.6924" scale="1.1" rot="299" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="1.48464" y="19.3268" scale="1.1" rot="273" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="25.6121" y="19.7374" scale="1.1" rot="119" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="0.72055" y="20.6268" scale="1.28243" rot="291" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="1.67085" y="20.5468" scale="1.36906" rot="222" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="2.70042" y="20.2868" scale="1.1" rot="306" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="0.636013" y="21.3459" scale="1.28964" rot="86" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="1.27329" y="21.3258" scale="1.3241" rot="57" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="2.5581" y="21.3047" scale="1.18659" rot="281" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="3.66971" y="21.7233" scale="1.1" rot="251" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="4.70697" y="21.7341" scale="1.1" rot="316" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="0.432867" y="22.5958" scale="1.15978" rot="21" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage6.png" x="1.42135" y="22.6568" scale="1.115" rot="178" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="2.25404" y="22.7403" scale="1.35036" rot="170" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="3.39548" y="22.5816" scale="1.19759" rot="73" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="4.37912" y="22.666" scale="1.29343" rot="22" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="5.41945" y="22.5584" scale="1.1" rot="337" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage6.png" x="6.26625" y="22.7015" scale="1.1" rot="226" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="7.50411" y="22.3442" scale="1.1" rot="113" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="0.319842" y="23.3263" scale="1.15164" rot="303" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="1.46378" y="23.5863" scale="1.20611" rot="164" z="foreground" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="2.61712" y="23.6022" scale="1.22036" rot="110" z="background" />
+	<sprite file="data/maps/doodahs/tree1.png" x="3.46012" y="23.6387" scale="1.36397" rot="87" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="4.39188" y="23.5366" scale="1.24082" rot="106" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="5.29294" y="23.2768" scale="1.35011" rot="70" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="6.45933" y="23.4505" scale="1.39178" rot="6" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="7.42008" y="23.4918" scale="1.3903" rot="24" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="8.56727" y="23.5207" scale="1.1" rot="289" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="9.3611" y="23.5235" scale="1.1" rot="165" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="0.656461" y="24.6725" scale="1.4078" rot="112" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="1.35193" y="24.6562" scale="1.1006" rot="331" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="2.51727" y="24.4867" scale="1.40309" rot="292" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="3.43029" y="24.3628" scale="1.14145" rot="12" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="4.65544" y="24.3074" scale="1.26268" rot="203" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="5.61024" y="24.4473" scale="1.27236" rot="16" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="6.63757" y="24.3639" scale="1.19115" rot="209" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="7.50742" y="24.7255" scale="1.30693" rot="181" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="8.59027" y="24.5093" scale="1.37027" rot="151" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="9.27025" y="24.3037" scale="1.1998" rot="222" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="10.6878" y="24.697" scale="1.1" rot="161" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="11.5168" y="24.4812" scale="1.1" rot="43" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="0.695479" y="25.6187" scale="1.12767" rot="8" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="1.73634" y="25.5243" scale="1.42804" rot="282" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="2.7484" y="25.5879" scale="1.15778" rot="183" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="3.34861" y="25.3566" scale="1.25751" rot="31" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="4.35723" y="25.3221" scale="1.30517" rot="213" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="5.39054" y="25.385" scale="1.39404" rot="44" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="6.44778" y="25.326" scale="1.18399" rot="22" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="7.67358" y="25.5522" scale="1.30202" rot="240" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="8.38015" y="25.6638" scale="1.39761" rot="156" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="9.29663" y="25.5892" scale="1.40154" rot="170" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="10.6636" y="25.5983" scale="1.36074" rot="170" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="11.6656" y="25.6385" scale="1.1" rot="160" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="0.298234" y="26.426" scale="1.23952" rot="48" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="1.72572" y="26.2537" scale="1.19054" rot="18" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="2.6502" y="26.4179" scale="1.27495" rot="63" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="3.52152" y="26.5583" scale="1.2743" rot="236" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="4.3078" y="26.642" scale="1.35269" rot="244" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="5.51844" y="26.384" scale="1.19473" rot="284" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="6.29662" y="26.6643" scale="1.24228" rot="81" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="7.41997" y="26.3133" scale="1.17162" rot="355" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="8.65049" y="26.2599" scale="1.32817" rot="201" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="9.55001" y="26.5424" scale="1.41432" rot="46" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="10.4669" y="26.3735" scale="1.10094" rot="27" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="11.3087" y="26.6637" scale="1.25565" rot="43" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="12.5248" y="26.7206" scale="1.1" rot="182" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="13.3132" y="26.6607" scale="1.1" rot="244" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="14.6269" y="26.6703" scale="1.1" rot="76" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="15.6624" y="26.4187" scale="1.1" rot="48" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="16.3541" y="26.4663" scale="1.1" rot="288" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="0.385258" y="27.703" scale="1.12606" rot="159" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="1.71049" y="27.4831" scale="1.29073" rot="38" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="2.59976" y="27.6455" scale="1.41703" rot="14" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="3.48864" y="27.6465" scale="1.40836" rot="338" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="4.2941" y="27.6286" scale="1.29422" rot="324" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="5.42786" y="27.4305" scale="1.23658" rot="160" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="6.50297" y="27.376" scale="1.42535" rot="176" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="7.67123" y="27.5341" scale="1.14072" rot="237" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="8.54974" y="27.3609" scale="1.24853" rot="152" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="9.46943" y="27.5226" scale="1.21057" rot="174" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="10.5275" y="27.6381" scale="1.42321" rot="122" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="11.3429" y="27.4205" scale="1.24551" rot="323" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="12.3561" y="27.714" scale="1.34213" rot="234" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="13.3084" y="27.5656" scale="1.31529" rot="54" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="14.6448" y="27.3907" scale="1.24629" rot="203" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="15.6178" y="27.5033" scale="1.41363" rot="281" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="16.2695" y="27.4804" scale="1.1" rot="314" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="0.555032" y="28.4115" scale="1.3145" rot="150" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="1.60775" y="28.6898" scale="1.31959" rot="214" z="foreground" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="2.5055" y="28.5329" scale="1.42069" rot="123" z="background" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="3.31859" y="28.6328" scale="1.36226" rot="280" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="4.56602" y="28.4427" scale="1.37164" rot="172" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="5.47944" y="28.6649" scale="1.24727" rot="179" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="6.7077" y="28.733" scale="1.32675" rot="331" z="foreground" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="7.35224" y="28.3436" scale="1.10943" rot="239" z="background" />
+	<sprite file="data/maps/doodahs/tree2.png" x="8.2614" y="28.4335" scale="1.3696" rot="214" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="9.61618" y="28.6318" scale="1.12717" rot="273" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="10.5691" y="28.2625" scale="1.26264" rot="300" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="11.6304" y="28.2748" scale="1.10213" rot="59" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="12.3531" y="28.677" scale="1.36418" rot="251" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="13.7452" y="28.4231" scale="1.10036" rot="246" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="14.5091" y="28.7312" scale="1.10496" rot="227" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="15.4235" y="28.3413" scale="1.22348" rot="175" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="16.4376" y="28.52" scale="1.22287" rot="40" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="17.5277" y="28.2602" scale="1.1" rot="226" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="0.513649" y="29.5384" scale="1.17522" rot="95" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="1.63723" y="29.4013" scale="1.10816" rot="292" z="foreground" />
+	<sprite file="data/maps/doodahs/tree5.png" x="2.65548" y="29.696" scale="1.33473" rot="319" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="3.74783" y="29.75" scale="1.29895" rot="88" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="4.51403" y="29.5474" scale="1.26501" rot="107" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="5.72575" y="29.5765" scale="1.37708" rot="143" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="6.37243" y="29.5956" scale="1.10989" rot="261" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="7.51843" y="29.3296" scale="1.30013" rot="85" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="8.73221" y="29.3633" scale="1.12299" rot="49" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="9.41216" y="29.6549" scale="1.37276" rot="265" z="foreground" />
+	<sprite file="data/maps/doodahs/ancientblocks.png" x="10.583" y="29.367" scale="1.15434" rot="250" z="background" />
+	<sprite file="data/maps/doodahs/tree2.png" x="11.6438" y="29.7409" scale="1.19033" rot="118" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="12.3196" y="29.728" scale="1.37199" rot="217" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="13.4793" y="29.2804" scale="1.32256" rot="93" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="14.4918" y="29.4861" scale="1.17172" rot="174" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="15.5302" y="29.3603" scale="1.19111" rot="85" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="16.3685" y="29.3" scale="1.32533" rot="97" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="17.6478" y="29.3813" scale="1.1" rot="13" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="28.4737" y="29.6862" scale="1.1" rot="314" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="29.2857" y="29.4644" scale="1.1" rot="124" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="30.6226" y="29.3332" scale="1.1" rot="62" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="31.3066" y="29.541" scale="1.1" rot="21" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="0.368244" y="30.3896" scale="1.18014" rot="268" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="1.3976" y="30.2571" scale="1.19296" rot="317" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="2.46744" y="30.5204" scale="1.15865" rot="212" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="3.6116" y="30.2647" scale="1.38516" rot="148" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage6.png" x="4.30916" y="30.5305" scale="1.23997" rot="270" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="5.63101" y="30.7381" scale="1.19697" rot="24" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="6.52569" y="30.5179" scale="1.25983" rot="330" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="7.71823" y="30.3442" scale="1.32415" rot="7" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="8.54357" y="30.4096" scale="1.13792" rot="177" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="9.53707" y="30.7409" scale="1.25562" rot="77" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="10.4381" y="30.4165" scale="1.26721" rot="217" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="11.6633" y="30.2747" scale="1.42203" rot="0" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="12.4436" y="30.4725" scale="1.35952" rot="189" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="13.7122" y="30.7163" scale="1.15249" rot="196" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="14.6568" y="30.6737" scale="1.13806" rot="190" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="15.6618" y="30.4268" scale="1.40602" rot="271" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="16.6633" y="30.6506" scale="1.4208" rot="84" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage4.png" x="17.6993" y="30.5931" scale="1.1" rot="331" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="25.329" y="30.2744" scale="1.1" rot="61" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage3.png" x="26.335" y="30.426" scale="1.1" rot="239" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="27.6444" y="30.657" scale="1.1" rot="215" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="28.6704" y="30.2903" scale="1.17145" rot="8" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage1.png" x="29.6006" y="30.6341" scale="1.12935" rot="96" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="30.6336" y="30.4433" scale="1.29224" rot="68" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="31.4239" y="30.3762" scale="1.12763" rot="16" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="0.283265" y="31.7121" scale="1.35444" rot="0" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="1.41587" y="31.5109" scale="1.34826" rot="176" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="2.47399" y="31.3508" scale="1.15147" rot="211" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="3.44607" y="31.7404" scale="1.28607" rot="138" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="4.35063" y="31.3015" scale="1.1505" rot="222" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="5.64297" y="31.4423" scale="1.34671" rot="170" z="foreground" />
+	<sprite file="data/maps/doodahs/tree3.png" x="6.35167" y="31.4438" scale="1.13902" rot="89" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="7.33295" y="31.7302" scale="1.30579" rot="22" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="8.7137" y="31.4824" scale="1.31703" rot="215" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="9.6024" y="31.4718" scale="1.19421" rot="238" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="10.4475" y="31.6839" scale="1.15679" rot="112" z="foreground" />
+	<sprite file="data/maps/doodahs/tree4.png" x="11.3159" y="31.3931" scale="1.10865" rot="198" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="12.4606" y="31.5667" scale="1.24378" rot="316" z="foreground" />
+	<sprite file="data/maps/doodahs/tree7.png" x="13.3273" y="31.681" scale="1.1989" rot="19" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="14.4931" y="31.6654" scale="1.27061" rot="263" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="15.281" y="31.5192" scale="1.38463" rot="158" z="foreground" />
+	<sprite file="data/maps/doodahs/tree2.png" x="16.38" y="31.4563" scale="1.42501" rot="137" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="17.6328" y="31.2935" scale="1.1" rot="183" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="24.4105" y="31.259" scale="1.1" rot="353" z="foreground" />
+	<sprite file="data/maps/doodahs/tree-strange.png" x="25.6326" y="31.3636" scale="1.18702" rot="226" z="foreground" />
+	<sprite file="data/maps/doodahs/tree8.png" x="26.2908" y="31.7161" scale="1.18722" rot="102" z="foreground" />
+	<sprite file="data/maps/doodahs/tree6.png" x="27.3236" y="31.3651" scale="1.27199" rot="221" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage2.png" x="28.492" y="31.6352" scale="1.3055" rot="265" z="foreground" />
+	<sprite file="data/maps/doodahs/foliage5.png" x="29.4265" y="31.5589" scale="1.15082" rot="202" z="foreground" />
+	<sprite file="data/maps/doodahs/tree9.png" x="30.6384" y="31.348" scale="1.35019" rot="20" z="foreground" />
+	<sprite file="data/maps/doodahs/tree1.png" x="31.6172" y="31.327" scale="1.25998" rot="295" z="foreground" />
+	<sprite file="data/maps/doodahs/skeleton.png" x="26.4292" y="14.2985" scale="0.708393" rot="66" z="onground" />
+	<sprite file="data/maps/doodahs/jungle/sticks3.png" x="18.3968" y="25.7288" scale="0.959428" rot="295" z="onground" />
+	<sprite file="data/maps/doodahs/bonefire_four.png" x="23.3931" y="24.5821" scale="0.865309" rot="268" z="onground" />
+	<sprite file="data/maps/doodahs/skeleton.png" x="17.6534" y="3.40685" scale="0.803987" rot="304" z="onground" />
+	<obj templateFile="data/loots/weapon.xml" x="24.3047" y="15.2753" ><ability>data/abilities/weapons/icearrow.xml</ability></obj>
+	<obj templateFile="data/loots/mana.xml" x="8.3349" y="21.363"><level>1</level></obj>
+	<obj templateFile="data/physicals/obstacles/chest.xml" x="17.583" y="23.6885"/>
+	<obj templateFile="data/loots/superspeed.xml" x="27.5012" y="24.3203"/>
+	<objtype code="monster0" file="data/physicals/monsters/defs/rat.xml" />
+	<obj code="monster0" x="2.27318" y="19.7224" rot="123" />
+	<obj code="monster0" x="17.6964" y="21.4692" rot="109" />
+	<objtype code="monster1" file="data/physicals/monsters/defs/bandit.xml" />
+	<obj code="monster1" x="20.6467" y="21.5245" rot="105" />
+	<obj code="monster1" x="26.5491" y="16.509" rot="128" />
+	<obj code="monster0" x="3.26012" y="18.4285" rot="350" />
+	<obj code="monster0" x="18.568" y="24.6277" rot="260" />
+	<obj code="monster0" x="24.3627" y="7.55761" rot="40" />
+	<obj code="monster0" x="18.3911" y="31.4886" rot="164" />
+	<obj code="monster0" x="18.3934" y="11.3972" rot="45" />
+	<obj code="monster1" x="19.4465" y="11.3996" rot="75" />
+	<obj code="monster0" x="18.2645" y="11.4003" rot="94" />
+	<obj code="monster0" x="30.3689" y="26.4925" rot="76" />
+	<obj code="monster0" x="20.4067" y="5.25697" rot="159" />
+	<obj code="monster1" x="18.451" y="18.4152" rot="133" />
+	<obj code="monster0" x="27.4531" y="26.3315" rot="38" />
+	<obj code="monster0" x="20.513" y="3.59289" rot="347" />
+	<obj code="monster0" x="17.4166" y="13.3361" rot="349" />
+	<obj code="monster0" x="21.6915" y="25.6919" rot="68" />
+	<obj code="monster0" x="26.4873" y="23.6489" rot="45" />
+	<obj code="monster0" x="22.3447" y="15.4215" rot="268" />
+	<obj code="monster0" x="27.4087" y="11.3463" rot="7" />
+	<obj code="monster0" x="30.6531" y="25.5852" rot="257" />
+	<obj code="monster0" x="15.5911" y="18.4021" rot="312" />
+	<obj code="monster0" x="26.3798" y="16.398" rot="198" />
+	<obj code="monster1" x="27.75" y="29.5739" rot="291" />
+	<obj code="monster0" x="27.5923" y="11.6528" rot="346" />
+	<obj code="monster0" x="20.347" y="7.50889" rot="210" />
+	<obj code="monster0" x="16.7159" y="18.4823" rot="3" />
+	<obj code="monster0" x="4.43224" y="19.323" rot="204" />
+</map>
