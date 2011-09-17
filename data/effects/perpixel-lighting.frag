@@ -24,4 +24,5 @@ void main()
 	diffuse = diffuse + lcolor2 * (1.0 - min(ldist2/lradius2, 1.0));
 	diffuse = diffuse + lcolor3 * (1.0 - min(ldist3/lradius3, 1.0));
 	gl_FragColor = (diffuse + ambient) * texColor;
+	gl_FragColor.a = texColor.a;
 }
