@@ -12,10 +12,11 @@ CObstacle::CObstacle(const std::wstring &uniqueId):
     CPhysical(uniqueId),
     mDestroyed(false),
     mDyingTime(0.0f),
-    mStats(this),
+    mStats(NULL),
     mDeathAnim(NULL),
     mOptionHandler(NULL)
 {
+    mStats = this;
     SetZIndex(Z_OBSTACLE);
 }
 

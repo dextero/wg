@@ -28,11 +28,6 @@ template<> Map::CMapManager* CSingleton<Map::CMapManager>::msSingleton = 0;
 
 namespace Map{
 
-	void CMapManager::SetMapFromData(const void *data){
-		CMapManager::NextMapData *d = (CMapManager::NextMapData*)data;
-		gMapManager.SetMap(d->mNextMap, d->mLoadCompleteMap, d->mNextMapRegion);
-	}
-
 	CMapManager::CMapManager() :
 		m_map( NULL ),
 		m_sceneManager( new CQuadTreeSceneManager() ),
@@ -64,18 +59,19 @@ namespace Map{
 		m_visitedMaps.clear();
 	}
 
-	void CMapManager::ScheduleSetMap( const std::string & mapFile, bool loadCompleteMap, const std::string & region)
+	void CMapManager::ScheduleSetMap(const std::string & mapFile, bool loadCompleteMap, const std::string & region)
     {
         fprintf(stderr, "ScheduleSetMap(%s, %d, %s)\n", mapFile.c_str(), (int)loadCompleteMap, region.c_str());
-	    NextMapData *data = new NextMapData(); //tox: kto kasuje potem data? dupa, nikt nie kasuje, dobrze widze?
-	    data->mNextMap = mapFile;
-	    data->mNextMapRegion = region;
-        data->mLoadCompleteMap = loadCompleteMap;
+        mDefferedMapData.map = mapFile;
+	    mDefferedMapData.region = region;
+        mDefferedMapData.loadCompleteMap = loadCompleteMap;
 
-	    CGame::loadingRoutine setMap;
-	    setMap.bind(this, &CMapManager::SetMapFromData);
-        gGame.ScheduleLoadingRoutine(setMap, data, mHideLoadingScreen);
+        gGame.ScheduleLoadingRoutine(mHideLoadingScreen);
     }
+
+	void CMapManager::SetDefferedMap() {
+        SetMap(mDefferedMapData.map, mDefferedMapData.loadCompleteMap, mDefferedMapData.region);
+	}
 
 	void CMapManager::SetCurrentMapAsVisited()
 	{
@@ -244,25 +240,31 @@ namespace Map{
         const std::string & map = mWorldGraph->startingMap;
         const std::string & region = mWorldGraph->startingRegion;
         fprintf(stderr, "LoadingStartingMap: %s %s\n", map.c_str(), region.c_str());
-        ScheduleSetMap(map, true, region.empty() ? "entry" : region);
+        EnterMap(map, region.empty() ? "entry" : region);
     }
 
-    void CMapManager::NextMap() {
-        fprintf(stderr, "NextMap()\n");
-        mLevel++;
-		fprintf(stderr, "Map level = %d\n", mLevel);
+    void CMapManager::EnterMap(const std::string & mapId, const std::string & region) {
+        if (FileUtils::FileExists(mapId)) { //i.e. mapId = "data/maps/town.xml"
+            ScheduleSetMap(mapId, true, region);
+            return;
+        }
+        std::string realFilename = GetWorldPath() + mapId + ".xml";
+        if (FileUtils::FileExists(realFilename)) {
+            ScheduleSetMap(realFilename, true, region.empty() ? "entry" : region);
+            return;
+        }
+        
+        //generate it!
+        if (mWorldGraph->maps.find(mapId) == mWorldGraph->maps.end()) {
+            fprintf(stderr, "Error, EnterMap: can't find mapId=%s\n", mapId.c_str());
+            return;
+        }
+        const CWorldGraphMap & mapDef = mWorldGraph->maps.find(mapId)->second;
+        mLevel = mapDef.level;
 
-        int r = 0;
-		//@dex, a co jesli m_map->GetFilename().size jest mniejsze od 5? wtedy gdzies po pamieci sobie pojezdzimy...
-        //if (m_map && m_map->GetFilename()[m_map->GetFilename().size() - 5] == '0') // 5? "0.xml" == 5 znakow
-        // dex: oj tam oj tam...
-        if (m_map && m_map->GetFilename().size() >= 5 && m_map->GetFilename()[m_map->GetFilename().size() - 5] == '0') // 5? "0.xml" == 5 znakow
-            r = 1;
-
-        // todo: robic w katalogu usera:
-        std::string filename = GetWorldPath() + "level" + StringUtils::ToString(mLevel) + ".xml";
         SRandomMapDesc desc;
-		desc.set = gRandomMapGenerator.GetSetForLevel(mLevel);
+		desc.set = mapDef.scheme;
+        desc.exits = mapDef.exits;
         desc.sizeX = 32;
         desc.sizeY = 32;
         desc.obstaclesAreaPercent = (float)gRand.Rnd(40, 60);
@@ -274,29 +276,23 @@ namespace Map{
         desc.level = mLevel;
         desc.minMonsterDist = 10.f;
         desc.narrowPathsPercent = (float)gRand.Rnd(40, 60);
-
+//todo: przerobic tak, zeby bralo z mapDef informacje, czy dany poziom ma byc bossowy...
 		if (mLevel == 9) {
             desc.mapType = SRandomMapDesc::MAP_BOSS;
             desc.monsters = gRand.Rnd(5, 10);
             desc.lairs = gRand.Rnd(1, 4);
 		}
 		else if (mLevel == 18) {
-            desc.mapType = SRandomMapDesc::MAP_BOSS;
+            desc.mapType = SRandomMapDesc::MAP_FINAL_BOSS;
             desc.monsters = gRand.Rnd(10, 15);
             desc.lairs = gRand.Rnd(2, 5);
 		}
-        else if (mLevel == 27) {
-            // finalowy boss, a po nim ekran victory
-            desc.mapType = SRandomMapDesc::MAP_FINAL_BOSS;
-            desc.monsters = gRand.Rnd(15, 20);
-            desc.lairs = gRand.Rnd(2, 5);
-        }
 
-        bool result = gRandomMapGenerator.GenerateRandomMap(filename, desc);
-        fprintf(stderr, "Generating map %s: %s", filename.c_str(), (result ? "OK!" : "FAILED!"));
+        bool result = gRandomMapGenerator.GenerateRandomMap(realFilename, desc);
+        fprintf(stderr, "Generating map %s: %s", realFilename.c_str(), (result ? "OK!" : "FAILED!"));
 
-		gResourceManager.DropResource(filename); // wymusza reload mapy z dysku
-        ScheduleSetMap(filename, true, "entry");
+		gResourceManager.DropResource(realFilename); // forces reload of the map from hard drive
+        ScheduleSetMap(realFilename, true, region);
     }
 
     void CMapManager::SetWorld(const std::string& world)

@@ -185,7 +185,7 @@ void CActor::Kill(){
         mAnimationTimeLeft = 0.0f;
         
         // dzwiek
-        if (unsigned sndCount = mSound["death"].size())
+        if (size_t sndCount = mSound["death"].size())
 		    gAudioManager.GetSoundPlayer().Play(mSound["death"][rand() % sndCount], mPosition);
 
         gPlayerManager.XPGained(mXPValue);

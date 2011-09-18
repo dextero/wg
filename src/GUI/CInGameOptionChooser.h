@@ -48,7 +48,7 @@ public:
 
 	inline const sf::Vector2i& GetSavedCursorPosition() {return mCursorPos;}
 
-    void OptionSelected(int selected);
+    void OptionSelected(size_t selected);
     void OptionSelectedThroughMouse(int selected);    
 
     void SetOptionHandler(IOptionChooserHandler * handler);

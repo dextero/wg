@@ -56,7 +56,6 @@ CGame::CGame():
 	mLoading(false),
     mLoaded(false),
 	mLoadingFrameCount(0),
-	mLoadingData(NULL),
 	mMapToLoadAtInit(NULL)
 {
     fprintf( stderr, "CGame::CGame()\n" );
@@ -193,7 +192,7 @@ void CGame::MainLoopStep()
             if (!mLoaded)
             {
                 // tlo sie zmienilo, laduj
-			    mLoadingRoutine(mLoadingData);
+			    gMapManager.SetDefferedMap();
                 mLoaded = true;
             }
 		} else {
@@ -389,9 +388,7 @@ void CGame::Init(sf::RenderWindow* wnd)
     }
 #endif
 
-void CGame::ScheduleLoadingRoutine(CGame::loadingRoutine method, void *data, bool hideLoadingScreen){
-	mLoadingRoutine = method;
-	mLoadingData = data;
+void CGame::ScheduleLoadingRoutine(bool hideLoadingScreen) {
 	mLoading = true;
     mLoadingFrameCount = (hideLoadingScreen ? 3 : 0);
 }

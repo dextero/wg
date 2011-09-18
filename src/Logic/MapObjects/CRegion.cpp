@@ -82,13 +82,8 @@ void CDynamicRegion::Trigger(CPlayer *player){
     // region bedzie "odpalony" przez pol sekundy po wejsciu na niego gracza
     mTriggerTime = 0.5f;
     // moze zmieniamy mape?
-    if (mNextMap != NULL && !mNextMap->empty() ){
-        if (mNextMap->compare("@RANDOM") == 0) {
-            gMapManager.NextMap();
-            return;
-        }
-        fprintf(stderr,"scheduled set map for %s from region %ls\n",mNextMap->c_str(),mUniqueId.c_str());
-        gMapManager.ScheduleSetMap(*mNextMap,true,*mNextMapRegion);
+    if (mNextMap != NULL && !mNextMap->empty()) {
+        gMapManager.EnterMap(*mNextMap, *mNextMapRegion);
         return;
     }
     // a moze... ? :)

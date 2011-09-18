@@ -19,7 +19,7 @@ namespace GUI
 		CHud();
 		~CHud();
 
-		void Init( unsigned playerNumber );
+		void Init(size_t playerNumber);
 		void Update( float dt );
 		void Show();
 		void Hide();
@@ -27,7 +27,7 @@ namespace GUI
 
 		//inline void ResetSequences() { mSeq.clear(); }
 	private:
-		unsigned		mPlayerNumber;
+		size_t  		mPlayerNumber;
 		CGUIObject *	mHud;
 		CProgressBar *	mHP, *mMana, *mManaFlr, *mXP;
 		CImageBox *		mAvatar, *mHudFg;

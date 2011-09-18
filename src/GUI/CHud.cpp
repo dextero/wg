@@ -43,7 +43,7 @@ CHud::~CHud()
 {
 }
 
-void CHud::Init(unsigned int playerNumber)
+void CHud::Init(size_t playerNumber)
 {
 	std::string prefix = std::string("pl") + StringUtils::ToString(playerNumber) + "-";
 

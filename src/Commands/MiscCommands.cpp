@@ -647,13 +647,13 @@ void CommandVFSAdd(size_t argc, const std::vector<std::wstring> &argv)
             }
 
             file.seekg(0, std::ios::end);
-            size_t size = file.tellg();
+            std::streamsize size = file.tellg();
 
             char* buf = new char[size];
             file.read(buf, size);
             file.close();
 
-            if (gVFS.AddFile(it->c_str(), buf, size))
+            if (gVFS.AddFile(it->c_str(), buf, (boost::int32_t)size))
             {
                 gConsole.Printf(L"+ %S", it->c_str());
                 ++added;

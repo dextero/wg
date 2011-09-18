@@ -27,7 +27,6 @@ void CommandRegisterMonsterAtLair(size_t argc, const std::vector<std::wstring> &
 CCommands::SCommandPair MapCommands [] =
 {
     {L"load-map"                        , "$MAN_LOAD_MAP"           , CommandLoadMap },
-    {L"next-map"                        , "$MAN_NEXT_MAP"           , CommandNextMap },
     {L"load-starting-map"               , "$MAN_LOAD_STARTING_MAP"  , CommandLoadStartingMap },
     {L"set-map-level"                   , "$MAN_SET_MAP_LEVEL"      , CommandSetMapLevel },
     {L"preload-map"                     , "$MAN_PRELOAD_MAP"        , CommandPreloadMap },
@@ -281,11 +280,6 @@ void CommandGenerateRandomMap(size_t argc, const std::vector<std::wstring> &argv
 
     bool result = gRandomMapGenerator.GenerateRandomMap(StringUtils::ConvertToString(argv[1]), desc);
     gConsole.Printf(L"Generating map %ls: %ls", argv[1].c_str(), (result ? L"OK!" : L"FAILED!"));
-}
-
-void CommandNextMap(size_t argc, const std::vector<std::wstring> &argv)
-{
-    gMapManager.NextMap();
 }
 
 void CommandLoadStartingMap(size_t argc, const std::vector<std::wstring> &argv)

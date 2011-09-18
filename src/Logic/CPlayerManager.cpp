@@ -24,7 +24,7 @@ CPlayerManager::~CPlayerManager()
     fprintf( stderr, "CPlayerManager::~CPlayerManager()\n" );
 }
 
-void CPlayerManager::LoadPlayer(unsigned int number)
+void CPlayerManager::LoadPlayer(size_t number)
 {
 	std::string templ = std::string("data/player/player") + ToString(number) + std::string(".xml");
 	std::wstring name = std::wstring(L"player") + ToWString(number);
@@ -33,7 +33,7 @@ void CPlayerManager::LoadPlayer(unsigned int number)
     gLogic.GetHud(number)->Init(number);
 }
 
-void CPlayerManager::RegisterPlayer(CPlayer *player, unsigned int number)
+void CPlayerManager::RegisterPlayer(CPlayer *player, size_t number)
 {
     assert(player!=NULL);
 
@@ -55,9 +55,9 @@ void CPlayerManager::UnregisterPlayer(CPlayer* player)
 	}
 }
 
-void CPlayerManager::UnregisterPlayer(int number)
+void CPlayerManager::UnregisterPlayer(size_t number)
 {
-	for (unsigned i=0; i<mPlayers.size(); i++)
+	for (size_t i=0; i<mPlayers.size(); i++)
 	if (mPlayers[i]->GetNumber() == number)
 	{
 		mPlayers[i]->MarkForDelete();
@@ -69,9 +69,9 @@ void CPlayerManager::UnregisterPlayer(int number)
 	fprintf( stderr, "warning: CPlayerManager::UnregisterPlayer(CPlayer*) - player not found in mPlayer\n") ;
 }
 
-CPlayer *CPlayerManager::GetPlayerByNumber(int number)
+CPlayer *CPlayerManager::GetPlayerByNumber(size_t number)
 {
-	for (unsigned i=0; i<mPlayers.size(); i++)
+	for (size_t i=0; i<mPlayers.size(); i++)
 		if (mPlayers[i]->GetNumber() == number)
 			return mPlayers[i];
 

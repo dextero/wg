@@ -2,6 +2,7 @@
 #define __CRANDOMMAPGENERATOR_H__
 
 #include "../Utils/CSingleton.h"
+#include "CWorldGraph.h"
 
 #include <string>
 #include <map>
@@ -29,6 +30,7 @@ struct SRandomMapDesc
         MAP_BOSS,       // arena z bossem
         MAP_FINAL_BOSS  // finalowa arena z bossem - po jego zabiciu wyswietla sie ekran victory
     } mapType;
+    std::vector<CWorldGraphExit> exits;
 
     SRandomMapDesc(): sizeX(0), sizeY(0), obstaclesAreaPercent(0.f), lairs(0), monsters(0), loots(0),
         maxLivingMonsters(0), maxMonsters(0), level(0), nextMap("@RANDOM"), minMonsterDist(0.f), mapType(MAP_NORMAL) {}

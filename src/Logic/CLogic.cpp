@@ -610,7 +610,7 @@ std::wstring CLogic::GetGameInfo( const std::string & name )
     return StringUtils::ConvertToWString(info);
 }
 
-GUI::CHud* CLogic::GetHud(unsigned int player)
+GUI::CHud* CLogic::GetHud(size_t player)
 {
     return mGameScreens.GetHud(player);
 }

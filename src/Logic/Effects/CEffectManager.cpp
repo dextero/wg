@@ -686,7 +686,7 @@ bool CEffectManager::ParseEffect(CXml &xml, xml_node<> *node){
 	//bool addedTag = false;
 	tmp_str = xml.GetString(node,"tag");
 	if (tmp_str != ""){
-		mTags[tmp_str] = effectNodes.size()-1;
+		mTags[tmp_str] = (int)(effectNodes.size()-1);
 		//addedTag = true;
 		//fprintf(stderr,"Added tag %s at %d\n",tmp_str.c_str(),mTags[tmp_str]);
 	}

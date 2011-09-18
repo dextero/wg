@@ -42,14 +42,15 @@ namespace Map{
         std::string mWorld;
         CWorldGraph * mWorldGraph; 
 
-	public:
-		void SetMapFromData(const void *data);
-
-		struct NextMapData{
-			std::string mNextMap;
-			std::string mNextMapRegion;
-            bool mLoadCompleteMap;
+        struct DefferedMapData {
+			std::string map;
+			std::string region;
+            bool loadCompleteMap;
 		};
+
+        DefferedMapData mDefferedMapData; //for scheduled map changing
+
+	public:
 
 		CMapManager();
 		virtual ~CMapManager();
@@ -63,7 +64,9 @@ namespace Map{
 
 		void SetCurrentMapAsVisited();
         bool SetMap( const std::string &mapFile, bool loadCompleteMap, const std::string &region = "");
-        void NextMap();
+        void SetDefferedMap();
+
+        void EnterMap(const std::string & mapId, const std::string & region);
         void LoadStartingMap();
         void SetLevel(int newLevel) { mLevel = newLevel; }
         int GetLevel() { return mLevel; }

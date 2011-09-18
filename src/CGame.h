@@ -54,14 +54,10 @@ public:
     inline bool GetShowingFps() { return mShowFps; }
     void SetShowingFps(bool show);
 
-	typedef fastdelegate::FastDelegate1<const void *,void> loadingRoutine;
-	void ScheduleLoadingRoutine(loadingRoutine method, void *data, bool hideLoadingScreen = false);
+	void ScheduleLoadingRoutine(bool hideLoadingScreen);
 
 	static bool dontLoadWindowHack;
 private:
-    // ponizsze przewalic do PIMPL (yikes!)
-    // narazie niech tu sobie polezy roboczo:
-    // rAum: nie przewalamy do PIMPL bo nie ma takiej potrzeby
 
     void MainLoopStep();
     sf::RenderWindow* mRenderWindow;
@@ -86,9 +82,6 @@ private:
 
     static void Init(sf::RenderWindow* wnd);
 #endif
-
-	loadingRoutine mLoadingRoutine;
-	void *mLoadingData;
 
 	std::string *mMapToLoadAtInit;
 public:
