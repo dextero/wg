@@ -123,7 +123,7 @@ void CInGameOptionChooser::SetOptions(const std::vector<std::string> & options)
             mButtons[i]->SetFont(mOptionFont, mOptionFontSize, GUI::UNIT_PIXEL);
             mButtons[i]->SetColor(mOptionColor);
             mButtons[i]->GetClickIntCallback()->bind(this, &CInGameOptionChooser::OptionSelectedThroughMouse);
-            mButtons[i]->SetClickIntCallbackParam(i);
+            mButtons[i]->SetClickIntCallbackParam((int)i);
         }
         mButtons[i]->SetText(StringUtils::ConvertToWString(options[i]));
     }
@@ -211,12 +211,12 @@ bool CInGameOptionChooser::IsVisible()
 
 void CInGameOptionChooser::OptionSelectedThroughMouse(int selected)
 {
-    this->OptionSelected(selected);
+    this->OptionSelected((size_t)selected);
 }
 
-void CInGameOptionChooser::OptionSelected(int selected)
+void CInGameOptionChooser::OptionSelected(size_t selected)
 {
-    if (selected >= (int)mButtons.size()) // cos tu nie gra 
+    if (selected >= mButtons.size()) // cos tu nie gra 
         return;
     if (mOptionHandler) {
         mOptionHandler->OptionSelected(selected);

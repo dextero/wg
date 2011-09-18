@@ -36,11 +36,11 @@ namespace GUI
         void SetBarBackground(const std::string& bg);
         void SetSlotBackground(const std::string& bg);
 
-        void SetSlotItem(unsigned int slot, CItem* item, bool updatePlayer = true);
+        void SetSlotItem(size_t slot, CItem* item, bool updatePlayer = true);
         
         void SetBarPosPercent(sf::Vector2f pos) { mBarPosPercent = pos; }
         void SetBarSizePix(sf::Vector2f size) { mBarSizePix = size; }
-        void SetSlotPosPercent(unsigned int slot, sf::Vector2f pos) { if (slot < ITEM_SLOTS_COUNT) mSlotPosPercent[slot] = pos; }
+        void SetSlotPosPercent(size_t slot, sf::Vector2f pos) { if (slot < ITEM_SLOTS_COUNT) mSlotPosPercent[slot] = pos; }
         void SetSlotSizePercent(sf::Vector2f size) { mSlotSizePercent = size; }
     private:
         unsigned mPlayerNumber;

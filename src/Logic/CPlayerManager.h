@@ -17,15 +17,15 @@ public:
 	CPlayerManager();
 	virtual ~CPlayerManager();
 
-	void LoadPlayer(unsigned int number);						/* Wczytuje z pliku podanego gracza i rejestruje */
-	void RegisterPlayer(CPlayer *player,unsigned int number);	/* Jesli juz istnieje gracz o tym numerze - usuw go */
+	void LoadPlayer(size_t number);						/* Wczytuje z pliku podanego gracza i rejestruje */
+	void RegisterPlayer(CPlayer *player,size_t number);	/* Jesli juz istnieje gracz o tym numerze - usuw go */
 	void UnregisterPlayer(CPlayer* player);
-	void UnregisterPlayer(int number);
-	CPlayer *GetPlayerByNumber(int number);
+	void UnregisterPlayer(size_t number);
+	CPlayer *GetPlayerByNumber(size_t number);
 
 	/* Metody do przegladania wszystkich zarejestrowanych graczy */
 
-	inline CPlayer *GetPlayerByOrder(unsigned int order)	{ return mPlayers[order]; }
+	inline CPlayer *GetPlayerByOrder(size_t order)	{ return mPlayers[order]; }
 	inline size_t GetPlayerCount()							{ return mPlayers.size(); }
 
 	/* Metody wplywajace na wszystkich zarejestrowanych graczy */

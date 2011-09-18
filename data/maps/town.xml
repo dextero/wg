@@ -662,9 +662,10 @@
 	tb ad ee kf kg nh oi ce jk al ql rg tl eo ep up hc fr is ct st gu tu dv tq aw pw cx ku xx jy ev 
 	</tiles>
 	<region name="entry" x="6.5" y="7.5" rot="0" scale="1"></region>
+	<region name="east" x="26.25" y="25.5" rot="0" scale="1"></region>
 	<region name="exit" x="27.5" y="25.5" rot="0" scale="1">
 		<next-map>forest1</next-map>
-		<next-map-region>from_east</next-map-region>
+		<next-map-region>west</next-map-region>
 	</region>
 	<objtype code="exit-portal" file="data/physicals/walls/test-barrier.xml" />
 	<obj code="exit-portal" x="27.5" y="25.5" />
@@ -1171,35 +1172,4 @@
 	<obj templateFile="data/loots/mana.xml" x="8.3349" y="21.363"><level>1</level></obj>
 	<obj templateFile="data/physicals/obstacles/chest.xml" x="17.583" y="23.6885"/>
 	<obj templateFile="data/loots/superspeed.xml" x="27.5012" y="24.3203"/>
-	<objtype code="monster0" file="data/physicals/monsters/defs/rat.xml" />
-	<obj code="monster0" x="2.27318" y="19.7224" rot="123" />
-	<obj code="monster0" x="17.6964" y="21.4692" rot="109" />
-	<objtype code="monster1" file="data/physicals/monsters/defs/bandit.xml" />
-	<obj code="monster1" x="20.6467" y="21.5245" rot="105" />
-	<obj code="monster1" x="26.5491" y="16.509" rot="128" />
-	<obj code="monster0" x="3.26012" y="18.4285" rot="350" />
-	<obj code="monster0" x="18.568" y="24.6277" rot="260" />
-	<obj code="monster0" x="24.3627" y="7.55761" rot="40" />
-	<obj code="monster0" x="18.3911" y="31.4886" rot="164" />
-	<obj code="monster0" x="18.3934" y="11.3972" rot="45" />
-	<obj code="monster1" x="19.4465" y="11.3996" rot="75" />
-	<obj code="monster0" x="18.2645" y="11.4003" rot="94" />
-	<obj code="monster0" x="30.3689" y="26.4925" rot="76" />
-	<obj code="monster0" x="20.4067" y="5.25697" rot="159" />
-	<obj code="monster1" x="18.451" y="18.4152" rot="133" />
-	<obj code="monster0" x="27.4531" y="26.3315" rot="38" />
-	<obj code="monster0" x="20.513" y="3.59289" rot="347" />
-	<obj code="monster0" x="17.4166" y="13.3361" rot="349" />
-	<obj code="monster0" x="21.6915" y="25.6919" rot="68" />
-	<obj code="monster0" x="26.4873" y="23.6489" rot="45" />
-	<obj code="monster0" x="22.3447" y="15.4215" rot="268" />
-	<obj code="monster0" x="27.4087" y="11.3463" rot="7" />
-	<obj code="monster0" x="30.6531" y="25.5852" rot="257" />
-	<obj code="monster0" x="15.5911" y="18.4021" rot="312" />
-	<obj code="monster0" x="26.3798" y="16.398" rot="198" />
-	<obj code="monster1" x="27.75" y="29.5739" rot="291" />
-	<obj code="monster0" x="27.5923" y="11.6528" rot="346" />
-	<obj code="monster0" x="20.347" y="7.50889" rot="210" />
-	<obj code="monster0" x="16.7159" y="18.4823" rot="3" />
-	<obj code="monster0" x="4.43224" y="19.323" rot="204" />
 </map>

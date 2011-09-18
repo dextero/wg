@@ -37,7 +37,7 @@ void CBleeder::Bleed(float dmg,EffectSourcePtr source){
 		}
 
 		std::vector<System::Resource::CSound*>& sounds = actor->GetSounds("damaged");
-		if (unsigned sndCount = sounds.size())
+		if (size_t sndCount = sounds.size())
 			gAudioManager.GetSoundPlayer().Play(sounds[rand() % sndCount], actor->GetPosition());
 	}
 }

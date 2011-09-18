@@ -18,7 +18,7 @@
 	    <exit toMap="forest2" onBorder="west" />
 	    <exit toMap="arctic2" onBorder="east" />
 	</map>
-    <map id="arctic2" scheme="arctic" level="27" final-boss="data/physicals/monsters/defs/baldurian.xml">
+    <map id="arctic2" scheme="arctic" level="18" final-boss="data/physicals/monsters/defs/baldurian.xml">
 	    <exit toMap="arctic1" onBorder="west" />
 	</map>
 </root>

@@ -101,7 +101,7 @@ void CPlayer::NextLevel( bool ignoreSkillPoints, bool muteSound ){
     }
 
     if (!muteSound)
-        if (unsigned sndCount = GetSounds("level-up").size())
+        if (size_t sndCount = GetSounds("level-up").size())
             gAudioManager.GetSoundPlayer().Play(GetSounds("level-up")[rand() % sndCount]);
 }
 

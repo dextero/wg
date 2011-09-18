@@ -48,7 +48,7 @@ public:
 	bool CanLoadGame(const std::string & name);
     std::wstring GetGameInfo(const std::string & name);
 
-    GUI::CHud* GetHud(unsigned int player);
+    GUI::CHud* GetHud(size_t player);
 
     GUI::CGameScreens* GetGameScreens() { return &mGameScreens; };
     GUI::CMenuScreens* GetMenuScreens() { return &mMenuScreens; };
