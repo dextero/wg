@@ -690,98 +690,79 @@ bool CRandomMapGenerator::PlaceWalls()
     return true;
 }
 
-bool CRandomMapGenerator::PlaceRegions()
-{
-    CTimer timer("- regions: ");
-
-    // ostatni boss ma wejscie, ale wyjscia juz nie
-    unsigned int regionsToPlace = (mDesc.mapType == SRandomMapDesc::MAP_FINAL_BOSS ? 1 : 2);
-    
-    // za malo miejsca, zeby postawic chociazby region wejscia (i ew. wyjscia)..
-    if (mPassableLeft < regionsToPlace) return false;
-    
-    sf::Vector2i entry, exit;
-    unsigned int first, last;   // uzywane przy wyznaczaniu pozycji wejscia.wyjscia na mapach z bossami
-
-    switch (mDesc.mapType)
-    {
-    case SRandomMapDesc::MAP_BOSS:
-        for (first = 0; first < mDesc.sizeY && mCurrent[mDesc.sizeX - 1][first] == BLOCKED; ++first);     // poczatek wyjscia
-        for (last = first; last < mDesc.sizeY && mCurrent[mDesc.sizeX - 1][last] == FREE; ++last);        // koniec wyjscia
-
-        if (first == mDesc.sizeY && last == mDesc.sizeY) // nie ma wyjscia
-            return false;
-
-        exit = sf::Vector2i(mDesc.sizeX - 1, (last + first) / 2);
-        // bez break, bo 'zwykly' boss potrzebuje wejscia i wyjscia, 'finalowy' - tylko wejscia
-
-    case SRandomMapDesc::MAP_FINAL_BOSS:
-        for (first = 0; first < mDesc.sizeY && mCurrent[0][first] == BLOCKED; ++first);     // poczatek wejscia
-        for (last = first; last < mDesc.sizeY && mCurrent[0][last] == FREE; ++last);        // koniec wejscia
-
-        if (first == mDesc.sizeY && last == mDesc.sizeY) // nie ma wejscia
-            return false;
-    
-        mEntryPos = entry = sf::Vector2i(0, (last + first) / 2);    // srodek tunelu
-        break;
-
-    default:
-        {
-            // jesli to nie mapa z bossem, to regiony moga byc gdzie im sie podoba
-            unsigned int dist = 0;
-
-            for (size_t i = 0; i < 100; ++i)
-            {
-                sf::Vector2i newEntry, newExit;
-                // do skutku, az bedzie na "przejezdnym"
-                do
-                    newEntry = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
-                while (mCurrent[newEntry.x][newEntry.y] != FREE);
-                do
-                    newExit = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
-                while (mCurrent[newExit.x][newExit.y] != FREE);
-
-                // odslaniamy okolice wyjscia
-                for (int x = std::max<int>(newExit.x - 1, 0); x < std::min<int>(newExit.x + 2, mDesc.sizeX); ++x)
-                    for (int y = std::max<int>(newExit.y - 1, 0); y < std::min<int>(newExit.y + 2, mDesc.sizeY); ++y)
-                        if (!mCurrent[x][y]) // == BLOCKED?
-                        {
-                            mCurrent[x][y] = FREE;
-                            ++mPassableLeft;
-                        }
-
-                // wybieramy najdluzsza droge
-                unsigned int newDist = DistanceDijkstra(newEntry, newExit);
-                if (newDist != (unsigned int)-1 && newDist > dist)
-                {
-                    mEntryPos = entry = newEntry;
-                    exit = newExit;
-                    dist = newDist;
-                }
+void CRandomMapGenerator::MakePassableAround(const sf::Vector2i & position) {
+    for (int x = std::max<int>(position.x - 1, 0); x < std::min<int>(position.x + 2, mDesc.sizeX); ++x) {
+        for (int y = std::max<int>(position.y - 1, 0); y < std::min<int>(position.y + 2, mDesc.sizeY); ++y) {
+            if (!mCurrent[x][y]) { // == BLOCKED?
+                mCurrent[x][y] = FREE;
+                ++mPassableLeft;
             }
         }
     }
+}
 
-    // wejscie
-    mXmlText << "\t<region name=\"entry\" x=\"" << entry.x + 0.5f << "\" y=\"" << entry.y + 0.5f << "\" rot=\"0\" scale=\"1\"></region>\n";
-    mCurrent[entry.x][entry.y] = REGION;
+bool CRandomMapGenerator::PlaceRegions()
+{
+    CTimer timer("- regions: ");
+// todo: przerobic/zrobic na nowo ustawianie bossow, aby uwzglednialo world-graph.xml
+
+    // za malo miejsca, zeby postawic chociazby region wejscia (i ew. wyjscia)..
+    if (mPassableLeft < mDesc.exits.size()) return false;
     
-    if (mDesc.mapType != SRandomMapDesc::MAP_FINAL_BOSS) {
-        // wyjscie
-        mXmlText << "\t<region name=\"exit\" x=\"" << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" rot=\"0\" scale=\"1\">\n"
-            << "\t\t<next-map>" << mDesc.nextMap << "</next-map>\n"
-    //            << "\t\t<next-map>data/maps/level01.xml</next-map>\n"
-    //            << "\t\t<next-map-region>entry</next-map-region>\n"
-            << "\t</region>\n"
-            // tlo pod wyjscie - portal
-            << "\t<objtype code=\"exit-portal\" file=\"data/physicals/walls/test-barrier.xml\" />\n"
-            << "\t<obj code=\"exit-portal\" x=\"" << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" />\n";
-        mCurrent[exit.x][exit.y] = REGION;
+    mXmlText << "\t<objtype code=\"exit-portal\" file=\"data/physicals/walls/test-barrier.xml\" />\n";
+
+    for (std::vector<CWorldGraphExit>::iterator it = mDesc.exits.begin() ; it != mDesc.exits.end() ; it++) {
+        sf::Vector2i bestExit(mDesc.sizeX / 2, mDesc.sizeY / 2);
+        for (size_t i = 0; i < 100; ++i) {
+            sf::Vector2i newExit;
+            do
+                newExit = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
+            while (mCurrent[newExit.x][newExit.y] != FREE);
+
+            bool isBetterCandidate = false;
+            if (it->onBorder == "north" && newExit.y < bestExit.y) isBetterCandidate = true;
+            if (it->onBorder == "south" && newExit.y > bestExit.y) isBetterCandidate = true;
+            if (it->onBorder == "west"  && newExit.x < bestExit.x) isBetterCandidate = true;
+            if (it->onBorder == "east"  && newExit.x > bestExit.x) isBetterCandidate = true;
+
+            if (isBetterCandidate) {
+                bestExit = newExit;
+            }
+        }
+        MakePassableAround(bestExit);
+        mCurrent[bestExit.x][bestExit.y] = REGION;
+        mPassableLeft--;
+
+        std::string entryRegion;
+        sf::Vector2i bestEntry = bestExit;
+        if (it->onBorder == "north") {
+            entryRegion = "south";
+            bestEntry.y += 2;
+        }
+        if (it->onBorder == "south") {
+            entryRegion = "north";
+            bestEntry.y -= 2;
+        }   
+        if (it->onBorder == "west") {
+            entryRegion = "east";
+            bestEntry.x += 2;
+        }
+        if (it->onBorder == "east") {
+            entryRegion = "west";
+            bestEntry.x -= 2;
+        }
+        MakePassableAround(bestEntry);
+
+        mXmlText << "\t<region name=\"" << it->onBorder << "\" x=\"" 
+                << bestEntry.x + 0.5f << "\" y=\"" << bestEntry.y + 0.5f << "\" rot=\"0\" scale=\"1\"></region>\n";
+   
+        mXmlText << "\t<region name=\"exit-" << it->onBorder << "\" x=\"" 
+                << bestExit.x + 0.5f << "\" y=\"" << bestExit.y + 0.5f << "\" rot=\"0\" scale=\"1\">\n"
+                << "\t\t<next-map>" << it->toMap << "</next-map>\n"
+                << "\t\t<next-map-region>" << entryRegion << "</next-map-region>\n"
+                << "\t</region>\n"
+                << "\t<obj code=\"exit-portal\" x=\"" << bestExit.x + 0.5f << "\" y=\"" << bestExit.y + 0.5f << "\" />\n";
     }
-
-    // regiony "zapychaja" pola
-    mPassableLeft -= regionsToPlace;
-
     return true;
 }
 

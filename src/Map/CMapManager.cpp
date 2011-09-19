@@ -277,16 +277,6 @@ namespace Map{
         desc.minMonsterDist = 10.f;
         desc.narrowPathsPercent = (float)gRand.Rnd(40, 60);
 //todo: przerobic tak, zeby bralo z mapDef informacje, czy dany poziom ma byc bossowy...
-		if (mLevel == 9) {
-            desc.mapType = SRandomMapDesc::MAP_BOSS;
-            desc.monsters = gRand.Rnd(5, 10);
-            desc.lairs = gRand.Rnd(1, 4);
-		}
-		else if (mLevel == 18) {
-            desc.mapType = SRandomMapDesc::MAP_FINAL_BOSS;
-            desc.monsters = gRand.Rnd(10, 15);
-            desc.lairs = gRand.Rnd(2, 5);
-		}
 
         bool result = gRandomMapGenerator.GenerateRandomMap(realFilename, desc);
         fprintf(stderr, "Generating map %s: %s", realFilename.c_str(), (result ? "OK!" : "FAILED!"));
@@ -302,7 +292,7 @@ namespace Map{
         // upewniamy sie, ze folder na mapy istnieje, bo inaczej bedzie kuku
         std::string path = GetWorldPath();
         if (boost::filesystem::exists(path))
-            boost::filesystem::create_directories(path);
+            boost::filesystem::create_directories(path); // FileUtils::CreateDir() ? zamiast uzalezniania sie od boosta? nie wiem...
     }
 
     const std::string CMapManager::GetWorldPath()
