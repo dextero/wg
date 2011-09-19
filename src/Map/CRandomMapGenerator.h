@@ -141,6 +141,9 @@ private:
     // generowanie pojedynczego prostego tunelu miedzy dwoma punktami - zwraca ilosc wykopanych pol
     unsigned int GenerateStraightTunnel(const sf::Vector2i& from, const sf::Vector2i& to, unsigned int tunnelSize);
 
+    // makes map tiles around given position FREE - call this method before placing doodahs or other objects
+    void MakePassableAround(const sf::Vector2i & position);
+
     // generowanie "jaskini" o nieregularnych ksztaltach (wielokat); rectSize - "grubosc" prostokatow, w ktorych moga znalezc sie wierzcholki
     // patrz: http://roguebasin.roguelikedevelopment.org/index.php?title=Irregular_Shaped_Rooms
     unsigned int GenerateIrregularCave(const sf::IntRect& outsideRect, unsigned int rectSize);
@@ -158,7 +161,7 @@ private:
     bool PlaceTiles();
     bool PlaceWalls();      // invisible-walls
     bool PlaceRegions();    // entry & exit - koniecznie przed PlaceLairs/Monsters, bo inaczej potwory moga sie spawnowac na glowie gracza
-                            // poniewaz PlaceRegions "kopie" przejscie naokolo teleportu, musi byc przed PlaceWalls <-- tox, 12 Sep 2011, a co to za komentarz w tej linijce?
+                            // i poniewaz PlaceRegions "kopie" przejscie naokolo teleportu, to musi byc wywolane przed PlaceWalls
     bool PlaceDoodahs();
     bool PlaceLights();
     bool PlaceBossDoors();  // drzwi otwierajace sie po zabiciu bossa. opcjonalne, ale jesli wywolywac, to najlepiej przed potworami/gniazdami/itemami
