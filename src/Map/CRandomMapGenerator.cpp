@@ -556,7 +556,7 @@ bool CRandomMapGenerator::PlaceTiles()
         corners[i] = new unsigned int[mDesc.sizeY + 1];
 		ncorners[i] = new unsigned int[mDesc.sizeY + 1];
         for (unsigned int j = 0; j < mDesc.sizeY + 1; ++j)
-            ncorners[i][j] = corners[i][j] = rand() % set.tiles.size();
+            ncorners[i][j] = corners[i][j] = rand() % (unsigned int)set.tiles.size();
     }
 
 	// rAum:
@@ -577,11 +577,22 @@ bool CRandomMapGenerator::PlaceTiles()
         delete[] ncorners[i];
     delete[] ncorners;
 
+    struct TileDef {
+        std::string image, topLeft, topRight, bottomLeft, bottomRight;
+        unsigned int mask;
+        TileDef(const std::string & _image) : image(_image){};
+        TileDef(const std::string & _image, const std::string & _topLeft, const std::string & _topRight,
+                const std::string & _bottomLeft, const std::string & _bottomRight, unsigned int _mask)
+                : image(_image), topLeft(_topLeft), topRight(_topRight), bottomLeft(_bottomLeft), bottomRight(_bottomRight), mask(_mask){};
+    };
 
     // mapa na dobrane kafle, zeby nie duplikowac
     std::map<std::string, unsigned int> generatedTiles;
     // i wektor, bo jak sie doda do set.tiles to drugie generowanie jest o dupe rozbic
-    std::vector<std::string> tilePaths = set.tiles;
+    std::vector<TileDef> tilePaths;
+    for (std::vector<std::string>::iterator it = set.tiles.begin() ; it != set.tiles.end() ; it++) {
+        tilePaths.push_back(TileDef(*it));
+    }
 
     // tu dobieramy reszte tak, zeby pasowaly
     for (unsigned int x = 0; x < mDesc.sizeX; ++x)
@@ -617,10 +628,9 @@ bool CRandomMapGenerator::PlaceTiles()
                     fprintf(stderr, "Error: generating intermediate tile from files:\n- %s\n- %s\n- %s\n- %s\nfailed!\n", nameTopLeft.c_str(), nameTopRight.c_str(), nameBottomLeft.c_str(), nameBottomRight.c_str());
                     return false;
                 }
-
-                tiles[x][y] = tilePaths.size();
-                generatedTiles.insert(std::make_pair(imgName, tilePaths.size()));
-                tilePaths.push_back(imgName);
+                tiles[x][y] = (unsigned int)tilePaths.size();
+                generatedTiles.insert(std::make_pair(imgName, (unsigned int)tilePaths.size()));
+                tilePaths.push_back(TileDef(imgName, nameTopLeft, nameTopRight, nameBottomLeft, nameBottomRight, tileMask));
             }
             else
                 tiles[x][y] = generatedTiles[imgName];
@@ -635,7 +645,7 @@ bool CRandomMapGenerator::PlaceTiles()
 
         do {
             size_t c = tmp % ('z' - 'a');
-            code += ('a' + c);
+            code += ('a' + (char)c);
             tmp /= ('z' - 'a');
         } while (tmp);
 
@@ -643,8 +653,14 @@ bool CRandomMapGenerator::PlaceTiles()
     }
 
     // typy kafli
-    for (size_t i = 0; i < tilePaths.size(); ++i)
-	    mXmlText << "\t<tiletype code=\"" << tileCodes[i] << "\" image=\"" << tilePaths[i] << "\"/>\n";
+    for (size_t i = 0; i < tilePaths.size(); ++i) {
+        const TileDef & td = tilePaths[i];
+	    mXmlText << "\t<tiletype code=\"" << tileCodes[i] << "\" image=\"" << td.image 
+            << "\" topleft=\"" << td.topLeft << "\" topright=\"" << td.topRight 
+            << "\" bottomleft=\"" << td.bottomLeft << "\" bottomright=\"" << td.bottomRight
+            << "\" mask=\"" << td.mask << "\" />\n";
+    }
+//<tiletype code="o" image="$GENERATE" topleft="grass.png" topright="sand.png" bottomleft="grass2.png" bottomright="grass.png" mask="mask1.png" />
     
     // uklad kafli na mapie
     mXmlText << "\t<tiles>\n";
@@ -955,9 +971,9 @@ bool CRandomMapGenerator::PlaceLairs()
                 tile = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
             while (mCurrent[tile.x][tile.y] != FREE ||	// wolne pole
 				(tile.x > 0 && mCurrent[tile.x - 1][tile.y] == BLOCKED) ||	// na przyleglych polach nie ma murow
-				(tile.x < mDesc.sizeX - 1 && mCurrent[tile.x + 1][tile.y] == BLOCKED) ||
+				(tile.x < (int)mDesc.sizeX - 1 && mCurrent[tile.x + 1][tile.y] == BLOCKED) ||
 				(tile.y > 0 && mCurrent[tile.x][tile.y - 1] == BLOCKED) ||
-				(tile.y < mDesc.sizeY - 1 && mCurrent[tile.x][tile.y + 1] == BLOCKED) ||
+				(tile.y < (int)mDesc.sizeY - 1 && mCurrent[tile.x][tile.y + 1] == BLOCKED) ||
                 ((float)std::min(mDesc.sizeX, mDesc.sizeY) > mDesc.minMonsterDist * 2.f &&     // jesli mapa nie ma rozmiaru przynajmniej 2*minMonsterDist, to olej sprawdzanie odleglosci
                 Maths::LengthSQ(sf::Vector2f((float)(tile.x - mEntryPos.x), (float)(tile.y - mEntryPos.y))) <= mDesc.minMonsterDist * mDesc.minMonsterDist) );
 
