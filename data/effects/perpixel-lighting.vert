@@ -1,13 +1,10 @@
 // Swiatlo perpixel - program wierzcholkow
-// Przyjmuje pozycje 3 najmocniejszych swiatel w przestrzeni swiata
+// Przyjmuje pozycje najmocniejszych swiatel w przestrzeni swiata
 
-uniform vec3 lpos1;
-uniform vec3 lpos2;
-uniform vec3 lpos3;
+#define LIGHTS_CNT 5
 
-varying float ldist1;
-varying float ldist2;
-varying float ldist3;
+uniform vec3 lpos[LIGHTS_CNT];
+varying float ldist[LIGHTS_CNT];
 
 void main()
 {	
@@ -16,7 +13,6 @@ void main()
 	
 	// Oblicz odleglosc wierzcholka od zrodel swiatla
 	vec3 vertexPos = (gl_ModelViewMatrix * gl_Vertex).xyz;
-	ldist1 = length(vertexPos - lpos1);
-	ldist2 = length(vertexPos - lpos2);
-	ldist3 = length(vertexPos - lpos3);
+	for (int i = 0; i < LIGHTS_CNT; i++)
+		ldist[i] = length(vertexPos - lpos[i]);
 }
