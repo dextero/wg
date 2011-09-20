@@ -78,7 +78,14 @@ namespace Map{
 		if ( m_map != NULL )
 		{
             // zapisz stan mapy, jesli juz z niej wychodzimy
-            gLogic.SaveMapStateToFile(m_map->GetFilename() + ".console");
+            std::string mapStateFile = m_map->GetFilename();
+            if (mapStateFile.size() > 10 && mapStateFile.substr(0, 10) == "data/maps/")
+            {
+                mapStateFile[4] = mapStateFile[9] = '_';        // zamien data/maps/ na data_maps_, jesli mapa jest 'statyczna' (#1164)
+                mapStateFile = GetWorldPath() + mapStateFile;   // i dopisz na poczatku sciezke do userDir/$timestamp
+            }
+
+            gLogic.SaveMapStateToFile(mapStateFile + ".console");
 
 			gEditor.SetSelectedToErase( NULL );
 			m_sceneManager->ClearScene();
@@ -123,8 +130,15 @@ namespace Map{
                 player->GetController()->SetWalkTarget(false, sf::Vector2f(), true);
         }
 
+        std::string mapStateFile = mapFile + ".console";
+        if (mapStateFile.size() > 10 && mapStateFile.substr(0, 10) == "data/maps/")
+        {
+            mapStateFile[4] = mapStateFile[9] = '_';        // zamien data/maps/ na data_maps_, jesli mapa jest 'statyczna' (#1164)
+            mapStateFile = GetWorldPath() + mapStateFile;   // i dopisz na poczatku sciezke do userDir/$timestamp
+        }
+
         // jesli istnieje plik z zapisanym stanem mapy, to nie laduj calej mapy, tylko przywroc to co bylo
-        loadCompleteMap = loadCompleteMap && !FileUtils::FileExists(mapFile + ".console");
+        loadCompleteMap = loadCompleteMap && !FileUtils::FileExists(mapStateFile);
 
 		m_map = gResourceManager.GetMap( mapFile );
 		if ( m_map )
@@ -157,8 +171,8 @@ namespace Map{
             gLogic.GetGameScreens()->Show(L"hud");
 
             // odpal skrypt zawierajacy zapisany stan mapy, jesli taki istnieje (i jest taka potrzeba)
-            if (!loadCompleteMap && FileUtils::FileExists(mapFile + ".console"))
-                gCommands.ParseCommand(L"exec " + StringUtils::ConvertToWString(mapFile) + L".console");
+            if (!loadCompleteMap && FileUtils::FileExists(mapStateFile))
+                gCommands.ParseCommand(L"exec " + StringUtils::ConvertToWString(mapStateFile));
 
             // jak stoimy z czasem? oplaca sie pokazywac loading screena czy nie?
             float time = timer.GetElapsedTime();
