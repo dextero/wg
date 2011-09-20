@@ -1,25 +1,16 @@
 // Normalmapping - program fragmentow
 
+#define LIGHTS_CNT 3
+
 uniform sampler2D tex;
 uniform sampler2D normalmap;
 uniform vec4 ambient;
 uniform float nmcontrast;
 
-uniform float lradius1;
-uniform float lradius2;
-uniform float lradius3;
-
-uniform vec4 lcolor1;
-uniform vec4 lcolor2;
-uniform vec4 lcolor3;
-
-varying vec3 ldir1;
-varying vec3 ldir2;
-varying vec3 ldir3;
-
-varying float ldist1;
-varying float ldist2;
-varying float ldist3;
+uniform float lradius[LIGHTS_CNT];
+uniform vec4 lcolor[LIGHTS_CNT];
+varying vec3 ldir[LIGHTS_CNT];
+varying float ldist[LIGHTS_CNT];
 
 void main()
 {
@@ -28,14 +19,14 @@ void main()
 	normal = normalize(normal - 0.5);
 	
 	// Oblicz kolor swiatla diffuse (to 1 - min.... to zanik swiatla - interpolacja liniowa)
-	float diffuseStrength = max( dot(normal, normalize(ldir1)), 0.0 );
-	vec4 diffuse = lcolor1 * diffuseStrength * nmcontrast * (1.0 - min(ldist1/lradius1, 1.0));
+	float diffuseStrength = max( dot(normal, normalize(ldir[0])), 0.0 );
+	vec4 diffuse = lcolor[0] * diffuseStrength * nmcontrast * (1.0 - min(ldist[0]/lradius[0], 1.0));
 	
-	diffuseStrength = max( dot(normal, normalize(ldir2)), 0.0 ); 
-	diffuse += lcolor2 * diffuseStrength * nmcontrast * (1.0 - min(ldist2/lradius2, 1.0));
-	
-	diffuseStrength = max( dot(normal, normalize(ldir3)), 0.0 ); 
-	diffuse += lcolor3 * diffuseStrength * nmcontrast * (1.0 - min(ldist3/lradius3, 1.0));
+	for (int i = 1; i < LIGHTS_CNT; i++)
+	{
+		diffuseStrength = max( dot(normal, normalize(ldir[i])), 0.0 ); 
+		diffuse += lcolor[i] * diffuseStrength * nmcontrast * (1.0 - min(ldist[i]/lradius[i], 1.0));
+	}
 	
 	gl_FragColor = (diffuse + ambient) * texColor;
 	gl_FragColor.a = texColor.a;
