@@ -69,16 +69,30 @@ public:
 
     virtual bool FramesDuringPause(EPauseVariant pv){ return true; }
 private:
+
+	/* Struktura opisujaca wierzcholki uzywane do renderowania swiatel */
+	struct vertexDesc
+	{
+		float u, v;
+		unsigned char r, g, b, a;
+		float x, y, z;
+	};
+
 	/* Znajdz [count] najmocniej swiecacych w punkcie [pos] swiatel
 	 * i umiesc je w tablicy out */
 	void GetStrongestLights(SLight** out, unsigned count, const sf::Vector2f& pos);
 	void DrawWithNormalMapping(sf::RenderWindow* wnd, CDisplayable* displayable, const sf::Image* normalmap);
 	void DrawWithPerPixelLighting(sf::RenderWindow* wnd, CDisplayable* displayable);
 
+	void FillLightsUV();
+	void DrawLightsGeometry();
+
     DrawableLists mLayers;
-	std::vector<SLight*> mLights;
 	sf::Color mAmbient;
 	sf::Color mNormalMappingAmbient;
+	std::vector<SLight*> mLights;
+	vertexDesc* mLightsGeometry;
+	unsigned mLightsGeometrySize; // zalozmy ze chodzi o ilosc swiatel - nie wierzcholkow
 	float mNormalMappingContrast;
 	bool mLightingEnabled;
 };

@@ -1,28 +1,23 @@
 // Swiatlo perpixel - program fragmentow
 
+#define LIGHTS_CNT 5
+
 uniform sampler2D tex;
 uniform vec4 ambient;
 
-uniform float lradius1;
-uniform float lradius2;
-uniform float lradius3;
-
-uniform vec4 lcolor1;
-uniform vec4 lcolor2;
-uniform vec4 lcolor3;
-
-varying float ldist1;
-varying float ldist2;
-varying float ldist3;
+uniform float lradius[LIGHTS_CNT];
+uniform vec4 lcolor[LIGHTS_CNT];
+varying float ldist[LIGHTS_CNT];
 
 void main()
 {	
 	vec4 texColor = texture2D(tex, gl_TexCoord[0].st);
 	
 	// Oblicz kolor swiatla diffuse (to 1 - min.... to zanik swiatla - interpolacja liniowa)
-	vec4 diffuse = lcolor1 * (1.0 - min(ldist1/lradius1, 1.0));
-	diffuse = diffuse + lcolor2 * (1.0 - min(ldist2/lradius2, 1.0));
-	diffuse = diffuse + lcolor3 * (1.0 - min(ldist3/lradius3, 1.0));
+	vec4 diffuse = lcolor[0] * (1.0 - min(ldist[0]/lradius[0], 1.0));
+	for (int i = 1; i < LIGHTS_CNT; i++)
+		diffuse = diffuse + lcolor[i] * (1.0 - min(ldist[i]/lradius[i], 1.0));
+		
 	gl_FragColor = (diffuse + ambient) * texColor;
 	gl_FragColor.a = texColor.a;
 }

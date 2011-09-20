@@ -9,19 +9,26 @@
 #include "ZIndexVals.h"
 
 #include "../CGame.h"
+#include "CCamera.h"
 #include "CShaderManager.h"
 #include "../Utils/Maths.h"
 
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/System/Vector3.hpp>
 
+#define INIT_LIGHTS_GEOMETRY_SIZE 8
+
 template<> CDrawableManager* CSingleton<CDrawableManager>::msSingleton = 0;
 
 CDrawableManager::CDrawableManager() :
 	mNormalMappingContrast(1.0f),
-	mLightingEnabled(false)
+	mLightingEnabled(false),
+	mLightsGeometrySize(INIT_LIGHTS_GEOMETRY_SIZE)
 {
     fprintf(stderr,"CDrawableManager::CDrawableManager()\n");
+	mLightsGeometry = new vertexDesc[mLightsGeometrySize * 6];
+	FillLightsUV();
+
     mLayers.resize( Z_MAX + 1 );
     gGame.AddFrameListener( this );
 }
@@ -175,6 +182,16 @@ void CDrawableManager::DrawFrame(sf::RenderWindow* wnd)
 
 SLight* CDrawableManager::CreateLight()
 {
+	/* Sprawdz czy mamy wystarczajaco duzo miejsca w 'buforze geometrii' zeby pomiescic nowe swiatlo
+	 * Jesli nie - zaalokuj dwa razy wiecej niz obecnie. [Potrzebne dla swiatelek na fixedpipeline] */
+	if (mLights.size() >= mLightsGeometrySize)
+	{
+		mLightsGeometrySize *= 2;
+		delete [] mLightsGeometry;
+		mLightsGeometry = new vertexDesc[mLightsGeometrySize * 6];
+		FillLightsUV();
+	}
+
 	SLight* light = new SLight();
 	mLights.push_back(light);
 	return light;
@@ -247,15 +264,15 @@ void CDrawableManager::DrawWithNormalMapping(sf::RenderWindow* wnd, CDisplayable
 	{
 		SLight* lights[3];
 		this->GetStrongestLights(lights, 3, displayable->GetPosition());
-		gShaderManager.setUniform(id, "lpos1", lights[0]->mPosition);
-		gShaderManager.setUniform(id, "lpos2", lights[1]->mPosition);
-		gShaderManager.setUniform(id, "lpos3", lights[2]->mPosition);
-		gShaderManager.setUniform(id, "lcolor1", lights[0]->mColor);
-		gShaderManager.setUniform(id, "lcolor2", lights[1]->mColor);
-		gShaderManager.setUniform(id, "lcolor3", lights[2]->mColor);
-		gShaderManager.setUniform(id, "lradius1", lights[0]->mRadius);
-		gShaderManager.setUniform(id, "lradius2", lights[1]->mRadius);
-		gShaderManager.setUniform(id, "lradius3", lights[2]->mRadius);
+		gShaderManager.setUniform(id, "lpos[0]", lights[0]->mPosition);
+		gShaderManager.setUniform(id, "lpos[1]", lights[1]->mPosition);
+		gShaderManager.setUniform(id, "lpos[2]", lights[2]->mPosition);
+		gShaderManager.setUniform(id, "lcolor[0]", lights[0]->mColor);
+		gShaderManager.setUniform(id, "lcolor[1]", lights[1]->mColor);
+		gShaderManager.setUniform(id, "lcolor[2]", lights[2]->mColor);
+		gShaderManager.setUniform(id, "lradius[0]", lights[0]->mRadius);
+		gShaderManager.setUniform(id, "lradius[1]", lights[1]->mRadius);
+		gShaderManager.setUniform(id, "lradius[2]", lights[2]->mRadius);
 		gShaderManager.setUniform(id, "ambient", mAmbient);
 		gShaderManager.setUniform(id, "nmcontrast", mNormalMappingContrast);
 		gShaderManager.setUniform(id, "invModelMatrix", displayable->GetSFSprite()->GetInverseMatrix());
@@ -270,19 +287,53 @@ void CDrawableManager::DrawWithPerPixelLighting(sf::RenderWindow *wnd, CDisplaya
 	int id = gShaderManager.activate("perpixel-lighting");
 	if (id >= 0)
 	{
-		SLight* lights[3];
-		this->GetStrongestLights(lights, 3, displayable->GetPosition());
-		gShaderManager.setUniform(id, "lpos1", lights[0]->mPosition);
-		gShaderManager.setUniform(id, "lpos2", lights[1]->mPosition);
-		gShaderManager.setUniform(id, "lpos3", lights[2]->mPosition);
-		gShaderManager.setUniform(id, "lcolor1", lights[0]->mColor);
-		gShaderManager.setUniform(id, "lcolor2", lights[1]->mColor);
-		gShaderManager.setUniform(id, "lcolor3", lights[2]->mColor);
-		gShaderManager.setUniform(id, "lradius1", lights[0]->mRadius);
-		gShaderManager.setUniform(id, "lradius2", lights[1]->mRadius);
-		gShaderManager.setUniform(id, "lradius3", lights[2]->mRadius);
+		SLight* lights[5];
+		this->GetStrongestLights(lights, 5, displayable->GetPosition());
+		gShaderManager.setUniform(id, "lpos[0]", lights[0]->mPosition);
+		gShaderManager.setUniform(id, "lpos[1]", lights[1]->mPosition);
+		gShaderManager.setUniform(id, "lpos[2]", lights[2]->mPosition);
+		gShaderManager.setUniform(id, "lpos[3]", lights[3]->mPosition);
+		gShaderManager.setUniform(id, "lpos[4]", lights[4]->mPosition);
+		gShaderManager.setUniform(id, "lcolor[0]", lights[0]->mColor);
+		gShaderManager.setUniform(id, "lcolor[1]", lights[1]->mColor);
+		gShaderManager.setUniform(id, "lcolor[2]", lights[2]->mColor);
+		gShaderManager.setUniform(id, "lcolor[3]", lights[3]->mColor);
+		gShaderManager.setUniform(id, "lcolor[4]", lights[4]->mColor);
+		gShaderManager.setUniform(id, "lradius[0]", lights[0]->mRadius);
+		gShaderManager.setUniform(id, "lradius[1]", lights[1]->mRadius);
+		gShaderManager.setUniform(id, "lradius[2]", lights[2]->mRadius);
+		gShaderManager.setUniform(id, "lradius[3]", lights[3]->mRadius);
+		gShaderManager.setUniform(id, "lradius[4]", lights[4]->mRadius);
 		gShaderManager.setUniform(id, "ambient", mAmbient);
 	}
 	displayable->Draw(wnd);
 }
 
+void CDrawableManager::FillLightsUV()
+{
+	for (unsigned i = 0; i < mLightsGeometrySize; i++)
+	{
+		mLightsGeometry[i * 6 + 0].u = 0.0f;
+		mLightsGeometry[i * 6 + 0].v = 0.0f;
+		mLightsGeometry[i * 6 + 1].u = 1.0f;
+		mLightsGeometry[i * 6 + 1].v = 0.0f;
+		mLightsGeometry[i * 6 + 2].u = 0.0f;
+		mLightsGeometry[i * 6 + 2].v = 1.0f;
+		mLightsGeometry[i * 6 + 3].u = 0.0f;
+		mLightsGeometry[i * 6 + 3].v = 1.0f;
+		mLightsGeometry[i * 6 + 4].u = 1.0f;
+		mLightsGeometry[i * 6 + 4].v = 0.0f;
+		mLightsGeometry[i * 6 + 5].u = 1.0f;
+		mLightsGeometry[i * 6 + 5].v = 1.0f;
+	}
+}
+
+void CDrawableManager::DrawLightsGeometry()
+{
+	sf::Vector2f cameraPos = gCamera.GetViewTopLeft();
+
+	for (unsigned i = 0; i < mLights.size(); i++)
+	{
+		
+	}
+}
