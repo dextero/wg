@@ -151,9 +151,6 @@ private:
     // BFS
     unsigned int DistanceDijkstra(sf::Vector2i start, sf::Vector2i end);
 
-    // generowanie posrednich kafli
-    bool GenerateIntermediateTile(const std::string& outFile, const std::string& topLeft, const std::string& topRight, const std::string& bottomLeft, const std::string& bottomRight, unsigned int tileMask);
-
     // samo generowanie pol pustych/nie do przejscia
     // stawianie invisible-walli: PlaceWalls()
     bool GenerateMap();
@@ -182,11 +179,16 @@ public:
 
     bool GenerateRandomMap(const std::string& filename, const SRandomMapDesc& desc);
 
+    // generowanie posrednich kafli
+    std::string GetIntermediateTile(const std::string & topLeft,
+                                const std::string & topRight,
+                                const std::string & bottomLeft,
+                                const std::string & bottomRight,
+                                unsigned int mask);
+
     std::string GetRandomWeaponFile(int level);
 
 	std::string GetSetForLevel(unsigned int level);
-
-//  std::string GenerateNextFinding(bool isLootFromDyingMonster);
 
     // tworzy i zwraca nowa znajdzke - uzywane m.in. przez ginace potwory
     CLoot * GenerateNextLoot(float additionalWeaponProbability = 0.0f, const sf::Vector2f & position = sf::Vector2f(0,0));

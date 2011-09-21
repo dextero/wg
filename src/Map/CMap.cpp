@@ -23,6 +23,7 @@
 #include "CLightDescriptor.h"
 #include "CRegionDescriptor.h"
 #include "../Logic/MapObjects/CRegion.h"
+#include "CRandomMapGenerator.h"
 
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Image.hpp>
@@ -300,7 +301,15 @@ namespace Map{
         CMapTileType *mtt;
         for (node=xml.GetChild(0,"tiletype"); node; node=xml.GetSibl(node,"tiletype")) {
             mtt = new CMapTileType();
-			mtt->img = xml.GetString(node,"image");
+            mtt->img = xml.GetString(node,"image");
+            if (mtt->img.empty()) {
+                std::string topLeft = xml.GetString(node, "topleft");
+                std::string topRight = xml.GetString(node, "topright");
+                std::string bottomLeft = xml.GetString(node, "bottomleft");
+                std::string bottomRight = xml.GetString(node, "bottomright");
+                unsigned int mask = xml.GetInt(node, "mask");
+                mtt->img = gRandomMapGenerator.GetIntermediateTile(topLeft, topRight, bottomLeft, bottomRight, mask);
+            }
 			mtt->code = xml.GetString(node,"code");
             mtt->number = xml.GetInt(node,"index");
 			if(gResourceManager.LoadImage( mtt->img )==false){

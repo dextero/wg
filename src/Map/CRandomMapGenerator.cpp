@@ -387,23 +387,38 @@ unsigned int CRandomMapGenerator::DistanceDijkstra(sf::Vector2i start, sf::Vecto
     return (unsigned int)-1;
 }
 
-
-// generowanie posrednich kafli
-bool CRandomMapGenerator::GenerateIntermediateTile(const std::string& outFile, const std::string& topLeft, const std::string& topRight, const std::string& bottomLeft, const std::string& bottomRight, unsigned int tileMask)
+std::string CRandomMapGenerator::GetIntermediateTile(const std::string & topLeft,
+                                const std::string & topRight,
+                                const std::string & bottomLeft,
+                                const std::string & bottomRight,
+                                unsigned int tileMask)
 {
-    // moze juz istnieje?
-    if (FileUtils::FileExists(outFile.c_str()))
-        return true;
+    if (!boost::filesystem::exists(mTilesFolder)) {
+        boost::filesystem::create_directory(mTilesFolder);
+    }
+            
+    // nazwa przejsciowego kafla
+    std::string imgName = mTilesFolder + "/" +
+            StringUtils::ToString(StringUtils::GetStringHash(topLeft + topRight + bottomLeft + bottomRight)) + "_" +
+            StringUtils::ToString(tileMask) + ".png";
+
+    if (FileUtils::FileExists(imgName.c_str())) {
+        return imgName;
+    }
 
     // nie ma prawa wystapic sytuacja, kiedy generujemy posrednie kafle z
     // wczesniej wygenerowanych, bo inaczej wszystkie beda sie robic do 2012
     if (topLeft.find(mTilesFolder) != std::string::npos ||
-        topRight.find(mTilesFolder) != std::string::npos ||
-        bottomLeft.find(mTilesFolder) != std::string::npos ||
-        bottomRight.find(mTilesFolder) != std::string::npos)
-    {
-        fprintf(stderr, "CRandomMapGenerator::GenerateIntermediateTile: OMG FATAL ERROR (trying to generate from generated)!\n");
-        return false;
+            topRight.find(mTilesFolder) != std::string::npos ||
+            bottomLeft.find(mTilesFolder) != std::string::npos ||
+            bottomRight.find(mTilesFolder) != std::string::npos) {
+        fprintf(stderr, "CRandomMapGenerator::GetIntermediateTile: OMG FATAL ERROR (trying to generate from generated)!\n");
+        return "";
+    }
+
+    if (topLeft == topRight && topRight == bottomLeft && bottomLeft == bottomRight) {
+        // wszystkie rogi te same? super!
+        return topLeft;
     }
 
     sf::Image* tl = gResourceManager.GetImage(topLeft);
@@ -411,32 +426,21 @@ bool CRandomMapGenerator::GenerateIntermediateTile(const std::string& outFile, c
     sf::Image* bl = gResourceManager.GetImage(bottomLeft);
     sf::Image* br = gResourceManager.GetImage(bottomRight);
 
-    if (!tl->GetWidth())
-    {
-        fprintf(stderr, "ERROR: Tile image not loaded: %s\n", topLeft.c_str());
-        return false;
+    if (!tl->GetWidth()) {
+        fprintf(stderr, "ERROR: CRandomMapGenerator::GetIntermediateTile, topLeft image not loaded: %s\n", topLeft.c_str());
+        return "";
     }
-    if (!tr->GetWidth())
-    {
-        fprintf(stderr, "ERROR: Tile image not loaded: %s\n", topRight.c_str());
-        return false;
+    if (!tr->GetWidth()) {
+        fprintf(stderr, "ERROR: CRandomMapGenerator::GetIntermediateTile, topRight image not loaded: %s\n", topRight.c_str());
+        return "";
     }
-    if (!bl->GetWidth())
-    {
-        fprintf(stderr, "ERROR: Tile image not loaded: %s\n", bottomLeft.c_str());
-        return false;
+    if (!bl->GetWidth()) {
+        fprintf(stderr, "ERROR: CRandomMapGenerator::GetIntermediateTile, bottomLeft image not loaded: %s\n", bottomLeft.c_str());
+        return "";
     }
-    if (!br->GetWidth())
-    {
-        fprintf(stderr, "ERROR: Tile image not loaded: %s\n", bottomRight.c_str());
-        return false;
-    }
-
-    if (tl == tr && tr == bl && bl == br)
-    {
-        // wszystkie rogi te same? super!
-        tl->SaveToFile(outFile);
-        return true;
+    if (!br->GetWidth()) {
+        fprintf(stderr, "ERROR: CRandomMapGenerator::GetIntermediateTile, bottomRight image not loaded: %s\n", bottomRight.c_str());
+        return "";
     }
 
     // do tego obrazka generujemy
@@ -444,8 +448,9 @@ bool CRandomMapGenerator::GenerateIntermediateTile(const std::string& outFile, c
     sf::Image mask; // maska ma miec 64x64px! (Map::TILE_SIZE)
 
     // jesli mamy maske, uzywamy. jesli nie ma, robimy brzydkie przejscie
-    if (mTileMasks.size() > tileMask)
+    if (mTileMasks.size() > tileMask) {
         mask.LoadFromFile(mTileMasks[tileMask]);
+    }
 
     for (int y = 0; y < Map::TILE_SIZE; ++y)
         for (int x = 0; x < Map::TILE_SIZE; ++x)
@@ -495,9 +500,9 @@ bool CRandomMapGenerator::GenerateIntermediateTile(const std::string& outFile, c
             generated.SetPixel(x, y, pixel);
         }
 
-    generated.SaveToFile(outFile);
-    
-    return true; 
+    fprintf(stderr, "Generated a new tile %s\n", imgName.c_str()); 
+    generated.SaveToFile(imgName);
+    return imgName; 
 }
 
 
@@ -591,7 +596,7 @@ bool CRandomMapGenerator::PlaceTiles()
     // i wektor, bo jak sie doda do set.tiles to drugie generowanie jest o dupe rozbic
     std::vector<TileDef> tilePaths;
     for (std::vector<std::string>::iterator it = set.tiles.begin() ; it != set.tiles.end() ; it++) {
-        tilePaths.push_back(TileDef(*it));
+        tilePaths.push_back(TileDef(*it, *it, *it, *it, *it, 0));
     }
 
     // tu dobieramy reszte tak, zeby pasowaly
@@ -608,26 +613,10 @@ bool CRandomMapGenerator::PlaceTiles()
             // losowanie maski
             unsigned int tileMask = (mTileMasks.size() ? (unsigned int)(rand()) % mTileMasks.size() : (unsigned int)-1);
 
-            // IOCCC mode off
+            std::string imgName = GetIntermediateTile(nameTopLeft, nameTopRight, nameBottomLeft, nameBottomRight, tileMask);
 
-            if (!boost::filesystem::exists(mTilesFolder))
-                boost::filesystem::create_directory(mTilesFolder);
-            
-            // nazwa przejsciowego kafla
-            boost::uint64_t hash = StringUtils::GetStringHash(nameTopLeft + nameTopRight + nameBottomLeft + nameBottomRight);
-            std::string imgName = mTilesFolder + "/" +
-                StringUtils::ToString(hash) + "_" +
-                StringUtils::ToString(tileMask) + ".png";
-
-
-            // jesli nie wygenerowalismy takiego kafla, to to robimy
             if (generatedTiles.find(imgName) == generatedTiles.end())
             {
-                if (!GenerateIntermediateTile(imgName, nameTopLeft, nameTopRight, nameBottomLeft, nameBottomRight, tileMask))
-                {
-                    fprintf(stderr, "Error: generating intermediate tile from files:\n- %s\n- %s\n- %s\n- %s\nfailed!\n", nameTopLeft.c_str(), nameTopRight.c_str(), nameBottomLeft.c_str(), nameBottomRight.c_str());
-                    return false;
-                }
                 tiles[x][y] = (unsigned int)tilePaths.size();
                 generatedTiles.insert(std::make_pair(imgName, (unsigned int)tilePaths.size()));
                 tilePaths.push_back(TileDef(imgName, nameTopLeft, nameTopRight, nameBottomLeft, nameBottomRight, tileMask));
@@ -655,12 +644,14 @@ bool CRandomMapGenerator::PlaceTiles()
     // typy kafli
     for (size_t i = 0; i < tilePaths.size(); ++i) {
         const TileDef & td = tilePaths[i];
-	    mXmlText << "\t<tiletype code=\"" << tileCodes[i] << "\" image=\"" << td.image 
-            << "\" topleft=\"" << td.topLeft << "\" topright=\"" << td.topRight 
-            << "\" bottomleft=\"" << td.bottomLeft << "\" bottomright=\"" << td.bottomRight
-            << "\" mask=\"" << td.mask << "\" />\n";
+        if (td.image == td.topLeft) { //not intermediate tile, use image=
+	        mXmlText << "\t<tiletype code=\"" << tileCodes[i] << "\" image=\"" << td.image << "\" />\n";
+        } else {
+	        mXmlText << "\t<tiletype code=\"" << tileCodes[i] << "\" topleft=\"" << td.topLeft 
+                    << "\" topright=\"" << td.topRight << "\" bottomleft=\"" << td.bottomLeft
+                    << "\" bottomright=\"" << td.bottomRight << "\" mask=\"" << td.mask << "\" />\n";
+        }
     }
-//<tiletype code="o" image="$GENERATE" topleft="grass.png" topright="sand.png" bottomleft="grass2.png" bottomright="grass.png" mask="mask1.png" />
     
     // uklad kafli na mapie
     mXmlText << "\t<tiles>\n";
