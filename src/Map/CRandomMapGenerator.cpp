@@ -526,6 +526,16 @@ bool CRandomMapGenerator::GenerateMap()
     }
 }
 
+struct TileDef {
+    std::string image, topLeft, topRight, bottomLeft, bottomRight;
+    unsigned int mask;
+    TileDef(const std::string & _image) : image(_image){};
+    TileDef(const std::string & _image, const std::string & _topLeft, const std::string & _topRight,
+            const std::string & _bottomLeft, const std::string & _bottomRight, unsigned int _mask)
+            : image(_image), topLeft(_topLeft), topRight(_topRight), bottomLeft(_bottomLeft), bottomRight(_bottomRight), mask(_mask){};
+};
+
+
 bool CRandomMapGenerator::PlaceTiles()
 {
     CTimer timer("- tiles: ");
@@ -581,15 +591,6 @@ bool CRandomMapGenerator::PlaceTiles()
 	for (unsigned int i = 0; i < mDesc.sizeX + 1; ++i)
         delete[] ncorners[i];
     delete[] ncorners;
-
-    struct TileDef {
-        std::string image, topLeft, topRight, bottomLeft, bottomRight;
-        unsigned int mask;
-        TileDef(const std::string & _image) : image(_image){};
-        TileDef(const std::string & _image, const std::string & _topLeft, const std::string & _topRight,
-                const std::string & _bottomLeft, const std::string & _bottomRight, unsigned int _mask)
-                : image(_image), topLeft(_topLeft), topRight(_topRight), bottomLeft(_bottomLeft), bottomRight(_bottomRight), mask(_mask){};
-    };
 
     // mapa na dobrane kafle, zeby nie duplikowac
     std::map<std::string, unsigned int> generatedTiles;
