@@ -394,7 +394,7 @@ std::string CRandomMapGenerator::GetIntermediateTile(const std::string & topLeft
                                 unsigned int tileMask)
 {
     if (!boost::filesystem::exists(mTilesFolder)) {
-        boost::filesystem::create_directory(mTilesFolder);
+        boost::filesystem::create_directories(mTilesFolder);
     }
             
     // nazwa przejsciowego kafla
