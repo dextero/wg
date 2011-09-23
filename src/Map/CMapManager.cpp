@@ -35,7 +35,7 @@ namespace Map{
         mCurrentMapTimeElapsed( 0.0f ),
         mHideLoadingScreen( false ),
         mLevel(0),
-        mWorld("default"),
+        mWorld("current"),
         mWorldGraph(NULL)
 	{
 		fprintf( stderr, "CMapManager::CMapManager()\n");
@@ -43,6 +43,9 @@ namespace Map{
 		m_visitedMaps.clear();
         mWorldGraph = new CWorldGraph();
         mWorldGraph->LoadFromFile("data/maps/world-graph.xml");
+
+        if (!boost::filesystem::exists(mWorld))
+            boost::filesystem::create_directories(mWorld);
 	}
 
 	CMapManager::~CMapManager()
@@ -312,18 +315,13 @@ namespace Map{
         ScheduleSetMap(realFilename, true, region);
     }
 
-    void CMapManager::SetWorld(const std::string& world)
-    {
-        mWorld = world;
-
-        // upewniamy sie, ze folder na mapy istnieje, bo inaczej bedzie kuku
-        std::string path = GetWorldPath();
-        if (boost::filesystem::exists(path))
-            boost::filesystem::create_directories(path); // FileUtils::CreateDir() ? zamiast uzalezniania sie od boosta? nie wiem...
-    }
-
     const std::string CMapManager::GetWorldPath()
     {
         return gGameOptions.GetUserDir() + "/world/" + mWorld + "/";
+    }
+    
+    const std::string CMapManager::GetWorldsDirPath()
+    {
+        return gGameOptions.GetUserDir() + "/world/";
     }
 }

@@ -41,6 +41,9 @@ public:
     void SaveGame(const std::string & name, bool thumbnail, bool savePlayerPos = true);
 	void LoadGame(const std::string & name);
 
+    bool StoreWorldStateScripts(const std::string& toDirectory);
+    bool RestoreWorldStateScripts(const std::string& fromDirectory);
+
     void SetGameThumbnail(const sf::Image & thumbnail);
     void PrepareToSaveGame(const std::string & filename, bool savePlayerPos = true);
     void SaveMapState(std::ostream & out);

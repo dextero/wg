@@ -40,7 +40,6 @@ CCommands::SCommandPair MapCommands [] =
     {L"delete-region"                   , "$MAN_DELETE_REGION"      , CommandDeleteRegion},
     {L"generate-random-map"             , "$MAN_GENERATE_RANDOM_MAP", CommandGenerateRandomMap},
     {L"register-monster-at-lair"        , "$MAN_REGISTER_MONSTER_AT_LAIR", CommandRegisterMonsterAtLair},
-    {L"set-world"                       , "$MAN_SET_WORLD"          , CommandSetWorld},
     {0,0,0}
 };
 
@@ -329,24 +328,4 @@ void CommandRegisterMonsterAtLair(size_t argc, const std::vector<std::wstring> &
     }
     if ( !lair || !monster ) return;
     lair->RegisterMonsterAsSpawned(monster);	
-}
-
-void CommandSetWorld(size_t argc, const std::vector<std::wstring> &argv)
-{
-    if (argc < 2)
-    {
-        gConsole.Printf(L"usage: %ls worldName [ overwrite ]", argv[0].c_str());
-        return;
-    }
-
-    gMapManager.SetWorld(StringUtils::ConvertToString(argv[1]));
-    
-    // overwrite
-    if (argc > 2)
-    {
-        try {
-            boost::filesystem::remove_all(gMapManager.GetWorldPath() + "*");
-        } catch (...) {
-        }
-    }
 }

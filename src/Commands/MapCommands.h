@@ -17,6 +17,5 @@ void CommandSaveMap(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSaveEmptyMap(size_t argc, const std::vector<std::wstring> &argv);
 void CommandDeleteRegion(size_t argc, const std::vector<std::wstring> &argv);
 void CommandGenerateRandomMap(size_t argc, const std::vector<std::wstring> &argv);
-void CommandSetWorld(size_t argc, const std::vector<std::wstring> &argv);
 
 #endif
