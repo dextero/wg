@@ -39,7 +39,7 @@ namespace Map{
         bool mHideLoadingScreen;
 
         int mLevel; // ktora to juz plansza?
-        std::string mWorld;
+        const std::string mWorld;
         CWorldGraph * mWorldGraph; 
 
         struct DefferedMapData {
@@ -77,9 +77,9 @@ namespace Map{
         bool SaveMap(const std::string &mapFile);
 		void SaveEmptyMap(const std::string& filename, const sf::Vector2i& size);
 
-        void SetWorld(const std::string& world);
         const std::string& GetWorld() { return mWorld; }
         const std::string GetWorldPath(); // zwraca sciezke do folderu, w ktorym sa mapy skladajace sie na 'swiat', z / na koncu
+        const std::string GetWorldsDirPath(); // zwraca scieke do folderu zawierajacego "swiaty", z / na koncu
 	};
 }
 #endif /*__CMAPMANAGER_H__*/

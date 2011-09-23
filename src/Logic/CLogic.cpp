@@ -262,8 +262,9 @@ void CLogic::StartNewGame( const std::wstring& startFile )
     for (unsigned int player = 0; player < gPlayerManager.GetPlayerCount(); ++player)
         for (unsigned int i = 0; i < ABI_SLOTS_COUNT; ++i)
             mGameScreens.SetSlotAbility(player, i, NULL);
-
-    gMapManager.SetWorld(gClock.GenerateTimestamp());
+    
+    if (boost::filesystem::exists(gMapManager.GetWorldPath()))
+        boost::filesystem::remove_all(gMapManager.GetWorldPath() + "*");
 
 	gCommands.ParseCommand( std::wstring(L"exec ") + startFile );
     if (ToxicUtils::isGameInCrimsonMode) {
@@ -425,7 +426,6 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
 	ss << "add-xp " << xp << " ignore-skill-points silent\n";
     ss << "set-difficulty-factor " << mDifficultyFactor << "\n";
     ss << "set-score " << mScore << "\n";
-    ss << "set-world " << gMapManager.GetWorld() << "\n";
 	ss << "preload-map " << savedMapFile << " entry false\n";
     ss << "set-map-level " << gMapManager.GetLevel() << "\n";
 
@@ -545,6 +545,13 @@ void CLogic::SaveGame(const std::string & name, bool thumbnail, bool savePlayerP
 	fputs(mSaveGameStr.c_str(), outfile); 
 	fclose(outfile);
 
+    // kopiowanie skryptow przywracajacych stan map
+    size_t lastSlash = name.find_last_of("/\\");
+    std::string scriptsFolder = (lastSlash != std::string::npos ? name.substr(lastSlash + 1) : name);
+
+    if (!StoreWorldStateScripts(gMapManager.GetWorldsDirPath() + scriptsFolder))
+        fprintf(stderr, "Error: couldn't store world state scripts\n");
+
     if (thumbnail)
     {
         std::string thumbnailName =
@@ -576,11 +583,77 @@ void CLogic::LoadGame(const std::string & name)
         gPlayerManager.GetPlayerByNumber(i)->GetStats()->DoHeal(gPlayerManager.GetPlayerByNumber(i)->GetStats()->GetBaseAspect(aMaxHP));
     }
 
+    // przywracanie skryptow ze stanami map
+    size_t lastSlash = name.find_last_of("/\\");
+    std::string scriptsFolder = (lastSlash != std::string::npos ? name.substr(lastSlash + 1) : name);
+
+    if (RestoreWorldStateScripts(gMapManager.GetWorldsDirPath() + scriptsFolder))
+        fprintf(stderr, "Error: couldn't restore world state scripts\n");
+
 	mState = L"playing";
 	mMenuScreens.HideAll();
     mMenuScreens.ClearPreviousMenusList();
 	mGameScreens.HideAll();
 	mGameScreens.Show( L"hud" );
+}
+
+bool CLogic::StoreWorldStateScripts(const std::string& toDirectory)
+{
+    if (boost::filesystem::exists(gMapManager.GetWorldPath()))
+    {
+        boost::filesystem::directory_iterator it, end;
+     
+        // wyczysc folder przed kopiowaniem
+        if (boost::filesystem::exists(toDirectory))
+        {
+            for (it = boost::filesystem::directory_iterator(toDirectory); it != end; ++it)
+                boost::filesystem::remove(it->path());
+        }
+        else
+        {
+            boost::filesystem::create_directory(toDirectory);
+        }
+
+        // skopiuj 'swiat'
+        for (it = boost::filesystem::directory_iterator(gMapManager.GetWorldPath()); it != end; ++it)
+        {
+            boost::filesystem::copy_file(it->path(), toDirectory + "/" + it->leaf());
+        }
+
+        return true;
+    }
+
+    // folder swiata nie istnieje, wtf?
+    return false;
+}
+
+bool CLogic::RestoreWorldStateScripts(const std::string& fromDirectory)
+{
+    const std::string outPath = gMapManager.GetWorldPath();
+
+    if (boost::filesystem::exists(outPath))
+    {
+        boost::filesystem::directory_iterator it, end;
+        
+        // usun wszystko z folderu current przed kopiowaniem
+        for (it = boost::filesystem::directory_iterator(gMapManager.GetWorldPath()); it != end; ++it)
+            boost::filesystem::remove(it->path());
+
+        // skopiuj skrypty .console
+        for (it = boost::filesystem::directory_iterator(fromDirectory); it != end; ++it)
+        {
+            const std::string filePath = outPath + "/" + it->leaf();
+            if (boost::filesystem::exists(filePath))
+                boost::filesystem::remove(filePath);
+
+            boost::filesystem::copy_file(it->path(), filePath);
+        }
+
+        return true;
+    }
+
+    // folder swiata nie istnieje, wtf?
+    return false;
 }
 
 bool CLogic::CanLoadGame(const std::string & name){
