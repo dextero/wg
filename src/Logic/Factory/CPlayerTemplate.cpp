@@ -9,7 +9,6 @@
 #include "../../Input/CPlayerController.h"
 #include "../Abilities/CTriggerEffects.h"
 #include "../Abilities/CAbilityTree.h"
-#include "../../Utils/ToxicUtils.h"
 #include "../Abilities/CAbility.h"
 
 using namespace rapidxml;

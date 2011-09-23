@@ -32,7 +32,6 @@
 #include "../GUI/Cutscene/CCutscenePlayer.h"
 #include "../GUI/Dialogs/CDialogDisplayer.h"
 #include "../GUI/Messages/CMessageSystem.h"
-#include "../Utils/ToxicUtils.h"
 #include "../Rendering/Effects/CGraphicalEffects.h"
 #include "../GUI/CRoot.h"
 #include "../GUI/CHud.h"
@@ -270,9 +269,6 @@ void CLogic::StartNewGame( const std::wstring& startFile )
     boost::filesystem::create_directories(worldPath);
 
 	gCommands.ParseCommand( std::wstring(L"exec ") + startFile );
-    if (ToxicUtils::isGameInCrimsonMode) {
-        gCommands.ParseCommand(L"exec crimson-mode");
-    }
 	mState = L"playing";
 	mMenuScreens.HideAll();
     mMenuScreens.ClearPreviousMenusList();
