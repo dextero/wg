@@ -24,7 +24,6 @@
 #include "Stats/CRPGCalc.h"
 #include "../GUI/Localization/CLocalizator.h"
 #include "../Audio/CAudioManager.h"
-#include "../Utils/ToxicUtils.h"
 #include "../CGameOptions.h"
 #include "../Commands/CCommands.h"
 #include "Items/CItem.h"
@@ -132,15 +131,14 @@ void CPlayer::BindAbilityTrees(std::vector<CAbilityTree*> *mAbiTrees, std::vecto
     assert(this->mAbiCodes != NULL);
     assert(mAbiCodes->size() == mAbilityTrees->size());
     // sprawdzamy, czy cos dostajemy "od reki"
-    if (!ToxicUtils::isGameInCrimsonMode) {
-        for (unsigned int i = 0; i < mAbilityTrees->size(); i++){
-            CAbilityTree *at = mAbilityTrees->at(i);
-            for (unsigned int j = 0; j < at->GetAbilityNodes().size(); j++){
-                const SAbilityNode &an = at->GetAbilityNodes()[j];
-                if (an.startLevel > 0)
-                    for (int level = 0; level < an.startLevel; level++){
-                        AdvanceAbilityLevel(i,j);
-                    }
+    for (unsigned int i = 0; i < mAbilityTrees->size(); i++) {
+        CAbilityTree *at = mAbilityTrees->at(i);
+        for (unsigned int j = 0; j < at->GetAbilityNodes().size(); j++) {
+            const SAbilityNode &an = at->GetAbilityNodes()[j];
+            if (an.startLevel > 0) {
+                for (int level = 0; level < an.startLevel; level++) {
+                    AdvanceAbilityLevel(i,j);
+                }
             }
         }
     }

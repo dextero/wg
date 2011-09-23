@@ -2,7 +2,6 @@
 #include "CGameOptions.h"
 #include "Logic/CLogic.h"
 #include "Tests/CTests.h"
-#include "Utils/ToxicUtils.h"
 #include "Logic/Effects/EEffectType.h"
 #include "Utils/CLocaleIntegrityChecker.h"
 #include "ResourceManager/CResourceManager.h"
@@ -47,9 +46,6 @@ int main( int argc, char* argv[] ){
 			CTests::RunAll();
 			getchar();
 			return 0;
-		} else if (!std::string(argv[i]).compare("-crimson")) {
-            ToxicUtils::isGameInCrimsonMode = true;
-            fprintf(stderr, "running in crimson mode...\n");
         } else if (strcmp(argv[i],"--editor")==0) {
             fprintf(stderr, "running in editor mode...\n");
             gGameOptions;   // MUSI byc zaladowane przed gLogic
