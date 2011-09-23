@@ -263,8 +263,11 @@ void CLogic::StartNewGame( const std::wstring& startFile )
         for (unsigned int i = 0; i < ABI_SLOTS_COUNT; ++i)
             mGameScreens.SetSlotAbility(player, i, NULL);
     
-    if (boost::filesystem::exists(gMapManager.GetWorldPath()))
-        boost::filesystem::remove_all(gMapManager.GetWorldPath());
+    const std::string & worldPath = gMapManager.GetWorldPath();
+    if (boost::filesystem::exists(worldPath)) {
+        boost::filesystem::remove_all(worldPath);
+    }
+    boost::filesystem::create_directories(worldPath);
 
 	gCommands.ParseCommand( std::wstring(L"exec ") + startFile );
     if (ToxicUtils::isGameInCrimsonMode) {
