@@ -15,6 +15,7 @@ const std::string & FileUtils::GetUserDir()
         wordexp_t exp_result;
         wordexp("~/.WarlocksGauntlet", &exp_result, 0);
         gUserDir = exp_result.we_wordv[0];
+        CreateDir(gUserDir.c_str());
         wordfree(&exp_result);
 
         //inny sposob: char * home = getenv("HOME");
@@ -29,7 +30,7 @@ const std::string & FileUtils::GetUserDir()
 void FileUtils::CreateDir(const char * filename)
 {
     fprintf(stderr, "Creating directory `%s'...\n", filename);
-    mkdir(filename, 0700);
+    mkdir(filename, 0744); // dex: wow, pierwszy raz widze zapis osemkowy w kodzie :O
 }
 
 bool AskForFullscreen(const wchar_t * title, const wchar_t * message, int maxw, int maxh)
