@@ -212,6 +212,10 @@ void CEditor::KeyPressed( const sf::Event::KeyEvent &e ){
 		case sf::Key::Down:		mScaleSpeed =-0.5f; break;
 		case sf::Key::Left:		mRotationSpeed = 90.0f; break;
 		case sf::Key::Right:	mRotationSpeed =-90.0f; break;
+        case sf::Key::W:        { sf::View & view = gGame.GetRenderWindow()->GetDefaultView(); view.SetCenter(sf::Vector2f(0, -Map::TILE_SIZE) + view.GetCenter()); break; }
+        case sf::Key::S:        { sf::View & view = gGame.GetRenderWindow()->GetDefaultView(); view.SetCenter(sf::Vector2f(0, +Map::TILE_SIZE) + view.GetCenter()); break; }
+        case sf::Key::A:        { sf::View & view = gGame.GetRenderWindow()->GetDefaultView(); view.SetCenter(sf::Vector2f(-Map::TILE_SIZE, 0) + view.GetCenter()); break; }
+        case sf::Key::D:        { sf::View & view = gGame.GetRenderWindow()->GetDefaultView(); view.SetCenter(sf::Vector2f(+Map::TILE_SIZE, 0) + view.GetCenter()); break; }
 		case sf::Key::Z:		mZIndexFlag = !mZIndexFlag; break;
         case sf::Key::I:       
             mShowInvisibleWalls = !mShowInvisibleWalls;
