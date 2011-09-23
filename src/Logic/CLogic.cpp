@@ -264,7 +264,7 @@ void CLogic::StartNewGame( const std::wstring& startFile )
             mGameScreens.SetSlotAbility(player, i, NULL);
     
     if (boost::filesystem::exists(gMapManager.GetWorldPath()))
-        boost::filesystem::remove_all(gMapManager.GetWorldPath() + "*");
+        boost::filesystem::remove_all(gMapManager.GetWorldPath());
 
 	gCommands.ParseCommand( std::wstring(L"exec ") + startFile );
     if (ToxicUtils::isGameInCrimsonMode) {
