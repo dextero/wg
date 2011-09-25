@@ -273,9 +273,8 @@ void CDrawableManager::DrawWithNormalMapping(sf::RenderWindow* wnd, CDisplayable
 		gShaderManager.setUniform(id, "lradius[0]", lights[0]->mRadius);
 		gShaderManager.setUniform(id, "lradius[1]", lights[1]->mRadius);
 		gShaderManager.setUniform(id, "lradius[2]", lights[2]->mRadius);
-		gShaderManager.setUniform(id, "ambient", mAmbient);
+		gShaderManager.setUniform(id, "ambient", mNormalMappingAmbient);
 		gShaderManager.setUniform(id, "nmcontrast", mNormalMappingContrast);
-		gShaderManager.setUniform(id, "invModelMatrix", displayable->GetSFSprite()->GetInverseMatrix());
 		gShaderManager.bindTexture(id, "normalmap", normalmap);
 	}
 	displayable->Draw(wnd);

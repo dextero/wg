@@ -15,6 +15,8 @@ private:
 public:
 	inline sf::Image* GetNormalMap()		{ return normalMap; }
 	inline void SetNormalMap(sf::Image* nm)	{ normalMap = nm; }
+	inline const sf::Matrix3& GetMatrix() const { 
+		return sf::Sprite::GetMatrix(); }
 	inline const sf::Matrix3& GetInverseMatrix() const { 
 		return sf::Sprite::GetInverseMatrix(); }
 	virtual void Render(sf::RenderTarget &renderTarget) const;
