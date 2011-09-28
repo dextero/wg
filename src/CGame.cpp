@@ -372,7 +372,6 @@ void CGame::Init(sf::RenderWindow* wnd)
         gLogic;
         gCamera;
         gAudioManager;
-        gDropManager;
 	    gQuestManager;
 
         gRand.Seed((unsigned) gClock.GetTime());
