@@ -26,7 +26,11 @@ public:
     ~CShaderManager();
 
 	inline bool shadersAvailable() {
+#ifndef __EDITOR__
 		return GLEW_VERSION_2_0 != NULL;
+#else
+        return false;
+#endif
 	}
 	
 	// returns programId (to allow uniform binding)
