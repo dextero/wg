@@ -12,10 +12,15 @@
 #include "CCamera.h"
 #include "CShaderManager.h"
 #include "../Utils/Maths.h"
+#include "../ResourceManager/CResourceManager.h"
+#include "../ResourceManager/CImage.h"
 
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/System/Vector3.hpp>
+#include <SFML/Graphics/RenderWindow.hpp>
+#include <SFML/Graphics/View.hpp>
 
+// poczatkowy rozmiar bufora na geometrie swiatla (w swiatlojednostkach)
 #define INIT_LIGHTS_GEOMETRY_SIZE 8
 
 template<> CDrawableManager* CSingleton<CDrawableManager>::msSingleton = 0;
@@ -26,6 +31,7 @@ CDrawableManager::CDrawableManager() :
 	mLightsGeometrySize(INIT_LIGHTS_GEOMETRY_SIZE)
 {
     fprintf(stderr,"CDrawableManager::CDrawableManager()\n");
+	mLightTexture = gResourceManager.GetImage("data/effects/light.png");
 	mLightsGeometry = new vertexDesc[mLightsGeometrySize * 6];
 	FillLightsUV();
 
@@ -151,6 +157,25 @@ void CDrawableManager::DrawFrame(sf::RenderWindow* wnd)
 	{
 		// damork, TODO: kod renderujacy do tekstury quady ze swiatlami
 	}
+
+	/* TEMP - do testow 
+	DrawLightsGeometry();
+	for ( DrawableLists::reverse_iterator it1 = mLayers.rbegin() ; it1 != mLayers.rend() ; it1++ )
+    {
+        const DrawableList& list = ( *it1 );
+        for ( DrawableList::const_iterator it2 = list.begin() ; it2 != list.end() ; it2++ )
+        {
+            IDrawable* drawable = ( *it2 );
+			if (drawable->IsVisible())
+			{
+				int z = drawable->GetZIndex();
+				if (z >= Z_TILE) continue;
+				gShaderManager.activateDefault();
+				drawable->Draw( wnd );
+			}
+        } 
+    }
+	return;*/
 
     for ( DrawableLists::reverse_iterator it1 = mLayers.rbegin() ; it1 != mLayers.rend() ; it1++ )
     {
@@ -310,6 +335,7 @@ void CDrawableManager::DrawWithPerPixelLighting(sf::RenderWindow *wnd, CDisplaya
 
 void CDrawableManager::FillLightsUV()
 {
+	memset(mLightsGeometry, 0, sizeof(vertexDesc) * mLightsGeometrySize * 6);
 	for (unsigned i = 0; i < mLightsGeometrySize; i++)
 	{
 		mLightsGeometry[i * 6 + 0].u = 0.0f;
@@ -329,10 +355,74 @@ void CDrawableManager::FillLightsUV()
 
 void CDrawableManager::DrawLightsGeometry()
 {
-	sf::Vector2f cameraPos = gCamera.GetViewTopLeft();
+	const sf::FloatRect& cameraRect = gGame.GetRenderWindow()->GetDefaultView().GetRect();
+	unsigned quadsToRender = 0;
 
 	for (unsigned i = 0; i < mLights.size(); i++)
 	{
-		
+		SLight* l = mLights[i];
+		SLight l2 = *(mLights[i]);
+		float radius = sqrtf( std::max( 0.0f, l->mRadius * l->mRadius - l->mPosition.z * l->mPosition.z ) );
+
+		if (l->mPosition.x + radius > cameraRect.Left &&
+			l->mPosition.y + radius > cameraRect.Top &&
+			l->mPosition.x - radius < cameraRect.Right &&
+			l->mPosition.y - radius < cameraRect.Bottom)
+		{
+			mLightsGeometry[quadsToRender * 6 + 0].x = l->mPosition.x - radius;
+			mLightsGeometry[quadsToRender * 6 + 0].y = l->mPosition.y - radius;
+			mLightsGeometry[quadsToRender * 6 + 1].x = l->mPosition.x + radius;
+			mLightsGeometry[quadsToRender * 6 + 1].y = l->mPosition.y - radius;
+			mLightsGeometry[quadsToRender * 6 + 2].x = l->mPosition.x - radius;
+			mLightsGeometry[quadsToRender * 6 + 2].y = l->mPosition.y + radius;
+			mLightsGeometry[quadsToRender * 6 + 3].x = l->mPosition.x - radius;
+			mLightsGeometry[quadsToRender * 6 + 3].y = l->mPosition.y + radius;
+			mLightsGeometry[quadsToRender * 6 + 4].x = l->mPosition.x + radius;
+			mLightsGeometry[quadsToRender * 6 + 4].y = l->mPosition.y - radius;
+			mLightsGeometry[quadsToRender * 6 + 5].x = l->mPosition.x + radius;
+			mLightsGeometry[quadsToRender * 6 + 5].y = l->mPosition.y + radius;
+
+			for (unsigned j = 0; j < 6; j++)
+			{
+				mLightsGeometry[quadsToRender * 6 + j].r = l->mColor.r;
+				mLightsGeometry[quadsToRender * 6 + j].g = l->mColor.g;
+				mLightsGeometry[quadsToRender * 6 + j].b = l->mColor.b;
+				mLightsGeometry[quadsToRender * 6 + j].a = l->mColor.a;
+			}
+
+			++ quadsToRender;
+		}
 	}
+
+	glPushAttrib(GL_VIEWPORT_BIT);
+	glMatrixMode(GL_MODELVIEW);
+	glPushMatrix();
+	glLoadIdentity();
+	glTranslatef(-cameraRect.Left, -cameraRect.Top, 0.0f);
+	glViewport(0, 0, 512, 512);
+	glClear(GL_COLOR_BUFFER_BIT);
+	glBlendFunc(GL_ONE, GL_ONE);
+
+	if (quadsToRender > 0)
+	{
+		if (mLightTexture != NULL)
+			mLightTexture->Bind();
+
+		glEnableClientState( GL_VERTEX_ARRAY );
+		glEnableClientState( GL_TEXTURE_COORD_ARRAY );
+		glEnableClientState( GL_COLOR_ARRAY );
+
+		glVertexPointer( 2, GL_FLOAT, sizeof(vertexDesc), &(mLightsGeometry[0].x) );
+		glTexCoordPointer( 2, GL_FLOAT, sizeof(vertexDesc), &(mLightsGeometry[0].u) );
+		glColorPointer( 4, GL_UNSIGNED_BYTE, sizeof(vertexDesc), &(mLightsGeometry[0].r) );
+
+		glDrawArrays( GL_TRIANGLES, 0, mLightsGeometrySize * 6 );
+
+		glDisableClientState( GL_VERTEX_ARRAY );
+		glDisableClientState( GL_TEXTURE_COORD_ARRAY );
+		glDisableClientState( GL_COLOR_ARRAY );
+	}
+
+	glPopMatrix();
+	glPopAttrib();
 }
