@@ -75,7 +75,7 @@ private:
 	{
 		float u, v;
 		unsigned char r, g, b, a;
-		float x, y, z;
+		float x, y;
 	};
 
 	/* Znajdz [count] najmocniej swiecacych w punkcie [pos] swiatel
@@ -93,6 +93,7 @@ private:
 	std::vector<SLight*> mLights;
 	vertexDesc* mLightsGeometry;
 	unsigned mLightsGeometrySize; // zalozmy ze chodzi o ilosc swiatel - nie wierzcholkow
+	sf::Image* mLightTexture;
 	float mNormalMappingContrast;
 	bool mLightingEnabled;
 };
