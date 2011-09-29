@@ -104,6 +104,9 @@ private:
 	void LoadPhysicals();
 	bool MouseInWorkspace();
     sf::Vector2f GetMousePosInWorld();
+    
+    bool mMapObjectsVisible;
+    void ToggleMapObjectsVisibility();
 
 #ifdef __EDITOR__
     friend class CEditorWnd;

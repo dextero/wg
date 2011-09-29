@@ -48,7 +48,8 @@ mIsModifying(false),
 mUseLockedMousePos(false),
 mLockedMousePos(0.f, 0.f),
 mWorkspace(0.0f,0.0f,1.0f,1.0f),
-mEditorScreens(NULL)
+mEditorScreens(NULL),
+mMapObjectsVisible(true)
 {
     gGame.AddFrameListener( this );
 	gGame.AddKeyListener( this );
@@ -223,6 +224,7 @@ void CEditor::KeyPressed( const sf::Event::KeyEvent &e ){
                 gMapManager.GetCurrent()->ShowInvisibleWalls(mShowInvisibleWalls);
             break;
         case sf::Key::M:        SetMode(MODIFYING_MODE); break;
+        case sf::Key::H:        ToggleMapObjectsVisibility(); break;
 		default: break;
 	}
 }
@@ -454,6 +456,9 @@ void CEditor::SetSelectedToErase( CSceneNode* sn ){
 
 	if (mSelectedToErase != sn)
 	{
+        if (!mMapObjectsVisible)
+            ToggleMapObjectsVisibility();
+
         CDynamicRegion* r = NULL;
         if (mSelectedToErase)
         {
@@ -502,4 +507,36 @@ sf::Vector2f CEditor::GetMousePosInWorld(){
     mousePos.x /= Map::TILE_SIZE;
     mousePos.y /= Map::TILE_SIZE;
     return mousePos;
+}
+
+void CEditor::ToggleMapObjectsVisibility()
+{
+    mMapObjectsVisible = !mMapObjectsVisible;
+
+    for (size_t i = 0; i < gScene.GetQuadTreeNodes().size(); ++i)
+    {
+        CQuadTreeSceneNode& node = gScene.GetQuadTreeNodes()[i];
+        const float invisibleAlpha = 0.25f;
+
+        // physicale
+        for (std::vector<CSceneNode*>::iterator it = node.GetMovingPhysicals()->begin(); it != node.GetMovingPhysicals()->end(); ++it)
+        {
+            if (mMapObjectsVisible) (*it)->SetPreviousColor();
+            else (*it)->SetColor(1.f, 1.f, 1.f, invisibleAlpha);
+        }
+
+        for (std::vector<CSceneNode*>::iterator it = node.GetNonMovingPhysicals()->begin(); it != node.GetNonMovingPhysicals()->end(); ++it)
+        {
+            if (mMapObjectsVisible) (*it)->SetPreviousColor();
+            else (*it)->SetColor(1.f, 1.f, 1.f, invisibleAlpha);
+        }
+
+        // doodahy
+        for (std::vector<CSceneNode*>::iterator it = node.GetDisplayables()->begin(); it != node.GetDisplayables()->end(); ++it)
+        {
+            if (mMapObjectsVisible) (*it)->SetPreviousColor();
+            else (*it)->SetColor(1.f, 1.f, 1.f, invisibleAlpha);
+        }
+
+    }
 }
