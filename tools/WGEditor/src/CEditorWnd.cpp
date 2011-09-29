@@ -897,6 +897,9 @@ void CEditorWnd::OnSfmlWndKeyDown( wxKeyEvent& event )
         mCurrActionType = Actions::modifySomething;
         mStatusBar->SetStatusText(L"Mode: modifying objects");
         break;
+    case 'H': // ukrywanie physicali i doodahow
+        mStatusBar->SetStatusText(std::wstring(L"Map objects: ") + (!gEditor.mMapObjectsVisible ? L"visible" : L"invisible"));
+        break;
     case WXK_UP:
     case WXK_DOWN:
         mStatusBar->SetStatusText(L"Scale: " + StringUtils::ToWString(gEditor.mScale));
@@ -913,7 +916,8 @@ void CEditorWnd::OnSfmlWndKeyDown( wxKeyEvent& event )
 
 void CEditorWnd::OnSfmlWndEnterWindow( wxMouseEvent& event )
 {
-    mSfml->SetFocus();
+    if (IsActive())
+        mSfml->SetFocus();
 }
 
 
@@ -926,7 +930,8 @@ void CEditorWnd::OnSfmlWndLeaveWindow( wxMouseEvent& event )
     // skoro juz zgubilismy leftUp, to przeladujmy losowy pedzel
     PrepareRandomBrush();
     // i setfocus na widocznym drzewku, zeby mozna bylo scrollowac bez klikania
-    FocusCurrentTree();
+    if (IsActive())
+        FocusCurrentTree();
 }
 
 
