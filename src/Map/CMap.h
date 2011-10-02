@@ -15,6 +15,7 @@ class CPhysicalTemplate;
 #   else
         class CTileResource;
         class CEditorWnd;
+        class CXml;
 #   endif
 #endif
 
@@ -123,6 +124,22 @@ namespace Map{
         int mMaxLivingMonsters;
 
 #ifdef __EDITOR__
+        // pomocnicza tablica, zawerajaca 'bazowe' kafle
+        std::vector<std::string> mBaseTileTypes;
+        std::vector<std::vector<unsigned int> > mBaseTiles;
+        std::vector<std::vector<unsigned int> > mBaseTileMasks;
+        std::string GetOrCreateGeneratedTileCode(const std::string& topLeft, const std::string& topRight, const std::string& bottomLeft, const std::string& bottomRight, unsigned int mask);
+        unsigned int FindBaseTileId(const std::string& name);
+        void RemoveTileTypeDuplicates();
+        // podczas edycji kafli w edytorze kody kafli moga nie byc po kolei
+        // dobrze byloby to poprawiac, zeby po n edycji mapy nie okazalo sie,
+        // ze kody sa kilkunastoznakowe
+        void OptimizeTileCodes();
+
+    public:
+        void SetTileCorner(float mouseX, float mouseY, const std::string& file);
+        void InitBaseTilesArray(CXml& xml);
+
         friend class ::CEditorWnd;
         friend class ::CTileResource;
 #endif
