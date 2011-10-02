@@ -469,7 +469,7 @@ void CEditorWnd::InitTreeTiles(std::vector<std::wstring>& tiles, int defaultImg)
         //wxImage img(PATH_TO_GAMEW + L"data/" + *it);
         mTreeTiles->SetItemImage(mTreeTiles->AppendItem(parentNode, rest), mTreeTiles->GetImageList()->Add(img.Scale(TREE_ICON_SIZE)));
 
-        fprintf(stderr, "Loading tiles.. (%u/%u)", (unsigned int)(it - tiles.begin() + 1), tiles.size());
+        fprintf(stderr, "Loading tiles.. (%u/%u)\r", (unsigned int)(it - tiles.begin() + 1), tiles.size());
     }
     mTreeTiles->Expand(root);
 }
