@@ -100,6 +100,7 @@ std::string ExtractParam( const std::string & input, const std::string & tag, in
 std::vector< std::string > Tokenize( const std::string & input, char separator = ',' );
 
 std::string GenerateCode(std::vector<char> &chars,int maxLength,int hash);
+std::string GetNextCode_AZ(const std::string& lastCode);
 
 void Exclude( const std::string& s, char ch, std::vector<std::string>& out );
 

@@ -12,6 +12,7 @@
 #ifdef __EDITOR__
 #   include "../Map/CTile.h"
 #   include "src/CActionsList.h"
+#   include "CEditor.h"
 #endif
 
 CTileResource::CTileResource(const std::string &path):
@@ -31,11 +32,11 @@ void CTileResource::PrepareDisplayable(CDisplayable *d){
 }
 
 void CTileResource::UpdateDisplayable(CDisplayable *d, sf::Vector2f pos, float rotation, float scale, bool z){
-    float x = 0.5f + floorf(pos.x);
-    float y = 0.5f + floorf(pos.y);
+    float x = floorf(pos.x + 0.5f);
+    float y = floorf(pos.y + 0.5f);
     d->SetPosition(x,y);
 	d->SetRotation(0.0f);
-	d->SetScale(1.0f,1.0f);
+	d->SetScale(0.3f, 0.3f);
 
 	if (d->GetZIndex() != Z_TILE)
 	{
@@ -47,7 +48,7 @@ void CTileResource::UpdateDisplayable(CDisplayable *d, sf::Vector2f pos, float r
 void CTileResource::Place(sf::Vector2f pos, float rotation, float scale, bool z){
 	if (Map::CMap *map = gMapManager.GetCurrent())
 	{
-		std::string code = map->GetOrCreateTileCode(mPath);
+		/*std::string code = map->GetOrCreateTileCode(mPath);
 
 #ifdef __EDITOR__
         int index = (int)pos.y * map->mMapHeader->Width + (int)pos.x;
@@ -56,6 +57,7 @@ void CTileResource::Place(sf::Vector2f pos, float rotation, float scale, bool z)
             gActionsList.Push(SAction::ChangeTile(pos.x, pos.y, map->mFields->at(index)->GetCode(), code));
 #endif
 
-		map->SetTile((int)pos.x, (int)pos.y, code);
+		map->SetTile((int)pos.x, (int)pos.y, code);*/
+        map->SetTileCorner(pos.x, pos.y, mPath);
 	}
 }
