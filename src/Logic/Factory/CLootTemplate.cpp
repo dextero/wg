@@ -68,9 +68,7 @@ CTemplateParam * CLootTemplate::ReadParam(CXml & xml, rapidxml::xml_node<> * nod
         orig->stringValues["ability"] = ability;
     int level = xml.GetInt(node, "level");
     if (level != 0) {
-        int * levelPtr = new int;
-        *levelPtr = level;
-        orig->values["level"] = levelPtr;
+        orig->values["level"] = (void*)level;
     }
 
     return CPhysicalTemplate::ReadParam(xml,node,orig);
@@ -82,11 +80,21 @@ void CLootTemplate::Parametrise(CPhysical * phys, CTemplateParam * param) {
         loot->SetAbility(param->stringValues["ability"]);
     }
     if (param->values.count("level") > 0) {
-        int * levelPtr = (int*) param->values["level"];
-        loot->SetLevel(*levelPtr);
-        delete levelPtr;
+        int levelPtr = (int) param->values["level"];
+        loot->SetLevel(levelPtr);
     }
     CPhysicalTemplate::Parametrise(loot, param);
+}
+
+void CLootTemplate::SerializeParam(std::ostream &out, CTemplateParam *param, int indent)
+{
+    if (param != NULL){
+        if (param->values.count("level") > 0){
+            for (int i = 0; i < indent; ++i) out << "\t";
+            out << "<level>" << (int)param->values["level"] << "</level>\n";
+        }
+    }
+    CPhysicalTemplate::SerializeParam(out, param, indent);
 }
 
 bool operator<(const SLootTemplate& a, const SLootTemplate& b) { return a.lootLvl < b.lootLvl; }    

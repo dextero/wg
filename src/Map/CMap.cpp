@@ -25,6 +25,10 @@
 #include "../Logic/MapObjects/CRegion.h"
 #include "CRandomMapGenerator.h"
 
+#ifdef __EDITOR__
+#   include "../Editor/CEditor.h"
+#endif // __EDITOR__
+
 #include <SFML/Graphics/Sprite.hpp>
 #include <SFML/Graphics/Image.hpp>
 
@@ -38,7 +42,13 @@ namespace Map{
         std::string img;
         int number; // indeks w atlasie lub -1 -> caly obrazek
 
-        CMapTileType():  number(-1) {}
+        bool isGenerated;
+        struct {
+            unsigned int tl, tr, bl, br; // indeks kafla 'bazowego' w mBaseTileTypes
+            unsigned int mask;
+        } generated;
+
+        CMapTileType():  number(-1), isGenerated(false) {}
     };
 
 	class CMapObjectType{
@@ -308,6 +318,15 @@ namespace Map{
                 std::string bottomLeft = xml.GetString(node, "bottomleft");
                 std::string bottomRight = xml.GetString(node, "bottomright");
                 unsigned int mask = xml.GetInt(node, "mask");
+                
+                // dane do serializacji
+                mtt->isGenerated = true;
+                mtt->generated.tl = FindBaseTileId(topLeft);
+                mtt->generated.tr = FindBaseTileId(topRight);
+                mtt->generated.bl = FindBaseTileId(bottomLeft);
+                mtt->generated.br = FindBaseTileId(bottomRight);
+                mtt->generated.mask = mask;
+
                 mtt->img = gRandomMapGenerator.GetIntermediateTile(topLeft, topRight, bottomLeft, bottomRight, mask);
             }
 			mtt->code = xml.GetString(node,"code");
@@ -340,6 +359,10 @@ namespace Map{
 
 			mFields->push_back(tile);
 		}
+
+#ifdef __EDITOR__
+        InitBaseTilesArray(xml);
+#endif //__EDITOR__
 
         // typy physicali
 		CMapObjectType* mpt;
@@ -583,8 +606,20 @@ namespace Map{
         if (mMaxLivingMonsters != MAX_MONSTERS_DEFAULT)
             out << "<max-living-monsters>" << mMaxLivingMonsters << "</max-living-monsters>\n";
         // typy kafli
+
+#ifdef __EDITOR__
+        // edytor tworzy nowe kody jak szalony, dobrze byloby je skrocic przed zapisem
+        OptimizeTileCodes();
+#endif // __EDITOR__
+
         for (unsigned int i = 0; i < mTileTypes.size(); i++){
-            out << "\t<tiletype code=\"" << mTileTypes[i]->code << "\" image=\"" << mTileTypes[i]->img << "\"/>\n";
+            if (mTileTypes[i]->isGenerated) {
+                out << "\t<tiletype code=\"" << mTileTypes[i]->code << "\" topleft=\"" << mBaseTileTypes[mTileTypes[i]->generated.tl] << "\" topright=\"" << mBaseTileTypes[mTileTypes[i]->generated.tr]
+                    << "\" bottomleft=\"" << mBaseTileTypes[mTileTypes[i]->generated.bl] << "\" bottomright=\"" << mBaseTileTypes[mTileTypes[i]->generated.br] << "\" mask=\"" << mTileTypes[i]->generated.mask << "\" />\n";
+            }
+            else {
+                out << "\t<tiletype code=\"" << mTileTypes[i]->code << "\" image=\"" << mTileTypes[i]->img << "\"/>\n";
+            }
         }
         // kafle
         out << "\t<tiles>";
@@ -602,8 +637,16 @@ namespace Map{
         }
         // obiekty
         for (unsigned int i = 0; i < mMapObjectDescriptors.size(); i++){
-            out << "\t<obj code=\"" << mMapObjectDescriptors[i]->code << "\" x=\"" << mMapObjectDescriptors[i]->x
-                << "\" y=\"" << mMapObjectDescriptors[i]->y << "\"";
+            if (mMapObjectDescriptors[i]->code.empty())
+            {
+                out << "\t<obj templateFile=\"" << mMapObjectDescriptors[i]->templ->GetFilename()
+                    << "\" x=\"" << mMapObjectDescriptors[i]->x << "\" y=\"" << mMapObjectDescriptors[i]->y << "\"";
+            }
+            else
+            {
+                out << "\t<obj code=\"" << mMapObjectDescriptors[i]->code << "\" x=\"" << mMapObjectDescriptors[i]->x
+                    << "\" y=\"" << mMapObjectDescriptors[i]->y << "\"";
+            }
             if (mMapObjectDescriptors[i]->rot != 0.0f)
                 out << " rot=\"" << mMapObjectDescriptors[i]->rot << "\"";
             if (mMapObjectDescriptors[i]->param != NULL){
@@ -657,10 +700,22 @@ namespace Map{
 
         // nie znaleziono kodu, wiec probujemy zsyntetyzowac nowy
 		unsigned maxLength = 2;
-		std::vector<char> chars;
-		for (char ch = 'a'; ch <= 'z'; ch++)
-			chars.push_back(ch);
+		//std::vector<char> chars;
+		//for (char ch = 'a'; ch <= 'z'; ch++)
+		//	chars.push_back(ch);
 
+        // dex: zmienie sposob generowania kodow, chyba troche szybszy
+        std::string lastCode = StringUtils::GetNextCode_AZ(mTileTypes[mTileTypes.size() - 1]->code);
+        if (lastCode.size() > 10)
+            OptimizeTileCodes();
+
+        CMapTileType *mtt = new CMapTileType();
+        mtt->img = path;
+        mtt->code = lastCode;
+        mTileTypes.push_back(mtt);
+        return mtt->code;
+        
+        /*
         for (int i = 0; i < 500; i++){
             std::string code = StringUtils::GenerateCode(chars,maxLength,i);
             bool found = false;
@@ -676,6 +731,7 @@ namespace Map{
                 return mtt->code;
             }
         }
+        */
 
         static const std::string standardCode = "error";
         return standardCode;
@@ -690,7 +746,22 @@ namespace Map{
         tile->InitializeTile(mTileTypes[imageIndex]->img, mTileTypes[imageIndex]->number);
         tile->SetPosition( ( index % mMapHeader->Width ) + 0.5f, (index / mMapHeader->Width) + 0.5f );
 
-		if (mFields->at(index)) delete mFields->at(index);
+		if (mFields->at(index)) 
+        {
+#ifdef __EDITOR__
+            // edytor: w trakcie stawiania kafli tileTypes moga sie tworzyc
+            // co chwile i nie ma po co trzymac niepotrzebnych
+            bool eraseCode = true;
+            for (size_t i = 0; i < mTileTypes.size(); ++i)
+                if (i != index && mTileTypes[i]->code == code)
+                    eraseCode = false;
+
+            if (eraseCode)
+                mTileTypes.erase(mTileTypes.begin() + GetTileTypeIndex(code));
+#endif // __EDITOR__
+
+            delete mFields->at(index);
+        }
 		mFields->at(index) = tile;
     }
 
@@ -796,4 +867,205 @@ namespace Map{
 
         return NULL;
     }
+
+
+#ifdef __EDITOR__
+
+    std::string CMap::GetOrCreateGeneratedTileCode(const std::string& topLeft, const std::string& topRight, const std::string& bottomLeft, const std::string& bottomRight, unsigned int mask)
+    {
+        std::string path = gRandomMapGenerator.GetIntermediateTile(topLeft, topRight, bottomLeft, bottomRight, mask);
+
+        // szukamy istniejacego kodu
+        for (unsigned int i = 0; i < mTileTypes.size(); i++)
+			if ( mTileTypes[i]->img == path)
+                return mTileTypes[i]->code;
+
+        // nie znaleziono kodu, wiec probujemy zsyntetyzowac nowy
+        std::string lastCode = StringUtils::GetNextCode_AZ(mTileTypes[mTileTypes.size() - 1]->code);
+        if (lastCode.size() > 10)
+            OptimizeTileCodes();
+
+        CMapTileType *mtt = new CMapTileType();
+        mtt->img = path;
+        mtt->code = lastCode;
+        mtt->isGenerated = true;
+        mtt->generated.tl = FindBaseTileId(topLeft);
+        mtt->generated.tr = FindBaseTileId(topRight);
+        mtt->generated.bl = FindBaseTileId(bottomLeft);
+        mtt->generated.br = FindBaseTileId(bottomRight);
+        mTileTypes.push_back(mtt);
+        return mtt->code;
+    }
+
+    void CMap::RemoveTileTypeDuplicates()
+    {
+        fprintf(stderr, "Removing tile type duplicates... ");
+        int found = 0;
+
+        for (std::vector<CMapTileType*>::iterator i = mTileTypes.begin(); i != mTileTypes.end(); ++i)
+        {
+            for (std::vector<CMapTileType*>::iterator j = (i + 1); j != mTileTypes.end();)
+            {
+                if ((*i)->img == (*j)->img)
+                {
+                    fprintf(stderr, ">> duplicate: %s (%s)\n", (*j)->code.c_str(), (*j)->img.c_str());
+                    std::string oldCode = (*j)->code;
+                    j = mTileTypes.erase(j);
+
+                    for (std::vector<CTile*>::iterator t = mFields->begin(); t != mFields->end(); ++t)
+                        if ((*t)->GetCode() == oldCode)
+                        {
+                            // chrzanic const, hgw
+                            fprintf(stderr, "updating code %s to %s\n", (*t)->GetCode().c_str(), (*i)->code.c_str());
+                            const_cast<std::string&>((*t)->GetCode()) = (*i)->code;
+                        }
+
+                    ++found;
+                }
+                else
+                    ++j;
+            }
+        }
+
+        fprintf(stderr, "%d found\n", found);
+    }
+
+    void CMap::OptimizeTileCodes()
+    {
+        if (mTileTypes.size() == 0)
+            return;
+
+        //RemoveTileTypeDuplicates();
+
+        fprintf(stderr, "Optimizing tile codes...\n");
+
+        std::vector<CMapTileType*> newTileTypes = mTileTypes;
+        newTileTypes[0]->code = "a";
+
+        for (size_t i = 1; i < newTileTypes.size(); ++i)
+            newTileTypes[i]->code = StringUtils::GetNextCode_AZ(newTileTypes[i - 1]->code);
+
+        for (size_t i = 0; i < mFields->size(); ++i)
+        {
+            int index = GetTileTypeIndex(mFields->at(i)->GetCode());
+            // chrzanic const, hgw
+            const_cast<std::string&>(mFields->at(i)->GetCode()) = newTileTypes[index]->code;
+        }
+
+        mTileTypes = newTileTypes;
+    }
+
+    unsigned int CMap::FindBaseTileId(const std::string& name)
+    {
+        for (size_t i = 0; i < mBaseTileTypes.size(); ++i)
+            if (mBaseTileTypes[i] == name)
+                return i;
+
+        mBaseTileTypes.push_back(name);
+        return mBaseTileTypes.size() - 1;
+    }
+
+    void CMap::SetTileCorner(float mouseX, float mouseY, const std::string& file)
+    {
+        int x = (int)(mouseX + 0.5f),
+            y = (int)(mouseY + 0.5f);
+
+        mBaseTiles[x][y] = FindBaseTileId(file);
+        if (x > 0)
+        {
+            if (y > 0)
+                SetTile(x - 1, y - 1, GetOrCreateGeneratedTileCode(
+                    mBaseTileTypes[mBaseTiles[x - 1][y - 1]], mBaseTileTypes[mBaseTiles[x][y - 1]],
+                    mBaseTileTypes[mBaseTiles[x - 1][y]], mBaseTileTypes[mBaseTiles[x][y]],
+                    rand() % gRandomMapGenerator.GetTileMaskCount()));
+        
+            if (y < m_size.y)
+                SetTile(x - 1, y, GetOrCreateGeneratedTileCode(
+                    mBaseTileTypes[mBaseTiles[x - 1][y]], mBaseTileTypes[mBaseTiles[x][y]],
+                    mBaseTileTypes[mBaseTiles[x - 1][y + 1]], mBaseTileTypes[mBaseTiles[x][y + 1]],
+                    rand() % gRandomMapGenerator.GetTileMaskCount()));
+        }
+
+        if (x < m_size.x)
+        {
+            if (y > 0)
+                SetTile(x, y - 1, GetOrCreateGeneratedTileCode(
+                    mBaseTileTypes[mBaseTiles[x][y - 1]], mBaseTileTypes[mBaseTiles[x + 1][y - 1]],
+                    mBaseTileTypes[mBaseTiles[x][y]], mBaseTileTypes[mBaseTiles[x + 1][y]],
+                    rand() % gRandomMapGenerator.GetTileMaskCount()));
+            if (y < GetSize().y)
+                SetTile(x, y, GetOrCreateGeneratedTileCode(
+                    mBaseTileTypes[mBaseTiles[x][y]], mBaseTileTypes[mBaseTiles[x + 1][y]],
+                    mBaseTileTypes[mBaseTiles[x][y + 1]], mBaseTileTypes[mBaseTiles[x + 1][y + 1]],
+                    rand() % gRandomMapGenerator.GetTileMaskCount()));
+        }
+    }
+
+    // pomocnicza struktura, uzywana tylko w InitBaseTilesArray
+    struct STileDescUInts
+    {
+        unsigned int tl, tr, bl, br, mask;
+    };
+
+    void CMap::InitBaseTilesArray(CXml& xml)
+    {
+        std::map<std::string, STileDescUInts> tileCodes;
+        mBaseTileTypes.clear();
+        mBaseTileMasks.clear();
+        mBaseTiles.clear();
+
+        for (rapidxml::xml_node<>* node = xml.GetChild(0,"tiletype"); node; node = xml.GetSibl(node,"tiletype")) {
+            if (xml.GetString(node,"image").empty()){
+                STileDescUInts tmpCorners = {
+                    FindBaseTileId(xml.GetString(node, "topleft")),
+                    FindBaseTileId(xml.GetString(node, "topright")),
+                    FindBaseTileId(xml.GetString(node, "bottomleft")),
+                    FindBaseTileId(xml.GetString(node, "bottomright")),
+                    xml.GetInt(node, "mask")
+                };
+
+                tileCodes.insert(std::make_pair(xml.GetString(node, "code"), tmpCorners));
+            } else {
+                unsigned int baseTileId = FindBaseTileId(xml.GetString(node, "image"));
+                STileDescUInts tmpCorners = {
+                    baseTileId, baseTileId, baseTileId, baseTileId, 0
+                };
+
+                tileCodes.insert(std::make_pair(xml.GetString(node, "code"), tmpCorners));
+            }
+        }
+
+        if (tileCodes.size())
+        {
+            std::vector<std::string> codes = StringUtils::Explode(xml.GetString(xml.GetRootNode(), "tiles"), " ");
+
+            int height = xml.GetInt(xml.GetRootNode(), "height");
+            int width = xml.GetInt(xml.GetRootNode(), "width");
+            mBaseTiles.resize(width + 1);
+            mBaseTileMasks.resize(width);
+
+            // zakladam, ze [0][0].tr == [1][0].tl itd.
+            for (int x = 0; x < width; ++x)
+            {
+                mBaseTiles[x].resize(height + 1);
+                mBaseTileMasks[x].resize(height);
+
+                for (int y = 0; y < height; ++y)
+                {
+                    mBaseTiles[x][y] = tileCodes[codes[y * width + x]].tl;
+                    mBaseTileMasks[x][y] = tileCodes[codes[y * width + x]].mask;
+                }
+
+                mBaseTiles[x][height] = tileCodes[codes[(x + 1) * height - 1]].tr;
+            }
+
+            mBaseTiles[width].resize(height + 1);
+            for (int y = 0; y < height; ++y)
+                mBaseTiles[width][y] = tileCodes[codes[(y + 1) * width - 1]].bl;
+
+            mBaseTiles[width][height] = tileCodes[codes[width * height - 1]].br;
+        }
+    }
+
+#endif // __EDITOR__
 }

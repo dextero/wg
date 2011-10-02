@@ -263,6 +263,28 @@ std::string GenerateCode(std::vector<char> &chars,int maxLength,int hash){
         return "";
 }
 
+std::string GetNextCode_AZ(const std::string& lastCode)
+{
+    std::string ret = lastCode;
+
+    size_t i;
+    for (i = 0; i < ret.size(); ++i)
+    {
+        if (ret[i] == 'z')
+            ret[i] = 'a';
+        else
+        {
+            ret[i] = ret[i] + 1;
+            break;
+        }
+    }
+    // jesli wszystkie znaki byly 'z'kami, to zamieni je na 'a' i dopisze na koniec jeszcze jedno 'a'
+    if (i == ret.size())
+        ret += "a";
+
+    return ret;
+}
+
 void Exclude( const std::string& s, char ch, std::vector<std::string>& out )
 {
 	std::string curWord;
