@@ -18,6 +18,7 @@ public:
 
     virtual CTemplateParam * ReadParam(CXml & xml, xml_node<> * node, CTemplateParam * orig = NULL);
     virtual void Parametrise(CPhysical * loot, CTemplateParam * param);
+    virtual void SerializeParam(std::ostream &out, CTemplateParam *param, int indent = 0);
 
     /* IResource */
 

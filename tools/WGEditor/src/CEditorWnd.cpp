@@ -154,7 +154,7 @@ bool CEditorWnd::LoadMod(const std::string& modDir)
             {
                 if (f.find("/doodahs/") != std::string::npos)
                     doodahs.push_back(StringUtils::ConvertToWString(f.substr(charsToRemove)));
-                else if (f.find("/themes/") != std::string::npos)
+                else if (f.find("/tiles/") != std::string::npos)
                     tiles.push_back(StringUtils::ConvertToWString(f.substr(charsToRemove)));
                     
             }

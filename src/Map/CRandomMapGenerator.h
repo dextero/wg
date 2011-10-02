@@ -176,6 +176,7 @@ public:
     ~CRandomMapGenerator();
 
     bool LoadPartSets(const std::string& filename);
+    unsigned int GetTileMaskCount() { return mTileMasks.size(); }
 
     bool GenerateRandomMap(const std::string& filename, const SRandomMapDesc& desc);
 

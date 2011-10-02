@@ -11,6 +11,7 @@
 #include "../Map/CMap.h"
 #include "../Map/SceneManager/CSceneNode.h"
 #include "../Map/SceneManager/CQuadTreeSceneManager.h"
+#include "../Map/CRandomMapGenerator.h"
 #include "../ResourceManager/CResourceManager.h"
 #include "../Rendering/Animations/SAnimationState.h"
 #include "../Rendering/CCamera.h"
@@ -20,6 +21,7 @@
 #include "../GUI/Editor/CEditorScreens.h"
 #include "../Logic/Factory/CPhysicalTemplate.h"
 #include "../Logic/MapObjects/CRegion.h"
+#include "../Utils/StringUtils.h"
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <math.h>
 
@@ -402,7 +404,7 @@ void CEditor::SetSelected( IEditorResource *res){
     {
         IEditorResource* res = NULL;
 
-        if (path.find("data/maps/themes/") != std::string::npos || path.find("data/maps/generated_tiles") != std::string::npos)
+        if (path.find("data/maps/tiles/") != std::string::npos || path.find("data/maps/generated_tiles") != std::string::npos)
         {
             if (!mTiles)
                 mTiles = new CEditorResourceSet();
