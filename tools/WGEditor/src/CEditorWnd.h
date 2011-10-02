@@ -47,6 +47,7 @@ private:
 
     // rekurencyjne wczytywanie zawartosci folderow, katalogi sa na wierzchu
     static void LoadFromDirectory(std::vector<std::string>& directories, std::vector<std::string>& files);
+	static void LoadFromVFS(std::vector<std::string>& files);
     // ladowanie zawartosci folderu do drzewek
     bool LoadMod(const std::string& modDir);
 

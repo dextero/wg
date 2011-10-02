@@ -28,6 +28,7 @@
 #include "Rendering/ZIndexVals.h"
 
 #include "CGameOptions.h"
+#include "VFS/vfs.h"
 
 #include <iostream>
 
@@ -113,6 +114,12 @@ void CEditorWnd::LoadFromDirectory(std::vector<std::string>& directories, std::v
 	}
 }
 
+void CEditorWnd::LoadFromVFS(std::vector<std::string>& files)
+{
+	std::vector<std::string> const & vfsFiles = gVFS.GetFilenames();
+	files.insert(files.begin(), vfsFiles.begin(), vfsFiles.end());
+}
+
 // ladowanie zawartosci katalogu do drzewek
 bool CEditorWnd::LoadMod(const std::string& modDir)
 {
@@ -129,6 +136,7 @@ bool CEditorWnd::LoadMod(const std::string& modDir)
     std::vector<std::string> foundFiles, foundDirectories;
 	foundDirectories.push_back(modDir);
     LoadFromDirectory(foundDirectories, foundFiles);
+	LoadFromVFS(foundFiles);
 
 	fprintf(stderr,"\n\nFound %d files!",(int)(foundFiles.size()));
 
@@ -154,9 +162,8 @@ bool CEditorWnd::LoadMod(const std::string& modDir)
             {
                 if (f.find("/doodahs/") != std::string::npos)
                     doodahs.push_back(StringUtils::ConvertToWString(f.substr(charsToRemove)));
-                else if (f.find("/themes/") != std::string::npos)
-                    tiles.push_back(StringUtils::ConvertToWString(f.substr(charsToRemove)));
-                    
+                else if ((f.find("/tiles/") != std::string::npos) || (f.find("/themes/") != std::string::npos))
+                    tiles.push_back(StringUtils::ConvertToWString(f.substr(charsToRemove)));                    
             }
 		}
     }
@@ -447,10 +454,22 @@ void CEditorWnd::InitTreeTiles(std::vector<std::wstring>& tiles, int defaultImg)
             rest = rest.substr(slashAt + 1);
         }
 
-        wxImage img(PATH_TO_GAMEW + L"data/" + *it);
+		sf::Image * bitmap = gResourceManager.GetImage(StringUtils::ConvertToString(PATH_TO_GAMEW + L"data/" + *it));
+		const sf::Uint8 * pixels = bitmap->GetPixelsPtr();
+		unsigned int pixelCount = bitmap->GetWidth() * bitmap->GetHeight();
+		unsigned char * buffer = (unsigned char *)malloc(sizeof(char) * pixelCount * 3);
+		unsigned int index = 0, i = 0;
+		for (; i < pixelCount * 4; i+=4, index+=3){
+			buffer[index] = pixels[i];
+			buffer[index+1] = pixels[i+1];
+			buffer[index+2] = pixels[i+2];
+			// skip alpha channel! wx just cant handle this exotic concept...
+		}
+		wxImage img(bitmap->GetWidth(), bitmap->GetHeight(), buffer, false /* wx will delete the buffer */);
+        //wxImage img(PATH_TO_GAMEW + L"data/" + *it);
         mTreeTiles->SetItemImage(mTreeTiles->AppendItem(parentNode, rest), mTreeTiles->GetImageList()->Add(img.Scale(TREE_ICON_SIZE)));
 
-        fprintf(stderr, "Loading tiles.. (%u/%u)\r", (unsigned int)(it - tiles.begin() + 1), tiles.size());
+        fprintf(stderr, "Loading tiles.. (%u/%u)", (unsigned int)(it - tiles.begin() + 1), tiles.size());
     }
     mTreeTiles->Expand(root);
 }
