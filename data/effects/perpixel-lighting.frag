@@ -13,7 +13,7 @@ varying vec3 vertexPos;
 
 void main()
 {	
-	vec4 texColor = texture2D(tex, gl_TexCoord[0].st);
+	vec4 texColor = texture2D(tex, gl_TexCoord[0].st) * gl_Color;
 	
 	// Oblicz kolor swiatla diffuse (to 1 - min.... to zanik swiatla - interpolacja liniowa)
 	vec4 diffuse = lcolor[0] * (1.0 - min(length(vertexPos-lpos[0])/lradius[0], 1.0));
