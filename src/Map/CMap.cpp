@@ -319,6 +319,7 @@ namespace Map{
                 std::string bottomRight = xml.GetString(node, "bottomright");
                 unsigned int mask = xml.GetInt(node, "mask");
                 
+#ifdef __EDITOR__
                 // dane do serializacji
                 mtt->isGenerated = true;
                 mtt->generated.tl = FindBaseTileId(topLeft);
@@ -326,6 +327,7 @@ namespace Map{
                 mtt->generated.bl = FindBaseTileId(bottomLeft);
                 mtt->generated.br = FindBaseTileId(bottomRight);
                 mtt->generated.mask = mask;
+#endif
 
                 mtt->img = gRandomMapGenerator.GetIntermediateTile(topLeft, topRight, bottomLeft, bottomRight, mask);
             }
@@ -607,20 +609,30 @@ namespace Map{
             out << "<max-living-monsters>" << mMaxLivingMonsters << "</max-living-monsters>\n";
         // typy kafli
 
+        // nie patrzec co ja tu narobilem, dex
 #ifdef __EDITOR__
         // edytor tworzy nowe kody jak szalony, dobrze byloby je skrocic przed zapisem
         OptimizeTileCodes();
+
 #endif // __EDITOR__
 
         for (unsigned int i = 0; i < mTileTypes.size(); i++){
+
+#ifdef __EDITOR__
             if (mTileTypes[i]->isGenerated) {
                 out << "\t<tiletype code=\"" << mTileTypes[i]->code << "\" topleft=\"" << mBaseTileTypes[mTileTypes[i]->generated.tl] << "\" topright=\"" << mBaseTileTypes[mTileTypes[i]->generated.tr]
                     << "\" bottomleft=\"" << mBaseTileTypes[mTileTypes[i]->generated.bl] << "\" bottomright=\"" << mBaseTileTypes[mTileTypes[i]->generated.br] << "\" mask=\"" << mTileTypes[i]->generated.mask << "\" />\n";
             }
             else {
+#endif // __EDITOR__
+
                 out << "\t<tiletype code=\"" << mTileTypes[i]->code << "\" image=\"" << mTileTypes[i]->img << "\"/>\n";
             }
+
+#ifdef __EDITOR__
         }
+#endif // __EDITOR__
+
         // kafle
         out << "\t<tiles>";
         for (unsigned int i = 0; i < mFields->size(); i++){
@@ -706,8 +718,11 @@ namespace Map{
 
         // dex: zmienie sposob generowania kodow, chyba troche szybszy
         std::string lastCode = StringUtils::GetNextCode_AZ(mTileTypes[mTileTypes.size() - 1]->code);
+
+#ifdef __EDITOR__
         if (lastCode.size() > 10)
             OptimizeTileCodes();
+#endif // __EDITOR__
 
         CMapTileType *mtt = new CMapTileType();
         mtt->img = path;
@@ -955,6 +970,11 @@ namespace Map{
         mTileTypes = newTileTypes;
     }
 
+    int CMap::GetTileMaskId(int x, int y) 
+    {
+        return mBaseTileMasks.size() > x ? (mBaseTileMasks[x].size() > y ? mBaseTileMasks[x][y] : -1) : -1; 
+    }
+
     unsigned int CMap::FindBaseTileId(const std::string& name)
     {
         for (size_t i = 0; i < mBaseTileTypes.size(); ++i)
@@ -965,10 +985,15 @@ namespace Map{
         return mBaseTileTypes.size() - 1;
     }
 
-    void CMap::SetTileCorner(float mouseX, float mouseY, const std::string& file)
+    void CMap::SetTileCorner(float mouseX, float mouseY, const std::string& file, int tlMask, int trMask, int blMask, int brMask)
     {
         int x = (int)(mouseX + 0.5f),
             y = (int)(mouseY + 0.5f);
+
+        if (tlMask < 0) tlMask = rand() % gRandomMapGenerator.GetTileMaskCount();
+        if (trMask < 0) trMask = rand() % gRandomMapGenerator.GetTileMaskCount();
+        if (blMask < 0) blMask = rand() % gRandomMapGenerator.GetTileMaskCount();
+        if (brMask < 0) brMask = rand() % gRandomMapGenerator.GetTileMaskCount();
 
         mBaseTiles[x][y] = FindBaseTileId(file);
         if (x > 0)
@@ -977,13 +1002,13 @@ namespace Map{
                 SetTile(x - 1, y - 1, GetOrCreateGeneratedTileCode(
                     mBaseTileTypes[mBaseTiles[x - 1][y - 1]], mBaseTileTypes[mBaseTiles[x][y - 1]],
                     mBaseTileTypes[mBaseTiles[x - 1][y]], mBaseTileTypes[mBaseTiles[x][y]],
-                    rand() % gRandomMapGenerator.GetTileMaskCount()));
+                    tlMask));
         
             if (y < m_size.y)
                 SetTile(x - 1, y, GetOrCreateGeneratedTileCode(
                     mBaseTileTypes[mBaseTiles[x - 1][y]], mBaseTileTypes[mBaseTiles[x][y]],
                     mBaseTileTypes[mBaseTiles[x - 1][y + 1]], mBaseTileTypes[mBaseTiles[x][y + 1]],
-                    rand() % gRandomMapGenerator.GetTileMaskCount()));
+                    trMask));
         }
 
         if (x < m_size.x)
@@ -992,12 +1017,12 @@ namespace Map{
                 SetTile(x, y - 1, GetOrCreateGeneratedTileCode(
                     mBaseTileTypes[mBaseTiles[x][y - 1]], mBaseTileTypes[mBaseTiles[x + 1][y - 1]],
                     mBaseTileTypes[mBaseTiles[x][y]], mBaseTileTypes[mBaseTiles[x + 1][y]],
-                    rand() % gRandomMapGenerator.GetTileMaskCount()));
+                    blMask));
             if (y < GetSize().y)
                 SetTile(x, y, GetOrCreateGeneratedTileCode(
                     mBaseTileTypes[mBaseTiles[x][y]], mBaseTileTypes[mBaseTiles[x + 1][y]],
                     mBaseTileTypes[mBaseTiles[x][y + 1]], mBaseTileTypes[mBaseTiles[x + 1][y + 1]],
-                    rand() % gRandomMapGenerator.GetTileMaskCount()));
+                    brMask));
         }
     }
 

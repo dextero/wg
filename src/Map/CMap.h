@@ -137,7 +137,8 @@ namespace Map{
         void OptimizeTileCodes();
 
     public:
-        void SetTileCorner(float mouseX, float mouseY, const std::string& file);
+        int GetTileMaskId(int x, int y);
+        void SetTileCorner(float mouseX, float mouseY, const std::string& file, int tlMask = -1, int trMask = -1, int blMask = -1, int brMask = -1);
         void InitBaseTilesArray(CXml& xml);
 
         friend class ::CEditorWnd;
