@@ -15,7 +15,7 @@ varying vec3 vertexPos;
 
 void main()
 {
-	vec4 texColor = texture2D(tex, gl_TexCoord[0].st);
+	vec4 texColor = texture2D(tex, gl_TexCoord[0].st) * gl_Color;
 	vec3 normal = texture2D(normalmap, gl_TexCoord[0].st).xyz;
 	normal = gl_NormalMatrix * normalize(normal - 0.5);
 	
