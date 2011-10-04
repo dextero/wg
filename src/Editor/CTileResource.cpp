@@ -56,7 +56,7 @@ void CTileResource::Place(sf::Vector2f pos, float rotation, float scale, bool z)
 
         unsigned int maskCount = gRandomMapGenerator.GetTileMaskCount();
         // pierwsza tablica to powinny byc numery masek, TODO
-        STileChanged tc = { { 
+        /*STileChanged tc = { { 
             map->GetTileMaskId((int)pos.x, (int)pos.y),
             map->GetTileMaskId((int)pos.x, (int)pos.y + 1),
             map->GetTileMaskId((int)pos.x + 1, (int)pos.y),
@@ -66,6 +66,7 @@ void CTileResource::Place(sf::Vector2f pos, float rotation, float scale, bool z)
 
         if (map->mFields->at(index) && (code != map->mFields->at(index)->GetCode()))
             gActionsList.Push(SAction::ChangeTile(pos.x, pos.y, map->mFields->at(index)->GetCode(), code, tc));
+            */
 
         map->SetTileCorner(pos.x, pos.y, mPath);
 #endif
