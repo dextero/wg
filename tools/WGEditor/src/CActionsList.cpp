@@ -30,6 +30,8 @@ SAction SAction::Reverse(SAction action)
             std::string tmp = action.code;
             action.code = action.codeNew;
             action.codeNew = tmp;
+            for (int i = 0; i < 4; ++i)
+                std::swap(action.tileChanged.oldMasks[i], action.tileChanged.newMasks[i]);
         }
         break;
     }

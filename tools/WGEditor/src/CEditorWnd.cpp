@@ -224,7 +224,7 @@ void CEditorWnd::HandleAction(SAction action)
     switch (action.type)
     {
     case Actions::changeTile:
-        gMapManager.GetCurrent()->SetTile((int)action.x, (int)action.y, action.code);
+        gMapManager.GetCurrent()->SetTileCorner(action.x, action.y, action.code, action.tileChanged.oldMasks[0], action.tileChanged.oldMasks[1], action.tileChanged.oldMasks[2], action.tileChanged.oldMasks[3]);
         break;
     case Actions::deleteDoodah:
         // doodah BYL skasowany, trzeba przywrocic
@@ -308,23 +308,23 @@ void CEditorWnd::HandleAction(SAction action)
         }
         break;
     case Actions::placeRegion:
-        // region BYL postawiony, trzeba skasowac
+    // region BYL postawiony, trzeba skasowac
+    {
+        CSceneNode* node = gScene.GetPhysicalAt(sf::Vector2f(action.x, action.y));
+        if (node != NULL)
         {
-            CSceneNode* node = gScene.GetPhysicalAt(sf::Vector2f(action.x, action.y));
-            if (node != NULL)
+            CPhysical* phys = node->GetPhysical();
+            if (CDynamicRegion* rgn = dynamic_cast<CDynamicRegion*>(phys))
             {
-                CPhysical* phys = node->GetPhysical();
-                if (CDynamicRegion* rgn = dynamic_cast<CDynamicRegion*>(phys))
-                {
-                    rgn->MarkForDelete();
-                    gMapManager.GetCurrent()->EraseRegion(rgn->GetDescriptorId());
-                }
+                rgn->MarkForDelete();
+                gMapManager.GetCurrent()->EraseRegion(rgn->GetDescriptorId());
             }
         }
-        break;
-    default:
-        break;
     }
+    break;
+default:
+    break;
+}
 }
 
 void CEditorWnd::PrepareRandomBrush()

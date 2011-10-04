@@ -21,15 +21,27 @@ namespace Actions
     };
 }
 
+struct STileChanged
+{
+    int oldMasks[4], newMasks[4];
+    STileChanged()
+    {
+        for (int i = 0; i < 8; ++i)
+            oldMasks[i] = 0;
+    }
+    //STileChanged(int old1, 
+};
+
 struct SAction
 {
     Actions::EActionType type;
     float x, y, rot, scale;
     int z;
     std::string code, codeNew;
+    STileChanged tileChanged;
 
-    SAction(Actions::EActionType _type, float _x, float _y, int _z, float _rot, float _scale, const std::string _code = "", const std::string _codeNew = ""):
-        type(_type), x(_x), y(_y), z(_z), rot(_rot), scale(_scale), code(_code), codeNew(_codeNew) {}
+    SAction(Actions::EActionType _type, float _x, float _y, int _z, float _rot, float _scale, const std::string _code = "", const std::string _codeNew = "", STileChanged _tileChanged = STileChanged()):
+        type(_type), x(_x), y(_y), z(_z), rot(_rot), scale(_scale), code(_code), codeNew(_codeNew), tileChanged(_tileChanged) {}
     SAction(const SAction& copy)
     {
         type = copy.type;
@@ -40,10 +52,11 @@ struct SAction
         z = copy.z;
         code = copy.code;
         codeNew = copy.codeNew;
+        tileChanged = copy.tileChanged;
     }
 
     static SAction None() { return SAction(Actions::none, 0.f, 0.f, 0, 0.f, 0.f); }
-    static SAction ChangeTile(float x, float y, const std::string& oldCode, const std::string& newCode) { return SAction(Actions::changeTile, x, y, 0, 0.f, 0.f, oldCode, newCode); }
+    static SAction ChangeTile(float x, float y, const std::string& oldCode, const std::string& newCode, STileChanged tileChanged) { return SAction(Actions::changeTile, x, y, 0, 0.f, 0.f, oldCode, newCode, tileChanged); }
     static SAction DeleteDoodah(float x, float y, int z, float rot, float scale, const std::string& path) { return SAction(Actions::deleteDoodah, x, y, z, rot, scale, path); }
     static SAction PlaceDoodah(float x, float y, int z, float rot, float scale, const std::string& path) { return SAction(Actions::placeDoodah, x, y, z, rot, scale, path); }
 
