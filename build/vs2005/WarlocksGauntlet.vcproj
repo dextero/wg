@@ -2276,14 +2276,6 @@
 				RelativePath="..\..\src\Utils\StringUtils.h"
 				>
 			</File>
-			<File
-				RelativePath="..\..\src\Utils\ToxicUtils.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\Utils\ToxicUtils.h"
-				>
-			</File>
 			<Filter
 				Name="boost"
 				>
