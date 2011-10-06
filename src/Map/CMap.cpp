@@ -612,7 +612,7 @@ namespace Map{
         // nie patrzec co ja tu narobilem, dex
 #ifdef __EDITOR__
         // edytor tworzy nowe kody jak szalony, dobrze byloby je skrocic przed zapisem
-        OptimizeTileCodes();
+        //OptimizeTileCodes();
 
 #endif // __EDITOR__
 
@@ -720,8 +720,8 @@ namespace Map{
         std::string lastCode = StringUtils::GetNextCode_AZ(mTileTypes[mTileTypes.size() - 1]->code);
 
 #ifdef __EDITOR__
-        if (lastCode.size() > 10)
-            OptimizeTileCodes();
+        /*if (lastCode.size() > 10)
+            OptimizeTileCodes();*/
 #endif // __EDITOR__
 
         CMapTileType *mtt = new CMapTileType();
@@ -897,8 +897,8 @@ namespace Map{
 
         // nie znaleziono kodu, wiec probujemy zsyntetyzowac nowy
         std::string lastCode = StringUtils::GetNextCode_AZ(mTileTypes[mTileTypes.size() - 1]->code);
-        if (lastCode.size() > 10)
-            OptimizeTileCodes();
+        //if (lastCode.size() > 10)
+        //    OptimizeTileCodes();
 
         CMapTileType *mtt = new CMapTileType();
         mtt->img = path;
