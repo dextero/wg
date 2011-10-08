@@ -104,6 +104,8 @@ private:
 	void LoadPhysicals();
 	bool MouseInWorkspace();
     sf::Vector2f GetMousePosInWorld();
+	
+	sf::Vector2f mPreviousMousePosInWorld;
     
     bool mMapObjectsVisible;
     void ToggleMapObjectsVisibility();
