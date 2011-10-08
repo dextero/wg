@@ -83,6 +83,7 @@ bool CImage::Load(std::map<std::string,std::string>& argv)
         if (mAtlas!=NULL)
             mAtlas->SetImage(this);
     }
+	this->SetSmooth(false);
 	return true;
 }
 
