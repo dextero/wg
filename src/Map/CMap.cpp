@@ -990,6 +990,10 @@ namespace Map{
         int x = (int)(mouseX + 0.5f),
             y = (int)(mouseY + 0.5f);
 
+		if ((x < 0) || (y < 0) || (x >= mBaseTiles.size()) || (y >= mBaseTiles[x].size())){
+			return;
+		}
+
         if (tlMask < 0) tlMask = rand() % gRandomMapGenerator.GetTileMaskCount();
         if (trMask < 0) trMask = rand() % gRandomMapGenerator.GetTileMaskCount();
         if (blMask < 0) blMask = rand() % gRandomMapGenerator.GetTileMaskCount();
