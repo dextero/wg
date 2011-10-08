@@ -429,10 +429,7 @@
             <doodah file="data/maps/doodahs/skeleton.png" z="onground" scale="0.8" />
             <doodah file="data/maps/doodahs/snow/flatbush1.png" z="onground" scale="0.8" />
             <doodah file="data/maps/doodahs/snow/flatbush2.png" z="onground" scale="0.8" />
-			<doodah file="data/maps/doodahs/snow/flatbush3.png" z="onground" scale="0.8" />
             <doodah file="data/maps/doodahs/snow/flatbush3.png" z="onground" scale="0.8" />
-            <doodah file="data/maps/doodahs/snow/flatbush4.png" z="onground" scale="0.8" />
-			<doodah file="data/maps/doodahs/snow/flatbush4.png" z="onground" scale="0.8" />
 			<doodah file="data/maps/doodahs/snow/flatbush4.png" z="onground" scale="0.8" />
 			<doodah file="data/maps/doodahs/snow/flatbush5.png" z="onground" scale="0.8" />
 			
@@ -447,6 +444,10 @@
 			<doodah file="data/maps/doodahs/boulders/icy-stone3.png" z="background" scale="0.6"/>
 			<doodah file="data/maps/doodahs/snow/arctic-tree1.png" z="foreground" scale="0.7"/>
 			<doodah file="data/maps/doodahs/snow/arctic-tree2.png" z="foreground" scale="0.7"/>
+			<doodah file="data/maps/doodahs/snow/snowy-tree.png" z="foreground" scale="0.8" />
+			<doodah file="data/maps/doodahs/snow/snowy-tree.png" z="foreground" scale="0.8" />
+			<doodah file="data/maps/doodahs/snow/snowy-branches1.png" z="foreground" scale="0.8" />
+			<doodah file="data/maps/doodahs/snow/snowy-branches2.png" z="foreground" scale="0.8" />
 		</doodahs>
 		<min-doodahs-on-ground value="30"/>
 		<max-doodahs-on-ground value="50"/>
