@@ -88,6 +88,8 @@ CEditor::~CEditor(){
 void CEditor::MousePressed( const sf::Event::MouseButtonEvent &e ){
 	if (!mRunning) return;
 
+	this->mPreviousMousePosInWorld = this->GetMousePosInWorld();
+
 	if (MouseInWorkspace())
 	{
 		if (e.Button == sf::Mouse::Left)
@@ -197,7 +199,16 @@ void CEditor::MouseMoved( const sf::Event::MouseMoveEvent& e ){
 	if (MouseInWorkspace())
 	{
 		if (mMode == PLACEMENT_MODE && mMouseLeftDown && mSelected && mSelected->ContinuousPlacement())
-			mSelected->Place(GetMousePosInWorld(),mRotation,mScale,mZIndexFlag);
+		{
+			// dobra, tu jest mega-zalozenie, ze to s¹ tak naprawdê kafle...
+			// chodzi o to, zeby ulatwic gladkie kladzenie kafli szybkimi ruchami
+			sf::Vector2f const currPos = GetMousePosInWorld();
+			sf::Vector2f const diff = this->mPreviousMousePosInWorld - currPos;
+			for (unsigned int i = 0; i < 10; i++)
+			{
+				mSelected->Place(currPos + (float)i * diff / 10.f,mRotation,mScale,mZIndexFlag);
+			}
+		}
 	}
 
 	if (mMouseRightDown){
@@ -205,6 +216,8 @@ void CEditor::MouseMoved( const sf::Event::MouseMoveEvent& e ){
 		sf::Vector2f mouseMove = mousePos - mSavedMousePos;
 		gCamera.GoTo( mSavedCameraPos - mouseMove/float(Map::TILE_SIZE), 0.0f );
 	}
+
+	this->mPreviousMousePosInWorld = this->GetMousePosInWorld();
 }
 
 void CEditor::KeyPressed( const sf::Event::KeyEvent &e ){
