@@ -84,10 +84,11 @@ std::wstring CButton::GetText()
 	else				return std::wstring(L"");
 }
 
+//@Deprecated:
 void CButton::SetText(const SLocalizedText& text, std::string font)
 {
     SetText(text.text);
-    SetFont(font, text.fontSize, text.fontSizeType);
+    SetFont(font, 100.0f, GUI::UNIT_PIXEL);
     SetPadding(text.padding);
 }
 
