@@ -52,7 +52,7 @@ namespace GUI
 
         void ShowCursor(bool show=true);
 
-        FontSetting GetFontSetting(const std::string & id);
+        FontSetting GetFontSetting(const std::string & id, float scale = 1.0f);
 	private:
 
 		CGUIObject* mActiveObject;

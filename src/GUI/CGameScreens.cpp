@@ -258,7 +258,7 @@ void CGameScreens::InitAbilities(unsigned playerNumber)
 			atd[i]->SetActiveHolderImage("data/GUI/abilities_scroll_bought.png");
 			atd[i]->SetPotentialHolderImage("data/GUI/abilities_scroll_potential.png");
             atd[i]->SetDependencyLineImage("data/GUI/abilities-dependency-line.png");
-            const GUI::FontSetting & fs = gGUI.GetFontSetting("FONT_LEVEL_TEXT");
+            const GUI::FontSetting & fs = gGUI.GetFontSetting("FONT_IN_GAME_TEXT");
             atd[i]->SetLvlTextFont(fs.name, fs.size);
 
 			CTextArea * xp = atd[i]->CreateTextArea("xptext");
@@ -428,7 +428,7 @@ void CGameScreens::InitControlListing(unsigned playerNumber)
 			}
 
 		CTextArea *txt = panel->CreateTextArea("help");
-		txt->SetFont(gGUI.GetFontSetting("FONT_LEVEL_TEXT"));
+		txt->SetFont(gGUI.GetFontSetting("FONT_IN_GAME_TEXT"));
 		txt->SetPosition(0.0f,0.0f,100.0f,0.0f);
 		txt->SetAutoHeight(true);
 
@@ -446,19 +446,19 @@ void CGameScreens::InitControlListing(unsigned playerNumber)
 		txt->SetColor(sf::Color::Black);
 
 		txt = txt->CreateTextArea("controls-txt");
-		txt->SetFont(gGUI.GetFontSetting("FONT_LEVEL_TEXT"));
+		txt->SetFont(gGUI.GetFontSetting("FONT_IN_GAME_TEXT"));
 		txt->SetPosition(0.0f,100.0f,100.0f,0.0f);
 		txt->SetAutoHeight(true);
 		txt->SetColor(sf::Color::Black);
 
 		CTextArea *txt2 = txt->CreateTextArea("abilities-txt-left");
-		txt2->SetFont(gGUI.GetFontSetting("FONT_ABILITIES_TEXT"));
+		txt2->SetFont(gGUI.GetFontSetting("FONT_IN_GAME_TEXT", 1.2f));
 		txt2->SetPosition(0.0f,100.0f,40.0f,0.0f);
 		txt2->SetAutoHeight(true);
 		txt2->SetColor(sf::Color::Black);
 
         txt2 = txt->CreateTextArea("abilities-txt-right");
-		txt2->SetFont(gGUI.GetFontSetting("FONT_ABILITIES_TEXT"));
+		txt2->SetFont(gGUI.GetFontSetting("FONT_IN_GAME_TEXT", 1.2f));
 		txt2->SetPosition(40.0f,100.0f,60.0f,0.0f);
 		txt2->SetAutoHeight(true);
 		txt2->SetColor(sf::Color::Black);

@@ -122,7 +122,7 @@ void CHud::Init(size_t playerNumber)
 	mHudFGText = mHP->CreateTextArea( prefix + "hud-fg-text");
 	mHudFGText->SetPosition( 0.0f, 0.0f, 100.0f, 30.0f );
 	mHudFGText->SetCenter(true);
-	mHudFGText->SetFont(gGUI.GetFontSetting("FONT_LEVEL_TEXT"));
+	mHudFGText->SetFont(gGUI.GetFontSetting("FONT_IN_GAME_TEXT"));
 	mHudFGText->SetColor(sf::Color::Green);
 	mHudFGText->SetVisible(false);
 

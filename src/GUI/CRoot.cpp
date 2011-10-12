@@ -82,18 +82,19 @@ CRoot::~CRoot()
 {
 }
 
-FontSetting CRoot::GetFontSetting(const std::string & id)
+FontSetting CRoot::GetFontSetting(const std::string & id, float scale)
 {
+    FontSetting fs;
     if (mFontSettings.find(id) != mFontSettings.end()) {
-        return mFontSettings[id];
+        fs = mFontSettings[id];
+        fs.size *= scale;
     } else {
         fprintf(stderr, "warning: CRoot::GetFontSetting, can't find font with id=`%s'\n", id.c_str());
-        FontSetting fs;
         fs.name = "data/GUI/verdana.ttf";
         fs.size = 14.f;
         fs.unit = GUI::UNIT_PIXEL;
-        return fs;
     }
+    return fs;
 }
 
 void CRoot::FrameStarted(float secondsPassed)

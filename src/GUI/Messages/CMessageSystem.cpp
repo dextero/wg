@@ -116,7 +116,7 @@ void CMessageSystem::AddMessage(const wchar_t *text)
     msg->text = gGUI.CreateTextArea(StringUtils::ToString(id++) + "msg", true, Z_FLOATER_MSG);
     msg->text->SetText(text);
     float size = msg->text->GetSFString()->GetSize();
-    msg->text->SetFont(gGUI.GetFontSetting("FONT_LEVEL_TEXT")); //bylo 22
+    msg->text->SetFont(gGUI.GetFontSetting("FONT_IN_GAME_TEXT")); //bylo 22
 
     msg->text->SetPosition( mStartPosition.x - size * 0.5f, mStartPosition.y ,mWidth, mHeight );
 
