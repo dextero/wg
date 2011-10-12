@@ -122,7 +122,7 @@ void CHud::Init(size_t playerNumber)
 	mHudFGText = mHP->CreateTextArea( prefix + "hud-fg-text");
 	mHudFGText->SetPosition( 0.0f, 0.0f, 100.0f, 30.0f );
 	mHudFGText->SetCenter(true);
-	mHudFGText->SetFont(gLocalizator.GetFont(GUI::FONT_MESSAGE),20);
+	mHudFGText->SetFont(gGUI.GetFontSetting("FONT_LEVEL_TEXT"));
 	mHudFGText->SetColor(sf::Color::Green);
 	mHudFGText->SetVisible(false);
 
@@ -168,7 +168,7 @@ void CHud::Update(float dt)
 		if (isLevelUp){
 			mHudFg->SetSequenceState(1.0f);
 			if (mHudFg->IsVisible()) mHudFGText->SetVisible(true);
-			const std::map<std::string,int>& keys = gBindManagerByPlayer(mPlayerNumber)->GetKeyBindings();
+			const std::map<std::string,int>& keys = gBindManagerByPlayer((unsigned int)mPlayerNumber)->GetKeyBindings();
 			mHudFGText->SetText(StringUtils::ConvertToWString(KeyStrings::KeyToString( keys.find("Abilities")->second )));
 		} else {
 			mHudFg->SetSequenceState(0.0f);

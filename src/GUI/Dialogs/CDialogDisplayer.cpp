@@ -31,7 +31,7 @@ CDialogDisplayer::CDialogDisplayer()
 	mStatementArea->SetPosition( 5.0f, 5.0f, 90.0f, 0.0f );
 	mStatementArea->SetPadding( 20.0f, 20.0f, 20.0f, 20.0f, UNIT_PIXEL );
 	mStatementArea->SetAutoHeight( true );
-	mStatementArea->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 12.0f );
+	mStatementArea->SetFont(gGUI.GetFontSetting("FONT_DEFAULT")); // bylo 12.f
 	mStatementArea->SetBackgroundImage( "data/cutscene/bg.png" );
 	mStatementArea->SetVisible( false );
 
@@ -244,7 +244,7 @@ void CDialogDisplayer::DisplayOptions( const std::vector<SDialogNode*>& options 
 
 		optionText->SetAutoHeight( true );
 		optionText->SetText( options[i]->mString );
-		optionText->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 14.0f );
+		optionText->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 
 		mOptionTexts.push_back( optionText );
 		mOptionNodes.push_back( options[i] );

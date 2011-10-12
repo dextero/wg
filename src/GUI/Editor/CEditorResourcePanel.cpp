@@ -36,7 +36,7 @@ void CEditorResourcePanel::Load(CEditorResourceSet *ers){
     const std::vector<IEditorResource*> &resources = ers->GetResources();
     for (unsigned int i = 0; i < resources.size(); i++){
         CButton *btn = mScrollPanel->CreateButton("btn-" + StringUtils::ToString(i));
-		btn->SetFont("data/GUI/verdana.ttf", 10.0f);
+		btn->SetFont("data/GUI/verdana.ttf", 10.0f); //todo: przeniesc do data/gui.xml
 		btn->SetColor(sf::Color::Black);
         resources[i]->ConfigureButton(btn);
         btn->GetClickParamCallback()->bind(this,&CEditorResourcePanel::SelectCallback);

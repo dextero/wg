@@ -33,7 +33,7 @@ CCutscenePlayer::CCutscenePlayer()
 	mTextArea = mImageBox->CreateTextArea( "cutscene-text" );
 	mTextArea->SetPosition( 5.0f, 80.0f, 90.0f, 18.0f );
 	mTextArea->SetPadding( 2.0f, 2.0f, 2.0f, 2.0f );
-	mTextArea->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
+	mTextArea->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 	mTextArea->SetBackgroundImage( "data/cutscene/bg.png" );
 	mTextArea->SetColor( sf::Color::White );
 	mTextArea->SetVisible( false );

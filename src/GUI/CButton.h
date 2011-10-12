@@ -18,6 +18,7 @@
 #include <string>
 #include <FastDelegate.h>
 #include <SFML/Graphics/Color.hpp>
+#include "CRoot.h" //GUI::FontSetting
 
 class CHudSprite;
 class CHudStaticText;
@@ -28,6 +29,7 @@ namespace GUI
 	{
 	public:
         void SetImage( const std::string& normal, const std::string& mouseOver="", const std::string& mouseClick="" );
+        void SetFont(const GUI::FontSetting & fs);
 		void SetFont( const std::string& name, float size, guiUnit u = UNIT_PIXEL );
 		void SetColor( const sf::Color color );
 		void SetText( const std::wstring& text );

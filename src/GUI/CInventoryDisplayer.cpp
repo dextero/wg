@@ -75,22 +75,23 @@ CInventoryDisplayer::CInventoryDisplayer( const std::string& name, CGUIObject* p
     mAbiTreeDisplayer->SetActiveHolderImage("data/GUI/abilities_scroll_bought.png");
     mAbiTreeDisplayer->SetPotentialHolderImage("data/GUI/abilities_scroll_potential.png");
     mAbiTreeDisplayer->SetDependencyLineImage("data/GUI/abilities-dependency-line.png");
-    mAbiTreeDisplayer->SetLvlTextFont(gLocalizator.GetFont(GUI::FONT_MESSAGE),20);
+    const GUI::FontSetting & fs = gGUI.GetFontSetting("FONT_LEVEL_TEXT"); 
+    mAbiTreeDisplayer->SetLvlTextFont(fs.name, fs.size);
     mAbiTreeDisplayer->ForceReload();
     
     CTextArea * xp = mBackground->CreateTextArea("xptext");
     xp->SetPosition(23.0f,18.0f,25.0f,10.0f);
-    xp->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
+    xp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
     xp->SetText(L"XP: ?");
 
     CTextArea * sp = mBackground->CreateTextArea("skill-points");
     sp->SetPosition(23.0f,21.25f,25.0f,10.0f);
-    sp->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
+    sp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
     sp->SetText(L"SP: ?");
 
     CTextArea * lvl = mBackground->CreateTextArea("player-level");
     lvl->SetPosition(23.0f,24.5f,25.0f,10.0f);
-    lvl->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
+    lvl->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
     lvl->SetText(L"LVL: ?");
 
     CImageBox* avatar = mBackground->CreateImageBox("avatar");
@@ -107,7 +108,7 @@ CInventoryDisplayer::CInventoryDisplayer( const std::string& name, CGUIObject* p
     close->SetImage("data/GUI/bbtn-up.png", "data/GUI/bbtn-hover.png", "data/GUI/bbtn-down.png");
     close->GetClickCallback()->bind(gLogic.GetGameScreens(), &CGameScreens::ReturnToGame);
     // temp (wywalic po zmianie grafiki):
-    close->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
+    close->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
     close->SetText(gLocalizator.GetText("ABITREE_CLOSE"));
     close->SetCenter(true);
     

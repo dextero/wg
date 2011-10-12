@@ -17,6 +17,11 @@ void CDropList::SetImage( const std::string& normal, const std::string& mouseOve
 	mSelectedOption->SetImage( normal, mouseOver );
 }
 
+void CDropList::SetFont(const GUI::FontSetting & fs)
+{
+    SetFont(fs.name, fs.size, fs.unit);
+}
+
 void CDropList::SetFont(const std::string &name, float size, guiUnit u)
 {
 	mSelectedOption->SetFont( name, size, u );
@@ -36,6 +41,11 @@ void CDropList::SetOptionImage(const std::string &normal, const std::string &mou
 {
 	mOptionData.normalImage = normal;
 	mOptionData.mouseOverImage = mouseOver;
+}
+
+void CDropList::SetOptionFont(const GUI::FontSetting & fs)
+{
+    SetOptionFont(fs.name, fs.size, fs.unit);
 }
 
 void CDropList::SetOptionFont(const std::string& name, float size, guiUnit u)

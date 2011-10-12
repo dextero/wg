@@ -26,6 +26,11 @@ void CTextArea::SetBackgroundImage( const std::string& filename )
 		mBackgroundSprite->GetSFSprite()->SetImage( *img );
 }
 
+void CTextArea::SetFont(const GUI::FontSetting & fs)
+{
+    SetFont(fs.name, fs.size, fs.unit);
+}
+
 void CTextArea::SetFont(const std::string &name, float size, guiUnit u)
 {
 	mFontSize[u] = size * ( u == UNIT_PERCENT ? .01f : 1.0f );

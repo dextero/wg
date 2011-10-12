@@ -25,6 +25,7 @@
 #include "../Logic/CPlayerManager.h"
 #include "../Rendering/CHudSprite.h"
 #include "../Rendering/CDrawableManager.h"
+#include "../Utils/CXml.h"
 
 #undef CreateWindow
 #undef MOUSE_MOVED
@@ -47,10 +48,20 @@ CRoot::CRoot()
 	gGame.AddKeyListener( this );
 	gGame.AddMouseListener( this );
 
+    CXml xml("data/gui.xml", "root");
+    for (xml_node<>* node = xml.GetChild(NULL, "fontSetting"); node; node = xml.GetSibl(node, "fontSetting")) {
+        GUI::FontSetting fs;
+        std::string id = xml.GetString(node, "id");
+        fs.name = xml.GetString(node, "name");
+        fs.size = xml.GetFloat(node, "size");
+        fs.unit = xml.GetString(node, "unit") == "UNIT_PIXEL" ? GUI::UNIT_PIXEL : GUI::UNIT_PERCENT;
+        mFontSettings[id] = fs;
+    }
+
 	/* TEMP */
 	CTextArea* gfps = CreateTextArea("fpstext",true,Z_GUI4);
 	gfps->SetPosition(2.0f,2.0f,20.0f,10.0f);
-	gfps->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
+    gfps->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 	gfps->SetVisible(false);
 
     mCursor = CreateImageBox("cursor", true, Z_CURSOR);
@@ -69,6 +80,20 @@ CRoot::CRoot()
 
 CRoot::~CRoot()
 {
+}
+
+FontSetting CRoot::GetFontSetting(const std::string & id)
+{
+    if (mFontSettings.find(id) != mFontSettings.end()) {
+        return mFontSettings[id];
+    } else {
+        fprintf(stderr, "warning: CRoot::GetFontSetting, can't find font with id=`%s'\n", id.c_str());
+        FontSetting fs;
+        fs.name = "data/GUI/verdana.ttf";
+        fs.size = 14.f;
+        fs.unit = GUI::UNIT_PIXEL;
+        return fs;
+    }
 }
 
 void CRoot::FrameStarted(float secondsPassed)

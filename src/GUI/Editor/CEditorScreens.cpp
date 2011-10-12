@@ -43,9 +43,9 @@ void CEditorScreens::Init()
 		editor->SetPosition(80.0f,0.0f,20.0f,100.0f);
 
 		mEditorMode = editor->CreateDropList( "editor-mode" );
-		mEditorMode->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 45.0f, UNIT_PERCENT );
+		mEditorMode->SetFont("data/GUI/verdana.ttf", 45.0f, UNIT_PERCENT );
 		mEditorMode->SetImage( "data/GUI/droplist.png", "data/GUI/droplistd.png" );
-		mEditorMode->SetOptionFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 45.0f, UNIT_PERCENT );
+		mEditorMode->SetOptionFont("data/GUI/verdana.ttf", 45.0f, UNIT_PERCENT );
 		mEditorMode->SetOptionImage( "data/GUI/droplist-option.png", "data/GUI/droplist-optiond.png" );
 		mEditorMode->SetOptionCenter( true );
 		mEditorMode->SetPosition( 10.0f, 1.0f, 80.0f, 4.0f );
@@ -79,7 +79,7 @@ void CEditorScreens::Init()
 
 		CTextArea * hint = editor->CreateTextArea("hint");
 		hint->SetText(L"pomoc: F11 -> editor-help\nrotacja: lewo prawo\nskalowanie: gora dol\nwysokosc doodaha: z");
-        hint->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG),12.0f);
+        hint->SetFont(gGUI.GetFontSetting("FONT_DEFAULT")); // bylo 12.
         hint->SetColor(sf::Color::Black);
         hint->SetPosition(10.0f,92.0f,80.0f,8.0f);
         

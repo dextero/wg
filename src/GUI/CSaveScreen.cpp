@@ -54,7 +54,7 @@ CSaveScreen::CSaveScreen(CScreens * parent)
 
     CButton* loadBtn = saveScreen->CreateButton("load-button");
     loadBtn->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
-    loadBtn->SetFont( gLocalizator.GetFont(GUI::FONT_MENU), 38.0f, UNIT_PERCENT );
+    loadBtn->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON_SMALL"));
     loadBtn->SetText( gLocalizator.GetText("MENU_LOAD") );
     loadBtn->SetPosition( 66.0f, 71.f, 29.0f, 6.0f );
     loadBtn->SetCenter( true );
@@ -75,7 +75,7 @@ CSaveScreen::CSaveScreen(CScreens * parent)
         thumb->SetPosition(0, 0, 4 * kSaveSlotHeight / 3, 100);
 
         CButton * button = saveSlot->CreateButton(slotName + "-button");
-        button->SetFont( gLocalizator.GetFont(GUI::FONT_MENU), 25.0f, UNIT_PERCENT );
+        button->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON_SAVE"));
         button->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
         button->SetCenter( true );
         button->SetPosition(4 * kSaveSlotHeight / 3, 0, 100 - 4 * kSaveSlotHeight / 3, 100);
@@ -83,7 +83,7 @@ CSaveScreen::CSaveScreen(CScreens * parent)
 
     CButton * exitSaveScreen = saveScreen->CreateButton( "save-screen-exit" );
     exitSaveScreen->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
-    exitSaveScreen->SetFont( gLocalizator.GetFont(GUI::FONT_MENU), 38.0f, UNIT_PERCENT );
+    exitSaveScreen->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON_SMALL"));
     exitSaveScreen->SetText( gLocalizator.GetText("OPT_CANCEL") );
     exitSaveScreen->SetPosition( 35.0f, kCancelButtonOffset, 30.0f, 6.0f );
     exitSaveScreen->SetCenter( true );

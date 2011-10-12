@@ -78,14 +78,14 @@ void CInGameOptionChooser::SetOptionImages(const std::string & normal, const std
     }
 }
 
-void CInGameOptionChooser::SetOptionFont(const std::string & name, float size) {
-    mOptionFont = name;
-    mOptionFontSize = size;
+void CInGameOptionChooser::SetOptionFont(const GUI::FontSetting & fs) {
+    mOptionFontSetting = fs;
     for (size_t i = 0; i < mButtons.size(); i++) {
-        mButtons[i]->SetFont(name, size, GUI::UNIT_PIXEL);
+        mButtons[i]->SetFont(fs);
     }
     if (mTitle) {
-        mTitle->SetFont(name, size + 2.0f, GUI::UNIT_PIXEL);
+//        mTitle->SetFont(name, size + 2.0f, GUI::UNIT_PIXEL);
+        mTitle->SetFont(fs);
     }
 }
 
@@ -106,7 +106,8 @@ void CInGameOptionChooser::SetTitle(const std::string & title) {
         // te tutaj to trzeba chyba jednak na sztywno ustalic czy w inny sposob uzyskiwac
         // - a na razie tak na lapu-capu zostawiam:
         mTitle->SetImage(mOptionImageNormal, mOptionImageMouseOver);
-        mTitle->SetFont(mOptionFont, mOptionFontSize + 2.0f, GUI::UNIT_PIXEL);
+//        mTitle->SetFont(mOptionFont, mOptionFontSize + 2.0f, GUI::UNIT_PIXEL);
+        mTitle->SetFont(mOptionFontSetting);
         mTitle->SetColor(mOptionColor);
         mTitle->SetCenter(true);
     }
@@ -120,7 +121,8 @@ void CInGameOptionChooser::SetOptions(const std::vector<std::string> & options)
             mButtons.push_back(gGUI.CreateButton(std::string("igoc-" + StringUtils::ToString(i), true, Z_GUI1)));
             mButtons[i]->SetPadding(40.f, 0.f, 0.f, 0.f);
             mButtons[i]->SetImage(mOptionImageNormal, mOptionImageMouseOver);
-            mButtons[i]->SetFont(mOptionFont, mOptionFontSize, GUI::UNIT_PIXEL);
+//            mButtons[i]->SetFont(mOptionFont, mOptionFontSize, GUI::UNIT_PIXEL);
+            mButtons[i]->SetFont(mOptionFontSetting);
             mButtons[i]->SetColor(mOptionColor);
             mButtons[i]->GetClickIntCallback()->bind(this, &CInGameOptionChooser::OptionSelectedThroughMouse);
             mButtons[i]->SetClickIntCallbackParam((int)i);

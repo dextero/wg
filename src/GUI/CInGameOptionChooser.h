@@ -35,7 +35,7 @@ public:
 	void SetOptions(const char * first, const char * second, const char * third, const char * fourth);
 	void SetOptionSize(const sf::Vector2f & size);
 	void SetOptionImages(const std::string & normal, const std::string & mouseOver = "");
-	void SetOptionFont(const std::string& name, float size);
+    void SetOptionFont(const GUI::FontSetting & fs);
 	void SetOptionColor(const sf::Color color);
     void SetTitle(const std::string & title);
 
@@ -68,8 +68,7 @@ private:
     std::string mOptionImageNormal;
     std::string mOptionImageMouseOver;
     sf::Color mOptionColor;
-    std::string mOptionFont;
-    float mOptionFontSize;
+    GUI::FontSetting mOptionFontSetting;
 
     IOptionChooserHandler * mOptionHandler;
     // TODO SafePtr!

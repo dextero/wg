@@ -13,15 +13,6 @@ namespace GUI {
 	};
 
 	const unsigned int UNIT_COUNT = 2;
-
-    enum localFontType {
-        FONT_MENU       = 0,
-        FONT_DIALOG     = 1,
-        FONT_MESSAGE    = 2,
-        FONT_CONSOLE    = 3
-    };
-
-    const unsigned int FONT_COUNT = 4;
 };
 
 struct STextPadding {
@@ -53,14 +44,10 @@ private:
 	std::map<hash_t, SLocalizedText> mKeys;
 	std::wstring mName;
 	std::wstring mCode;
-    std::string mFonts[GUI::FONT_COUNT];
 public:
     const SLocalizedText Get(hash_t id);
 	const std::wstring &GetText(hash_t id);
     STextPadding GetPadding(hash_t id);
-    float GetFontSize(hash_t id);
-    GUI::guiUnit GetFontSizeType(hash_t id);
-    const std::string& GetFont(GUI::localFontType type);
 	
 	void Load(std::string filename);
 

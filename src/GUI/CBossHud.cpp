@@ -48,7 +48,7 @@ void GUI::CBossHud::Init()
     mText->SetPosition(0.f, 0.f, 100.f, 100.f);
     mText->SetCenter(true);
     mText->SetColor(sf::Color::White);
-    mText->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
+    mText->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
     mText->GetSFString()->SetStyle(sf::String::Bold);
 }
 

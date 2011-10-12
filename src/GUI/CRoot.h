@@ -15,6 +15,12 @@
 
 namespace GUI
 {
+    struct FontSetting {
+        std::string name;
+        float size;
+        guiUnit unit;
+    };
+
 	class CRoot : public CSingleton< CRoot >, public CGUIObject, IFrameListener, IKeyListener, IMouseListener 
 	{
 	public:
@@ -45,6 +51,8 @@ namespace GUI
         inline CGUIObject* GetLastDraggedObject() { return mDraggedObject; }
 
         void ShowCursor(bool show=true);
+
+        FontSetting GetFontSetting(const std::string & id);
 	private:
 
 		CGUIObject* mActiveObject;
@@ -53,6 +61,7 @@ namespace GUI
         CImageBox* mCursor;
         CGUIObject* mDraggedObject;
         CImageBox* mDraggedImg;
+        std::map<std::string, FontSetting> mFontSettings;
 
 		friend class CGUIObject;
 	};

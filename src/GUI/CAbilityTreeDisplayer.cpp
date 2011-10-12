@@ -290,7 +290,7 @@ void CAbilityTreeDisplayer::LoadAbilityNode(const SAbilityNode &an){
     description->SetVisible(false);
     //description->SetCenter(true); // ³eeee³oooo³eeee³oooo bug alert, nie centrowac
     description->SetAutoHeight(true);
-    description->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
+    description->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
     
 	EAbilityType type = an.ability->abilityType;
     // kombinacja
@@ -352,7 +352,7 @@ void CAbilityTreeDisplayer::LoadAbilityNode(const SAbilityNode &an){
     CTextArea* info = tooltip->CreateTextArea("info");
     info->SetVisible(false);
     info->SetAutoHeight(true);
-    info->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
+    info->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 
     tooltip->UpdateChilds(0.f);
     description->UpdateText();

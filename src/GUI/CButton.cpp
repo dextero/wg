@@ -47,6 +47,11 @@ void CButton::SetImage( const std::string& normal, const std::string& mouseOver,
     }
 }
 
+void CButton::SetFont(const GUI::FontSetting & fs)
+{
+    SetFont(fs.name, fs.size, fs.unit);
+}
+
 void CButton::SetFont( const std::string& name, float size, guiUnit u )
 {
 	if ( !mTextSprite )
