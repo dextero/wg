@@ -196,22 +196,6 @@ Stay tuned!</value>
 		<value>File data/config.xml file doesn&apos;t contain any control schemes. Please update it, or make your own scheme.</value>
 	</entry>
 	<entry>
-		<key>FONT_CONSOLE</key>
-		<value>data/GUI/free_mono.ttf</value>
-	</entry>
-	<entry>
-		<key>FONT_DIALOG</key>
-		<value>data/GUI/verdana.ttf</value>
-	</entry>
-	<entry>
-		<key>FONT_MENU</key>
-		<value>data/GUI/argbrujs.ttf</value>
-	</entry>
-	<entry>
-		<key>FONT_MESSAGE</key>
-		<value>data/GUI/monotype-corsiva.ttf</value>
-	</entry>
-	<entry>
 		<key>FULLSCREEN_MESSAGE</key>
 		<value>Do you want to run Warlock&apos;s Gauntlet in fullscreen mode? If you select OK, game will start in fullscreen mode %dx%d. If you select Cancel, game will start in windowed mode 800x600. Remember, you can always change fullscreen mode and resolution in options menu.</value>
 	</entry>
@@ -252,52 +236,42 @@ F11 - console window</value>
 	<entry>
 		<key>MENU_1_PLAYER</key>
 		<value>1 player</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_1_PLAYER_TUTORIAL</key>
 		<value>Tutorial</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_2_PLAYERS</key>
 		<value>2 players</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_ACHIEVEMENTS</key>
 		<value>Achievements</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_AUTOSAVE</key>
 		<value>Autosave</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_BESTIARY</key>
 		<value>Bestiary</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_CONTINUE</key>
 		<value>Continue</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_EDITOR</key>
 		<value>Editor</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_EMPTY_SAVE_SLOT</key>
 		<value>Empty slot</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_EXIT</key>
 		<value>Exit</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_LOAD</key>
@@ -306,32 +280,26 @@ F11 - console window</value>
 	<entry>
 		<key>MENU_LOAD_GAME</key>
 		<value>Load game</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_NEW_GAME</key>
 		<value>New game</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_OPTIONS</key>
 		<value>Options</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_README</key>
 		<value>Instruction</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_RETURN</key>
 		<value>Return</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MENU_SAVE_GAME</key>
 		<value>Save game</value>
-		<size>35%</size>
 	</entry>
 	<entry>
 		<key>MSG_FOUND</key>
@@ -387,7 +355,6 @@ F11 - console window</value>
 	<entry>
 		<key>OPT_CANCEL</key>
 		<value>Cancel</value>
-		<size>38%</size>
 	</entry>
 	<entry>
 		<key>OPT_CONTROLS1</key>
@@ -400,7 +367,6 @@ F11 - console window</value>
 	<entry>
 		<key>OPT_DEFINE</key>
 		<value>Configure</value>
-		<size>45%</size>
 	</entry>
 	<entry>
 		<key>OPT_FULLSCREEN</key>
@@ -417,7 +383,6 @@ F11 - console window</value>
 	<entry>
 		<key>OPT_SAVE</key>
 		<value>Apply</value>
-		<size>38%</size>
 	</entry>
 	<entry>
 		<key>OPT_SOUND_LEVEL</key>
@@ -493,7 +458,6 @@ Anonim, borys94, BrutalComputer, ciVis, Fiolek, Kenji-dev,
 - creators of an open-source game 0 A.D. - http://www.wildfiregames.com/0ad/
 - Eternal Lands&apos; team - http://www.eternal-lands.com/ - for allowing us to use sounds from their game.
 </value>
-		<size>14</size>
 	</entry>
 	<entry>
 		<key>REQ_LEVEL</key>

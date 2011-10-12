@@ -15,10 +15,8 @@ STextPadding::STextPadding(std::wstring& str) {
             padding[i] = StringUtils::Parse<float>(str.substr(at, str.find(L",", at)));
 };
 
-SLocalizedText::SLocalizedText(std::wstring text, float fontSize, GUI::guiUnit fontSizeType, STextPadding padding):
+SLocalizedText::SLocalizedText(std::wstring text, STextPadding padding):
     text(text),
-    fontSize(fontSize),
-    fontSizeType(fontSizeType),
     padding(padding)
 {
 }
@@ -63,19 +61,10 @@ void CLocale::Load(std::string filename){
 		std::wstring str = std::wstring(StringUtils::ReinterpretFromUTF8(xml.GetString(xml.GetChild(n,"value"))));
         std::wstring padding = StringUtils::ReinterpretFromUTF8(xml.GetString(xml.GetChild(n, "padding")));
 
-        std::wstring sizeStr = StringUtils::ReinterpretFromUTF8(xml.GetString(xml.GetChild(n, "size")));
-        GUI::guiUnit sizeType = GUI::UNIT_PIXEL;
-        float size = 100.f;
-        if (sizeStr != L"")
-        {
-            sizeType = (sizeStr[sizeStr.size() - 1] == L'%' ? GUI::UNIT_PERCENT : GUI::UNIT_PIXEL);
-            size = StringUtils::Parse<float>(sizeStr);
-        }
-
         if (padding != L"")
-            mKeys[hash] = SLocalizedText(str, size, sizeType, STextPadding(padding));
+            mKeys[hash] = SLocalizedText(str, STextPadding(padding));
         else
-		    mKeys[hash] = SLocalizedText(str, size, sizeType);
+		    mKeys[hash] = SLocalizedText(str);
 	}
 
     fprintf(stderr, "Locale: %d keys in %s\n", (int)(mKeys.size() - oldKeys), filename.c_str());

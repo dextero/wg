@@ -29,13 +29,9 @@ struct STextPadding {
 
 struct SLocalizedText {
     std::wstring text;
-    float fontSize;
-    GUI::guiUnit fontSizeType;
     STextPadding padding;
 
     SLocalizedText(std::wstring text = L"-undefined-",
-                   float fontSize = 100.f,
-                   GUI::guiUnit fontSizeType = GUI::UNIT_PIXEL,
                    STextPadding padding = STextPadding());
 };
 
