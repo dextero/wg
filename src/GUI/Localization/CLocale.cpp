@@ -4,10 +4,6 @@
 #include "GeneralKeys.h"
 #include "../CGUIObject.h"
 
-#define LOAD_FONT(font, key, default) \
-    if ((mFonts[font] = StringUtils::ConvertToString(GetText(StringUtils::GetStringHash(key)))) == "???") \
-        mFonts[font] = default
-
 STextPadding::STextPadding(float left, float top, float right, float bottom): left(left), top(top), right(right), bottom(bottom)
 {
 }
@@ -52,25 +48,6 @@ STextPadding CLocale::GetPadding(hash_t id){
         return STextPadding();
 }
 
-float CLocale::GetFontSize(hash_t id){
-    if (mKeys.count(id) > 0)
-        return mKeys[id].fontSize;
-    else
-        return 100.f;
-}
-
-GUI::guiUnit CLocale::GetFontSizeType(hash_t id){
-    if (mKeys.count(id) > 0)
-        return mKeys[id].fontSizeType;
-    else
-        return GUI::UNIT_PIXEL;
-}
-
-const std::string& CLocale::GetFont(GUI::localFontType type)
-{
-    return mFonts[type];
-}
-
 void CLocale::Load(std::string filename){
 	CXml xml(filename, "root");
 	if (xml.GetString(xml.GetRootNode(),"type") != "locale")
@@ -102,18 +79,9 @@ void CLocale::Load(std::string filename){
 	}
 
     fprintf(stderr, "Locale: %d keys in %s\n", (int)(mKeys.size() - oldKeys), filename.c_str());
-
-    // szybszy dostep do fontow
-    // dex: uwaga, wszystkie sciezki do fontow musza byc poprawne lub nie istniec
-    LOAD_FONT(GUI::FONT_MENU, "FONT_MENU", "data/GUI/argbrujs.ttf");
-    LOAD_FONT(GUI::FONT_DIALOG, "FONT_DIALOG", "data/GUI/verdana.ttf");
-    LOAD_FONT(GUI::FONT_MESSAGE, "FONT_MESSAGE", "data/GUI/monotype-corsiva.ttf");
-    LOAD_FONT(GUI::FONT_CONSOLE, "FONT_CONSOLE", "data/GUI/free_mono.ttf");
 }
 
 CLocale::CLocale(){
-    for (unsigned int i = 0; i < GUI::FONT_COUNT; ++i)
-        mFonts[i] = "";
 }
 
 CLocale::~CLocale(){

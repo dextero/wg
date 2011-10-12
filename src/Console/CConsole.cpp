@@ -21,12 +21,12 @@
 
 #include "../GUI/Localization/CLocalizator.h"
 #include "../GUI/Localization/GeneralKeys.h"
+#include "../GUI/CRoot.h" // GUI::FontSetting
 
 #include <fstream>
 
 #define CONSOLE_WIDTH 70
 #define CONSOLE_HEIGHT 15
-#define CONSOLE_FONT_SIZE 18
 
 #ifndef SCM_REVISION
 #define SCM_REVISION dev-snapshot
@@ -41,13 +41,16 @@ static unsigned currentFontSize = 0;
 
 template<> CConsole* CSingleton<CConsole>::msSingleton = 0;
 
+static GUI::FontSetting fontSetting;
+
 CConsole::CConsole() :
     mVisible( false )
 {   
     fprintf( stderr, "CConsole::CConsole()\n" );
 
     gCommands;
-	currentFontSize = unsigned( (float) CONSOLE_FONT_SIZE * std::min( (float) gGameOptions.GetWidth() / 800.0f, (float) gGameOptions.GetHeight() / 600.0f ) );
+    fontSetting = gGUI.GetFontSetting("FONT_CONSOLE");
+    currentFontSize = unsigned( fontSetting.size * std::min( (float) gGameOptions.GetWidth() / 800.0f, (float) gGameOptions.GetHeight() / 600.0f ) );
 	mWidth = CONSOLE_WIDTH;
 	mHeight = CONSOLE_HEIGHT;
     
@@ -65,17 +68,16 @@ CConsole::CConsole() :
     }
 
     std::map<std::string, std::string> args;
-    args["name"] = gLocalizator.GetFont(GUI::FONT_CONSOLE);
+    args["name"] = fontSetting.name;
     args["charsize"] = StringUtils::ToString(currentFontSize);
     gResourceManager.LoadFont(args);
-    sf::Font* font = gResourceManager.GetFont(gLocalizator.GetFont(GUI::FONT_CONSOLE));
+    sf::Font* font = gResourceManager.GetFont(fontSetting.name);
     if (!font) {
         fprintf(stderr, "error: CConsole::CConsole(): Unable to load font, continuing anyway\n");
     }
 
     mHudStaticText = gDrawableManager.CreateHudStaticText(Z_CONSOLE_TEXT);
     if (mHudStaticText) {
-        sf::Font* font = gResourceManager.GetFont(gLocalizator.GetFont(GUI::FONT_CONSOLE));
         if (font) {
             mHudStaticText->GetSFString()->SetFont(*font);
 		}
@@ -157,7 +159,7 @@ void CConsole::Cleanup()
 
 void CConsole::FrameStarted( float secondsPassed )
 {
-	unsigned newFontSize = unsigned( (float) CONSOLE_FONT_SIZE * std::min( (float) gGameOptions.GetWidth() / 800.0f, (float) gGameOptions.GetHeight() / 600.0f ) );
+	unsigned newFontSize = unsigned( fontSetting.size * std::min( (float) gGameOptions.GetWidth() / 800.0f, (float) gGameOptions.GetHeight() / 600.0f ) );
     if (newFontSize != currentFontSize) {
         currentFontSize = newFontSize;
         mHudStaticText->GetSFString()->SetSize((float)currentFontSize);

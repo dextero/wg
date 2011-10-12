@@ -4,6 +4,7 @@
 #define _TEXT_AREA_H_
 
 #include "CGUIObject.h"
+#include "CRoot.h" // FontSetting
 #include <string>
 #include <SFML/Graphics/Color.hpp>
 
@@ -21,6 +22,7 @@ namespace GUI
 	{
 	public:
 		void SetBackgroundImage( const std::string& filename );
+        void SetFont(const GUI::FontSetting & fs);
 		void SetFont( const std::string& name, float size, guiUnit u = UNIT_PIXEL );
 		void SetColor(const sf::Color color);
 		void SetText( const std::wstring& text );

@@ -25,13 +25,6 @@ public:
     STextPadding GetPadding(hash_t id);
     STextPadding GetPadding(const char* id);
     
-    float GetFontSize(hash_t id);
-    float GetFontSize(const char* id);
-    GUI::guiUnit GetFontSizeType(hash_t id);
-    GUI::guiUnit GetFontSizeType(const char* id);
-
-    const std::string& GetFont(GUI::localFontType type);
-
     const std::wstring Localize(std::string str);
     const std::wstring Localize(std::wstring str);
 

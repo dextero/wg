@@ -2,6 +2,7 @@
 #define KEY_READER_H
 
 #include "CGUIObject.h"
+#include "CRoot.h" // GUI::FontSetting
 #include <SFML/Graphics/Color.hpp>
 #include <SFML/Window/Event.hpp>
 #include <FastDelegate.h>
@@ -19,6 +20,7 @@ namespace GUI
 	{
 	public:
 		void SetImage( const std::string& normal, const std::string& mouseOver, const std::string& active );
+        void SetFont(const GUI::FontSetting & fs);
 		void SetFont( const std::string& name, float size, guiUnit u = UNIT_PIXEL );
 		void SetColor( const sf::Color color );
 		void SetKey( int key );

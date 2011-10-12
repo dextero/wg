@@ -57,43 +57,6 @@ STextPadding CLocalizator::GetPadding(const char* id){
         return STextPadding();
 }
 
-float CLocalizator::GetFontSize(hash_t id){
-    if (mCurrent)
-        return mCurrent->GetFontSize(id);
-    else
-        return 100.f;
-}
-
-float CLocalizator::GetFontSize(const char* id){
-    if (mCurrent)
-        return mCurrent->GetFontSize(StringUtils::GetStringHash(id));
-    else
-        return 100.f;
-}
-
-GUI::guiUnit CLocalizator::GetFontSizeType(hash_t id){
-    if (mCurrent)
-        return mCurrent->GetFontSizeType(id);
-    else
-        return GUI::UNIT_PIXEL;
-}
-
-GUI::guiUnit CLocalizator::GetFontSizeType(const char* id){
-    if (mCurrent)
-        return mCurrent->GetFontSizeType(StringUtils::GetStringHash(id));
-    else
-        return GUI::UNIT_PIXEL;
-}
-
-const std::string& CLocalizator::GetFont(GUI::localFontType type)
-{
-    if (mCurrent)
-        return mCurrent->GetFont(type);
-    else
-        return emptyFont;
-}
-
-
 const std::wstring CLocalizator::Localize(std::string str)
 {
     return (str[0] == '$' ? GetText(str.substr(1).c_str()) : StringUtils::ReinterpretFromUTF8(str));

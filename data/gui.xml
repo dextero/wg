@@ -1,0 +1,34 @@
+<root type="config">
+  <fontSetting id="FONT_CONSOLE" name="data/GUI/free-mono.ttf" size="18.f"/>
+
+  <fontSetting id="FONT_DEFAULT" name="data/GUI/verdana.ttf" size="14.f" unit="UNIT_PIXEL" />
+  <fontSetting id="FONT_OPTION_CHOOSER" name="data/GUI/verdana.ttf" size="12.f" unit="UNIT_PIXEL" />
+  <fontSetting id="FONT_MOUSE_CAST" name="data/GUI/verdana.ttf" size="16.f" unit="UNIT_PIXEL" />
+  <fontSetting id="FONT_IN_GAME_MESSAGE" name="data/GUI/argor.ttf" size="22.f" unit="UNIT_PIXEL" />
+  
+  <fontSetting id="FONT_MENU_OPTION_LABEL" name="data/GUI/argor.ttf" size="55.f" unit="UNIT_PERCENT" />
+  <fontSetting id="FONT_MENU_OPTION_FIELD" name="data/GUI/verdana.ttf" size="45.f" unit="UNIT_PERCENT" />
+  <fontSetting id="FONT_MENU_BUTTON" name="data/GUI/argbrujs.ttf" size="50.f" unit="UNIT_PERCENT" />
+  <fontSetting id="FONT_MENU_BUTTON_SMALL" name="data/GUI/argbrujs.ttf" size="38.f" unit="UNIT_PERCENT" />
+  <fontSetting id="FONT_MENU_BUTTON_VERY_SMALL" name="data/GUI/argbrujs.ttf" size="20.f" unit="UNIT_PERCENT" />
+  <fontSetting id="FONT_MENU_BUTTON_SAVE" name="data/GUI/argbrujs.ttf" size="25.f" unit="UNIT_PERCENT" />
+  <fontSetting id="FONT_MENU_SAVE" name="data/GUI/verdana.ttf" size="24.f" unit="UNIT_PIXEL" />
+  <fontSetting id="FONT_MENU_SAVE_DESCRIPTION" name="data/GUI/verdana.ttf" size="12.f" unit="UNIT_PIXEL" />
+  <fontSetting id="FONT_MENU_HEADER" name="data/GUI/argbrujs.ttf" size="30.f" unit="UNIT_PERCENT" />
+  <!-- todo? bindKey-> jak default, tylko wielkosci 15 zamiast 14 -->
+  
+  <!-- tak naprawde to tutaj chyba trzeba by tylko podefiniowac podstawowe czcionki i bazowa wielkosc,
+  a w samym kodzie nie uzwac BUTTON_SMALL, BUTTON_VERY_SMALL itd itp, tylko skalowac bazowa wielkosc przez potrzebna
+  stala i juz. No, ale ja nie mam chwilowo na to czasu. -->
+  
+  <!-- to jest uzywane kilkukrotnie gdzies w abilities i okolicy, w roznym kontekscie, moze rozbic? -->
+  <fontSetting id="FONT_LEVEL_TEXT" name="data/GUI/monotype-corsiva.ttf" size="20.f" unit="UNIT_PIXEL" />
+  
+  <fontSetting id="FONT_ABILITIES_TEXT" name="data/GUI/monotype-corsiva.ttf" size="24.f" unit="UNIT_PIXEL" />
+
+  <fontSetting id="FONT_MENU_BUTTON" name="data/GUI/argbrujs.ttf" size="50.f" unit="UNIT_PERCENT" />
+  <fontSetting id="FONT_MENU_OPTION" name="data/GUI/argbrujs.ttf" size="50.f" unit="UNIT_PERCENT" />
+  <fontSetting id="FONT_DIALOG" name="data/GUI/verdana.ttf" size="14.f" unit="UNIT_PIXEL" />
+  <fontSetting id="FONT_MESSAGE" name="data/GUI/monotype-corsiva.ttf" />
+</root>
+

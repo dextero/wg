@@ -31,11 +31,13 @@ namespace GUI
 	{
 	public:
 		void SetImage( const std::string& normal, const std::string& mouseOver="" );
+        void SetFont(const GUI::FontSetting & fs);
 		void SetFont( const std::string& name, float size, guiUnit u = UNIT_PIXEL );
 		void SetColor( const sf::Color color );
 		void SetCenter( bool center );
 
 		void SetOptionImage( const std::string& normal, const std::string& mouseOver="" );
+        void SetOptionFont(const GUI::FontSetting & fs);
 		void SetOptionFont( const std::string& name, float size, guiUnit u = UNIT_PIXEL );
 		void SetOptionColor( const sf::Color color );
 		void SetOptionCenter( bool center );

@@ -178,7 +178,7 @@ CItemSlot::CItemSlot(const std::string &name, unsigned player, CGUIObject *paren
     description->SetVisible(false);
     //description->SetCenter(true); // ³eeee³oooo³eeee³oooo bug alert, nie centrowac
     description->SetAutoHeight(true);
-    description->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
+    description->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 
     // nie chcemy, zeby tooltip odbieral komunikaty myszy
     gGUI.UnregisterObject(tooltip);

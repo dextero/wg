@@ -226,7 +226,7 @@ void CGameScreens::InitAbilities(unsigned playerNumber)
             {
                 btn[j] = trees[i]->CreateButton("tree-switcher" + StringUtils::ToString(j));
                 btn[j]->SetPosition(8.f + j * 16.f, 3.5f, 15.f, 5.f);
-                btn[j]->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG), 14.f);
+                btn[j]->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
                 btn[j]->SetText(gLocalizator.GetText(treesKeys[j].c_str()));
                 btn[j]->GetClickParamCallback()->bind(this, &CGameScreens::SetActiveAbilityScreen);
                 btn[j]->SetClickCallbackParams(StringUtils::ConvertToWString(treesNames[j]));
@@ -239,7 +239,7 @@ void CGameScreens::InitAbilities(unsigned playerNumber)
             close->SetImage("data/GUI/bbtn-up.png", "data/GUI/bbtn-hover.png", "data/GUI/bbtn-down.png");
             close->GetClickCallback()->bind(this, &CGameScreens::ReturnToGame);
             // temp (wywalic po zmianie grafiki):
-            close->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
+            close->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
             close->SetText(gLocalizator.GetText("ABITREE_CLOSE"));
             close->SetCenter(true);
         }
@@ -258,21 +258,22 @@ void CGameScreens::InitAbilities(unsigned playerNumber)
 			atd[i]->SetActiveHolderImage("data/GUI/abilities_scroll_bought.png");
 			atd[i]->SetPotentialHolderImage("data/GUI/abilities_scroll_potential.png");
             atd[i]->SetDependencyLineImage("data/GUI/abilities-dependency-line.png");
-            atd[i]->SetLvlTextFont(gLocalizator.GetFont(GUI::FONT_MESSAGE),20);
+            const GUI::FontSetting & fs = gGUI.GetFontSetting("FONT_LEVEL_TEXT");
+            atd[i]->SetLvlTextFont(fs.name, fs.size);
 
 			CTextArea * xp = atd[i]->CreateTextArea("xptext");
 			xp->SetPosition(5.0f,87.0f,25.0f,15.0f);
-			xp->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
+			xp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 			xp->SetText(L"XP: ?");
 
 			CTextArea * sp = atd[i]->CreateTextArea("skill-points");
 			sp->SetPosition(5.0f,90.0f,25.0f,10.0f);
-			sp->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
+			sp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 			sp->SetText(L"SP: ?");
 
 			CTextArea * lvl = atd[i]->CreateTextArea("player-level");
 			lvl->SetPosition(5.0f,93.0f,25.0f,10.0f);
-			lvl->SetFont(gLocalizator.GetFont(GUI::FONT_DIALOG), 14 );
+			lvl->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 			lvl->SetText(L"LVL: ?");
 
 			CImageBox* avatar = atd[i]->CreateImageBox("avatar");
@@ -401,7 +402,7 @@ void CGameScreens::InitControlListing(unsigned playerNumber)
         close->SetImage("data/GUI/bbtn-up.png", "data/GUI/bbtn-hover.png", "data/GUI/bbtn-down.png");
         close->GetClickCallback()->bind(this, &CGameScreens::ReturnToGame);
         // temp (wywalic po zmianie grafiki):
-        close->SetFont(gLocalizator.GetFont(FONT_DIALOG), 14.f);
+        close->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
         close->SetText(L"X");
         close->SetCenter(true);
 
@@ -426,8 +427,8 @@ void CGameScreens::InitControlListing(unsigned playerNumber)
 			default: avatar->AddImageToSequence("data/GUI/mag20.png"); break;
 			}
 
-		CTextArea *txt = panel->CreateTextArea("help"); //tox: help screen
-		txt->SetFont(gLocalizator.GetFont(GUI::FONT_MESSAGE), 20 );
+		CTextArea *txt = panel->CreateTextArea("help");
+		txt->SetFont(gGUI.GetFontSetting("FONT_LEVEL_TEXT"));
 		txt->SetPosition(0.0f,0.0f,100.0f,0.0f);
 		txt->SetAutoHeight(true);
 
@@ -445,19 +446,19 @@ void CGameScreens::InitControlListing(unsigned playerNumber)
 		txt->SetColor(sf::Color::Black);
 
 		txt = txt->CreateTextArea("controls-txt");
-		txt->SetFont(gLocalizator.GetFont(GUI::FONT_MESSAGE), 20 );
+		txt->SetFont(gGUI.GetFontSetting("FONT_LEVEL_TEXT"));
 		txt->SetPosition(0.0f,100.0f,100.0f,0.0f);
 		txt->SetAutoHeight(true);
 		txt->SetColor(sf::Color::Black);
 
 		CTextArea *txt2 = txt->CreateTextArea("abilities-txt-left");
-		txt2->SetFont(gLocalizator.GetFont(GUI::FONT_MESSAGE), 24 );
+		txt2->SetFont(gGUI.GetFontSetting("FONT_ABILITIES_TEXT"));
 		txt2->SetPosition(0.0f,100.0f,40.0f,0.0f);
 		txt2->SetAutoHeight(true);
 		txt2->SetColor(sf::Color::Black);
 
         txt2 = txt->CreateTextArea("abilities-txt-right");
-		txt2->SetFont(gLocalizator.GetFont(GUI::FONT_MESSAGE), 24 );
+		txt2->SetFont(gGUI.GetFontSetting("FONT_ABILITIES_TEXT"));
 		txt2->SetPosition(40.0f,100.0f,60.0f,0.0f);
 		txt2->SetAutoHeight(true);
 		txt2->SetColor(sf::Color::Black);
@@ -595,7 +596,7 @@ void CGameScreens::InitGameOver()
 		CButton * load = gameOver->CreateButton( "load-game-button" );
 		load->SetImage( "data/GUI/btn-blank.png", "data/GUI/btn-blankd.png" );
         load->SetText(gLocalizator.GetText("MENU_LOAD_GAME"));
-        load->SetFont(gLocalizator.GetFont(FONT_MENU), 50.f, UNIT_PERCENT);
+        load->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON"));
         load->SetCenter(true);
 		load->SetPosition( 20.0f, 90.0f, 20.0f, 6.0f );
 //		load->GetClickCallback()->bind( &gLogic, &CLogic::LoadGame );
@@ -605,7 +606,7 @@ void CGameScreens::InitGameOver()
         CButton * exit = gameOver->CreateButton( "exit-button" );
 		exit->SetImage( "data/GUI/btn-blank.png", "data/GUI/btn-blankd.png" );
         exit->SetText(gLocalizator.GetText("MENU_EXIT"));
-        exit->SetFont(gLocalizator.GetFont(FONT_MENU), 50.f, UNIT_PERCENT);
+        exit->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON"));
         exit->SetCenter(true);
 		exit->SetPosition( 60.0f, 90.0f, 20.0f, 6.0f );
 		exit->GetClickCallback()->bind( &gLogic, &CLogic::CheckRestart );

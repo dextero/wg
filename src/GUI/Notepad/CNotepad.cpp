@@ -46,7 +46,7 @@ CNotepad::CNotepad()
 
 	mPageContent = pagePanel->CreateTextArea( "np-page-content" );
 	mPageContent->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
-	mPageContent->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 14.0f );
+	mPageContent->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 	mPageContent->SetColor( sf::Color::White );
 	mPageContent->SetAutoHeight( true );
 
@@ -116,7 +116,7 @@ CNotepad::SPage* CNotepad::AddPage(const std::wstring &caption)
 	page.caption_btn->SetPosition( 0.0f, 0.0, 100.0f, 0.0f, UNIT_PERCENT );
 	page.caption_btn->SetPosition( 0.0f, CAPTION_BTN_HEIGHT * mPages.size(), 0.0f, CAPTION_BTN_HEIGHT, UNIT_PIXEL );
 	page.caption_btn->SetImage( "data/GUI/droplist-option.png", "data/GUI/droplist-optiond.png" );
-	page.caption_btn->SetFont( gLocalizator.GetFont(GUI::FONT_DIALOG), 14.0f );
+	page.caption_btn->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 	page.caption_btn->SetColor( sf::Color::White );
 	page.caption_btn->SetText( caption );
 	page.caption_btn->GetClickParamCallback()->bind( this, &GUI::CNotepad::Show );

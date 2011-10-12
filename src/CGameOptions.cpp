@@ -508,7 +508,8 @@ size_t CGameOptions::AddControlScheme( int player, const std::string& name, cons
 	    CMouseCaster* mc = new CMouseCaster();
 	    mc->Initialize( abiKeys, 80.0f );
 	    mc->SetKeyImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png" );
-	    mc->SetKeyFont( "data/GUI/verdana.ttf", 16.0f );
+        const GUI::FontSetting & fs = gGUI.GetFontSetting("FONT_MOUSE_CAST");
+	    mc->SetKeyFont(fs.name, fs.size, fs.unit);
 	    mc->SetKeyColor( sf::Color::White );
 	    mc->SetKeySize( sf::Vector2f(60.0f,60.0f) );
 

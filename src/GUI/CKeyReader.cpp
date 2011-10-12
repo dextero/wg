@@ -25,6 +25,11 @@ void CKeyReader::SetImage( const std::string& normal, const std::string& mouseOv
 	if ( active != "" )		mActiveImg = gResourceManager.GetImage( active );
 }
 
+void CKeyReader::SetFont(const GUI::FontSetting & fs)
+{
+    SetFont(fs.name, fs.size, fs.unit);
+}
+
 void CKeyReader::SetFont( const std::string& name, float size, guiUnit u )
 {
 	sf::Font* font = gResourceManager.GetFont( name );
