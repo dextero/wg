@@ -79,7 +79,7 @@ void CEditorScreens::Init()
 
 		CTextArea * hint = editor->CreateTextArea("hint");
 		hint->SetText(L"pomoc: F11 -> editor-help\nrotacja: lewo prawo\nskalowanie: gora dol\nwysokosc doodaha: z");
-        hint->SetFont(gGUI.GetFontSetting("FONT_DEFAULT")); // bylo 12.
+        hint->SetFont(gGUI.GetFontSetting("FONT_DEFAULT")); // bylo 12.f
         hint->SetColor(sf::Color::Black);
         hint->SetPosition(10.0f,92.0f,80.0f,8.0f);
         

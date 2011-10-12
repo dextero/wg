@@ -281,7 +281,7 @@ CInGameOptionChooser * CPlayerController::GetOptionChooser() {
         mOptionChooser = CInGameOptionChooser::CreateChooser();
         mOptionChooser->SetPlayer((CPlayer *)mActor);
         mOptionChooser->SetOptionImages("data/GUI/btn-up.png", "data/GUI/btn-hover.png");
-        mOptionChooser->SetOptionFont(gGUI.GetFontSetting("FONT_OPTION_CHOOSER"));
+        mOptionChooser->SetOptionFont(gGUI.GetFontSetting("FONT_DEFAULT"));
         mOptionChooser->SetOptionColor(sf::Color::White);
         mOptionChooser->SetOptionSize(sf::Vector2f(60.0f,60.0f));
         mOptionChooser->SetRadius(80.0f);

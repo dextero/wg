@@ -381,7 +381,7 @@ void GUI::CMenuScreens::InitChooseControlsMenu()
         controls->SetBackgroundImage("data/GUI/bg-options.jpg");
 
         CTextArea* header = controls->CreateTextArea("header");
-        header->SetFont(gGUI.GetFontSetting("FONT_MENU_HEADER"));
+        header->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON", (30.f/38.f)));
         header->SetText(gLocalizator.GetText("CHOOSE_CONTROLS_SCHEME"));
         header->SetPosition(0.f, 10.f, 100.f, 10.f);
         header->SetCenter(true);
@@ -396,7 +396,7 @@ void GUI::CMenuScreens::InitChooseControlsMenu()
                 continue;
 
             CButton* btn = controls->CreateButton("controls" + StringUtils::ToString(i));
-            btn->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON_VERY_SMALL"));
+            btn->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON", (0.20f/0.38f)));
             btn->SetText(System::Input::CBindManager::GetBindManagerAt(i)->GetName());
 		    btn->SetImage("data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png");
 		    btn->SetPosition(10.f + (bindsAdded % 2) * 40.f, 30.f + (int)(bindsAdded / 2) * 15.f, 40.0f, 10.0f);
@@ -433,7 +433,7 @@ void GUI::CMenuScreens::InitChooseControlsMenu()
         moreSchemesTxt->SetPosition(15.f, 63.f, 55.f, 11.f);
 
         CButton* options = controls->CreateButton("options");
-        options->SetFont(gGUI.GetFontSetting("FONT_DEFAULT")); //a bylo 12.f
+        options->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
         options->SetText(gLocalizator.GetText("MENU_OPTIONS"));
 		options->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
         options->SetPosition(69.f, 63.f, 13.f, 6.f);
@@ -442,7 +442,7 @@ void GUI::CMenuScreens::InitChooseControlsMenu()
         options->SetClickCallbackParams( L"options-from-choose-controls" );
 
         CButton* ret = controls->CreateButton("return");
-        ret->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON_VERY_SMALL"));
+        ret->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON"));
         ret->SetText(gLocalizator.GetText("MENU_RETURN"));
 		ret->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
         ret->SetPosition(30.f, 80.f, 40.f, 10.f);
@@ -473,15 +473,15 @@ void CMenuScreens::InitOptions()
 		options->SetBackgroundImage( "data/GUI/bg-options.jpg" );
 
 		CTextArea * resolutionTxt = options->CreateTextArea( "resolution-txt" );
-		resolutionTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_OPTION_LABEL"));
+		resolutionTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
 		resolutionTxt->SetText( gLocalizator.GetText("OPT_RESOLUTION") );
 		resolutionTxt->SetPosition( 19.0f, 15.0f, 30.0f, 5.0f );
 
 		CDropList * resolution = options->CreateDropList( "resolution" );
-		resolution->SetFont(gGUI.GetFontSetting("FONT_MENU_OPTION_FIELD"));
+		resolution->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
 		resolution->SetImage( "data/GUI/droplist.png", "data/GUI/droplistd.png" );
 		resolution->SetCenter( true );
-		resolution->SetOptionFont(gGUI.GetFontSetting("FONT_MENU_OPTION_FIELD"));
+		resolution->SetOptionFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
 		resolution->SetOptionImage( "data/GUI/droplist-option.png", "data/GUI/droplist-optiond.png" );
 		resolution->SetOptionCenter( true );
 		resolution->SetPosition( 51.0f, 15.0f, 20.0f, 4.0f );
@@ -502,7 +502,7 @@ void CMenuScreens::InitOptions()
 		/* ------------------------- */
 
 		CTextArea * fullscreenTxt = options->CreateTextArea( "fullscreen-txt" );
-		fullscreenTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_OPTION_LABEL"));
+		fullscreenTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
         fullscreenTxt->SetText( gLocalizator.GetText("OPT_FULLSCREEN"));
 		fullscreenTxt->SetPosition( 19.0f, 23.0f, 30.0f, 5.0f );
 
@@ -511,7 +511,7 @@ void CMenuScreens::InitOptions()
 		fullscreen->SetPosition( 51.0f, 23.0f, 3.25f, 4.0f );
 
 		CTextArea * vsyncTxt = options->CreateTextArea( "vsync-txt" );
-		vsyncTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_OPTION_LABEL"));
+		vsyncTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
 		vsyncTxt->SetText( gLocalizator.GetText("OPT_VSYNC") );
 		vsyncTxt->SetPosition( 19.0f, 31.0f, 30.0f, 5.0f );
 
@@ -520,7 +520,7 @@ void CMenuScreens::InitOptions()
 		vsync->SetPosition( 51.0f, 31.0f, 3.25f, 4.0f );
 
 		CTextArea * soundTxt = options->CreateTextArea( "sound-txt" );
-		soundTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_OPTION_LABEL"));
+		soundTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
 		soundTxt->SetText(  gLocalizator.GetText("OPT_SOUND_LEVEL") );
 		soundTxt->SetPosition( 19.0f, 41.0f, 30.0f, 5.0f );
 
@@ -531,7 +531,7 @@ void CMenuScreens::InitOptions()
         sound->SetHandleSize(16.0f);
 
 		CTextArea * musicTxt = options->CreateTextArea( "music-txt" );
-		musicTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_OPTION_LABEL"));
+		musicTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
 		musicTxt->SetText(  gLocalizator.GetText("OPT_MUSIC_LEVEL") );
 		musicTxt->SetPosition( 19.0f, 49.0f, 30.0f, 5.0f );
 
@@ -542,7 +542,7 @@ void CMenuScreens::InitOptions()
         music->SetHandleSize(16.0f);
         
 		CTextArea * stereoTxt = options->CreateTextArea( "3d-sound-txt" );
-		stereoTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_OPTION_LABEL"));
+		stereoTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
         stereoTxt->SetText( gLocalizator.GetText("OPT_3D_SOUND"));
 		stereoTxt->SetPosition( 19.0f, 57.0f, 30.0f, 5.0f );
 
@@ -551,15 +551,15 @@ void CMenuScreens::InitOptions()
 		stereo->SetPosition( 51.0f, 57.0f, 3.25f, 4.0f );
 
         CTextArea * controlsTxt0 = options->CreateTextArea( "controls-txt0" );
-        controlsTxt0->SetFont(gGUI.GetFontSetting("FONT_MENU_OPTION_LABEL"));
+        controlsTxt0->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
         controlsTxt0->SetText(  gLocalizator.GetText("OPT_CONTROLS1") );
         controlsTxt0->SetPosition( 19.0f, 64.0f, 30.0f, 5.0f );
 
 		CDropList * controls0 = options->CreateDropList( "controls0" );
-		controls0->SetFont(gGUI.GetFontSetting("FONT_MENU_OPTION_FIELD"));
+		controls0->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
 		controls0->SetImage( "data/GUI/droplist.png", "data/GUI/droplistd.png" );
 		controls0->SetCenter( true );
-		controls0->SetOptionFont(gGUI.GetFontSetting("FONT_MENU_OPTION_FIELD"));
+		controls0->SetOptionFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
 		controls0->SetOptionImage( "data/GUI/droplist-option.png", "data/GUI/droplist-optiond.png" );
 		controls0->SetOptionCenter( true );
 		controls0->SetPosition( 51.0f, 64.0f, 20.0f, 4.0f );
@@ -593,21 +593,21 @@ void CMenuScreens::InitOptions()
 		binding0->SetPosition( 75.0f, 64.0f, 10.0f, 4.0f );
 		binding0->SetCenter( true );
 		binding0->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
-        binding0->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+        binding0->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
 		binding0->SetText(gLocalizator.GetText("OPT_DEFINE"));
 		binding0->GetClickParamCallback()->bind( this, &CMenuScreens::ShowBindingOptions );
 		binding0->SetClickCallbackParams( L"binding-options0" );
 
 		CTextArea * controlsTxt1 = options->CreateTextArea( "controls-txt1" );
-        controlsTxt1->SetFont(gGUI.GetFontSetting("FONT_MENU_OPTION_LABEL"));
+        controlsTxt1->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
         controlsTxt1->SetText(  gLocalizator.GetText("OPT_CONTROLS2") );
         controlsTxt1->SetPosition( 19.0f, 71.0f, 30.0f, 5.0f );
 
 		CDropList * controls1 = options->CreateDropList( "controls1" );
-        controls1->SetFont(gGUI.GetFontSetting("FONT_MENU_OPTION_FIELD"));
+        controls1->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
 		controls1->SetImage( "data/GUI/droplist.png", "data/GUI/droplistd.png" );
 		controls1->SetCenter( true );
-		controls1->SetOptionFont(gGUI.GetFontSetting("FONT_MENU_OPTION_FIELD"));
+		controls1->SetOptionFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
 		controls1->SetOptionImage( "data/GUI/droplist-option.png", "data/GUI/droplist-optiond.png" );
 		controls1->SetOptionCenter( true );
 		controls1->SetPosition( 51.0f, 71.0f, 20.0f, 4.0f );
@@ -641,14 +641,14 @@ void CMenuScreens::InitOptions()
 		binding1->SetPosition( 75.0f, 71.0f, 10.0f, 4.0f );
 		binding1->SetCenter( true );
 		binding1->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
-        binding1->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+        binding1->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
 		binding1->SetText(gLocalizator.GetText("OPT_DEFINE"));
 		binding1->GetClickParamCallback()->bind( this, &CMenuScreens::ShowBindingOptions );
 		binding1->SetClickCallbackParams( L"binding-options1" );
 
 		CButton * saveOptions = options->CreateButton( "save-options-button" );
 		saveOptions->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
-		saveOptions->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON_SMALL"));
+		saveOptions->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON"));
 		saveOptions->SetText( gLocalizator.GetText("OPT_SAVE") );
 		saveOptions->SetPosition( 19.0f, 80.0f, 30.0f, 6.0f );
 		saveOptions->SetCenter( true );
@@ -656,7 +656,7 @@ void CMenuScreens::InitOptions()
 
 		CButton * exitOptions = options->CreateButton( "exit-options-button" );
 		exitOptions->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
-		exitOptions->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON_SMALL"));
+		exitOptions->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON"));
 		exitOptions->SetText( gLocalizator.GetText("OPT_CANCEL") );
 		exitOptions->SetPosition( 51.0f, 80.0f, 30.0f, 6.0f );
 		exitOptions->SetCenter( true );
@@ -891,9 +891,9 @@ void CMenuScreens::InitBindingOptions()
             absolute->SetEventIntParam(MOUSE_RELEASED_LEFT, i);
 
             CTextArea* absoluteTxt = w->CreateTextArea("absolute-txt");
-            absoluteTxt->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+            absoluteTxt->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
             absoluteTxt->SetText(gLocalizator.GetText("CTRL_BIND_ABS"));
-            absoluteTxt->SetPosition(15.f, 14.f, 11.f, 8.f);
+            absoluteTxt->SetPosition(15.f, 14.f, 11.f, 4.f);
 
             CTextArea* absoluteTooltip = gGUI.CreateTextArea("binding" + StringUtils::ToString(i) + "-absolute_tooltip", true, Z_GUI4);
             absoluteTooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
@@ -914,9 +914,9 @@ void CMenuScreens::InitBindingOptions()
             mouseLook->SetEventIntParam(MOUSE_RELEASED_LEFT, i);
 
             CTextArea* mouseLookTxt = w->CreateTextArea("mouse-look-txt");
-            mouseLookTxt->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+            mouseLookTxt->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
             mouseLookTxt->SetText(gLocalizator.GetText("CTRL_BIND_MOUSE_LOOK"));
-            mouseLookTxt->SetPosition(31.f, 14.f, 11.f, 8.f);
+            mouseLookTxt->SetPosition(31.f, 14.f, 11.f, 4.f);
 
             CTextArea* mouseLookTooltip = gGUI.CreateTextArea("binding" + StringUtils::ToString(i) + "-mouse-look_tooltip", true, Z_GUI4);
             mouseLookTooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
@@ -937,9 +937,9 @@ void CMenuScreens::InitBindingOptions()
             mouseCast->SetEventIntParam(MOUSE_RELEASED_LEFT, i);
 
             CTextArea* mouseCastTxt = w->CreateTextArea("mouse-cast-txt");
-            mouseCastTxt->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+            mouseCastTxt->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
             mouseCastTxt->SetText(gLocalizator.GetText("CTRL_BIND_MOUSECAST"));
-            mouseCastTxt->SetPosition(47.f, 14.f, 11.f, 8.f);
+            mouseCastTxt->SetPosition(47.f, 14.f, 11.f, 4.f);
 
             CTextArea* mouseCastTooltip = gGUI.CreateTextArea("binding" + StringUtils::ToString(i) + "-mouse-cast_tooltip", true, Z_GUI4);
             mouseCastTooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
@@ -960,9 +960,9 @@ void CMenuScreens::InitBindingOptions()
             separateSeq->SetEventIntParam(MOUSE_RELEASED_LEFT, i);
 
             CTextArea* separateSeqTxt = w->CreateTextArea("separate-seq-txt");
-            separateSeqTxt->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+            separateSeqTxt->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
             separateSeqTxt->SetText(gLocalizator.GetText("CTRL_BIND_SEPARATE_SEQUENCES"));
-            separateSeqTxt->SetPosition(63.f, 14.f, 11.f, 8.f);
+            separateSeqTxt->SetPosition(63.f, 14.f, 11.f, 4.f);
 
             CTextArea* separateSeqTooltip = gGUI.CreateTextArea("binding" + StringUtils::ToString(i) + "-separate-seq_tooltip", true, Z_GUI4);
             separateSeqTooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
@@ -983,9 +983,9 @@ void CMenuScreens::InitBindingOptions()
             pointNClickMovement->SetEventIntParam(MOUSE_RELEASED_LEFT, i);
 
             CTextArea* pointNClickMovementTxt = w->CreateTextArea("pnc-movement-txt");
-            pointNClickMovementTxt->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+            pointNClickMovementTxt->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
             pointNClickMovementTxt->SetText(gLocalizator.GetText("CTRL_BIND_POINTNCLICK_MOVEMENT"));
-            pointNClickMovementTxt->SetPosition(80.f, 14.f, 11.f, 8.f);
+            pointNClickMovementTxt->SetPosition(80.f, 14.f, 11.f, 4.f);
 
             CTextArea* pointNClickMovementTooltip = gGUI.CreateTextArea("binding" + StringUtils::ToString(i) + "-pnc-movement_tooltip", true, Z_GUI4);
             pointNClickMovementTooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
@@ -1102,13 +1102,13 @@ void CMenuScreens::UpdateBindingOptions(int playerNumber)
 					kb.name = actions[j].first;
 
 					kb.textArea = mBindingOptions[playerNumber]->CreateTextArea( "binding-txt" );
-					kb.textArea->SetFont(gGUI.GetFontSetting("FONT_MENU_OPTION_LABEL"));
+					kb.textArea->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
                     kb.textArea->SetText( KeyStrings::GetBindDesc(actions[j].first) );
 					kb.textArea->SetPosition( 10.0f + (i%2) * 40.f, 5.0f*((i/2)+5), 25.0f, 4.0f );
                     kb.textArea->UpdateText();
 
 					kb.keyReader = mBindingOptions[playerNumber]->CreateKeyReader( "key-reader" );
-					kb.keyReader->SetFont(gGUI.GetFontSetting("FONT_MENU_OPTION_LABEL"));
+					kb.keyReader->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL", 1.2f));
 					kb.keyReader->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
                     kb.keyReader->UpdateSprites(0.f);   // zapobiega mruganiu napisow w rogu
 
@@ -1181,7 +1181,7 @@ void CMenuScreens::SaveBindingOptions(const std::wstring& playerWStr)
 	        CMouseCaster* mc = new CMouseCaster();
 	        mc->Initialize( abiKeys, 80.0f );
 	        mc->SetKeyImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png" );
-            const GUI::FontSetting & fs = gGUI.GetFontSetting("FONT_MOUSE_CAST");
+            const GUI::FontSetting & fs = gGUI.GetFontSetting("FONT_DEFAULT"); //bylo 16.f na 14.f
 	        mc->SetKeyFont(fs.name, fs.size, fs.unit);
 	        mc->SetKeyColor( sf::Color::White );
 	        mc->SetKeySize( sf::Vector2f(60.0f,60.0f) );
@@ -1245,7 +1245,7 @@ void CMenuScreens::InitReadmeScreen()
 
         CTextArea* text = panel->CreateTextArea("readme-panel-text");
         text->SetPosition(0.f, 0.f, 100.f, 0.f);
-        text->SetFont(gGUI.GetFontSetting("FONT_DEFAULT")); //dawniej FONT_README
+        text->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
         text->SetText(gLocalizator.GetText("README_TEXT"));
         text->SetAutoHeight(true);
 
@@ -1359,7 +1359,7 @@ void CMenuScreens::UpdateAchievementsScreen()
         tooltip->SetBackgroundImage("data/GUI/transparent-black.png");
         tooltip->SetVisible(false);
         tooltip->SetAutoHeight(true);
-        tooltip->SetFont(gGUI.GetFontSetting("FONT_DEFALUT"));
+        tooltip->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
         tooltip->SetPadding(20.f, 20.f, 20.f, 20.f, UNIT_PIXEL);
         tooltip->SetOffset(sf::Vector2f(size, 20.f));
 
@@ -1450,16 +1450,16 @@ void CMenuScreens::UpdateBestiaryScreen()
 
         CTextArea* name = tt->CreateTextArea("name");
         name->SetPosition(40.f + size, 20.f, tooltipW - 60.f - size, size, UNIT_PIXEL);
-        name->SetFont(gGUI.GetFontSetting("FONT_MENU_SAVE"));
+        name->SetFont(gGUI.GetFontSetting("FONT_DEFAULT", 2.0f));
         name->SetCenter(true);
 
         CTextArea* stats = tt->CreateTextArea("stats");
         stats->SetPosition(20.f, 40.f + size, statsW, tooltipH - 60.f - size, UNIT_PIXEL);
-        stats->SetFont(gGUI.GetFontSetting("FONT_MENU_SAVE_DESCRIPTION"));
+        stats->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 
         CTextArea* desc = tt->CreateTextArea("description");
         desc->SetPosition(40.f + statsW, 40.f + size, tooltipW - 60.f - statsW, tooltipH - 60.f - size, UNIT_PIXEL);
-        desc->SetFont(gGUI.GetFontSetting("FONT_MENU_SAVE_DESCRIPTION"));
+        desc->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 
         tooltip = tt;
 

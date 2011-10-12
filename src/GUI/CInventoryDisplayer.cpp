@@ -75,7 +75,7 @@ CInventoryDisplayer::CInventoryDisplayer( const std::string& name, CGUIObject* p
     mAbiTreeDisplayer->SetActiveHolderImage("data/GUI/abilities_scroll_bought.png");
     mAbiTreeDisplayer->SetPotentialHolderImage("data/GUI/abilities_scroll_potential.png");
     mAbiTreeDisplayer->SetDependencyLineImage("data/GUI/abilities-dependency-line.png");
-    const GUI::FontSetting & fs = gGUI.GetFontSetting("FONT_LEVEL_TEXT"); 
+    const GUI::FontSetting & fs = gGUI.GetFontSetting("FONT_IN_GAME_TEXT"); 
     mAbiTreeDisplayer->SetLvlTextFont(fs.name, fs.size);
     mAbiTreeDisplayer->ForceReload();
     
