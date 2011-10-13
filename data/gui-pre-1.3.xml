@@ -6,10 +6,10 @@
   <!-- proporcjonalne, uzywac do buttonow, droplist itepe -->
   <fontSetting id="FONT_DEFAULT_CONTROL" name="data/GUI/fonts/verdana.ttf" size="50.f" unit="UNIT_PERCENT" />
   
-  <!-- przyciski w glownym menu: -->
-  <fontSetting id="FONT_MENU_BUTTON" name="data/GUI/fonts/kberry.ttf" size="60.f" unit="UNIT_PERCENT" />
-  <!-- niektore napisy w menu, glownie labele w opcjach: -->
-  <fontSetting id="FONT_MENU_LABEL" name="data/GUI/fonts/vinque.ttf" size="50.f" unit="UNIT_PERCENT" />
+  <!-- przyciski w glownym menu, te fikusne: -->
+  <fontSetting id="FONT_MENU_BUTTON" name="data/GUI/fonts/argbrujs.ttf" size="38.f" unit="UNIT_PERCENT" />
+  <!-- niektore napisy w menu, te lekko fikusne: -->
+  <fontSetting id="FONT_MENU_LABEL" name="data/GUI/fonts/argor.ttf" size="55.f" unit="UNIT_PERCENT" />
 
   <!-- wiadomosci pokazywane u gory ekranu w trakie walki: -->
   <fontSetting id="FONT_IN_GAME_MESSAGE" name="data/GUI/fonts/argor.ttf" size="22.f" unit="UNIT_PIXEL" />
