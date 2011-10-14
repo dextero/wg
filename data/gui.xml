@@ -7,7 +7,7 @@
   <fontSetting id="FONT_DEFAULT_CONTROL" name="data/GUI/fonts/verdana.ttf" size="50.f" unit="UNIT_PERCENT" />
   
   <!-- przyciski w glownym menu: -->
-  <fontSetting id="FONT_MENU_BUTTON" name="data/GUI/fonts/kberry.ttf" size="60.f" unit="UNIT_PERCENT" />
+  <fontSetting id="FONT_MENU_BUTTON" name="data/GUI/fonts/vinque.ttf" size="50.f" unit="UNIT_PERCENT" />
   <!-- niektore napisy w menu, glownie labele w opcjach: -->
   <fontSetting id="FONT_MENU_LABEL" name="data/GUI/fonts/vinque.ttf" size="50.f" unit="UNIT_PERCENT" />
 
