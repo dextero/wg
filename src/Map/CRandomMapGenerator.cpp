@@ -759,7 +759,10 @@ bool CRandomMapGenerator::PlaceRegions()
             entryRegion = "west";
             bestEntry.x -= 2;
         }
-        MakePassableAround(bestEntry);
+
+        if (!it->toEntry.empty()) {
+            entryRegion = it->toEntry;
+        }MakePassableAround(bestEntry);
 
         mXmlText << "\t<region name=\"" << it->onBorder << "\" x=\"" 
                 << bestEntry.x + 0.5f << "\" y=\"" << bestEntry.y + 0.5f << "\" rot=\"0\" scale=\"1\"></region>\n";

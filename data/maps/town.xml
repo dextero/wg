@@ -2019,11 +2019,12 @@
 		vpa noa mpa aa cqa pqa aa ah qmb nmb erb nub ssb vba aa aa ac ba gc jsb psb ssb erb jqb dpb emb wsb osb qg qg ymb aa za ba sb aa aa aa aa aa aa vlb xmb lmb aa aa aa aa 
 	</tiles>
 	<objtype code="aa" file="data/physicals/obstacles/barrel.xml"/>
-	<objtype code="ba" file="data/physicals/hooks/acid-smoke.xml"/>
+	<objtype code="ba" file="data/physicals/walls/invisible-wall-half.xml"/>
 	<objtype code="ca" file="data/physicals/walls/invisible-wall.xml"/>
 	<obj code="aa" x="16.9219" y="21.7656" rot="31"/>
 	<obj code="aa" x="16.5781" y="21.6719" rot="31"/>
 	<obj code="aa" x="17.3125" y="21.9219"/>
+	<obj code="ba" x="24.0971" y="21.0124"/>
 	<obj code="ca" x="30.0781" y="22.5156"/>
 	<obj code="ca" x="30.2344" y="21.9219"/>
 	<obj code="ca" x="30.8438" y="21.2813"/>
@@ -2715,8 +2716,50 @@
 	<obj code="ca" x="4.59375" y="14.8906"/>
 	<obj code="ca" x="9.95313" y="18.7813"/>
 	<obj code="ca" x="2.125" y="29.0938"/>
-	<region name="entry" x="38.7344" y="1.125" rot="0" scale="1">
+    <objtype code="exit-portal" file="data/physicals/walls/test-barrier.xml" />
+    <region name="entry" x="38.7344" y="1.125" rot="0" scale="1" />
+    <region name="entry-nw" x="2.7048" y="9.297" rot="0" scale="1" />
+    <region name="exit-nw" x="0.7048" y="9.297" rot="0" scale="1">
+      <next-map>mingorian-desert1</next-map>
+      <next-map-region>east</next-map-region>
 	</region>
+	<obj code="exit-portal" x="0.7048" y="9.297" />
+
+    <region name="entry-n" x="10.5359" y="2.5692" rot="0" scale="1" />
+    <region name="exit-n" x="10.5359" y="0.5692" rot="0" scale="1">
+      <next-map>mingorian-desert2</next-map>
+      <next-map-region>south</next-map-region>
+	</region>
+	<obj code="exit-portal" x="10.5359" y="0.5692" />
+
+    <region name="entry-w" x="2.5147" y="31.5036" rot="0" scale="1" />
+    <region name="exit-w" x="0.5147" y="31.5036" rot="0" scale="1">
+      <next-map>rothmos-forest1</next-map>
+      <next-map-region>east</next-map-region>
+	</region>
+	<obj code="exit-portal" x="0.5147" y="31.5036" />
+
+    <region name="entry-sw" x="17.2641" y="45.2375" rot="0" scale="1" />
+    <region name="exit-sw" x="17.2641" y="47.2375" rot="0" scale="1">
+      <next-map>andor-forest1</next-map>
+      <next-map-region>north</next-map-region>
+	</region>
+	<obj code="exit-portal" x="17.2641" y="47.2375" />
+
+    <region name="entry-s" x="33.5607" y="45.2375" rot="0" scale="1" />
+    <region name="exit-s" x="33.5607" y="47.2375" rot="0" scale="1">
+      <next-map>andor-forest2</next-map>
+      <next-map-region>north</next-map-region>
+	</region>
+	<obj code="exit-portal" x="33.5607" y="47.2375" />
+
+    <region name="entry-e" x="45.55" y="33.3712" rot="0" scale="1" />
+    <region name="exit-e" x="47.55" y="33.3712" rot="0" scale="1">
+      <next-map>gorrada-swamps1</next-map>
+      <next-map-region>west</next-map-region>
+	</region>
+	<obj code="exit-portal" x="47.55" y="33.3712" />
+	
 	<sprite file="data/maps/doodahs/town/bag.png" x="15.9063" y="25.3594" z="background" scale="1" rot="56.25"/>
 	<sprite file="data/maps/doodahs/town/bag.png" x="16.2344" y="24.7344" z="background" scale="1" rot="-78.75"/>
 	<sprite file="data/maps/doodahs/town/bag.png" x="16.3281" y="25.125" z="background" scale="1" rot="94.5"/>
