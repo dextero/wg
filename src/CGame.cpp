@@ -33,12 +33,8 @@
 
 #include <SFML/Graphics/RenderWindow.hpp>
 
-#ifdef __I_AM_TOXIC__
 #include "Logic/CPhysicalManager.h"
 #include "Logic/CPhysical.h"
-
-#include "Utils/ToxicUtils.h"
-#endif
 
 template<> CGame* CSingleton<CGame>::msSingleton = 0;
 
@@ -324,13 +320,10 @@ void CGame::MainLoopStep()
         if (cTime > lastFPSDisplay + 1.0f){
             std::wstringstream s;
             s << "FPS: " << gClock.GetFPS() << "\nAverageFPS: " << gClock.GetAverageFPS() << "\nCurrentMap: " << gMapManager.GetLevel();
-
-#ifdef __I_AM_TOXIC__
             CPhysical * player = gPhysicalManager.GetPhysicalById( L"player0" );
             if ( player ) {
                 s << "\n" << player->GetPosition().x << " " << player->GetPosition().y;
             }
-#endif
 
             ((GUI::CTextArea*) gGUI.FindObject("fpstext"))->SetText(s.str());
             lastFPSDisplay = cTime;

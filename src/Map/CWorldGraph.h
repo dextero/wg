@@ -8,6 +8,7 @@
 struct CWorldGraphExit {
     std::string toMap;
     std::string onBorder;
+    std::string toEntry;
 };
 
 struct CWorldGraphMap {
