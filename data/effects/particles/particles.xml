@@ -237,6 +237,20 @@
 	</mods>
 </emiter>
 
+<emiter name="e-torchflame">
+	<speed value="0.1" />
+	<life min="0.45" max="0.8" />
+	<textures start="2" end="2" />
+	<rotation min="0" max="360" />
+	<size min="0.35" max="0.35" />
+	<mods>
+		<life min="0.75" max="0.78" />
+		<rotation min="10" max="50" />
+		<size min="0.8" max="1.0" />
+		<force x-min="-1" x-max="1" y-min="-1" y-max="1" />
+	</mods>
+</emiter>
+
 <!-- AFEKTORY -->
 
 <affector type="random" name="a-smallfireball">
@@ -302,5 +316,6 @@
 <particlesystem name="storm-cloud" emiter="e-storm-cloud" affector="a-smallfireball" count="25" />
 <particlesystem name="green-cloud" affector="a-smallfireball" emiter="e-smallgreenfireball" count="8" />
 <particlesystem name="flames" affector="boczki" emiter="e-flames" count="30" />
+<particlesystem name="torchflame" affector="pm" emiter="e-torchflame" count="4" />
 
 </root>
