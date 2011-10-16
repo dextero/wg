@@ -873,7 +873,7 @@
 		gw xv cw gs ng ba uc oc pk bk oc oc 
 	</tiles>
 	<objtype code="aa" file="data/physicals/walls/invisible-wall.xml"/>
-	<objtype code="ba" file="data/physicals/hooks/buring-torch-hook.xml"/>
+	<objtype code="ba" file="data/physicals/hooks/burning-torch-hook.xml"/>
 	<obj code="aa" x="4.45313" y="8.98438"/>
 	<obj code="aa" x="4.46875" y="6.5"/>
 	<obj code="aa" x="4.48438" y="7.46875"/>
