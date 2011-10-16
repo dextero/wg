@@ -29,6 +29,7 @@ void CWorldGraph::LoadFromFile(const std::string & filename) {
             CWorldGraphExit graphExit;
             graphExit.toMap = xml.GetString(exit, "toMap");
             graphExit.onBorder = xml.GetString(exit, "onBorder");
+            graphExit.toEntry = xml.GetString(exit, "toEntry");
             graphMap.exits.push_back(graphExit);
         }
         

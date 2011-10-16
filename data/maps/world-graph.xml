@@ -2,7 +2,60 @@
     <startingMap>data/maps/town.xml</startingMap>
 	<startingRegion>entry</startingRegion>
 	
-    <map id="forest1" scheme="forest" level="1">
+<!-- szkic swiata
+legenda: md -> mingorian-desert
+         rf -> rothmos-forest
+         af -> andor-forest
+		 gs -> gorrada-swamps
+
+		 
+           md3-md2
+            |  |
+           md1-\
+				\
+				 town--gs1
+        rf2-rf1-/ || 
+				 / |
+               af1-af2
+
+-->	
+	
+    <map id="mingorian-desert1" scheme="desert" level="10">
+        <exit toMap="data/maps/town.xml" onBorder="east" toEntry="entry-nw"/>
+        <exit toMap="mingorian-desert3" onBorder="north"/> 
+    </map>
+    <map id="mingorian-desert2" scheme="desert" level="10">
+        <exit toMap="data/maps/town.xml" onBorder="south" toEntry="entry-n"/>
+        <exit toMap="mingorian-desert3" onBorder="west"/> 
+    </map>
+    <map id="mingorian-desert3" scheme="desert" level="11">
+        <exit toMap="mingorian-desert1" onBorder="south"/>
+        <exit toMap="mingorian-desert2" onBorder="east"/> 
+    </map>
+
+    <map id="rothmos-forest1" scheme="forest" level="1">
+        <exit toMap="data/maps/town.xml" onBorder="east" toEntry="entry-w"/>
+        <exit toMap="rothmos-forest2" onBorder="west"/> 
+    </map>
+    <map id="rothmos-forest2" scheme="forest" level="2">
+        <exit toMap="rothmos-forest1" onBorder="east"/>
+    <!--    <exit toMap="rothmos-forest3" onBorder="west"/>  --> 
+    </map>
+
+    <map id="andor-forest1" scheme="forest" level="1">
+        <exit toMap="data/maps/town.xml" onBorder="north" toEntry="entry-sw"/>
+        <exit toMap="andor-forest2" onBorder="east"/>
+    </map>
+    <map id="andor-forest2" scheme="forest" level="1">
+        <exit toMap="data/maps/town.xml" onBorder="north" toEntry="entry-s"/>
+        <exit toMap="andor-forest1" onBorder="west"/>
+    </map>
+
+    <map id="gorrada-swamps1" scheme="forest" level="6">
+        <exit toMap="data/maps/town.xml" onBorder="west" toEntry="entry-e"/>
+    </map>
+	
+<!--<map id="forest1" scheme="forest" level="1">
 	    <exit toMap="data/maps/town.xml" onBorder="west" />
 	    <exit toMap="forest2" onBorder="east" />
 	</map>
@@ -20,5 +73,5 @@
 	</map>
     <map id="arctic2" scheme="arctic" level="18" final-boss="data/physicals/monsters/defs/baldurian.xml">
 	    <exit toMap="arctic1" onBorder="west" />
-	</map>
+	</map>-->
 </root>
