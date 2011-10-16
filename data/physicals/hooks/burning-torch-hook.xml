@@ -4,12 +4,13 @@
 			<time value="100000.0" />
 			<name value="torchflame" />
 		</effect>
+		
 		<effect type="non-cumulative">
 			<effect type="delayed">
 				<time value="0.0"/>
 				<effect type="console">
 					<text>[
-						create-light $X $Y 1.0 1.0 255 210 160
+						create-light $X $Y 0.5 1.0 255 210 160
 					]</text>
 				</effect>				
 			</effect>
