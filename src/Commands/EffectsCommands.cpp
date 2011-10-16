@@ -9,6 +9,7 @@
 #include "../Logic/Effects/CAppliedEffect.h"
 #include "../Logic/CPhysicalManager.h"
 #include "../GUI/Localization/CLocalizator.h"
+#include "../Map/CMap.h"
 
 #include <SFML/Graphics/Color.hpp>
 
@@ -186,11 +187,11 @@ void CommandCreateLight(size_t argc, const std::vector<std::wstring> &argv)
 
 	SLight* light = gDrawableManager.CreateLight();
 	light->mPosition = sf::Vector3f(
-		StringUtils::Parse<float>(argv[1]),
-		StringUtils::Parse<float>(argv[2]),
-		StringUtils::Parse<float>(argv[3])
+		StringUtils::Parse<float>(argv[1]) * Map::TILE_SIZE,
+		StringUtils::Parse<float>(argv[2]) * Map::TILE_SIZE,
+		StringUtils::Parse<float>(argv[3]) * Map::TILE_SIZE
 	);
-	light->mRadius = StringUtils::Parse<float>(argv[4]);
+	light->mRadius = StringUtils::Parse<float>(argv[4]) * Map::TILE_SIZE;
 	light->mColor = sf::Color(
 		StringUtils::Parse<unsigned>(argv[5]),
 		StringUtils::Parse<unsigned>(argv[6]),
