@@ -1,0 +1,13 @@
+<root type="hook">
+	<effect type="list">
+		<effect type="graphical-effect">
+			<time value="100000.0" />
+			<name value="torchflame" />
+		</effect>
+		<effect type="console">
+			<text>[
+				create-light $X $Y -3.0 4.0 1.0 0.8 0.4
+			]</text>
+		</effect>
+	</effect>
+</root>
