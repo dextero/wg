@@ -8,8 +8,10 @@
 
 class CTemplateParam{
 public:
-    std::map<std::string, void*> values;
+    std::map<std::string, void*> values; //@Deprecated, nie castowac na voidy, tylko
+                                         //usiasc i porzadnie napisac serializacje/deserializacje
     std::map<std::string, std::string> stringValues;
+    std::map<std::string, int> intValues;
 };
 
 #endif
