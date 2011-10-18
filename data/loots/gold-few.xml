@@ -1,0 +1,11 @@
+﻿<root type="loot">
+	<name name="$ITEM_GOLD" />
+    <genre>gold</genre>
+	<image filename="data/loots/gold-few.png" />
+	<effect type="console">
+		<text>[
+		msg $MSG_FOUND $LEVEL gold pieces
+		add-gold $THIS $LEVEL
+		]</text>
+	</effect>
+</root>

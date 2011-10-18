@@ -180,7 +180,12 @@
 
 		<!-- -->
 
-		<loot file="data/loots/gold.xml" lootLevel="level" minLevel="0" maxLevel="99" frequency="10000.0" />
+		<!-- kasa -->
+		<loot file="data/loots/gold-few.xml" lootLevel="rnd(1, level * 3)" minLevel="0" maxLevel="4" frequency="4.0" />
+		<loot file="data/loots/gold-few.xml" lootLevel="rnd(1, 13)" minLevel="5" maxLevel="11" frequency="2.0" />
+		<loot file="data/loots/gold-many.xml" lootLevel="14 + rnd(0, 14 + (level - 4) * 4)" minLevel="5" maxLevel="11" frequency="2.0" />
+		<loot file="data/loots/gold-many.xml" lootLevel="14 + rnd(0, 14 + (level - 4) * 5)" minLevel="12" maxLevel="99" frequency="4.0" />
+
         <!-- hp, mana -->
         <loot file="data/loots/health.xml" lootLevel="level" minLevel="0" maxLevel="99" />
         <loot file="data/loots/mana.xml" lootLevel="level" minLevel="0" maxLevel="99" />
@@ -191,15 +196,6 @@
         <loot file="data/loots/mana-regeneration.xml" lootLevel="0" minLevel="3" maxLevel="9" frequency="0.5" />
         <loot file="data/loots/mana-regeneration.xml" lootLevel="1" minLevel="10" maxLevel="18" frequency="0.5" />
         <loot file="data/loots/mana-regeneration.xml" lootLevel="2" minLevel="19" maxLevel="27" frequency="0.5" />
-
-        <!-- xp -->
-        <loot file="data/loots/25xp.xml" minLevel="0" maxLevel="5"/>
-        <loot file="data/loots/64xp.xml" minLevel="3" maxLevel="8"/>
-        <loot file="data/loots/100xp.xml" minLevel="5" maxLevel="13"/>
-        <loot file="data/loots/200xp.xml" minLevel="8" maxLevel="18"/>
-        <loot file="data/loots/350xp.xml" minLevel="13" maxLevel="25"/>
-        <loot file="data/loots/600xp.xml" minLevel="18" maxLevel="99"/>
-        <loot file="data/loots/1k-xp.xml" minLevel="25" maxLevel="99"/>
 
 		<!-- ofensywne -->		
         <loot file="data/loots/fireburst.xml" lootLevel="0" minLevel="2" maxLevel="9" frequency="0.25" />
