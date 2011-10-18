@@ -18,6 +18,8 @@
 
 #include "../CGameOptions.h"
 
+#include "../Utils/muParser/muParser.h"
+
 #include <fstream>
 #include <string.h>
 #include <list>
@@ -623,7 +625,7 @@ bool CRandomMapGenerator::PlaceTiles()
                 tilePaths.push_back(TileDef(imgName, nameTopLeft, nameTopRight, nameBottomLeft, nameBottomRight, tileMask));
             }
             else
-                tiles[x][y] = generatedTiles[imgName];
+                tiles[x][y] = (unsigned int)generatedTiles[imgName];
         }
 
     // generowanie kodow kafli
@@ -1132,11 +1134,20 @@ CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability,
 }
 
 int CRandomMapGenerator::CalculateLootLevel(const std::string & lootLevel) {
-    if (lootLevel.empty()) return 0;
-    if (lootLevel == "$level") return mDesc.level;
-    int ret;
-    StringUtils::FromString<int>(lootLevel, ret);
-    return ret;
+    mu::Parser parser;
+	try {
+//		parser->SetVarFactory(AddVariable, NULL);
+        double level = mDesc.level;
+		parser.DefineVar("$level", &level);
+		parser.SetExpr(lootLevel);
+		return (int)parser.Eval();
+    } catch (mu::Parser::exception_type &e){
+        fprintf(stderr, "error - CRandomMapGenerator::CalculateLootLevel: parsing of expresion %s failed: %s\n",
+                lootLevel.c_str(),
+                e.GetMsg().c_str()
+        );
+	    return 0;
+	}
 }
 
 bool CRandomMapGenerator::PlaceLoots()
