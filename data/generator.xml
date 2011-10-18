@@ -180,9 +180,10 @@
 
 		<!-- -->
 
+		<loot file="data/loots/gold.xml" lootLevel="level" minLevel="0" maxLevel="99" frequency="10000.0" />
         <!-- hp, mana -->
-        <loot file="data/loots/health.xml" lootLevel="$level" minLevel="0" maxLevel="99" />
-        <loot file="data/loots/mana.xml" lootLevel="$level" minLevel="0" maxLevel="99" />
+        <loot file="data/loots/health.xml" lootLevel="level" minLevel="0" maxLevel="99" />
+        <loot file="data/loots/mana.xml" lootLevel="level" minLevel="0" maxLevel="99" />
 
         <loot file="data/loots/regeneration.xml" lootLevel="0" minLevel="5" maxLevel="9" frequency="0.3" />
         <loot file="data/loots/regeneration.xml" lootLevel="1" minLevel="10" maxLevel="18" frequency="0.3" />
