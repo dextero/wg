@@ -53,6 +53,7 @@
 void CommandClearPhysicals(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSetAbility(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSpawnLoot(size_t argc, const std::vector<std::wstring> &argv);
+void CommandAddGold(size_t argc, const std::vector<std::wstring> &argv);
 
 // na koncu musi byc {0,0,0}, bo sie wszystko ***
 CCommands::SCommandPair LogicCommands [] =
@@ -78,6 +79,7 @@ CCommands::SCommandPair LogicCommands [] =
     {L"clear-physicals"                     , "$MAN_CLEAR_PHYSICALS"            , CommandClearPhysicals          },
     {L"switch-controls"                     , "$MAN_SWITCH_CONTROLS"            , CommandSwitchControls          },
     {L"add-xp"                              , "$MAN_ADD_XP"                     , CommandAddXP                   },
+    {L"add-gold"                            , "$MAN_ADD_GOLD"                   , CommandAddGold                 },
     {L"god-mode"                            , "$MAN_GOD_MODE"                   , CommandGodMode                 },
     {L"display-effect-debug-data"           , "$MAN_DISPLAY_EFFECT_DEBUG_DATA"  , CommandDisplayEffectDebugData  },
     {L"kill-all"                            , "$MAN_KILL_ALL"                   , CommandKillAll                 },
@@ -498,11 +500,8 @@ void CommandAddXP(size_t argc, const std::vector<std::wstring> &argv){
         return;
     }
 
-    float value = 0.0f;
-    if (swscanf(argv[1].c_str(),L"%f",&value) < 1){
-        gConsole.Printf(L"failed to parse value: %ls",argv[1].c_str());
-        return;
-    }
+    float value = StringUtils::Parse<float>(argv[1]);
+
     bool ignoreSkillPoints = false, muteSound = false;
     for (size_t i = 1; i < argc; ++i)
     {
@@ -513,6 +512,22 @@ void CommandAddXP(size_t argc, const std::vector<std::wstring> &argv){
     }
 
     gPlayerManager.XPGained(value, ignoreSkillPoints, muteSound);
+}
+
+void CommandAddGold(size_t argc, const std::vector<std::wstring> &argv){
+	if (argc < 3){
+        gConsole.Printf( L"usage: %ls playerId value" , argv[0].c_str());
+        return;
+    }
+
+    int amount = StringUtils::Parse<float>(argv[2]);
+    CPlayer* player= dynamic_cast<CPlayer*>(gPhysicalManager.GetPhysicalById(argv[1]));
+    if (!player) {
+        gConsole.Printf(L"player %ls not found", argv[1].c_str());
+        return;
+    }
+    player->SetGold(player->GetGold() + amount);
+    // todo: play a sound?
 }
 
 void CommandGodMode(size_t argc, const std::vector<std::wstring> &argv){

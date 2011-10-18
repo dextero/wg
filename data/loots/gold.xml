@@ -5,6 +5,7 @@
 	<effect type="console">
 		<text>[
 		msg $MSG_FOUND $LEVEL gold pieces
+		add-gold $THIS $LEVEL
 		]</text>
 	</effect>
 </root>
