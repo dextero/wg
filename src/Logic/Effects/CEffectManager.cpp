@@ -284,9 +284,10 @@ void CEffectManager::Perform(CPhysical *physical, CAppliedEffectPtr ae,float dt)
             break;
         case betConsole:{ // specjalne traktowanie - najpierw licznik, potem text
         	std::map<std::wstring, std::wstring> params;
-        	params[L"$X"] = StringUtils::ConvertToWString(StringUtils::ToString(physical->GetPosition().x));
-        	params[L"$Y"] = StringUtils::ConvertToWString(StringUtils::ToString(physical->GetPosition().y));
+        	params[L"$X"] = StringUtils::ToWString(physical->GetPosition().x);
+        	params[L"$Y"] = StringUtils::ToWString(physical->GetPosition().y);
         	params[L"$THIS"] = physical->GetUniqueId();
+            params[L"$LEVEL"] = ae->context == NULL ? L"0" : StringUtils::ToWString(ae->context->values[aLevel]);
             for (int i = 0; i < effectNodes[ae->offset+1].iParam; i++)
                 gCommands.ParseCommand(*(effectNodes[ae->offset+2].wsParam+i),params);
             break;

@@ -1133,17 +1133,16 @@ CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability,
     return loot;
 }
 
-int CRandomMapGenerator::CalculateLootLevel(const std::string & lootLevel) {
+int CRandomMapGenerator::CalculateLootLevel(const std::string & expr) {
     mu::Parser parser;
 	try {
-//		parser->SetVarFactory(AddVariable, NULL);
         double level = mDesc.level;
-		parser.DefineVar("$level", &level);
-		parser.SetExpr(lootLevel);
+		parser.DefineVar("level", &level);
+		parser.SetExpr(expr);
 		return (int)parser.Eval();
     } catch (mu::Parser::exception_type &e){
         fprintf(stderr, "error - CRandomMapGenerator::CalculateLootLevel: parsing of expresion %s failed: %s\n",
-                lootLevel.c_str(),
+                expr.c_str(),
                 e.GetMsg().c_str()
         );
 	    return 0;
