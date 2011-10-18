@@ -34,6 +34,7 @@ CPlayer::CPlayer(const std::wstring& uniqueId) :
     CActor(uniqueId),
 	mNumber(-1),
     mTotalXP(0.0f),
+    mGold(0),
     mImmortal(false),
     mDied(false),
     mSkillPoints(0),

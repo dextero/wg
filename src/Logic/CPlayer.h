@@ -56,6 +56,7 @@ protected:
     float mTotalXP;
     bool mImmortal;
     bool mDied;
+    int mGold;
 
     int mSkillPoints, mAttrPoints;
 
@@ -83,6 +84,9 @@ public:
 	inline float GetTotalXP(){ return mTotalXP; }
     int GetLevel();
 	inline int GetSkillPoints() { return mSkillPoints; }
+
+    inline void SetGold(int newValue) { mGold = newValue; }
+    inline int GetGold() { return mGold; }
 
     CItem * GetItem(size_t invPos);
     void AddItem(CItem * item, size_t invPos);

@@ -262,17 +262,22 @@ void CGameScreens::InitAbilities(unsigned playerNumber)
             atd[i]->SetLvlTextFont(fs.name, fs.size);
 
 			CTextArea * xp = atd[i]->CreateTextArea("xptext");
-			xp->SetPosition(5.0f,87.0f,25.0f,15.0f);
+			xp->SetPosition(5.0f,86.0f,25.0f,10.0f);
 			xp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 			xp->SetText(L"XP: ?");
 
+			CTextArea * gold = atd[i]->CreateTextArea("gold");
+			xp->SetPosition(5.0f,89.0f,25.0f,15.0f);
+			xp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+			xp->SetText(L"GOLD: ?"); //my aktualnie nie uzywamy ekranu abilities, tylko inventory, prawda?
+
 			CTextArea * sp = atd[i]->CreateTextArea("skill-points");
-			sp->SetPosition(5.0f,90.0f,25.0f,10.0f);
+			sp->SetPosition(5.0f,92.0f,25.0f,10.0f);
 			sp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 			sp->SetText(L"SP: ?");
 
 			CTextArea * lvl = atd[i]->CreateTextArea("player-level");
-			lvl->SetPosition(5.0f,93.0f,25.0f,10.0f);
+			lvl->SetPosition(5.0f,95.0f,25.0f,10.0f);
 			lvl->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 			lvl->SetText(L"LVL: ?");
 
@@ -320,10 +325,15 @@ void CGameScreens::UpdateAbilitiesTextboxes(unsigned playerNumber){
 
 		for (int i = 0; i < 4; ++i){
             CWindow* tree = (CWindow*)wnd->FindObject(treesNames[i]);
-			GUI::CTextArea* xp = (GUI::CTextArea*) tree->FindObject("xptext");
 			std::wstringstream s;
+			GUI::CTextArea* xp = (GUI::CTextArea*) tree->FindObject("xptext");
 			s << gLocalizator.GetText("UI_XP").c_str() << (int)(player->GetTotalXP()) << "/" << (int)(player->XPRequired());
 			xp->SetText(s.str());
+
+            GUI::CTextArea* gold = (GUI::CTextArea*) tree->FindObject("gold");
+			s.str(L"");
+			s << gLocalizator.GetText("UI_GOLD").c_str() << player->GetGold();
+			gold->SetText(s.str());
 
 			GUI::CTextArea* sp = (GUI::CTextArea*) tree->FindObject("skill-points");
 			s.str(L"");

@@ -80,12 +80,17 @@ CInventoryDisplayer::CInventoryDisplayer( const std::string& name, CGUIObject* p
     mAbiTreeDisplayer->ForceReload();
     
     CTextArea * xp = mBackground->CreateTextArea("xptext");
-    xp->SetPosition(23.0f,18.0f,25.0f,10.0f);
+    xp->SetPosition(23.0f,17.0f,25.0f,10.0f);
     xp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
     xp->SetText(L"XP: ?");
 
+    CTextArea * gold = mBackground->CreateTextArea("gold");
+    gold->SetPosition(23.0f,19.5f,25.0f,10.0f);
+    gold->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+    gold->SetText(L"Gold: ?");
+
     CTextArea * sp = mBackground->CreateTextArea("skill-points");
-    sp->SetPosition(23.0f,21.25f,25.0f,10.0f);
+    sp->SetPosition(23.0f,22.0f,25.0f,10.0f);
     sp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
     sp->SetText(L"SP: ?");
 
@@ -142,6 +147,11 @@ void CInventoryDisplayer::UpdateSprites( float secondsPassed ){
                     std::wstringstream s;
                     s << gLocalizator.GetText("UI_XP").c_str() << (int)(player->GetTotalXP()) << "/" << (int)(player->XPRequired());
                     xp->SetText(s.str());
+
+                    GUI::CTextArea* gold = (GUI::CTextArea*) mBackground->FindObject("gold");
+                    s.str(L"");
+                    s << gLocalizator.GetText("UI_GOLD").c_str() << player->GetGold();
+                    gold->SetText(s.str());
 
                     GUI::CTextArea* sp = (GUI::CTextArea*) mBackground->FindObject("skill-points");
                     s.str(L"");
