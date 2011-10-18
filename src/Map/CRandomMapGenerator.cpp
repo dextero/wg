@@ -1133,11 +1133,18 @@ CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability,
     return loot;
 }
 
+// Function callback, z CExprParser.cpp
+extern mu::value_type rnd(mu::value_type ax, mu::value_type bx);
+
 int CRandomMapGenerator::CalculateLootLevel(const std::string & expr) {
+    if (expr.empty()) {
+        return 0;
+    }
     mu::Parser parser;
 	try {
         double level = mDesc.level;
 		parser.DefineVar("level", &level);
+		parser.DefineFun("rnd", rnd, false);
 		parser.SetExpr(expr);
 		return (int)parser.Eval();
     } catch (mu::Parser::exception_type &e){

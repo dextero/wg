@@ -41,7 +41,7 @@ value_type dot(value_type ax, value_type bx, value_type ay, value_type by, value
 }
 
 // Function callback
-value_type rnd(value_type ax, value_type bx) 
+extern value_type rnd(value_type ax, value_type bx) 
 { 
     return gRand.Rndf((float)ax, (float)bx); 
 }
