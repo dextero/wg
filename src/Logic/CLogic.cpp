@@ -416,10 +416,14 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
     // umiejki-bronie
 	for (unsigned int i = 0; i < gPlayerManager.GetPlayerCount(); i++)
 	{
-        if (CPlayer* player = gPlayerManager.GetPlayerByNumber(i))
-            for (unsigned int j = 0; j < 4; ++j)
-                if (player->GetItem(j))
+        if (CPlayer* player = gPlayerManager.GetPlayerByNumber(i)) {
+            for (unsigned int j = 0; j < 4; ++j) {
+                if (player->GetItem(j)) {
                     ss << "set-ability player" << i << " " << player->GetItem(j)->GetAbility() << " " << j << " " << player->GetItem(j)->mLevel << "\n";
+                }
+            }
+            ss << "add-gold player" << i << " " << player->GetGold() << "\n";
+        }
     }
 
 	ss << "add-xp " << xp << " ignore-skill-points silent\n";
