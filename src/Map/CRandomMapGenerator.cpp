@@ -59,7 +59,7 @@ bool VectorCompareFunc(const CRandomMapGenerator::SPhysical& first, const CRando
 
 typedef std::vector<CRandomMapGenerator::SPhysical> PhysicalsVector;
 
-PhysicalsVector FilterByType(const PhysicalsVector & input, const std::string & Type);
+PhysicalsVector FilterByType(const PhysicalsVector & input, const std::string & type);
 
 PhysicalsVector FilterByLevel(const PhysicalsVector & input, int level)
 {
@@ -68,6 +68,28 @@ PhysicalsVector FilterByLevel(const PhysicalsVector & input, int level)
         if (it->minLevel <= level && it->maxLevel >= level) filteredOut.push_back(*it);
     }
     return filteredOut;
+}
+
+PhysicalsVector FilterByTags(const PhysicalsVector & input, const std::string & tags) {
+    if (tags.empty()) {
+        return input;
+    } else {
+        std::vector<std::string> tagsVector = StringUtils::Tokenize(tags);
+        PhysicalsVector filteredOut;
+        for (PhysicalsVector::const_iterator it = input.begin() ; it != input.end() ; it++) {
+            std::vector<std::string> physicalTags = StringUtils::Tokenize(it->tags);
+            bool found = false;
+            for (size_t i = 0 ; i < physicalTags.size() ; i++) {
+                for (size_t j = 0 ; j < tagsVector.size() ; j++ ) {
+                    if (physicalTags[i] == tagsVector[j]) { 
+                        found = true;
+                    }
+                }
+            }
+            if (found) filteredOut.push_back(*it);
+        }
+        return filteredOut;
+    }
 }
 
 CRandomMapGenerator::SPhysical ChooseRandomlyRegardingFrequency(const PhysicalsVector & input) {
@@ -1077,7 +1099,7 @@ PhysicalsVector FilterByType(const PhysicalsVector & input, const std::string & 
     return filteredOut;
 }
 
-CRandomMapGenerator::SPhysical CRandomMapGenerator::GenerateNextLootDef(bool canBeObstacle, float additionalWeaponProbability, const sf::Vector2f & position)
+CRandomMapGenerator::SPhysical CRandomMapGenerator::GenerateNextLootDef(bool canBeObstacle, float additionalWeaponProbability, const sf::Vector2f & position, const std::string & lootTags)
 {
     // #997, to prevent generating chests and weapons close to the edge of the user screen
     const static float TRESHOLD = 4.5;
@@ -1101,7 +1123,7 @@ CRandomMapGenerator::SPhysical CRandomMapGenerator::GenerateNextLootDef(bool can
         mSpawnWeaponProbability += 0.05f - (mSpawnedWeaponsCount * 0.02f);
     }
 
-    PhysicalsVector loots = FilterByLevel(FilterByType(mPhysicals, "loot"), mDesc.level);
+    PhysicalsVector loots = FilterByTags(FilterByLevel(FilterByType(mPhysicals, "loot"), mDesc.level), lootTags);
     if (loots.empty()) {
         return SPhysical();
     }
@@ -1116,9 +1138,9 @@ CRandomMapGenerator::SPhysical CRandomMapGenerator::GenerateNextLootDef(bool can
 
 }
 
-CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability, const sf::Vector2f & position)
+CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability, const sf::Vector2f & position, const std::string & lootTags)
 {
-    SPhysical lootDef = GenerateNextLootDef(false, additionalWeaponProbability, position);
+    SPhysical lootDef = GenerateNextLootDef(false, additionalWeaponProbability, position, lootTags);
     const std::string lootTemplateFile = lootDef.file;
     if (lootTemplateFile.empty()) return NULL;
 
@@ -1351,6 +1373,7 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
                 minLevel = maxLevel = level;
             }
             std::string lootLevel = xml.GetString(n, "lootLevel");
+            std::string tags = xml.GetString(n, "tags");
             float frequency = xml.GetFloat(n, "frequency", 1.0f);
             std::string file = xml.GetString(n, "file");
             // opcjonalne, tycza sie tylko bossow
@@ -1358,7 +1381,7 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
             std::string bossTriggerAI = xml.GetString(n, "trigger-ai");
             std::string bossPlaylist = xml.GetString(n, "trigger-playlist");
 
-            mPhysicals.push_back(SPhysical(type, file, minLevel, maxLevel, lootLevel, frequency, bossTriggerRadius, bossTriggerAI, bossPlaylist));
+            mPhysicals.push_back(SPhysical(type, file, minLevel, maxLevel, lootLevel, tags, frequency, bossTriggerRadius, bossTriggerAI, bossPlaylist)); // bleee, brzydkie - uzyc pattern Buildera
         }
     }
 

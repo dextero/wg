@@ -93,6 +93,7 @@ public:
         int minLevel;
         int maxLevel;
         std::string lootLevel;
+        std::string tags;
         float frequency;
         float bossTriggerRadius;
 
@@ -103,12 +104,13 @@ public:
                 int minLevel = 0,
                 int maxLevel = 0,
                 const std::string & lootLevel = "",
+                const std::string & tags = "",
                 float frequency = 0.0f,
                 float bossTriggerRadius = 0.f,
                 std::string bossTriggerAI = "",
                 std::string bossPlaylist = ""
                 ) :            
-            type(type), file(file), minLevel(minLevel), maxLevel(maxLevel), lootLevel(lootLevel), frequency(frequency),
+            type(type), file(file), minLevel(minLevel), maxLevel(maxLevel), lootLevel(lootLevel), tags(tags), frequency(frequency),
             bossTriggerRadius(bossTriggerRadius), bossTriggerAI(bossTriggerAI), bossPlaylist(bossPlaylist) {}
     };
     typedef std::vector<SPhysical> PhysicalsVector;
@@ -169,7 +171,7 @@ private:
 
     void ReleaseCurrent();
 
-    SPhysical GenerateNextLootDef(bool canBeObstacle = false, float additionalWeaponProbability = 0.0f, const sf::Vector2f & position = sf::Vector2f(0,0));
+    SPhysical GenerateNextLootDef(bool canBeObstacle = false, float additionalWeaponProbability = 0.0f, const sf::Vector2f & position = sf::Vector2f(0,0), const std::string & tags = "");
 
 public:
     CRandomMapGenerator();
@@ -192,7 +194,7 @@ public:
 	std::string GetSetForLevel(unsigned int level);
 
     // tworzy i zwraca nowa znajdzke - uzywane m.in. przez ginace potwory
-    CLoot * GenerateNextLoot(float additionalWeaponProbability = 0.0f, const sf::Vector2f & position = sf::Vector2f(0,0));
+    CLoot * GenerateNextLoot(float additionalWeaponProbability = 0.0f, const sf::Vector2f & position = sf::Vector2f(0,0), const std::string & lootTag = "");
 
     // sortowanie potworow po levelu
     friend bool VectorCompareFunc(const SPhysical& first, const SPhysical& last);
