@@ -229,24 +229,6 @@ std::string ExtractParam( const std::string & input, const std::string & tag, in
     return StringUtils::TrimWhiteSpaces( input.substr( start ) );
 }
 
-std::vector< std::string > Tokenize( const std::string & input, char separator )
-{
-    std::vector< std::string > ret;
-    size_t separatorPosition = 0;
-    do
-    {
-        size_t nextSeparatorPosition = input.find( separator, separatorPosition + 1 );
-        size_t length = nextSeparatorPosition - separatorPosition;
-        ret.push_back( input.substr( separatorPosition, length ) );
-        separatorPosition = nextSeparatorPosition;
-        if ( separatorPosition != std::string::npos)
-            separatorPosition++;
-    }
-    while ( separatorPosition != std::string::npos );
-
-    return ret;
-}
-
 std::string GenerateCode(std::vector<char> &chars,int maxLength,int hash){
     if (chars.size() > 0){
         int index = hash % chars.size();
@@ -339,6 +321,24 @@ std::wstring FloatToWString(float num, unsigned precision)
     std::wstring ret = streamOut.str();
     size_t lastNonZero = ret.find_last_not_of(L".0") + 1;
     return ret.substr(0, std::max(lastNonZero ? lastNonZero : 1, ret.size() - precision - 1));
+}
+
+std::vector< std::string > Tokenize( const std::string & input, char separator )
+{
+    std::vector< std::string > ret;
+    size_t separatorPosition = 0;
+    do
+    {
+        size_t nextSeparatorPosition = input.find( separator, separatorPosition + 1 );
+        size_t length = nextSeparatorPosition - separatorPosition;
+        ret.push_back( input.substr( separatorPosition, length ) );
+        separatorPosition = nextSeparatorPosition;
+        if ( separatorPosition != std::string::npos)
+            separatorPosition++;
+    }
+    while ( separatorPosition != std::string::npos );
+
+    return ret;
 }
 
 std::vector<std::string> Explode(const std::string& str, const std::string& separator)

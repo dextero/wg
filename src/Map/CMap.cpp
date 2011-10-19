@@ -711,7 +711,7 @@ namespace Map{
                 return mTileTypes[i]->code;
 
         // nie znaleziono kodu, wiec probujemy zsyntetyzowac nowy
-		unsigned maxLength = 2;
+		// unsigned maxLength = 2;
 		//std::vector<char> chars;
 		//for (char ch = 'a'; ch <= 'z'; ch++)
 		//	chars.push_back(ch);
