@@ -17,6 +17,7 @@ CCommands::SCommandPair CameraCommands [] =
     {L"set-camera-position"             , "$MAN_SET_CAMERA_POSITION"    , CommandSetCameraPosition },
     {L"trail-players"                   , "$MAN_TRAIL_PLAYERS"          , CommandTrailPlayers },
     {L"camera-sway-to"                  , "$MAN_CAMERA_SWAY_TO"         , CommandCameraSway },
+	{L"shake-camera"					, "$MAN_SHAKE_CAMERA"			, CommandShakeCamera },
     {0,0,0}
 };
 
@@ -77,3 +78,16 @@ void CommandTrailPlayers(size_t argc, const std::vector<std::wstring> &argv ){
     gCamera.TrailPlayers();
 }
 
+void CommandShakeCamera(size_t argc, const std::vector<std::wstring> &argv)
+{
+	if (argc < 4)
+	{
+		gConsole.Printf(L"usage: %ls <time> <strength> <frequency>",argv[0].c_str());
+        return;
+	}
+
+	gCamera.Shake(
+		StringUtils::Parse<float>(argv[1]),
+		StringUtils::Parse<float>(argv[2]),
+		StringUtils::Parse<float>(argv[3]) );
+}
