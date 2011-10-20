@@ -48,6 +48,12 @@ public:
 	void SetViewArea( float left, float top, float right, float bottom );	// obszar widoku - czesc ekranu niezaslonieta przez hudy etc. [%]
 	void SetZoom( float zoom );
 
+	inline void Shake(float time, float strength, float frequency) {
+		mShakeTime = time;
+		mShakeStrength = strength;
+		mShakeFrequency = frequency;
+	}
+
     sf::Vector2f  GetPosition();				 // pozycja w pixelach, nie kaflach
     sf::Vector2f  GetPositionInGame();
     sf::Vector2f  GetViewTopLeft();
@@ -72,6 +78,11 @@ private:
 	cameraTask	 mTask;
 	float		 mSwayingTime;
 	float		 mZoom;
+	float		 mPrimaryZoom;
+
+	float mShakeTime;
+	float mShakeStrength;
+	float mShakeFrequency;
 
 	SCameraSettings mSettings;
 	mu::Parser *	mParser;

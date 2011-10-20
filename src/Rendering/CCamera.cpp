@@ -35,8 +35,12 @@ CCamera::CCamera():
 	mTask( CCamera::STAND ), 
     mSwayingTime(0.f),
 	mZoom(1.0f),
+	mPrimaryZoom(1.0f),
 	mParser(NULL),
-	mViewArea(0.0f,0.0f,1.0f,1.0f)
+	mViewArea(0.0f,0.0f,1.0f,1.0f),
+	mShakeTime(-1.0f),
+	mShakeStrength(0.0f),
+	mShakeFrequency(0.0f)
 {
     fprintf(stderr,"CCamera::CCamera()\n");
     
@@ -179,20 +183,20 @@ void CCamera::UpdateSettings()
 		mParser->SetExpr( mSettings.zoom );
 	}
 
-	float zoom = 1.0f;
+	mPrimaryZoom = 1.0f;
 
 	try 
 	{
 		resX = gGameOptions.GetWidth();
 		resY = gGameOptions.GetHeight();
-		zoom = (float) mParser->Eval();
+		mPrimaryZoom = (float) mParser->Eval();
 	} 
 	catch ( mu::Parser::exception_type &e )
 	{
 		fprintf( stderr, "error - parsing of expresion %s failed: %s\n", mSettings.zoom.c_str(), e.GetMsg().c_str() );
 	}
 
-	SetZoom( zoom );
+	SetZoom( mPrimaryZoom );
 }
 
 void CCamera::Update(float secondsPassed)
@@ -227,6 +231,14 @@ void CCamera::Update(float secondsPassed)
 		position = target;
 
 	SetPosition( position );
+
+	// trzesienie ziemi
+	if (mShakeTime > 0.0f)
+	{
+		mShakeStrength *= (1.0f - secondsPassed / mShakeTime);
+		mShakeTime -= secondsPassed;
+		SetZoom( mPrimaryZoom + sin(mShakeTime * 2.0f * M_PI * mShakeFrequency) * mShakeStrength );
+	}
 }
 
 void CCamera::FrameStarted(float secondsPassed)

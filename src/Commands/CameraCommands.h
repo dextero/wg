@@ -10,5 +10,6 @@ void CommandTrailStop(size_t argc, const std::vector<std::wstring> &argv);
 void CommandTrailPlayers(size_t argc, const std::vector<std::wstring> &argv);
 void CommandCameraSway(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSetCameraPosition(size_t argc, const std::vector<std::wstring> &argv);
+void CommandShakeCamera(size_t argc, const std::vector<std::wstring> &argv);
 
 #endif
