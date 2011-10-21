@@ -13,7 +13,7 @@ legenda: md -> mingorian-desert
             |  |
            md1-\
 				\
-				 town--gs1
+				 town-gs1
         rf2-rf1-/ || 
 				 / |
                af1-af2
@@ -33,9 +33,9 @@ legenda: md -> mingorian-desert
         <exit toMap="mingorian-desert2" onBorder="east"/> 
     </map>
 
-    <map id="rothmos-forest1" scheme="forest" level="1">
+    <map id="rothmos-forest1" scheme="forest" level="1" boss="1">
         <exit toMap="data/maps/town.xml" onBorder="east" toEntry="entry-w"/>
-        <exit toMap="rothmos-forest2" onBorder="west"/> 
+        <exit toMap="rothmos-forest2" onBorder="west" blocked="true"/> 
     </map>
     <map id="rothmos-forest2" scheme="forest" level="2">
         <exit toMap="rothmos-forest1" onBorder="east"/>

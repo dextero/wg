@@ -306,7 +306,8 @@ namespace Map{
         desc.level = mLevel;
         desc.minMonsterDist = 10.f;
         desc.narrowPathsPercent = (float)gRand.Rnd(40, 60);
-//todo: przerobic tak, zeby bralo z mapDef informacje, czy dany poziom ma byc bossowy...
+        
+        desc.mapType = mapDef.boss.empty() ? SRandomMapDesc::MAP_NORMAL : SRandomMapDesc::MAP_BOSS;
 
         bool result = gRandomMapGenerator.GenerateRandomMap(realFilename, desc);
         fprintf(stderr, "Generating map %s: %s", realFilename.c_str(), (result ? "OK!" : "FAILED!"));

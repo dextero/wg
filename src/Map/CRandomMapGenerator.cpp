@@ -199,25 +199,63 @@ bool CRandomMapGenerator::GenerateTunnelsBossArena()
 {
     unsigned int tunnelSize = 3;
     unsigned int minDistFromMapEdge = 6;
-
-    // -tunnelSize, zeby nie wyszedl tunel o szerokosci 1 w dolnym rogu
-    sf::Vector2i entry(0, rand() % (mDesc.sizeY - tunnelSize - 2 * minDistFromMapEdge) + minDistFromMapEdge),                // lewa
-                 exit(mDesc.sizeX - 1, rand() % (mDesc.sizeY - tunnelSize - 2 * minDistFromMapEdge) + minDistFromMapEdge);   // prawa
-
-    // na ostatnim bossie nie ma wyjscia z mapy, ustawiamy exit na srodek
-    if (mDesc.mapType == SRandomMapDesc::MAP_FINAL_BOSS)
-        exit = sf::Vector2i(mDesc.sizeX / 2, mDesc.sizeY / 2);
-
-    // zapewniamy polaczenie miedzy tymi dwoma
-    mPassableLeft = mDesc.sizeX * mDesc.sizeY - GenerateStraightTunnel(entry, exit, tunnelSize);
-
+    
     // wlasciwa arena
     // http://roguebasin.roguelikedevelopment.org/index.php?title=Irregular_Shaped_Rooms
     unsigned int borderSize = 5;    // szerokosc "ramki", w ktorej nie beda drazone tunele
     unsigned int rectSize = 5;      // szerokosc prostokata - patrz link w komentarzu wyzej
     // UWAGA: niech tunnelSize + minDistFromMapEdge >= borderSize + rectSize, bo sciezka moze sie nie przeciac z arena
-
     mPassableLeft -= GenerateIrregularCave(sf::IntRect(borderSize, borderSize, mDesc.sizeX - borderSize, mDesc.sizeY - borderSize), rectSize);
+
+    // na ostatnim bossie nie ma wyjscia z mapy, ustawiamy exit na srodek
+    //if (mDesc.mapType == SRandomMapDesc::MAP_FINAL_BOSS)
+    //    exit = sf::Vector2i(mDesc.sizeX / 2, mDesc.sizeY / 2);
+
+    mPassableLeft = mDesc.sizeX * mDesc.sizeY; // - GenerateStraightTunnel(entry, exit, tunnelSize);
+
+    sf::Vector2i middle(mDesc.sizeX / 2, mDesc.sizeY / 2);
+    for (std::vector<CWorldGraphExit>::iterator it = mDesc.exits.begin() ; it != mDesc.exits.end() ; it++) {
+        sf::Vector2i exit, entry;
+        std::string toEntry;
+
+        // -tunnelSize, zeby nie wyszedl tunel o szerokosci 1 w dolnym rogu
+        if (it->onBorder == "north") {
+            exit = sf::Vector2i(rand() % (mDesc.sizeX - tunnelSize - 2 * minDistFromMapEdge) + minDistFromMapEdge, 0);
+            entry = exit + sf::Vector2i(0, 2);
+            toEntry = "south";
+        } else if (it->onBorder == "east") {
+            exit = sf::Vector2i(mDesc.sizeX - 1, rand() % (mDesc.sizeY - tunnelSize - 2 * minDistFromMapEdge) + minDistFromMapEdge);
+            entry = exit + sf::Vector2i(-2, 0);
+            toEntry = "west";
+        } else if (it->onBorder == "south") {
+            exit = sf::Vector2i(rand() % (mDesc.sizeX - tunnelSize - 2 * minDistFromMapEdge) + minDistFromMapEdge, mDesc.sizeY - 1);
+            entry = exit + sf::Vector2i(0, -2);
+            toEntry = "north";
+        } else if (it->onBorder == "west") {
+            exit = sf::Vector2i(0, rand() % (mDesc.sizeY - tunnelSize - 2 * minDistFromMapEdge) + minDistFromMapEdge);
+            entry = exit + sf::Vector2i(2, 0);
+            toEntry = "east";
+        }
+        if (!it->toEntry.empty()) {
+            toEntry = it->toEntry;
+        }
+
+        mPassableLeft -= GenerateStraightTunnel(middle, exit, tunnelSize);
+        MakePassableAround(entry);
+        MakePassableAround(exit);
+
+        //todo: wyciagnac wspolny kod stad i z PlaceRegions
+        mXmlText << "\t<objtype code=\"exit-portal\" file=\"data/physicals/walls/test-barrier.xml\" />\n";
+        mXmlText << "\t<region name=\"" << it->onBorder << "\" x=\"" 
+            << entry.x + 0.5f << "\" y=\"" << entry.y + 0.5f << "\" rot=\"0\" scale=\"1\"></region>\n";
+        
+        mXmlText << "\t<region name=\"exit-" << it->onBorder << "\" x=\"" 
+            << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" rot=\"0\" scale=\"1\">\n"
+            << "\t\t<next-map>" << it->toMap << "</next-map>\n"
+            << "\t\t<next-map-region>" << toEntry << "</next-map-region>\n"
+            << "\t</region>\n"
+            << "\t<obj code=\"exit-portal\" x=\"" << exit.x + 0.5f << "\" y=\"" << exit.y + 0.5f << "\" />\n";
+    }
 
     return true;
 }
@@ -737,6 +775,9 @@ bool CRandomMapGenerator::PlaceRegions()
 {
     CTimer timer("- regions: ");
 // todo: przerobic/zrobic na nowo ustawianie bossow, aby uwzglednialo world-graph.xml
+// tworzenie regionow z bossem jest roboczo w generateMap:
+    if (mDesc.mapType == SRandomMapDesc::MAP_BOSS)
+        return true;
 
     // za malo miejsca, zeby postawic chociazby region wejscia (i ew. wyjscia)..
     if (mPassableLeft < mDesc.exits.size()) return false;
@@ -786,7 +827,8 @@ bool CRandomMapGenerator::PlaceRegions()
 
         if (!it->toEntry.empty()) {
             entryRegion = it->toEntry;
-        }MakePassableAround(bestEntry);
+        }
+        MakePassableAround(bestEntry);
 
         mXmlText << "\t<region name=\"" << it->onBorder << "\" x=\"" 
                 << bestEntry.x + 0.5f << "\" y=\"" << bestEntry.y + 0.5f << "\" rot=\"0\" scale=\"1\"></region>\n";
@@ -944,25 +986,44 @@ bool CRandomMapGenerator::PlaceBossDoors()
     SPhysical door = doors[rand() % doors.size()];
 
     mXmlText << "\t<objtype code=\"door\" file=\"" << door.file << "\" />\n";
-    
-    unsigned int x = mDesc.sizeX - 3;   // stawiamy drzwi na wszystkich polach znajdujacych sie 3 kafle od prawej krawedzi
 
-    for (unsigned int i = 0; i < mDesc.sizeY; ++i)
-        if (mCurrent[x][i] != BLOCKED)
-        {
-            mXmlText << "\t<obj code=\"door\" x=\"" << (float)mDesc.sizeX - 2.5f
-                     << "\" y=\"" << (float)i + 0.5f << "\">\n"
-                     << "\t\t<cond check=\"once\">\n"
-                     << "\t\t\t<type>killed</type>\n"
-                     << "\t\t\t<param>boss</param>\n"   // zakladamy, ze boss ma id "boss"
-                     << "\t\t</cond>\n"
-                     << "\t\t<effect-on-open type=\"console\">\n"
-                     << "\t\t\t<text>load-playlist data/music/testpl.xml</text>\n"
-                     << "\t\t</effect-on-open>\n"
-                     << "\t</obj>\n";
+    std::map<std::string, sf::Vector2i> tilesToPutDoor;
 
-            mCurrent[x][i] = DOOR;
+    for (std::vector<CWorldGraphExit>::iterator it = mDesc.exits.begin() ; it != mDesc.exits.end() ; it++) {
+        if (!it->blocked) {
+            continue;
         }
+
+        if (it->onBorder == "north" || it->onBorder == "south") {
+            unsigned int y = it->onBorder == "north" ? 3 : mDesc.sizeY - 3;
+            for (unsigned int x = 0; x < mDesc.sizeX; ++x) {
+                if (mCurrent[x][y] != BLOCKED) {
+                    tilesToPutDoor[StringUtils::ToString(x) + ":" + StringUtils::ToString(y)] = sf::Vector2i(x, y);
+                }
+            }
+        } else if (it->onBorder == "west" || it->onBorder == "east") {
+            unsigned x = it->onBorder == "west" ? 3 : mDesc.sizeX - 3;
+            for (unsigned int y = 0; y < mDesc.sizeY; ++y) {
+                if (mCurrent[x][y] != BLOCKED) {
+                    tilesToPutDoor[StringUtils::ToString(x) + ":" + StringUtils::ToString(y)] = sf::Vector2i(x, y);
+                }
+            }
+        }
+    }
+
+    for (std::map<std::string, sf::Vector2i>::iterator it = tilesToPutDoor.begin() ; it != tilesToPutDoor.end() ; it++) {
+        mXmlText << "\t<obj code=\"door\" x=\"" << (float)it->second.x + 0.5f
+                 << "\" y=\"" << (float)it->second.y + 0.5f << "\">\n"
+                 << "\t\t<cond check=\"once\">\n"
+                 << "\t\t\t<type>killed</type>\n"
+                 << "\t\t\t<param>boss</param>\n"   // zakladamy, ze boss ma id "boss"
+                 << "\t\t</cond>\n"
+                 << "\t\t<effect-on-open type=\"console\">\n"
+                 << "\t\t\t<text>load-playlist data/music/testpl.xml</text>\n"
+                 << "\t\t</effect-on-open>\n"
+                 << "\t</obj>\n";
+        mCurrent[it->second.x][it->second.y] = DOOR;
+    }
 
     return true;
 }
