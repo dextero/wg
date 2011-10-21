@@ -24,12 +24,14 @@ void CWorldGraph::LoadFromFile(const std::string & filename) {
         graphMap.id = xml.GetString(map, "id");
         graphMap.scheme = xml.GetString(map, "scheme");
         graphMap.level = xml.GetInt(map, "level");
+        graphMap.boss = xml.GetString(map, "boss");
 
         for (rapidxml::xml_node<>* exit = xml.GetChild(map, "exit"); exit; exit = xml.GetSibl(exit, "exit")) {
             CWorldGraphExit graphExit;
             graphExit.toMap = xml.GetString(exit, "toMap");
             graphExit.onBorder = xml.GetString(exit, "onBorder");
             graphExit.toEntry = xml.GetString(exit, "toEntry");
+            graphExit.blocked = !xml.GetString(exit, "blocked").empty();
             graphMap.exits.push_back(graphExit);
         }
         
