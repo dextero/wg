@@ -21,7 +21,7 @@ Bonus for this spell depends:
     </effect>
     <effect type="console">
       <text>[
-        shake-camera 2 0.05 10
+        shake-camera 2 0.05 0.87
       ]</text>
     </effect>
     <effect type="graphical-effect">
