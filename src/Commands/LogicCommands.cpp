@@ -54,6 +54,7 @@ void CommandClearPhysicals(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSetAbility(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSpawnLoot(size_t argc, const std::vector<std::wstring> &argv);
 void CommandAddGold(size_t argc, const std::vector<std::wstring> &argv);
+void CommandOpenDoors(size_t argc, const std::vector<std::wstring> &argv);
 
 // na koncu musi byc {0,0,0}, bo sie wszystko ***
 CCommands::SCommandPair LogicCommands [] =
@@ -69,6 +70,7 @@ CCommands::SCommandPair LogicCommands [] =
     {L"spawn-raw-physical"                  , "$MAN_SPAWN_RAW_PHYSICAL"         , CommandSpawnRawPhysical        },
     {L"spawn-weapon"                        , "$MAN_SPAWN_WEAPON"               , CommandSpawnWeapon             },
     {L"spawn-door"                          , "$MAN_SPAWN_DOOR"                 , CommandSpawnDoor               },
+    {L"open-doors"                          , "$MAN_OPEN_DOORS"                 , CommandOpenDoors               },
     {L"destroy-physical"                    , "$MAN_DESTROY_PHYSICAL"           , CommandDestroyPhysical         },
     {L"set-ai-scheme"                       , "$MAN_SET_AI_SCHEME"              , CommandSetEnemyAIScheme        },
     {L"new-player"                          , "$MAN_NEW_PLAYER"                 , CommandNewPlayer               },
@@ -255,7 +257,7 @@ void CommandSpawnDoor(size_t argc, const std::vector<std::wstring> &argv)
 {
     if (argc < 4)
     {
-        gConsole.Printf(L"usage: %ls door.xml x y [opened|true|false(default)] [console-friendly serialized conditional] [console-friendly serialized effect-on-open]", argv[0].c_str());
+        gConsole.Printf(L"usage: %ls door.xml x y [opened|true|false(default)]", argv[0].c_str());
         return;
     }
 
@@ -268,22 +270,22 @@ void CommandSpawnDoor(size_t argc, const std::vector<std::wstring> &argv)
 
     CDoor* door = doorTpl->Create();
     door->SetPosition(sf::Vector2f(StringUtils::Parse<float>(argv[2]), StringUtils::Parse<float>(argv[3])), true);
-    door->SetOpened(argc > 4 && (argv[4] == L"opened" || argv[4] == L"true"));
-			door->SetOpenedAuto();
+    bool open = argc > 4 && (argv[4] == L"opened" || argv[4] == L"true");
+    door->SetState(open ? CDoor::dsOpened : CDoor::dsClosed);
 
-	if (argc > 5)
-	{
-		CCondition* cond = new CCondition();
-		if (cond->LoadConsoleFriendly(StringUtils::ConvertToString(argv[5])))
-		{
-			door->SetCondition(cond);
+}
 
-			if (argc > 6)
-				door->SetOnOpened(gEffectManager.LoadConsoleFriendly(StringUtils::ConvertToString(argv[6])));
-		}
-		else
-			delete cond;
-	}
+void CommandOpenDoors(size_t argc, const std::vector<std::wstring> &argv)
+{
+    const std::vector<CPhysical *> &phys = gPhysicalManager.GetPhysicals();
+    for (size_t i = 0; i < phys.size(); i++) {
+        if (phys[i]->GetCategory() & PHYSICAL_DOOR) {
+            CDoor * door = dynamic_cast<CDoor*>(phys[i]);
+            if (door) {
+                door->SetState(CDoor::dsOpened);
+            }
+        }
+    }
 }
 
 void CommandDestroyPhysical(size_t argc, const std::vector<std::wstring> &argv)

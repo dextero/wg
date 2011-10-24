@@ -5,6 +5,7 @@
 
 #include <string>
 #include <vector>
+#include <map>
 
 #include "../CPhysical.h"
 
@@ -19,39 +20,19 @@ public:
     virtual ~CDoor();
 
     enum DoorState{
-        dsOpening,
-        dsOpen,
-        dsClosing,
+        dsOpened,
         dsClosed
     };
 protected:
-    DoorState mState, mLastState;
-
-    bool mAuto;
-
-    CCondition *mCond;
-    int mSpecificCheck;
-    CEffectHandle *mOnOpened;
-
-    std::vector<SAnimation*> mAnims;
+    DoorState mState;
+    std::map<DoorState, SAnimation*> mAnims;
 	
-	bool mFirstUpdate;
 public:
     virtual void Update(float dt);
 
-    bool GetOpened();
-    void SetOpened(bool opened);
-    void SetOpenedAuto();
-
-    inline CCondition *GetCondition(){ return mCond; }
-    inline void SetCondition(CCondition *cond){ mCond = cond; }
-
+    bool IsOpened();
+    void SetState(DoorState ds);
     void SetAnimation(DoorState s, SAnimation *anim);
-
-    bool LetThrough();
-
-    void SetOnOpened(CEffectHandle *effect);
-	CEffectHandle* GetOnOpened() { return mOnOpened; }
 };
 
 #endif /*CDOOR_H_*/

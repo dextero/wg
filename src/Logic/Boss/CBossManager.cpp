@@ -35,6 +35,8 @@ void CBossManager::EnemyDied( CEnemy * enemy )
     {
         StopBossFight();
 
+        gCommands.ParseCommand(L"open-doors");
+
         std::wstring id = enemy->GetUniqueId();
         for (std::vector<SBossOnMap>::iterator it = mBossesOnMap.begin(); it != mBossesOnMap.end(); ++it)
             if (it->id == id)

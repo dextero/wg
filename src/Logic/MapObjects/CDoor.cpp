@@ -10,67 +10,29 @@
 
 CDoor::CDoor(const std::wstring& uniqueId) :
 CPhysical(uniqueId),
-mState(dsClosed),
-mLastState(dsOpen),
-mAuto(true),
-mCond(NULL),
-mSpecificCheck(CCondition::sctIs),
-mOnOpened(NULL),
-mFirstUpdate(true)
+mState(dsClosed)
 {
     SetZIndex(Z_DOOR);
-    for(int i = 0; i < 4; i++)
-        mAnims.push_back(NULL);
 }
 
 CDoor::~CDoor(){
+    //kto czysci animacje z mAnims[] ? AnimationManager?
 }
 
 void CDoor::Update(float dt){
     CPhysical::Update(dt);
-    if ((mCond!=NULL) && mAuto){
-        if (mCond->SpecificCheck())
-            mState = dsOpen;
-        else
-            mState = dsClosed;
-    }
-    if (mState != mLastState){
-        if (mState == dsOpen)
-            if (mOnOpened!=NULL)
-                mOnOpened->PerformAt(GetPosition());
-        mLastState = mState;
-        if (mAnims[mState]!=NULL)
-            CPhysical::SetAnimation(mAnims[mState]);
-    }
-	if (mFirstUpdate)
-		CPhysical::SetAnimation(mAnims[mState]);
-	mFirstUpdate = false;
+}
+
+bool CDoor::IsOpened() {
+    return mState == dsOpened;
+}
+
+void CDoor::SetState(DoorState ds) {
+    mState = ds;
+    CPhysical::SetAnimation(mAnims[ds]);
 }
 
 void CDoor::SetAnimation(DoorState s, SAnimation *anim){
     mAnims[s] = anim;
 }
 
-bool CDoor::LetThrough(){
-    // na razie niczym sie nie rozni, potem ew. moze byc przepuszczanie
-    // wybranych typow obiektow albo przepuszczanie w polowie animacji
-    // otwierania
-    return mState == dsOpen;
-}
-
-bool CDoor::GetOpened(){
-    return mState == dsOpen;
-}
-
-void CDoor::SetOpened(bool opened){
-    mAuto = false;
-    mState = opened ? dsOpen : dsClosed; // dsOpen; - haha, bardzo smieszne...
-}
-
-void CDoor::SetOpenedAuto(){
-    mAuto = true;
-}
-
-void CDoor::SetOnOpened(CEffectHandle *effect){
-    mOnOpened = effect;
-}

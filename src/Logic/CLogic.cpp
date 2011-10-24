@@ -498,11 +498,7 @@ void CLogic::SaveMapState(std::ostream & out)
             {
                 CDoor* door = (CDoor*)(*it);
                 out << "spawn-door " << door->GetTemplate()->GetFilename() << " " << door->GetPosition().x << " " << door->GetPosition().y << " "
-					<< (door->GetOpened() ? "true" : "false");
-				if (door->GetCondition())
-					out << " " << door->GetCondition()->SerializeConsoleFriendly()
-						<< " " << (door->GetOnOpened() ? door->GetOnOpened()->SerializeConsoleFriendly() : "");
-				out << "\n";
+					<< (door->IsOpened() ? "true" : "false") << "\n";
                 break;
             }
         default:

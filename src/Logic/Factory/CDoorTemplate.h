@@ -30,13 +30,14 @@ public:
     virtual bool CoreMapObject() const { return false; }
 
 protected:
-    float mClosingTime, mOpeningTime;
-    SAnimation *mClosedAnim, *mOpenAnim;
-    SAnimation *mClosingAnim, *mOpeningAnim;
+    SAnimation *mClosedAnim, *mOpenedAnim;
 public:
+
+    /*
     CTemplateParam *ReadParam(CXml &xml, xml_node<> *node,  CTemplateParam *orig = NULL);
     virtual void Parametrise(CPhysical *door,CTemplateParam *param);
     virtual void SerializeParam(std::ostream &out, CTemplateParam *param, int indent);
+    */
 };
 
 #endif // _CPHYSICAL_TEMPLATE_H_
