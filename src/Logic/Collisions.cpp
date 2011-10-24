@@ -91,7 +91,7 @@ void Collisions::LogicalResponse( CPhysical* physicalA, CPhysical* physicalB, bo
 	else if ( catA == PHYSICAL_BULLET && catB == PHYSICAL_DOOR ) 
 	{
         CDoor *door = dynamic_cast<CDoor*>(physicalB);
-        if (!(door->LetThrough()))
+        if (!(door->IsOpened()))
             dynamic_cast<CBullet*>(physicalA)->HandleCollision(physicalB);
 		makePhysicalResponse = false;
 	}
@@ -108,7 +108,7 @@ void Collisions::LogicalResponse( CPhysical* physicalA, CPhysical* physicalB, bo
     } else if ( ((catA & PHYSICAL_MOVING) != 0) && catB == PHYSICAL_DOOR)
     {
         CDoor *door = dynamic_cast<CDoor*>(physicalB);
-        makePhysicalResponse = !door->LetThrough();
+        makePhysicalResponse = !door->IsOpened();
     } else if ( catA == PHYSICAL_PLAYER && catB == PHYSICAL_REGION )
     {
         CDynamicRegion *region = dynamic_cast<CDynamicRegion*>(physicalB);

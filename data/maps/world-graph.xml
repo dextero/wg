@@ -91,6 +91,8 @@ legenda: md -> mingorian-desert
     <map id="mingorian-desert3" scheme="desert" level="11">
         <exit toMap="mingorian-desert1" onBorder="south"/>
         <exit toMap="mingorian-desert2" onBorder="east"/> 
+        <exit toMap="mingorian-desert5" onBorder="north"/> 
+        <exit toMap="mingorian-desert4" onBorder="west"/> 
     </map>
     <map id="mingorian-desert2" scheme="desert" level="10">
         <exit toMap="data/maps/town.xml" onBorder="south" toEntry="entry-n"/>

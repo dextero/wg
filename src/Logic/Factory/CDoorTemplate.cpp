@@ -12,12 +12,8 @@
 using namespace rapidxml;
 
 CDoorTemplate::CDoorTemplate() :
-mClosingTime(0.f),
-mOpeningTime(0.f),
 mClosedAnim(NULL),
-mOpenAnim(NULL),
-mClosingAnim(NULL),
-mOpeningAnim(NULL)
+mOpenedAnim(NULL)
 {
     ;
 }
@@ -35,19 +31,15 @@ bool CDoorTemplate::Load(CXml &xml)
     if (!CPhysicalTemplate::Load(xml)) return false;
 	xml_node<>*	node;
 
-	if ( xml.GetString(0,"type") != "door" )
+	if (xml.GetString(0,"type") != "door")
 		return false;
 
-    for (node=xml.GetChild(0,"anim"); node; node=xml.GetSibl(node,"anim") ){
+    for (node=xml.GetChild(0,"anim"); node; node=xml.GetSibl(node,"anim")){
         std::string str = xml.GetString(node,"type");
-        if (str == "open")
-            mOpenAnim = gAnimationManager.GetAnimation(xml.GetString(node,"name"));
+        if (str == "opened")
+            mOpenedAnim = gAnimationManager.GetAnimation(xml.GetString(node,"name"));
         else if (str == "closed")
             mClosedAnim = gAnimationManager.GetAnimation(xml.GetString(node,"name"));
-        else if (str == "opening")
-            mOpeningAnim = gAnimationManager.GetAnimation(xml.GetString(node,"name"));
-        else if (str == "closing")
-            mClosingAnim = gAnimationManager.GetAnimation(xml.GetString(node,"name"));
     }
 
 	return true;
@@ -60,28 +52,25 @@ void CDoorTemplate::Drop()
 
 void CDoorTemplate::PrepareEditorPreviewer(CDisplayable* d)
 {
-	d->SetAnimation(mOpenAnim);
+	d->SetAnimation(mOpenedAnim);
 }
 
 CDoor *CDoorTemplate::Create(std::wstring id)
 {
     CDoor* door = gPhysicalManager.CreateDoor(id);
-
-	door->SetTemplate(this);
-    door->SetAnimation(CDoor::dsOpen,mOpenAnim);
-    door->SetAnimation(CDoor::dsClosed,mClosedAnim);
-	door->SetAnimation(CDoor::dsOpening,mOpeningAnim ? mOpeningAnim : mOpenAnim);
-	door->SetAnimation(CDoor::dsClosing,mClosingAnim ? mClosedAnim : mClosedAnim);
-
+    door->SetTemplate(this);
+    door->SetAnimation(CDoor::dsOpened, mOpenedAnim);
+    door->SetAnimation(CDoor::dsClosed, mClosedAnim);
+    ((CPhysical*)(door))->SetAnimation(mClosedAnim);
     door->SetCategory(PHYSICAL_DOOR);
-	
 	return door;
 }
 
+/*
 CTemplateParam *CDoorTemplate::ReadParam(CXml &xml, rapidxml::xml_node<> *node, CTemplateParam *p){
     if (p == NULL)
         p = new CTemplateParam();
-    rapidxml::xml_node<> *n = xml.GetChild(node,"cond");
+    rapidxml::xml_node<> *n = xml.GetChild(node,"doorId");
     if (n != NULL){
         CCondition *cond = new CCondition();
         cond->Load(xml,n);
@@ -128,3 +117,5 @@ void CDoorTemplate::SerializeParam(std::ostream &out, CTemplateParam *param, int
     }
     CPhysicalTemplate::SerializeParam(out,param,indent);
 }
+*/
+
