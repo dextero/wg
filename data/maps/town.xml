@@ -2715,9 +2715,12 @@
 	<obj code="ca" x="5.0625" y="16.0938"/>
 	<obj code="ca" x="4.59375" y="14.8906"/>
 	<obj code="ca" x="9.95313" y="18.7813"/>
-	<obj code="ca" x="2.125" y="29.0938"/>
+    <obj code="ca" x="2.125" y="29.0938"/>
+    <obj templateFile="data/physicals/obstacles/roadsign.xml" x="38.7" y="3" />
+
     <objtype code="exit-portal" file="data/physicals/walls/test-barrier.xml" />
     <region name="entry" x="38.7344" y="1.125" rot="0" scale="1" />
+
     <region name="entry-nw" x="2.7048" y="9.297" rot="0" scale="1" />
     <region name="exit-nw" x="0.7048" y="9.297" rot="0" scale="1">
       <next-map>mingorian-desert1</next-map>
