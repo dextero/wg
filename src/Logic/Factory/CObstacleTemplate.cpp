@@ -1,4 +1,5 @@
 #include "CObstacleTemplate.h"
+#include "CTemplateParam.h"
 #include "../../Utils/CXml.h"
 #include "../../Utils/StringUtils.h"
 #include "../../Utils/CRand.h"
@@ -34,6 +35,7 @@ bool CObstacleTemplate::Load(CXml &xml)
     mDeathAnim = gAnimationManager.GetAnimation(xml.GetString("die-anim"));
 
     mImage = xml.GetString("image");
+    mTitle = xml.GetString("title");
 
     mColorRed = xml.GetFloat( "color", "r" , 1.0 );
     mColorGreen = xml.GetFloat( "color", "g", 1.0 );
@@ -81,5 +83,33 @@ CObstacle *CObstacleTemplate::Create(std::wstring id)
     }
 
 	return obstacle;
+}
+
+CTemplateParam * CObstacleTemplate::ReadParam(CXml & xml, rapidxml::xml_node<> * node, CTemplateParam * orig) {
+    if (orig == NULL) orig = new CTemplateParam();
+    std::string title = xml.GetString(node, "title");
+    if (!title.empty())
+        orig->stringValues["title"] = title;
+    return CPhysicalTemplate::ReadParam(xml,node,orig);
+}
+
+void CObstacleTemplate::Parametrise(CPhysical * phys, CTemplateParam * param) {
+    CObstacle * obstacle = (CObstacle*)phys;
+    if (param->stringValues.count("title") > 0) {
+        obstacle->SetTitle(param->stringValues["title"]);
+    }
+    CPhysicalTemplate::Parametrise(obstacle, param);
+}
+
+void CObstacleTemplate::SerializeParam(std::ostream &out, CTemplateParam *param, int indent)
+{
+    // spit out 'title' ?
+//    if (param != NULL){
+//        if (param->intValues.count("level") > 0){
+//            for (int i = 0; i < indent; ++i) out << "\t";
+//            out << "<level>" << param->intValues["level"] << "</level>\n";
+//        }
+//    }
+    CPhysicalTemplate::SerializeParam(out, param, indent);
 }
 

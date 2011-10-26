@@ -2,6 +2,7 @@
 #include "CPlayerController.h"
 #include "../GUI/CHud.h"
 #include "../GUI/CInGameOptionChooser.h"
+#include "../GUI/CInteractionTooltip.h"
 #include "../Logic/CLogic.h"
 #include "../Logic/CPlayer.h"
 #include "../Logic/CDetector.h"
@@ -37,8 +38,9 @@ CPlayerController::CPlayerController(CPlayer *player) :
     mAbsoluteMoveY(0.0f),
     mIsInAbsoluteMovement(false),
 	mMouseLook(false),
+    mHasWalkTarget(false),
     mOptionChooser(NULL),
-    mHasWalkTarget(false)
+    mInteractionTooltip(NULL)
 {
     fprintf(stderr,"CPlayerController::CPlayerController()\n");
     mySource = new CEffectSource(estCastingAbility,NULL);
@@ -51,6 +53,9 @@ CPlayerController::~CPlayerController(){
     fprintf(stderr,"CPlayerController::~CPlayerController()\n");
     if (mOptionChooser) {
         delete mOptionChooser;
+    }
+    if (mInteractionTooltip) {
+        delete mInteractionTooltip;
     }
 }
 
@@ -289,4 +294,10 @@ CInGameOptionChooser * CPlayerController::GetOptionChooser() {
     return mOptionChooser;
 }
 
-
+CInteractionTooltip * CPlayerController::GetInteractionTooltip() {
+    if (mInteractionTooltip == NULL) {
+        fprintf(stderr, "Creating a new interactionTooltip\n");
+        mInteractionTooltip = new CInteractionTooltip();
+    }
+    return mInteractionTooltip;
+}
