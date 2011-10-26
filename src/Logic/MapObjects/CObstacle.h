@@ -20,6 +20,7 @@ private:
     float mDyingTime;
 protected:
     CStats mStats;
+    std::string mTitle;
 
     CObstacle(const std::wstring& uniqueId);
     virtual ~CObstacle();
@@ -27,6 +28,7 @@ protected:
     SAnimation *mDeathAnim;
 
     IOptionChooserHandler * mOptionHandler;
+
 public:
     virtual CStats *GetStats();
     virtual void Update( float dt );
@@ -37,6 +39,8 @@ public:
 	inline bool IsDestroyed(){ return mDestroyed; }
 
     inline void SetDeathAnim(SAnimation *anim){ mDeathAnim = anim; }
+    
+    void SetTitle(const std::string & title);
 };
 
 #endif /*__COBSTACLE_H_*/

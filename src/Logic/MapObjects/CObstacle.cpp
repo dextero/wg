@@ -6,6 +6,7 @@
 #include "../CPlayer.h"
 #include "../../Input/CPlayerController.h"
 #include "../../GUI/CInGameOptionChooser.h"
+#include "../../GUI/CInteractionTooltip.h"
 #include "../OptionChooser/CChestOptionHandler.h"
 
 CObstacle::CObstacle(const std::wstring &uniqueId):
@@ -13,6 +14,7 @@ CObstacle::CObstacle(const std::wstring &uniqueId):
     mDestroyed(false),
     mDyingTime(0.0f),
     mStats(NULL),
+    mTitle(""),
     mDeathAnim(NULL),
     mOptionHandler(NULL)
 {
@@ -53,6 +55,13 @@ void CObstacle::Kill(){
 }
 
 void CObstacle::HandleCollisionWithPlayer(CPlayer * player) {
+    if (!mTitle.empty()) {
+        CInteractionTooltip * it = player->GetController()->GetInteractionTooltip();
+        it->SetTitle(mTitle);
+        it->Show();
+        return;
+    }
+
     if (mOptionHandler == NULL) {
         if (mGenre.compare(L"chest")) return;
 
@@ -65,3 +74,9 @@ void CObstacle::HandleCollisionWithPlayer(CPlayer * player) {
     oc->SetOptionHandler(mOptionHandler);
     oc->Show();
 }
+
+void CObstacle::SetTitle(const std::string & title) {
+    fprintf(stderr, "obstacle, set title %s\n", title.c_str());
+    mTitle = title;
+}
+

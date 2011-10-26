@@ -2716,7 +2716,9 @@
 	<obj code="ca" x="4.59375" y="14.8906"/>
 	<obj code="ca" x="9.95313" y="18.7813"/>
     <obj code="ca" x="2.125" y="29.0938"/>
-    <obj templateFile="data/physicals/obstacles/roadsign.xml" x="38.7" y="3" />
+    <obj templateFile="data/physicals/obstacles/roadsign.xml" x="38.7" y="3" >
+        <title>Beware the jabeerwock!</message>
+    </obj>
 
     <objtype code="exit-portal" file="data/physicals/walls/test-barrier.xml" />
     <region name="entry" x="38.7344" y="1.125" rot="0" scale="1" />

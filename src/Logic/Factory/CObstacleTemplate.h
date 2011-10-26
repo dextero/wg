@@ -32,10 +32,16 @@ public:
     CObstacle* Create(std::wstring id = L"");
 
     virtual bool CoreMapObject() const { return false; }
+
+    virtual CTemplateParam * ReadParam(CXml & xml, xml_node<> * node, CTemplateParam * orig = NULL);
+    virtual void Parametrise(CPhysical * loot, CTemplateParam * param);
+    virtual void SerializeParam(std::ostream &out, CTemplateParam *param, int indent = 0);
+
 private:
     SAnimation *mDefaultAnim,*mDeathAnim;
 	CStats *mMinStats,*mMaxStats;
     std::string mImage;
+    std::string mTitle;
 };
 
 #endif
