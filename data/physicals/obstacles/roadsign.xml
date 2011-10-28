@@ -4,7 +4,7 @@
   <radius min="0.2" max="0.24" />
 
   <!-- todo: invicibility -->
-  <maxhp min="500000" max="600000"/>
+  <maxhp min="5" max="6"/>
   
   <image>data/physicals/obstacles/roadsign.png</image>
 </root>

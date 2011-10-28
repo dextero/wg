@@ -8,6 +8,7 @@
 #include "../../GUI/CInGameOptionChooser.h"
 #include "../../GUI/CInteractionTooltip.h"
 #include "../OptionChooser/CChestOptionHandler.h"
+#include "../OptionChooser/SignInteraction.h"
 
 CObstacle::CObstacle(const std::wstring &uniqueId):
     CPhysical(uniqueId),
@@ -16,7 +17,9 @@ CObstacle::CObstacle(const std::wstring &uniqueId):
     mStats(NULL),
     mTitle(""),
     mDeathAnim(NULL),
-    mOptionHandler(NULL)
+    mOptionHandler(NULL),
+    mInteractionHandler(NULL),
+    mInteractionTooltip(NULL)
 {
     mStats = this;
     SetZIndex(Z_OBSTACLE);
@@ -29,6 +32,9 @@ CObstacle::~CObstacle(){
         if (mOptionHandler->mReferenceCounter == 0) {
             delete mOptionHandler;
         }
+    }
+    if (mInteractionTooltip != NULL) {
+        mInteractionTooltip->Clear();
     }
 }
 
@@ -56,9 +62,10 @@ void CObstacle::Kill(){
 
 void CObstacle::HandleCollisionWithPlayer(CPlayer * player) {
     if (!mTitle.empty()) {
-        CInteractionTooltip * it = player->GetController()->GetInteractionTooltip();
-        it->SetTitle(mTitle);
-        it->Show();
+        mInteractionTooltip = player->GetController()->GetInteractionTooltip();
+        if (mInteractionHandler != mInteractionTooltip->GetHandler() || mInteractionTooltip->GetHandler() == NULL) {
+            mInteractionHandler = new SignInteraction(mInteractionTooltip, mTitle);
+        }
         return;
     }
 

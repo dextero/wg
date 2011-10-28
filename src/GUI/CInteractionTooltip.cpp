@@ -1,68 +1,85 @@
 #include "CInteractionTooltip.h"
-#include "CButton.h"
 #include "CRoot.h"
-#include "../Utils/StringUtils.h"
+#include "CWindow.h"
+#include "CTextArea.h"
 #include "../Logic/CLogic.h"
-#include "../Rendering/CCamera.h"
-#include "../CGame.h"
-#include "../CGameOptions.h"
-#include "../Utils/Maths.h"
-
-#include <SFML/Graphics/RenderWindow.hpp>
+#include "../Utils/StringUtils.h"
 
 #include <stdarg.h>
 
+using namespace GUI;
+
 CInteractionTooltip::CInteractionTooltip() :
         mIsVisible(false),
-        mTitle("") {
+        mHandler(NULL),
+        mCanvas(NULL) {
     fprintf(stderr, "CInteractionTooltip()\n");
+    Clear();
 }
 
 CInteractionTooltip::~CInteractionTooltip() {
     fprintf(stderr, "~CInteractionTooltip()\n");
+    mCanvas->Remove();
+    mCanvas = NULL;
 }
 
-void CInteractionTooltip::SetTitle(const std::string & title) {
-    mTitle = title;
-    fprintf(stderr, "SetTitle %s\n", title.c_str());
-}
+//CPlayer * CInteractionTooltip::GetPlayer() {
+//    return mPlayer;
+//}
 
-CPlayer * CInteractionTooltip::GetPlayer()
-{
-    return mPlayer;
-}
+//void CInteractionTooltip::SetPlayer(CPlayer * player) {
+//    mPlayer = player;
+//}
 
-void CInteractionTooltip::SetPlayer(CPlayer * player)
-{
-    mPlayer = player;
-}
-
-void CInteractionTooltip::Show()
-{
+void CInteractionTooltip::Show() {
+    if (mIsVisible == true) return;
     mIsVisible = true;
+    fprintf(stderr, "showing\n");
+    mCanvas->SetVisible(true);
 }
 
-void CInteractionTooltip::Hide()
-{
+void CInteractionTooltip::Hide() {
     mIsVisible = false;
 }
 
-bool CInteractionTooltip::IsVisible()
-{
+void CInteractionTooltip::Clear() {
+    if (mCanvas != NULL) {
+        mCanvas->Remove();
+    }
+    mCanvas = gGUI.CreateWindow("interaction_tooltip" /* todo: player number */, true, Z_GUI4);
+    mCanvas->SetBackgroundImage("data/GUI/transparent-black.png");
+    mCanvas->SetVisible(false);
+    mCanvas->SetPosition(5.f, 5.f, 90.f, 90.f);
+    gGUI.UnregisterObject(mCanvas); // don't catch the mouse events
+}
+
+bool CInteractionTooltip::IsVisible() {
     return mIsVisible;
 }
 
-void CInteractionTooltip::Update(float secondsPassed)
-{
-	if (gLogic.GetState() != L"playing")
-		Hide();
+CWindow * CInteractionTooltip::GetCanvas() {
+    return mCanvas;
+}
+
+void CInteractionTooltip::SetHandler(InteractionHandler * handler) {
+    mHandler = handler;
+}
+
+InteractionHandler * CInteractionTooltip::GetHandler() {
+    return mHandler;
+}
+
+//void CInteractionTooltip::Update(float secondsPassed)
+//{
+//	if (gLogic.GetState() != L"playing")
+//		Hide();
 
   //  if (mIsVisible && mOptionHandler) {
  //       mOptionHandler->Update(secondsPassed);
 //    }
 
-    if (mIsVisible) {
+//    if (mIsVisible) {
 //        UpdateButtons();
-    }
-}
+//    }
+//}
 
