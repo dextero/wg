@@ -7,12 +7,15 @@
 
 #include <stdarg.h>
 
+static int interactionTooltipIdGenerator = 0;
+
 using namespace GUI;
 
 CInteractionTooltip::CInteractionTooltip() :
         mIsVisible(false),
         mHandler(NULL),
-        mCanvas(NULL) {
+        mCanvas(NULL),
+        mId(0) {
     fprintf(stderr, "CInteractionTooltip()\n");
     Clear();
 }
@@ -51,6 +54,7 @@ void CInteractionTooltip::Clear() {
     mCanvas->SetVisible(false);
     mCanvas->SetPosition(5.f, 5.f, 90.f, 90.f);
     gGUI.UnregisterObject(mCanvas); // don't catch the mouse events
+    mIsVisible = false;
 }
 
 bool CInteractionTooltip::IsVisible() {
@@ -63,10 +67,15 @@ CWindow * CInteractionTooltip::GetCanvas() {
 
 void CInteractionTooltip::SetHandler(InteractionHandler * handler) {
     mHandler = handler;
+    mId = ++interactionTooltipIdGenerator;
 }
 
 InteractionHandler * CInteractionTooltip::GetHandler() {
     return mHandler;
+}
+
+int CInteractionTooltip::GetId() {
+    return mId;
 }
 
 //void CInteractionTooltip::Update(float secondsPassed)

@@ -18,7 +18,7 @@ CObstacle::CObstacle(const std::wstring &uniqueId):
     mTitle(""),
     mDeathAnim(NULL),
     mOptionHandler(NULL),
-    mInteractionHandler(NULL),
+    mInteractionTooltipId(0),
     mInteractionTooltip(NULL)
 {
     mStats = this;
@@ -33,7 +33,7 @@ CObstacle::~CObstacle(){
             delete mOptionHandler;
         }
     }
-    if (mInteractionTooltip != NULL) {
+    if (mInteractionTooltip != NULL && mInteractionTooltip->GetId() == mInteractionTooltipId) {
         mInteractionTooltip->Clear();
     }
 }
@@ -63,8 +63,9 @@ void CObstacle::Kill(){
 void CObstacle::HandleCollisionWithPlayer(CPlayer * player) {
     if (!mTitle.empty()) {
         mInteractionTooltip = player->GetController()->GetInteractionTooltip();
-        if (mInteractionHandler != mInteractionTooltip->GetHandler() || mInteractionTooltip->GetHandler() == NULL) {
-            mInteractionHandler = new SignInteraction(mInteractionTooltip, mTitle);
+        if (mInteractionTooltip->GetHandler() == NULL || mInteractionTooltipId != mInteractionTooltip->GetId()) {
+            SignInteraction(mInteractionTooltip, mTitle);
+            mInteractionTooltipId = mInteractionTooltip->GetId();
         }
         return;
     }
