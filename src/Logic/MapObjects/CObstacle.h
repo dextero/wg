@@ -12,6 +12,8 @@ class CPlayer;
 struct SAnimation;
 
 class IOptionChooserHandler;
+class InteractionHandler;
+class CInteractionTooltip;
 
 class CObstacle: public CPhysical {
     friend class CPhysicalManager;
@@ -28,6 +30,9 @@ protected:
     SAnimation *mDeathAnim;
 
     IOptionChooserHandler * mOptionHandler;
+
+    InteractionHandler * mInteractionHandler;
+    CInteractionTooltip * mInteractionTooltip;
 
 public:
     virtual CStats *GetStats();
