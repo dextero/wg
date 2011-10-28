@@ -31,7 +31,7 @@ protected:
 
     IOptionChooserHandler * mOptionHandler;
 
-    InteractionHandler * mInteractionHandler;
+    int mInteractionTooltipId;
     CInteractionTooltip * mInteractionTooltip;
 
 public:

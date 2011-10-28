@@ -2719,6 +2719,12 @@
     <obj templateFile="data/physicals/obstacles/roadsign.xml" x="38.7" y="3" >
         <title>Beware the jabeerwock!</message>
     </obj>
+    
+    <obj templateFile="data/physicals/obstacles/roadsign.xml" x="39.9" y="4.3" >
+        <title>Highway
+           to
+           hell</message>
+    </obj>
 
     <objtype code="exit-portal" file="data/physicals/walls/test-barrier.xml" />
     <region name="entry" x="38.7344" y="1.125" rot="0" scale="1" />
