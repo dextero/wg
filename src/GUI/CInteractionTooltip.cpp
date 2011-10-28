@@ -4,6 +4,7 @@
 #include "CTextArea.h"
 #include "../Logic/CLogic.h"
 #include "../Utils/StringUtils.h"
+#include "../Logic/OptionChooser/InteractionHandler.h"
 
 #include <stdarg.h>
 
@@ -26,23 +27,15 @@ CInteractionTooltip::~CInteractionTooltip() {
     mCanvas = NULL;
 }
 
-//CPlayer * CInteractionTooltip::GetPlayer() {
-//    return mPlayer;
-//}
-
-//void CInteractionTooltip::SetPlayer(CPlayer * player) {
-//    mPlayer = player;
-//}
-
 void CInteractionTooltip::Show() {
     if (mIsVisible == true) return;
     mIsVisible = true;
-    fprintf(stderr, "showing\n");
     mCanvas->SetVisible(true);
 }
 
 void CInteractionTooltip::Hide() {
     mIsVisible = false;
+    mCanvas->SetVisible(false);
 }
 
 void CInteractionTooltip::Clear() {
@@ -55,6 +48,11 @@ void CInteractionTooltip::Clear() {
     mCanvas->SetPosition(5.f, 5.f, 90.f, 90.f);
     gGUI.UnregisterObject(mCanvas); // don't catch the mouse events
     mIsVisible = false;
+    mId = ++interactionTooltipIdGenerator;
+    if (mHandler != NULL) {
+        delete (mHandler);
+        mHandler = NULL;
+    }
 }
 
 bool CInteractionTooltip::IsVisible() {
@@ -67,7 +65,6 @@ CWindow * CInteractionTooltip::GetCanvas() {
 
 void CInteractionTooltip::SetHandler(InteractionHandler * handler) {
     mHandler = handler;
-    mId = ++interactionTooltipIdGenerator;
 }
 
 InteractionHandler * CInteractionTooltip::GetHandler() {
@@ -77,18 +74,4 @@ InteractionHandler * CInteractionTooltip::GetHandler() {
 int CInteractionTooltip::GetId() {
     return mId;
 }
-
-//void CInteractionTooltip::Update(float secondsPassed)
-//{
-//	if (gLogic.GetState() != L"playing")
-//		Hide();
-
-  //  if (mIsVisible && mOptionHandler) {
- //       mOptionHandler->Update(secondsPassed);
-//    }
-
-//    if (mIsVisible) {
-//        UpdateButtons();
-//    }
-//}
 

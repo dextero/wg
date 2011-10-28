@@ -23,6 +23,7 @@
 #include "Abilities/SAbilityInstance.h"
 #include "Stats/CRPGCalc.h"
 #include "../GUI/Localization/CLocalizator.h"
+#include "../GUI/CInteractionTooltip.h"
 #include "../Audio/CAudioManager.h"
 #include "../CGameOptions.h"
 #include "../Commands/CCommands.h"
@@ -34,15 +35,15 @@ CPlayer::CPlayer(const std::wstring& uniqueId) :
     CActor(uniqueId),
 	mNumber(-1),
     mTotalXP(0.0f),
-    mGold(0),
     mImmortal(false),
     mDied(false),
+    mGold(0),
     mSkillPoints(0),
     mAttrPoints(0),
+    mCurrentItem(0),
     mAbilityTrees(NULL),
     mAbiCodes(NULL),
-	mPinned(new CPinnedAbilityBatch(this)),
-    mCurrentItem(0)
+	mPinned(new CPinnedAbilityBatch(this))
 {
     fprintf(stderr,"CPlayer::CPlayer(%ls)\n",uniqueId.c_str());
 
@@ -54,6 +55,7 @@ CPlayer::~CPlayer()
 {
     fprintf(stderr,"CPlayer::~CPlayer(%ls)\n",GetUniqueId().c_str());
     gPlayerManager.UnregisterPlayer(this);
+    GetController()->GetInteractionTooltip()->Clear();
 
     if (mDied)
         gLogic.SetState(L"death");

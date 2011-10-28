@@ -266,11 +266,6 @@ void CGameScreens::InitAbilities(unsigned playerNumber)
 			xp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 			xp->SetText(L"XP: ?");
 
-			CTextArea * gold = atd[i]->CreateTextArea("gold");
-			xp->SetPosition(5.0f,89.0f,25.0f,15.0f);
-			xp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
-			xp->SetText(L"GOLD: ?"); //my aktualnie nie uzywamy ekranu abilities, tylko inventory, prawda?
-
 			CTextArea * sp = atd[i]->CreateTextArea("skill-points");
 			sp->SetPosition(5.0f,92.0f,25.0f,10.0f);
 			sp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));

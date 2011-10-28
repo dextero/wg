@@ -165,7 +165,7 @@ void CConsole::FrameStarted( float secondsPassed )
         mHudStaticText->GetSFString()->SetSize((float)currentFontSize);
         mVersionStaticText->GetSFString()->SetSize((float)currentFontSize);
     }
-    float fontHeight = (float)gGameOptions.GetHeight() / (float)mHeight;
+//    float fontHeight = (float)gGameOptions.GetHeight() / (float)mHeight;
     float fontWidth = (float)gGameOptions.GetWidth() / (float)mWidth;
 
     float currY = mHudSprite->GetSFSprite()->GetPosition().y;
@@ -232,7 +232,7 @@ void CConsole::FrameStarted( float secondsPassed )
 
 	mHudSprite->GetSFSprite()->Resize( (float)gGameOptions.GetWidth(), (float) gGameOptions.GetHeight() * 0.5f );
     mHudStaticText->GetSFString()->SetPosition( mHudSprite->GetSFSprite()->GetPosition() );
-    float halfWindowHeight = (float)gGame.GetRenderWindow()->GetHeight() * 0.5f;
+//    float halfWindowHeight = (float)gGame.GetRenderWindow()->GetHeight() * 0.5f;
     mVersionStaticText->GetSFString()->SetPosition(gGameOptions.GetWidth() - (revision.size() * fontWidth), (currentFontSize * mHeight) + currY);
 }
 

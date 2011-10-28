@@ -5,6 +5,8 @@ class InteractionHandler
 {
     protected:
     public:        
+        virtual void Update(float secondsPassed) {};
+        virtual ~InteractionHandler() {};
       
 };
 

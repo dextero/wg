@@ -9,7 +9,10 @@
 #include "../IFrameListener.h"
 #include "CGUIObject.h"
 #include <list>
+#include <set>
 #undef CreateWindow
+
+class InteractionHandler;
 
 #define gGUI GUI::CRoot::GetSingleton()
 
@@ -53,6 +56,9 @@ namespace GUI
         void ShowCursor(bool show=true);
 
         FontSetting GetFontSetting(const std::string & id, float scale = 1.0f);
+
+        void RegisterInteractionHandler(InteractionHandler * handler);
+        void UnregisterInteractionHandler(InteractionHandler * handler);
 	private:
 
 		CGUIObject* mActiveObject;
@@ -62,6 +68,8 @@ namespace GUI
         CGUIObject* mDraggedObject;
         CImageBox* mDraggedImg;
         std::map<std::string, FontSetting> mFontSettings;
+
+        std::set<InteractionHandler *> mInteractionHandlers;
 
 		friend class CGUIObject;
 	};
