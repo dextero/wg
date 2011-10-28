@@ -11,6 +11,7 @@
 #include "CAbilitySlot.h"
 #include "CAbiSlotsBar.h"
 #include "CInGameOptionChooser.h"
+#include "../Logic/OptionChooser/InteractionHandler.h"
 #include "CItemSlot.h"
 #include "../CGame.h"
 #include "../CGameOptions.h"
@@ -97,6 +98,8 @@ FontSetting CRoot::GetFontSetting(const std::string & id, float scale)
     return fs;
 }
 
+static std::vector<InteractionHandler *> sInteractionHandlersToLazilyUnregister;
+
 void CRoot::FrameStarted(float secondsPassed)
 {
 	mGlobalSize.x = (float) gGameOptions.GetWidth();
@@ -114,6 +117,15 @@ void CRoot::FrameStarted(float secondsPassed)
 
 	UpdateChilds( secondsPassed );
     CInGameOptionChooser::UpdateAll(secondsPassed);
+    for (std::vector<InteractionHandler *>::iterator it = sInteractionHandlersToLazilyUnregister.begin() ;
+            it != sInteractionHandlersToLazilyUnregister.end() ; it++) {
+        mInteractionHandlers.erase(mInteractionHandlers.find(*it));
+    }
+    sInteractionHandlersToLazilyUnregister.clear();
+    for (std::set<InteractionHandler *>::iterator it = mInteractionHandlers.begin() ; it != mInteractionHandlers.end() ; it++) {
+        (*it)->Update(secondsPassed);
+    }
+        
 }
 
 void CRoot::KeyPressed(const sf::Event::KeyEvent &e)
@@ -380,6 +392,14 @@ void CRoot::SetActiveObject(CGUIObject* active)
 			old->OnMouseEvent( 0.0f, 0.0f, MOUSE_UNCLICK );
 		}
 	}
+}
+
+void CRoot::RegisterInteractionHandler(InteractionHandler * handler) {
+    mInteractionHandlers.insert(handler);
+}
+
+void CRoot::UnregisterInteractionHandler(InteractionHandler * handler) {
+    sInteractionHandlersToLazilyUnregister.push_back(handler);
 }
 
 void CRoot::SetFocusedObject(CGUIObject* focused)

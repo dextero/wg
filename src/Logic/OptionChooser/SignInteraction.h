@@ -6,13 +6,21 @@
 #include "../../GUI/CTextArea.h"
 #include "../../GUI/CWindow.h"
 #include "../../Utils/StringUtils.h"
+#include "../../Utils/Maths.h"
 
 class SignInteraction : public InteractionHandler
 {
     protected:
+        CPhysical * mPlayer;
+        CPhysical * mObstacle;
+        CInteractionTooltip * mTooltip;
 
     public:        
-        SignInteraction(CInteractionTooltip * tooltip, const std::string & title) {
+        SignInteraction(CInteractionTooltip * tooltip, const std::string & title, CPhysical * player, CPhysical * obstacle) :
+                mPlayer(player),
+                mObstacle(obstacle),
+                mTooltip(tooltip)
+        {
             tooltip->Clear();
             GUI::CTextArea * description = tooltip->GetCanvas()->CreateTextArea("description");
             description->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
@@ -22,6 +30,18 @@ class SignInteraction : public InteractionHandler
             description->SetVisible(true);
             tooltip->SetHandler(this);
             tooltip->Show();
+            mTooltip = tooltip;
+            gGUI.RegisterInteractionHandler(this);
+        }
+
+        ~SignInteraction() {
+            gGUI.UnregisterInteractionHandler(this);
+        }
+
+        void Update(float secondsPassed) {
+            if (Maths::Length(mPlayer->GetPosition() - mObstacle->GetPosition()) > 1.5f) {
+                mTooltip->Hide();
+            }
         }
 };
 

@@ -24,14 +24,10 @@ public:
 
     GUI::CWindow * GetCanvas();
 
-//	void Update(float secondsPassed);
-
     int GetId();
 
     InteractionHandler * GetHandler();
     void SetHandler(InteractionHandler * handler);
-//    void SetPlayer(CPlayer * player);
-//    CPlayer * GetPlayer();
     bool IsVisible();
 
 private:
@@ -42,10 +38,6 @@ private:
     GUI::CWindow * mCanvas;
 
     int mId;
-
-    // TODO SafePtr!
-//    CPlayer * mPlayer; // ja to tak moge sobie przechowywac? Co jak ktos mi zabije tego gracza, wskaznik umrze?
-
 };
 
 #endif

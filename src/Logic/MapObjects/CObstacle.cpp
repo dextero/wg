@@ -64,9 +64,10 @@ void CObstacle::HandleCollisionWithPlayer(CPlayer * player) {
     if (!mTitle.empty()) {
         mInteractionTooltip = player->GetController()->GetInteractionTooltip();
         if (mInteractionTooltip->GetHandler() == NULL || mInteractionTooltipId != mInteractionTooltip->GetId()) {
-            SignInteraction(mInteractionTooltip, mTitle);
+            new SignInteraction(mInteractionTooltip, mTitle, player, this);
             mInteractionTooltipId = mInteractionTooltip->GetId();
-        }
+        } 
+        mInteractionTooltip->Show();
         return;
     }
 
