@@ -266,6 +266,11 @@ void CGameScreens::InitAbilities(unsigned playerNumber)
 			xp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
 			xp->SetText(L"XP: ?");
 
+			CTextArea * gold = atd[i]->CreateTextArea("gold");
+			gold->SetPosition(5.0f,89.0f,25.0f,15.0f);
+			gold->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+			gold->SetText(L"GOLD: ?");
+
 			CTextArea * sp = atd[i]->CreateTextArea("skill-points");
 			sp->SetPosition(5.0f,92.0f,25.0f,10.0f);
 			sp->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
