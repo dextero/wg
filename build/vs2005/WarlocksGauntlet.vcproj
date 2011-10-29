@@ -409,6 +409,14 @@
 				>
 			</File>
 			<File
+				RelativePath="..\..\src\GUI\CInteractionTooltip.cpp"
+				>
+			</File>
+			<File
+				RelativePath="..\..\src\GUI\CInteractionTooltip.h"
+				>
+			</File>
+			<File
 				RelativePath="..\..\src\GUI\CInventoryDisplayer.cpp"
 				>
 			</File>
@@ -1464,7 +1472,15 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\src\Logic\OptionChooser\InteractionHandler.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\src\Logic\OptionChooser\IOptionChooserHandler.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Logic\OptionChooser\SignInteraction.h"
 					>
 				</File>
 			</Filter>
