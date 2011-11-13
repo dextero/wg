@@ -4,11 +4,12 @@ rm -rf WGame*.app
 rm warsztat_game
 echo "WarsztatGame MacOSX auto build system"
 echo ""
-echo "Downloading SVN update..."
-svn update
-XREVISION=`svn info 2> /dev/null | head -n 5 | tail -n 1 | cut -c11-14`
+echo "Downloading hg update..."
+hg pull -u
+XREVISION=`hg log -l 1 --template '{node|short}\n'`
+#`svn info 2> /dev/null | head -n 5 | tail -n 1 | cut -c11-14`
 XSTATUS="?"
-echo "Building..."
+echo "Building ($XREVISION)ß..."
 rm -rf buildok
 make -f MakefileOSX clean > /dev/null
 make -f MakefileOSX > makelog.log 2> makelog.error
