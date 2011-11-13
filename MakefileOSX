@@ -2,11 +2,12 @@ BINARY_NAME = warsztat_game
 
 -include Makefile.sources
 
-CPPFLAGS = -m32 -I"build/includes/SFML-1.4/include" -I"build/includes" -I"/System/Library/Frameworks/OpenGL.framework/Headers/" -DPLATFORM_MACOSX -DPLATFORM_LINUX
+CPPFLAGS = -m32 -I"build/includes/SFML-1.6/include" -I"build/includes" -I"/System/Library/Frameworks/OpenGL.framework/Headers/" -DPLATFORM_MACOSX -DPLATFORM_LINUX
 
 LDFLAGS = -m32 -L"/System/Library/Frameworks/OpenGL.framework/Libraries"
 
-LIBS =  osxlib/graphics.o osxlib/window.o osxlib/system.o osxlib/audio.o osxlib/SFML.o osxlib/OpenAL.o -lGL 
+#LIBS =  osxlib/graphics.o osxlib/window.o osxlib/system.o osxlib/audio.o osxlib/SFML.o osxlib/OpenAL.o -lGL
+LIBS = -lGL
 
 #default:
 CXXFLAGS = -O2 -Wall
@@ -26,7 +27,7 @@ Release: all
 all: $(BINARY)
 
 $(BINARY): $(OBJECTS) platformOSX.o
-	$(CXX) -o $@ $(OBJECTS) platformOSX.o $(LDFLAGS) $(LIBS)  -lobjc -framework Foundation
+	$(CXX) -o $@ $(OBJECTS) platformOSX.o $(LDFLAGS) $(LIBS)  -lobjc -framework Foundation -framework SFML -framework sfml-graphics -framework sfml-system -framework sfml-audio -framework sfml-window -framework OpenAL
 
 %.d: %.cpp
 	-$(CXX) -E $(CXXFLAGS)  $(CPPFLAGS) -MM -MP -MF $@ -MQ $(@:.d=.s) -MQ $(@:.d=.o) -MQ $@ $<
