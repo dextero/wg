@@ -9,11 +9,11 @@ hg pull -u
 XREVISION=`hg log -l 1 --template '{node|short}\n'`
 #`svn info 2> /dev/null | head -n 5 | tail -n 1 | cut -c11-14`
 XSTATUS="?"
-echo "Building ($XREVISION)ß..."
+echo "Building ($XREVISION)..."
 rm -rf buildok
+XGAMELINK=""
 make -f MakefileOSX clean > /dev/null
 make -f MakefileOSX > makelog.log 2> makelog.error
-XGAMELINK=""
 if [ $? = 0 ]
 then
     XSTATUS="OK"
@@ -46,11 +46,11 @@ then
 	echo "Copy icon"
     cp ../../../osxlib/Icon.png i512.png
 	echo "Scale icon"
-    /opt/local/bin/convert -scale 50% i512.png i256.png
-    /opt/local/bin/convert -scale 50% i256.png i128.png
-    /opt/local/bin/convert -scale 50% i128.png i64.png
-    /opt/local/bin/convert -scale 50% i64.png i32.png
-    /opt/local/bin/convert -scale 50% i32.png i16.png
+    /usr/local/bin/convert -scale 50% i512.png i256.png
+    /usr/local/bin/convert -scale 50% i256.png i128.png
+    /usr/local/bin/convert -scale 50% i128.png i64.png
+    /usr/local/bin/convert -scale 50% i64.png i32.png
+    /usr/local/bin/convert -scale 50% i32.png i16.png
 	echo "Delete 64x64"
     rm -f -v i64.png
 	echo "png -> icns"
