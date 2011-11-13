@@ -24,3 +24,13 @@ WarlocksGauntlet.*\.exe\.manifest$
 WarlocksGauntlet.*\.ilk$
 .directory
 hell\.org\.pl\.rsa
+\.DS_Store
+wg_osx*
+osxlib/ff
+osxlib/SFML16
+makelog.*
+bladupload
+WGame*
+warsztat_game
+xmailbody
+
