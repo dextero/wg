@@ -3,9 +3,9 @@
 
 const char * GetUserDir_OSX()
 {
-	id path = [NSHomeDirectory()];
+	id path = NSHomeDirectory();
 	return [path UTF8String];
-} 
+}
 
 void CreateDir_OSX(const char * path)
 {

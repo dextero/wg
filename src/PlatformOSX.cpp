@@ -24,6 +24,9 @@ void FileUtils::CreateDir(const char * filename)
 	CreateDir_OSX(filename);
 }
 
+
+bool CanCreateWindowInFullScreenOnLinux() { return false; }
+
 extern "C" int AskForFullscreen_OSX(const wchar_t * title, const wchar_t * message, int maxw, int maxh);
 
 bool AskForFullscreen(const wchar_t * title, const wchar_t * message, int maxw, int maxh)
