@@ -10,8 +10,8 @@ const char * GetUserDir_OSX()
 void CreateDir_OSX(const char * path)
 {
 	NSFileManager *fileManager = [NSFileManager defaultManager];
-	NSLog(@"OSX: Creating directory `%@'...\n", path);
-	[fileManager createDirectoryAtPath:path withIntermediateDirectories:YES attributes:nil error:0];
+	NSLog(@"OSX: Creating directory `%s'...\n", path);
+	[fileManager createDirectoryAtPath:[NSString stringWithUTF8String:path] withIntermediateDirectories:YES attributes:nil error:0];
 } 
 
 int AskForFullscreen_OSX(const wchar_t * title, const wchar_t * message, int maxw, int maxh)
