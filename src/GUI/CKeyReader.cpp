@@ -128,10 +128,12 @@ bool CKeyReader::OnMouseEvent( float x, float y, mouseEvent e )
         if (mActive) SetKeyFromMouseButton(sf::Mouse::XButton2);
         break;
     case MOUSE_WHEEL_DOWN:
-        if (mActive) SetKeyFromMouseButton(sf::Mouse::ButtonCount + 0);
+        // TODO: tu byl blad na OSX (brak ButtonCount)
+        //if (mActive) SetKeyFromMouseButton(sf::Mouse::ButtonCount + 0);
         break;
     case MOUSE_WHEEL_UP:
-        if (mActive) SetKeyFromMouseButton(sf::Mouse::ButtonCount + 1);
+        // j/w
+        //if (mActive) SetKeyFromMouseButton(sf::Mouse::ButtonCount + 1);
         break;
 	case MOUSE_RELEASED_LEFT:
 		if ( mReadyToActive )
