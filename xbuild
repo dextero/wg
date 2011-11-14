@@ -12,7 +12,7 @@ XSTATUS="?"
 echo "Building ($XREVISION)..."
 rm -rf buildok
 XGAMELINK=""
-#make -f MakefileOSX clean > /dev/null
+make -f MakefileOSX clean > /dev/null
 make -f MakefileOSX > makelog.log 2> makelog.error
 if [ $? = 0 ]
 then
