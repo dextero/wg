@@ -1,4 +1,4 @@
-#include "CNPCTemplate.h"
+#include "CNpcTemplate.h"
 #include "../../Utils/CXml.h"
 #include "../../Utils/StringUtils.h"
 #include "../../Utils/CRand.h"
@@ -13,12 +13,12 @@ using namespace rapidxml;
 using namespace StringUtils;
 using namespace Maths;
 
-std::string CNPCTemplate::GetType()
+std::string CNpcTemplate::GetType()
 {
-	return "CNPCTemplate";
+	return "CNpcTemplate";
 }
 
-bool CNPCTemplate::Load(CXml &xml)
+bool CNpcTemplate::Load(CXml &xml)
 {
 	xml_node<>*	node;
 
@@ -33,14 +33,14 @@ bool CNPCTemplate::Load(CXml &xml)
 	return true;
 }
 
-void CNPCTemplate::Drop()
+void CNpcTemplate::Drop()
 {
 	delete this;
 }
 
-CNPC* CNPCTemplate::Create(std::wstring id)
+CNpc* CNpcTemplate::Create(std::wstring id)
 {
-	CNPC* npc = gPhysicalManager.CreateNPC(id);
+	CNpc* npc = gPhysicalManager.CreateNpc(id);
 	npc->SetCategory(PHYSICAL_NPC);
 	Fill(npc,gRand.Rndf());
 

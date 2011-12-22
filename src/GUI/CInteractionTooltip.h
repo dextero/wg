@@ -7,6 +7,8 @@
 #ifndef INTERACTION_TOOLTIP_H
 #define INTERACTION_TOOLTIP_H
 
+#include <string>
+
 class InteractionHandler;
 namespace GUI {
 class CWindow;
@@ -29,6 +31,7 @@ public:
     InteractionHandler * GetHandler();
     void SetHandler(InteractionHandler * handler);
     bool IsVisible();
+    void OptionSelected(size_t selected);
 
 private:
     bool mIsVisible;

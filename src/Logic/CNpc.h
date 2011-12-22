@@ -9,16 +9,17 @@ class CActorAI;
 class CInteractionTooltip;
 class CPlayer;
 
-class CNPC : public CActor
+class CNpc : public CActor
 {
 protected:
-	CNPC( const std::wstring& uniqueId );
-	virtual ~CNPC();
+	CNpc( const std::wstring& uniqueId );
+	virtual ~CNpc();
 
     // tox, 22 dec obrzydlistwo, jak sie tego pozbyc stad?
     int mInteractionTooltipId;
     // i tego? da sie?
     CInteractionTooltip * mInteractionTooltip;
+    std::string mSellingItem;
 
 public:
 	virtual void Update(float dt);
@@ -27,6 +28,9 @@ public:
 
     inline CActorAI* GetAI()				{ return (CActorAI*)mController; }
 	inline CDialogGraph* GetDialogGraph()	{ return &mDialogGraph; }
+
+    const std::string & GetSellingItem();
+    void SetSellingItem(const std::string & sellingItem);
 
 private:
 	CDialogGraph mDialogGraph;

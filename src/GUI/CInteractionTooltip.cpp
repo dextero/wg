@@ -74,4 +74,3 @@ InteractionHandler * CInteractionTooltip::GetHandler() {
 int CInteractionTooltip::GetId() {
     return mId;
 }
-

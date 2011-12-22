@@ -10,7 +10,7 @@
 #include "../Logic/Factory/CPhysicalTemplate.h"
 #include "../Logic/Abilities/CAbility.h"
 #include "../Logic/Factory/CEnemyTemplate.h"
-#include "../Logic/Factory/CNPCTemplate.h"
+#include "../Logic/Factory/CNpcTemplate.h"
 #include "../Logic/Factory/CBulletTemplate.h"
 #include "../Logic/Factory/CLairTemplate.h"
 #include "../Logic/Factory/CWallTemplate.h"
@@ -121,7 +121,7 @@ template <> ResourceHandle CResourceManager::LoadResource<CPhysicalTemplate>(std
     else if (type == "enemy")
         res = new CEnemyTemplate();
 	else if (type == "npc")
-		res = new CNPCTemplate();
+		res = new CNpcTemplate();
     else if (type == "bullet")
         res = new CBulletTemplate();
     else if (type == "wall")

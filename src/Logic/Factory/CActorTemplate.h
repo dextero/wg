@@ -5,7 +5,6 @@
 
 #include "CPhysicalTemplate.h"
 #include "../CEnemy.h"
-#include "../CNPC.h"
 #include <string>
 #include <vector>
 

@@ -15,7 +15,10 @@
 #include "../CGameOptions.h"
 #include "../Commands/CCommands.h"
 #include "../GUI/Localization/CLocalizator.h"
+//@Deprecate
 #include "../GUI/CInGameOptionChooser.h"
+#include "../GUI/CInteractionTooltip.h"
+#include "../Logic/OptionChooser/InteractionHandler.h"
 #include "../Map/CMap.h"
 #include <iostream>
 #include <math.h>
@@ -106,6 +109,7 @@ void CInputHandler::FrameStarted( float secondsPassed ){
 
             CInGameOptionChooser * oc = pc->GetOptionChooser();
             // todo: null check
+            // @Deprecate
             if (oc->IsVisible() && gBindManagerByPlayer(i)->GetMouseLook() != true)
             {
                 typedef std::map<std::string, size_t> MapType;
@@ -128,6 +132,30 @@ void CInputHandler::FrameStarted( float secondsPassed ){
                         gBindManagerByPlayer(i)->SetKeyState(it->first, false);
                     }
                 }
+            }
+            else if (pc->GetInteractionTooltip()->IsVisible() && gBindManagerByPlayer(i)->GetMouseLook() != true)
+            {
+                typedef std::map<std::string, size_t> MapType;
+                MapType mapping;
+                mapping["Slot-0"] = 0;
+                mapping["Slot-1"] = 1;
+                mapping["Slot-2"] = 2;
+                mapping["AbiX-0"] = 0;
+                mapping["AbiX-1"] = 1;
+                mapping["AbiX-2"] = 2;
+                mapping["AbiX-3"] = 3;
+                mapping["Abi-0"] = 0;
+                mapping["Abi-1"] = 1;
+                mapping["Abi-2"] = 2;
+                mapping["Abi-3"] = 3;
+
+                for (MapType::const_iterator it = mapping.begin(); it != mapping.end(); it++) {
+                    if (gBindManagerByPlayer(i)->Check(it->first) & keyMask) {
+                        pc->GetInteractionTooltip()->GetHandler()->OptionSelected(it->second);
+                        gBindManagerByPlayer(i)->SetKeyState(it->first, false);
+                    }
+                }
+
             }
             else
             {

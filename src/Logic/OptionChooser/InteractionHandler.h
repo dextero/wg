@@ -7,6 +7,7 @@ class InteractionHandler
     public:        
         virtual void Update(float secondsPassed) {};
         virtual ~InteractionHandler() {};
+        virtual void OptionSelected(size_t selected) {};
       
 };
 
