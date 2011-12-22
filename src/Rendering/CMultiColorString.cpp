@@ -1,4 +1,6 @@
 #include "CMultiColorString.h"
+#include "../ResourceManager/CResourceManager.h"
+#include "../GUI/CRoot.h"
 
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
@@ -22,6 +24,11 @@ using namespace sf;
 
 // jakies makro sfmlowe, nie moge go znalezc
 #define GLCheck(a) a
+
+CMultiColorString::CMultiColorString() :
+    sf::String(L"", *(gResourceManager.GetFont(gGUI.GetFontSetting("FONT_DEFAULT").name)), 30.f)
+{
+}
 
 const std::wstring CMultiColorString::NextColor(sf::Color col)
 {
