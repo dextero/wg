@@ -1,0 +1,15 @@
+<root type="npc">
+  <genre>default</genre>
+  <scale min="0.97" max="1.08" />
+  <radius min="0.5" max="0.52" />
+
+  <!-- todo: invicibility -->
+  <maxhp min="5" max="6"/>
+  
+  <!--  <image>data/physicals/obstacles/roadsign.png</image> -->
+  <animset>
+    <anim name="npcs/default/idle.anim" type="default" />
+    <anim name="npcs/default/move.anim" type="move" />
+  </animset>
+
+</root>
