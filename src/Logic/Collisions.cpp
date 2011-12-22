@@ -17,7 +17,7 @@
 #include "MapObjects/CHook.h"
 #include "MapObjects/CRegion.h"
 #include "MapObjects/CObstacle.h"
-#include "CNPC.h"
+#include "CNpc.h"
 #include "../GUI/Messages/CMessageSystem.h"
 #include "../Utils/StringUtils.h"
 #include "../Rendering/CCamera.h"
@@ -98,7 +98,7 @@ void Collisions::LogicalResponse( CPhysical* physicalA, CPhysical* physicalB, bo
 	}
     else if ( catA == PHYSICAL_PLAYER && catB == PHYSICAL_NPC )
     {
-        CNPC * npc = dynamic_cast<CNPC*>(physicalB);
+        CNpc * npc = dynamic_cast<CNpc*>(physicalB);
         npc->HandleCollisionWithPlayer(dynamic_cast<CPlayer*>(physicalA));
     }
     else if ( catA == PHYSICAL_PLAYER && catB == PHYSICAL_OBSTACLE )

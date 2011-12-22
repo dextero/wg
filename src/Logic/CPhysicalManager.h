@@ -14,7 +14,7 @@ class CDetector;
 class CPhysical;
 class CActor;
 class CEnemy;
-class CNPC;
+class CNpc;
 class CPlayer;
 class CBullet;
 class CLair;
@@ -40,7 +40,7 @@ public:
 	CDetector* CreateDetector( const std::wstring& uniqueId = L"" );
     CActor *CreateActor( const std::wstring &uniqueId = L"");
     CEnemy *CreateEnemy( const std::wstring &uniqueId = L"");
-	CNPC *CreateNPC( const std::wstring &uniqueId = L"");
+	CNpc *CreateNpc( const std::wstring &uniqueId = L"");
     CPlayer *CreatePlayer( const std::wstring &uniqueId = L"");
     CBullet *CreateBullet( const std::wstring &uniqueId = L"");
 	CLair *CreateLair( const std::wstring &uniqueId = L"");

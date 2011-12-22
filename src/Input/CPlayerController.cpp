@@ -280,6 +280,7 @@ bool CPlayerController::AllowKeyHold(){
     return (mLastKey != -1 && mFocusAbility != NULL);
 }
 
+//@Deprecated
 CInGameOptionChooser * CPlayerController::GetOptionChooser() {
     if (mOptionChooser == NULL) {
         fprintf(stderr, "Creating new chooser\n");

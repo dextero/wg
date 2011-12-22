@@ -8,7 +8,7 @@
 #include "Abilities/CTargetChooser.h"
 #include "../Utils/Directions.h"
 #include "CPhysicalManager.h"
-#include "CNPC.h"
+#include "CNpc.h"
 #include "../GUI/Dialogs/CDialogDisplayer.h"
 
 #include <limits>
@@ -28,7 +28,7 @@ CDetector::CDetector( const std::wstring& uniqueId )
     mFirstFrame( true ),
 	mCollision( false ),
 	mOldCollision( false ),
-	mNPC( NULL ),
+	mNpc( NULL ),
     mCallbackDispatcher( this )
 {
 	SetCategory( PHYSICAL_DETECTOR );
@@ -91,10 +91,10 @@ void CDetector::SetMeleeAngle(float angle){
 
 void CDetector::Update(float dt)
 {
-	if ( (mBehaviour & CHOOSE_NPC_TO_TALK) != 0 && mNPC != NULL )
+	if ( (mBehaviour & CHOOSE_NPC_TO_TALK) != 0 && mNpc != NULL )
 	{
 		fprintf( stderr, "I want to talk to you!\n" );
-		gDialogDisplayer.DisplayDialog( ((CNPC*) mNPC)->GetDialogGraph() );
+		gDialogDisplayer.DisplayDialog( ((CNpc*) mNpc)->GetDialogGraph() );
 	}
 
     mFirstFrame = false;
@@ -130,7 +130,7 @@ void CDetector::Update(float dt)
 
 	mOldCollision = mCollision;
 	mCollision = false;
-	mNPC = NULL;
+	mNpc = NULL;
 	mOldCollidingPhysicals.clear();
 	mOldCollidingPhysicals = mCollidingPhysicals; // TODO: poprawic
 	mCollidingPhysicals.clear();
@@ -170,7 +170,7 @@ void CDetector::HandleCollision(CPhysical *physical)
         // to bedzie jeszcze potrzebne? tox, 22 Dec
 		if ( (mBehaviour & CHOOSE_NPC_TO_TALK) != 0 && physical->GetCategory() == PHYSICAL_NPC )
 		{
-			mNPC = physical;
+			mNpc = physical;
 		}
 	}
 }

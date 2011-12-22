@@ -4,7 +4,7 @@
 #include "CDetector.h"
 #include "CPlayer.h"
 #include "CEnemy.h"
-#include "CNPC.h"
+#include "CNpc.h"
 #include "CLair.h"
 #include "CBullet.h"
 #include "MapObjects/CWall.h"
@@ -87,8 +87,8 @@ CEnemy *CPhysicalManager::CreateEnemy( const std::wstring &uniqueId){
     return Create<CEnemy>(uniqueId);
 }
 
-CNPC *CPhysicalManager::CreateNPC( const std::wstring &uniqueId){
-	return Create<CNPC>(uniqueId);
+CNpc *CPhysicalManager::CreateNpc( const std::wstring &uniqueId){
+	return Create<CNpc>(uniqueId);
 }
 
 CPlayer *CPhysicalManager::CreatePlayer( const std::wstring &uniqueId){

@@ -2,16 +2,17 @@
 #define _NPC_TEMPLATE_H_
 
 #include "CActorTemplate.h"
+#include "../CNpc.h"
 #include <string>
 #include <vector>
 
 class CXml;
 
-class CNPCTemplate : public CActorTemplate
+class CNpcTemplate : public CActorTemplate
 {
 public:
-	CNPCTemplate() {} 
-	virtual ~CNPCTemplate() { mDialogs.clear(); }
+	CNpcTemplate() {} 
+	virtual ~CNpcTemplate() { mDialogs.clear(); }
 
 	/* IResource */
 
@@ -21,7 +22,7 @@ public:
 
 	/* ========= */
 
-	CNPC* Create(std::wstring id = L"");
+	CNpc* Create(std::wstring id = L"");
 
     virtual bool CoreMapObject() const { return true; }
 private:

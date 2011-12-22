@@ -1,21 +1,22 @@
-#include "CNPC.h"
+#include "CNpc.h"
 #include "AI/CActorAI.h"
 #include "../GUI/CInteractionTooltip.h"
-#include "OptionChooser/SignInteraction.h"
+#include "OptionChooser/ShopInteraction.h"
 #include "CPlayer.h"
 #include "../Input/CPlayerController.h"
 
-CNPC::CNPC( const std::wstring& uniqueId )
+CNpc::CNpc( const std::wstring& uniqueId )
 :	CActor( uniqueId ),
     mInteractionTooltipId(0),
-    mInteractionTooltip(NULL)
+    mInteractionTooltip(NULL),
+    mSellingItem("meteor")
 {
 	CActorAI * ai = new CActorAI( this );
 	ai->GetData()->SetAttitude( AI_NEUTRAL );
 	mController = ai;
 }
 
-CNPC::~CNPC()
+CNpc::~CNpc()
 {
     // obrzydlistwo:
     if (mInteractionTooltip != NULL && mInteractionTooltip->GetId() == mInteractionTooltipId) {
@@ -23,17 +24,25 @@ CNPC::~CNPC()
     }
 }
 
-void CNPC::Update(float dt)
+void CNpc::Update(float dt)
 {
     mController->Update(dt);
     CActor::Update(dt);
 }
 
-void CNPC::HandleCollisionWithPlayer(CPlayer * player) {
+void CNpc::HandleCollisionWithPlayer(CPlayer * player) {
     mInteractionTooltip = player->GetController()->GetInteractionTooltip();
     if (mInteractionTooltip->GetHandler() == NULL || mInteractionTooltipId != mInteractionTooltip->GetId()) {
-        new SignInteraction(mInteractionTooltip, "Siema!\nJestem Griswold!", player, this);
+        new ShopInteraction(mInteractionTooltip, "Siema!\nJestem Griswold!", player, this);
         mInteractionTooltipId = mInteractionTooltip->GetId();
     }
     mInteractionTooltip->Show();
+}
+
+const std::string & CNpc::GetSellingItem() {
+    return mSellingItem;
+}
+
+void CNpc::SetSellingItem(const std::string & sellingItem) {
+    mSellingItem = sellingItem;
 }

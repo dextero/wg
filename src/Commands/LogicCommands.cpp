@@ -32,7 +32,7 @@
 #include "../Input/CBindManager.h"
 #include "../Input/CPlayerController.h"
 
-#include "../Logic/CNPC.h"
+#include "../Logic/CNpc.h"
 #include "../Logic/CDialogGraph.h"
 #include "../Logic/Quests/CQuestManager.h"
 #include "../GUI/Dialogs/CDialogDisplayer.h"
@@ -910,7 +910,7 @@ void CommandStartDialog(size_t argc, const std::vector<std::wstring> &argv)
         return;
     }
 
-    CNPC* npc = dynamic_cast<CNPC*>(gPhysicalManager.GetPhysicalById(argv[1]));
+    CNpc* npc = dynamic_cast<CNpc*>(gPhysicalManager.GetPhysicalById(argv[1]));
 
     if (!npc) {
         gConsole.Printf(L"%ls doesn't exist, or it is not a NPC", argv[1].c_str());

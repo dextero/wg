@@ -61,7 +61,7 @@ private:
     bool mFirstFrame;
 	bool mCollision;
 	bool mOldCollision;
-	CPhysical* mNPC;
+	CPhysical* mNpc;
 	std::vector<CPhysical*> mCollidingPhysicals;
 	std::vector<CPhysical*> mOldCollidingPhysicals;
 
