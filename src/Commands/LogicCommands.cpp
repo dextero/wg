@@ -522,7 +522,7 @@ void CommandAddGold(size_t argc, const std::vector<std::wstring> &argv){
         return;
     }
 
-    int amount = StringUtils::Parse<float>(argv[2]);
+    int amount = StringUtils::Parse<int>(argv[2]);
     CPlayer* player= dynamic_cast<CPlayer*>(gPhysicalManager.GetPhysicalById(argv[1]));
     if (!player) {
         gConsole.Printf(L"player %ls not found", argv[1].c_str());
