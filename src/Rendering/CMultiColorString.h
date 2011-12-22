@@ -6,6 +6,8 @@
 class CMultiColorString: public sf::String
 {
 public:
+    CMultiColorString();
+
     static const std::wstring NextColor(sf::Color col);
 
     virtual void Render(sf::RenderTarget& target) const;
