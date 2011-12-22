@@ -167,6 +167,7 @@ void CDetector::HandleCollision(CPhysical *physical)
 			gEffectManager.ApplyOnce(physical, mEffectOffset,mMeAsSource,mContext );
 		}
 
+        // to bedzie jeszcze potrzebne? tox, 22 Dec
 		if ( (mBehaviour & CHOOSE_NPC_TO_TALK) != 0 && physical->GetCategory() == PHYSICAL_NPC )
 		{
 			mNPC = physical;
