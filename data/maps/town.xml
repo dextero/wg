@@ -2727,6 +2727,10 @@
    </obj>
 
    <obj templateFile="data/physicals/npcs/default.xml" x="39.0" y="5.6" >
+       <sellingItem>data/abilities/weapons/meteor.xml:10</sellingItem>
+   </obj>
+   <obj templateFile="data/physicals/npcs/default.xml" x="38.3" y="7.6" rot="315" >
+       <sellingItem>data/abilities/weapons/blades.xml:15</sellingItem>
    </obj>
 
     <objtype code="exit-portal" file="data/physicals/walls/test-barrier.xml" />

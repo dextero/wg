@@ -20,6 +20,7 @@ protected:
     // i tego? da sie?
     CInteractionTooltip * mInteractionTooltip;
     std::string mSellingItem;
+    int mSellingPrice;
 
 public:
 	virtual void Update(float dt);
@@ -31,6 +32,9 @@ public:
 
     const std::string & GetSellingItem();
     void SetSellingItem(const std::string & sellingItem);
+
+    inline int GetSellingPrice() { return mSellingPrice; }
+    inline void SetSellingPrice(int price) { mSellingPrice = price; }
 
 private:
 	CDialogGraph mDialogGraph;

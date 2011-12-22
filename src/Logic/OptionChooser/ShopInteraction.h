@@ -13,6 +13,8 @@
 #include "../Items/CItem.h"
 #include "../../Rendering/Effects/CGraphicalEffects.h"
 #include "../../Audio/CAudioManager.h"
+#include "../Abilities/CAbility.h"
+#include "../../ResourceManager/CResourceManager.h"
 
 
 class ShopInteraction : public InteractionHandler
@@ -41,9 +43,12 @@ class ShopInteraction : public InteractionHandler
             if (mNpc->GetSellingItem().empty()) {
                 mDescription->SetText(L"Hello, I've already sold you what I had.");
             } else {
+                CAbility * ability = gResourceManager.GetAbility(mNpc->GetSellingItem());
+                int cost = mNpc->GetSellingPrice();
+
                 mDescription->SetText(L"Hello wanderer, I'm Griswold, Griswold the Angry. \
 Why angry you ask? Cause no where in Anthkaldia you will be able to buy \
-better spells than I can sell. Would you like to buy meteor spell for 10gp?");
+better spells than I can sell. Would you like to buy " + ability->name + L" spell for " + StringUtils::ToWString(cost) + L"gp?");
                 GUI::CButton * buttonYes = tooltip->GetCanvas()->CreateButton("yes");
                 buttonYes->SetImage("data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png");
                 buttonYes->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON"));
@@ -83,12 +88,13 @@ better spells than I can sell. Would you like to buy meteor spell for 10gp?");
                 mTooltip->Clear();
                 return;
             }
-
-            if (mPlayer->GetGold() <= 10) {
-                mDescription->SetText(mDescription->GetText() + L"\n\nNot enough gold! Come back when you have enough.");
+            int price = mNpc->GetSellingPrice();
+            if (mPlayer->GetGold() <= price) {
+                mDescription->SetText(mDescription->GetText() + L"\n\nNot enough gold! Come back when you have more. You have only " + StringUtils::ToWString(mPlayer->GetGold()) + L"gp.");
             } else {
+                mPlayer->SetGold(mPlayer->GetGold() - price);
                 CItem * item = new CItem();
-                item->SetAbility("data/abilities/weapons/" + mNpc->GetSellingItem() + ".xml");
+                item->SetAbility(mNpc->GetSellingItem());
                 item->mLevel = 1;
                 mPlayer->AddItem(item, 1);
                 gGraphicalEffects.ShowEffect("magic-circle-4", mPlayer);
