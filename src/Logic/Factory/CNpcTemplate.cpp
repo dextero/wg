@@ -1,4 +1,5 @@
 #include "CNpcTemplate.h"
+#include "CTemplateParam.h"
 #include "../../Utils/CXml.h"
 #include "../../Utils/StringUtils.h"
 #include "../../Utils/CRand.h"
@@ -8,6 +9,7 @@
 #include "../CPhysicalManager.h"
 #include "../../ResourceManager/CResourceManager.h"
 #include "../CActor.h"
+#include "../CNpc.h"
 
 using namespace rapidxml;
 using namespace StringUtils;
@@ -48,5 +50,29 @@ CNpc* CNpcTemplate::Create(std::wstring id)
 		npc->GetDialogGraph()->AddDialogFile( mDialogs[i] );
 
 	return npc;
+}
+
+CTemplateParam * CNpcTemplate::ReadParam(CXml & xml, rapidxml::xml_node<> * node, CTemplateParam * orig) {
+    if (orig == NULL) orig = new CTemplateParam();
+    std::string sellingItemStr = xml.GetString(node, "sellingItem");
+    if (!sellingItemStr.empty())
+        orig->stringValues["sellingItem"] = sellingItemStr;
+    return CActorTemplate::ReadParam(xml,node,orig);
+}
+
+void CNpcTemplate::Parametrise(CPhysical * phys, CTemplateParam * param) {
+    CNpc * npc = (CNpc*)phys;
+    if (param->stringValues.count("sellingItem") > 0) {
+        std::vector<std::string> sellingItemStr = StringUtils::Explode(param->stringValues["sellingItem"], ":");
+        npc->SetSellingItem(sellingItemStr[0]);
+        npc->SetSellingPrice(StringUtils::Parse<int>(sellingItemStr[1]));
+    }
+    CActorTemplate::Parametrise(npc, param);
+}
+
+void CNpcTemplate::SerializeParam(std::ostream &out, CTemplateParam *param, int indent)
+{
+    //todo:!!!
+    CActorTemplate::SerializeParam(out, param);
 }
 

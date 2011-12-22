@@ -9,7 +9,8 @@ CNpc::CNpc( const std::wstring& uniqueId )
 :	CActor( uniqueId ),
     mInteractionTooltipId(0),
     mInteractionTooltip(NULL),
-    mSellingItem("meteor")
+    mSellingItem(""),
+    mSellingPrice(0)
 {
 	CActorAI * ai = new CActorAI( this );
 	ai->GetData()->SetAttitude( AI_NEUTRAL );
