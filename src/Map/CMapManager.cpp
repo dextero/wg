@@ -117,6 +117,12 @@ namespace Map{
         sf::Clock timer;
         timer.Reset();
 
+        // #1179 - nazwa regionu, z ktorego weszlismy na plansze   
+        if (region != "")
+            mLastEntryRegion = region;
+        else
+            mLastEntryRegion = "entry";
+
 		if ( m_map != NULL && m_map->GetFilename() == mapFile ){
 			if ( region != "" )
 			{
@@ -125,12 +131,6 @@ namespace Map{
 
 			return true;
 		}
-
-        // #1179 - nazwa regionu, z ktorego weszlismy na plansze   
-        if (region != "")
-            mLastEntryRegion = region;
-        else
-            mLastEntryRegion = "entry";
 
 		SetCurrentMapAsVisited();
 
