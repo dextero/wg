@@ -441,9 +441,13 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
 
     // pozycje graczy
     if (savePlayerPos)
+    {
         for (unsigned i = 0; i < gPlayerManager.GetPlayerCount(); i++)
 	        if (CPlayer* player = gPlayerManager.GetPlayerByNumber(i))
                 ss << "set-physical-position player" << i << " " << player->GetPosition().x << " " << player->GetPosition().y << "\n";
+    }
+    else
+        ss << "move-players-to-region " << gMapManager.GetLastEntryRegion() << "\n";
 
 	ss << "exec post-new-game\n";
     //tox, 27 maja: todo: uwzgledniac crimson-mode

@@ -1886,6 +1886,14 @@
 					>
 				</File>
 				<File
+					RelativePath="..\..\src\GUI\CInteractionTooltip.cpp"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\GUI\CInteractionTooltip.h"
+					>
+				</File>
+				<File
 					RelativePath="..\..\src\GUI\CInventoryDisplayer.cpp"
 					>
 				</File>

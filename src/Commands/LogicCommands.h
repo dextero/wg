@@ -52,6 +52,7 @@ void CommandAddScore(size_t argc, const std::vector<std::wstring> &argv);
 //void CommandSetArcadeMode(size_t argc, const std::vector<std::wstring> &argv);
 void CommandBestiaryAdd(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSetBoss(size_t argc, const std::vector<std::wstring> &argv);
+void CommandMovePlayersToRegion(size_t argc, const std::vector<std::wstring> &argv);
 
 #endif//__MISC_COMMANDS_H__
 
