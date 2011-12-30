@@ -49,6 +49,7 @@ namespace Map{
 		};
 
         DefferedMapData mDefferedMapData; //for scheduled map changing
+        std::string mLastEntryRegion;   // #1179 - nazwa regionu, z ktorego weszlismy na plansze
 
 	public:
 
@@ -80,6 +81,8 @@ namespace Map{
         const std::string& GetWorld() { return mWorld; }
         const std::string GetWorldPath(); // zwraca sciezke do folderu, w ktorym sa mapy skladajace sie na 'swiat', z / na koncu
         const std::string GetWorldsDirPath(); // zwraca scieke do folderu zawierajacego "swiaty", z / na koncu
+
+        const std::string& GetLastEntryRegion() { return mLastEntryRegion; }
 	};
 }
 #endif /*__CMAPMANAGER_H__*/

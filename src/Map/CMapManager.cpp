@@ -122,8 +122,15 @@ namespace Map{
 			{
                 gPlayerManager.MovePlayersToRegion(region);
             }
+
 			return true;
 		}
+
+        // #1179 - nazwa regionu, z ktorego weszlismy na plansze   
+        if (region != "")
+            mLastEntryRegion = region;
+        else
+            mLastEntryRegion = "entry";
 
 		SetCurrentMapAsVisited();
 

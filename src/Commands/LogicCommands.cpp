@@ -110,6 +110,7 @@ CCommands::SCommandPair LogicCommands [] =
     //{L"set-arcade-mode"                     , "$MAN_SET_ARCADE_MODE"            , CommandSetArcadeMode           },
     {L"bestiary-add"                        , "$MAN_BESTIARY_ADD"               , CommandBestiaryAdd             },
     {L"set-boss"                            , "$MAN_SET_BOSS"                   , CommandSetBoss                 },
+    {L"move-players-to-region"              , "$MAN_MOVE_PLAYERS_TO_REGION"     , CommandMovePlayersToRegion     },
     {0,0,0}
 };
 
@@ -1103,4 +1104,15 @@ void CommandSetBoss(size_t argc, const std::vector<std::wstring> &argv)
 
     gBossManager.Trace(argv[1], StringUtils::ConvertToString(argv[2]), r, (argc > 4 ? StringUtils::ConvertToString(argv[4]) : ""));
     gConsole.Printf(L"ok!");
+}
+
+void CommandMovePlayersToRegion(size_t argc, const std::vector<std::wstring> &argv)
+{
+    if (argc < 2)
+    {
+        gConsole.Printf(L"usage: %s region-name", argv[0].c_str());
+        return;
+    }
+
+    gPlayerManager.MovePlayersToRegion(StringUtils::ConvertToString(argv[1]));
 }
