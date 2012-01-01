@@ -1661,6 +1661,38 @@
 						>
 					</File>
 				</Filter>
+				<Filter
+					Name="OptionChooser"
+					>
+					<File
+						RelativePath="..\..\src\Logic\OptionChooser\CChestOptionHandler.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\src\Logic\OptionChooser\CLootItemOptionHandler.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\src\Logic\OptionChooser\CSimpleOptionHandler.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\src\Logic\OptionChooser\InteractionHandler.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\src\Logic\OptionChooser\IOptionChooserHandler.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\src\Logic\OptionChooser\ShopInteraction.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\src\Logic\OptionChooser\SignInteraction.h"
+						>
+					</File>
+				</Filter>
 			</Filter>
 			<Filter
 				Name="ResourceManager"

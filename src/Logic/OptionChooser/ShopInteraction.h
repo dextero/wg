@@ -5,6 +5,7 @@
 #include "../../GUI/CRoot.h"
 #include "../../GUI/CTextArea.h"
 #include "../../GUI/CButton.h"
+#include "../../GUI/CImageBox.h"
 #include "../../GUI/CWindow.h"
 #include "../../Utils/StringUtils.h"
 #include "../../Utils/Maths.h"
@@ -43,13 +44,32 @@ class ShopInteraction : public InteractionHandler
             if (mNpc->GetSellingItem().empty()) {
                 mDescription->SetText(L"Hello, I've already sold you what I had.");
             } else {
+                GUI::CWindow* canvas = tooltip->GetCanvas();
+
                 CAbility * ability = gResourceManager.GetAbility(mNpc->GetSellingItem());
                 int cost = mNpc->GetSellingPrice();
 
                 mDescription->SetText(L"Hello wanderer, I'm Griswold, Griswold the Angry. \
 Why angry you ask? Cause no where in Anthkaldia you will be able to buy \
 better spells than I can sell. Would you like to buy " + ability->name + L" spell for " + StringUtils::ToWString(cost) + L"gp?");
-                GUI::CButton * buttonYes = tooltip->GetCanvas()->CreateButton("yes");
+
+                GUI::CImageBox* itemIcon = canvas->CreateImageBox("icon");
+                itemIcon->SetPosition(5.f, 20.f, 0.f, 0.f);
+                itemIcon->SetPosition(0.f, 0.f, 50.f, 50.f, GUI::UNIT_PIXEL);
+                itemIcon->AddImageToSequence(ability->icon);
+                itemIcon->SetSequenceState(0);
+
+                GUI::CTextArea* itemName = canvas->CreateTextArea("item-name");
+                itemName->SetPosition(15.f, 20.f, 80.f, 5.f);
+                itemName->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+                itemName->SetText(ability->name);
+
+                GUI::CTextArea* itemDescription = canvas->CreateTextArea("item-desc");
+                itemDescription->SetPosition(15.f, 20.f, 80.f, 20.f);
+                itemDescription->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+                itemDescription->SetText(ability->description);
+                
+                GUI::CButton * buttonYes = canvas->CreateButton("yes");
                 buttonYes->SetImage("data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png");
                 buttonYes->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON"));
                 buttonYes->SetText(L"Yeah, sure (press {btn0})");
@@ -57,7 +77,7 @@ better spells than I can sell. Would you like to buy " + ability->name + L" spel
                 buttonYes->SetCenter(true);
                 buttonYes->GetClickCallback()->bind(this, &ShopInteraction::OptionYes);
 
-                GUI::CButton * buttonNo = tooltip->GetCanvas()->CreateButton("no");
+                GUI::CButton * buttonNo = canvas->CreateButton("no");
                 buttonNo->SetImage("data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png");
                 buttonNo->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON"));
                 buttonNo->SetText(L"No thanks. (press {btn1})");
