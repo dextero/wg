@@ -3770,5 +3770,39 @@
 	<sprite file="data/maps/doodahs/tree9.png" x="15.5625" y="4.45313" z="background" scale="0.8625" rot="139.5"/>
 	<sprite file="data/maps/doodahs/tree9.png" x="14.1875" y="2.92188" z="background" scale="0.8625" rot="139.5"/>
 	<sprite file="data/maps/doodahs/tree9.png" x="17.4375" y="11.0625" z="background" scale="0.8625" rot="139.5"/>
-	<sprite file="data/maps/doodahs/town/ground_well.png" x="24.0625" y="21.0625" z="background" scale="1" rot="0"/>
+    <sprite file="data/maps/doodahs/town/ground_well.png" x="24.0625" y="21.0625" z="background" scale="1" rot="0"/>
+
+    <light x="20.6483" y="0.59329" radius="8.36005" color="9 5 255" />
+    <light x="12.4766" y="7.40109" radius="7.79031" color="158 168 45" />
+    <light x="27.4088" y="15.6057" radius="3.04801" color="149 199 49" />
+    <light x="10.7448" y="30.7038" radius="7.65872" color="84 162 176" />
+    <light x="22.4971" y="15.3316" radius="9.06317" color="215 170 178" />
+    <light x="25.5387" y="0.353924" radius="4.88151" color="212 212 195" />
+    <light x="16.4627" y="27.4031" radius="7.92619" color="195 173 70" />
+    <light x="24.5266" y="17.5778" radius="5.50882" color="74 90 71" />
+    <light x="14.5642" y="20.5019" radius="7.9582" color="110 245 220" />
+    <light x="10.3946" y="13.6227" radius="9.70127" color="143 118 191" />
+    <light x="44.85" y="8.4227" radius="9.70127" color="183 118 191" />
+    <light x="36.6483" y="12.79329" radius="8.36005" color="159 225 206" />
+    <light x="26.7448" y="24.7038" radius="7.65872" color="84 172 186" />
+    <light x="42.5387" y="22.353924" radius="4.88151" color="212 12 235" />
+    <light x="39.5387" y="19.553924" radius="3.88151" color="212 12 245" />
+    <light x="30.5642" y="36.5019" radius="6.9582" color="110 245 220" />
+
+    <light x="36.5387" y="30.353924" radius="4.88151" color="212 212 195" />
+    <light x="37.4627" y="35.4031" radius="7.92619" color="195 173 70" />
+    <light x="31.5266" y="34.5778" radius="4.50882" color="174 90 71" />
+    <light x="26.5642" y="31.5019" radius="7.9582" color="110 245 220" />
+    <light x="43.6845" y="23.3189" radius="4.66317" color="131 183 239" />
+    <light x="34.3946" y="43.6227" radius="9.70127" color="143 118 191" />
+    <light x="20.7448" y="40.7038" radius="7.65872" color="84 162 176" />
+    <light x="16.4971" y="44.3316" radius="3.06317" color="215 170 178" />
+    <light x="8.4387" y="40.353924" radius="4.88151" color="42 212 105" />
+    <light x="2.5627" y="45.4031" radius="7.92619" color="5 253 70" />
+
+    <light x="44.5627" y="23.4031" radius="3.92619" color="55 153 120" />
+    <light x="37.5627" y="2.7731" radius="4.32619" color="85 133 120" />
+    <light x="4.1627" y="31.7731" radius="4.32619" color="85 133 120" />
+    <light x="4.1627" y="21.7731" radius="4.32619" color="85 133 120" />
+    <light x="4.1627" y="10.7731" radius="4.32619" color="135 123 100" />
 </map>
