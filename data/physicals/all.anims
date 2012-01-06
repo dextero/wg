@@ -1978,7 +1978,10 @@ core/anim/timberman/death
 ########
 npcs/default/idle.anim
 {
-    0.10  "data/physicals/npcs/default.png"                  0   0   64  64
+    1.70  "data/physicals/npcs/default.png"                  0   64   64  128
+    0.40  "data/physicals/npcs/default.png"                 64   64  128  128
+    2.10  "data/physicals/npcs/default.png"                128   64  192  128
+    0.18  "data/physicals/npcs/default.png"                 64   64  128  128
 }
 
 npcs/default/move.anim
