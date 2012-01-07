@@ -2020,6 +2020,14 @@ npcs/default/blue-with-knife/idle.anim
     0.21  "data/physicals/npcs/blue-with-knife.png"     64   64  128  128
 }
 
+npcs/default/red-with-axe/idle.anim
+{
+    1.91  "data/physicals/npcs/red-with-axe.png"      0   64   64  128
+    0.26  "data/physicals/npcs/red-with-axe.png"     64   64  128  128
+    2.11  "data/physicals/npcs/red-with-axe.png"    128   64  192  128
+    0.23  "data/physicals/npcs/red-with-axe.png"     64   64  128  128
+}
+
 #########
 # krowa #
 #########
