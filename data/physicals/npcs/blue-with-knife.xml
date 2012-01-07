@@ -1,0 +1,10 @@
+<root type="npc">
+  <genre>blue-with-knife</genre>
+  <scale min="0.97" max="1.08" />
+  <radius min="0.5" max="0.52" />
+
+  <animset>
+    <anim name="npcs/default/blue-with-knife/idle.anim" type="default" />
+  </animset>
+
+</root>
