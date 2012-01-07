@@ -1996,6 +1996,14 @@ npcs/default/move.anim
     0.10  "data/physicals/npcs/default.png"                448   0  512  64
 }
 
+npcs/default/green/idle.anim
+{
+    1.70  "data/physicals/npcs/green.png"                  0   64   64  128
+    0.40  "data/physicals/npcs/green.png"                 64   64  128  128
+    2.10  "data/physicals/npcs/green.png"                128   64  192  128
+    0.18  "data/physicals/npcs/green.png"                 64   64  128  128
+}
+
 #########
 # krowa #
 #########

@@ -1,0 +1,11 @@
+<root type="npc">
+  <genre>green</genre>
+  <scale min="0.97" max="1.08" />
+  <radius min="0.5" max="0.52" />
+
+  <animset>
+    <anim name="npcs/default/green/idle.anim" type="default" />
+    <anim name="npcs/default/green/move.anim" type="move" />
+  </animset>
+
+</root>
