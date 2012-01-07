@@ -2012,6 +2012,14 @@ npcs/default/yellow-with-staff/idle.anim
     0.19  "data/physicals/npcs/yellow-with-staff.png"     64   64  128  128
 }
 
+npcs/default/blue-with-knife/idle.anim
+{
+    1.87  "data/physicals/npcs/blue-with-knife.png"      0   64   64  128
+    0.23  "data/physicals/npcs/blue-with-knife.png"     64   64  128  128
+    2.09  "data/physicals/npcs/blue-with-knife.png"    128   64  192  128
+    0.21  "data/physicals/npcs/blue-with-knife.png"     64   64  128  128
+}
+
 #########
 # krowa #
 #########
