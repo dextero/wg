@@ -1,0 +1,10 @@
+<root type="npc">
+  <genre>red-with-axe</genre>
+  <scale min="0.97" max="1.08" />
+  <radius min="0.5" max="0.52" />
+
+  <animset>
+    <anim name="npcs/default/red-with-axe/idle.anim" type="default" />
+  </animset>
+
+</root>
