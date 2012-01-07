@@ -1999,9 +1999,17 @@ npcs/default/move.anim
 npcs/default/green/idle.anim
 {
     1.70  "data/physicals/npcs/green.png"                  0   64   64  128
-    0.40  "data/physicals/npcs/green.png"                 64   64  128  128
+    0.24  "data/physicals/npcs/green.png"                 64   64  128  128
     2.10  "data/physicals/npcs/green.png"                128   64  192  128
-    0.18  "data/physicals/npcs/green.png"                 64   64  128  128
+    0.15  "data/physicals/npcs/green.png"                 64   64  128  128
+}
+
+npcs/default/yellow-with-staff/idle.anim
+{
+    1.83  "data/physicals/npcs/yellow-with-staff.png"      0   64   64  128
+    0.26  "data/physicals/npcs/yellow-with-staff.png"     64   64  128  128
+    2.17  "data/physicals/npcs/yellow-with-staff.png"    128   64  192  128
+    0.19  "data/physicals/npcs/yellow-with-staff.png"     64   64  128  128
 }
 
 #########

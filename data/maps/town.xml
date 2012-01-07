@@ -2107,7 +2107,7 @@
 	<obj code="ca" x="38.1875" y="20.6406"/>
 	<obj code="ca" x="39.125" y="20.9063"/>
 	<obj code="ca" x="39.7188" y="21.2969"/>
-	<obj code="ca" x="40.4688" y="21.5625"/>
+	<obj code="ca" x="40.0688" y="21.5625"/>
 	<obj code="ca" x="39.625" y="20.4063"/>
 	<obj code="ca" x="39.8438" y="19.4531"/>
 	<obj code="ca" x="39.8594" y="18.4688"/>
@@ -2739,7 +2739,7 @@
    <obj templateFile="data/physicals/npcs/green.xml" x="29.0721" y="20.9831" rot="90" >
        <sellingItem>data/abilities/weapons/magic-missile.xml:10</sellingItem>
    </obj>
-   <obj templateFile="data/physicals/npcs/default.xml" x="21.0345" y="2.0212" rot="00" >
+   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="21.0345" y="2.0212" rot="00" >
        <sellingItem>data/abilities/weapons/acidspray.xml:150</sellingItem>
    </obj>
    <obj templateFile="data/physicals/npcs/green.xml" x="13.0188" y="25.0079" rot="0" >
@@ -2748,7 +2748,7 @@
    <obj templateFile="data/physicals/npcs/default.xml" x="13.9969" y="21.0295" rot="180" >
        <sellingItem>data/abilities/weapons/hibernation.xml:50</sellingItem>
    </obj>
-   <obj templateFile="data/physicals/npcs/green.xml" x="5.3088" y="42.9369" rot="135" >
+   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="5.3088" y="42.9369" rot="135" >
        <sellingItem>data/abilities/weapons/acidcircus.xml:350</sellingItem>
    </obj>
    <obj templateFile="data/physicals/npcs/default.xml" x="21.2063" y="41.9081" rot="10" >
@@ -2757,7 +2757,7 @@
    <obj templateFile="data/physicals/npcs/green.xml" x="37.7063" y="30.7275" rot="135" >
        <sellingItem>data/abilities/weapons/haste.xml:50</sellingItem>
    </obj>
-   <obj templateFile="data/physicals/npcs/default.xml" x="36.1531" y="35.1313" rot="0" >
+   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="36.1531" y="35.1313" rot="0" >
        <sellingItem>data/abilities/weapons/firearrow-lvl2.xml:50</sellingItem>
    </obj>
    <obj templateFile="data/physicals/npcs/green.xml" x="30.6585" y="36.0281" rot="270" >
@@ -2766,7 +2766,7 @@
    <obj templateFile="data/physicals/npcs/default.xml" x="44.2063" y="22.8938" rot="90" >
        <sellingItem>data/abilities/weapons/exploding-corpse.xml:100</sellingItem>
    </obj>
-   <obj templateFile="data/physicals/npcs/green.xml" x="43.769" y="18.2836" rot="90" >
+   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="43.769" y="18.2836" rot="135" >
        <sellingItem>data/abilities/weapons/devolution.xml:350</sellingItem>
    </obj>
    <obj templateFile="data/physicals/npcs/default.xml" x="20.3027" y="21.0446" rot="270" >
