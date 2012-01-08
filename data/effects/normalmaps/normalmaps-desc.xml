@@ -162,4 +162,11 @@
 	<mat tex="data/physicals/monsters/gfx/wolfbeast-attack-wounded.png" nm="data/effects/normalmaps/wolfbeast-attack.png" />
 	<mat tex="data/physicals/monsters/gfx/wolfbeast-death.png" nm="data/effects/normalmaps/wolfbeast-death.png" />
 	
+	<!-- NPC -->
+	<mat tex="data/physicals/npcs/blue-with-knife.png" nm="data/effects/normalmaps/blue-with-knife.png" />
+	<mat tex="data/physicals/npcs/default.png" nm="data/effects/normalmaps/default.png" />
+	<mat tex="data/physicals/npcs/green.png" nm="data/effects/normalmaps/green.png" />
+	<mat tex="data/physicals/npcs/red-with-axe.png" nm="data/effects/normalmaps/red-with-axe.png" />
+	<mat tex="data/physicals/npcs/yellow-with-staff.png" nm="data/effects/normalmaps/yellow-with-staff.png" />
+	
 </root>
