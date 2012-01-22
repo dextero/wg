@@ -3,190 +3,143 @@
 	<startingRegion>entry</startingRegion>
 	
 <!-- szkic swiata
-legenda: md -> mingorian-desert
-         rf -> rothmos-forest
-         af -> andor-forest
-		 gs -> gorrada-swamps
+legenda: d -> mingorian-desert
+         f -> rothmos-forest
+		 a -> arctic
 
 		 
 		 
 		 
-		                    |
-		                 -town3-
-		                    =
-		                   md5
-		                    |
-       rf11 - - - - md4- - md3-md2
-        |            |      |  |
-        |            |     md1-\
-	    |           rf6         \
-        |            |           town-gs1-gs2-gs3-???
-       rf10     rf7-rf4-rf2-rf1-/ ||                
-        |        |   |   |       / |               |
-       rf9-rf8-town2-rf5-rf3  af1-af2              |                 
-				 |			   |   |               |
-                 |            af4-af3              |
-                 |             |   |               
-                af9 - - - - - af5-af6          
-							   |   |           
-							    `-af7-af8*
-						
+		                     
+		                        
+		                     
+ d14-d15-d16
+  |       |
+ d13     d17#a18-a19-a20
+  |       #           |
+ d12-d11--L          a21-a22
+  |        \              |
+ d10        town--------#a23-a24-a25!          
+  #       ,/ ||
+ f09#f06-"` / |
+  |   |    /   \                             
+ f08-f07 f03    \
+      |   |      \
+     f05-f04-f02-f01
+							  
+							  
+							  
+	   
+	   
+	   
+	   
+	   
+	   
 -->	
-    <map id="andor-forest9" scheme="forest" level="6">
-        <exit toMap="town2" onBorder="north"/>
-        <exit toMap="andor-forest5" onBorder="east"/>
-    </map>
-    <map id="andor-forest8" scheme="forest" level="8" boss="1">
-        <exit toMap="andor-forest7" onBorder="west"/>
-    </map>
-    <map id="andor-forest7" scheme="forest" level="7">
-        <exit toMap="andor-forest5" onBorder="west" toEntry="south"/>
-        <exit toMap="andor-forest6" onBorder="north"/>
-        <exit toMap="andor-forest8" onBorder="east"/>
-    </map>
-    <map id="andor-forest6" scheme="forest" level="6">
-        <exit toMap="andor-forest3" onBorder="north"/>
-        <exit toMap="andor-forest5" onBorder="west"/>
-        <exit toMap="andor-forest7" onBorder="south"/>
-    </map>
-    <map id="andor-forest5" scheme="forest" level="5">
-        <exit toMap="andor-forest4" onBorder="north"/>
-        <exit toMap="andor-forest6" onBorder="east"/>
-        <exit toMap="andor-forest9" onBorder="west"/>
-        <exit toMap="andor-forest7" onBorder="south" toEntry="west"/>
-    </map>
-    <map id="andor-forest4" scheme="forest" level="4">
-        <exit toMap="andor-forest1" onBorder="north"/>
-        <exit toMap="andor-forest3" onBorder="east"/>
-        <exit toMap="andor-forest5" onBorder="south"/>
-    </map>
-    <map id="andor-forest3" scheme="forest" level="3">
-        <exit toMap="andor-forest2" onBorder="north"/>
-        <exit toMap="andor-forest4" onBorder="west"/>
-        <exit toMap="andor-forest6" onBorder="south"/>
-    </map>
-    <map id="andor-forest2" scheme="forest" level="2">
+    <map id="f01" scheme="forest" level="1">
         <exit toMap="data/maps/town.xml" onBorder="north" toEntry="entry-s"/>
-        <exit toMap="andor-forest1" onBorder="west"/>
-        <exit toMap="andor-forest3" onBorder="south"/>
+        <exit toMap="f02" onBorder="west" /> 
     </map>
-    <map id="andor-forest1" scheme="forest" level="1">
+    <map id="f02" scheme="forest" level="2">
+        <exit toMap="f01" onBorder="east"/>
+        <exit toMap="f04" onBorder="west"/>
+    </map>
+    <map id="f03" scheme="forest" level="3">
         <exit toMap="data/maps/town.xml" onBorder="north" toEntry="entry-sw"/>
-        <exit toMap="andor-forest2" onBorder="east"/>
-        <exit toMap="andor-forest4" onBorder="south"/>
+        <exit toMap="f04" onBorder="south" /> 
     </map>
-
-    <map id="town3" scheme="desert" level="0" >
-        <exit toMap="mingorian-desert5" onBorder="south"/> 
+    <map id="f04" scheme="forest" level="4">
+        <exit toMap="f02" onBorder="east"/>
+        <exit toMap="f03" onBorder="north"/>
+        <exit toMap="f05" onBorder="west"/>
     </map>
-    <map id="mingorian-desert5" scheme="desert" level="9" boss="1">
-        <exit toMap="town3" onBorder="north" blocked="true" />
-        <exit toMap="mingorian-desert3" onBorder="south"/> 
+    <map id="f05" scheme="forest" level="5">
+        <exit toMap="f04" onBorder="east"/>
+        <exit toMap="f07" onBorder="north"/>
     </map>
-    <map id="mingorian-desert4" scheme="desert" level="8">
-        <exit toMap="rothmos-forest6" onBorder="south"/>
-        <exit toMap="rothmos-forest11" onBorder="west"/>
-        <exit toMap="mingorian-desert3" onBorder="east"/> 
-    </map>
-    <map id="mingorian-desert3" scheme="desert" level="11">
-        <exit toMap="mingorian-desert1" onBorder="south"/>
-        <exit toMap="mingorian-desert2" onBorder="east"/> 
-        <exit toMap="mingorian-desert5" onBorder="north"/> 
-        <exit toMap="mingorian-desert4" onBorder="west"/> 
-    </map>
-    <map id="mingorian-desert2" scheme="desert" level="10">
-        <exit toMap="data/maps/town.xml" onBorder="south" toEntry="entry-n"/>
-        <exit toMap="mingorian-desert3" onBorder="west"/> 
-    </map>
-    <map id="mingorian-desert1" scheme="desert" level="10">
-        <exit toMap="data/maps/town.xml" onBorder="east" toEntry="entry-nw"/>
-        <exit toMap="mingorian-desert3" onBorder="north"/> 
-    </map>
-
-    <map id="rothmos-forest11" scheme="forest" level="7">
-        <exit toMap="rothmos-forest10" onBorder="south"/>
-        <exit toMap="mingorian-desert4" onBorder="east"/>
-    </map>
-    <map id="rothmos-forest10" scheme="forest" level="6">
-        <exit toMap="rothmos-forest9" onBorder="south"/>
-        <exit toMap="rothmos-forest11" onBorder="north"/>
-    </map>
-    <map id="rothmos-forest9" scheme="forest" level="5">
-        <exit toMap="rothmos-forest8" onBorder="east"/>
-        <exit toMap="rothmos-forest10" onBorder="north"/>
-    </map>
-    <map id="rothmos-forest8" scheme="forest" level="4">
-        <exit toMap="rothmos-forest9" onBorder="west"/>
-        <exit toMap="town2" onBorder="east"/> 
-    </map>
-    <map id="town2" scheme="forest" level="0">
-        <exit toMap="rothmos-forest7" onBorder="north"/>
-        <exit toMap="rothmos-forest5" onBorder="east"/> 
-        <exit toMap="rothmos-forest8" onBorder="west"/> 
-        <exit toMap="andor-forest9" onBorder="south"/> 
-    </map>
-    <map id="rothmos-forest7" scheme="forest" level="3">
-        <exit toMap="rothmos-forest4" onBorder="east"/>
-        <exit toMap="town2" onBorder="south"/> 
-    </map>
-    <map id="rothmos-forest6" scheme="forest" level="6">
-        <exit toMap="rothmos-forest4" onBorder="south"/>
-        <exit toMap="mingorian-desert4" onBorder="north"/> 
-    </map>
-    <map id="rothmos-forest5" scheme="forest" level="3">
-        <exit toMap="rothmos-forest3" onBorder="east"/>
-        <exit toMap="town2" onBorder="west"/> 
-        <exit toMap="rothmos-forest4" onBorder="north"/> 
-    </map>
-    <map id="rothmos-forest4" scheme="forest" level="4">
-        <exit toMap="rothmos-forest2" onBorder="east"/>
-        <exit toMap="rothmos-forest5" onBorder="south"/> 
-        <exit toMap="rothmos-forest6" onBorder="north"/> 
-        <exit toMap="rothmos-forest7" onBorder="west"/> 
-    </map>
-    <map id="rothmos-forest3" scheme="forest" level="2">
-        <exit toMap="rothmos-forest2" onBorder="north"/>
-        <exit toMap="rothmos-forest5" onBorder="west"/> 
-    </map>
-    <map id="rothmos-forest2" scheme="forest" level="2">
-        <exit toMap="rothmos-forest1" onBorder="east"/>
-        <exit toMap="rothmos-forest3" onBorder="south"/> 
-        <exit toMap="rothmos-forest4" onBorder="west"/> 
-    </map>
-    <map id="rothmos-forest1" scheme="forest" level="1" >
+    <map id="f06" scheme="forest" level="6">
         <exit toMap="data/maps/town.xml" onBorder="east" toEntry="entry-w"/>
-        <exit toMap="rothmos-forest2" onBorder="west" /> 
+        <exit toMap="f07" onBorder="south" /> 
+        <exit toMap="f09" onBorder="west" /> 
     </map>
-	
-    <map id="gorrada-swamps1" scheme="forest" level="6">
-        <exit toMap="data/maps/town.xml" onBorder="west" toEntry="entry-e"/>
-        <exit toMap="gorrada-swamps2" onBorder="east" /> 
+    <map id="f07" scheme="forest" level="7">
+        <exit toMap="f05" onBorder="south"/>
+        <exit toMap="f06" onBorder="north"/>
+        <exit toMap="f08" onBorder="west"/>
     </map>
-    <map id="gorrada-swamps2" scheme="forest" level="6">
-        <exit toMap="gorrada-swamps1" onBorder="wast" /> 
-        <exit toMap="gorrada-swamps3" onBorder="east" /> 
+    <map id="f08" scheme="forest" level="8">
+        <exit toMap="f07" onBorder="east"/>
+        <exit toMap="f09" onBorder="north"/>
     </map>
-    <map id="gorrada-swamps3" scheme="forest" level="7">
-        <exit toMap="gorrada-swamps2" onBorder="wast" /> 
+    <map id="f09" scheme="forest" level="9" boss="1">
+        <exit toMap="f06" onBorder="east" blocked="true" />
+        <exit toMap="f08" onBorder="south"/> 
+        <exit toMap="d10" onBorder="north" blocked="true" />
     </map>
-	
-<!--<map id="forest1" scheme="forest" level="1">
-	    <exit toMap="data/maps/town.xml" onBorder="west" />
-	    <exit toMap="forest2" onBorder="east" />
+    <map id="d10" scheme="desert" level="10">
+        <exit toMap="f09" onBorder="south"/>
+        <exit toMap="d12" onBorder="north"/>
+    </map>
+    <map id="d11" scheme="desert" level="11">
+        <exit toMap="data/maps/town.xml" onBorder="south" toEntry="entry-nw"/>
+        <exit toMap="d12" onBorder="west"/>
+    </map>
+    <map id="d12" scheme="desert" level="12">
+        <exit toMap="d10" onBorder="south"/>
+        <exit toMap="d11" onBorder="east"/>
+        <exit toMap="d13" onBorder="north"/>
+    </map>
+    <map id="d13" scheme="desert" level="13">
+        <exit toMap="d12" onBorder="south"/>
+        <exit toMap="d14" onBorder="north"/>
+    </map>
+    <map id="d14" scheme="desert" level="14">
+        <exit toMap="d13" onBorder="south"/>
+        <exit toMap="d15" onBorder="east"/>
+    </map>
+    <map id="d15" scheme="desert" level="15">
+        <exit toMap="d14" onBorder="west"/>
+        <exit toMap="d16" onBorder="east"/>
+    </map>
+    <map id="d16" scheme="desert" level="16">
+        <exit toMap="d15" onBorder="west"/>
+        <exit toMap="d17" onBorder="south"/>
+    </map>
+    <map id="d17" scheme="desert" level="17" boss="1">
+        <exit toMap="d16" onBorder="north"/> 
+        <exit toMap="a18" onBorder="east" blocked="true" />
+        <exit toMap="data/maps/town.xml" onBorder="south" toEntry="entry-n" blocked="true" />
+    </map>
+    <map id="a18" scheme="arctic" level="18">
+        <exit toMap="d17" onBorder="west"/>
+        <exit toMap="a19" onBorder="east"/>
+    </map>
+    <map id="a19" scheme="arctic" level="19">
+        <exit toMap="a18" onBorder="west"/>
+        <exit toMap="a20" onBorder="east"/>
+    </map>
+    <map id="a20" scheme="arctic" level="20">
+        <exit toMap="a19" onBorder="west"/>
+        <exit toMap="a21" onBorder="south"/>
+    </map>
+    <map id="a21" scheme="arctic" level="21">
+        <exit toMap="a20" onBorder="north"/>
+        <exit toMap="a22" onBorder="east"/>
+    </map>
+    <map id="a22" scheme="arctic" level="22">
+        <exit toMap="a21" onBorder="west"/>
+        <exit toMap="a23" onBorder="south"/>
+    </map>
+    <map id="a23" scheme="arctic" level="23" boss="1">
+        <exit toMap="a22" onBorder="north"/> 
+        <exit toMap="a24" onBorder="east"/>
+        <exit toMap="data/maps/town.xml" onBorder="west" toEntry="entry-e" blocked="true" />
+    </map>
+    <map id="a24" scheme="arctic" level="24">
+        <exit toMap="a24" onBorder="west"/>
+        <exit toMap="a25" onBorder="east"/>
+    </map>
+    <map id="a25" scheme="arctic" level="25" boss="1" final-boss="1">
+	    <exit toMap="a24" onBorder="west" />
 	</map>
-    <map id="forest2" scheme="forest" level="2">
-        <exit toMap="forest1" onBorder="west" />
-	    <exit toMap="arctic1" onBorder="east" />
-	    <exit toMap="desert1" onBorder="north" />
-	</map>
-    <map id="desert1" scheme="desert" level="10">
-	    <exit toMap="forest2" onBorder="south" />
-	</map>
-    <map id="arctic1" scheme="arctic" level="20">
-	    <exit toMap="forest2" onBorder="west" />
-	    <exit toMap="arctic2" onBorder="east" />
-	</map>
-    <map id="arctic2" scheme="arctic" level="18" final-boss="data/physicals/monsters/defs/baldurian.xml">
-	    <exit toMap="arctic1" onBorder="west" />
-	</map>-->
 </root>
