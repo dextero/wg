@@ -2784,42 +2784,42 @@
 
     <region name="entry-nw" x="2.7048" y="9.297" rot="0" scale="1" />
     <region name="exit-nw" x="0.7048" y="9.297" rot="0" scale="1">
-      <next-map>mingorian-desert1</next-map>
+      <next-map>d11</next-map>
       <next-map-region>east</next-map-region>
 	</region>
 	<obj code="exit-portal" x="0.7048" y="9.297" />
 
     <region name="entry-n" x="10.5359" y="2.5692" rot="0" scale="1" />
     <region name="exit-n" x="10.5359" y="0.5692" rot="0" scale="1">
-      <next-map>mingorian-desert2</next-map>
+      <next-map>d17</next-map>
       <next-map-region>south</next-map-region>
 	</region>
 	<obj code="exit-portal" x="10.5359" y="0.5692" />
 
     <region name="entry-w" x="2.5147" y="31.5036" rot="0" scale="1" />
     <region name="exit-w" x="0.5147" y="31.5036" rot="0" scale="1">
-      <next-map>rothmos-forest1</next-map>
+      <next-map>f06</next-map>
       <next-map-region>east</next-map-region>
 	</region>
 	<obj code="exit-portal" x="0.5147" y="31.5036" />
 
     <region name="entry-sw" x="17.2641" y="45.2375" rot="0" scale="1" />
     <region name="exit-sw" x="17.2641" y="47.2375" rot="0" scale="1">
-      <next-map>andor-forest1</next-map>
+      <next-map>f03</next-map>
       <next-map-region>north</next-map-region>
 	</region>
 	<obj code="exit-portal" x="17.2641" y="47.2375" />
 
     <region name="entry-s" x="33.5607" y="45.2375" rot="0" scale="1" />
     <region name="exit-s" x="33.5607" y="47.2375" rot="0" scale="1">
-      <next-map>andor-forest2</next-map>
+      <next-map>f01</next-map>
       <next-map-region>north</next-map-region>
 	</region>
 	<obj code="exit-portal" x="33.5607" y="47.2375" />
 
     <region name="entry-e" x="45.55" y="33.3712" rot="0" scale="1" />
     <region name="exit-e" x="47.55" y="33.3712" rot="0" scale="1">
-      <next-map>gorrada-swamps1</next-map>
+      <next-map>a23</next-map>
       <next-map-region>west</next-map-region>
 	</region>
 	<obj code="exit-portal" x="47.55" y="33.3712" />

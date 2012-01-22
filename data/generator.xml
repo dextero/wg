@@ -51,7 +51,7 @@
         <weapon file="data/abilities/weapons/fireburst.xml" minLevel="18" maxLevel="99" frequency="18" />
         <weapon file="data/abilities/weapons/flaming-mantle.xml" minLevel="21" maxLevel="99" frequency="21" />
         <weapon file="data/abilities/weapons/lazoor.xml" minLevel="21" maxLevel="99" frequency="21" />
-        <weapon file="data/abilities/weapons/lightning-storm.xml" minLevel="24" maxLevel="99" frequency="24" />
+        <weapon file="data/abilities/weapons/lightning-storm.xml" minLevel="23" maxLevel="99" frequency="23" />
 	 
  	
 	<!-- inne -->
@@ -141,43 +141,43 @@
         <monster file="data/physicals/monsters/defs/cockroach.xml" minLevel="15" maxLevel="17" frequency="0.15" />
         <monster file="data/physicals/monsters/defs/desert-pincer.xml" minLevel="15" maxLevel="17" frequency="0.15" />
 
-        <lair    file="data/physicals/lairs/ugonoth-lair.xml" minLevel="16" maxLevel="18" frequency="0.1" />
+        <lair    file="data/physicals/lairs/ugonoth-lair.xml" minLevel="16" maxLevel="17" frequency="0.1" />
 
-        <lair    file="data/physicals/lairs/fafmycel-lair.xml" minLevel="17" maxLevel="18" frequency="0.1" />
+        <lair    file="data/physicals/lairs/fafmycel-lair.xml" minLevel="17" maxLevel="17" frequency="0.1" />
 
-        <monster file="data/physicals/monsters/defs/cockroach.xml" minLevel="18" maxLevel="18" frequency="0.3" />
-        <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="18" maxLevel="18" frequency="0.175" />
-        <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="18" maxLevel="18" frequency="0.10" />
+        <monster file="data/physicals/monsters/defs/cockroach.xml" minLevel="17" maxLevel="17" frequency="0.3" />
+        <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="17" maxLevel="17" frequency="0.175" />
+        <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="17" maxLevel="17" frequency="0.10" />
 
 
-        <monster file="data/physicals/monsters/defs/cockroach.xml" minLevel="19" maxLevel="25" frequency="0.6" />
-        <monster file="data/physicals/monsters/defs/ugonoth.xml" minLevel="19" maxLevel="25" frequency="0.3" />
-        <monster file="data/physicals/monsters/defs/ogre.xml" minLevel="19" maxLevel="25" frequency="0.6" />
-        <monster file="data/physicals/monsters/defs/kliver.xml" minLevel="19" maxLevel="26" frequency="0.08" />
-        <lair    file="data/physicals/lairs/ogre-lair.xml" minLevel="19" maxLevel="25" />
-        <lair    file="data/physicals/lairs/cockroach-lair.xml" minLevel="19" maxLevel="25" />
-        <monster file="data/physicals/monsters/defs/poison-haunter.xml" minLevel="19" maxLevel="24" frequency="0.5" />
-        <monster file="data/physicals/monsters/defs/murion.xml" minLevel="19" maxLevel="25" frequency="0.5" />
-        <lair    file="data/physicals/lairs/murion-lair.xml" minLevel="19" maxLevel="25" frequency="0.5" />
-        <monster file="data/physicals/monsters/defs/beholder.xml" minLevel="19" maxLevel="27" frequency="0.2" />
+        <monster file="data/physicals/monsters/defs/cockroach.xml" minLevel="18" maxLevel="23" frequency="0.6" />
+        <monster file="data/physicals/monsters/defs/ugonoth.xml" minLevel="18" maxLevel="23" frequency="0.3" />
+        <monster file="data/physicals/monsters/defs/ogre.xml" minLevel="18" maxLevel="23" frequency="0.6" />
+        <monster file="data/physicals/monsters/defs/kliver.xml" minLevel="18" maxLevel="24" frequency="0.08" />
+        <lair    file="data/physicals/lairs/ogre-lair.xml" minLevel="18" maxLevel="23" />
+        <lair    file="data/physicals/lairs/cockroach-lair.xml" minLevel="18" maxLevel="22" />
+        <monster file="data/physicals/monsters/defs/poison-haunter.xml" minLevel="18" maxLevel="22" frequency="0.5" />
+        <monster file="data/physicals/monsters/defs/murion.xml" minLevel="18" maxLevel="23" frequency="0.5" />
+        <lair    file="data/physicals/lairs/murion-lair.xml" minLevel="18" maxLevel="23" frequency="0.5" />
+        <monster file="data/physicals/monsters/defs/beholder.xml" minLevel="18" maxLevel="25" frequency="0.2" />
 
-        <monster file="data/physicals/monsters/defs/skeleton.xml" minLevel="21" maxLevel="27" frequency="0.75" />
-        <monster file="data/physicals/monsters/defs/frost-demon.xml" minLevel="21" maxLevel="27" />
+        <monster file="data/physicals/monsters/defs/skeleton.xml" minLevel="19" maxLevel="25" frequency="0.75" />
+        <monster file="data/physicals/monsters/defs/frost-demon.xml" minLevel="19" maxLevel="25" />
 
-        <monster file="data/physicals/monsters/defs/skeleton.xml" minLevel="22" maxLevel="27" frequency="0.25" />
-        <lair    file="data/physicals/lairs/poison-haunter-lair.xml" minLevel="22" maxLevel="26" frequency="0.33" />
-        <lair    file="data/physicals/lairs/frost-demon-lair.xml" minLevel="22" maxLevel="27" frequency="0.4" />
+        <monster file="data/physicals/monsters/defs/skeleton.xml" minLevel="20" maxLevel="25" frequency="0.25" />
+        <lair    file="data/physicals/lairs/poison-haunter-lair.xml" minLevel="20" maxLevel="24" frequency="0.33" />
+        <lair    file="data/physicals/lairs/frost-demon-lair.xml" minLevel="20" maxLevel="25" frequency="0.4" />
 
-        <monster file="data/physicals/monsters/defs/skeleton-mage.xml" minLevel="23" maxLevel="27" frequency="0.2" />
-        <monster file="data/physicals/monsters/defs/poison-haunter.xml" minLevel="23" maxLevel="26" frequency="0.25" />
-        <lair    file="data/physicals/lairs/skeleton-lair.xml" minLevel="23" maxLevel="25" frequency="1.0" />
+        <monster file="data/physicals/monsters/defs/skeleton-mage.xml" minLevel="21" maxLevel="25" frequency="0.2" />
+        <monster file="data/physicals/monsters/defs/poison-haunter.xml" minLevel="21" maxLevel="24" frequency="0.25" />
+        <lair    file="data/physicals/lairs/skeleton-lair.xml" minLevel="21" maxLevel="23" frequency="1.0" />
 
-        <monster file="data/physicals/monsters/defs/warlock.xml" minLevel="24" maxLevel="27" frequency="0.18" />
+        <monster file="data/physicals/monsters/defs/warlock.xml" minLevel="22" maxLevel="25" frequency="0.18" />
 
-        <lair    file="data/physicals/lairs/warlock-lair.xml" minLevel="25" maxLevel="27" frequency="0.2" />
+        <lair    file="data/physicals/lairs/warlock-lair.xml" minLevel="23" maxLevel="25" frequency="0.2" />
 
-        <monster file="data/physicals/monsters/defs/murion.xml" minLevel="26" maxLevel="26" frequency="0.1" />
-        <lair    file="data/physicals/lairs/skeleton-lair.xml" minLevel="26" maxLevel="27" frequency="1.5" />
+        <monster file="data/physicals/monsters/defs/murion.xml" minLevel="24" maxLevel="24" frequency="0.1" />
+        <lair    file="data/physicals/lairs/skeleton-lair.xml" minLevel="24" maxLevel="25" frequency="1.5" />
 
 		<!-- -->
 
@@ -218,8 +218,9 @@
       
         <!-- le boss -->
         <boss file="data/physicals/monsters/defs/gargant-boss.xml" minLevel="0" maxLevel="9" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss.xml" />
-        <boss file="data/physicals/monsters/defs/baldurian.xml" minLevel="10" maxLevel="18" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss.xml" />
-        <boss file="data/physicals/monsters/defs/dragon.xml" minLevel="19" maxLevel="27" trigger-radius="10" trigger-ai="ranged-caster" trigger-playlist="data/music/boss.xml" />
+        <boss file="data/physicals/monsters/defs/gargant-boss.xml" minLevel="23" maxLevel="23" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss.xml" />
+        <boss file="data/physicals/monsters/defs/baldurian.xml" minLevel="10" maxLevel="17" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss.xml" />
+        <boss file="data/physicals/monsters/defs/dragon.xml" minLevel="25" maxLevel="25" trigger-radius="10" trigger-ai="ranged-caster" trigger-playlist="data/music/boss.xml" />
       
         <!-- drzwi. todo: rozwazyc przeniesienie do <set> -->
         <door file="data/physicals/doors/gate.xml" />
