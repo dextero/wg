@@ -34,7 +34,7 @@ void CNpc::Update(float dt)
 void CNpc::HandleCollisionWithPlayer(CPlayer * player) {
     mInteractionTooltip = player->GetController()->GetInteractionTooltip();
     if (mInteractionTooltip->GetHandler() == NULL || mInteractionTooltipId != mInteractionTooltip->GetId()) {
-        new ShopInteraction(mInteractionTooltip, "Siema!\nJestem Griswold!", player, this);
+        new ShopInteraction(mInteractionTooltip, player, this);
         mInteractionTooltipId = mInteractionTooltip->GetId();
     }
     mInteractionTooltip->Show();

@@ -194,69 +194,13 @@ CItemSlot::~CItemSlot()
 
 void CItemSlot::UpdateTooltipText(const std::string& abiName)
 {
-    // dokladnosc wyswietlanych floatow - ile miejsc po przecinku
-    unsigned PRECISION = 4;
-
     CAbility* abi = NULL;
     if (abiName.size())
         abi = gResourceManager.GetAbility(abiName);
 
-    std::wstring tooltipText;
-    if (abi)
-    {
-        tooltipText = abi->name + L" (" + gLocalizator.GetText("ITEM_LEVEL") + L" " + StringUtils::ToWString(mSelectedItem->mLevel) + L")";
-        if (abi->isFocus) {
-            tooltipText += CTextArea::GetNextColorString(sf::Color(231, 216, 46)) //Gold
-                    + L"\n\n" + gLocalizator.GetText("ABILITY_IS_FOCUS_ABILITY")
-                    + CTextArea::GetNextColorString(sf::Color::White);
-        }
-        tooltipText += L"\n\n" + gLocalizator.GetText("SLOT_DRAG_ITEM_HERE");
-        tooltipText += L"\n\n" + abi->description;
-        tooltipText += L"\n\n" + gLocalizator.GetText("CURRENT_ITEM_POWER");
+    CPlayer * player = gPlayerManager.GetPlayerByNumber(mPlayer);
 
-        CPlayer* player = gPlayerManager.GetPlayerByNumber(mPlayer);
-
-        if (!player)
-            tooltipText += L"\n\nError, player not set :(";
-        else
-        {
-            float currPower = player->GetAbilityPower(abi);
-            float bestPower = currPower;
-        
-            std::vector<CAbility*> abis = player->GetExportedAbilities();
-            std::vector<float> powerAfterUpgrade;
-
-            tooltipText += StringUtils::FloatToWString(currPower, PRECISION);
-            tooltipText += L"\n\n" + gLocalizator.GetText("ITEM_POWER_AFTER_UPGRADE") + L"\n";
-            
-            for (size_t i = 0 ; i < abis.size(); ++i)
-            {
-                float upgradedPower = player->GetAbilityPowerAtNextLevelOfOther(abi, abis[i]);
-                powerAfterUpgrade.push_back(upgradedPower);
-                if (bestPower < upgradedPower)
-                    bestPower = upgradedPower;
-            }
-
-            for (size_t i = 0; i < abis.size(); ++i)
-            {
-                tooltipText += abis[i]->name + L": ";
-                if (powerAfterUpgrade[i] == bestPower)
-                    tooltipText += CTextArea::GetNextColorString(sf::Color::Green)
-                                + StringUtils::FloatToWString(powerAfterUpgrade[i], PRECISION)
-                                + CTextArea::GetNextColorString(sf::Color::White);
-                else if (powerAfterUpgrade[i] < currPower)
-                    tooltipText += CTextArea::GetNextColorString(sf::Color::Red)
-                                + StringUtils::FloatToWString(powerAfterUpgrade[i], PRECISION)
-                                + CTextArea::GetNextColorString(sf::Color::White);
-                else
-                    tooltipText += StringUtils::FloatToWString(powerAfterUpgrade[i], PRECISION);
-
-                tooltipText += L"\n";
-            }
-        }
-    }
-    else
-        tooltipText = gLocalizator.GetText("SLOT_EMPTY");
+    std::wstring tooltipText = CreateWeaponDescription(abi, mSelectedItem, player, MAX_VERBOSITY);
 
     if (GetTooltip())
     {
@@ -271,4 +215,95 @@ void CItemSlot::UpdateTooltipText(const std::string& abiName)
             GetTooltip()->SetPosition(0.f, 0.f, 400.f, description->GetSize(UNIT_PIXEL).y + 30.f, UNIT_PIXEL);
         }
     }
+}
+
+std::wstring CItemSlot::CreateWeaponDescription(CAbility * abi, CItem * selectedItem, CPlayer * player, int verbosity)
+{
+    // dokladnosc wyswietlanych floatow - ile miejsc po przecinku
+    unsigned PRECISION = 4;
+
+    std::wstring tooltipText;
+    if (abi)
+    {
+        tooltipText = abi->name + L" (" + gLocalizator.GetText("ITEM_LEVEL") + L" " + StringUtils::ToWString(selectedItem->mLevel) + L")";
+        if (abi->isFocus && verbosity >= MAX_VERBOSITY) {
+            tooltipText += CTextArea::GetNextColorString(sf::Color(231, 216, 46)) //Gold
+                    + L"\n\n" + gLocalizator.GetText("ABILITY_IS_FOCUS_ABILITY")
+                    + CTextArea::GetNextColorString(sf::Color::White);
+        }
+        if (verbosity >= MAX_VERBOSITY) {
+            tooltipText += L"\n\n" + gLocalizator.GetText("SLOT_DRAG_ITEM_HERE");
+        }
+        if (verbosity >= MID_VERBOSITY) {
+            tooltipText += L"\n\n" + abi->description;
+        } else if (verbosity >= LOW_VERBOSITY) {
+            std::vector<std::string> lines = StringUtils::Explode(StringUtils::ConvertToString(abi->description), "\n");
+            bool firstHit = false;
+            for (std::vector<std::string>::iterator it = lines.begin() ; it != lines.end() ; it++) {
+                bool foundNonWhiteChar = false;
+                for (size_t i = 0 ; i < it->length() ; i++) {
+                    if (it->at(i) != ' ' && it->at(i) != '\r' && it->at(i) != '\t' && it->at(i) != '\n') {
+                        foundNonWhiteChar = true;
+                        break;
+                    }
+                }
+                if (!foundNonWhiteChar) {
+                    if (!firstHit) {
+                        firstHit = true;
+                    } else {
+                        break;
+                    }
+                }
+                tooltipText += L"\n" + StringUtils::ConvertToWString(*it);
+            }
+        }
+        tooltipText += L"\n\n" + gLocalizator.GetText("CURRENT_ITEM_POWER");
+
+        if (!player)
+            tooltipText += L"\n\nError, player not set :(";
+        else
+        {
+            float currPower = player->GetAbilityPower(abi);
+            float bestPower = currPower;
+        
+            std::vector<CAbility*> abis = player->GetExportedAbilities();
+            std::vector<float> powerAfterUpgrade;
+
+            tooltipText += StringUtils::FloatToWString(currPower, PRECISION);
+
+            if (verbosity >= MAX_VERBOSITY) {
+                tooltipText += L"\n\n" + gLocalizator.GetText("ITEM_POWER_AFTER_UPGRADE") + L"\n";
+            
+                for (size_t i = 0 ; i < abis.size(); ++i)
+                {
+                    float upgradedPower = player->GetAbilityPowerAtNextLevelOfOther(abi, abis[i]);
+                    powerAfterUpgrade.push_back(upgradedPower);
+                    if (bestPower < upgradedPower)
+                        bestPower = upgradedPower;
+                }
+
+                for (size_t i = 0; i < abis.size(); ++i)
+                {
+                    tooltipText += abis[i]->name + L": ";
+                    if (powerAfterUpgrade[i] == bestPower)
+                        tooltipText += CTextArea::GetNextColorString(sf::Color::Green)
+                                + StringUtils::FloatToWString(powerAfterUpgrade[i], PRECISION)
+                                + CTextArea::GetNextColorString(sf::Color::White);
+                    else if (powerAfterUpgrade[i] < currPower)
+                        tooltipText += CTextArea::GetNextColorString(sf::Color::Red)
+                                + StringUtils::FloatToWString(powerAfterUpgrade[i], PRECISION)
+                                + CTextArea::GetNextColorString(sf::Color::White);
+                    else
+                        tooltipText += StringUtils::FloatToWString(powerAfterUpgrade[i], PRECISION);
+
+                    tooltipText += L"\n";
+                }
+            }
+        }
+    }
+    else
+        tooltipText = gLocalizator.GetText("SLOT_EMPTY");
+
+    return tooltipText;
+
 }

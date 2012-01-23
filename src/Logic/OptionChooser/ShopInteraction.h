@@ -27,7 +27,7 @@ class ShopInteraction : public InteractionHandler
         GUI::CTextArea * mDescription;
 
     public:        
-        ShopInteraction(CInteractionTooltip * tooltip, const std::string & title, CPlayer * player, CNpc * npc) :
+        ShopInteraction(CInteractionTooltip * tooltip, CPlayer * player, CNpc * npc) :
                 mPlayer(player),
                 mNpc(npc),
                 mTooltip(tooltip),

@@ -23,6 +23,7 @@ namespace GUI
 	public:
 		void SetBackgroundImage( const std::string& filename );
         void SetFont(const GUI::FontSetting & fs);
+        void SetFont(const GUI::FontSetting & fs, float scale);
 		void SetFont( const std::string& name, float size, guiUnit u = UNIT_PIXEL );
 		void SetColor(const sf::Color color);
 		void SetText( const std::wstring& text );

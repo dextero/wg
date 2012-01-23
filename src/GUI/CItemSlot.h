@@ -5,6 +5,8 @@
 #include "../Rendering/CHudSprite.h"
 
 class CItem;
+class CAbility;
+class CPlayer;
 
 namespace GUI
 {
@@ -21,6 +23,12 @@ namespace GUI
         inline void Clear()                     { mSelectedItem = NULL; }
         
         CHudSprite* GetDragIcon() { return mItemIcon; };
+
+        static const int MAX_VERBOSITY = 3;
+        static const int MID_VERBOSITY = 2;
+        static const int LOW_VERBOSITY = 1;
+
+        static std::wstring CreateWeaponDescription(CAbility * abi, CItem * selectedItem, CPlayer * player, int verbosity);
         
         // jezeli drop poszedl poza sloty, to dobrze byloby zapobiec usunieciu przedmiotu
         static void UndoDrag();
