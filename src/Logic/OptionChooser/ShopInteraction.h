@@ -11,12 +11,12 @@
 #include "../../Utils/Maths.h"
 #include "../CPlayer.h"
 #include "../CNpc.h"
-#include "../Items/CItem.h"
+#include "../Loots/CLoot.h"
 #include "../../Rendering/Effects/CGraphicalEffects.h"
 #include "../../Audio/CAudioManager.h"
 #include "../Abilities/CAbility.h"
 #include "../../ResourceManager/CResourceManager.h"
-
+#include "../Factory/CPhysicalTemplate.h"
 
 class ShopInteraction : public InteractionHandler
 {
@@ -113,12 +113,11 @@ better spells than I can sell. Would you like to buy " + ability->name + L" spel
                 mDescription->SetText(mDescription->GetText() + L"\n\nNot enough gold! Come back when you have more. You have only " + StringUtils::ToWString(mPlayer->GetGold()) + L"gp.");
             } else {
                 mPlayer->SetGold(mPlayer->GetGold() - price);
-                CItem * item = new CItem();
-                item->SetAbility(mNpc->GetSellingItem());
-                item->mLevel = 1;
-                mPlayer->AddItem(item, 1);
-                gGraphicalEffects.ShowEffect("magic-circle-4", mPlayer);
-                gAudioManager.PlaySound("data/sounds/reload.wav", mPlayer->GetPosition());
+
+                CLoot * loot = (CLoot*)(gResourceManager.GetPhysicalTemplate("data/loots/weapon.xml")->Create());
+                loot->SetPosition(mPlayer->GetPosition());
+                loot->SetAbility(mNpc->GetSellingItem());
+
                 mNpc->SetSellingItem("");
                 mTooltip->Clear();
             }
