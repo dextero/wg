@@ -8,7 +8,7 @@
 class CPlayer;
 class CPhysicalManager;
 class CItem;
-class IOptionChooserHandler;
+class CInteractionTooltip;
 
 /// Klasa reprezentuje przedmiot-znajdzke (miksturka, powerup) lezacy na ziemi.
 /// Na ogol znajdzki produkowane sa przez CLootManager.
@@ -37,8 +37,12 @@ public:
 protected:
     SLootTemplate *obj;  
 
+    // tox, 23jan12 obrzydlistwo, jak sie tego pozbyc stad?
+    int mInteractionTooltipId;
+    CInteractionTooltip * mInteractionTooltip;
+    //
+
 private:
-    IOptionChooserHandler * mOptionHandler;
     CItem * mItem;
     int mLevel;
 };

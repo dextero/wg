@@ -1,16 +1,18 @@
 #include "CLoot.h"
+#include "../Items/CItem.h"
 #include "../../Rendering/ZIndexVals.h"
 #include "../CPlayer.h"
 #include "../Effects/CEffectHandle.h"
 #include "../Effects/CExecutionContext.h"
-#include "../OptionChooser/CLootItemOptionHandler.h"
-//#include "../OptionChooser/CSimpleOptionHandler.h"
+#include "../../GUI/CInteractionTooltip.h"
+#include "../OptionChooser/WeaponInteraction.h"
 #include "../../Input/CPlayerController.h"
 
 CLoot::CLoot(const std::wstring& uniqueId) : 
         CPhysical(uniqueId),
         obj(NULL),
-        mOptionHandler(NULL),
+        mInteractionTooltipId(0),
+        mInteractionTooltip(NULL),
         mItem(NULL),
         mLevel(0)
 {
@@ -19,13 +21,10 @@ CLoot::CLoot(const std::wstring& uniqueId) :
 }
 
 CLoot::~CLoot() {
-    if (mOptionHandler) {
-        mOptionHandler->Hide();
-        mOptionHandler->mReferenceCounter--;
-        if (mOptionHandler->mReferenceCounter == 0) {
-            delete mOptionHandler;
-        }
-    }
+    // obrzydlistwo:
+    if (mInteractionTooltip != NULL && mInteractionTooltip->GetId() == mInteractionTooltipId) {
+        mInteractionTooltip->Clear();
+    }    
 }
 
 //weapon:
@@ -42,14 +41,12 @@ void CLoot::SetAbility(const std::string & ability)
 void CLoot::HandleCollision(CPlayer * player)
 {
     if (mItem != NULL) {
-        if (!mOptionHandler) {
-//            mOptionHandler = new CSimpleOptionHandler();
-            mOptionHandler = new CLootItemOptionHandler(this);
-            mOptionHandler->mReferenceCounter++;
+        mInteractionTooltip = player->GetController()->GetInteractionTooltip();
+        if (mInteractionTooltip->GetHandler() == NULL || mInteractionTooltipId != mInteractionTooltip->GetId()) {
+            new WeaponInteraction(mInteractionTooltip, player, this);
+            mInteractionTooltipId = mInteractionTooltip->GetId();
         }
-        CInGameOptionChooser * oc = player->GetController()->GetOptionChooser();
-        oc->SetOptionHandler(mOptionHandler);
-        oc->Show();
+        mInteractionTooltip->Show();
         return;
     }
 
