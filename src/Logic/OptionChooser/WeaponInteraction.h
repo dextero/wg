@@ -36,6 +36,7 @@ class WeaponInteraction : public InteractionHandler
                 mTooltip(tooltip),
                 mDescription(NULL)
         {
+            fprintf(stderr, "WI creating %p\n", this);
             tooltip->Clear();
 
             GUI::CTextArea * title = tooltip->GetCanvas()->CreateTextArea("title");
@@ -116,6 +117,7 @@ class WeaponInteraction : public InteractionHandler
         }
 
         ~WeaponInteraction() {
+            fprintf(stderr, "WI destroying %p\n", this);
             gGUI.UnregisterInteractionHandler(this);
         }
 

@@ -98,7 +98,7 @@ FontSetting CRoot::GetFontSetting(const std::string & id, float scale)
     return fs;
 }
 
-static std::vector<InteractionHandler *> sInteractionHandlersToLazilyUnregister;
+static std::set<InteractionHandler *> sInteractionHandlersToLazilyUnregister;
 
 void CRoot::FrameStarted(float secondsPassed)
 {
@@ -117,7 +117,7 @@ void CRoot::FrameStarted(float secondsPassed)
 
 	UpdateChilds( secondsPassed );
     CInGameOptionChooser::UpdateAll(secondsPassed);
-    for (std::vector<InteractionHandler *>::iterator it = sInteractionHandlersToLazilyUnregister.begin() ;
+    for (std::set<InteractionHandler *>::iterator it = sInteractionHandlersToLazilyUnregister.begin() ;
             it != sInteractionHandlersToLazilyUnregister.end() ; it++) {
         mInteractionHandlers.erase(mInteractionHandlers.find(*it));
     }
@@ -399,7 +399,7 @@ void CRoot::RegisterInteractionHandler(InteractionHandler * handler) {
 }
 
 void CRoot::UnregisterInteractionHandler(InteractionHandler * handler) {
-    sInteractionHandlersToLazilyUnregister.push_back(handler);
+    sInteractionHandlersToLazilyUnregister.insert(handler);
 }
 
 void CRoot::SetFocusedObject(CGUIObject* focused)
