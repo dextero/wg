@@ -33,6 +33,7 @@ class ShopInteraction : public InteractionHandler
                 mTooltip(tooltip),
                 mDescription(NULL)
         {
+            fprintf(stderr, "SI creating %p\n", this);
             tooltip->Clear();
             mDescription = tooltip->GetCanvas()->CreateTextArea("description");
             mDescription->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
@@ -93,19 +94,20 @@ better spells than I can sell. Would you like to buy " + ability->name + L" spel
         }
 
         ~ShopInteraction() {
+            fprintf(stderr, "SI destroying %p\n", this);
             gGUI.UnregisterInteractionHandler(this);
         }
 
         void Update(float secondsPassed) {
             if (Maths::Length(mPlayer->GetPosition() - mNpc->GetPosition()) > 1.5f) {
-                mTooltip->Clear();
+                mTooltip->Hide();
             }
         }
 
         void OptionYes() {
             if (mNpc->GetSellingItem().empty())
             {
-                mTooltip->Clear();
+                mTooltip->Hide();
                 return;
             }
             int price = mNpc->GetSellingPrice();
@@ -119,11 +121,12 @@ better spells than I can sell. Would you like to buy " + ability->name + L" spel
                 loot->SetAbility(mNpc->GetSellingItem());
 
                 mNpc->SetSellingItem("");
-                mTooltip->Clear();
+                mTooltip->Hide();
+                loot->HandleCollision(mPlayer);
             }
         }
         void OptionNo() {
-            mTooltip->Clear();
+            mTooltip->Hide();
         }
 
         virtual void OptionSelected(size_t selected) {

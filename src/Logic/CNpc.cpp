@@ -31,11 +31,17 @@ void CNpc::Update(float dt)
     CActor::Update(dt);
 }
 
+const static int INTERACTION_PRIORITY = 50;
+
 void CNpc::HandleCollisionWithPlayer(CPlayer * player) {
     mInteractionTooltip = player->GetController()->GetInteractionTooltip();
+    if (mInteractionTooltip->GetPriority() >= INTERACTION_PRIORITY) {
+                           return;
+    } 
     if (mInteractionTooltip->GetHandler() == NULL || mInteractionTooltipId != mInteractionTooltip->GetId()) {
         new ShopInteraction(mInteractionTooltip, player, this);
         mInteractionTooltipId = mInteractionTooltip->GetId();
+        mInteractionTooltip->SetPriority(INTERACTION_PRIORITY);
     }
     mInteractionTooltip->Show();
 }

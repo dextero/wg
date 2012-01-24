@@ -16,7 +16,8 @@ CInteractionTooltip::CInteractionTooltip() :
         mIsVisible(false),
         mHandler(NULL),
         mCanvas(NULL),
-        mId(0) {
+        mId(0),
+        mPriority(0) {
     fprintf(stderr, "CInteractionTooltip()\n");
     Clear();
 }
@@ -36,11 +37,12 @@ void CInteractionTooltip::Show() {
 void CInteractionTooltip::Hide() {
     mIsVisible = false;
     mCanvas->SetVisible(false);
+    mPriority = 0;
 }
 
 void CInteractionTooltip::Clear() {
     if (mCanvas != NULL) {
-        mCanvas->Remove();
+        mCanvas->SetVisible(false);
     }
     mCanvas = gGUI.CreateWindow("interaction_tooltip" /* todo: player number */, true, Z_GUI4);
     mCanvas->SetBackgroundImage("data/GUI/transparent-black.png");
@@ -53,6 +55,7 @@ void CInteractionTooltip::Clear() {
         delete (mHandler);
         mHandler = NULL;
     }
+    mPriority = 0;
 }
 
 bool CInteractionTooltip::IsVisible() {
@@ -73,4 +76,12 @@ InteractionHandler * CInteractionTooltip::GetHandler() {
 
 int CInteractionTooltip::GetId() {
     return mId;
+}
+
+void CInteractionTooltip::SetPriority(int priority) {
+    mPriority = priority;
+}
+
+int CInteractionTooltip::GetPriority() {
+    return mPriority;
 }

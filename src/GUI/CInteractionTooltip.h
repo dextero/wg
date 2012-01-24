@@ -33,6 +33,9 @@ public:
     bool IsVisible();
     void OptionSelected(size_t selected);
 
+    void SetPriority(int priority);
+    int GetPriority();
+
 private:
     bool mIsVisible;
 
@@ -41,6 +44,8 @@ private:
     GUI::CWindow * mCanvas;
 
     int mId;
+
+    int mPriority;
 };
 
 #endif
