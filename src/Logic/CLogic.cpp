@@ -429,7 +429,7 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
 	ss << "add-xp " << xp << " ignore-skill-points silent\n";
     ss << "set-difficulty-factor " << mDifficultyFactor << "\n";
     ss << "set-score " << mScore << "\n";
-	ss << "preload-map " << savedMapFile << " entry false\n";
+	ss << "preload-map " << savedMapFile << " " << gMapManager.GetLastEntryRegion() << " false\n";
     ss << "set-map-level " << gMapManager.GetLevel() << "\n";
 
     // flagi do questow
