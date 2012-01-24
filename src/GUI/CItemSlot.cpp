@@ -225,7 +225,8 @@ std::wstring CItemSlot::CreateWeaponDescription(CAbility * abi, CItem * selected
     std::wstring tooltipText;
     if (abi)
     {
-        tooltipText = abi->name + L" (" + gLocalizator.GetText("ITEM_LEVEL") + L" " + StringUtils::ToWString(selectedItem->mLevel) + L")";
+        tooltipText = abi->name;
+        if (selectedItem != NULL) tooltipText += L" (" + gLocalizator.GetText("ITEM_LEVEL") + L" " + StringUtils::ToWString(selectedItem->mLevel) + L")";
         if (abi->isFocus && verbosity >= MAX_VERBOSITY) {
             tooltipText += CTextArea::GetNextColorString(sf::Color(231, 216, 46)) //Gold
                     + L"\n\n" + gLocalizator.GetText("ABILITY_IS_FOCUS_ABILITY")

@@ -43,8 +43,7 @@ class WeaponInteraction : public InteractionHandler
             title->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"), 2.f);
             title->SetPosition(26.f, 2.5f, 30.f, 10.f);
             gGUI.UnregisterObject(title);
-            title->SetText(L"Replace weapon");
-            title->SetVisible(true);
+            title->SetText(L"Pickup spell");
 
             CAbility * ability = gResourceManager.GetAbility(loot->GetItem()->GetAbility());
 
