@@ -190,6 +190,7 @@ namespace Map{
 
             // save przeniesione do CGame::MainLoopStep
 
+            fprintf(stderr, "ResettingCompasss\n");
             gLogic.GetGameScreens()->ResetCompass();
             gLogic.GetGameScreens()->Show(L"hud");
 

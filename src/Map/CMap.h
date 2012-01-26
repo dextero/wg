@@ -74,7 +74,7 @@ namespace Map{
         CRegionDescriptor* GetRegionDescriptorById(int regionDescriptorId);
 
         int GetMaxLivingMonsters() { return mMaxLivingMonsters; }
-        sf::Vector2f GetExitPos();
+        std::vector<sf::Vector2f> GetExitsPositions();
 
         // uzywane przez edytor
         void ShowInvisibleWalls(bool show = true);
