@@ -25,6 +25,7 @@
 
 template<> Map::CMapManager* CSingleton<Map::CMapManager>::msSingleton = 0;
 
+static int lastMapLevelHack = -1;
 
 namespace Map{
 
@@ -92,6 +93,7 @@ namespace Map{
                 mapStateFile = GetWorldPath() + mapStateFile;   // i dopisz na poczatku sciezke do userDir/$world
             }
 
+            fprintf(stderr, "SaveMapStateToFile, skill = %d\n", GetLevel());
             gLogic.SaveMapStateToFile(mapStateFile + ".console");
 
 			gEditor.SetSelectedToErase( NULL );
@@ -132,7 +134,15 @@ namespace Map{
 			return true;
 		}
 
-		SetCurrentMapAsVisited();
+        if (lastMapLevelHack != -1) { //zeby sie zapisal poprawny level w odwiedzonej mapie
+            int currMapLevel = mLevel;
+            mLevel = lastMapLevelHack;
+    		SetCurrentMapAsVisited();
+            mLevel = currMapLevel;
+            lastMapLevelHack = -1;
+        } else {
+    		SetCurrentMapAsVisited();
+        }
 
         // bo segfault przy ominieciu bossa..
         gBossManager.ClearData();
@@ -299,6 +309,7 @@ namespace Map{
             return;
         }
         const CWorldGraphMap & mapDef = mWorldGraph->maps.find(mapId)->second;
+        lastMapLevelHack = mLevel;
         mLevel = mapDef.level;
 
         SRandomMapDesc desc;

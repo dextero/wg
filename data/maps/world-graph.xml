@@ -136,7 +136,7 @@ legenda: d -> mingorian-desert
         <exit toMap="data/maps/town.xml" onBorder="west" toEntry="entry-e" blocked="true" />
     </map>
     <map id="a24" scheme="arctic" level="24">
-        <exit toMap="a24" onBorder="west"/>
+        <exit toMap="a23" onBorder="west"/>
         <exit toMap="a25" onBorder="east"/>
     </map>
     <map id="a25" scheme="arctic" level="25" boss="1" final="1">

@@ -430,7 +430,6 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
     ss << "set-difficulty-factor " << mDifficultyFactor << "\n";
     ss << "set-score " << mScore << "\n";
 	ss << "preload-map " << savedMapFile << " " << gMapManager.GetLastEntryRegion() << " false\n";
-    ss << "set-map-level " << gMapManager.GetLevel() << "\n";
 
     // flagi do questow
     for (std::map<std::wstring, bool>::const_iterator i = gQuestManager.GetFlags().begin(); i != gQuestManager.GetFlags().end(); ++i)
@@ -456,6 +455,7 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
 
 void CLogic::SaveMapState(std::ostream & out)
 {
+    out << "set-map-level " << gMapManager.GetLevel() << "\n";
     // physicale
     std::map<CEnemy*, int> monstersIndex;
     std::map<CLair*, int> lairsIndex;
