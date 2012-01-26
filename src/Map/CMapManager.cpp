@@ -190,13 +190,14 @@ namespace Map{
 
             // save przeniesione do CGame::MainLoopStep
 
-            fprintf(stderr, "ResettingCompasss\n");
             gLogic.GetGameScreens()->ResetCompass();
             gLogic.GetGameScreens()->Show(L"hud");
 
             // odpal skrypt zawierajacy zapisany stan mapy, jesli taki istnieje (i jest taka potrzeba)
             if (!loadCompleteMap && mapStateFileExists)
                 gCommands.ParseCommand(L"exec " + StringUtils::ConvertToWString(mapStateFile));
+
+            gCommands.ParseCommand(L"exec load-playlist data/music/testpl.xml");
 
             // jak stoimy z czasem? oplaca sie pokazywac loading screena czy nie?
             float time = timer.GetElapsedTime();
