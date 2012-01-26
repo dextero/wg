@@ -16,7 +16,8 @@ Map::CMapObjectDescriptor::CMapObjectDescriptor() :
     rot(0),
     bossPlaylist(""),
     bossAI(""),
-    bossRadius(0.f)
+    bossRadius(0.f),
+    final(false)
 {
 	static int nextId = 1;
 	uniqueId = nextId++;
@@ -32,7 +33,7 @@ void Map::CMapObjectDescriptor::Create(){
         // jesli mamy radius, to jest to boss i trzeba go sledzic
         // bo jeszcze nagrandzi i nie bedzie mial kto sprzatac
         if (bossRadius > 0.f)
-            gBossManager.Trace(phys->GetUniqueId(), bossAI, bossRadius, bossPlaylist);
+            gBossManager.Trace(phys->GetUniqueId(), bossAI, bossRadius, bossPlaylist, final);
 
 		CActor * actor = dynamic_cast<CActor*>(phys);
 		if (actor){

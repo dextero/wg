@@ -139,7 +139,7 @@ legenda: d -> mingorian-desert
         <exit toMap="a24" onBorder="west"/>
         <exit toMap="a25" onBorder="east"/>
     </map>
-    <map id="a25" scheme="arctic" level="25" boss="1" final-boss="1">
+    <map id="a25" scheme="arctic" level="25" boss="1" final="1">
 	    <exit toMap="a24" onBorder="west" />
 	</map>
 </root>

@@ -36,11 +36,16 @@ void CBossManager::EnemyDied( CEnemy * enemy )
         StopBossFight();
 
         gCommands.ParseCommand(L"open-doors");
+        gCommands.ParseCommand(L"load-playlist data/music/testpl.xml");
+
 
         std::wstring id = enemy->GetUniqueId();
         for (std::vector<SBossOnMap>::iterator it = mBossesOnMap.begin(); it != mBossesOnMap.end(); ++it)
             if (it->id == id)
             {
+                if( it->isFinal) {
+                    gCommands.ParseCommand(L"exec data/console/final-boss-dead.console");
+                }
                 mBossesOnMap.erase(it);
                 break;
             }
@@ -52,9 +57,14 @@ CEnemy * CBossManager::GetBoss() const
     return mBoss;
 }
 
-void CBossManager::Trace(const std::wstring& enemyId, const std::string& aiScheme, float triggerRadius, const std::string playlist)
+void CBossManager::Trace(const std::wstring& enemyId, const std::string& aiScheme, float triggerRadius, const std::string playlist, bool final)
 {
-    mBossesOnMap.push_back(SBossOnMap(enemyId, aiScheme, playlist, triggerRadius));
+    for (std::vector<SBossOnMap>::iterator it = mBossesOnMap.begin(); it != mBossesOnMap.end(); ++it) {
+        if (it->id == enemyId) {
+            return;
+        }
+    }
+    mBossesOnMap.push_back(SBossOnMap(enemyId, aiScheme, playlist, triggerRadius, final));
 }
 
 const std::string CBossManager::SerializeLivingBosses()
@@ -62,7 +72,7 @@ const std::string CBossManager::SerializeLivingBosses()
     std::stringstream ss;
 
     for (std::vector<SBossOnMap>::iterator it = mBossesOnMap.begin(); it != mBossesOnMap.end(); ++it)
-        ss << "set-boss " << StringUtils::ConvertToString(it->id) << " " << it->ai << " " << it->radius << " " << it->playlist << "\n";
+        ss << "set-boss " << StringUtils::ConvertToString(it->id) << " " << it->ai << " " << it->radius << " " << it->playlist << " " << it->isFinal << "\n";
 
     return ss.str();
 }

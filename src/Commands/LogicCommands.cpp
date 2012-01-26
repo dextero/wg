@@ -1079,7 +1079,7 @@ void CommandSetBoss(size_t argc, const std::vector<std::wstring> &argv)
 {
     if (argc < 4)
     {
-        gConsole.Printf(L"usage: %s physical-id ai-scheme trigger-radius [playlist]", argv[0].c_str());
+        gConsole.Printf(L"usage: %s physical-id ai-scheme trigger-radius [playlist] [isFinal]", argv[0].c_str());
         return;
     }
 
@@ -1102,7 +1102,7 @@ void CommandSetBoss(size_t argc, const std::vector<std::wstring> &argv)
         return;
     }
 
-    gBossManager.Trace(argv[1], StringUtils::ConvertToString(argv[2]), r, (argc > 4 ? StringUtils::ConvertToString(argv[4]) : ""));
+    gBossManager.Trace(argv[1], StringUtils::ConvertToString(argv[2]), r, (argc > 4 ? StringUtils::ConvertToString(argv[4]) : ""), argc > 5 ? StringUtils::Parse<bool>(argv[5]) : false);
     gConsole.Printf(L"ok!");
 }
 

@@ -776,7 +776,7 @@ bool CRandomMapGenerator::PlaceRegions()
     CTimer timer("- regions: ");
 // todo: przerobic/zrobic na nowo ustawianie bossow, aby uwzglednialo world-graph.xml
 // tworzenie regionow z bossem jest roboczo w generateMap:
-    if (mDesc.mapType == SRandomMapDesc::MAP_BOSS)
+    if (mDesc.mapType == SRandomMapDesc::MAP_BOSS || mDesc.mapType == SRandomMapDesc::MAP_FINAL_BOSS)
         return true;
 
     // za malo miejsca, zeby postawic chociazby region wejscia (i ew. wyjscia)..
@@ -989,9 +989,8 @@ bool CRandomMapGenerator::PlaceBossDoors()
 {
     CTimer timer("- boss doors: ");
 
-    // finalowy boss nie ma wyjscia, mozna olac MAP_FINAL_BOSS
-    if (mDesc.mapType != SRandomMapDesc::MAP_BOSS)
-        return true;    // nie potrzeba drzwi
+    if (mDesc.mapType == SRandomMapDesc::MAP_NORMAL)
+        return true;    // nie potrzeba drzwi 'bossowych'
 
     PhysicalsVector doors = FilterByType(mPhysicals, "door");
     if (doors.empty())
@@ -1029,13 +1028,6 @@ bool CRandomMapGenerator::PlaceBossDoors()
     for (std::map<std::string, sf::Vector2i>::iterator it = tilesToPutDoor.begin() ; it != tilesToPutDoor.end() ; it++) {
         mXmlText << "\t<obj code=\"door\" x=\"" << (float)it->second.x + 0.5f
                  << "\" y=\"" << (float)it->second.y + 0.5f << "\">\n"
-                 << "\t\t<cond check=\"once\">\n"
-                 << "\t\t\t<type>killed</type>\n"
-                 << "\t\t\t<param>boss</param>\n"   // zakladamy, ze boss ma id "boss"
-                 << "\t\t</cond>\n"
-                 << "\t\t<effect-on-open type=\"console\">\n"
-                 << "\t\t\t<text>load-playlist data/music/testpl.xml</text>\n"
-                 << "\t\t</effect-on-open>\n"
                  << "\t</obj>\n";
         mCurrent[it->second.x][it->second.y] = DOOR;
     }
@@ -1121,8 +1113,9 @@ bool CRandomMapGenerator::PlaceMonsters()
             << "\" rot=\"" << rand() % 360
             << "\" name=\"boss\" trigger-radius=\"" << boss.bossTriggerRadius
             << "\" trigger-ai=\"" << boss.bossTriggerAI
-            << "\" trigger-playlist=\"" << boss.bossPlaylist
-            << "\" />\n";
+            << "\" trigger-playlist=\"" << boss.bossPlaylist; 
+        if (mDesc.mapType == SRandomMapDesc::MAP_FINAL_BOSS) mXmlText << "\" final=\"1 ";
+        mXmlText << "\" />\n";
     }
 
     PhysicalsVector monsters = FilterByLevel(FilterByType(mPhysicals, "monster"), mDesc.level);
@@ -1307,7 +1300,7 @@ bool CRandomMapGenerator::PlaceLoots()
 bool CRandomMapGenerator::PlaceMiscEffects()
 {
     // na razie inne efekty sa tylko na ostatniej mapie
-    if (mDesc.mapType != SRandomMapDesc::MAP_FINAL_BOSS)
+//    if (mDesc.mapType != SRandomMapDesc::MAP_FINAL_BOSS)
         return true;
 
     // niewidzialne drzwi, uzuwane przez wszystkie 
