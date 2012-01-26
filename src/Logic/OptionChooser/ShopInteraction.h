@@ -149,7 +149,7 @@ class ShopInteraction : public InteractionHandler
                 return;
             }
             int price = mNpc->GetSellingPrice();
-            if (mPlayer->GetGold() <= price) {
+            if (mPlayer->GetGold() < price) {
                 if (!tookAction) {
                     mDescription->SetText(mDescription->GetText() + L"\n\nNot enough gold! Come back when you have more. You have only " + StringUtils::ToWString(mPlayer->GetGold()) + L"gp.");
                     tookAction = true;
