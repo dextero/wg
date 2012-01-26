@@ -49,12 +49,17 @@ void CCompass::Show()
 #ifndef __EDITOR__
     UpdatePosition();
     mHud->SetVisible(FindExit());
+    for (size_t i = 0 ; i < mArrows.size() ; i++) {
+        mArrows[i]->SetVisible(true);
+    }
 #endif
 };
 
 void CCompass::Hide()
 {
+    fprintf(stderr, "Hide()\n");
     mHud->SetVisible(false);
+    ClearExit();
 };
 
 void CCompass::UpdatePosition()
@@ -125,7 +130,6 @@ void CCompass::PointExit()
                 arrow->SetPosition(0.0f, 0.0f, 80.0f, 80.0f);
                 mArrows.push_back(arrow);
             }
-            mArrows[index]->SetVisible(true);
             sf::Sprite * sprite = mArrows[index]->mBackgroundSprite->GetSFSprite();
             sprite->SetRotation(rotation);
             sprite->SetColor(sf::Color(255, 255, 255, dotAlpha));
