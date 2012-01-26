@@ -797,19 +797,19 @@ bool CRandomMapGenerator::PlaceRegions()
             float weight = 0.0;
             if (it->onBorder == "north") {
                 weight += newExit.y * 1000.0f;
-                weight += abs(newExit.x - (mDesc.sizeX / 2));
+                weight += abs((float)(newExit.x - (mDesc.sizeX / 2)));
             } 
             if (it->onBorder == "south") {
                 weight += (mDesc.sizeY - newExit.y) * 1000.0f;
-                weight += abs(newExit.x - (mDesc.sizeX / 2));
+                weight += abs((float)(newExit.x - (mDesc.sizeX / 2)));
             }
             if (it->onBorder == "west") {
                 weight += newExit.x * 1000.0f;
-                weight += abs(newExit.y - (mDesc.sizeY / 2));
+                weight += abs((float)(newExit.y - (mDesc.sizeY / 2)));
             }
             if (it->onBorder == "east") {
                 weight += (mDesc.sizeX - newExit.x) * 1000.0f;
-                weight += abs(newExit.y - (mDesc.sizeY / 2));
+                weight += abs((float)(newExit.y - (mDesc.sizeY / 2)));
             }
             isBetterCandidate = weight < bestExitWeight;
             if (isBetterCandidate) {
@@ -1183,7 +1183,7 @@ CRandomMapGenerator::SPhysical CRandomMapGenerator::GenerateNextLootDef(bool can
         return SPhysical("obstacle", "data/physicals/obstacles/chest.xml");
     }
     float realWeaponSpawnProbability = mSpawnWeaponProbability + (additionalWeaponProbability * (3 - mSpawnedWeaponsCount));
-    realWeaponSpawnProbability *= 0.2;
+    realWeaponSpawnProbability *= 0.2f;
 	realWeaponSpawnProbability += closeToScreenEdgePenalty;
     if (gRand.Rndf() < realWeaponSpawnProbability) {
         mSpawnedWeaponsCount++;
