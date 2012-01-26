@@ -2721,7 +2721,7 @@
     </obj> -->
     
    <obj templateFile="data/physicals/npcs/green.xml" x="23.6334" y="17.4031" rot="180" >
-       <sellingItem>data/abilities/weapons/fireball.xml:25</sellingItem>
+       <sellingItem>data/abilities/weapons/fireball.xml:50</sellingItem>
    </obj>
    <obj templateFile="data/physicals/npcs/red-with-axe.xml" x="29.0721" y="20.9831" rot="90" >
        <sellingItem>data/abilities/weapons/magic-missile.xml:10</sellingItem>

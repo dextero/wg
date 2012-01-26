@@ -184,8 +184,8 @@
 		<!-- kasa -->
 		<loot file="data/loots/gold-few.xml" lootLevel="rnd(1, level * 3)" minLevel="0" maxLevel="4" frequency="4.0" tags="gold" />
 		<loot file="data/loots/gold-few.xml" lootLevel="rnd(1, 13)" minLevel="5" maxLevel="11" frequency="2.0" tags="gold" />
-		<loot file="data/loots/gold-many.xml" lootLevel="14 + rnd(0, 14 + (level - 4) * 4)" minLevel="5" maxLevel="11" frequency="2.0" tags="gold" />
-		<loot file="data/loots/gold-many.xml" lootLevel="14 + rnd(0, 14 + (level - 4) * 5)" minLevel="12" maxLevel="99" frequency="4.0" tags="gold" />
+		<loot file="data/loots/gold-many.xml" lootLevel="14 + rnd(0, 14 + (level - 4) * 2)" minLevel="5" maxLevel="11" frequency="2.0" tags="gold" />
+		<loot file="data/loots/gold-many.xml" lootLevel="14 + rnd(0, 14 + (level - 4) * 3)" minLevel="12" maxLevel="99" frequency="4.0" tags="gold" />
 
         <!-- hp, mana -->
         <loot file="data/loots/health.xml" lootLevel="level" minLevel="0" maxLevel="99" />
