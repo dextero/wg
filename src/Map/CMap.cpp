@@ -123,13 +123,15 @@ namespace Map{
 		return mMapFilename;
 	}
 
-    sf::Vector2f CMap::GetExitPos()
+    std::vector<sf::Vector2f> CMap::GetExitsPositions()
     {
-        for (std::vector<CRegionDescriptor*>::iterator i = mRegionDescriptors.begin();
-             i != mRegionDescriptors.end(); ++i)
-            if ((*i)->nextMap != "")
-                return (*i)->pos;
-        return sf::Vector2f (0.0f,0.0f);
+        std::vector<sf::Vector2f> ret;
+        for (std::vector<CRegionDescriptor*>::iterator i = mRegionDescriptors.begin(); i != mRegionDescriptors.end(); ++i) {
+            if ((*i)->nextMap != "") {
+                ret.push_back((*i)->pos);
+            }
+        }
+        return ret;
     };
 
     

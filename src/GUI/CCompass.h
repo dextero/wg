@@ -3,6 +3,8 @@
 
 #include <SFML/System/Vector2.hpp>
 
+#include <vector>
+
 namespace GUI
 {
     class CGUIObject;
@@ -24,9 +26,9 @@ namespace GUI
 
         private:
         CGUIObject *mHud;
-        sf::Vector2f mPos, mExitPos;
-        CImageBox *mArrow, *mBackground;
-        bool mExitFound;
+        sf::Vector2f mPos;
+        CImageBox *mBackground;
+        std::vector<CImageBox *> mArrows;
         float mRotation;
     };
 }
