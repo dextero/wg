@@ -786,6 +786,7 @@ bool CRandomMapGenerator::PlaceRegions()
 
     for (std::vector<CWorldGraphExit>::iterator it = mDesc.exits.begin() ; it != mDesc.exits.end() ; it++) {
         sf::Vector2i bestExit(mDesc.sizeX / 2, mDesc.sizeY / 2);
+        float bestExitWeight = 100000.0f;
         for (size_t i = 0; i < 100; ++i) {
             sf::Vector2i newExit;
             do
@@ -793,13 +794,27 @@ bool CRandomMapGenerator::PlaceRegions()
             while (mCurrent[newExit.x][newExit.y] != FREE);
 
             bool isBetterCandidate = false;
-            if (it->onBorder == "north" && newExit.y < bestExit.y) isBetterCandidate = true;
-            if (it->onBorder == "south" && newExit.y > bestExit.y) isBetterCandidate = true;
-            if (it->onBorder == "west"  && newExit.x < bestExit.x) isBetterCandidate = true;
-            if (it->onBorder == "east"  && newExit.x > bestExit.x) isBetterCandidate = true;
-
+            float weight = 0.0;
+            if (it->onBorder == "north") {
+                weight += newExit.y * 1000.0f;
+                weight += abs(newExit.x - (mDesc.sizeX / 2));
+            } 
+            if (it->onBorder == "south") {
+                weight += (mDesc.sizeY - newExit.y) * 1000.0f;
+                weight += abs(newExit.x - (mDesc.sizeX / 2));
+            }
+            if (it->onBorder == "west") {
+                weight += newExit.x * 1000.0f;
+                weight += abs(newExit.y - (mDesc.sizeY / 2));
+            }
+            if (it->onBorder == "east") {
+                weight += (mDesc.sizeX - newExit.x) * 1000.0f;
+                weight += abs(newExit.y - (mDesc.sizeY / 2));
+            }
+            isBetterCandidate = weight < bestExitWeight;
             if (isBetterCandidate) {
                 bestExit = newExit;
+                bestExitWeight = weight;
             }
         }
         MakePassableAround(bestExit);
@@ -1175,6 +1190,7 @@ CRandomMapGenerator::SPhysical CRandomMapGenerator::GenerateNextLootDef(bool can
         return SPhysical("obstacle", "data/physicals/obstacles/chest.xml");
     }
     float realWeaponSpawnProbability = mSpawnWeaponProbability + (additionalWeaponProbability * (3 - mSpawnedWeaponsCount));
+    realWeaponSpawnProbability *= 0.2;
 	realWeaponSpawnProbability += closeToScreenEdgePenalty;
     if (gRand.Rndf() < realWeaponSpawnProbability) {
         mSpawnedWeaponsCount++;
