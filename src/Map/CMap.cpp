@@ -411,6 +411,7 @@ namespace Map{
             mapObj->bossRadius = xml.GetFloat(node, "trigger-radius");
             mapObj->bossAI = xml.GetString(node, "trigger-ai");
             mapObj->bossPlaylist = xml.GetString(node, "trigger-playlist");
+            mapObj->final = xml.GetInt(node, "final") != 0;
             if (node->first_node() != NULL)
                 mapObj->param = mapObj->templ->ReadParam(xml,node);
             mMapObjectDescriptors.push_back(mapObj);

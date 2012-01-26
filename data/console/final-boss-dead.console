@@ -1,0 +1,10 @@
+#skrypt na zabicie ostatniego bossa (smoka)
+[
+[
+delay 3
+clear-physicals
+clear-logic
+unload-map
+exit-to-main-menu
+play-cutscene data/cutscene/enddemo.xml
+]

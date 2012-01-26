@@ -25,6 +25,7 @@ void CWorldGraph::LoadFromFile(const std::string & filename) {
         graphMap.scheme = xml.GetString(map, "scheme");
         graphMap.level = xml.GetInt(map, "level");
         graphMap.boss = xml.GetString(map, "boss");
+        graphMap.final = xml.GetInt(map, "final") != 0;
 
         for (rapidxml::xml_node<>* exit = xml.GetChild(map, "exit"); exit; exit = xml.GetSibl(exit, "exit")) {
             CWorldGraphExit graphExit;

@@ -18,6 +18,7 @@ struct CWorldGraphMap {
     int level;
     std::vector<CWorldGraphExit> exits;
     std::string boss;
+    bool final;
 };
 
 struct CWorldGraph {

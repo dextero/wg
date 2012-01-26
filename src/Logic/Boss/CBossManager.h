@@ -24,7 +24,7 @@ public:
 
     // sprawdzaj odleglosc gracza od tege przeciwnika co klatke
     // i w razie czego odpal boss-fighta
-    void Trace(const std::wstring& enemyId, const std::string& aiScheme, float triggerRadius, const std::string playlist = "");
+    void Trace(const std::wstring& enemyId, const std::string& aiScheme, float triggerRadius, const std::string playlist = "", bool final = false);
     const std::string SerializeLivingBosses();
 
     // zerowanie bossa, czyszczenie wektora sledzonych bossow
@@ -42,9 +42,10 @@ private:
         std::string ai;
         std::string playlist;
         float radius;
+        bool isFinal;
         
-        SBossOnMap(): id(L""), ai(""), playlist(""), radius(0.f) {}
-        SBossOnMap(const std::wstring& id, const std::string& ai, const std::string& pl, float r): id(id), ai(ai), playlist(pl), radius(r) {}
+        SBossOnMap(): id(L""), ai(""), playlist(""), radius(0.f), isFinal(false) {}
+        SBossOnMap(const std::wstring& id, const std::string& ai, const std::string& pl, float r, bool f): id(id), ai(ai), playlist(pl), radius(r), isFinal(f) {}
     };
     // bossy obecne na mapie
     std::vector<SBossOnMap> mBossesOnMap;

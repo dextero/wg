@@ -22,6 +22,7 @@ namespace Map{
         std::string bossPlaylist;
         std::string bossAI;
         float bossRadius; // promien obszaru, w ktorym odpala sie boss-fight
+        bool final; //czy koncowy boss
 
 		CMapObjectDescriptor();
         void Create();
