@@ -995,14 +995,14 @@ bool CRandomMapGenerator::PlaceBossDoors()
         }
 
         if (it->onBorder == "north" || it->onBorder == "south") {
-            unsigned int y = it->onBorder == "north" ? 3 : mDesc.sizeY - 3;
+            unsigned int y = it->onBorder == "north" ? 3 : mDesc.sizeY - 4;
             for (unsigned int x = 0; x < mDesc.sizeX; ++x) {
                 if (mCurrent[x][y] != BLOCKED) {
                     tilesToPutDoor[StringUtils::ToString(x) + ":" + StringUtils::ToString(y)] = sf::Vector2i(x, y);
                 }
             }
         } else if (it->onBorder == "west" || it->onBorder == "east") {
-            unsigned x = it->onBorder == "west" ? 3 : mDesc.sizeX - 3;
+            unsigned x = it->onBorder == "west" ? 3 : mDesc.sizeX - 4;
             for (unsigned int y = 0; y < mDesc.sizeY; ++y) {
                 if (mCurrent[x][y] != BLOCKED) {
                     tilesToPutDoor[StringUtils::ToString(x) + ":" + StringUtils::ToString(y)] = sf::Vector2i(x, y);
