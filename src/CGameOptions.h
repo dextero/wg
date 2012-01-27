@@ -27,7 +27,7 @@ private:
 
 	unsigned int mVersion;
     unsigned int mWidth, mHeight, mBPP;
-    bool mFullscreen, mVSync, m3DSound;
+    bool mFullscreen, mVSync, m3DSound, mSmooth;
     float mSoundVolume;
     float mMusicVolume;
 	std::string mLocaleLang;
@@ -118,6 +118,9 @@ public:
     void SetHeight(unsigned int height) { mHeight = height; };
     void SetBitsPerPixel(unsigned int bpp) { mBPP = bpp; };
     void SetFullscreen(bool fs) { mFullscreen = fs; };
+
+	bool GetSmooth() { return mSmooth; }
+	void SetSmooth(bool s);
 
 	void SetVSync(bool vsync);
 

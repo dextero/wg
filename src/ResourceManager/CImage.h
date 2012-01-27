@@ -34,6 +34,7 @@ namespace System
 			std::string GetType();
 
 			static bool dontLoadDataHack;
+			static bool smoothEnabled;
 		};
 	}
 }

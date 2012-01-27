@@ -9,7 +9,7 @@ using namespace System::Resource;
 CImage::CImage(): mNormalMap(NULL), mAtlas(NULL), notified(false){}
 
 bool CImage::dontLoadDataHack = false;
-
+bool CImage::smoothEnabled = true;
 bool CImage::metaNotified = false;
 
 void CImage::MetaNotify() const{
@@ -83,7 +83,7 @@ bool CImage::Load(std::map<std::string,std::string>& argv)
         if (mAtlas!=NULL)
             mAtlas->SetImage(this);
     }
-	this->SetSmooth(false);
+	this->SetSmooth(smoothEnabled);
 	return true;
 }
 
