@@ -20,6 +20,7 @@
 #include "Logic/CPlayer.h"
 #include "Logic/CLogic.h"
 #include "GUI/Localization/CLocalizator.h"
+#include "ResourceManager/CImage.h"
 
 extern bool AskForFullscreen(const wchar_t * title, const wchar_t * message, int maxw, int maxh);
 
@@ -166,7 +167,7 @@ bool CGameOptions::LoadOptions()
 	mWidth = xml.GetInt( "video", "width" );
 	mHeight = xml.GetInt( "video", "height" );
 	mBPP = xml.GetInt( "video", "bpp" );
-	
+
 	mFullscreen = xml.GetInt("video", "fs") != 0;
 	
 	if (is_first_game) {
@@ -175,6 +176,7 @@ bool CGameOptions::LoadOptions()
 		mFullscreen = UserWantToPlayInFullscreen(&mWidth, &mHeight);
 	}
 
+	SetSmooth(xml.GetInt("smooth", "on", 1) != 0); // domyslnie wlaczamy smooth
 	SetVSync( xml.GetInt("video","vsync") != 0 );
     SetSoundVolume( xml.GetFloat("audio","sound",1.0f) );
     SetMusicVolume( xml.GetFloat("audio","music",1.0f) );
@@ -291,6 +293,7 @@ CGameOptions::CGameOptions():
     mFullscreen(false),
     mVSync(true),
     m3DSound(true),
+	mSmooth(true),
     mSoundVolume(100.f),
     mMusicVolume(100.f)
 {
@@ -320,7 +323,8 @@ void CGameOptions::SaveOptions()
     fprintf(file, "<root type=\"config\" version=\"%d\">\n", mVersion);
 	fprintf(file, "\t<!-- VideoMode Config -->\n");
 	fprintf(file, "\t<video width=\"%d\" height=\"%d\" fs=\"%d\" bpp=\"%d\" vsync=\"%d\" />\n", mWidth, mHeight, mFullscreen, mBPP, mVSync);
-    fprintf(file, "\t<audio sound=\"%f\" music=\"%f\" stereo=\"%d\" />\n", mSoundVolume, mMusicVolume, m3DSound);
+    fprintf(file, "\t<smooth on=\"%d\" />\n", (int) mSmooth);
+	fprintf(file, "\t<audio sound=\"%f\" music=\"%f\" stereo=\"%d\" />\n", mSoundVolume, mMusicVolume, m3DSound);
 	fprintf(file, "\t<locale lang=\"%s\" />\n\n", mLocaleLang.c_str());
 
     for ( unsigned p = 0; p < PLAYERS_CNT; ++p )
@@ -332,6 +336,12 @@ void CGameOptions::SaveOptions()
 
 	fprintf(file, "</root>\n");
     fclose(file);
+}
+
+void CGameOptions::SetSmooth(bool s)
+{
+	mSmooth = s;
+	System::Resource::CImage::smoothEnabled = s;
 }
 
 void CGameOptions::SetVSync(bool vsync)

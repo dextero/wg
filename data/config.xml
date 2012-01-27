@@ -1,6 +1,8 @@
-<root type="config" version="12">
+<root type="config" version="13">
 	<!-- VideoMode Config -->
 	<video width="800" height="600" fs="1" bpp="32" vsync="1" />
+	<!-- Smoothing (texture filtering) -->
+	<smooth on="1" />
 	<!-- audio config -->
 	<audio sound="1.0" music="1.0" />
 	<!-- language config -->
