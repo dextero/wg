@@ -393,6 +393,10 @@ void CRoot::SetActiveObject(CGUIObject* active)
 }
 
 void CRoot::RegisterInteractionHandler(InteractionHandler * handler) {
+    if (sInteractionHandlersToLazilyUnregister.find(handler) != sInteractionHandlersToLazilyUnregister.end()) {
+        sInteractionHandlersToLazilyUnregister.erase(sInteractionHandlersToLazilyUnregister.find(handler));
+        return;
+    }
     mInteractionHandlers.insert(handler);
 }
 

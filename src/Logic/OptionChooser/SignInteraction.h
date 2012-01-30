@@ -16,7 +16,8 @@ class SignInteraction : public InteractionHandler
         CInteractionTooltip * mTooltip;
 
     public:        
-        SignInteraction(CInteractionTooltip * tooltip, const std::string & title, CPhysical * player, CPhysical * obstacle) :
+        SignInteraction(CInteractionTooltip * tooltip, const std::string & title, CPlayer * player, CPhysical * obstacle) :
+            InteractionHandler(player),
                 mPlayer(player),
                 mObstacle(obstacle),
                 mTooltip(tooltip)

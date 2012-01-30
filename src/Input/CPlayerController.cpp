@@ -19,6 +19,8 @@
 
 const float CPlayerController::TurningTimeThreshold = 0.45f; // zeby dodac odrobine precyzji do obrotu
 
+static CInteractionTooltip * sharedInteractionTooltip = NULL;
+
 CPlayerController::CPlayerController(CPlayer *player) :
     CActorController(player),
     mWalkingDir(wdNone),
@@ -37,8 +39,7 @@ CPlayerController::CPlayerController(CPlayer *player) :
     mAbsoluteMoveY(0.0f),
     mIsInAbsoluteMovement(false),
 	mMouseLook(false),
-    mHasWalkTarget(false),
-    mInteractionTooltip(NULL)
+    mHasWalkTarget(false)
 {
     fprintf(stderr,"CPlayerController::CPlayerController()\n");
     mySource = new CEffectSource(estCastingAbility,NULL);
@@ -49,8 +50,9 @@ CPlayerController::CPlayerController(CPlayer *player) :
 
 CPlayerController::~CPlayerController(){
     fprintf(stderr,"CPlayerController::~CPlayerController()\n");
-    if (mInteractionTooltip) {
-        delete mInteractionTooltip;
+    if (sharedInteractionTooltip != NULL) {
+        delete sharedInteractionTooltip;
+        sharedInteractionTooltip = NULL;
     }
 }
 
@@ -276,9 +278,9 @@ bool CPlayerController::AllowKeyHold(){
 }
 
 CInteractionTooltip * CPlayerController::GetInteractionTooltip() {
-    if (mInteractionTooltip == NULL) {
+    if (sharedInteractionTooltip == NULL) {
         fprintf(stderr, "Creating a new interactionTooltip\n");
-        mInteractionTooltip = new CInteractionTooltip();
+        sharedInteractionTooltip = new CInteractionTooltip();
     }
-    return mInteractionTooltip;
+    return sharedInteractionTooltip;
 }
