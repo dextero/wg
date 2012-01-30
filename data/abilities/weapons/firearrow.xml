@@ -68,7 +68,7 @@ Bonus for this spell depends:
   <bullet value="data/physicals/bullets/flaming-arrow.xml" />
   <filter value="wall"/>
 
-  <manacost calc="5 * (1 + 0.66 * power)" />
+  <manacost calc="5 * (1 + 0.22 * power)" />
   <casttime calc="0.09" />
   <delay calc="0.05" />
   <cooldown value="0.65" />

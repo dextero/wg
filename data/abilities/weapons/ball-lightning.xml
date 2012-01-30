@@ -101,7 +101,7 @@ Bonus for this spell depends:
   <filter value="wall" />
   <bullet-angular-speed value="-1440" />
 
-  <manacost calc="28.0 * (1 + 0.66 * power)" />
+  <manacost calc="28.0 * (1 + 0.22 * power)" />
   <casttime calc="0.44" />
   <delay calc="0.58" />
   <cooldown calc="0.5" />

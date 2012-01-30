@@ -99,7 +99,7 @@ Bonus for this spell depends:
   <delay calc="0.05" />
   <cooldown calc="0.05" />
 
-  <focus-mana-cost calc="10.0 * (1 + 0.66 * power)" />
+  <focus-mana-cost calc="10.0 * (1 + 0.22 * power)" />
   <focus-max-duration value="8.0" />
   
 </root>
