@@ -7,8 +7,8 @@
 #include "../../Input/CPlayerController.h"
 #include "../../GUI/CInGameOptionChooser.h"
 #include "../../GUI/CInteractionTooltip.h"
-#include "../OptionChooser/CChestOptionHandler.h"
 #include "../OptionChooser/SignInteraction.h"
+#include "../OptionChooser/ChestInteraction.h"
 
 CObstacle::CObstacle(const std::wstring &uniqueId):
     CPhysical(uniqueId),
@@ -17,7 +17,6 @@ CObstacle::CObstacle(const std::wstring &uniqueId):
     mStats(NULL),
     mTitle(""),
     mDeathAnim(NULL),
-    mOptionHandler(NULL),
     mInteractionTooltipId(0),
     mInteractionTooltip(NULL)
 {
@@ -26,13 +25,6 @@ CObstacle::CObstacle(const std::wstring &uniqueId):
 }
 
 CObstacle::~CObstacle(){
-    if (mOptionHandler) {
-        mOptionHandler->Hide();
-        mOptionHandler->mReferenceCounter--;
-        if (mOptionHandler->mReferenceCounter == 0) {
-            delete mOptionHandler;
-        }
-    }
     if (mInteractionTooltip != NULL && mInteractionTooltip->GetId() == mInteractionTooltipId) {
         mInteractionTooltip->Clear();
     }
@@ -60,6 +52,8 @@ void CObstacle::Kill(){
     }
 }
 
+const static int CHEST_INTERACTION_PRIORITY = 75;
+
 void CObstacle::HandleCollisionWithPlayer(CPlayer * player) {
     if (!mTitle.empty()) {
         mInteractionTooltip = player->GetController()->GetInteractionTooltip();
@@ -71,21 +65,21 @@ void CObstacle::HandleCollisionWithPlayer(CPlayer * player) {
         return;
     }
 
-    if (mOptionHandler == NULL) {
-        if (mGenre.compare(L"chest")) return;
-
-        mOptionHandler = new CChestOptionHandler(this);
-        mOptionHandler->mReferenceCounter++;
+    if (mGenre == L"chest") {
+        mInteractionTooltip = player->GetController()->GetInteractionTooltip();
+        if (mInteractionTooltip->GetPriority() >= CHEST_INTERACTION_PRIORITY) {
+            return;
+        }
+        if (mInteractionTooltip->GetHandler() == NULL || mInteractionTooltipId != mInteractionTooltip->GetId()) {
+            new ChestInteraction(mInteractionTooltip, player, this);
+            mInteractionTooltipId = mInteractionTooltip->GetId();
+            mInteractionTooltip->SetPriority(CHEST_INTERACTION_PRIORITY);
+        }
+        mInteractionTooltip->Show();
     }
-    CInGameOptionChooser * oc = player->GetController()->GetOptionChooser();
-    oc->SetTitle("You have found a chest");
-    oc->SetOption("Open it");
-    oc->SetOptionHandler(mOptionHandler);
-    oc->Show();
 }
 
 void CObstacle::SetTitle(const std::string & title) {
-    fprintf(stderr, "obstacle, set title %s\n", title.c_str());
     mTitle = title;
 }
 
