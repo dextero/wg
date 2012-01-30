@@ -71,7 +71,7 @@ class ShopInteraction : public InteractionHandler
                 CAbility * ability = gResourceManager.GetAbility(mNpc->GetSellingItem());
                 int cost = mNpc->GetSellingPrice();
 
-                mDescription->SetText(L"Hello wanderer, Would you like to buy " + ability->name + L" spell for " + StringUtils::ToWString(cost) + L"gp?");
+                mDescription->SetText(L"Hello wanderer, Would you like to buy " + ability->name + L" spell for " + StringUtils::ToWString(cost) + L" gold?");
 
                 GUI::CImageBox* weaponIcon = tooltip->GetCanvas()->CreateImageBox("weaponIcon");
                 weaponIcon->SetPosition(3.f, 35.f, 9.f, 9.f, GUI::UNIT_PERCENT, true);
@@ -130,7 +130,7 @@ class ShopInteraction : public InteractionHandler
             int price = mNpc->GetSellingPrice();
             if (mPlayer->GetGold() < price) {
                 if (!tookAction) {
-                    mDescription->SetText(mDescription->GetText() + L"\n\nNot enough gold! Come back when you have more. You have only " + StringUtils::ToWString(mPlayer->GetGold()) + L"gp.");
+                    mDescription->SetText(mDescription->GetText() + L"\n\nNot enough gold! Come back when you have more. You have only " + StringUtils::ToWString(mPlayer->GetGold()) + L" gold.");
                     tookAction = true;
                 }
             } else {
