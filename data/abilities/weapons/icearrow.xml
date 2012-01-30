@@ -45,7 +45,7 @@ Bonus for this spell depends:
     </effect>
   </effect>
   
-  <manacost calc="5.5 * (1 + 0.66 * power)" />
+  <manacost calc="5.25 * (1 + 0.22 * power)" />
   <range value="12.0" />
   <speed value="10.0" />
   <ttl value="0.8" />

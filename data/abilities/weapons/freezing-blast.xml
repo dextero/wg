@@ -52,7 +52,7 @@ Bonus for this spell depends:
   <range value="3.0" />
   <width value="80.0" />
 
-  <manacost calc="25.0 * (1 + 0.66 * power)" />
+  <manacost calc="25.0 * (1 + 0.22 * power)" />
   <casttime value="0.09" />
   <delay value="0.05" />
   <cooldown value="0.50" />

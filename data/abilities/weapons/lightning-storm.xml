@@ -180,7 +180,7 @@ Bonus for this spell depends:
     </effect>
   </effect>
 
-  <manacost calc="34.0 * (1 + 0.66 * power)" />
+  <manacost calc="34.0 * (1 + 0.22 * power)" />
   <casttime calc="0.01" />
   <delay calc="0.05" />
   <cooldown calc="2.5" />

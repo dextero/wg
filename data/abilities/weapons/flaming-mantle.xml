@@ -150,7 +150,7 @@ Bonus for this spell depends:
     <amount value="0.6" />
   </delay-effect>
 
-  <manacost calc="35 * (1 + 0.66 * power)" />
+  <manacost calc="35 * (1 + 0.22 * power)" />
   <casttime calc="1.4" />
   <delay calc="0.05" />
   <cooldown calc="10" />

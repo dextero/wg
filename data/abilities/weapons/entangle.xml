@@ -63,7 +63,7 @@ Bonus for this spell depends:
     </effect>
   </effect>
   
-  <manacost calc="17 * (1 + 0.66 * power)" />
+  <manacost calc="17 * (1 + 0.22 * power)" />
   <casttime value="0.10" />
   <delay value="0.05" />
   <cooldown value="0.90" />

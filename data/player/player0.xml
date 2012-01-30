@@ -30,7 +30,7 @@
   <anim name="test/anim/hero/death" type="death" />
   <anim name="core/anim/hero/strafe" type="strafe" />
   
-  <manaregen min="4.0" max="4.0" />
+  <manaregen min="6.0" max="6.0" />
   
 <!--  <trigger-effects>data/player/trigger-effects0.xml</trigger-effects>-->
   
