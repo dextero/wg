@@ -29,6 +29,7 @@ class WeaponInteraction : public InteractionHandler
 
     public:        
         WeaponInteraction(CInteractionTooltip * tooltip, CPlayer * player, CLoot * loot) :
+            InteractionHandler(player),
                 mPlayer(player),
                 mLoot(loot),
                 mTooltip(tooltip),

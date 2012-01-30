@@ -30,6 +30,7 @@ class ShopInteraction : public InteractionHandler
 
     public:        
         ShopInteraction(CInteractionTooltip * tooltip, CPlayer * player, CNpc * npc) :
+            InteractionHandler(player),
                 mPlayer(player),
                 mNpc(npc),
                 mTooltip(tooltip),

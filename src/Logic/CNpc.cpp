@@ -36,7 +36,7 @@ const static int INTERACTION_PRIORITY = 50;
 void CNpc::HandleCollisionWithPlayer(CPlayer * player) {
     mInteractionTooltip = player->GetController()->GetInteractionTooltip();
     if (mInteractionTooltip->GetPriority() >= INTERACTION_PRIORITY) {
-                           return;
+        return;
     } 
     if (mInteractionTooltip->GetHandler() == NULL || mInteractionTooltipId != mInteractionTooltip->GetId()) {
         new ShopInteraction(mInteractionTooltip, player, this);
