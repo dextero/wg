@@ -1,5 +1,5 @@
-#ifndef __SIGN_INTERACTION_H__
-#define __SIGN_INTERACTION_H__
+#ifndef __SHOP_INTERACTION_H__
+#define __SHOP_INTERACTION_H__
 
 #include "InteractionHandler.h"
 #include "../../GUI/CRoot.h"
@@ -13,13 +13,9 @@
 #include "../CPlayer.h"
 #include "../CNpc.h"
 #include "../Loots/CLoot.h"
-#include "../../Rendering/Effects/CGraphicalEffects.h"
-#include "../../Audio/CAudioManager.h"
 #include "../Abilities/CAbility.h"
 #include "../../ResourceManager/CResourceManager.h"
 #include "../Factory/CPhysicalTemplate.h"
-#include "../../Input/CBindManager.h"
-#include "../../Utils/KeyStrings.h"
 
 
 class ShopInteraction : public InteractionHandler

@@ -11,7 +11,6 @@ class CPlayer;
 
 struct SAnimation;
 
-class IOptionChooserHandler;
 class InteractionHandler;
 class CInteractionTooltip;
 
@@ -28,8 +27,6 @@ protected:
     virtual ~CObstacle();
     
     SAnimation *mDeathAnim;
-
-    IOptionChooserHandler * mOptionHandler;
 
     int mInteractionTooltipId;
     CInteractionTooltip * mInteractionTooltip;

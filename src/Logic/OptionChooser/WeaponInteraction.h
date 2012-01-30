@@ -17,8 +17,6 @@
 #include "../Abilities/CAbility.h"
 #include "../../ResourceManager/CResourceManager.h"
 #include "../Factory/CPhysicalTemplate.h"
-#include "../../Input/CBindManager.h"
-#include "../../Utils/KeyStrings.h"
 
 
 class WeaponInteraction : public InteractionHandler
