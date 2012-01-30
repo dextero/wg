@@ -16,7 +16,6 @@
 #include "CBossHud.h"
 #include "CAbiSlotsBar.h"
 #include "CInventoryDisplayer.h"
-#include "CInGameOptionChooser.h"
 #include "../Logic/CLogic.h"
 #include "../Logic/CPlayerManager.h"
 #include "../Logic/CPlayer.h"
@@ -26,7 +25,7 @@
 #include "../Utils/KeyStrings.h"
 #include "../Utils/Directions.h"
 #include "../Input/CBindManager.h"
-#include "../Input/CPlayerController.h"
+#include "CInteractionTooltip.h"
 #include "Notepad/CNotepad.h"
 #include "Localization/CLocalizator.h"
 #include "Localization/GeneralKeys.h"
@@ -122,7 +121,7 @@ void CGameScreens::Hide(const std::wstring &menu)
         for (int i = 0; i < 2; i++) {
             CPlayer * player = gPlayerManager.GetPlayerByNumber(i);
             if (player) {
-                player->GetController()->GetOptionChooser()->Hide();
+                player->GetController()->GetInteractionTooltip()->Hide();
             }
         }
 	}

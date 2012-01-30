@@ -5,7 +5,6 @@
 #include "../../Rendering/CDisplayable.h"
 #include "../CPlayer.h"
 #include "../../Input/CPlayerController.h"
-#include "../../GUI/CInGameOptionChooser.h"
 #include "../../GUI/CInteractionTooltip.h"
 #include "../OptionChooser/SignInteraction.h"
 #include "../OptionChooser/ChestInteraction.h"

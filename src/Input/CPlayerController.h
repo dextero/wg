@@ -16,7 +16,6 @@ class CAbility;
 struct SAbilityInstance;
 class CTriggerEffects;
 
-class CInGameOptionChooser;
 class CInteractionTooltip;
 
 class CPlayerController : public CActorController
@@ -55,7 +54,6 @@ private:
     // sloty na czary
     int mSelectedAbilities[ABI_SLOTS_COUNT];
 
-    CInGameOptionChooser * mOptionChooser;
     CInteractionTooltip * mInteractionTooltip;
 public:
 	CPlayerController(CPlayer *player);
@@ -85,7 +83,6 @@ public:
  
     bool AllowKeyHold();
 
-    CInGameOptionChooser * GetOptionChooser();
     CInteractionTooltip * GetInteractionTooltip();
 };
 
