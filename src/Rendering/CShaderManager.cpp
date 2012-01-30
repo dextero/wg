@@ -164,6 +164,41 @@ bool CShaderManager::setUniform(int programId, const std::string& name, const sf
 	return true;
 }
 
+bool CShaderManager::setUniformArray(int programId, const std::string& name, float* value, unsigned n)
+{
+	GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
+    if (location < 0) {
+        fprintf(stderr, "shader ERROR: couldn't get uniform location: %s\n", name.c_str());
+        return false;
+    }
+    
+	glUniform1fv(location, n, value);
+    return true;
+}
+bool CShaderManager::setUniformArray(int programId, const std::string& name, sf::Vector3f* value, unsigned n)
+{
+	GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
+    if (location < 0) {
+        fprintf(stderr, "shader ERROR: couldn't get uniform location: %s\n", name.c_str());
+        return false;
+    }
+    
+	glUniform3fv(location, n, &value->x);
+    return true;
+}
+
+bool CShaderManager::setUniform4fArray(int programId, const std::string& name, float* value, unsigned n)
+{
+	GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
+    if (location < 0) {
+        fprintf(stderr, "shader ERROR: couldn't get uniform location: %s\n", name.c_str());
+        return false;
+    }
+    
+	glUniform4fv(location, n, value);
+    return true;
+}
+
 // program must be active!
 bool CShaderManager::bindTexture(int programId, const std::string & name, sf::Image const * image)
 {
