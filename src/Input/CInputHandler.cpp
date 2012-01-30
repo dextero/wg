@@ -104,7 +104,9 @@ void CInputHandler::FrameStarted( float secondsPassed ){
 			/* atak - kombinacje */
   			keyMask = CBindManager::KEY_PRESS;
 
-            if (pc->GetInteractionTooltip()->IsVisible() && !gBindManagerByPlayer(i)->GetPointNClickMove())
+            if (pc->GetInteractionTooltip()->IsVisible() && !gBindManagerByPlayer(i)->GetPointNClickMove() 
+                    && pc->GetInteractionTooltip()->GetHandler()
+                    && pc->GetInteractionTooltip()->GetHandler()->GetControllingPlayer() == p)
             {
                 typedef std::map<std::string, size_t> MapType;
                 MapType mapping;

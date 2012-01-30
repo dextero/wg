@@ -53,8 +53,6 @@ private:
 
     // sloty na czary
     int mSelectedAbilities[ABI_SLOTS_COUNT];
-
-    CInteractionTooltip * mInteractionTooltip;
 public:
 	CPlayerController(CPlayer *player);
 	virtual ~CPlayerController();
