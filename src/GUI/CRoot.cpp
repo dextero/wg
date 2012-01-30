@@ -10,7 +10,6 @@
 #include "CImageBox.h"
 #include "CAbilitySlot.h"
 #include "CAbiSlotsBar.h"
-#include "CInGameOptionChooser.h"
 #include "../Logic/OptionChooser/InteractionHandler.h"
 #include "CItemSlot.h"
 #include "../CGame.h"
@@ -116,7 +115,6 @@ void CRoot::FrameStarted(float secondsPassed)
 	mClippingRect.Bottom =	mGlobalSize.y;
 
 	UpdateChilds( secondsPassed );
-    CInGameOptionChooser::UpdateAll(secondsPassed);
     for (std::set<InteractionHandler *>::iterator it = sInteractionHandlersToLazilyUnregister.begin() ;
             it != sInteractionHandlersToLazilyUnregister.end() ; it++) {
         mInteractionHandlers.erase(mInteractionHandlers.find(*it));

@@ -34,7 +34,6 @@ void CommandClearLogic(size_t argc, const std::vector<std::wstring> &argv)
 void CommandSetLogicState(size_t argc, const std::vector<std::wstring> &argv);
 void CommandStartNewGame(size_t argc, const std::vector<std::wstring> &argv);
 void CommandExitToMainMenu(size_t argc, const std::vector<std::wstring> &argv);
-void CommandGuiCreateChooser(size_t argc, const std::vector<std::wstring> &argv);
 
 // na koncu musi byc {0,0,0}, bo sie wszystko ***
 CCommands::SCommandPair MiscCommands [] =
@@ -77,7 +76,6 @@ CCommands::SCommandPair MiscCommands [] =
     {L"vfs-contains"                , "$MAN_VFS_CONTAINS"           , CommandVFSContains             },
     {L"vfs-clear"                   , "$MAN_VFS_CLEAR"              , CommandVFSClear                },
     {L"gui-show-menu"               , "$MAN_GUI_SHOW_MENU"          , CommandGuiShowMenu             },
-    {L"gui-create-chooser"          , "$MAN_GUI_CREATE_CHOOSER"     , CommandGuiCreateChooser        },
     {0,0,0}
 };
 
@@ -762,33 +760,4 @@ void CommandGuiShowMenu(size_t argc, const std::vector<std::wstring> &argv)
     else
         gLogic.GetMenuScreens()->Show(argv[1]);
 }
-
-#include "../GUI/CInGameOptionChooser.h"
-#include "../Logic/CPlayerManager.h"
-#include "../Logic/CPlayer.h"
-#include "../Input/CPlayerController.h"
-#include "../Logic/OptionChooser/CSimpleOptionHandler.h"
-
-void CommandGuiCreateChooser(size_t argc, const std::vector<std::wstring> &argv)
-{  
-    CInGameOptionChooser* oc = NULL;
-    CPlayer * p = gPlayerManager.GetPlayerByNumber(0);
-    CPlayerController * pc = p != NULL ? p->GetController() : NULL;
-    if (!pc) return;
-
-    oc = pc->GetOptionChooser();
-    oc->Hide();
-    if (argc < 2) return;
-
-    std::vector<std::string> options;
-    for (size_t i = 1 ; i < argv.size() ; i++) {
-        options.push_back(StringUtils::ConvertToString(argv[i]));
-    }
-
-    oc->SetOptions(options);
-    oc->SetOptionHandler(new CSimpleOptionHandler());
-
-    oc->Show();
-}
-
 

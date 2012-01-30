@@ -1,7 +1,6 @@
 #include <cstdio>
 #include "CPlayerController.h"
 #include "../GUI/CHud.h"
-#include "../GUI/CInGameOptionChooser.h"
 #include "../GUI/CInteractionTooltip.h"
 #include "../Logic/CLogic.h"
 #include "../Logic/CPlayer.h"
@@ -39,7 +38,6 @@ CPlayerController::CPlayerController(CPlayer *player) :
     mIsInAbsoluteMovement(false),
 	mMouseLook(false),
     mHasWalkTarget(false),
-    mOptionChooser(NULL),
     mInteractionTooltip(NULL)
 {
     fprintf(stderr,"CPlayerController::CPlayerController()\n");
@@ -51,9 +49,6 @@ CPlayerController::CPlayerController(CPlayer *player) :
 
 CPlayerController::~CPlayerController(){
     fprintf(stderr,"CPlayerController::~CPlayerController()\n");
-    if (mOptionChooser) {
-        delete mOptionChooser;
-    }
     if (mInteractionTooltip) {
         delete mInteractionTooltip;
     }
@@ -278,21 +273,6 @@ void CPlayerController::SwitchControls(){
 
 bool CPlayerController::AllowKeyHold(){
     return (mLastKey != -1 && mFocusAbility != NULL);
-}
-
-//@Deprecated
-CInGameOptionChooser * CPlayerController::GetOptionChooser() {
-    if (mOptionChooser == NULL) {
-        fprintf(stderr, "Creating new chooser\n");
-        mOptionChooser = CInGameOptionChooser::CreateChooser();
-        mOptionChooser->SetPlayer((CPlayer *)mActor);
-        mOptionChooser->SetOptionImages("data/GUI/btn-up.png", "data/GUI/btn-hover.png");
-        mOptionChooser->SetOptionFont(gGUI.GetFontSetting("FONT_DEFAULT"));
-        mOptionChooser->SetOptionColor(sf::Color::White);
-        mOptionChooser->SetOptionSize(sf::Vector2f(60.0f,60.0f));
-        mOptionChooser->SetRadius(80.0f);
-    }
-    return mOptionChooser;
 }
 
 CInteractionTooltip * CPlayerController::GetInteractionTooltip() {
