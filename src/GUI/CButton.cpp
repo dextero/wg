@@ -149,7 +149,7 @@ static void ForceReleaseMouseButton()
         gBindManagerByPlayer(i)->SetKeyState("PointNClick", false);
         if (CPlayer *p = gPlayerManager.GetPlayerByNumber(i)) {
             if (CPlayerController *pc = p->GetController()) {
-                pc->SetWalkTarget(false, p->GetPosition(), true);
+//                pc->SetWalkTarget(false, p->GetPosition(), true);
             }
         }
     }
