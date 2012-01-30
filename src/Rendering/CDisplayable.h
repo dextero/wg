@@ -94,6 +94,9 @@ public:
 	void SetCanDraw(bool draw);
 	bool GetCanDraw();
 
+	inline void SetLighted(bool l)	{ mLighted = l; }
+	inline bool GetLighted()		{ return mLighted; }
+
     void SetColor( const sf::Color & color );
     void SetColor( float r, float g, float b, float a = 1.0f);
 	void GetColor( float* r, float* g, float* b, float* a );
@@ -111,6 +114,7 @@ private:
     std::string mImageName; // do edytora
     sf::Vector2f mScale; // 1.0 1.0 oznacza wielkosc jednego kafla
 	bool m_canDraw; // oznacza czy mozna rysowac tego kafla
+	bool mLighted; // czy podlega oswietleniu
     
     // przycinanie
 	bool mClipPlaneEnabled;
