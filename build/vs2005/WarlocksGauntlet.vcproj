@@ -401,14 +401,6 @@
 				>
 			</File>
 			<File
-				RelativePath="..\..\src\GUI\CInGameOptionChooser.cpp"
-				>
-			</File>
-			<File
-				RelativePath="..\..\src\GUI\CInGameOptionChooser.h"
-				>
-			</File>
-			<File
 				RelativePath="..\..\src\GUI\CInteractionTooltip.cpp"
 				>
 			</File>
@@ -1460,15 +1452,7 @@
 				Name="OptionChooser"
 				>
 				<File
-					RelativePath="..\..\src\Logic\OptionChooser\CChestOptionHandler.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\src\Logic\OptionChooser\CLootItemOptionHandler.h"
-					>
-				</File>
-				<File
-					RelativePath="..\..\src\Logic\OptionChooser\CSimpleOptionHandler.h"
+					RelativePath="..\..\src\Logic\OptionChooser\ChestInteraction.h"
 					>
 				</File>
 				<File
@@ -1476,11 +1460,15 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\src\Logic\OptionChooser\IOptionChooserHandler.h"
+					RelativePath="..\..\src\Logic\OptionChooser\ShopInteraction.h"
 					>
 				</File>
 				<File
 					RelativePath="..\..\src\Logic\OptionChooser\SignInteraction.h"
+					>
+				</File>
+				<File
+					RelativePath="..\..\src\Logic\OptionChooser\WeaponInteraction.h"
 					>
 				</File>
 			</Filter>
