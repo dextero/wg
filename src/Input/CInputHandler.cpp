@@ -133,7 +133,7 @@ void CInputHandler::FrameStarted( float secondsPassed ){
                     }
                 }
             }
-            else if (pc->GetInteractionTooltip()->IsVisible() && gBindManagerByPlayer(i)->GetMouseLook() != true)
+            else if (pc->GetInteractionTooltip()->IsVisible() && !gBindManagerByPlayer(i)->GetPointNClickMove())
             {
                 typedef std::map<std::string, size_t> MapType;
                 MapType mapping;

@@ -77,12 +77,12 @@ class ShopInteraction : public InteractionHandler
                 mDescription->SetText(L"Hello wanderer, Would you like to buy " + ability->name + L" spell for " + StringUtils::ToWString(cost) + L"gp?");
 
                 GUI::CImageBox* weaponIcon = tooltip->GetCanvas()->CreateImageBox("weaponIcon");
-                weaponIcon->SetPosition(3.f, 45.f, 9.f, 9.f, GUI::UNIT_PERCENT, true);
+                weaponIcon->SetPosition(3.f, 35.f, 9.f, 9.f, GUI::UNIT_PERCENT, true);
                 weaponIcon->AddImageToSequence(ability->icon);
                 weaponIcon->SetSequenceState(0);
 
                 GUI::CTextArea* weaponDescription = tooltip->GetCanvas()->CreateTextArea("weaponDescription");
-                weaponDescription->SetPosition(10.f, 45.f, 38.f, 20.f);
+                weaponDescription->SetPosition(10.f, 35.f, 38.f, 20.f);
                 weaponDescription->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
                 weaponDescription->SetText(GUI::CItemSlot::CreateWeaponDescription(ability, NULL, mPlayer,
                         GUI::CItemSlot::MID_VERBOSITY));
@@ -93,17 +93,7 @@ class ShopInteraction : public InteractionHandler
                 buttonYes->SetPosition(21.0f, 87.0f, 30.0f, 6.0f);
                 buttonYes->SetCenter(true);
                 buttonYes->GetClickCallback()->bind(this, &ShopInteraction::OptionYes);
-
-                std::string keyKey = "Abi-0";
-                std::string keyXKey = "AbiX-0";
-                std::string keyLabel;
-                const std::map<std::string, int> & keys = gBindManagerByPlayer(mPlayer->GetNumber())->GetKeyBindings();
-                if (keys.count(keyKey) > 0) {
-                    keyLabel = KeyStrings::KeyToString(keys.find(keyKey)->second);
-                } else if (keys.count(keyXKey) > 0) {
-                    keyLabel = KeyStrings::KeyToString(keys.find(keyXKey)->second);
-                }
-                buttonYes->SetText(L"Yes (press " + StringUtils::ConvertToWString(keyLabel) + L")");
+                buttonYes->SetText(L"Yes", mPlayer->GetNumber(), 0);
 
                 GUI::CButton * buttonNo = canvas->CreateButton("no");
                 buttonNo->SetImage("data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png");
@@ -111,15 +101,7 @@ class ShopInteraction : public InteractionHandler
                 buttonNo->SetPosition(51.0f, 87.0f, 30.0f, 6.0f);
                 buttonNo->SetCenter(true);
                 buttonNo->GetClickCallback()->bind(this, &ShopInteraction::OptionNo);
-                
-                keyKey = "Abi-1";
-                keyXKey = "AbiX-1";
-                if (keys.count(keyKey) > 0) {
-                    keyLabel = KeyStrings::KeyToString(keys.find(keyKey)->second);
-                } else if (keys.count(keyXKey) > 0) {
-                    keyLabel = KeyStrings::KeyToString(keys.find(keyXKey)->second);
-                }
-                buttonNo->SetText(L"No (press " + StringUtils::ConvertToWString(keyLabel) + L")");
+                buttonNo->SetText(L"No", mPlayer->GetNumber(), 1);
             }
 
             tooltip->SetHandler(this);
