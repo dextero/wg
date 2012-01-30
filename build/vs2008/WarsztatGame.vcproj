@@ -1910,14 +1910,6 @@
 					>
 				</File>
 				<File
-					RelativePath="..\..\src\GUI\CInGameOptionChooser.cpp"
-					>
-				</File>
-				<File
-					RelativePath="..\..\src\GUI\CInGameOptionChooser.h"
-					>
-				</File>
-				<File
 					RelativePath="..\..\src\GUI\CInteractionTooltip.cpp"
 					>
 				</File>
