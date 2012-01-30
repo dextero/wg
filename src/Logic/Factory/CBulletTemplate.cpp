@@ -73,7 +73,10 @@ CBullet* CBulletTemplate::Create(std::wstring id)
     }
 
 	if ( bullet->GetDisplayable() )
+	{
+		bullet->GetDisplayable()->SetLighted(false);
 		bullet->GetDisplayable()->SetScale( scale, scale );
+	}
 
 	/* TODO:
 	*  przypisywanie efektów cz¹steczkowych do pocisku

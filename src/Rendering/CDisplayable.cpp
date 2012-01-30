@@ -29,7 +29,8 @@
 using namespace System::Resource;
 
 CDisplayable::CDisplayable() :
-    IDrawable(), mSFSprite( NULL ), mAnimationState( NULL ), mScale( 1.0, 1.0 ), mClipPlaneEnabled(false), mClipRectEnabled(false)
+    IDrawable(), mSFSprite( NULL ), mAnimationState( NULL ), mScale( 1.0, 1.0 ), 
+	mLighted(true), mClipPlaneEnabled(false), mClipRectEnabled(false)
 {
     memset(mClipPlane, 0, 4 * sizeof(double));
     memset(mClipRect, 0, 4 * sizeof(int));

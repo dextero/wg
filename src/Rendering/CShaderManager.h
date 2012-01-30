@@ -42,6 +42,9 @@ public:
     bool setUniform(int programId, const std::string& name, const sf::Vector3f& value);
     bool setUniform(int programId, const std::string& name, const sf::Color& value);
 	bool setUniform(int programId, const std::string& name, const sf::Matrix3& value);
+	bool setUniformArray(int programId, const std::string& name, float* value, unsigned n);
+    bool setUniformArray(int programId, const std::string& name, sf::Vector3f* value, unsigned n);
+	bool setUniform4fArray(int programId, const std::string& name, float* value, unsigned n);
 	// program must be active!
 	// remember to call clearBoundTextures() later on
 	bool bindTexture(int programId, const std::string & name, sf::Image const * image);
