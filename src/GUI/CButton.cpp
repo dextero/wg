@@ -8,6 +8,10 @@
 #include "../CGameOptions.h"
 #include "../Audio/CAudioManager.h"
 #include "../Input/CBindManager.h"
+#include "../Input/CPlayerController.h"
+#include "../Utils/KeyStrings.h"
+#include "../Logic/CPlayerManager.h"
+#include "../Logic/CPlayer.h"
 
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/Graphics/Sprite.hpp>
@@ -78,6 +82,25 @@ void CButton::SetText( const std::wstring& text )
 	mTextSprite->GetSFString()->SetText( text );
 }
 
+void CButton::SetText(const std::wstring& text, int playerNumber, int buttonNo)
+{
+    System::Input::CBindManager * bindManager = gBindManagerByPlayer(playerNumber);
+    if (bindManager->GetPointNClickMove()) {
+        return SetText(text);
+    }
+    std::string keyKey = "Abi-" + StringUtils::ToString(buttonNo);
+    std::string keyXKey = "AbiX-" + StringUtils::ToString(buttonNo);
+    std::string keyLabel;
+    
+    const std::map<std::string, int> & keys = bindManager->GetKeyBindings();
+    if (keys.count(keyKey) > 0) {
+        keyLabel = KeyStrings::KeyToString(keys.find(keyKey)->second);
+    } else if (keys.count(keyXKey) > 0) {
+        keyLabel = KeyStrings::KeyToString(keys.find(keyXKey)->second);
+    }
+    SetText(text + L" (press " + StringUtils::ConvertToWString(keyLabel) + L")");
+}
+
 std::wstring CButton::GetText()
 {
 	if ( mTextSprite )	return mTextSprite->GetSFString()->GetText();
@@ -119,6 +142,19 @@ CButton::~CButton()
 	if ( mTextSprite )		gDrawableManager.DestroyDrawable( mTextSprite );
 }
 
+static void ForceReleaseMouseButton()
+{
+    for (int i = 0 ; i <= 1; i++) {
+        System::Input::CBindManager::GetActualBindManager(i)->ForceMouseLeftReleased();
+        gBindManagerByPlayer(i)->SetKeyState("PointNClick", false);
+        if (CPlayer *p = gPlayerManager.GetPlayerByNumber(i)) {
+            if (CPlayerController *pc = p->GetController()) {
+                pc->SetWalkTarget(false, p->GetPosition(), true);
+            }
+        }
+    }
+}
+
 bool CButton::OnMouseEvent( float x, float y, mouseEvent e )
 {
     CGUIObject::OnMouseEvent(x, y, e);
@@ -127,15 +163,13 @@ bool CButton::OnMouseEvent( float x, float y, mouseEvent e )
 	{
 	case MOUSE_PRESSED_LEFT:
         mMousePressed = true;
-        System::Input::CBindManager::GetActualBindManager(0)->ForceMouseLeftReleased();
-        System::Input::CBindManager::GetActualBindManager(1)->ForceMouseLeftReleased();
+        ForceReleaseMouseButton();
         gAudioManager.GetSoundPlayer().Play(gResourceManager.GetSound("data/sounds/GUI_klik.ogg"));
 		break;
     case MOUSE_RELEASED_LEFT:
         if (mMousePressed)
         {
-            System::Input::CBindManager::GetActualBindManager(0)->ForceMouseLeftReleased();
-            System::Input::CBindManager::GetActualBindManager(1)->ForceMouseLeftReleased();
+            ForceReleaseMouseButton();
             gGUI.SetActiveObject( NULL );
 		    if ( !mClickCallback.empty() )		mClickCallback();
 		    if ( !mClickParamCallback.empty() ) mClickParamCallback( mClickCallbackParams );

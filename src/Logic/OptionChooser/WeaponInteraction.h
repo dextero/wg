@@ -48,12 +48,12 @@ class WeaponInteraction : public InteractionHandler
             CAbility * ability = gResourceManager.GetAbility(loot->GetItem()->GetAbility());
 
             GUI::CImageBox* weaponIcon = tooltip->GetCanvas()->CreateImageBox("weaponIcon");
-            weaponIcon->SetPosition(3.f, 45.f, 9.f, 9.f, GUI::UNIT_PERCENT, true);
+            weaponIcon->SetPosition(3.f, 35.f, 9.f, 9.f, GUI::UNIT_PERCENT, true);
             weaponIcon->AddImageToSequence(ability->icon);
             weaponIcon->SetSequenceState(0);
 
             GUI::CTextArea* weaponDescription = tooltip->GetCanvas()->CreateTextArea("weaponDescription");
-            weaponDescription->SetPosition(10.f, 45.f, 38.f, 20.f);
+            weaponDescription->SetPosition(10.f, 35.f, 38.f, 20.f);
             weaponDescription->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
             weaponDescription->SetText(GUI::CItemSlot::CreateWeaponDescription(ability, mLoot->GetItem(), mPlayer,
                     GUI::CItemSlot::MID_VERBOSITY));
@@ -94,16 +94,7 @@ class WeaponInteraction : public InteractionHandler
                 GUI::CButton * buttonReplace = tooltip->GetCanvas()->CreateButton("replace" + StringUtils::ToString(i));
                 buttonReplace->SetImage("data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png");
                 buttonReplace->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON"));
-                std::string keyKey = "Abi-" + StringUtils::ToString(i);
-                std::string keyXKey = "AbiX-" + StringUtils::ToString(i);
-                std::string keyLabel;
-                const std::map<std::string, int> & keys = gBindManagerByPlayer(mPlayer->GetNumber())->GetKeyBindings();
-                if (keys.count(keyKey) > 0) {
-                    keyLabel = KeyStrings::KeyToString(keys.find(keyKey)->second);
-                } else if (keys.count(keyXKey) > 0) {
-                    keyLabel = KeyStrings::KeyToString(keys.find(keyXKey)->second);
-                }
-                buttonReplace->SetText(buttonText + L" (press " + StringUtils::ConvertToWString(keyLabel) + L")");
+                buttonReplace->SetText(buttonText, mPlayer->GetNumber(), i);
                 buttonReplace->SetPosition(73.0f, 21.0f + (i * step), 27.0f, 6.0f);
                 buttonReplace->SetCenter(true);
                 buttonReplace->GetClickIntCallback()->bind(this, &WeaponInteraction::ReplaceButtonClicked);

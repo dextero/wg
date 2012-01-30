@@ -33,6 +33,7 @@ namespace GUI
 		void SetFont( const std::string& name, float size, guiUnit u = UNIT_PIXEL );
 		void SetColor( const sf::Color color );
 		void SetText( const std::wstring& text );
+        void SetText(const std::wstring& text, int playerNumber, int buttonNo);
         //@Deprecated:
 		void SetText( const SLocalizedText& text, std::string font );
 		void SetCenter( bool center );
