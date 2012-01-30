@@ -27,6 +27,7 @@ class ChestInteraction : public InteractionHandler
 
     public:        
         ChestInteraction(CInteractionTooltip * tooltip, CPlayer * player, CObstacle * chest) :
+            InteractionHandler(player),
                 mPlayer(player),
                 mChest(chest),
                 mTooltip(tooltip),
