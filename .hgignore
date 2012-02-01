@@ -12,6 +12,10 @@ data/maps/generated_tiles/.*
 build/vs2005/Debug/.*
 build/vs2005/Release/.*
 build/vs2005/.*\.user$
+build/vs2008/Debug/.*
+build/vs2008/Debug XP/.*
+build/vs2008/Release/.*
+build/vs2008/.*\.user$
 ^user.*
 WarlocksGauntlet.bin*
 .*\.exe$
