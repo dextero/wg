@@ -183,6 +183,12 @@ void CLogic::KeyPressed( const sf::Event::KeyEvent &e )
 			if ( mCurrentScreen != L"abilities1" )	{ newScreen = L"abilities1"; }
 			else									{ newScreen = L""; }
         }
+        // mapa
+        else if (e.Code == sf::Key::F5)
+        {
+			if ( mCurrentScreen != L"map" )	        { newScreen = L"map"; }
+			else									{ newScreen = L""; }
+        }
 
 
 		if ( mCurrentScreen != newScreen )

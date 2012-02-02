@@ -100,6 +100,12 @@ void CGameScreens::Show(const std::wstring &menu)
 #endif
 
 	else if ( menu == L"notepad" )		{ gNotepad.Show(); ShowCursor(); }
+    else if ( menu == L"map" ) {
+		Hide(L"hud");
+//        UpdateMap();
+        mMap->SetVisible(true);
+        ShowCursor();
+    }
 
     mSaveScreen->SetVisible(menu == L"load-game");
     mGameOver->SetVisible(menu == L"game-over");
@@ -155,6 +161,7 @@ void CGameScreens::Hide(const std::wstring &menu)
     else if ( menu == L"game-over" )	{ mGameOver->SetVisible( false ); ShowCursor(false); }
     else if ( menu == L"editor" )       { mEditorScreens->Hide(); ShowCursor(false); }
 	else if ( menu == L"notepad" )		{ gNotepad.Hide(); ShowCursor(false); }
+    else if ( menu == L"map")           { mMap->SetVisible(false); ShowCursor(false); }
 }
 
 void CGameScreens::HideAll()
@@ -177,6 +184,7 @@ void CGameScreens::HideAll()
     mInventory[0]->SetVisible(false);
     mInventory[1]->SetVisible(false);
 	gNotepad.Hide();
+    mMap->SetVisible(false);
     ShowCursor(false);
 }
 
@@ -198,6 +206,23 @@ void CGameScreens::UpdateHud(float dt)
 	mHud[1]->Update(dt);
 	mCompass->Update(dt);
     mBossHud->Update(dt);
+}
+
+void CGameScreens::InitMap()
+{
+    CWindow* wnd = gGUI.CreateWindow("map", true, Z_GUI3);
+    wnd->SetPosition(0.f, 0.f, 100.f, 100.f);
+	wnd->SetBackgroundImage( "data/GUI/paper-bkg.jpg" );
+    CButton* close = wnd->CreateButton("close-button", true, Z_GUI3 - 2);
+    close->SetPosition(91.5f, 2.5f, 5.f, 5.f * (float)gGameOptions.GetWidth() / (float)gGameOptions.GetHeight());
+    close->SetImage("data/GUI/bbtn-up.png", "data/GUI/bbtn-hover.png", "data/GUI/bbtn-down.png");
+    close->GetClickCallback()->bind(this, &CGameScreens::ReturnToGame);
+    // temp (wywalic po zmianie grafiki):
+    close->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+    close->SetText(L"X");
+    close->SetCenter(true);
+
+    mMap = wnd;
 }
 
 void CGameScreens::InitAbilities(unsigned playerNumber)
@@ -666,7 +691,8 @@ void CGameScreens::SetSlotAbility(unsigned int player, unsigned int slot, CAbili
 CGameScreens::CGameScreens()
 :	mGameOver( NULL ),
     mSaveScreen( NULL ),
-    mEditorScreens( NULL )
+    mEditorScreens( NULL ),
+    mMap(NULL)
 {
 	mHud[0] = mHud[1] = NULL;
 	mCompass = NULL;
@@ -685,6 +711,7 @@ CGameScreens::CGameScreens()
 	InitGameOver();
     InitInventory(0);
     InitInventory(1);
+    InitMap();
     mSaveScreen = new CSaveScreen(this);
     mEditorScreens = new CEditorScreens();
 	HideAll();
