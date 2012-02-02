@@ -33,6 +33,7 @@ namespace GUI
 		void InitHud();
 		void UpdateHud(float dt);
         void InitMap();
+        void UpdateMap();
 
 		void InitAbilities( unsigned playerNumber );
 		void UpdateAbilities( unsigned playerNumber );
@@ -73,7 +74,7 @@ namespace GUI
         CSaveScreen * mSaveScreen;
         CEditorScreens * mEditorScreens;
         CInventoryDisplayer * mInventory[2];
-		CGUIObject * mMap;
+		CWindow * mMap;
 	};
 };
 

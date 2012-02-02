@@ -292,13 +292,31 @@ namespace Map{
         EnterMap(map, region.empty() ? "entry" : region);
     }
 
+    const CWorldGraph & CMapManager::GetWorldGraph()
+    {
+        assert(mWorldGraph != NULL);
+        return (*mWorldGraph);
+    }
+
+    const std::string & CMapManager::GetCurrentMapId()
+    {
+        return mCurrentMapId;
+    }
+
+    void CMapManager::SetCurrentMapId(const std::string & mapId)
+    {
+        mCurrentMapId = mapId;
+    }
+
     void CMapManager::EnterMap(const std::string & mapId, const std::string & region) {
         if (FileUtils::FileExists(mapId)) { //i.e. mapId = "data/maps/town.xml"
+            mCurrentMapId = mapId;
             ScheduleSetMap(mapId, true, region);
             return;
         }
         std::string realFilename = GetWorldPath() + mapId + ".xml";
         if (FileUtils::FileExists(realFilename)) {
+            mCurrentMapId = mapId;
             ScheduleSetMap(realFilename, true, region.empty() ? "entry" : region);
             return;
         }
@@ -308,6 +326,7 @@ namespace Map{
             fprintf(stderr, "Error, EnterMap: can't find mapId=%s\n", mapId.c_str());
             return;
         }
+        mCurrentMapId = mapId;
         const CWorldGraphMap & mapDef = mWorldGraph->maps.find(mapId)->second;
         lastMapLevelHack = mLevel;
         mLevel = mapDef.level;

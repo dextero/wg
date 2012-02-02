@@ -29,6 +29,8 @@
 #include "Notepad/CNotepad.h"
 #include "Localization/CLocalizator.h"
 #include "Localization/GeneralKeys.h"
+#include "../Map/CWorldGraph.h"
+#include "../Map/CMapManager.h"
 #include "../CGameOptions.h"
 #include <algorithm>
 #undef CreateWindow
@@ -102,7 +104,7 @@ void CGameScreens::Show(const std::wstring &menu)
 	else if ( menu == L"notepad" )		{ gNotepad.Show(); ShowCursor(); }
     else if ( menu == L"map" ) {
 		Hide(L"hud");
-//        UpdateMap();
+        UpdateMap();
         mMap->SetVisible(true);
         ShowCursor();
     }
@@ -161,7 +163,7 @@ void CGameScreens::Hide(const std::wstring &menu)
     else if ( menu == L"game-over" )	{ mGameOver->SetVisible( false ); ShowCursor(false); }
     else if ( menu == L"editor" )       { mEditorScreens->Hide(); ShowCursor(false); }
 	else if ( menu == L"notepad" )		{ gNotepad.Hide(); ShowCursor(false); }
-    else if ( menu == L"map")           { mMap->SetVisible(false); ShowCursor(false); }
+    else if ( menu == L"map")           { mMap->SetVisible(false); this->Show(L"hud"); ShowCursor(false); }
 }
 
 void CGameScreens::HideAll()
@@ -200,12 +202,18 @@ void CGameScreens::InitHud()
     mBossHud->Init();
 }
 
+static float markerState = 0.0f;
+
 void CGameScreens::UpdateHud(float dt)
 {
 	mHud[0]->Update(dt);
 	mHud[1]->Update(dt);
 	mCompass->Update(dt);
     mBossHud->Update(dt);
+    CImageBox* marker = (CImageBox*)(mMap->FindObject("marker"));
+    markerState += dt;
+    if (markerState >= 2.0f) markerState = 0.0f;
+    marker->SetSequenceState(markerState >= 1.0f ? 2.0f - markerState : markerState);
 }
 
 void CGameScreens::InitMap()
@@ -222,7 +230,27 @@ void CGameScreens::InitMap()
     close->SetText(L"X");
     close->SetCenter(true);
 
+    CImageBox* content = wnd->CreateImageBox("content");
+    content->SetPosition(0.0f,9.0f,100.0f,83.0f);
+    content->AddImageToSequence("data/maps/world-map.png");
+    CImageBox* marker = content->CreateImageBox("marker");
+    marker->AddImageToSequence("data/GUI/transparent.png");
+    marker->AddImageToSequence("data/maps/world-map-mark.png");
+
     mMap = wnd;
+}
+
+void CGameScreens::UpdateMap()
+{
+    CImageBox* marker = (CImageBox*)(mMap->FindObject("marker"));
+    const CWorldGraph & worldGraph = gMapManager.GetWorldGraph();
+    const std::string & mapId = gMapManager.GetCurrentMapId();
+    if (worldGraph.maps.find(mapId) == worldGraph.maps.end()) {
+        return;
+    }
+    const CWorldGraphMap & mapDef = worldGraph.maps.find(mapId)->second;
+    const sf::Vector2f & mapPos = mapDef.mapPos;
+    marker->SetPosition(mapPos.x - 2.5f, mapPos.y - 2.5f, 5.0f, 5.0f, GUI::UNIT_PERCENT, false);
 }
 
 void CGameScreens::InitAbilities(unsigned playerNumber)
