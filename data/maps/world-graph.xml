@@ -30,116 +30,113 @@ legenda: d -> mingorian-desert
 							  
 							  
 	   
-	   
-	   
-	   
-	   
-	   
 -->	
-    <map id="f01" scheme="forest" level="1">
+	<map id="data/maps/town.xml" posx="49.0" posy="55.0"/>
+
+    <map id="f01" scheme="forest" level="1" posx="70.7" posy="77">
         <exit toMap="data/maps/town.xml" onBorder="north" toEntry="entry-s"/>
         <exit toMap="f02" onBorder="west" /> 
     </map>
-    <map id="f02" scheme="forest" level="2">
+    <map id="f02" scheme="forest" level="2" posx="62.7" posy="86.8">
         <exit toMap="f01" onBorder="east"/>
         <exit toMap="f04" onBorder="west"/>
     </map>
-    <map id="f03" scheme="forest" level="3">
+    <map id="f03" scheme="forest" level="3" posx="45.8" posy="81.3">
         <exit toMap="data/maps/town.xml" onBorder="north" toEntry="entry-sw"/>
         <exit toMap="f04" onBorder="south" /> 
     </map>
-    <map id="f04" scheme="forest" level="4">
+    <map id="f04" scheme="forest" level="4" posx="51" posy="95.2">
         <exit toMap="f02" onBorder="east"/>
         <exit toMap="f03" onBorder="north"/>
         <exit toMap="f05" onBorder="west"/>
     </map>
-    <map id="f05" scheme="forest" level="5">
+    <map id="f05" scheme="forest" level="5" posx="35.5" posy="88.5">
         <exit toMap="f04" onBorder="east"/>
         <exit toMap="f07" onBorder="north"/>
     </map>
-    <map id="f06" scheme="forest" level="6">
+    <map id="f06" scheme="forest" level="6" posx="24.7" posy="65.8">
         <exit toMap="data/maps/town.xml" onBorder="east" toEntry="entry-w"/>
         <exit toMap="f07" onBorder="south" /> 
         <exit toMap="f09" onBorder="west" /> 
     </map>
-    <map id="f07" scheme="forest" level="7">
+    <map id="f07" scheme="forest" level="7" posx="21.7" posy="81.8">
         <exit toMap="f05" onBorder="south"/>
         <exit toMap="f06" onBorder="north"/>
         <exit toMap="f08" onBorder="west"/>
     </map>
-    <map id="f08" scheme="forest" level="8">
+    <map id="f08" scheme="forest" level="8" posx="10.7" posy="79.6">
         <exit toMap="f07" onBorder="east"/>
         <exit toMap="f09" onBorder="north"/>
     </map>
-    <map id="f09" scheme="forest" level="9" boss="1">
+    <map id="f09" scheme="forest" level="9" boss="1" posx="6.8" posy="70.7">
         <exit toMap="f06" onBorder="east" blocked="true" />
         <exit toMap="f08" onBorder="south"/> 
         <exit toMap="d10" onBorder="north" blocked="true" />
     </map>
-    <map id="d10" scheme="desert" level="10">
+    <map id="d10" scheme="desert" level="10" posx="16.7" posy="54.4">
         <exit toMap="f09" onBorder="south"/>
         <exit toMap="d12" onBorder="north"/>
     </map>
-    <map id="d11" scheme="desert" level="11">
+    <map id="d11" scheme="desert" level="11" posx="30.3" posy="49.3">
         <exit toMap="data/maps/town.xml" onBorder="south" toEntry="entry-nw"/>
         <exit toMap="d12" onBorder="west"/>
     </map>
-    <map id="d12" scheme="desert" level="12">
+    <map id="d12" scheme="desert" level="12" posx="21.2" posy="38.9">
         <exit toMap="d10" onBorder="south"/>
         <exit toMap="d11" onBorder="east"/>
         <exit toMap="d13" onBorder="north"/>
     </map>
-    <map id="d13" scheme="desert" level="13">
+    <map id="d13" scheme="desert" level="13" posx="11.9" posy="23.6">
         <exit toMap="d12" onBorder="south"/>
         <exit toMap="d14" onBorder="north"/>
     </map>
-    <map id="d14" scheme="desert" level="14">
+    <map id="d14" scheme="desert" level="14" posx="18.8" posy="13">
         <exit toMap="d13" onBorder="south"/>
         <exit toMap="d15" onBorder="east"/>
     </map>
-    <map id="d15" scheme="desert" level="15">
+    <map id="d15" scheme="desert" level="15" posx="34.3" posy="21.7">
         <exit toMap="d14" onBorder="west"/>
         <exit toMap="d16" onBorder="east"/>
     </map>
-    <map id="d16" scheme="desert" level="16">
+    <map id="d16" scheme="desert" level="16" posx="43.8" posy="18.5">
         <exit toMap="d15" onBorder="west"/>
         <exit toMap="d17" onBorder="south"/>
     </map>
-    <map id="d17" scheme="desert" level="17" boss="1">
+    <map id="d17" scheme="desert" level="17" boss="1" posx="39.6" posy="36.1">
         <exit toMap="d16" onBorder="north"/> 
         <exit toMap="a18" onBorder="east" blocked="true" />
         <exit toMap="data/maps/town.xml" onBorder="south" toEntry="entry-n" blocked="true" />
     </map>
-    <map id="a18" scheme="arctic" level="18">
+    <map id="a18" scheme="arctic" level="18" posx="56.1" posy="26.3">
         <exit toMap="d17" onBorder="west"/>
         <exit toMap="a19" onBorder="east"/>
     </map>
-    <map id="a19" scheme="arctic" level="19">
+    <map id="a19" scheme="arctic" level="19" posx="64.9" posy="16.7">
         <exit toMap="a18" onBorder="west"/>
         <exit toMap="a20" onBorder="east"/>
     </map>
-    <map id="a20" scheme="arctic" level="20">
+    <map id="a20" scheme="arctic" level="20" posx="75.9" posy="13.3">
         <exit toMap="a19" onBorder="west"/>
         <exit toMap="a21" onBorder="south"/>
     </map>
-    <map id="a21" scheme="arctic" level="21">
+    <map id="a21" scheme="arctic" level="21" posx="70.8" posy="31">
         <exit toMap="a20" onBorder="north"/>
         <exit toMap="a22" onBorder="east"/>
     </map>
-    <map id="a22" scheme="arctic" level="22">
+    <map id="a22" scheme="arctic" level="22" posx="78.2" posy="34.1">
         <exit toMap="a21" onBorder="west"/>
         <exit toMap="a23" onBorder="south"/>
     </map>
-    <map id="a23" scheme="arctic" level="23" boss="1">
+    <map id="a23" scheme="arctic" level="23" boss="1" posx="69.7" posy="53.4">
         <exit toMap="a22" onBorder="north"/> 
         <exit toMap="a24" onBorder="east"/>
         <exit toMap="data/maps/town.xml" onBorder="west" toEntry="entry-e" blocked="true" />
     </map>
-    <map id="a24" scheme="arctic" level="24">
+    <map id="a24" scheme="arctic" level="24" posx="79.4" posy="58.9">
         <exit toMap="a23" onBorder="west"/>
         <exit toMap="a25" onBorder="east"/>
     </map>
-    <map id="a25" scheme="arctic" level="25" boss="1" final="1">
+    <map id="a25" scheme="arctic" level="25" boss="1" final="1" posx="85.4" posy="57.7">
 	    <exit toMap="a24" onBorder="west" />
 	</map>
 </root>

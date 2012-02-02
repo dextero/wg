@@ -5,6 +5,8 @@
 #include <map>
 #include <vector>
 
+#include <SFML/System/Vector2.hpp>
+
 struct CWorldGraphExit {
     std::string toMap;
     std::string onBorder;
@@ -19,6 +21,7 @@ struct CWorldGraphMap {
     std::vector<CWorldGraphExit> exits;
     std::string boss;
     bool final;
+    sf::Vector2f mapPos;
 };
 
 struct CWorldGraph {

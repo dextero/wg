@@ -22,6 +22,7 @@ void CommandNextMap(size_t argc, const std::vector<std::wstring> &argv);
 void CommandLoadStartingMap(size_t argc, const std::vector<std::wstring> &argv);
 void CommandSetMapLevel(size_t argc, const std::vector<std::wstring> &argv);
 void CommandRegisterMonsterAtLair(size_t argc, const std::vector<std::wstring> &argv);
+void CommandSetCurrentMapId(size_t argc, const std::vector<std::wstring> &argv);
 
  // na koncu musi byc {0,0,0}, bo sie wszystko ***
 CCommands::SCommandPair MapCommands [] =
@@ -40,6 +41,7 @@ CCommands::SCommandPair MapCommands [] =
     {L"delete-region"                   , "$MAN_DELETE_REGION"      , CommandDeleteRegion},
     {L"generate-random-map"             , "$MAN_GENERATE_RANDOM_MAP", CommandGenerateRandomMap},
     {L"register-monster-at-lair"        , "$MAN_REGISTER_MONSTER_AT_LAIR", CommandRegisterMonsterAtLair},
+    {L"set-current-map-id"              , "$MAN_SET_CURRENT_MAP_ID" , CommandSetCurrentMapId },
     {0,0,0}
 };
 
@@ -295,6 +297,15 @@ void CommandSetMapLevel(size_t argc, const std::vector<std::wstring> &argv)
     int newLevel = StringUtils::Parse<int>(argv[1]);
 
     gMapManager.SetLevel(newLevel);
+}
+
+void CommandSetCurrentMapId(size_t argc, const std::vector<std::wstring> &argv)
+{
+    if (argc < 2) {
+        gConsole.Printf(L"usage: %ls mapId", argv[0].c_str());
+        return;
+    }
+    gMapManager.SetCurrentMapId(StringUtils::ConvertToString(argv[1]));
 }
 
 void CommandRegisterMonsterAtLair(size_t argc, const std::vector<std::wstring> &argv)

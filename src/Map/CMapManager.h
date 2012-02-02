@@ -51,6 +51,7 @@ namespace Map{
         DefferedMapData mDefferedMapData; //for scheduled map changing
         std::string mLastEntryRegion;   // #1179 - nazwa regionu, z ktorego weszlismy na plansze
 
+        std::string mCurrentMapId; // id z worldGraphu
 	public:
 
 		CMapManager();
@@ -66,6 +67,10 @@ namespace Map{
 		void SetCurrentMapAsVisited();
         bool SetMap( const std::string &mapFile, bool loadCompleteMap, const std::string &region = "");
         void SetDefferedMap();
+
+        const CWorldGraph & GetWorldGraph();
+        const std::string & GetCurrentMapId();
+        void SetCurrentMapId(const std::string & mapId);
 
         void EnterMap(const std::string & mapId, const std::string & region);
         void LoadStartingMap();
