@@ -31,7 +31,7 @@ legenda: d -> mingorian-desert
 							  
 	   
 -->	
-	<map id="data/maps/town.xml" posx="49.0" posy="55.0"/>
+	<map id="data/maps/town.xml" posx="48.2" posy="55.5"/>
 
     <map id="f01" scheme="forest" level="1" posx="70.7" posy="77">
         <exit toMap="data/maps/town.xml" onBorder="north" toEntry="entry-s"/>
