@@ -220,19 +220,25 @@ void CGameScreens::InitMap()
 {
     CWindow* wnd = gGUI.CreateWindow("map", true, Z_GUI3);
     wnd->SetPosition(0.f, 0.f, 100.f, 100.f);
-	wnd->SetBackgroundImage( "data/GUI/paper-bkg.jpg" );
-    CButton* close = wnd->CreateButton("close-button", true, Z_GUI3 - 2);
+
+	CImageBox* borders = wnd->CreateImageBox("map-borders", true, Z_GUI3 - 2);
+	borders->SetPosition(0.0f, 0.0f, 100.0f, 100.0f);
+	borders->AddImageToSequence( "data/GUI/empty-borders.png" );
+
+    CButton* close = borders->CreateButton("close-button");
     close->SetPosition(91.5f, 2.5f, 5.f, 5.f * (float)gGameOptions.GetWidth() / (float)gGameOptions.GetHeight());
     close->SetImage("data/GUI/bbtn-up.png", "data/GUI/bbtn-hover.png", "data/GUI/bbtn-down.png");
     close->GetClickCallback()->bind(this, &CGameScreens::ReturnToGame);
+
     // temp (wywalic po zmianie grafiki):
     close->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
     close->SetText(L"X");
     close->SetCenter(true);
 
     CImageBox* content = wnd->CreateImageBox("content");
-    content->SetPosition(0.0f,9.0f,100.0f,83.0f);
+    content->SetPosition(0.0f,7.0f,100.0f,86.0f);
     content->AddImageToSequence("data/maps/world-map.png");
+
     CImageBox* marker = content->CreateImageBox("marker");
     marker->AddImageToSequence("data/GUI/transparent.png");
     marker->AddImageToSequence("data/maps/world-map-mark.png");
