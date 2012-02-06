@@ -42,3 +42,12 @@ print("<title>".$pageTitle."</title>\n");
 			print("<img src=\"img/indiedb.png\" alt=\"IndieDB\" title=\"".$title."\" border=\"0\">");
 		?>
 	</a>
+	<a href="http://www.desura.com/games/warlocks-gauntlet">
+	    <?php
+			switch ($lang) {
+				case 'en' : $title = "See WG on Desura"; break; 
+				case 'pl' : $title = "WG na Desurze"; break;
+			}
+			print("<img src=\"http://media.desura.com/images/global/desura.png\" alt=\"Desura\" title=\"".$title."\" border=\"0\">");
+		?>
+	</a>
