@@ -956,14 +956,38 @@ bool CRandomMapGenerator::PlaceLights()
 
     static const unsigned int LIGHT_COUNT = 13;
 
+    std::vector<std::pair<sf::Vector2f, float> > lights;
+
     for (unsigned int i = 0; i < LIGHT_COUNT; ++i) {
         // znalezienie wolnego pola
         sf::Vector2i pos;
-        do
-            pos = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
-        while (mCurrent[pos.x][pos.y] != FREE ||
-                (std::min(mDesc.sizeX, mDesc.sizeY) > mDesc.minMonsterDist * 2.f &&     // jesli mapa nie ma rozmiaru przynajmniej 2*minMonsterDist, to olej sprawdzanie odleglosci
+        unsigned int guard = 0;
+        bool distantEnough;
+
+        do {
+            distantEnough = true;
+
+            do
+                pos = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
+            while (mCurrent[pos.x][pos.y] != FREE ||
+                    (std::min(mDesc.sizeX, mDesc.sizeY) > mDesc.minMonsterDist * 2.f &&     // jesli mapa nie ma rozmiaru przynajmniej 2*minMonsterDist, to olej sprawdzanie odleglosci
                 Maths::LengthSQ(sf::Vector2f((float)(pos.x - mEntryPos.x), (float)(pos.y - mEntryPos.y))) <= mDesc.minMonsterDist * mDesc.minMonsterDist) );
+
+            // nie za blisko innych swiatel?
+            for (size_t i = 0; i < lights.size(); ++i)
+                if (Maths::LengthSQ(sf::Vector2f((float)(pos.x) - lights[i].first.x, (float)(pos.y) - lights[i].first.y)) < lights[i].second * lights[i].second)
+                {
+                    distantEnough = false;
+                    break;
+                }
+
+            // zabezpieczenie przed zapetleniem
+            if (++guard > 100)
+            {
+                fprintf(stderr, "warning: placed only %d/%d lights, continuing...\n", lights.size(), LIGHT_COUNT);
+                return true;
+            }
+        } while (!distantEnough);
 
         //todo: generowac pole z dala od juz wygenerowanych swiatel...
 
@@ -976,6 +1000,15 @@ bool CRandomMapGenerator::PlaceLights()
         int blue = gRand.Rnd(40, 255);
         float radius = gRand.Rndf(3.0f, 10.0f);
 
+        // przesuniecie koloru w strone niebieskiego
+        if (mDesc.set == "arctic")
+        {
+            red /= 3;
+            green /= 2;
+            blue = Maths::ClampInt(blue + 50, 0, 255);
+        }
+
+        lights.push_back(std::make_pair(sf::Vector2f((float)pos.x + offsetX, (float)pos.y + offsetY), radius));
         mXmlText << "\t<light x=\"" << (float)pos.x + offsetX
                     << "\" y=\"" << (float)pos.y + offsetY
                     << "\" radius=\"" << radius
