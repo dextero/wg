@@ -78,7 +78,7 @@ legenda: d -> mingorian-desert
         <exit toMap="d12" onBorder="north"/>
     </map>
     <map id="d11" scheme="desert" level="11" posx="30.3" posy="49.3">
-        <exit toMap="data/maps/town.xml" onBorder="south" toEntry="entry-nw"/>
+        <exit toMap="data/maps/town.xml" onBorder="east" toEntry="entry-nw"/>
         <exit toMap="d12" onBorder="west"/>
     </map>
     <map id="d12" scheme="desert" level="12" posx="21.2" posy="38.9">
