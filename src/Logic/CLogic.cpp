@@ -354,11 +354,14 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
     // hm, jesli ktos wczyta gre i ja od razu zapisze na tej samej mapie, to mogloby skasowac plik i kopiowac nicosc
     if (savedMapFile != gMapManager.GetCurrent()->GetFilename())
     {
+        fprintf(stderr, "remove %s\n", savedMapFile.c_str());
         boost::filesystem::remove(savedMapFile);
         boost::filesystem::copy_file(gMapManager.GetCurrent()->GetFilename(), savedMapFile);
+        fprintf(stderr, "copy_file %s -> %s\n", gMapManager.GetCurrent()->GetFilename().c_str(), savedMapFile.c_str());
 
         // poniewaz zmienila sie mapa, trzeba wymusic jej reload w ResourceManagerze
         gResourceManager.DropResource(savedMapFile);
+        fprintf(stderr, "droppedResource %s\n", savedMapFile.c_str());
     }
 
 	float xp = 0.0f;
@@ -456,7 +459,6 @@ void CLogic::PrepareToSaveGame(const std::string & filename, bool savePlayerPos)
         ss << "move-players-to-region " << gMapManager.GetLastEntryRegion() << "\n";
 
 	ss << "exec post-new-game\n";
-    //tox, 27 maja: todo: uwzgledniac crimson-mode
 	mSaveGameStr = ss.str();
 }
 
@@ -537,6 +539,7 @@ void CLogic::SaveMapStateToFile(const std::string& file)
     std::ofstream f(file.c_str());
     if (f.is_open())
     {
+        fprintf(stderr, "saving state to file %s\n", file.c_str());
         SaveMapState(f);
         f.close();
     }
@@ -552,6 +555,7 @@ void CLogic::SaveGame(const std::string & name, bool thumbnail, bool savePlayerP
 	FILE *outfile = fopen(name.c_str(), "w");
     if ( !outfile )
 		return;
+    fprintf(stderr, "zapis do %s\n", name.c_str());
 	fputs(mSaveGameStr.c_str(), outfile); 
 	fclose(outfile);
 
@@ -597,8 +601,9 @@ void CLogic::LoadGame(const std::string & name)
     size_t lastSlash = name.find_last_of("/\\");
     std::string scriptsFolder = (lastSlash != std::string::npos ? name.substr(lastSlash + 1) : name);
 
-    if (RestoreWorldStateScripts(gMapManager.GetWorldsDirPath() + scriptsFolder))
-        fprintf(stderr, "Error: couldn't restore world state scripts\n");
+    if (!RestoreWorldStateScripts(gMapManager.GetWorldsDirPath() + scriptsFolder)) {
+        fprintf(stderr, "Error: couldn't restore world state scripts in %s\n", std::string(gMapManager.GetWorldsDirPath() + scriptsFolder).c_str());
+    }
 
 	mState = L"playing";
 	mMenuScreens.HideAll();
@@ -616,18 +621,23 @@ bool CLogic::StoreWorldStateScripts(const std::string& toDirectory)
         // wyczysc folder przed kopiowaniem
         if (boost::filesystem::exists(toDirectory))
         {
-            for (it = boost::filesystem::directory_iterator(toDirectory); it != end; ++it)
+            for (it = boost::filesystem::directory_iterator(toDirectory); it != end; ++it) {
                 boost::filesystem::remove(it->path());
+                fprintf(stderr, "remove %s\n", it->string().c_str());
+            }
         }
         else
         {
             boost::filesystem::create_directory(toDirectory);
+            fprintf(stderr, "create_directory %s\n", toDirectory.c_str());
         }
 
         // skopiuj 'swiat'
         for (it = boost::filesystem::directory_iterator(gMapManager.GetWorldPath()); it != end; ++it)
         {
-            boost::filesystem::copy_file(it->path(), toDirectory + "/" + it->leaf());
+            std::string dest = toDirectory + "/" + it->leaf();
+            boost::filesystem::copy_file(it->path(), dest);
+            fprintf(stderr, "copy_file %s -> %s\n", it->string().c_str(), dest.c_str());
         }
 
         return true;
@@ -643,23 +653,31 @@ bool CLogic::RestoreWorldStateScripts(const std::string& fromDirectory)
 
     if (boost::filesystem::exists(outPath))
     {
+        fprintf(stderr, "exists %s\n", outPath.c_str());
         boost::filesystem::directory_iterator it, end;
         
         // usun wszystko z folderu current przed kopiowaniem
-        for (it = boost::filesystem::directory_iterator(gMapManager.GetWorldPath()); it != end; ++it)
+        for (it = boost::filesystem::directory_iterator(gMapManager.GetWorldPath()); it != end; ++it) {
             boost::filesystem::remove(it->path());
+            fprintf(stderr, "remove %s\n", it->string().c_str());
+        }
 
         // skopiuj skrypty .console
         for (it = boost::filesystem::directory_iterator(fromDirectory); it != end; ++it)
         {
             const std::string filePath = outPath + "/" + it->leaf();
-            if (boost::filesystem::exists(filePath))
+            if (boost::filesystem::exists(filePath)) {
                 boost::filesystem::remove(filePath);
+                fprintf(stderr, "remove %s\n", filePath.c_str());
+            }
 
             boost::filesystem::copy_file(it->path(), filePath);
+            fprintf(stderr, "copy_file %s -> %s\n", it->string().c_str(), filePath.c_str());
         }
 
         return true;
+    } else {
+        fprintf(stderr, "not exists %s\n", outPath.c_str());
     }
 
     // folder swiata nie istnieje, wtf?

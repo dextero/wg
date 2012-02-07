@@ -26,6 +26,7 @@
 template<> Map::CMapManager* CSingleton<Map::CMapManager>::msSingleton = 0;
 
 static int lastMapLevelHack = -1;
+std::string lastMapIdHack = "-1";
 
 namespace Map{
 
@@ -81,8 +82,15 @@ namespace Map{
 	{
 		if ( m_map != NULL )
 		{
+            fprintf(stderr, "SetCurrentMapAsVisited() %s\n", lastMapIdHack.c_str());
             // zapisz stan mapy, jesli juz z niej wychodzimy
-            std::string mapStateFile = m_map->GetFilename();
+            std::string mapStateFile;
+            if (lastMapIdHack == "-1") { // fallback
+                std::string mapStateFile = m_map->GetFilename();
+            } else {
+                mapStateFile = GetWorldPath() + lastMapIdHack + ".xml"; //hack hack
+                lastMapIdHack = mCurrentMapId;
+            }
             if (mapStateFile.size() > 10 && mapStateFile.substr(0, 10) == "data/maps/")
             {
                 // zamien \ i / na _, jesli mapa jest 'statyczna' (#1164)
@@ -93,7 +101,6 @@ namespace Map{
                 mapStateFile = GetWorldPath() + mapStateFile;   // i dopisz na poczatku sciezke do userDir/$world
             }
 
-            fprintf(stderr, "SaveMapStateToFile, skill = %d\n", GetLevel());
             gLogic.SaveMapStateToFile(mapStateFile + ".console");
 
 			gEditor.SetSelectedToErase( NULL );
@@ -137,7 +144,7 @@ namespace Map{
         if (lastMapLevelHack != -1) { //zeby sie zapisal poprawny level w odwiedzonej mapie
             int currMapLevel = mLevel;
             mLevel = lastMapLevelHack;
-    		SetCurrentMapAsVisited();
+            SetCurrentMapAsVisited();
             mLevel = currMapLevel;
             lastMapLevelHack = -1;
         } else {
@@ -167,11 +174,15 @@ namespace Map{
 
         // jesli istnieje plik z zapisanym stanem mapy, to nie laduj calej mapy, tylko przywroc to co bylo
         bool mapStateFileExists = FileUtils::FileExists(mapStateFile);
+        fprintf(stderr, "mapStateFileExists %s exists ? %d\n", mapStateFile.c_str(), int(mapStateFileExists));
         loadCompleteMap = loadCompleteMap && !mapStateFileExists;
+        fprintf(stderr, "mapStateFile %s, load it ? %d\n", mapStateFile.c_str(), (int)loadCompleteMap);
 
         // fix na #1177 - duplikaty przedmiotow po powrocie na mape
-        if (mapStateFileExists)
+        if (mapStateFileExists) {
+            fprintf(stderr, "dropping resource %s\n", mapFile.c_str());
             gResourceManager.DropResource(mapFile);
+        }
 
 		m_map = gResourceManager.GetMap( mapFile );
 		if ( m_map )
@@ -204,8 +215,10 @@ namespace Map{
             gLogic.GetGameScreens()->Show(L"hud");
 
             // odpal skrypt zawierajacy zapisany stan mapy, jesli taki istnieje (i jest taka potrzeba)
-            if (!loadCompleteMap && mapStateFileExists)
+            if (!loadCompleteMap && mapStateFileExists) {
+                fprintf(stderr, "exec %s\n", mapStateFile.c_str());
                 gCommands.ParseCommand(L"exec " + StringUtils::ConvertToWString(mapStateFile));
+            }
 
             gCommands.ParseCommand(L"load-playlist data/music/testpl.xml");
 
@@ -306,6 +319,7 @@ namespace Map{
     void CMapManager::SetCurrentMapId(const std::string & mapId)
     {
         mCurrentMapId = mapId;
+        lastMapIdHack = mCurrentMapId;
     }
 
     void CMapManager::EnterMap(const std::string & mapId, const std::string & region) {
