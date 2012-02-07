@@ -597,8 +597,9 @@ void CLogic::LoadGame(const std::string & name)
     size_t lastSlash = name.find_last_of("/\\");
     std::string scriptsFolder = (lastSlash != std::string::npos ? name.substr(lastSlash + 1) : name);
 
-    if (RestoreWorldStateScripts(gMapManager.GetWorldsDirPath() + scriptsFolder))
-        fprintf(stderr, "Error: couldn't restore world state scripts\n");
+    if (!RestoreWorldStateScripts(gMapManager.GetWorldsDirPath() + scriptsFolder)) {
+        fprintf(stderr, "Error: couldn't restore world state scripts in %s\n", std::string(gMapManager.GetWorldsDirPath() + scriptsFolder).c_str());
+    }
 
 	mState = L"playing";
 	mMenuScreens.HideAll();

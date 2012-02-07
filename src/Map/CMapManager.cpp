@@ -26,6 +26,7 @@
 template<> Map::CMapManager* CSingleton<Map::CMapManager>::msSingleton = 0;
 
 static int lastMapLevelHack = -1;
+std::string lastMapIdHack = "-1";
 
 namespace Map{
 
@@ -82,7 +83,13 @@ namespace Map{
 		if ( m_map != NULL )
 		{
             // zapisz stan mapy, jesli juz z niej wychodzimy
-            std::string mapStateFile = m_map->GetFilename();
+            std::string mapStateFile;
+            if (lastMapIdHack == "-1") { // fallback
+                std::string mapStateFile = m_map->GetFilename();
+            } else {
+                mapStateFile = GetWorldPath() + lastMapIdHack + ".xml"; //hack hack
+                lastMapIdHack = mCurrentMapId;
+            }
             if (mapStateFile.size() > 10 && mapStateFile.substr(0, 10) == "data/maps/")
             {
                 // zamien \ i / na _, jesli mapa jest 'statyczna' (#1164)
@@ -306,6 +313,7 @@ namespace Map{
     void CMapManager::SetCurrentMapId(const std::string & mapId)
     {
         mCurrentMapId = mapId;
+        lastMapIdHack = mCurrentMapId;
     }
 
     void CMapManager::EnterMap(const std::string & mapId, const std::string & region) {
