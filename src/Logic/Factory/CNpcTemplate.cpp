@@ -10,6 +10,9 @@
 #include "../../ResourceManager/CResourceManager.h"
 #include "../CActor.h"
 #include "../CNpc.h"
+#include "../../Map/CRandomMapGenerator.h"
+#include "../CPlayerManager.h"
+#include "../CPlayer.h"
 
 using namespace rapidxml;
 using namespace StringUtils;
@@ -48,6 +51,13 @@ CNpc* CNpcTemplate::Create(std::wstring id)
 
 	for ( unsigned i = 0; i < mDialogs.size(); i++ )
 		npc->GetDialogGraph()->AddDialogFile( mDialogs[i] );
+
+    int level = 0;
+    for (unsigned int i = 0; i < gPlayerManager.GetPlayerCount(); ++i)
+        level += gPlayerManager.GetPlayerByNumber(0)->GetLevel();
+    level /= gPlayerManager.GetPlayerCount();
+
+    npc->SetSellingItem(gRandomMapGenerator.GetRandomWeaponFile(level));
 
 	return npc;
 }
