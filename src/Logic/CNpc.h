@@ -21,6 +21,10 @@ protected:
     CInteractionTooltip * mInteractionTooltip;
     std::string mSellingItem;
     int mSellingPrice;
+    bool mHasShop;
+
+    static std::string mHints[];
+    static unsigned int mHintsCount;
 
 public:
 	virtual void Update(float dt);
@@ -35,6 +39,9 @@ public:
 
     inline int GetSellingPrice() { return mSellingPrice; }
     inline void SetSellingPrice(int price) { mSellingPrice = price; }
+
+    inline bool HasShop() { return mHasShop; }
+    inline void SetHasShop(bool shop) { mHasShop = shop; }
 
 private:
 	CDialogGraph mDialogGraph;
