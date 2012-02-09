@@ -1,8 +1,8 @@
 <root type="enemy">
 
   <bestiary>
-    <name value="Beholder" />
-    <desc value="Beholder description" />
+    <name value="$BESTIARY_BEHOLDER_NAME" />
+    <desc value="$BESTIARY_BEHOLDER_DESC" />
   </bestiary>
   <genre>beholder</genre>
 
