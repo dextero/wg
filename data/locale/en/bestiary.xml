@@ -13,7 +13,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_BEE_DESC</key>
-		<value>A gigantic bee, or maybe a wasp? The hero's movements are slowed down by her stings, so a large number of them could mean serious trouble. They're usually found near Hornets.</value>
+		<value>A gigantic bee, or maybe a wasp? The hero&apos;s movements are slowed down by her stings, so a large number of them could mean serious trouble. They&apos;re usually found near Hornets.</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_BLIND_PINCER_NAME</key>
@@ -29,7 +29,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_CHITYNIAK_DESC</key>
-		<value>An armored rodent-insect hybrid. It's fast and poisonous. A single Chitin warrior should be easy to keep at a distance; a group, however, could easily corner and overwhelm the unsuspecting adventurer.</value>
+		<value>An armored rodent-insect hybrid. It&apos;s fast and poisonous. A single Chitin warrior should be easy to keep at a distance; a group, however, could easily corner and overwhelm the unsuspecting adventurer.</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_CHITYNIAK_PLWACZ_NAME</key>
@@ -45,7 +45,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_COCKROACH_DESC</key>
-		<value>Cockroach - warrior. Armored, cunning, fast, master fencer - all this adds up to a formidable opponent. Don't even try to stomp on him.</value>
+		<value>Cockroach - warrior. Armored, cunning, fast, master fencer - all this adds up to a formidable opponent. Don&apos;t even try to stomp on him.</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_COW_NAME</key>
@@ -53,7 +53,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_COW_DESC</key>
-		<value>It's a cow. What'd you expect? It'll probably try to eat, which is kind of unusual, but this is a bestiary after all.</value>
+		<value>It&apos;s a cow. What&apos;d you expect? It&apos;ll probably try to eat, which is kind of unusual, but this is a bestiary after all.</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_CRAWLER_NAME</key>
@@ -61,7 +61,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_CRAWLER_DESC</key>
-		<value>Majestic, heavily armored insectoid. It might be a bit slow, but it's mass and resistance to damage make it an opponent to be reckoned with.</value>
+		<value>Majestic, heavily armored insectoid. It might be a bit slow, but it&apos;s mass and resistance to damage make it an opponent to be reckoned with.</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_CRAWLER_KAMIKADZE_NAME</key>
@@ -69,7 +69,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_CRAWLER_KAMIKADZE_DESC</key>
-		<value>The mentally handicapped but explosively packed younger brother of the Crawler. He's fast, but weak and less armored - be sure to aim well.</value>
+		<value>The mentally handicapped but explosively packed younger brother of the Crawler. He&apos;s fast, but weak and less armored - be sure to aim well.</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_EARLY_NAME</key>
@@ -77,7 +77,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_EARLY_DESC</key>
-		<value>Don't be fooled by his cudly appearance - this monster will happily bash your head in whenever he hears you. He'll destroy your mana reserves, too.</value>
+		<value>Don&apos;t be fooled by his cudly appearance - this monster will happily bash your head in whenever he hears you. He&apos;ll destroy your mana reserves, too.</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_EARWIGLE_NAME</key>
@@ -125,7 +125,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_HEALER_GHOST_DESC</key>
-		<value>This is a monster? I don't think so. It heals the player, doesn't try to eat him... definitely not a monster. Then what's it doing in the bestiary, eh?</value>
+		<value>This is a monster? I don&apos;t think so. It heals the player, doesn&apos;t try to eat him... definitely not a monster. Then what&apos;s it doing in the bestiary, eh?</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_HORNET_NAME</key>
@@ -133,7 +133,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_HORNET_DESC</key>
-		<value>An extremely dangerous hornet-rodent hybrid. A flock of these would be really hard to beat, since they're quite speedy and resistant. What's more, their venom cripples and slows down the victim.</value>
+		<value>An extremely dangerous hornet-rodent hybrid. A flock of these would be really hard to beat, since they&apos;re quite speedy and resistant. What&apos;s more, their venom cripples and slows down the victim.</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_HORNY_NAME</key>
@@ -181,7 +181,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_OGRE_BOSS1_DESC</key>
-		<value>A huge beast, as large (and strong) as a herd of bulls. Thankfully he isn't very smart, and only attacks in melee - but woe be to anyone caught in between his muscular arms.</value>
+		<value>A huge beast, as large (and strong) as a herd of bulls. Thankfully he isn&apos;t very smart, and only attacks in melee - but woe be to anyone caught in between his muscular arms.</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_OGRE_BOSS2_NAME</key>
@@ -213,7 +213,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_OGRE_WIFE_DESC</key>
-		<value>The ogrette, as the eastern magi call her, is a strong, loud, hateful monster full of spite and malice. Not exactly smart, though. Just keep your distance and you'll be fine.</value>
+		<value>The ogrette, as the eastern magi call her, is a strong, loud, hateful monster full of spite and malice. Not exactly smart, though. Just keep your distance and you&apos;ll be fine.</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_RAT_NAME</key>
@@ -221,7 +221,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_RAT_DESC</key>
-		<value>The overgrown rat, or rather rats - it's rare to find only one of these - are weak, but many. Use area-of-effect spells to get rid of any pesky horde.</value>
+		<value>The overgrown rat, or rather rats - it&apos;s rare to find only one of these - are weak, but many. Use area-of-effect spells to get rid of any pesky horde.</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_RAT_GREEN_NAME</key>
@@ -229,7 +229,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_RAT_GREEN_DESC</key>
-		<value>Similar to ye olde rat, this greenish-coloured vermin carries the plague. It's attacks are weaker, but they poison the victim.</value>
+		<value>Similar to ye olde rat, this greenish-coloured vermin carries the plague. It&apos;s attacks are weaker, but they poison the victim.</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_REDBALDY_NAME</key>
@@ -285,7 +285,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_TIMBERMAN_DESC</key>
-		<value>This timberman tries to chop the player to pieces, since the development team didn't code NPCs into the game. Maybe one day he'll be able to give us a quest?</value>
+		<value>This timberman tries to chop the player to pieces, since the development team didn&apos;t code NPCs into the game. Maybe one day he&apos;ll be able to give us a quest?</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_TIMBERMAN_WITH_AXE_NAME</key>
@@ -301,7 +301,7 @@
 	</entry>
 	<entry>
 		<key>BESTIARY_TIMBERMAN_WITH_KNIFE_DESC</key>
-		<value>This is what happens when you disturb someone while they're making breakfast - they run around trying to stab you in the eye with a bread knife. What a world.</value>
+		<value>This is what happens when you disturb someone while they&apos;re making breakfast - they run around trying to stab you in the eye with a bread knife. What a world.</value>
 	</entry>
 	<entry>
 		<key>BESTIARY_TROLL_NAME</key>
@@ -374,5 +374,13 @@
 	<entry>
 		<key>BESTIARY_CARROT_DESC</key>
 		<value>Toxic flying carrot, comes in batches.</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_BEHOLDER_NAME</key>
+		<value>Beholder</value>
+	</entry>
+	<entry>
+		<key>BESTIARY_BEHOLDER_DESC</key>
+		<value>It may be slow, but it&apos;s often surrounded by minions and uses a deadly piercing laser attack.</value>
 	</entry>
 </root>
