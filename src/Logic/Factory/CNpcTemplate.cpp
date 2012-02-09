@@ -57,7 +57,9 @@ CNpc* CNpcTemplate::Create(std::wstring id)
         level += gPlayerManager.GetPlayerByNumber(0)->GetLevel();
     level /= gPlayerManager.GetPlayerCount();
 
-    npc->SetSellingItem(gRandomMapGenerator.GetRandomWeaponFile(level));
+    int price;
+    npc->SetSellingItem(gRandomMapGenerator.GetRandomWeaponFile(level, &price));
+    npc->SetSellingPrice(price);
 
 	return npc;
 }

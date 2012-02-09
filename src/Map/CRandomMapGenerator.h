@@ -96,6 +96,7 @@ public:
         std::string tags;
         float frequency;
         float bossTriggerRadius;
+        int weaponPrice;
 
         std::string bossTriggerAI, bossPlaylist;
         SPhysical(
@@ -108,10 +109,11 @@ public:
                 float frequency = 0.0f,
                 float bossTriggerRadius = 0.f,
                 std::string bossTriggerAI = "",
-                std::string bossPlaylist = ""
+                std::string bossPlaylist = "",
+                int weaponPrice = 0
                 ) :            
             type(type), file(file), minLevel(minLevel), maxLevel(maxLevel), lootLevel(lootLevel), tags(tags), frequency(frequency),
-            bossTriggerRadius(bossTriggerRadius), bossTriggerAI(bossTriggerAI), bossPlaylist(bossPlaylist) {}
+            bossTriggerRadius(bossTriggerRadius), bossTriggerAI(bossTriggerAI), bossPlaylist(bossPlaylist), weaponPrice(weaponPrice) {}
     };
     typedef std::vector<SPhysical> PhysicalsVector;
 private:
@@ -189,7 +191,7 @@ public:
                                 const std::string & bottomRight,
                                 unsigned int mask);
 
-    std::string GetRandomWeaponFile(int level);
+    std::string GetRandomWeaponFile(int level, int* outCost);
 
 	std::string GetSetForLevel(unsigned int level);
 
