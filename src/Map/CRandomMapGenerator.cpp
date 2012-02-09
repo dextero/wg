@@ -111,9 +111,12 @@ CRandomMapGenerator::SPhysical ChooseRandomlyRegardingFrequency(const PhysicalsV
     }
 }
 
-std::string CRandomMapGenerator::GetRandomWeaponFile(int level) {
+std::string CRandomMapGenerator::GetRandomWeaponFile(int level, int* outCost) {
     PhysicalsVector weapons = FilterByLevel(FilterByType(mPhysicals, "weapon"), level);
     SPhysical weapon = ChooseRandomlyRegardingFrequency(weapons);
+    if (outCost != NULL)
+        *outCost = weapon.weaponPrice;
+
     return weapon.file;
 }
 
@@ -1249,7 +1252,7 @@ CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability,
 
     CLoot * loot = dynamic_cast<CLootTemplate*>(gResourceManager.GetPhysicalTemplate(lootTemplateFile))->Create();
     if (loot->GetGenre() == L"weapon") { //a moze "random weapon" ?
-        const std::string ability = GetRandomWeaponFile(mDesc.level);
+        const std::string ability = GetRandomWeaponFile(mDesc.level, NULL);
         loot->SetAbility(ability);
     }
     if (!lootDef.lootLevel.empty()) {
@@ -1310,7 +1313,7 @@ bool CRandomMapGenerator::PlaceLoots()
             int lootLevel = CalculateLootLevel(lootDef.lootLevel);
             // brzydki hak:
             if (lootTemplateFile == "data/loots/weapon.xml") {
-                const std::string ability = GetRandomWeaponFile(mDesc.level);
+                const std::string ability = GetRandomWeaponFile(mDesc.level, NULL);
                 mXmlText << "\t<obj templateFile=\"" << lootTemplateFile << "\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\" ><ability>" << ability << "</ability></obj>\n";
             } else {
                 mXmlText << "\t<obj templateFile=\"" << lootTemplateFile << "\" x=\"" << tile.x + offsetX << "\" y=\"" << tile.y + offsetY << "\"";
@@ -1483,8 +1486,9 @@ bool CRandomMapGenerator::LoadPartSets(const std::string& filename)
             float bossTriggerRadius = xml.GetFloat(n, "trigger-radius");
             std::string bossTriggerAI = xml.GetString(n, "trigger-ai");
             std::string bossPlaylist = xml.GetString(n, "trigger-playlist");
+            int price = xml.GetInt(n, "price");
 
-            mPhysicals.push_back(SPhysical(type, file, minLevel, maxLevel, lootLevel, tags, frequency, bossTriggerRadius, bossTriggerAI, bossPlaylist)); // bleee, brzydkie - uzyc pattern Buildera
+            mPhysicals.push_back(SPhysical(type, file, minLevel, maxLevel, lootLevel, tags, frequency, bossTriggerRadius, bossTriggerAI, bossPlaylist, price)); // bleee, brzydkie - uzyc pattern Buildera
         }
     }
 
