@@ -52,23 +52,18 @@ CNpc* CNpcTemplate::Create(std::wstring id)
 	for ( unsigned i = 0; i < mDialogs.size(); i++ )
 		npc->GetDialogGraph()->AddDialogFile( mDialogs[i] );
 
-    int level = 0;
-    for (unsigned int i = 0; i < gPlayerManager.GetPlayerCount(); ++i)
-        level += gPlayerManager.GetPlayerByNumber(0)->GetLevel();
-    level /= gPlayerManager.GetPlayerCount();
-
-    int price;
-    npc->SetSellingItem(gRandomMapGenerator.GetRandomWeaponFile(level, &price));
-    npc->SetSellingPrice(price);
-
 	return npc;
 }
 
 CTemplateParam * CNpcTemplate::ReadParam(CXml & xml, rapidxml::xml_node<> * node, CTemplateParam * orig) {
     if (orig == NULL) orig = new CTemplateParam();
+
     std::string sellingItemStr = xml.GetString(node, "sellingItem");
     if (!sellingItemStr.empty())
         orig->stringValues["sellingItem"] = sellingItemStr;
+    else if (xml.GetInt(node, "shop") != 0)
+        orig->intValues["shop"] = 1;
+
     return CActorTemplate::ReadParam(xml,node,orig);
 }
 
@@ -79,6 +74,25 @@ void CNpcTemplate::Parametrise(CPhysical * phys, CTemplateParam * param) {
         npc->SetSellingItem(sellingItemStr[0]);
         npc->SetSellingPrice(StringUtils::Parse<int>(sellingItemStr[1]));
     }
+    else
+    {
+        bool hasShop = param->intValues.count("shop") != 0;
+        // moze jest jakis sklep z losowymi rzeczami?
+        npc->SetHasShop(hasShop);
+    
+        if (hasShop)
+        {
+            int level = 0;
+            for (unsigned int i = 0; i < gPlayerManager.GetPlayerCount(); ++i)
+                level += gPlayerManager.GetPlayerByNumber(0)->GetLevel();
+            level /= gPlayerManager.GetPlayerCount();
+
+            int price;
+            npc->SetSellingItem(gRandomMapGenerator.GetRandomWeaponFile(level, &price));
+            npc->SetSellingPrice(price);
+        }
+    }
+
     CActorTemplate::Parametrise(npc, param);
 }
 

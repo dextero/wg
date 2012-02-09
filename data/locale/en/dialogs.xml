@@ -93,4 +93,32 @@ With each level gained you earn a skill point. You can use it to upgrade your sp
 
 Good luck!</value>
 	</entry>
+	<entry>
+		<key>DLG_NPC_HINT_MAGIC_SCHOOLS</key>
+		<value>There are four magic schools: melancholic, sanguine, choleric and phlegmatic. Trianing in one of them improves some spells, but may decrease others&apos; power, so be careful!</value>
+	</entry>
+	<entry>
+		<key>DLG_NPC_HINT_SPELLS</key>
+		<value>Somebody *really* should find a way to cast spells without using these damn spellbooks. It&apos;s just impossible to have more than four at a time and I&apos;m often forced to throw away some to be able to use a new spell. I&apos;m sure you&apos;ll soon face the same problem, my friend...</value>
+	</entry>
+	<entry>
+		<key>DLG_NPC_HINT_DRAGON</key>
+		<value>Wanderers spread rumors about a dragon hiding in frozen wastelands east from here. That has always been a dangerous place, but a monster so powerful? If it&apos;s true, we need somebody to get rid of it.</value>
+	</entry>
+	<entry>
+		<key>DLG_NPC_HINT_FROZEN_WASTELANDS_MONSTERS</key>
+		<value>Frozen Wasteland&apos;s beasts have become immune to all kinds of poisons. Our greatest mages are trying to find out why, but they haven&apos;t found anything so far.</value>
+	</entry>
+	<entry>
+		<key>DLG_NPC_HINT_HOSTILE_CREATURES</key>
+		<value>Monsters from Frozen Wastelands have become aggresive lately and started to attack creatures living in Gargant Forest and Forgotten Lands. Be careful if you&apos;re going there - every single person is now considered as a danger, so you&apos;ll face hordes of hostile creatures.</value>
+	</entry>
+	<entry>
+		<key>DLG_NPC_HINT_GARGANT_FOREST</key>
+		<value>As a unexperienced mage, you should start by visiting Gargant Forest to the south. There you&apos;ll find many ingredients that could be useful, and monsters are not so tough as in northern territories.</value>
+	</entry>
+	<entry>
+		<key>DLG_NPC_HINT_MAP</key>
+		<value>Paths between nearby territories are somewhat strange. You should really get a map to avoid getting lost... Oh, you already have one? Brilliant! [F5]</value>
+	</entry>
 </root>
