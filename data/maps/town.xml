@@ -2721,10 +2721,8 @@
     </obj> -->
 
    <obj templateFile="data/physicals/npcs/green.xml" x="23.6334" y="17.4031" rot="180">
-     <shop>1</shop>
    </obj>
    <obj templateFile="data/physicals/npcs/red-with-axe.xml" x="29.0721" y="20.9831" rot="90">
-     <shop>1</shop>
    </obj>
    <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="21.0345" y="2.0212" rot="0">
      <shop>1</shop>
@@ -2733,18 +2731,31 @@
      <shop>1</shop>
    </obj>
    <obj templateFile="data/physicals/npcs/blue-with-knife.xml" x="13.9969" y="21.0295" rot="180">
+   </obj>
+   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="5.3088" y="42.9369" rot="135" >
      <shop>1</shop>
    </obj>
-   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="5.3088" y="42.9369" rot="135" />
-   <obj templateFile="data/physicals/npcs/green.xml" x="21.2063" y="41.9081" rot="10" />
-   <obj templateFile="data/physicals/npcs/green.xml" x="37.7063" y="30.7275" rot="128" />
-   <obj templateFile="data/physicals/npcs/red-with-axe.xml" x="36.1331" y="35.1313" rot="0" />
-   <obj templateFile="data/physicals/npcs/blue-with-knife.xml" x="30.6585" y="36.0281" rot="270" />
-   <obj templateFile="data/physicals/npcs/red-with-axe.xml" x="44.2063" y="22.8938" rot="90" />
-   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="43.769" y="18.2836" rot="135" />
-   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="20.3027" y="21.0446" rot="270" />
-   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="42.0578" y="36.9851" rot="0" />
-   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="6.0088" y="14.9769" rot="0" />
+   <obj templateFile="data/physicals/npcs/green.xml" x="21.2063" y="41.9081" rot="10" >
+   </obj>
+   <obj templateFile="data/physicals/npcs/green.xml" x="37.7063" y="30.7275" rot="128" >
+     <shop>1</shop>
+   </obj>
+   <obj templateFile="data/physicals/npcs/red-with-axe.xml" x="36.1331" y="35.1313" rot="0" >
+   </obj>
+   <obj templateFile="data/physicals/npcs/blue-with-knife.xml" x="30.6585" y="36.0281" rot="270" >
+     <shop>1</shop>
+   </obj>
+   <obj templateFile="data/physicals/npcs/red-with-axe.xml" x="44.2063" y="22.8938" rot="90" >
+     <shop>1</shop>
+   </obj>
+   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="43.769" y="18.2836" rot="135" >
+   </obj>
+   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="20.3027" y="21.0446" rot="270" >
+   </obj>
+   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="42.0578" y="36.9851" rot="0" >
+   </obj>
+   <obj templateFile="data/physicals/npcs/yellow-with-staff.xml" x="6.0088" y="14.9769" rot="0" >
+   </obj>
 
     <objtype code="exit-portal" file="data/physicals/walls/test-barrier.xml" />
     <region name="entry" x="38.7344" y="1.125" rot="0" scale="1" />
