@@ -92,20 +92,20 @@ legenda: d -> mingorian-desert
     </map>
     <map id="d14" scheme="desert" level="14" posx="18.8" posy="13">
         <exit toMap="d13" onBorder="south"/>
-        <exit toMap="d15" onBorder="east"/>
-    </map>
-    <map id="d15" scheme="desert" level="15" posx="34.3" posy="21.7">
-        <exit toMap="d14" onBorder="west"/>
         <exit toMap="d16" onBorder="east"/>
     </map>
-    <map id="d16" scheme="desert" level="16" posx="43.8" posy="18.5">
-        <exit toMap="d15" onBorder="west"/>
-        <exit toMap="d17" onBorder="south"/>
+    <map id="d15" scheme="desert" level="15" posx="34.3" posy="21.7">
+        <exit toMap="d17" onBorder="north"/>
+        <exit toMap="data/maps/town.xml" onBorder="south"/>
     </map>
-    <map id="d17" scheme="desert" level="17" boss="1" posx="39.6" posy="36.1">
-        <exit toMap="d16" onBorder="north"/> 
+    <map id="d16" scheme="desert" level="16" boss="1" posx="39.6" posy="36.1">
+        <exit toMap="d14" onBorder="west"/> 
+        <exit toMap="d17" onBorder="east"/> 
+    </map>
+    <map id="d17" scheme="desert" level="17" boss="1" posx="43.8" posy="18.5">
+        <exit toMap="d16" onBorder="west"/>
+        <exit toMap="d15" onBorder="south" blocked="true" />
         <exit toMap="a18" onBorder="east" blocked="true" />
-        <exit toMap="data/maps/town.xml" onBorder="south" toEntry="entry-n" blocked="true" />
     </map>
     <map id="a18" scheme="arctic" level="18" posx="56.1" posy="26.3">
         <exit toMap="d17" onBorder="west"/>

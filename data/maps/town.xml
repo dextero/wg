@@ -2769,7 +2769,7 @@
 
     <region name="entry-n" x="10.5359" y="2.5692" rot="0" scale="1" />
     <region name="exit-n" x="10.5359" y="0.5692" rot="0" scale="1">
-      <next-map>d17</next-map>
+      <next-map>d15</next-map>
       <next-map-region>south</next-map-region>
 	</region>
 	<obj code="exit-portal" x="10.5359" y="0.5692" />
