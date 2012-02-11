@@ -85,7 +85,8 @@ void CNpcTemplate::Parametrise(CPhysical * phys, CTemplateParam * param) {
             int level = 0;
             for (unsigned int i = 0; i < gPlayerManager.GetPlayerCount(); ++i)
                 level += gPlayerManager.GetPlayerByNumber(0)->GetLevel();
-            level /= gPlayerManager.GetPlayerCount();
+            level /= (int)gPlayerManager.GetPlayerCount(); // w sumie to jest bezsensu - obaj gracze maja zawsze taki sam poziom
+            level += rand() % 4; // zeby troche wiecej itemow bylo do kupienia
 
             int price;
             npc->SetSellingItem(gRandomMapGenerator.GetRandomWeaponFile(level, &price));

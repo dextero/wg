@@ -39,6 +39,7 @@ class SignInteraction : public InteractionHandler
             buttonClose->SetCenter(true);
             buttonClose->GetClickCallback()->bind(this, &SignInteraction::Hide);
             buttonClose->SetText(L"Close");
+            buttonClose->SetText(L"Close", player->GetNumber(), 0);
 
             tooltip->SetHandler(this);
             tooltip->Show();
@@ -50,6 +51,12 @@ class SignInteraction : public InteractionHandler
         {
             mTooltip->Hide();
             mTooltip->SetPriority(51); // dex: co to za 51, do czego to?
+                                       // tox: jak naraz by sie zdarzylo, ze gracz(e) dotykaliby
+                                       // dwoch roznych Signow/NPCow, to zeby interakcje sie nie
+                                       // odpalaly w petli raz ta raz tamta. czy jakos tak. nie pamietam
+                                       //    aha, juz pamietam - chodzi o to, zeby po kliknieciu w 'close'
+                                       // nie otwieralo sie znowu okienki interakcji jesli gracz 'styka'
+                                       // sie z npcem nadal
         }
 
         ~SignInteraction() {
@@ -58,9 +65,15 @@ class SignInteraction : public InteractionHandler
 
         void Update(float secondsPassed) {
             if (Maths::Length(mPlayer->GetPosition() - mObstacle->GetPosition()) > 1.5f) {
-                mTooltip->Hide();
+                mTooltip->Clear();
             }
         }
+
+        virtual void OptionSelected(size_t selected) {
+            if (selected == 0) {
+                Hide();
+            }
+        };
 };
 
 #endif//__SIGN_INTERACTION_H__

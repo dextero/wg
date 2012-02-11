@@ -95,19 +95,27 @@ Good luck!</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_MAGIC_SCHOOLS</key>
-		<value>There are four magic schools: melancholic, sanguine, choleric and phlegmatic. Trianing in one of them improves some spells, but may decrease others&apos; power, so be careful!</value>
+		<value>There are four magic disciplines: melancholic, sanguine, choleric and phlegmatic. Training in one of them improves some spells effectiveness, but may decrease other spells power, so be careful!</value>
+	</entry>
+	<entry>
+		<key>DLG_NPC_HINT_MAGIC_SCHOOLS2</key>
+		<value>To master a spell one have to develop his four magic elements in exact proportions. However, for each spell these proportion are different so it's not possible to be a master in all.</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_SPELLS</key>
-		<value>Somebody *really* should find a way to cast spells without using these damn spellbooks. It&apos;s just impossible to have more than four at a time and I&apos;m often forced to throw away some to be able to use a new spell. I&apos;m sure you&apos;ll soon face the same problem, my friend...</value>
+		<value>Somebody *really* should find a way to cast spells without using these damn spellbooks. It&apos;s just impossible to have more than four at a time and I&apos;m often forced to throw away some spells to be able to use a new one. I&apos;m sure you&apos;ll soon face the same problem, my friend...</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_DRAGON</key>
-		<value>Wanderers spread rumors about a dragon hiding in frozen wastelands east from here. That has always been a dangerous place, but a monster so powerful? If it&apos;s true, we need somebody to get rid of it.</value>
+		<value>Wanderers spread rumors about a dragon hiding in frozen wastelands east from here. It has always been a dangerous place, but a monster so powerful? If it&apos;s true, we need somebody to get rid of it.</value>
+	</entry>
+	<entry>
+		<key>DLG_NPC_HINT_DRAGON2</key>
+		<value>I've heard there was a green dragon seen east from our town. I wonder what it eats - not much of maidens you can encounter here lately.</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_FROZEN_WASTELANDS_MONSTERS</key>
-		<value>Frozen Wasteland&apos;s beasts have become immune to all kinds of poisons. Our greatest mages are trying to find out why, but they haven&apos;t found anything so far.</value>
+		<value>Frozen Wasteland&apos;s undead beasts are immune to all kinds of poisons. Our greatest mages are trying to find out why, but they have no clue so far.</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_HOSTILE_CREATURES</key>
@@ -119,6 +127,10 @@ Good luck!</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_MAP</key>
-		<value>Paths between nearby territories are somewhat strange. You should really get a map to avoid getting lost... Oh, you already have one? Brilliant! [F5]</value>
+		<value>Paths between nearby territories are somewhat strange. You should really get a map to avoid getting lost... Here, take my map. (press F5 whenever you want to check your current location)</value>
+	</entry>
+	<entry>
+		<key>DLG_NPC_HINT_SHOPS</key>
+		<value>Some of the town folk may have a spell for sale. You should check them each time you are in town - they might have different offer.</value>
 	</entry>
 </root>

@@ -10,12 +10,15 @@
 // klucze lokalizatora
 std::string CNpc::mHints[] = {
     "DLG_NPC_HINT_MAGIC_SCHOOLS",
+    "DLG_NPC_HINT_MAGIC_SCHOOLS2",
     "DLG_NPC_HINT_SPELLS",
     "DLG_NPC_HINT_DRAGON",
+    "DLG_NPC_HINT_DRAGON2",
     "DLG_NPC_HINT_FROZEN_WASTELANDS_MONSTERS",
     "DLG_NPC_HINT_HOSTILE_CREATURES",
     "DLG_NPC_HINT_GARGANT_FOREST",
-    "DLG_NPC_HINT_MAP"
+    "DLG_NPC_HINT_MAP",
+    "DLG_NPC_HINT_SHOPS",
 };
 unsigned int CNpc::mHintsCount = sizeof(CNpc::mHints) / sizeof(CNpc::mHints[0]);
 

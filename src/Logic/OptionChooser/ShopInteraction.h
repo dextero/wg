@@ -150,7 +150,7 @@ class ShopInteraction : public InteractionHandler
         }
         void OptionNo() {
             mTooltip->Hide();
-            mTooltip->SetPriority(51); // dex: co to za 51, do czego to?
+            mTooltip->SetPriority(51); // dex: co to za 51, do czego to? //tox: patrz opis w SignInt*.h
         }
 
         virtual void OptionSelected(size_t selected) {
