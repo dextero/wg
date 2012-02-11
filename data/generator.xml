@@ -1,57 +1,57 @@
 <root type="map-gen">  
     <physicals>
 	<!-- przejrzane bronie: -->
-        <weapon file="data/abilities/weapons/firebolt.xml" minLevel="0" maxLevel="99" frequency="0.5" price="50" />
+        <weapon file="data/abilities/weapons/firebolt.xml" minLevel="0" maxLevel="99" frequency="0.5" price="5" />
 
-        <weapon file="data/abilities/weapons/electron.xml" minLevel="0" maxLevel="99" frequency="1.0" price="50" />	
-        <weapon file="data/abilities/weapons/lightning.xml" minLevel="1" maxLevel="99" frequency="0.75" price="100" />
-        <weapon file="data/abilities/weapons/icearrow.xml" minLevel="1" maxLevel="99" frequency="1.0" price="100" />
-        <weapon file="data/abilities/weapons/sting.xml" minLevel="1" maxLevel="99" frequency="0.6" price="100" />
-        <weapon file="data/abilities/weapons/burning-hands.xml" minLevel="1" maxLevel="99" frequency="2" price="100" />
-        <weapon file="data/abilities/weapons/electrostatics.xml" minLevel="2" maxLevel="99" frequency="2" price="200" />
-        <weapon file="data/abilities/weapons/firearrow.xml" minLevel="2" maxLevel="99" frequency="2" price="200" />
-        <weapon file="data/abilities/weapons/magic-missile.xml" minLevel="2" maxLevel="99" frequency="2" price="200" />
-        <weapon file="data/abilities/weapons/blazing-feet.xml" minLevel="3" maxLevel="99" frequency="3" price="300" />
-        <weapon file="data/abilities/weapons/hibernation.xml" minLevel="3" maxLevel="99" frequency="3" price="300" />
-        <weapon file="data/abilities/weapons/poison-cloud.xml" minLevel="3" maxLevel="99" frequency="3" price="300" />
-        <weapon file="data/abilities/weapons/chain-lightning.xml" minLevel="3" maxLevel="99" frequency="3" price="300" />
-        <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="4" price="400" />
+        <weapon file="data/abilities/weapons/electron.xml" minLevel="0" maxLevel="99" frequency="1.0" price="10" />	
+        <weapon file="data/abilities/weapons/lightning.xml" minLevel="1" maxLevel="99" frequency="0.75" price="40" />
+        <weapon file="data/abilities/weapons/icearrow.xml" minLevel="1" maxLevel="99" frequency="1.0" price="20" />
+        <weapon file="data/abilities/weapons/sting.xml" minLevel="1" maxLevel="99" frequency="0.6" price="20" />
+        <weapon file="data/abilities/weapons/burning-hands.xml" minLevel="1" maxLevel="99" frequency="2" price="20" />
+        <weapon file="data/abilities/weapons/electrostatics.xml" minLevel="2" maxLevel="99" frequency="2" price="50" />
+        <weapon file="data/abilities/weapons/firearrow.xml" minLevel="2" maxLevel="99" frequency="2" price="50" />
+        <weapon file="data/abilities/weapons/magic-missile.xml" minLevel="2" maxLevel="99" frequency="2" price="20" />
+        <weapon file="data/abilities/weapons/blazing-feet.xml" minLevel="3" maxLevel="99" frequency="3" price="50" />
+        <weapon file="data/abilities/weapons/hibernation.xml" minLevel="3" maxLevel="99" frequency="3" price="50" />
+        <weapon file="data/abilities/weapons/poison-cloud.xml" minLevel="3" maxLevel="99" frequency="3" price="75" />
+        <weapon file="data/abilities/weapons/chain-lightning.xml" minLevel="3" maxLevel="99" frequency="3" price="100" />
+        <weapon file="data/abilities/weapons/fireball.xml" minLevel="4" maxLevel="99" frequency="4" price="200" />
         <weapon file="data/abilities/weapons/entangle.xml" minLevel="4" maxLevel="99" frequency="4" price="400" />
-        <weapon file="data/abilities/weapons/powerslash.xml" minLevel="4" maxLevel="99" frequency="4" price="400" />
-        <weapon file="data/abilities/weapons/gorgon-shards.xml" minLevel="4" maxLevel="99" frequency="4" price="400" />
-        <weapon file="data/abilities/weapons/firearrow-lvl2.xml" minLevel="5" maxLevel="99" frequency="5" price="500" />
-        <weapon file="data/abilities/weapons/meditation.xml" minLevel="5" maxLevel="99" frequency="5" price="500" />
-        <weapon file="data/abilities/weapons/firestream.xml" minLevel="5" maxLevel="99" frequency="5" price="500" />
-        <weapon file="data/abilities/weapons/haste.xml" minLevel="5" maxLevel="99" frequency="5" price="500" />
-        <weapon file="data/abilities/weapons/freezing-mine.xml" minLevel="5" maxLevel="99" frequency="5" price="500" />
-        <weapon file="data/abilities/weapons/magic-missile-lvl2.xml" minLevel="6" maxLevel="99" frequency="6" price="600" />
-        <weapon file="data/abilities/weapons/resonator.xml" minLevel="6" maxLevel="99" frequency="6" price="600" />
-        <weapon file="data/abilities/weapons/firepits.xml" minLevel="6" maxLevel="99" frequency="6" price="600" />
-        <weapon file="data/abilities/weapons/firearrow-lvl3.xml" minLevel="7" maxLevel="99" frequency="7" price="700" />
-        <weapon file="data/abilities/weapons/forked-lightning.xml" minLevel="7" maxLevel="99" frequency="7" price="700" />
-        <weapon file="data/abilities/weapons/hellfire.xml" minLevel="7" maxLevel="99" frequency="7" price="700" />
-        <weapon file="data/abilities/weapons/electric-snare.xml" minLevel="8" maxLevel="99" frequency="8" price="800" />
-        <weapon file="data/abilities/weapons/acidspray.xml" minLevel="8" maxLevel="99" frequency="8" price="800" />
-        <weapon file="data/abilities/weapons/firewall.xml" minLevel="8" maxLevel="99" frequency="8" price="800" />
-        <weapon file="data/abilities/weapons/blades.xml" minLevel="8" maxLevel="99" frequency="8" price="800" />
+        <weapon file="data/abilities/weapons/powerslash.xml" minLevel="4" maxLevel="99" frequency="4" price="100" />
+        <weapon file="data/abilities/weapons/gorgon-shards.xml" minLevel="4" maxLevel="99" frequency="4" price="200" />
+        <weapon file="data/abilities/weapons/firearrow-lvl2.xml" minLevel="5" maxLevel="99" frequency="5" price="250" />
+        <weapon file="data/abilities/weapons/meditation.xml" minLevel="5" maxLevel="99" frequency="5" price="100" />
+        <weapon file="data/abilities/weapons/firestream.xml" minLevel="5" maxLevel="99" frequency="5" price="300" />
+        <weapon file="data/abilities/weapons/haste.xml" minLevel="5" maxLevel="99" frequency="5" price="200" />
+        <weapon file="data/abilities/weapons/freezing-mine.xml" minLevel="5" maxLevel="99" frequency="5" price="300" />
+        <weapon file="data/abilities/weapons/exploding-corpse.xml" minLevel="5" maxLevel="99" frequency="5" price="250" />
+        <weapon file="data/abilities/weapons/magic-missile-lvl2.xml" minLevel="6" maxLevel="99" frequency="6" price="400" />
+        <weapon file="data/abilities/weapons/resonator.xml" minLevel="6" maxLevel="99" frequency="6" price="200" />
+        <weapon file="data/abilities/weapons/firepits.xml" minLevel="6" maxLevel="99" frequency="6" price="500" />
+        <weapon file="data/abilities/weapons/firearrow-lvl3.xml" minLevel="7" maxLevel="99" frequency="7" price="500" />
+        <weapon file="data/abilities/weapons/forked-lightning.xml" minLevel="7" maxLevel="99" frequency="7" price="500" />
+        <weapon file="data/abilities/weapons/hellfire.xml" minLevel="7" maxLevel="99" frequency="7" price="750" />
+        <weapon file="data/abilities/weapons/electric-snare.xml" minLevel="8" maxLevel="99" frequency="8" price="1000" />
+        <weapon file="data/abilities/weapons/acidspray.xml" minLevel="8" maxLevel="99" frequency="8" price="750" />
+        <weapon file="data/abilities/weapons/firewall.xml" minLevel="8" maxLevel="99" frequency="8" price="1000" />
+        <weapon file="data/abilities/weapons/blades.xml" minLevel="8" maxLevel="99" frequency="8" price="1250" />
         <weapon file="data/abilities/weapons/transfusion.xml" minLevel="8" maxLevel="99" frequency="8" price="800" />
         <weapon file="data/abilities/weapons/freezing-blast.xml" minLevel="9" maxLevel="99" frequency="9" price="900" />
-        <weapon file="data/abilities/weapons/basher.xml" minLevel="9" maxLevel="99" frequency="9" price="900" />
-        <weapon file="data/abilities/weapons/ignite.xml" minLevel="9" maxLevel="99" frequency="9" price="900" />
-        <weapon file="data/abilities/weapons/icecircle.xml" minLevel="10" maxLevel="99" frequency="10" price="1000" />
-        <weapon file="data/abilities/weapons/sparkrain.xml" minLevel="10" maxLevel="99" frequency="10" price="1000" />
-        <weapon file="data/abilities/weapons/ball-lightning.xml" minLevel="10" maxLevel="99" frequency="10" price="1000" />
-        <weapon file="data/abilities/weapons/meteor.xml" minLevel="13" maxLevel="99" frequency="13" price="1300" />
-        <weapon file="data/abilities/weapons/acidcircus.xml" minLevel="15" maxLevel="99" frequency="15" price="1500" />
+        <weapon file="data/abilities/weapons/basher.xml" minLevel="9" maxLevel="99" frequency="9" price="1200" />
+        <weapon file="data/abilities/weapons/ignite.xml" minLevel="9" maxLevel="99" frequency="9" price="1000" />
+        <weapon file="data/abilities/weapons/icecircle.xml" minLevel="10" maxLevel="99" frequency="10" price="1500" />
+        <weapon file="data/abilities/weapons/sparkrain.xml" minLevel="10" maxLevel="99" frequency="10" price="1500" />
+        <weapon file="data/abilities/weapons/ball-lightning.xml" minLevel="10" maxLevel="99" frequency="10" price="1300" />
+        <weapon file="data/abilities/weapons/meteor.xml" minLevel="13" maxLevel="99" frequency="13" price="1750" />
+        <weapon file="data/abilities/weapons/acidcircus.xml" minLevel="15" maxLevel="99" frequency="15" price="1800" />
         <weapon file="data/abilities/weapons/blizzard.xml" minLevel="15" maxLevel="99" frequency="15" price="1500" />
-        <weapon file="data/abilities/weapons/devolution.xml" minLevel="15" maxLevel="99" frequency="15" price="1500" />
+        <weapon file="data/abilities/weapons/devolution.xml" minLevel="15" maxLevel="99" frequency="15" price="2000" />
         <weapon file="data/abilities/weapons/dragonbreath.xml" minLevel="15" maxLevel="99" frequency="15" price="1500" />
-        <weapon file="data/abilities/weapons/exploding-corpse.xml" minLevel="15" maxLevel="99" frequency="15" price="1500" />
-        <weapon file="data/abilities/weapons/frostnova.xml" minLevel="16" maxLevel="99" frequency="16" price="1600" />
-        <weapon file="data/abilities/weapons/fireburst.xml" minLevel="18" maxLevel="99" frequency="18" price="1800" />
-        <weapon file="data/abilities/weapons/flaming-mantle.xml" minLevel="21" maxLevel="99" frequency="21" price="2100" />
-        <weapon file="data/abilities/weapons/lazoor.xml" minLevel="21" maxLevel="99" frequency="21" price="2100" />
-        <weapon file="data/abilities/weapons/lightning-storm.xml" minLevel="23" maxLevel="99" frequency="23" price="2300" />
+        <weapon file="data/abilities/weapons/frostnova.xml" minLevel="16" maxLevel="99" frequency="16" price="2200" />
+        <weapon file="data/abilities/weapons/fireburst.xml" minLevel="18" maxLevel="99" frequency="18" price="3000" />
+        <weapon file="data/abilities/weapons/flaming-mantle.xml" minLevel="21" maxLevel="99" frequency="21" price="3500" />
+        <weapon file="data/abilities/weapons/lazoor.xml" minLevel="21" maxLevel="99" frequency="21" price="2500" />
+        <weapon file="data/abilities/weapons/lightning-storm.xml" minLevel="23" maxLevel="99" frequency="23" price="5000" />
 	 
  	
 	<!-- inne -->
