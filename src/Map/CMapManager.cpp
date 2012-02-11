@@ -85,7 +85,7 @@ namespace Map{
             // zapisz stan mapy, jesli juz z niej wychodzimy
             std::string mapStateFile;
             if (lastMapIdHack == "-1") { // fallback
-                std::string mapStateFile = m_map->GetFilename();
+                mapStateFile = m_map->GetFilename();
             } else {
                 mapStateFile = GetWorldPath() + lastMapIdHack + ".xml"; //hack hack
                 lastMapIdHack = mCurrentMapId;
@@ -100,7 +100,7 @@ namespace Map{
                 mapStateFile = GetWorldPath() + mapStateFile;   // i dopisz na poczatku sciezke do userDir/$world
             }
 
-            fprintf(stderr, "SaveMapStateToFile, skill = %d\n", GetLevel());
+            fprintf(stderr, "SaveMapStateToFile, file = %s, skill = %d\n", std::string(mapStateFile + ".console").c_str(), GetLevel());
             gLogic.SaveMapStateToFile(mapStateFile + ".console");
 
 			gEditor.SetSelectedToErase( NULL );
