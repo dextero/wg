@@ -106,6 +106,10 @@ Good luck!</value>
 		<value>Somebody *really* should find a way to cast spells without using these damn spellbooks. It&apos;s just impossible to have more than four at a time and I&apos;m often forced to throw away some spells to be able to use a new one. I&apos;m sure you&apos;ll soon face the same problem, my friend...</value>
 	</entry>
 	<entry>
+		<key>DLG_NPC_HINT_MANACOST</key>
+		<value>When improving your spell mastery you need to remember the casting will cost you more mana. Sometimes it is even a good idea to consciously lower the power of a spell so you can cast it multiple times during heat of the battle.</value>
+	</entry>
+	<entry>
 		<key>DLG_NPC_HINT_DRAGON</key>
 		<value>Wanderers spread rumors about a dragon hiding in frozen wastelands east from here. It has always been a dangerous place, but a monster so powerful? If it&apos;s true, we need somebody to get rid of it.</value>
 	</entry>

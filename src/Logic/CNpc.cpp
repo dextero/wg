@@ -19,6 +19,7 @@ std::string CNpc::mHints[] = {
     "DLG_NPC_HINT_GARGANT_FOREST",
     "DLG_NPC_HINT_MAP",
     "DLG_NPC_HINT_SHOPS",
+    "DLG_NPC_HINT_MANACOST",
 };
 unsigned int CNpc::mHintsCount = sizeof(CNpc::mHints) / sizeof(CNpc::mHints[0]);
 
