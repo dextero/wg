@@ -150,7 +150,7 @@ class ShopInteraction : public InteractionHandler
         }
         void OptionNo() {
             mTooltip->Hide();
-            mTooltip->SetPriority(51);
+            mTooltip->SetPriority(51); // dex: co to za 51, do czego to?
         }
 
         virtual void OptionSelected(size_t selected) {
