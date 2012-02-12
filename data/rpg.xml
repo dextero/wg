@@ -59,10 +59,37 @@
 
   <!-- zamiana poziomu gracza na poziomy wypadajacych przedmiotow -->
   <level-translation-table>
-    <!-- w przypadku luk bedzie probowalo robic jakiegos lerpa. ma to byc posortowane po
-    poziomie gracza, bo inaczej zrobi sie lerp, a wpisana wartosc zostanie zignorowana -->
-    <level player="1" item="1" />
-    <level player="5" item="3" />
+    <!-- w przypadku luk bedzie bralo ostatnia wpisana wartosc. ma to byc posortowane po
+    poziomie gracza, bo inaczej wpisana wartosc zostanie zignorowana -->
+	<!-- toxica notatki:
+	xp 12 -> 538gp, d10
+    xp 16 -> 676gp, d15
+    xp 17 -> 911gp, d16
+    xp 18 -> 1000gp, arctic	
+	-->
+    <level item="1" player="1"/>
+    <level item="2" player="4"/>
+    <level item="3" player="7"/>
+    <level item="4" player="9"/>
+    <level item="5" player="11"/>
+    <level item="6" player="13"/>
+    <level item="7" player="15"/>
+    <level item="8" player="16"/>
+    <level item="9" player="17"/>
+    <level item="10" player="18"/>
+    <level item="11" player="19"/>
+    <level item="12" player="20"/>
+    <level item="13" player="21"/>
+    <level item="14" player="22"/>
+    <level item="15" player="23"/>
+    <level item="16" player="24"/>
+    <level item="17" player="25"/>
+    <level item="18" player="26"/>
+    <level item="19" player="27"/>
+    <level item="20" player="28"/>
+    <level item="21" player="29"/>
+    <level item="22" player="30"/>
+    <level item="23" player="31"/>
   </level-translation-table>
 </root>
 

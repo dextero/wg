@@ -1266,13 +1266,15 @@ void CRandomMapGenerator::LoadLevelTranslationTable(const std::string& file)
             int itemLvl = xml.GetInt(node, "item");
 
             if (playerLvl < (int)mLevelTranslationTable.size())
-                fprintf(stderr, "warning: level %d already present in translation table, ignoring\n");
+                fprintf(stderr, "warning: level %d already present in translation table, ignoring\n", playerLvl);
             else
             {
                 int size = (int)mLevelTranslationTable.size();
                 int last = size ? mLevelTranslationTable[size - 1] : 0;
-                for (int i = size; i <= playerLvl; ++i)
-                    mLevelTranslationTable.push_back((int)Maths::Lerp((float)last, (float)itemLvl, (float)(i - size) / (float)(playerLvl - size)));
+                for (int i = size; i <= playerLvl - 1; ++i) {
+                    mLevelTranslationTable.push_back(last);
+                }
+                mLevelTranslationTable.push_back(itemLvl);
             }
         }
     }

@@ -46,7 +46,7 @@ Bonus for this spell depends:
 		        <time calc="5.0 + (1.5 * power)"/>
 			    <effect type="damage" tag="poison-cloud-damage-tag">
 			      <damage-type value="poison"/>
-			      <amount calc="3.5 + (0.25 + power)"/>
+			      <amount calc="4.5 + (1.25 * power)"/>
 			    </effect>
 		      </effect>
 	        </effect>	
@@ -91,7 +91,7 @@ Bonus for this spell depends:
   <bullet value="data/physicals/bullets/poison.xml" />
   <bullet-angular-speed value="-1440" />
 
-  <manacost calc="21 * (1 + 0.22 * power)" />
+  <manacost calc="20 * (1 + 0.22 * power)" />
   <casttime value="0.1" />
   <delay value="0.05" />
   <cooldown value="0.8" />
