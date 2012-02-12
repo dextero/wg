@@ -56,5 +56,13 @@
 	<level><!-- 50 --><req-xp>277000</req-xp></level>
 	<level><!-- 51 --><req-xp>288000</req-xp></level>
 	<level><!-- 52 --><req-xp>300000</req-xp></level>
+
+  <!-- zamiana poziomu gracza na poziomy wypadajacych przedmiotow -->
+  <level-translation-table>
+    <!-- w przypadku luk bedzie probowalo robic jakiegos lerpa. ma to byc posortowane po
+    poziomie gracza, bo inaczej zrobi sie lerp, a wpisana wartosc zostanie zignorowana -->
+    <level player="1" item="1" />
+    <level player="5" item="3" />
+  </level-translation-table>
 </root>
 

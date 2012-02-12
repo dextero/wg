@@ -89,7 +89,7 @@ void CNpcTemplate::Parametrise(CPhysical * phys, CTemplateParam * param) {
             level += rand() % 4; // zeby troche wiecej itemow bylo do kupienia
 
             int price;
-            npc->SetSellingItem(gRandomMapGenerator.GetRandomWeaponFile(level, &price));
+            npc->SetSellingItem(gRandomMapGenerator.GetRandomWeaponFile(level, &price, true));
             npc->SetSellingPrice(price);
         }
     }

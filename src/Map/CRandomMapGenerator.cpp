@@ -111,7 +111,10 @@ CRandomMapGenerator::SPhysical ChooseRandomlyRegardingFrequency(const PhysicalsV
     }
 }
 
-std::string CRandomMapGenerator::GetRandomWeaponFile(int level, int* outCost) {
+std::string CRandomMapGenerator::GetRandomWeaponFile(int level, int* outCost, bool translateLevel) {
+    if (translateLevel && level < (int)mLevelTranslationTable.size())
+        level = mLevelTranslationTable[level];
+
     PhysicalsVector weapons = FilterByLevel(FilterByType(mPhysicals, "weapon"), level);
     SPhysical weapon = ChooseRandomlyRegardingFrequency(weapons);
     if (outCost != NULL)
@@ -1244,6 +1247,43 @@ CRandomMapGenerator::SPhysical CRandomMapGenerator::GenerateNextLootDef(bool can
 
 }
 
+void CRandomMapGenerator::LoadLevelTranslationTable(const std::string& file)
+{
+    CXml xml(file, "root");
+
+    if (xml.GetString(xml.GetRootNode(), "type") != "rpg")
+        fprintf(stderr, "warning: possibly invalid XML file type\n");
+
+    rapidxml::xml_node<>* node = xml.GetChild(xml.GetRootNode(), "level-translation-table");
+    if (node != NULL)
+        node = xml.GetChild(node, "level");
+
+    if (node != NULL)
+    {
+        for (; node; node = xml.GetSibl(node, "level"))
+        {
+            int playerLvl = xml.GetInt(node, "player");
+            int itemLvl = xml.GetInt(node, "item");
+
+            if (playerLvl < (int)mLevelTranslationTable.size())
+                fprintf(stderr, "warning: level %d already present in translation table, ignoring\n");
+            else
+            {
+                int size = (int)mLevelTranslationTable.size();
+                int last = size ? mLevelTranslationTable[size - 1] : 0;
+                for (int i = size; i <= playerLvl; ++i)
+                    mLevelTranslationTable.push_back((int)Maths::Lerp((float)last, (float)itemLvl, (float)(i - size) / (float)(playerLvl - size)));
+            }
+        }
+    }
+    else
+        fprintf(stderr, "level translation table not found in file \"%s\", item level will be equal to player level\n", file.c_str());
+
+    fprintf(stderr, "translation table: ");
+    for (size_t i = 0; i < mLevelTranslationTable.size(); ++i)
+        fprintf(stderr, "%d ", mLevelTranslationTable[i]);
+}
+
 CLoot * CRandomMapGenerator::GenerateNextLoot(float additionalWeaponProbability, const sf::Vector2f & position, const std::string & lootTags)
 {
     SPhysical lootDef = GenerateNextLootDef(false, additionalWeaponProbability, position, lootTags);
@@ -1399,6 +1439,7 @@ CRandomMapGenerator::CRandomMapGenerator():
     mPassableLeft(0u)
 {
     LoadPartSets("data/generator.xml");
+    LoadLevelTranslationTable("data/rpg.xml");
 	mTilesFolder = gGameOptions.GetUserDir() + "/generated_tiles";
 }
 
