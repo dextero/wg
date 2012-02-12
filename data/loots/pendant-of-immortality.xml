@@ -10,7 +10,7 @@
         </effect>
 	    <effect type="non-cumulative">
 		  <effect type="timed">
-			<time value="10.0" />
+			<time value="40.0" />
 			<effect type="list">
 			  <effect type="modify">
 				<aspect value="fireresist"/>
@@ -36,7 +36,7 @@
 		  </effect>
         </effect>
         <effect type="graphical-effect">
-            <time value="10.0" />
+            <time value="40.0" />
             <name value="immortality-blink" />
         </effect>
     </effect>
