@@ -121,6 +121,7 @@ private:
     std::map<std::string, SPartSet> mPartSets;
     PhysicalsVector mPhysicals;
     std::vector<std::string> mTileMasks;
+    std::vector<int> mLevelTranslationTable;    // #1212 - level gracza -> level do generowania itemow
 
     unsigned int** mCurrent;
     unsigned int mPassableLeft; // TODO: sprawdzic, do czego to sluzylo poza generowaniem tuneli
@@ -175,6 +176,8 @@ private:
 
     SPhysical GenerateNextLootDef(bool canBeObstacle = false, float additionalWeaponProbability = 0.0f, const sf::Vector2f & position = sf::Vector2f(0,0), const std::string & tags = "");
 
+    void LoadLevelTranslationTable(const std::string& file);
+
 public:
     CRandomMapGenerator();
     ~CRandomMapGenerator();
@@ -191,7 +194,7 @@ public:
                                 const std::string & bottomRight,
                                 unsigned int mask);
 
-    std::string GetRandomWeaponFile(int level, int* outCost);
+    std::string GetRandomWeaponFile(int level, int* outCost, bool translateLevel = false);
 
 	std::string GetSetForLevel(unsigned int level);
 
