@@ -60,6 +60,11 @@ bool CAbility::Load(std::map<std::string,std::string>& argv)
 
     description = gLocalizator.Localize(xml.GetString("description"));
 
+    node = xml.GetChild(xml.GetRootNode(), "stats");
+    effectDescription = xml.GetString(node, "desc");
+    for (node = xml.GetChild(node, "param"); node; node = xml.GetSibl(node, "param"))
+        effectDescriptionParameters.insert(std::make_pair(xml.GetString(node, "name"), xml.GetString(node, "calc")));
+
 	node = xml.GetChild(xml.GetRootNode(),"manacost");
 	if (node)
 		mManaCost = CComputedValueFactory::Parse(xml,node);
@@ -211,4 +216,24 @@ bool CAbility::InMeleeRange(CPhysical *attacker, CPhysical *victim, ExecutionCon
         return false;
     return Maths::CircleInAngle(attacker->GetPosition(),RotationToVector((float)attacker->GetRotation()),
         angularWidth,victim->GetPosition(),victim->GetCircleRadius());
+}
+
+const std::string CAbility::GetEffectDescription(CActor* performer)
+{
+    std::string out = effectDescription;
+
+    for (std::map<std::string, std::string>::iterator it = effectDescriptionParameters.begin(); it != effectDescriptionParameters.end(); ++it)
+    {
+        CComputedValue val(it->second);
+        int abiIndex = performer->GetAbilityPerformer().FindAbilityIndex(this);
+        if (abiIndex == -1)
+            fprintf(stderr, "CAbility::GetEffectDescription error\n");
+        else
+        {
+            std::string computed = StringUtils::ToString(val.Evaluate(performer->GetAbilityPerformer().GetContext(abiIndex)));
+            out = StringUtils::ReplaceAllOccurrences(out, "$" + it->first, computed);
+        }
+    }
+
+    return out;
 }
