@@ -7,7 +7,16 @@ int main(int argc, char* argv[]){
     const unsigned int windowMode = sf::Style::Close;
     const unsigned int fullscreenMode = sf::Style::Fullscreen;
 
-    sf::RenderWindow * rw = new sf::RenderWindow(sf::VideoMode(800, 600, 32), "Warsztat Game", fullscreenMode);
+    int maxw = 800; maxh = 600;
+    for (size_t i = 0; i < sf::VideoMode::GetModesCount(); i++)
+    {
+        videoMode = sf::VideoMode::GetMode(i);
+        if (videoMode.Width > maxw) {
+            maxw = videoMode.Width; maxh = videoMode.Height;
+        }
+    }
+
+    sf::RenderWindow * rw = new sf::RenderWindow(sf::VideoMode(maxw, maxh, 32), "Warlock's Gauntlet", fullscreenMode);
     rw->Close();
     delete rw;
 
