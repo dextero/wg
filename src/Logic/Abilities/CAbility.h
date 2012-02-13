@@ -91,6 +91,7 @@ public:
 
     // opis czaru, z uwzglednieniem wyliczanych parametrow
     const std::string GetEffectDescription(CActor* performer);
+    const std::string GetManaCostString(CActor* performer);
 };
 
 #endif

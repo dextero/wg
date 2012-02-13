@@ -237,3 +237,20 @@ const std::string CAbility::GetEffectDescription(CActor* performer)
 
     return out;
 }
+
+const std::string CAbility::GetManaCostString(CActor* performer)
+{
+    int abiIndex = performer->GetAbilityPerformer().FindAbilityIndex(this);
+    if (abiIndex == -1)
+    {
+        fprintf(stderr, "CAbility::GetEffectDescription error\n");
+        return "(error)";
+    }
+
+    std::string ret = StringUtils::ToString(mManaCost.Evaluate(performer->GetAbilityPerformer().GetContext(abiIndex)));
+
+    if (isFocus)
+        ret += " + " + StringUtils::ToString(focusManaCost.Evaluate(performer->GetAbilityPerformer().GetContext(abiIndex)));
+
+    return ret;
+}
