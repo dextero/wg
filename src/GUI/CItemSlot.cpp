@@ -259,7 +259,8 @@ std::wstring CItemSlot::CreateWeaponDescription(CAbility * abi, CItem * selected
             }
         }
         if (player)
-            tooltipText += L"\n" + StringUtils::ConvertToWString(abi->GetEffectDescription(player));
+            tooltipText += CTextArea::GetNextColorString(sf::Color(100, 100, 255)) + L"\nMana cost: " + StringUtils::ConvertToWString(abi->GetManaCostString(player))
+                        + CTextArea::GetNextColorString(sf::Color::White) + L"\n" + StringUtils::ConvertToWString(abi->GetEffectDescription(player));
 
         tooltipText += L"\n\n" + gLocalizator.GetText("CURRENT_ITEM_POWER");
 
