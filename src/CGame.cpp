@@ -111,12 +111,6 @@ void CGame::Run()
     gAudioManager;
 	gQuestManager;
 
-#ifdef __I_AM_TOXIC__
-    ToxicUtils::Editor editor;
-    AddKeyListener( &editor ); 
-    AddMouseListener( &editor ); 
-#endif
-
     gRand.Seed((unsigned) gClock.GetTime());
 
 	if (mMapToLoadAtInit != NULL){
