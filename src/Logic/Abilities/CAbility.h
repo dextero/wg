@@ -30,6 +30,9 @@ protected:
     void PerformMelee(CActor *actor, ExecutionContextPtr context = ExecutionContextPtr(NULL), FocusObjectPtr focus = FocusObjectPtr(NULL));
 
     virtual bool Load(std::map<std::string,std::string>& argv);
+
+    std::string effectDescription;
+    std::map<std::string, std::string> effectDescriptionParameters;
 public:
     std::wstring name;
     std::wstring description;
@@ -85,6 +88,9 @@ public:
 
     // szacowana "sila" umiejki
     CComputedValue mPower;
+
+    // opis czaru, z uwzglednieniem wyliczanych parametrow
+    const std::string GetEffectDescription(CActor* performer);
 };
 
 #endif

@@ -258,6 +258,9 @@ std::wstring CItemSlot::CreateWeaponDescription(CAbility * abi, CItem * selected
                 tooltipText += L"\n" + StringUtils::ConvertToWString(*it);
             }
         }
+        if (player)
+            tooltipText += L"\n" + StringUtils::ConvertToWString(abi->GetEffectDescription(player));
+
         tooltipText += L"\n\n" + gLocalizator.GetText("CURRENT_ITEM_POWER");
 
         if (!player)

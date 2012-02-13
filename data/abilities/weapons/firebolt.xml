@@ -10,6 +10,9 @@ Bonus for this spell depends:
   mildly on sanguine rune
   not at all on phlegmatic rune     
  </description>
+  <stats desc="deals $1 fire damage, knocks enemies back a bit">
+    <param name="1" calc="4.0 * (1 + power)" />
+  </stats>
   <trigger></trigger>
   <icon>data/abilities/weapons/firebolt.png</icon>
 
