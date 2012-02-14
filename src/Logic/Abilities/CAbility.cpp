@@ -222,18 +222,23 @@ const std::string CAbility::GetEffectDescription(CActor* performer)
 {
     std::string out = effectDescription;
 
+    int abiIndex = performer->GetAbilityPerformer().FindAbilityIndex(this);
+    int toDelete = -1;
+
+    if (abiIndex == -1)
+        toDelete = abiIndex = performer->GetAbilityPerformer().AddAbility(SAbilityInstance(this));
+
     for (std::map<std::string, std::string>::iterator it = effectDescriptionParameters.begin(); it != effectDescriptionParameters.end(); ++it)
     {
         CComputedValue val(it->second);
-        int abiIndex = performer->GetAbilityPerformer().FindAbilityIndex(this);
-        if (abiIndex == -1)
-            fprintf(stderr, "CAbility::GetEffectDescription error\n");
-        else
-        {
-            std::string computed = StringUtils::ToString(val.Evaluate(performer->GetAbilityPerformer().GetContext(abiIndex)));
-            out = StringUtils::ReplaceAllOccurrences(out, "$" + it->first, computed);
-        }
+
+        std::string computed = StringUtils::ToString(val.Evaluate(performer->GetAbilityPerformer().GetContext(abiIndex)));
+        out = StringUtils::ReplaceAllOccurrences(out, "$" + it->first, computed);
+
     }
+    
+    if (toDelete > -1)
+        performer->GetAbilityPerformer().GetAbilities()->erase(performer->GetAbilityPerformer().GetAbilities()->begin() + toDelete);
 
     return out;
 }
@@ -241,16 +246,18 @@ const std::string CAbility::GetEffectDescription(CActor* performer)
 const std::string CAbility::GetManaCostString(CActor* performer)
 {
     int abiIndex = performer->GetAbilityPerformer().FindAbilityIndex(this);
+    int toDelete = -1;
+
     if (abiIndex == -1)
-    {
-        fprintf(stderr, "CAbility::GetEffectDescription error\n");
-        return "(error)";
-    }
+        toDelete = abiIndex = performer->GetAbilityPerformer().AddAbility(SAbilityInstance(this));
 
     std::string ret = StringUtils::ToString(mManaCost.Evaluate(performer->GetAbilityPerformer().GetContext(abiIndex)));
 
     if (isFocus)
         ret += " + " + StringUtils::ToString(focusManaCost.Evaluate(performer->GetAbilityPerformer().GetContext(abiIndex)));
+
+    if (toDelete > -1)
+        performer->GetAbilityPerformer().GetAbilities()->erase(performer->GetAbilityPerformer().GetAbilities()->begin() + toDelete);
 
     return ret;
 }
