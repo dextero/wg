@@ -799,21 +799,28 @@ bool CRandomMapGenerator::PlaceRegions()
                 newExit = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
             while (mCurrent[newExit.x][newExit.y] != FREE);
 
+            if (((it->onBorder == "north" || it->onBorder == "south")) && ((newExit.x < 6 || newExit.x > (int)mDesc.sizeX - 6))) {
+                continue;
+            }
+            if (((it->onBorder == "east" || it->onBorder == "west")) && ((newExit.y < 6 || newExit.y > (int)mDesc.sizeY - 6))) {
+                continue;
+            }
+
             bool isBetterCandidate = false;
             float weight = 0.0;
             if (it->onBorder == "north") {
                 weight += newExit.y * 1000.0f;
                 weight += abs((float)(newExit.x - (mDesc.sizeX / 2)));
             } 
-            if (it->onBorder == "south") {
+            else if (it->onBorder == "south") {
                 weight += (mDesc.sizeY - newExit.y) * 1000.0f;
                 weight += abs((float)(newExit.x - (mDesc.sizeX / 2)));
             }
-            if (it->onBorder == "west") {
+            else if (it->onBorder == "west") {
                 weight += newExit.x * 1000.0f;
                 weight += abs((float)(newExit.y - (mDesc.sizeY / 2)));
             }
-            if (it->onBorder == "east") {
+            else if (it->onBorder == "east") {
                 weight += (mDesc.sizeX - newExit.x) * 1000.0f;
                 weight += abs((float)(newExit.y - (mDesc.sizeY / 2)));
             }
@@ -823,6 +830,28 @@ bool CRandomMapGenerator::PlaceRegions()
                 bestExitWeight = weight;
             }
         }
+        if (it->onBorder == "north") {
+            while (bestExit.y > 1) {
+                MakePassableAround(bestExit);
+                bestExit.y--;
+            }
+        } else if (it->onBorder == "south") {
+            while (bestExit.y < (int)mDesc.sizeY - 2) {
+                MakePassableAround(bestExit);
+                bestExit.y++;
+            }
+        } else if (it->onBorder == "west") {
+            while (bestExit.x > 1) {
+                MakePassableAround(bestExit);
+                bestExit.x--;
+            }
+        } else if (it->onBorder == "east") {
+            while (bestExit.x < (int)mDesc.sizeX - 2) {
+                MakePassableAround(bestExit);
+                bestExit.x++;
+            }
+        }
+
         MakePassableAround(bestExit);
         mCurrent[bestExit.x][bestExit.y] = REGION;
         mPassableLeft--;
