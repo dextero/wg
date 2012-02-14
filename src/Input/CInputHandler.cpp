@@ -110,9 +110,9 @@ void CInputHandler::FrameStarted( float secondsPassed ){
             {
                 typedef std::map<std::string, size_t> MapType;
                 MapType mapping;
-                mapping["Slot-0"] = 0;
-                mapping["Slot-1"] = 1;
-                mapping["Slot-2"] = 2;
+//                mapping["Slot-0"] = 0;
+//                mapping["Slot-1"] = 1;
+//                mapping["Slot-2"] = 2;
                 mapping["AbiX-0"] = 0;
                 mapping["AbiX-1"] = 1;
                 mapping["AbiX-2"] = 2;
