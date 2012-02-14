@@ -42,6 +42,9 @@ bool AskForFullscreen(const wchar_t * title, const wchar_t * message, int maxw, 
 char APP[] = "./bin/check_fullscreen";
 bool CanCreateWindowInFullScreenOnLinux()
 {
+    if (!FileUtils::FileExists(APP)) {
+        return true; // to allow force-using user's config.xml by deleting the check_fullscreen script from their installation
+    }
     int pid,status;
         
     if (!(pid=fork())) {
