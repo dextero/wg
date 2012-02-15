@@ -11,6 +11,12 @@ Bonus for this spell depends:
   barely on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/fireball.png</icon>
+  <stats desc="area of $1 fire damage
+$2% chance for setting on fire ($3 fire damage per second)">
+    <param name="1" calc="16.0 * (1 + power)" />
+	<param name="2" calc="0.25 + (0.005 * power)" />
+	<param name="3" calc="2.5 + (0.5 * power)" />
+  </stats>
 
   <!-- power = 5x cho, 0x mel, 3x san, 1x phl -->
   <power calc="0.2 * dot(5, choleric, 0, melancholic, 3, sanguine, 1, phlegmatic)"/>

@@ -11,6 +11,12 @@ Bonus for this spell depends:
   heavily on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/icearrow.png</icon>
+  <stats desc="deals $1 ice damage
+slows down to $2 base speed for $3 seconds">
+    <param name="1" calc="5.0 * (1 + power)" />
+	<param name="2" calc="0.76 - (0.005 * power)" />
+    <param name="3" calc="1.75 + (0.02 * power)" />
+  </stats>
 
   <!-- power = 2x cho, 4x mel, 0x san, 3x phl -->
   <power calc="0.2 * dot(2, choleric, 4, melancholic, 0, sanguine, 3, phlegmatic)"/>

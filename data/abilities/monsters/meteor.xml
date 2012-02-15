@@ -4,6 +4,11 @@
     <effect type="sound">
       <name value="data/sounds/Lugaro/break.ogg" />
     </effect>
+    <effect type="console">
+      <text>[
+        shake-camera 2 0.05 0.87
+      ]</text>
+    </effect>
     <effect type="graphical-effect">
       <name value="bullet-explosion" />
       <time value="0.8" />

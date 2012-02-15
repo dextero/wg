@@ -11,6 +11,13 @@ Bonus for this spell depends:
   barely on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/sparkrain.png</icon>
+  <stats desc="deals $1 fire damage per $2 sparks
+$3% chance for setting on fire ($4 fire damage per second)">
+    <param name="1" calc="10.5 + (4.5 * power)" />
+	<param name="2" calc="12 + (0.16 * power)" />
+	<param name="3" calc="0.25 + (0.005 * power)" />
+	<param name="4" calc="2 + (0.25 * power)" />
+  </stats>
 
   <!-- power = 4x cho, 0x mel, 4x san, 1x phl -->
   <power calc="0.2 * dot(4, choleric, 0, melancholic, 4, sanguine, 1, phlegmatic)"/>
