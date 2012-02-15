@@ -223,12 +223,11 @@ const std::string CAbility::GetEffectDescription(CActor* performer)
     std::string out = effectDescription;
 
     int abiIndex = performer->GetAbilityPerformer().FindAbilityIndex(this);
-    int toDelete = -1;
 
     if (abiIndex == -1)
     {
         SAbilityInstance abiInst(this);
-        toDelete = abiIndex = performer->GetAbilityPerformer().AddAbility(abiInst);
+        abiIndex = performer->GetAbilityPerformer().AddAbility(abiInst);
     }
 
     for (std::map<std::string, std::string>::iterator it = effectDescriptionParameters.begin(); it != effectDescriptionParameters.end(); ++it)
@@ -239,9 +238,6 @@ const std::string CAbility::GetEffectDescription(CActor* performer)
         out = StringUtils::ReplaceAllOccurrences(out, "$" + it->first, computed);
 
     }
-    
-    if (toDelete > -1)
-        performer->GetAbilityPerformer().GetAbilities()->erase(performer->GetAbilityPerformer().GetAbilities()->begin() + toDelete);
 
     return out;
 }
@@ -249,21 +245,17 @@ const std::string CAbility::GetEffectDescription(CActor* performer)
 const std::string CAbility::GetManaCostString(CActor* performer)
 {
     int abiIndex = performer->GetAbilityPerformer().FindAbilityIndex(this);
-    int toDelete = -1;
 
     if (abiIndex == -1)
     {
         SAbilityInstance abiInst(this);
-        toDelete = abiIndex = performer->GetAbilityPerformer().AddAbility(abiInst);
+        abiIndex = performer->GetAbilityPerformer().AddAbility(abiInst);
     }
 
     std::string ret = StringUtils::ToString(mManaCost.Evaluate(performer->GetAbilityPerformer().GetContext(abiIndex)));
 
     if (isFocus)
         ret += " + " + StringUtils::ToString(focusManaCost.Evaluate(performer->GetAbilityPerformer().GetContext(abiIndex)));
-
-    if (toDelete > -1)
-        performer->GetAbilityPerformer().GetAbilities()->erase(performer->GetAbilityPerformer().GetAbilities()->begin() + toDelete);
 
     return ret;
 }
