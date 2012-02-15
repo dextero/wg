@@ -1,4 +1,4 @@
-<root type="config" version="13">
+<root type="config" version="14">
 	<!-- VideoMode Config -->
 	<video width="800" height="600" fs="1" bpp="32" vsync="1" />
 	<!-- Smoothing (texture filtering) -->
@@ -96,10 +96,10 @@
     <keyBinding name="Slot-2" key="323">
       <override platform="macintosh" key="277" />
     </keyBinding>
-      <keyBinding name="Help" key="305" >
+      <keyBinding name="Help" key="307" >
         <override platform="macintosh" key="122" />
       </keyBinding>
-      <keyBinding name="Abilities" key="306" >
+      <keyBinding name="Abilities" key="308" >
         <override platform="macintosh" key="120" />
       </keyBinding>
   </controlsScheme>
