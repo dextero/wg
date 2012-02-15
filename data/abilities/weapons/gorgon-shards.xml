@@ -11,6 +11,9 @@ Bonus for this spell depends:
   barely on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/gorgon-shards.png</icon>
+  <stats desc="area of $1 fire damage per three shards">
+    <param name="1" calc="12.0 * (1 + power)" />
+  </stats>
 
   <!-- power = 5x cho, 0x mel, 3x san, 1x phl -->
   <power calc="0.2 * dot(5, choleric, 0, melancholic, 3, sanguine, 1, phlegmatic)"/>

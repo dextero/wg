@@ -11,6 +11,9 @@ Bonus for this spell depends:
   heavily on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/lightning.png</icon>
+  <stats desc="deals $1 lightning damage">
+    <param name="1" calc="18.0 * (1 + power)" />
+  </stats>
 
   <!-- power = 2x cho, 2x mel, 3x san, 3x phl -->
   <power calc="0.2 * dot(2, choleric, 2, melancholic, 3, sanguine, 3, phlegmatic)"/>

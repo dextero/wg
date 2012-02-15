@@ -11,6 +11,10 @@ Bonus for this spell depends:
   barely on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/sting.png</icon>
+  <stats desc="deals $1 poison damage per $2 seconds">
+    <param name="1" calc="2.65 + (0.25 * power)" />
+	<param name="2" calc="8.0 + (3.0 * power)" />
+  </stats>
 
   <!-- power = 1x cho, 4x mel, 2x san, 1x phl -->
   <power calc="0.2 * dot(1, choleric, 4, melancholic, 2, sanguine, 1, phlegmatic)"/>
@@ -26,10 +30,10 @@ Bonus for this spell depends:
         <time calc="6.0 + (3.0 * power)" />
       </effect>
       <effect type="timed">
-        <time calc="6.0 + (3.0 * power)" />
+        <time calc="8.0 + (3.0 * power)" />
         <effect type="damage">
           <damage-type value="poison"/>
-          <amount calc="2.25 + (0.25 * power)"/>
+          <amount calc="2.65 + (0.25 * power)"/>
         </effect>
       </effect>
 

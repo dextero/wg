@@ -11,6 +11,9 @@ Bonus for this spell depends:
   mildly on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/firestream.png</icon>
+  <stats desc="deals $1 fire damage per spark">
+    <param name="1" calc="4.0 * (1 + power)" />
+  </stats>
 
   <!-- power = 1x cho, 0x mel, 5x san, 2x phl -->
   <power calc="0.2 * dot(1, choleric, 0, melancholic, 5, sanguine, 2, phlegmatic)"/>

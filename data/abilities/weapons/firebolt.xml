@@ -9,12 +9,11 @@ Bonus for this spell depends:
   barely on melancholic rune
   mildly on sanguine rune
   not at all on phlegmatic rune     
- </description>
-  <stats desc="deals $1 fire damage, knocks enemies back a bit">
+  </description>
+  <icon>data/abilities/weapons/firebolt.png</icon>
+  <stats desc="deals $1 fire damage">
     <param name="1" calc="4.0 * (1 + power)" />
   </stats>
-  <trigger></trigger>
-  <icon>data/abilities/weapons/firebolt.png</icon>
 
   <!-- power = 5x cho, 1x mel, 2x san, 0x phl -->
   <power calc="0.2 * dot(5, choleric, 1, melancholic, 2, sanguine, 0, phlegmatic)"/>

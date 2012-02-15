@@ -11,6 +11,9 @@ Bonus for this spell depends:
   barely on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/firearrow-lvl2.png</icon>
+  <stats desc="deals $1 fire damage per penetration">
+    <param name="1" calc="7.0 * (1 + power)" />
+  </stats>
 
   <!-- power = 3x cho, 0x mel, 4x san, 1x phl -->
   <power calc="0.2 * dot(3, choleric, 0, melancholic, 4, sanguine, 1, phlegmatic)"/>

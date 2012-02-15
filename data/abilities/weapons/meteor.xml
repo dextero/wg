@@ -11,6 +11,12 @@ Bonus for this spell depends:
   barely on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/fireball.png</icon>
+  <stats desc="deals $1 fire damage
+area of $2-$3 fire damage">
+    <param name="1" calc="12.0 * (1 + power)" />
+	<param name="2" calc="7.5 * (1 + power)" />
+	<param name="3" calc="18 * 7.5 * (1 + power)" />
+  </stats>
 
   <!-- power = 5x cho, 0x mel, 4x san, 1x phl -->
   <power calc="0.2 * dot(5, choleric, 0, melancholic, 4, sanguine, 1, phlegmatic)"/>
@@ -48,7 +54,7 @@ Bonus for this spell depends:
         <effect type="list">
           <effect type="damage">
             <damage-type value="fire"/>
-            <amount calc="7.5" />
+            <amount calc="7.5 * (1 + power)" />
           </effect>
           <effect type="knockback">
             <amount calc="5 "/>
@@ -73,7 +79,7 @@ Bonus for this spell depends:
   <effect type="list">
     <effect type="damage">
       <damage-type value="fire"/>
-      <amount calc="12" />
+      <amount calc="12 * (1 + power)" />
     </effect>
   </effect>
 

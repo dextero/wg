@@ -11,6 +11,10 @@ Bonus for this spell depends:
   heavily on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/poison-cloud.png</icon>
+  <stats desc="area of $1 poison damage per $2 seconds">
+    <param name="1" calc="4.5 + (1.25 * power)" />
+	<param name="2" calc="5.0 + (1.5 * power)" />
+  </stats>
 
   <!-- power = 1x cho, 2x mel, 2x san, 3x phl -->
   <power calc="0.2 * dot(1, choleric, 2, melancholic, 2, sanguine, 3, phlegmatic)"/>
