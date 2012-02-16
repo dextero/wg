@@ -235,7 +235,7 @@ const std::string CAbility::GetEffectDescription(CActor* performer)
     {
         CComputedValue val(it->second);
 
-        std::string computed = StringUtils::ToString(val.Evaluate(context));
+        std::string computed = StringUtils::FloatToString(val.Evaluate(context), 2);
         out = StringUtils::ReplaceAllOccurrences(out, "$" + it->first, computed);
 
     }
@@ -256,10 +256,10 @@ const std::string CAbility::GetManaCostString(CActor* performer)
     ExecutionContextPtr context = performer->GetAbilityPerformer().GetContext(abiIndex);
     context->abilityPower = mPower.Evaluate(context);
 
-    std::string ret = StringUtils::ToString(mManaCost.Evaluate(context));
+    std::string ret = StringUtils::FloatToString(mManaCost.Evaluate(context), 2);
 
     if (isFocus)
-        ret += " + " + StringUtils::ToString(focusManaCost.Evaluate(context));
+        ret += " + " + StringUtils::FloatToString(focusManaCost.Evaluate(context), 2) + "/s";
 
     return ret;
 }

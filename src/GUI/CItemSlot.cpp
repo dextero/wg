@@ -226,41 +226,26 @@ std::wstring CItemSlot::CreateWeaponDescription(CAbility * abi, CItem * selected
     if (abi)
     {
         tooltipText = abi->name;
+
         //if (selectedItem != NULL) tooltipText += L" (" + gLocalizator.GetText("ITEM_LEVEL") + L" " + StringUtils::ToWString(selectedItem->mLevel) + L")";
         if (abi->isFocus && verbosity >= MAX_VERBOSITY) {
             tooltipText += CTextArea::GetNextColorString(sf::Color(231, 216, 46)) //Gold
                     + L"\n\n" + gLocalizator.GetText("ABILITY_IS_FOCUS_ABILITY")
                     + CTextArea::GetNextColorString(sf::Color::White);
         }
+
         if (verbosity >= MAX_VERBOSITY) {
             tooltipText += L"\n\n" + gLocalizator.GetText("SLOT_DRAG_ITEM_HERE");
         }
         if (verbosity >= MID_VERBOSITY) {
             tooltipText += L"\n\n" + abi->description;
-        } else if (verbosity >= LOW_VERBOSITY) {
-            std::vector<std::string> lines = StringUtils::Explode(StringUtils::ConvertToString(abi->description), "\n");
-            bool firstHit = false;
-            for (std::vector<std::string>::iterator it = lines.begin() ; it != lines.end() ; it++) {
-                bool foundNonWhiteChar = false;
-                for (size_t i = 0 ; i < it->length() ; i++) {
-                    if (it->at(i) != ' ' && it->at(i) != '\r' && it->at(i) != '\t' && it->at(i) != '\n') {
-                        foundNonWhiteChar = true;
-                        break;
-                    }
-                }
-                if (!foundNonWhiteChar) {
-                    if (!firstHit) {
-                        firstHit = true;
-                    } else {
-                        break;
-                    }
-                }
-                tooltipText += L"\n" + StringUtils::ConvertToWString(*it);
-            }
         }
-        if (player)
-            tooltipText += CTextArea::GetNextColorString(sf::Color(100, 100, 255)) + L"\nMana cost: " + StringUtils::ConvertToWString(abi->GetManaCostString(player))
-                        + CTextArea::GetNextColorString(sf::Color::White) + L"\n" + StringUtils::ConvertToWString(abi->GetEffectDescription(player));
+        if (verbosity >= LOW_VERBOSITY) {
+            if (player)
+                tooltipText += L"\n\n" + StringUtils::ConvertToWString(abi->GetEffectDescription(player))
+                            + CTextArea::GetNextColorString(sf::Color(100, 100, 255)) + L"\nMana cost: " + StringUtils::ConvertToWString(abi->GetManaCostString(player))
+                            + CTextArea::GetNextColorString(sf::Color::White);
+        }
 
         tooltipText += L"\n\n" + gLocalizator.GetText("CURRENT_ITEM_POWER");
 
