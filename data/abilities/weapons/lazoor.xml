@@ -11,6 +11,9 @@ Bonus for this spell depends:
   mildly on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/lazoor.png</icon>
+  <stats desc="deals $1 of lightning damage">
+    <param name="1" calc="25.0 * (1 + power)" />
+  </stats>
 
   <!-- power = 1x cho, 1x mel, 2x san, 2x phl -->
   <power calc="0.2 * dot(1, choleric, 1, melancholic, 2, sanguine, 2, phlegmatic)"/>

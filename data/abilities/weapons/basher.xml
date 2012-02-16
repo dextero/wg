@@ -11,6 +11,13 @@ Bonus for this spell depends:
   barely on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/basher.png</icon>
+  <stats desc="deals $1 of physical damage
+deals $2 of vorpal damage
+stun for $3 seconds">
+    <param name="1" calc="21.0 * (1 + power)" />
+    <param name="2" calc="14.0 * (1 + power)" />
+    <param name="3" calc="1.0 + ln(1 + power)" />
+  </stats>
 
   <!-- power = 1x cho, 4x mel, 0x san, 1x phl -->
   <power calc="0.2 * dot(1, choleric, 4, melancholic, 0, sanguine, 1, phlegmatic)"/>

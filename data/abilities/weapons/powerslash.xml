@@ -11,6 +11,10 @@ Bonus for this spell depends:
   extremely on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/powerslash.png</icon>
+  <stats desc="deals $1 of damage" >
+    <param name="1" calc="7.5 * (1 + power)" />
+  </stats>
+                      
 
   <!-- power = 1x cho, 2x mel, 1x san, 4x phl -->
   <power calc="0.2 * dot(1, choleric, 2, melancholic, 1, sanguine, 4, phlegmatic)"/>

@@ -11,6 +11,11 @@ Bonus for this spell depends:
   heavily on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/ignite.png</icon>
+  <stats desc="deals $1-$2 of fire damage
+33% chance to spread the fire">
+    <param name="1" calc="4 * (1 + power)" />
+    <param name="2" calc="8 * 4 * (1 + power)" />
+  </stats>
 
   <!-- power = 1x cho, 0x mel, 5x san, 3x phl -->
   <power calc="0.2 * dot(1, choleric, 0, melancholic, 5, sanguine, 3, phlegmatic)"/>

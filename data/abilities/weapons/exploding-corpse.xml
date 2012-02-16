@@ -11,6 +11,10 @@ Bonus for this spell depends:
   mildly on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/exploding-corpse.png</icon>
+  <stats desc="area of $1 fire damage">
+    <param name="1" calc="19 * (1 + power)" />
+  </stats>
+
 
   <!-- power = 2x cho, 2x mel, 2x san, 2x phl -->
   <power calc="0.2 * dot(2, choleric, 2, melancholic, 2, sanguine, 2, phlegmatic)"/>

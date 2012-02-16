@@ -11,6 +11,11 @@ Bonus for this spell depends:
   mildly on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/firewall.png</icon>
+  <stats desc="area of $1-$2 fire damage
+pushes back">
+    <param name="1" calc="2 * (1 + power)" />
+    <param name="2" calc="2.5 * 2 * (1 + power)" />
+  </stats>
 
   <!-- power = 3x cho, 1x mel, 2x san, 2x phl -->
   <power calc="0.2 * dot(3, choleric, 1, melancholic, 2, sanguine, 2, phlegmatic)"/>

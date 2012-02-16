@@ -11,6 +11,11 @@ Bonus for this spell depends:
   heavily on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/entangle.png</icon>
+  <stats desc="immobilize $1 opponents for $2 seconds">
+    <param name="1" calc="6 * ln(1 + (0.33 * power))" />
+    <param name="2" calc="3.0 * (1 + 0.5 * ln(1 + power))" />
+  </stats>
+                  
 
   <!-- power = 1x cho, 4x mel, 2x san, 3x phl -->
   <power calc="0.2 * dot(1, choleric, 4, melancholic, 2, sanguine, 3, phlegmatic)"/>

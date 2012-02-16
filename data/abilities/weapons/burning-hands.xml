@@ -11,8 +11,9 @@ Bonus for this spell depends:
   not at all on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/burning-hands.png</icon>
-  <stats desc="deals $1 fire damage per second">
-    <param name="1" calc="(8.0 * (1 + power)) * 2.5" />
+  <stats desc="deals $1-$2 of fire damage">
+    <param name="1" calc="(8.0 * (1 + power))" />
+    <param name="2" calc="(8.0 * (1 + power)) * 2.5" />
   </stats>
 
   <!-- power = 4x cho, 2x mel, 2x san, 0x phl -->

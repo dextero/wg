@@ -11,6 +11,13 @@ Bonus for this spell depends:
   totally on phlegmatic rune
 </description>
 <icon>data/abilities/weapons/acidcircus.png</icon>
+<stats desc="area of $1 poison damage for 5 seconds
+deals $2 of poison damage per spark
+deals $3 of poison damage for 5 seconds per spark">
+  <param name="1" calc="10.0 * (1 + power)" />
+  <param name="2" calc="7 * (1 + power)" />
+  <param name="3" calc="7.0 * (1 + power)" />
+</stats>
 
   <!-- power = 2x cho, 0x mel, 3x san, 5x phl -->
   <power calc="0.2 * dot(2, choleric, 0, melancholic, 3, sanguine, 5, phlegmatic)"/>

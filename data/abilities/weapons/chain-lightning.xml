@@ -11,7 +11,7 @@ Bonus for this spell depends:
   mildly on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/chain-lightning.png</icon>
-  <stats desc="deals $1-$2 lightning damage">
+  <stats desc="deals $1-$2 of lightning damage">
     <param name="1" calc="9.0 * (1 + power)" />
     <param name="2" calc="52.0 * (1 + power)" />
   </stats>

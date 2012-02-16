@@ -11,6 +11,10 @@ Bonus for this spell depends:
   totally on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/meditation.png</icon>
+  <stats desc="restores $1 mana-points
+immobilizes caster">
+    <param name="1" calc="5.0 * (1 + power)" />
+  </stats>
 
   <!-- power = 0x cho, 4x mel, 0x san, 5x phl -->
   <power calc="0.2 * dot(0, choleric, 4, melancholic, 0, sanguine, 5, phlegmatic)"/>

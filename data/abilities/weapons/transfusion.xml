@@ -11,6 +11,14 @@ Bonus for this spell depends:
   mildly on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/transfusion.png</icon>
+  <stats desc="deals $1-$2 of lightning damage
+transfers $3-$4 of hit points">
+    <param name="1" calc="1.5 * (1 + power)" />
+    <param name="2" calc="8 * 1.5 * (1 + power)" />
+    <param name="3" calc="0.5 * (1 + power)" />
+    <param name="4" calc="8 * 0.5 * (1 + power)" />
+  </stats>
+                  
 
   <!-- power = 2x cho, 3x mel, 1x san, 2x phl -->
   <power calc="0.2 * dot(2, choleric, 3, melancholic, 1, sanguine, 2, phlegmatic)"/>
