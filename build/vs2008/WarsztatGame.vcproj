@@ -1665,23 +1665,11 @@
 					Name="OptionChooser"
 					>
 					<File
-						RelativePath="..\..\src\Logic\OptionChooser\CChestOptionHandler.h"
-						>
-					</File>
-					<File
-						RelativePath="..\..\src\Logic\OptionChooser\CLootItemOptionHandler.h"
-						>
-					</File>
-					<File
-						RelativePath="..\..\src\Logic\OptionChooser\CSimpleOptionHandler.h"
+						RelativePath="..\..\src\Logic\OptionChooser\ChestInteraction.h"
 						>
 					</File>
 					<File
 						RelativePath="..\..\src\Logic\OptionChooser\InteractionHandler.h"
-						>
-					</File>
-					<File
-						RelativePath="..\..\src\Logic\OptionChooser\IOptionChooserHandler.h"
 						>
 					</File>
 					<File
@@ -1690,6 +1678,10 @@
 					</File>
 					<File
 						RelativePath="..\..\src\Logic\OptionChooser\SignInteraction.h"
+						>
+					</File>
+					<File
+						RelativePath="..\..\src\Logic\OptionChooser\WeaponInteraction.h"
 						>
 					</File>
 				</Filter>
