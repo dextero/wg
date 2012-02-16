@@ -51,11 +51,20 @@ int CAbilityPerformer::AddAbility(SAbilityInstance &abi, const std::string & ani
 }
 
 int CAbilityPerformer::FindAbilityIndex(CAbility *abi) {
-	for (unsigned int i = 0; i < mAbilities->size(); i++) {
-		if (mAbilities->at(i).ability == abi)
-			return i;
-	}
-	return -1;
+//	for (unsigned int i = 0; i < mAbilities->size(); i++) {
+//		if (mAbilities->at(i).ability == abi)
+//			return i;
+//	}
+//	return -1;
+
+    size_t i = mAbilities->size();
+    while (i > 0) {
+        if (mAbilities->at(i-1).ability == abi) {
+            return i-1;
+        }
+        i--;
+    }
+    return -1;
 }
 
 int CAbilityPerformer::FindAbilityIndexByInvPos(size_t invPos) {
