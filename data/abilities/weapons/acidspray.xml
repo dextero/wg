@@ -11,6 +11,14 @@ Bonus for this spell depends:
   mildly on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/acidspray.png</icon>
+  <stats desc="deals $1-$2 of poison damage
+deals $3 of poison damage for $4 seconds">
+  <param name="1" calc="4.0 * (1 + power)" />
+  <param name="2" calc="6 * 4.0 * (1 + power)" />
+  <param name="3" calc="7.5 + (0.02 * power)" />
+  <param name="4" calc="2.0 + (0.01 * power)" />
+</stats>
+
 
   <!-- power = 1x cho, 0x mel, 5x san, 2x phl -->
   <power calc="0.2 * dot(1, choleric, 0, melancholic, 5, sanguine, 2, phlegmatic)"/>

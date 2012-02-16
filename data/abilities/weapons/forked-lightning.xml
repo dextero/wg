@@ -11,6 +11,10 @@ Bonus for this spell depends:
   mildly on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/forked-lightning.png</icon>
+  <stats desc="deals $1-$2 of lightning damage">
+    <param name="1" calc="18.0 * (1 + power)" />
+    <param name="2" calc="5 * 18.0 * (1 + power)" />
+  </stats>
 
   <!-- power = 1x cho, 3x mel, 2x san, 2x phl -->
   <power calc="0.2 * dot(1, choleric, 3, melancholic, 2, sanguine, 2, phlegmatic)"/>

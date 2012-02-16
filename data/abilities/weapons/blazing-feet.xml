@@ -11,6 +11,11 @@ Bonus for this spell depends:
   heavily on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/blazing-feet.png</icon>
+  <stats desc="area of $1-$2 fire damage">
+    <param name="1" calc="2 * (1 + power)" />
+    <param name="2" calc="2.5 * 2 * (1 + power)" />
+  </stats>
+
 
   <!-- power = 0x cho, 2x mel, 3x san, 3x phl -->
   <power calc="0.2 * dot(0, choleric, 2, melancholic, 3, sanguine, 3, phlegmatic)"/>

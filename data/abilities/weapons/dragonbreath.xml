@@ -11,6 +11,12 @@ Bonus for this spell depends:
   mildly on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/dragonbreath.png</icon>
+  <stats desc="area of $1 fire damage
+10 shrapnels dealing $2-$3 of fire damage">
+    <param name="1" calc="12.0 * (1 + power)" />
+    <param name="2" calc="(12.0 * (1 + power))" />
+    <param name="3" calc="(12.0 * (1 + power)) * 2.5" />
+  </stats>
 
   <!-- power = 3x cho, 1x mel, 2x san, 2x phl -->
   <power calc="0.2 * dot(3, choleric, 1, melancholic, 2, sanguine, 2, phlegmatic)"/>

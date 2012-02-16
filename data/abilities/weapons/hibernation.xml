@@ -11,6 +11,10 @@ Bonus for this spell depends:
   heavily on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/hibernation.png</icon>
+  <stats desc="heals $1 hit-points
+immobilizes caster">
+    <param name="1" calc="7.5 * (1 + 2 * power)" />
+  </stats>
 
   <!-- power = 2x cho, 3x mel, 1x san, 3x phl -->
   <power calc="0.2 * dot(2, choleric, 3, melancholic, 1, sanguine, 3, phlegmatic)"/>

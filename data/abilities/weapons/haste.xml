@@ -11,6 +11,9 @@ Bonus for this spell depends:
   mildly on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/haste.png</icon>
+  <stats desc="hastes to $1 of base speed">
+    <param name="1" calc="1.25 + 0.15 * ln(1 + 4 * (power))" />
+  </stats>
 
   <!-- power = 1x cho, 1x mel, 5x san, 2x phl -->
   <power calc="0.2 * dot(1, choleric, 1, melancholic, 5, sanguine, 2, phlegmatic)"/>

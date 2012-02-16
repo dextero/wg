@@ -11,6 +11,11 @@ Bonus for this spell depends:
   barely on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/blades.png</icon>
+  <stats desc="$3 blades dealing $1-$2 of vorpal damage per penetration">
+    <param name="1" calc="3.0 * (1 + power)" />
+    <param name="2" calc="5 * 3.0 * (1 + power)" />
+    <param name="3" calc="3 + ln(1 + power)" />
+  </stats>
 
   <!-- power = 3x cho, 0x mel, 4x san, 1x phl -->
   <power calc="0.2 * dot(3, choleric, 0, melancholic, 4, sanguine, 1, phlegmatic)"/>

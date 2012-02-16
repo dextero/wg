@@ -11,6 +11,16 @@ Bonus for this spell depends:
   barely on phlegmatic rune     
   </description>
   <icon>data/abilities/weapons/fireburst.png</icon>
+  <stats desc="area of $1 fire damage
+$2% chance for setting on fire ($3-$4 fire damage)
+$5 shards dealing $6 of fire damage">
+    <param name="1" calc="35.0 * (1 + power)" />
+    <param name="2" calc="0.66 + (0.01 * power)" />
+    <param name="3" calc="3 + (0.25 * power)" />
+    <param name="4" calc="(3 + (0.25 * power)) * 4" />
+    <param name="5" calc="7 + (3.4 * power)" />
+    <param name="6" calc="11 + (0.4 * power)" />
+  </stats>
 
   <!-- power = 4x cho, 1x mel, 4x san, 1x phl -->
   <power calc="0.2 * dot(4, choleric, 1, melancholic, 4, sanguine, 1, phlegmatic)"/>

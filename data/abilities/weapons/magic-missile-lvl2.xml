@@ -11,6 +11,10 @@ Bonus for this spell depends:
   heavily on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/magic-missile-lvl2.png</icon>
+  <stats desc="deals $1-$2 damage">
+    <param name="1" calc="10.0 * (1 + power)" />
+    <param name="2" calc="5 * 10.0 * (1 + power)" />
+  </stats>
 
   <!-- power = 2x cho, 1x mel, 4x san, 3x phl -->
   <power calc="0.2 * dot(2, choleric, 1, melancholic, 4, sanguine, 3, phlegmatic)"/>

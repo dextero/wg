@@ -11,6 +11,10 @@ Bonus for this spell depends:
   barely on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/electric-snare.png</icon>
+  <stats desc="deals $1-$2 of lightning damage">
+    <param name="1" calc="14 * (1 + power)" />
+    <param name="2" calc="(1/0.17) * 2.0 * 14 * (1 + power)" />
+  </stats>
 
   <!-- power = 3x cho, 1x mel, 4x san, 1x phl -->
   <power calc="0.2 * dot(3, choleric, 1, melancholic, 4, sanguine, 1, phlegmatic)"/>

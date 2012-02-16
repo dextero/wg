@@ -11,6 +11,17 @@ Bonus for this spell depends:
   mildly on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/icecircle.png</icon>
+  <stats desc="area of $1 ice damage
+freezes for 3 seconds
+15 shards, each:
+  deals $2 of ice damage
+  slows down to $3 base speed for $4 seconds">
+    <param name="1" calc="12.0 * (1 + power)" />
+    <param name="2" calc="5.0 * (1 + power)" />
+    <param name="3" calc="0.76 - (0.005 * power)" />
+    <param name="4" calc="1.75 + (0.02 * power)" />
+  </stats>
+
 
   <!-- power = 2x cho, 2x mel, 2x san, 2x phl -->
   <power calc="0.2 * dot(2, choleric, 2, melancholic, 2, sanguine, 2, phlegmatic)"/>

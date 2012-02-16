@@ -11,6 +11,16 @@ Bonus for this spell depends:
   barely on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/freezing-mine.png</icon>
+  <stats desc="area of $1 ice damage
+freezes for 3 seconds
+8 shards, each:
+  deals $2 of ice damage
+  slows down to $3 base speed for $4 seconds">
+    <param name="1" calc="16.0 * (1 + power)" />
+    <param name="2" calc="8.0 * (1 + power)" />
+    <param name="3" calc="0.76 - (0.005 * power)" />
+    <param name="4" calc="1.75 + (0.02 * power)" />
+  </stats>
 
   <!-- power = 2x cho, 3x mel, 2x san, 1x phl -->
   <power calc="0.2 * dot(2, choleric, 3, melancholic, 2, sanguine, 1, phlegmatic)"/>

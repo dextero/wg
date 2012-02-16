@@ -11,7 +11,7 @@ Bonus for this spell depends:
   heavily on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/icearrow.png</icon>
-  <stats desc="deals $1 ice damage
+  <stats desc="deals $1 of ice damage
 slows down to $2 base speed for $3 seconds">
     <param name="1" calc="5.0 * (1 + power)" />
 	<param name="2" calc="0.76 - (0.005 * power)" />
