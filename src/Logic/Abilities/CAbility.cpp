@@ -122,8 +122,6 @@ bool CAbility::Load(std::map<std::string,std::string>& argv)
 
     mMaxLevel = xml.GetInt(xml.GetChild(xml.GetRootNode(), "max-level"), "value", INT_MAX);
     mCanBuy = (xml.GetChild(xml.GetRootNode(), "no-buy") == 0);
-    if (xml.GetFilename().find("firebolt") != std::string::npos)
-        fprintf(stderr, "");
     mPower = CComputedValueFactory::Parse(xml, xml.GetChild(0, "power"));
 
     std::string abiClass = xml.GetString(0,"class");
