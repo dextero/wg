@@ -230,11 +230,14 @@ const std::string CAbility::GetEffectDescription(CActor* performer)
         abiIndex = performer->GetAbilityPerformer().AddAbility(abiInst);
     }
 
+    ExecutionContextPtr context = performer->GetAbilityPerformer().GetContext(abiIndex);
+    context->abilityPower = mPower.Evaluate(context);
+
     for (std::map<std::string, std::string>::iterator it = effectDescriptionParameters.begin(); it != effectDescriptionParameters.end(); ++it)
     {
         CComputedValue val(it->second);
 
-        std::string computed = StringUtils::ToString(val.Evaluate(performer->GetAbilityPerformer().GetContext(abiIndex)));
+        std::string computed = StringUtils::ToString(val.Evaluate(context));
         out = StringUtils::ReplaceAllOccurrences(out, "$" + it->first, computed);
 
     }
@@ -252,10 +255,13 @@ const std::string CAbility::GetManaCostString(CActor* performer)
         abiIndex = performer->GetAbilityPerformer().AddAbility(abiInst);
     }
 
-    std::string ret = StringUtils::ToString(mManaCost.Evaluate(performer->GetAbilityPerformer().GetContext(abiIndex)));
+    ExecutionContextPtr context = performer->GetAbilityPerformer().GetContext(abiIndex);
+    context->abilityPower = mPower.Evaluate(context);
+
+    std::string ret = StringUtils::ToString(mManaCost.Evaluate(context));
 
     if (isFocus)
-        ret += " + " + StringUtils::ToString(focusManaCost.Evaluate(performer->GetAbilityPerformer().GetContext(abiIndex)));
+        ret += " + " + StringUtils::ToString(focusManaCost.Evaluate(context));
 
     return ret;
 }
