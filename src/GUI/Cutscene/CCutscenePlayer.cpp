@@ -30,11 +30,15 @@ CCutscenePlayer::CCutscenePlayer()
 	mImageBox->SetPosition( 0.0f, 0.0f, 100.0f, 100.0f );
 	mImageBox->SetVisible( false );
 
+    CImageBox * bg = mImageBox->CreateImageBox("text-background");
+    bg->AddImageToSequence("data/cutscene/bg.png");
+    bg->SetPosition(0.0f, 70.0f, 92.0f, 26.0f);
+
 	mTextArea = mImageBox->CreateTextArea( "cutscene-text" );
-	mTextArea->SetPosition( 5.0f, 80.0f, 90.0f, 18.0f );
-	mTextArea->SetPadding( 2.0f, 2.0f, 2.0f, 2.0f );
+	mTextArea->SetPosition( 5.0f, 72.0f, 90.0f, 28.0f );
+//	mTextArea->SetPadding( 2.0f, 2.0f, 2.0f, 2.0f );
 	mTextArea->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
-	mTextArea->SetBackgroundImage( "data/cutscene/bg.png" );
+//	mTextArea->SetBackgroundImage( "data/cutscene/bg.png" ); usuwam, bo sie rozjezdzalo
 	mTextArea->SetColor( sf::Color::White );
 	mTextArea->SetVisible( false );
 }
