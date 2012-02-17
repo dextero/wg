@@ -2,13 +2,7 @@
 
   <name>Frostnova</name>
   <description>
-When this projectile hits the target a magic cold spreads over the vicinity causing damage and freezing enemies.
-
-Bonus for this spell depends:
-  mildly on choleric rune
-  mildly on melancholic rune
-  heavily on sanguine rune
-  heavily on phlegmatic rune  
+When this projectile hits the target a magic cold spreads over the vicinity causing damage and freezing enemies. 
   </description>
   <icon>data/abilities/weapons/frostnova.png</icon>
   <stats desc="area of $1-$2 ice damage

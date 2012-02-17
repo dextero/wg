@@ -3,12 +3,6 @@
   <name>Powerslash</name>
   <description>
 A basic melee attack which knocks opponents back.
-
-Bonus for this spell depends:
-  barely on choleric rune
-  mildly on melancholic rune
-  barely on sanguine rune
-  extremely on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/powerslash.png</icon>
   <stats desc="deals $1 of damage" >

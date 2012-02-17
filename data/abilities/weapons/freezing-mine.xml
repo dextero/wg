@@ -2,13 +2,7 @@
 
   <name>Freezing mine</name>
   <description>
-Quite strong mine which is able to freeze opponents being close enough. If the mine hits something before arming itself the mine will disappear. 
-
-Bonus for this spell depends:
-  mildly on choleric rune
-  heavily on melancholic rune
-  mildly on sanguine rune
-  barely on phlegmatic rune  
+Quite strong mine which is able to freeze opponents being close enough. If the mine hits something before arming itself the mine will disappear.
   </description>
   <icon>data/abilities/weapons/freezing-mine.png</icon>
   <stats desc="area of $1 ice damage

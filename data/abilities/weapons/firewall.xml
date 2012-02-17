@@ -2,13 +2,7 @@
 
   <name>Fire wall</name>
   <description>
-This spell creates a barrier of impenetrable flame, which hurts monsters (and careless battlemages), preventing them from passing through. Only the most desperated enemies can make it to the other side, but they will pay dearly for it.
-
-Bonus for this spell depends:
-  heavily on choleric rune
-  barely on melancholic rune
-  mildly on sanguine rune
-  mildly on phlegmatic rune  
+This spell creates a barrier of impenetrable flame, which hurts monsters (and careless battlemages), preventing them from passing through. Only the most desperated enemies can make it to the other side, but they will pay dearly for it. 
   </description>
   <icon>data/abilities/weapons/firewall.png</icon>
   <stats desc="area of $1-$2 fire damage

@@ -3,12 +3,6 @@
   <name>Resonator</name>
   <description>
 This spell was discovered by Siolan, a junior third class battlemage, while he was running away from hordes of mountain trolls. It&apos;s quite simple - the more monsters are near the caster, the stronger the caster is pushed away, giving him a fair chance to run away. Battlemages despise this spell, calling it a &quot;coward&apos;s trick&quot; - on the other hand, Siolan was one of the few battlemages who lived to the retirement age...
-
-Bonus for this spell depends:
-  barely on choleric rune
-  extremely on melancholic rune
-  not at all on sanguine rune
-  extremely on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/resonator.png</icon>
 

@@ -3,12 +3,6 @@
   <name>Poison cloud</name>
   <description>
 A slow projectile turning into cloud of suffocating gas.
-
-Bonus for this spell depends:
-  barely on choleric rune
-  mildly on melancholic rune
-  mildly on sanguine rune
-  heavily on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/poison-cloud.png</icon>
   <stats desc="area of $1 poison damage per $2 seconds">

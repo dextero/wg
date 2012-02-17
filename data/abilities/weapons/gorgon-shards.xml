@@ -3,12 +3,6 @@
   <name>Gorgon shards</name>
   <description>
 Throws three explosive shards under incoming enemies.
-
-Bonus for this spell depends:
-  totally on choleric rune
-  not at all on melancholic rune
-  heavily on sanguine rune
-  barely on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/gorgon-shards.png</icon>
   <stats desc="area of $1-$2 fire damage">

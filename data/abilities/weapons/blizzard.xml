@@ -3,12 +3,6 @@
   <name>Blizzard</name>
   <description>
 Ice mages have many spells which slow down and freeze enemies. This particular spell is very effective when you get surrounded by enemy hordes.
-
-Bonus for this spell depends:
-  heavily on choleric rune
-  mildly on melancholic rune
-  barely on sanguine rune
-  mildly on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/blizzard.png</icon>
   <stats desc="area of $1-$2 ice damage

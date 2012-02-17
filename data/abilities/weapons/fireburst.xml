@@ -2,13 +2,7 @@
 
   <name>Fireburst</name>
   <description>
-The ultimate solution for the &quot;being surrounded by a horde of ferocious mosters&quot; problem.
-
-Bonus for this spell depends:
-  extremely on choleric rune
-  barely on melancholic rune
-  extremely on sanguine rune
-  barely on phlegmatic rune     
+The ultimate solution for the &quot;being surrounded by a horde of ferocious mosters&quot; problem.    
   </description>
   <icon>data/abilities/weapons/fireburst.png</icon>
   <stats desc="area of $1 fire damage

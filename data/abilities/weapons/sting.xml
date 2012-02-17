@@ -2,13 +2,7 @@
 
   <name>Sting</name>
   <description>
-A poisonous thorn injuring enemy.
-  
-Bonus for this spell depends:
-  barely on choleric rune
-  extremely on melancholic rune
-  mildly on sanguine rune
-  barely on phlegmatic rune  
+A poisonous thorn injuring enemy. 
   </description>
   <icon>data/abilities/weapons/sting.png</icon>
   <stats desc="deals $1 poison damage per $2 seconds">

@@ -3,12 +3,6 @@
   <name>Electron</name>
   <description>
 Basic electricity spell. Inflicts small damage and has a chance to stun the target.
-
-Bonus for this spell depends:
-  barely on choleric rune
-  extremely on melancholic rune
-  mildly on sanguine rune
-  mildly on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/electron.png</icon>
   <stats desc="deals $1 lightning damage

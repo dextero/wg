@@ -3,12 +3,6 @@
   <name>Hibernation</name>
   <description>
 For a short period of time you can't move nor cast spell, but your body quickly regenerates. Use with care.
-
-Bonus for this spell depends:
-  mildly on choleric rune
-  heavily on melancholic rune
-  barely on sanguine rune
-  heavily on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/hibernation.png</icon>
   <stats desc="heals $1 hit-points

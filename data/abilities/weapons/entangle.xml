@@ -3,12 +3,6 @@
   <name>Entangle</name>
   <description>
 Powers of the nature entangle enemy. Talented caster is able to entangle multiple enemies at once.
-
-Bonus for this spell depends:
-  barely on choleric rune
-  extremely on melancholic rune
-  mildly on sanguine rune
-  heavily on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/entangle.png</icon>
   <stats desc="immobilize $1 opponents for $2 seconds">

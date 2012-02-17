@@ -3,12 +3,6 @@
   <name>Electric snare</name>
   <description>
 Sends a bomb that draws nearby enemies into a vortex of electricity, dealing damage and keeping them in check.
-
-Bonus for this spell depends:
-  heavily on choleric rune
-  barely on melancholic rune
-  extremely on sanguine rune
-  barely on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/electric-snare.png</icon>
   <stats desc="deals $1-$2 of lightning damage">

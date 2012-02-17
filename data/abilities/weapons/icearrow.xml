@@ -2,13 +2,7 @@
 
   <name>Ice arrow</name>
   <description>
-Basic offensive spell used by Water Mages - an icicle that wounds and slows down enemy.  
-  
-Bonus for this spell depends:
-  mildly on choleric rune
-  extremely on melancholic rune
-  not at all on sanguine rune
-  heavily on phlegmatic rune  
+Basic offensive spell used by Water Mages - an icicle that wounds and slows down enemy.
   </description>
   <icon>data/abilities/weapons/icearrow.png</icon>
   <stats desc="deals $1 of ice damage

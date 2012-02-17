@@ -2,13 +2,7 @@
 
   <name>Fire pits</name>
   <description>
-The mage summons two pits full of molten fire and sulphur. They appear in front of the mage, and any bypassing monster is captured and burned for a certain period of time.
-
-Bonus for this spell depends:
-  barely on choleric rune
-  heavily on melancholic rune
-  barely on sanguine rune
-  heavily on phlegmatic rune  
+The mage summons two pits full of molten fire and sulphur. They appear in front of the mage, and any bypassing monster is captured and burned for a certain period of time. 
   </description>
   <icon>data/abilities/weapons/firepits.png</icon>
 

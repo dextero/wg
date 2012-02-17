@@ -3,12 +3,6 @@
   <name>Chain lightning</name>
   <description>
 A lightning that jumps between enemies, dealing less damage with each jump.
-
-Bonus for this spell depends:
-  heavily on choleric rune
-  mildly all on melancholic rune
-  heavily on sanguine rune
-  mildly on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/chain-lightning.png</icon>
   <stats desc="deals $1-$2 of lightning damage">

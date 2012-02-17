@@ -3,12 +3,6 @@
   <name>Ice circle</name>
   <description>
 An ice missile scattering into ring of sharp icicles.
-
-Bonus for this spell depends:
-  mildly on choleric rune
-  mildly on melancholic rune
-  mildly on sanguine rune
-  mildly on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/icecircle.png</icon>
   <stats desc="area of $1 ice damage

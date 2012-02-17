@@ -3,12 +3,6 @@
   <name>Meditation</name>
   <description>
 For a short period of time you can't move nor cast spell, but your mana quickly regenerates.
-
-Bonus for this spell depends:
-  not at all on choleric rune
-  extremely on melancholic rune
-  not at all on sanguine rune
-  totally on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/meditation.png</icon>
   <stats desc="restores $1 mana-points

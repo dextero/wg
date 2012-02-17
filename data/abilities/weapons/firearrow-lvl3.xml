@@ -3,12 +3,6 @@
   <name>Fire arrow (MkIII)</name>
   <description>
 Triple fire arrows, dealing damage and knocking enemies backward. The arrows can fly through enemies, so you can hit a few monsters in a row.
-
-Bonus for this spell depends:
-  heavily on choleric rune
-  not at all on melancholic rune
-  extremely on sanguine rune
-  barely on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/firearrow-lvl3.png</icon>
   <stats desc="deals $1-$2 fire damage">

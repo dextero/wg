@@ -3,12 +3,6 @@
   <name>Magic missile</name>
   <description>
 Just a casual Magic Missile. Causes physical damages.
-
-Bonus for this spell depends:
-  mildly on choleric rune
-  barely on melancholic rune
-  heavily on sanguine rune
-  mildly on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/magic-missile.png</icon>
   <stats desc="deals $1 damage">

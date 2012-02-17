@@ -2,13 +2,7 @@
 
   <name>Kromad&apos;s club</name>
   <description>
-When the Troll shaman, Kromad the Terrifying, lost his bone club in the midst of a battle, he decided to smack enemies with pure magic energy. The spell became interesting enough for human mages to make a copy of it.  
-
-Bonus for this spell depends:
-  barely on choleric rune
-  extremely on melancholic rune
-  not at all on sanguine rune
-  barely on phlegmatic rune
+When the Troll shaman, Kromad the Terrifying, lost his bone club in the midst of a battle, he decided to smack enemies with pure magic energy. The spell became interesting enough for human mages to make a copy of it.
   </description>
   <icon>data/abilities/weapons/basher.png</icon>
   <stats desc="deals $1 of physical damage
