@@ -3,12 +3,6 @@
   <name>Hellfire</name>
   <description>
 Shoots two auto-aiming fireballs that will explode into ten firebolts upon contact.
-
-Bonus for this spell depends:
-  totally on choleric rune
-  not at all on melancholic rune
-  extremely on sanguine rune
-  barely on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/hellfire.png</icon>
   <stats desc="area of $1 fire damage

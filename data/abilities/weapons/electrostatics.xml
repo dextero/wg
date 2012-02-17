@@ -3,12 +3,6 @@
   <name>Electrostatics</name>
   <description>
 A direct extension of the &quot;Wandering electron&quot; spell. The difference in the electric potentials between the target and it&apos;s nearest environment causes a temporary transition of electric charges.
-
-Bonus for this spell depends:
-  heavily on choleric rune
-  mildly on melancholic rune
-  extremely on sanguine rune
-  barely on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/electrostatics.png</icon>
   <stats desc="deals $1 lightning damage

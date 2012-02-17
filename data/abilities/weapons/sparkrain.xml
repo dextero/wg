@@ -3,12 +3,6 @@
   <name>Spark rain</name>
   <description>
 Fire magic taken to the extreme - this spell spreads a wide fan of sparks, dealing damage to any monsters within it&apos;s limited range.
-
-Bonus for this spell depends:
-  extremely on choleric rune
-  not at all on melancholic rune
-  extremely on sanguine rune
-  barely on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/sparkrain.png</icon>
   <stats desc="deals $1-$2 of fire damage

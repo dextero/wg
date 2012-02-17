@@ -3,12 +3,6 @@
   <name>Devolution</name>
   <description>
 An intimidating set of lightning bolts targetting many enemies at once.
-
-Bonus for this spell depends:
-  not at all on choleric rune
-  extremely on melancholic rune
-  mildly on sanguine rune
-  mildly on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/devolution.png</icon>
   <stats desc="deals $1-$2 of lightning damage">

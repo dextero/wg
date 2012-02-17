@@ -2,13 +2,7 @@
 
   <name>Freezing blast</name>
   <description>
-Melee attack which freezes any enemies that are hit.
-
-Bonus for this spell depends:
-  mildly on choleric rune
-  extremely on melancholic rune
-  mildly on sanguine rune
-  mildly on phlegmatic rune  
+Melee attack which freezes any enemies that are hit. 
   </description>
   <icon>data/abilities/weapons/freezing-blast.png</icon>
   <stats desc="deals $1 of ice damage

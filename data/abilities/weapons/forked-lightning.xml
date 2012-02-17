@@ -2,13 +2,7 @@
 
   <name>Forked lightning</name>
   <description>
-Multiple lightning bolts shot in the directions of several separate targets.
-
-Bonus for this spell depends:
-  barely on choleric rune
-  heavily on melancholic rune
-  mildly on sanguine rune
-  mildly on phlegmatic rune  
+Multiple lightning bolts shot in the directions of several separate targets. 
   </description>
   <icon>data/abilities/weapons/forked-lightning.png</icon>
   <stats desc="deals $1-$2 of lightning damage">

@@ -36,6 +36,7 @@ protected:
 public:
     std::wstring name;
     std::wstring description;
+    std::wstring runesDescription;
     std::string trigger;
     std::string icon;
     std::string unavailableIcon;
@@ -88,6 +89,9 @@ public:
 
     // szacowana "sila" umiejki
     CComputedValue mPower;
+
+    // wyciag z <power calc=".." /> opis, jak bardzo umiejka zalezy od run
+    void ParseRunesDescription(const std::string& str);
 
     // opis czaru, z uwzglednieniem wyliczanych parametrow
     const std::string GetEffectDescription(CActor* performer);

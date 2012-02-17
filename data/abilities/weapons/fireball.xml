@@ -3,12 +3,6 @@
   <name>Fireball</name>
   <description>
 Fire mages&apos; favourite weapon - a ball of liquid fire that explodes if it hits an enemy.
-	
-Bonus for this spell depends:
-  totally on choleric rune
-  not at all on melancholic rune
-  heavily on sanguine rune
-  barely on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/fireball.png</icon>
   <stats desc="area of $1 fire damage

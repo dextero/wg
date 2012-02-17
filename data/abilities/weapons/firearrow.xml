@@ -3,12 +3,6 @@
   <name>Fire arrow</name>
   <description>
 A simple fire arrow, dealing damage and knocking enemies backward. This arrow can fly through enemies, so you can hit a few monsters in a row.
-
-Bonus for this spell depends:
-  heavily on choleric rune
-  not at all on melancholic rune
-  heavily on sanguine rune
-  mildly on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/firearrow.png</icon>
   <stats desc="deals $1-$2 fire damage per penetration">

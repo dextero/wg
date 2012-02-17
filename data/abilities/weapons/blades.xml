@@ -3,12 +3,6 @@
   <name>Blades of d&apos;Apac</name>
   <description>
 Swarm of blades of pure shadow surrounds targets, hitting through them and ignoring all armor. Master d&apos;Apac called it &quot;his greatest achievement&quot; - especially since the first few tests blew several holes in the lab&apos;s wall.
-
-Bonus for this spell depends:
-  heavily on choleric rune
-  not at all on melancholic rune
-  extremely on sanguine rune
-  barely on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/blades.png</icon>
   <stats desc="$3 blades dealing $1-$2 of vorpal damage per penetration">

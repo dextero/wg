@@ -3,12 +3,6 @@
   <name>Lazoor</name>
   <description>
 A thin beam with very long range and superior penetration, burning everything on its way.
-
-Bonus for this spell depends:
-  barely on choleric rune
-  barely on melancholic rune
-  mildly on sanguine rune
-  mildly on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/lazoor.png</icon>
   <stats desc="deals $1 of lightning damage">

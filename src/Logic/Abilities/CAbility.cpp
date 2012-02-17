@@ -122,6 +122,8 @@ bool CAbility::Load(std::map<std::string,std::string>& argv)
 
     mMaxLevel = xml.GetInt(xml.GetChild(xml.GetRootNode(), "max-level"), "value", INT_MAX);
     mCanBuy = (xml.GetChild(xml.GetRootNode(), "no-buy") == 0);
+
+    ParseRunesDescription(xml.GetString(xml.GetChild(0, "power"), "calc"));
     mPower = CComputedValueFactory::Parse(xml, xml.GetChild(0, "power"));
 
     std::string abiClass = xml.GetString(0,"class");
@@ -214,6 +216,60 @@ bool CAbility::InMeleeRange(CPhysical *attacker, CPhysical *victim, ExecutionCon
         return false;
     return Maths::CircleInAngle(attacker->GetPosition(),RotationToVector((float)attacker->GetRotation()),
         angularWidth,victim->GetPosition(),victim->GetCircleRadius());
+}
+
+void CAbility::ParseRunesDescription(const std::string& str)
+{
+    if (str.empty())
+        return;
+
+    size_t start = str.find("dot(");
+    if (start == std::string::npos)
+    {
+        fprintf(stderr, "CAbility::ParseRunesDescription error 1\n");
+        return;
+    }
+
+    start += 4;
+    size_t end = str.find(')', start);
+    if (end == std::string::npos)
+    {
+        fprintf(stderr, "CAbility::ParseRunesDescription error 2\n");
+        return;
+    }
+
+    runesDescription = L"Bonus for this spell depends:\n";
+
+    std::vector<std::string> params = StringUtils::Explode(str.substr(start, end - start), ",");
+    for (size_t i = 0; i < params.size() / 2; ++i)
+    {
+        float val;
+        if (!StringUtils::FromString<float>(params[i * 2], val))
+        {
+        fprintf(stderr, "CAbility::ParseRunesDescription error 3\n");
+            return;
+        }
+
+        std::string rune = StringUtils::TrimWhiteSpaces(params[i * 2 + 1]);
+
+        runesDescription += L"  ";
+        if (val > 4.f)
+            runesDescription += L"totally on ";
+        else if (val > 3.f)
+            runesDescription += L"extremely on ";
+        else if (val > 2.f)
+            runesDescription += L"heavily on ";
+        else if (val > 1.f)
+            runesDescription += L"mildly on ";
+        else if (val > 0.f)
+            runesDescription += L"barely on ";
+        else if (val == 0.f)
+            runesDescription += L"does NOT depend on ";
+        else
+            runesDescription += L"receives penalty from ";
+
+        runesDescription += StringUtils::ConvertToWString(rune) + L" rune\n";
+    }
 }
 
 const std::string CAbility::GetEffectDescription(CActor* performer)

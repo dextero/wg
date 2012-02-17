@@ -3,12 +3,6 @@
   <name>Ball lighning</name>
   <description>
 A sphere that throws lightning bolts at nearby victims.
-
-Bonus for this spell depends:
-  heavily on choleric rune
-  barely on melancholic rune
-  heavily on sanguine rune
-  mildly on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/ball-lightning.png</icon>
   <stats desc="deals $1-$2 of lightning damage per second">

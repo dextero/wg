@@ -247,6 +247,9 @@ std::wstring CItemSlot::CreateWeaponDescription(CAbility * abi, CItem * selected
                             + CTextArea::GetNextColorString(sf::Color::White);
         }
 
+        if (verbosity >= MID_VERBOSITY) {
+            tooltipText += L"\n\n" + abi->runesDescription;
+        }
         tooltipText += L"\n\n" + gLocalizator.GetText("CURRENT_ITEM_POWER");
 
         if (!player)

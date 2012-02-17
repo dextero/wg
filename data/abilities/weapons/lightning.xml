@@ -2,13 +2,7 @@
 
   <name>Lightning</name>
   <description>
-A single lightning bolt which deals massive damage to a single enemy.
-
-Bonus for this spell depends:
-  mildly on choleric rune
-  mildly on melancholic rune
-  heavily on sanguine rune
-  heavily on phlegmatic rune  
+A single lightning bolt which deals massive damage to a single enemy. 
   </description>
   <icon>data/abilities/weapons/lightning.png</icon>
   <stats desc="deals $1 lightning damage">

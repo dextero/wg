@@ -3,12 +3,6 @@
   <name>Burning hands</name>
   <description>
 A cone of searing flame shoots from your fingertips. Any creature in the area of the flames takes fire damage.
-
-Bonus for this spell depends:
-  extremely on choleric rune
-  mildly on melancholic rune
-  mildly on sanguine rune
-  not at all on phlegmatic rune
   </description>
   <icon>data/abilities/weapons/burning-hands.png</icon>
   <stats desc="deals $1-$2 of fire damage">

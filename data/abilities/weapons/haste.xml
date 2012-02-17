@@ -3,12 +3,6 @@
   <name>Haste</name>
   <description>
 Visibly increases the mage&apos;s speed for a short while.
-
-Bonus for this spell depends:
-  barely on choleric rune
-  barely on melancholic rune
-  totally on sanguine rune
-  mildly on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/haste.png</icon>
   <stats desc="hastes to $1 of base speed">

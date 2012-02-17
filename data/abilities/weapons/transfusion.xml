@@ -3,12 +3,6 @@
   <name>Transfusion</name>
   <description>
 Chain of vampyric bolts draining life from enemies.
-
-Bonus for this spell depends:
-  mildly on choleric rune
-  heavily on melancholic rune
-  barely on sanguine rune
-  mildly on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/transfusion.png</icon>
   <stats desc="deals $1-$2 of lightning damage

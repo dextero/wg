@@ -3,12 +3,6 @@
   <name>Ignite</name>
   <description>
 Targeted enemy is instantly incinerated causing constant injuries over time. The fire spreads over enemies.
-
-Bonus for this spell depends:
-  barely on choleric rune
-  not at all on melancholic rune
-  totally on sanguine rune
-  heavily on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/ignite.png</icon>
   <stats desc="deals $1-$2 of fire damage

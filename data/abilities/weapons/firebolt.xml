@@ -2,13 +2,7 @@
 
   <name>Firebolt</name>
   <description>
-Battle mages&apos; favourite weapon - a bolt of liquid fire that burns hit enemies.  
-  
-Bonus for this spell depends:
-  totally on choleric rune
-  barely on melancholic rune
-  mildly on sanguine rune
-  not at all on phlegmatic rune     
+Battle mages&apos; favourite weapon - a bolt of liquid fire that burns hit enemies.
   </description>
   <icon>data/abilities/weapons/firebolt.png</icon>
   <stats desc="deals $1 fire damage">

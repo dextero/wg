@@ -3,12 +3,6 @@
   <name>Lightning storm</name>
   <description>
 The battlemage summons a magical storm, creating an unstoppable mass of lightning bolts. Even if someone manages to dogde the storm, they will be catched by wandering electrons.
-
-Bonus for this spell depends:
-  extremely on choleric rune
-  barely on melancholic rune
-  heavily on sanguine rune
-  barely on phlegmatic rune  
   </description>
   <icon>data/abilities/weapons/lightning-storm.png</icon>
   <stats desc="deals $1-$2 of lightning damage">
