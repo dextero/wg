@@ -15,7 +15,7 @@
 	  
 	  <effect type="non-cumulative">
           <effect type="timed">
-              <time value="10.0" />
+              <time value="20.0" />
               <effect type="modify">
                   <aspect value="speed" />
                   <amount value="1.6" />
@@ -24,7 +24,7 @@
 	  </effect>
 
       <effect type="graphical-effect">
-          <time value="10.0" />
+          <time value="20.0" />
           <name value="trail" />
       </effect>
       <effect type="graphical-effect">
