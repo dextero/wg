@@ -5,8 +5,9 @@
 A basic melee attack which knocks opponents back.
   </description>
   <icon>data/abilities/weapons/powerslash.png</icon>
-  <stats desc="deals $1 of damage" >
+  <stats desc="deals $1-$2 damage" >
     <param name="1" calc="7.5 * (1 + power)" />
+    <param name="2" calc="2.5 * 7.5 * (1 + power)" />
   </stats>
                       
 

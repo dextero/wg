@@ -5,7 +5,7 @@
 Battle mages&apos; favourite weapon - a bolt of liquid fire that burns hit enemies.
   </description>
   <icon>data/abilities/weapons/firebolt.png</icon>
-  <stats desc="deals $1 fire damage">
+  <stats desc="deals $1 of fire damage">
     <param name="1" calc="4.0 * (1 + power)" />
   </stats>
 

@@ -5,7 +5,7 @@
 Basic electricity spell. Inflicts small damage and has a chance to stun the target.
   </description>
   <icon>data/abilities/weapons/electron.png</icon>
-  <stats desc="deals $1 lightning damage
+  <stats desc="deals $1 of lightning damage
 $2% chance for stun">
     <param name="1" calc="6.0 * (1 + power)" />
 	<param name="2" calc="0.01 * power" />

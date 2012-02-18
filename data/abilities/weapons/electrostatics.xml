@@ -5,14 +5,11 @@
 A direct extension of the &quot;Wandering electron&quot; spell. The difference in the electric potentials between the target and it&apos;s nearest environment causes a temporary transition of electric charges.
   </description>
   <icon>data/abilities/weapons/electrostatics.png</icon>
-  <stats desc="deals $1 lightning damage
-$2% chance for stun
-deals $3 lightning damage per $4 nearby hostiles
-">
+  <stats desc="deals $1-$2 of lightning damage
+$3% chance for stun">
     <param name="1" calc="7.0 * (1 + power)" />
-	<param name="2" calc="0.01 * power" />
-	<param name="3" calc="4 * (1 + power)" />
-	<param name="4" calc="4 + (0.4 * power)" />
+	<param name="2" calc="(7.0 * (1 + power)) + (4 * (1 + power) * rint(4 + (0.4 * power)))" />
+	<param name="3" calc="0.01 * power" />
   </stats>
 
   <!-- power = 3x cho, 2x mel, 4x san, 1x phl -->
@@ -57,7 +54,7 @@ deals $3 lightning damage per $4 nearby hostiles
         <range calc="1.0" />
         <angle value="360.0" />
         <aim-at-ground value="1"/>
-        <count calc="4 + (0.4 * power)" />
+        <count calc="rint(4 + (0.4 * power))" />
       </target-chooser>
       <effect type="list">
         <effect type="linked-graphical-effect">
