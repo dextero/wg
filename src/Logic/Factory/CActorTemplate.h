@@ -44,6 +44,7 @@ protected:
 
     float mMinXPValue,   mMaxXPValue;
     CStats *mMinStats,*mMaxStats;
+    int mNoStun;
 
     std::vector<CAnimSet*> mAvailableAnimations;
     CAnimSet *mAnimations;

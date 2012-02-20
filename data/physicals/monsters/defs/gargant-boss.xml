@@ -26,6 +26,8 @@
   <shadow-offset min="0.12" max="0.12" />
   <color r="1.0" g="0.66" b="0.66" a="1.0" />
 
+  <noStun noStun="1"/>
+
   <animset>
     <anim name="core/anim/gargant/boss/default" type="default" />
     <anim name="core/anim/gargant/boss/move" type="move" />

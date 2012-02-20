@@ -23,6 +23,8 @@
   <scale min="1.30" max="1.3" />
   <shadow-offset min="0.12" max="0.12" />
 
+  <noStun noStun="1"/>
+
   <animset>
     <anim name="core/anim/demon/default" type="default" />
     <anim name="core/anim/demon/move" type="move" />

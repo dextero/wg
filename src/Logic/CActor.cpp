@@ -35,6 +35,7 @@ mMoveState(msStanding),
 mSpawnState(ssAlive),
 mCondition(NULL),
 mStunLevel(0),
+mNoStun(0),
 mHealthcastLevel(0),
 mNextAbilityLevelBonus(0),
 // zeby nie bylo - te thisy to zaden problem, przekazywany

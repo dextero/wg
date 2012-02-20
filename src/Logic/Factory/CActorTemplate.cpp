@@ -50,6 +50,8 @@ bool CActorTemplate::Load(CXml &xml)
     mColorBlue = xml.GetFloat( "color", "b", 1.0 );
     mColorAlpha = xml.GetFloat( "color", "a", 1.0 );
 
+    mNoStun = xml.GetInt("noStun", "noStun", 0);
+
     if ((node = xml.GetChild(xml.GetRootNode(),"animset"))){
         for ( node=xml.GetChild(0,"animset"); node; node=xml.GetSibl(node,"animset") ){
             CAnimSet * animations = new CAnimSet();
@@ -131,6 +133,8 @@ void CActorTemplate::Fill(CActor *actor, float f)
     {
 		actor->GetShadow()->SetScale( scale, scale );
     }
+
+    actor->SetNoStun(mNoStun != 0);
 
     actor->GetAbilityPerformer().Bind(&mAbilities,&mAbilityAnims);
     actor->GetAbilityPerformer().SetDefaultAttack(mDefaultAbility);
