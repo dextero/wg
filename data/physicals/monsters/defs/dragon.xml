@@ -25,6 +25,8 @@
   <scale min="2.20" max="2.20" />
   <shadow-offset min="0.18" max="0.18" />
 
+  <noStun noStun="1"/>
+
   <animset>
     <anim name="core/anim/dragon/default" type="default" />
     <anim name="core/anim/dragon/move" type="move" />

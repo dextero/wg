@@ -105,7 +105,7 @@ public:
     // zabija aktora, wywolujac odpowiednie czynnosci z tym zwiazane
 	virtual void Kill();
 
-    inline void SetStun(bool s){ mStunLevel += s ? 1 : -1; }
+    inline void SetStun(bool s){ if (mNoStun) return; mStunLevel += s ? 1 : -1; }
     inline int GetStun(){ return mStunLevel; }
 
 	inline void SetHealthcast(bool h){ mHealthcastLevel += h ? 1 : -1; }
@@ -140,10 +140,14 @@ public:
     inline sf::Vector2f GetForce() { return mForce; }
     inline void SetForce(sf::Vector2f force) { mForce = force / mStats.GetCurrAspect(aMass); mForceTime = 1.0f;  }
     void ApplyForce(sf::Vector2f force);
+
+    bool IsNoStun() { return mNoStun; }
+    void SetNoStun(bool noStun) { mNoStun = noStun; }
 protected:
 // ------------------------------------------- Umiejetnosci
     sf::Vector2f mForce;
     float mForceTime;
+    bool mNoStun;
     
     SAnimation *mLastAnimation;
     CAbilityPerformer mAbilityPerformer;
