@@ -2,10 +2,10 @@
 
   <name>Blades of d&apos;Apac</name>
   <description>
-Swarm of blades of pure shadow surrounds targets, hitting through them and ignoring all armor. Master d&apos;Apac called it &quot;his greatest achievement&quot; - especially since the first few tests blew several holes in the lab&apos;s wall.
+Swarm of blades of pure shadow surrounds targets, hitting through them and ignoring all armor. 
   </description>
   <icon>data/abilities/weapons/blades.png</icon>
-  <stats desc="$3 blades dealing $1-$2 of vorpal damage per penetration">
+  <stats desc="$3 blades dealing $1-$2 of vorpal damage">
     <param name="1" calc="3.0 * (1 + power)" />
     <param name="2" calc="5 * 3.0 * (1 + power)" />
     <param name="3" calc="3 + ln(1 + power)" />

@@ -5,7 +5,7 @@
 A sphere that throws lightning bolts at nearby victims.
   </description>
   <icon>data/abilities/weapons/ball-lightning.png</icon>
-  <stats desc="deals $1-$2 of lightning damage per second">
+  <stats desc="deals $1-$2 of lightning damage">
     <param name="1" calc="10 + (7 * power)" />
     <param name="2" calc="10 * (10 + (7 * power))" />
   </stats>

@@ -2,7 +2,7 @@
 
   <name>Blazing feet</name>
   <description>
-Even while running away, a battlemage is dangerous to his foes. As long as the player&apos;s the spell holding key, the mage leaves a trail of blazing footprints which hurt all enemies who step on them.
+Even while running away, a battlemage is dangerous to his foes. The mage leaves a trail of blazing footprints which hurt all enemies who step on them.
   </description>
   <icon>data/abilities/weapons/blazing-feet.png</icon>
   <stats desc="area of $1-$2 fire damage">

@@ -53,7 +53,7 @@ class WeaponInteraction : public InteractionHandler
 
             GUI::CTextArea* weaponDescription = tooltip->GetCanvas()->CreateTextArea("weaponDescription");
             weaponDescription->SetPosition(10.f, 35.f, 38.f, 20.f);
-            weaponDescription->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+            weaponDescription->SetFont(gGUI.GetFontSetting("FONT_DEFAULT", 0.9f));
             weaponDescription->SetText(GUI::CItemSlot::CreateWeaponDescription(ability, mLoot->GetItem(), mPlayer,
                     GUI::CItemSlot::MID_VERBOSITY));
 
