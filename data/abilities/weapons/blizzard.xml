@@ -7,8 +7,8 @@ Ice mages have many spells which slow down and freeze enemies. This particular s
   <icon>data/abilities/weapons/blizzard.png</icon>
   <stats desc="area of $1-$2 ice damage
 freezes for $3 seconds
-slows down to 50% base speed for $4 seconds
-drains additional 10 mana points over time">
+50% base speed for $4 seconds
+drains 10 mana points">
     <param name="1" calc="15 * (1 + power)" />
     <param name="2" calc="45 * (1 + power)" />
     <param name="3" calc="1.0 + (0.04 * power)" />

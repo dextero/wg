@@ -138,7 +138,7 @@ A lightning that jumps between enemies, dealing less damage with each jump.
     <amount value="0.2" />
   </delay-effect>
 
-  <manacost calc="22.0 * (1 + 0.22 * power)" />
+  <manacost calc="20.0 * (1 + 0.22 * power)" />
   <casttime calc="0.30" />
   <delay calc="0.50" />
   <cooldown calc="0.50" />
