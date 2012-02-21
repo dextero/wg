@@ -7,7 +7,7 @@ Quite strong mine which is able to freeze opponents being close enough. If the m
   <icon>data/abilities/weapons/freezing-mine.png</icon>
   <stats desc="deals $1-$2 of ice damage
 freezes for 3 seconds
-slows down to $3 base speed for $4 seconds">
+$3% base speed for $4 seconds">
     <param name="1" calc="16.0 * (1 + power)" />
     <param name="2" calc="(16.0 * (1 + power)) + (8 * 8.0 * (1 + power))" />
     <param name="3" calc="0.76 - (0.005 * power)" />
