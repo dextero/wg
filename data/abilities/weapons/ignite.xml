@@ -7,8 +7,8 @@ Targeted enemy is instantly incinerated causing constant injuries over time. The
   <icon>data/abilities/weapons/ignite.png</icon>
   <stats desc="deals $1-$2 of fire damage
 33% chance to spread the fire">
-    <param name="1" calc="4 * (1 + power)" />
-    <param name="2" calc="8 * 4 * (1 + power)" />
+    <param name="1" calc="3 * (1 + power)" />
+    <param name="2" calc="8 * 3 * (1 + power)" />
   </stats>
 
   <!-- power = 1x cho, 0x mel, 5x san, 3x phl -->
@@ -49,7 +49,7 @@ Targeted enemy is instantly incinerated causing constant injuries over time. The
             <time calc="8.0"/>
             <effect type="damage">
               <damage-type value="fire"/>
-              <amount calc="4 * (1 + power)"/>
+              <amount calc="3 * (1 + power)"/>
             </effect>
           </effect>
           <effect type="recastable">
@@ -105,6 +105,6 @@ Targeted enemy is instantly incinerated causing constant injuries over time. The
   <manacost calc="25.0 * (1 + 0.22 * power)" />
   <casttime value="0.20" />
   <delay value="0.05" />
-  <cooldown value="0.25" />
+  <cooldown value="1.25" />
   
 </root>

@@ -152,6 +152,6 @@ An intimidating set of lightning bolts targetting many enemies at once.
   <cooldown calc="0.60" />
 
   <focus-mana-cost calc="32 * (1 + 0.22 * power)" />
-  <focus-max-duration value="8.0" />
+  <focus-max-duration value="999.0" />
 
 </root>

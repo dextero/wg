@@ -80,6 +80,6 @@ Even while running away, a battlemage is dangerous to his foes. The mage leaves 
   <cooldown value="0.10" />
 
   <focus-mana-cost calc="20.0 * (1 + 0.22 * power)" />
-  <focus-max-duration value="6.0" />
+  <focus-max-duration value="999.0" />
 
 </root>

@@ -138,6 +138,6 @@ transfers $3-$4 of hit points">
   <cooldown calc="0.60" />
 
   <focus-mana-cost calc="15 * (1 + 0.22 * power)" />
-  <focus-max-duration value="8.0" />
+  <focus-max-duration value="999.0" />
 
 </root>

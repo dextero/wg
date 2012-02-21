@@ -70,5 +70,5 @@ Corpses of recently killed monsters explode, damaging nearby enemies. The longer
   <cooldown value="0.0" />
 
   <focus-mana-cost calc="14.0 * (1 + 0.22 * power)" />
-  <focus-max-duration value="5.0" />
+  <focus-max-duration value="999.0" />
 </root>

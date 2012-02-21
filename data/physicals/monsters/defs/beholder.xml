@@ -6,7 +6,7 @@
   </bestiary>
   <genre>beholder</genre>
 
-  <maxhp min="80.0" max="92.0" />
+  <maxhp min="90.0" max="102.0" />
   <speed min="1.4" max="1.5" />
   <turnspeed min="120.0" max="120.0" />
   <strength min="0.0" max="0.0" />
