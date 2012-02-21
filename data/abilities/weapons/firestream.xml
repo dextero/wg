@@ -76,6 +76,6 @@ A continuous stream of tiny sparks. Good against nests and single opponents, but
   <cooldown value="0.10" />
 
   <focus-mana-cost calc="18.0 * (1 + 0.22 * power)" />
-  <focus-max-duration calc="2.5 * (1 + power)" />
+  <focus-max-duration calc="999.0" />
 
 </root>

@@ -8,9 +8,9 @@ When the Troll shaman, Kromad the Terrifying, lost his bone club in the midst of
   <stats desc="deals $1 of physical damage
 deals $2 of vorpal damage
 stuns for $3 seconds">
-    <param name="1" calc="21.0 * (1 + power)" />
-    <param name="2" calc="14.0 * (1 + power)" />
-    <param name="3" calc="1.0 + ln(1 + power)" />
+    <param name="1" calc="17.0 * (1 + power)" />
+    <param name="2" calc="11.0 * (1 + power)" />
+    <param name="3" calc="0.6 + ln(1 + power)" />
   </stats>
 
   <!-- power = 1x cho, 4x mel, 0x san, 1x phl -->
@@ -22,19 +22,19 @@ stuns for $3 seconds">
     </effect>
     <effect type="damage">
       <damage-type value="physical"/>
-      <amount calc="21.0 * (1 + power)" />
+      <amount calc="17.0 * (1 + power)" />
     </effect>
     <effect type="damage">
       <damage-type value="vorpal"/>
-      <amount calc="14.0 * (1 + power)" />
+      <amount calc="11.0 * (1 + power)" />
     </effect>
     <effect type="timed">
       <effect type="stun"/>
-      <time calc="1.0 + ln(1 + power)"/>
+      <time calc="0.6 + ln(1 + power)"/>
     </effect>
     <effect type="graphical-effect">
       <name value="stars" />
-      <time calc="1.0 + ln(1 + power)"/>
+      <time calc="0.6 + ln(1 + power)"/>
     </effect>
   </effect>
 
@@ -46,9 +46,9 @@ stuns for $3 seconds">
   <range calc="1.1" />
   <width value="90.0" />
 
-  <manacost calc="7.0 * (1 + 0.22 * power)" />
+  <manacost calc="12.0 * (1 + 0.22 * power)" />
   <casttime calc="0.09" />
   <delay calc="0.05" />
-  <cooldown calc="0.40" />
+  <cooldown calc="0.80" />
 
 </root>

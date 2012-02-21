@@ -98,6 +98,6 @@ A cone of searing flame shoots from your fingertips. Any creature in the area of
   <cooldown calc="0.05" />
 
   <focus-mana-cost calc="10.0 * (1 + 0.22 * power)" />
-  <focus-max-duration value="8.0" />
+  <focus-max-duration value="999.0" />
   
 </root>

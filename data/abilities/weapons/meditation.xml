@@ -67,5 +67,5 @@ immobilizes caster">
   <cooldown value="5.0" />
 
   <focus-mana-cost value="0.0" />
-  <focus-max-duration value="5.0" />
+  <focus-max-duration value="999.0" />
 </root>

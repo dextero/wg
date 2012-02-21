@@ -64,6 +64,6 @@ Visibly increases the mage&apos;s speed for a short while.
   <cooldown calc="3.0" />
 
   <focus-mana-cost calc="7.0 * (1 + 0.22 * power)" />
-  <focus-max-duration calc="3.0 * (1 + power)" />
+  <focus-max-duration calc="999.0" />
   
 </root>

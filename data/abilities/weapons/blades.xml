@@ -6,13 +6,15 @@ Swarm of blades of pure shadow surrounds targets, hitting through them and ignor
   </description>
   <icon>data/abilities/weapons/blades.png</icon>
   <stats desc="$3 blades dealing $1-$2 of vorpal damage">
+      <!-- czesc obrazen przenioslem na typ 'fire' zeby finalnego smoka trudniej sie pokonywalo
+           wiem ze to nie jest spojne z opisem, ale niech tak zostanie  -->
     <param name="1" calc="3.0 * (1 + power)" />
     <param name="2" calc="5 * 3.0 * (1 + power)" />
     <param name="3" calc="3 + ln(1 + power)" />
   </stats>
 
-  <!-- power = 3x cho, 0x mel, 4x san, 1x phl -->
-  <power calc="0.2 * dot(3, choleric, 0, melancholic, 4, sanguine, 1, phlegmatic)"/>
+  <!-- power = 3x cho, 0x mel, 3x san, 2x phl -->
+  <power calc="0.2 * dot(3, choleric, 0, melancholic, 3, sanguine, 2, phlegmatic)"/>
 
   <flight-effect type="list">
     <effect type="recastable">
@@ -24,7 +26,11 @@ Swarm of blades of pure shadow surrounds targets, hitting through them and ignor
         <effect type="list">
           <effect type="damage">
             <damage-type value="vorpal"/>
-            <amount calc="3.0 * (1 + power)" />
+            <amount calc="2.0 * (1 + power)" />
+          </effect>
+          <effect type="damage">
+            <damage-type value="fire"/>
+            <amount calc="1.0 * (1 + power)" />
           </effect>
           <effect type="knockback">
             <amount calc="1.3"/>
@@ -55,7 +61,7 @@ Swarm of blades of pure shadow surrounds targets, hitting through them and ignor
   <time-for-tracking calc="1.4" />
   <turning-speed calc="640.0"/>
 
-  <manacost calc="18 * (1 + 0.22 * power)" />
+  <manacost calc="19 * (1 + 0.22 * power)" />
   <casttime calc="0.09" />
   <delay calc="0.05" />
   <cooldown calc="0.27" />
