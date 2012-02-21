@@ -80,14 +80,14 @@ class ShopInteraction : public InteractionHandler
 
                 GUI::CTextArea* weaponDescription = tooltip->GetCanvas()->CreateTextArea("weaponDescription");
                 weaponDescription->SetPosition(10.f, 35.f, 38.f, 20.f);
-                weaponDescription->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
+                weaponDescription->SetFont(gGUI.GetFontSetting("FONT_DEFAULT", 0.9f));
                 weaponDescription->SetText(GUI::CItemSlot::CreateWeaponDescription(ability, NULL, mPlayer,
                         GUI::CItemSlot::MID_VERBOSITY));
 
                 GUI::CButton * buttonYes = canvas->CreateButton("yes");
                 buttonYes->SetImage("data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png");
                 buttonYes->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON"));
-                buttonYes->SetPosition(21.0f, 87.0f, 30.0f, 6.0f);
+                buttonYes->SetPosition(21.0f, 92.0f, 30.0f, 6.0f);
                 buttonYes->SetCenter(true);
                 buttonYes->GetClickCallback()->bind(this, &ShopInteraction::OptionYes);
                 buttonYes->SetText(L"Yes", mPlayer->GetNumber(), 0);
@@ -95,7 +95,7 @@ class ShopInteraction : public InteractionHandler
                 GUI::CButton * buttonNo = canvas->CreateButton("no");
                 buttonNo->SetImage("data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png");
                 buttonNo->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON"));
-                buttonNo->SetPosition(51.0f, 87.0f, 30.0f, 6.0f);
+                buttonNo->SetPosition(51.0f, 92.0f, 30.0f, 6.0f);
                 buttonNo->SetCenter(true);
                 buttonNo->GetClickCallback()->bind(this, &ShopInteraction::OptionNo);
                 buttonNo->SetText(L"No", mPlayer->GetNumber(), 1);

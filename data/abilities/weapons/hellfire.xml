@@ -5,10 +5,9 @@
 Shoots two auto-aiming fireballs that will explode into ten firebolts upon contact.
   </description>
   <icon>data/abilities/weapons/hellfire.png</icon>
-  <stats desc="area of $1 fire damage
-20 shrapnels dealing $2 of fire damage">
+  <stats desc="deals $1-$2 of fire damage">
     <param name="1" calc="12.0 * (1 + power)" />
-    <param name="2" calc="12.0 * (1 + power)" />
+    <param name="2" calc="20 * 12.0 * (1 + power)" />
   </stats>
 
 

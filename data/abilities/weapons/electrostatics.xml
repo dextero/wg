@@ -2,7 +2,7 @@
 
   <name>Electrostatics</name>
   <description>
-A direct extension of the &quot;Wandering electron&quot; spell. The difference in the electric potentials between the target and it&apos;s nearest environment causes a temporary transition of electric charges.
+The electric potentials between the target and it&apos;s nearest environment causes a temporary transition of electric charges.
   </description>
   <icon>data/abilities/weapons/electrostatics.png</icon>
   <stats desc="deals $1-$2 of lightning damage

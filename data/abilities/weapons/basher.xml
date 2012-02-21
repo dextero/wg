@@ -2,12 +2,12 @@
 
   <name>Kromad&apos;s club</name>
   <description>
-When the Troll shaman, Kromad the Terrifying, lost his bone club in the midst of a battle, he decided to smack enemies with pure magic energy. The spell became interesting enough for human mages to make a copy of it.
+When the Troll shaman, Kromad the Terrifying, lost his bone club in the midst of a battle, he decided to smack enemies with pure magic energy.
   </description>
   <icon>data/abilities/weapons/basher.png</icon>
   <stats desc="deals $1 of physical damage
 deals $2 of vorpal damage
-stun for $3 seconds">
+stuns for $3 seconds">
     <param name="1" calc="21.0 * (1 + power)" />
     <param name="2" calc="14.0 * (1 + power)" />
     <param name="3" calc="1.0 + ln(1 + power)" />

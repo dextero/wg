@@ -2,7 +2,7 @@
 
   <name>Flaming mantle</name>
   <description>
-A powerful defensive spell, increasing fire and physical resistance while also burning any monsters closing up to the caster. Additionally, the mage is surrounded by a cloud of sparks, further separating the mage from his enemies.
+A defensive spell, increasing fire and physical resistance while also burning any monsters closing up to the caster. Additionally, the mage is surrounded by a cloud of fire sparks.
   </description>
   <icon>data/abilities/weapons/flaming-mantle.png</icon>
   <stats desc="area of $1-$2 fire damage

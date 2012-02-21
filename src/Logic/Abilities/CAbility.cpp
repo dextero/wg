@@ -264,7 +264,7 @@ void CAbility::ParseRunesDescription(const std::string& str)
         else if (val > 0.f)
             runesDescription += L"barely on ";
         else if (val == 0.f)
-            runesDescription += L"does NOT depend on ";
+            runesDescription += L"not at all on ";
         else
             runesDescription += L"receives penalty from ";
 
