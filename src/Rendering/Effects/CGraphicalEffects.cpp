@@ -30,22 +30,23 @@ struct SDisplayableEffectFrame {
     float scale;
     float alpha;
     float rotation;
+	float brightness;
 
     SDisplayableEffectFrame(
             float _duration = 1.0,
             float _scale = 1.0,
             float _alpha = 1.0,
-            float _rotation = 0.0
+            float _rotation = 0.0,
+			float _brightness = 1.0
     ) :
             duration( _duration ),
             scale( _scale ),
             alpha( _alpha ),
-            rotation( _rotation )
+            rotation( _rotation ),
+			brightness (_brightness)
     {
         ;
     }
-
-
 };
 
 typedef std::vector< SDisplayableEffectFrame > EffectAnimation;
@@ -135,6 +136,7 @@ SDisplayableEffectFrame CalculateInterpolatedFrame(
     ret.scale = ( frame->scale * ( 1 - fraction ) ) + ( nextFrame->scale * fraction );
     ret.alpha = ( frame->alpha * ( 1 - fraction ) ) + ( nextFrame->alpha * fraction );
     ret.rotation = ( frame->rotation * ( 1 - fraction ) ) + ( nextFrame->rotation * fraction );
+	ret.brightness = (frame->brightness * (1 - fraction) ) + ( nextFrame->brightness * fraction );
 
 //    fprintf( stderr, "ret{ %f, %f, %f, %f }\n", ret.duration, ret.scale, ret.alpha, ret.rotation );
     return ret;
@@ -207,16 +209,29 @@ bool CGraphicalEffects::Initialize(const std::string & configFile)
     gsAnimations[ "magic-circle" ] = animation;
 
     animation.clear();
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.000f, 0.000f, 0.000f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 90.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 270.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 0.000f, 1.000f, 1.000f, 360.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 0.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 90.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 270.0f ) );
-    animation.push_back( SDisplayableEffectFrame( 0.000f, 0.000f, 0.000f, 360.0f ) );
+
+    animation.push_back( SDisplayableEffectFrame( 0.500f, 0.000f, 0.000f, 0.000f, 0.5f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 90.0f,  0.625f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f, 0.75f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 270.0f, 0.875f  ) );
+    animation.push_back( SDisplayableEffectFrame( 0.000f, 1.000f, 1.000f, 360.0f, 1.000f) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 0.0f,   1.000f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 90.0f,  0.875f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f, 0.75f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 270.0f, 0.625f  ) );
+    animation.push_back( SDisplayableEffectFrame( 0.000f, 0.000f, 0.000f, 360.0f, 0.500f) );
+	
+    animation.push_back( SDisplayableEffectFrame( 0.500f, 0.000f, 0.000f, 0.000f, 0.5f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 90.0f,  0.375f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f, 0.250f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 270.0f, 0.125f  ) );
+    animation.push_back( SDisplayableEffectFrame( 0.000f, 1.000f, 1.000f, 360.0f, 0.000f) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 0.0f,   0.000f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 90.0f,  0.125f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f, 0.250f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 270.0f, 0.375f  ) );
+    animation.push_back( SDisplayableEffectFrame( 0.000f, 0.000f, 0.000f, 360.0f, 0.500f) );
+
     gsAnimations[ "loot-circle" ] = animation;
 	
 	animation.clear();
@@ -341,8 +356,11 @@ void CGraphicalEffects::FrameStarted( float secondsPassed )
             float scale = effect.eps.scale;
             float rotation = effect.eps.rotation;
             effect.displayable->SetScale( scale * interpolatedFrame.scale );
-            effect.displayable->SetColor( 1.0f * effect.eps.red, 1.0f * effect.eps.green, 1.0f * effect.eps.blue, 
-                    interpolatedFrame.alpha * effect.eps.alpha );
+            effect.displayable->SetColor( interpolatedFrame.brightness * effect.eps.red, 
+										  interpolatedFrame.brightness * effect.eps.green, 
+										  interpolatedFrame.brightness * effect.eps.blue, 
+											interpolatedFrame.alpha * effect.eps.alpha );
+
             effect.displayable->SetRotation( rotation + interpolatedFrame.rotation );
         }
     }
