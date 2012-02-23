@@ -213,8 +213,15 @@ namespace Map{
             // odpal skrypt zawierajacy zapisany stan mapy, jesli taki istnieje (i jest taka potrzeba)
             if (!loadCompleteMap && mapStateFileExists)
                 gCommands.ParseCommand(L"exec " + StringUtils::ConvertToWString(mapStateFile));
-
-            gCommands.ParseCommand(L"load-playlist data/music/testpl.xml");
+			
+			if(mapFile.find("town") == std::string::npos)
+			{
+				gCommands.ParseCommand(L"load-playlist data/music/testpl.xml");
+			}
+			else
+			{
+				gCommands.ParseCommand(L"load-playlist data/music/town.xml");
+			}
 
             // jak stoimy z czasem? oplaca sie pokazywac loading screena czy nie?
             float time = timer.GetElapsedTime();
