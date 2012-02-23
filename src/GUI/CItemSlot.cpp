@@ -233,10 +233,6 @@ std::wstring CItemSlot::CreateWeaponDescription(CAbility * abi, CItem * selected
                     + L"\n" + gLocalizator.GetText("ABILITY_IS_FOCUS_ABILITY")
                     + CTextArea::GetNextColorString(sf::Color::White);
         }
-
-        if (verbosity >= MAX_VERBOSITY) {
-            tooltipText += L"\n" + gLocalizator.GetText("SLOT_DRAG_ITEM_HERE");
-        }
         if (verbosity >= MID_VERBOSITY) {
             tooltipText += L"\n" + abi->description;
         }
@@ -292,6 +288,10 @@ std::wstring CItemSlot::CreateWeaponDescription(CAbility * abi, CItem * selected
                     tooltipText += L"\n";
                 }
             }
+        }
+
+        if (verbosity >= MAX_VERBOSITY) {
+            tooltipText += L"\n" + gLocalizator.GetText("SLOT_DRAG_ITEM_HERE");
         }
     }
     else
