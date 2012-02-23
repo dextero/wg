@@ -210,27 +210,27 @@ bool CGraphicalEffects::Initialize(const std::string & configFile)
 
     animation.clear();
 
-    animation.push_back( SDisplayableEffectFrame( 0.500f, 0.000f, 0.000f, 0.000f, 0.5f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 90.0f,  0.625f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f, 0.75f  ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 270.0f, 0.875f  ) );
-    animation.push_back( SDisplayableEffectFrame( 0.000f, 1.000f, 1.000f, 360.0f, 1.000f) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 0.0f,   1.000f  ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 90.0f,  0.875f  ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f, 0.75f  ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 270.0f, 0.625f  ) );
-    animation.push_back( SDisplayableEffectFrame( 0.000f, 0.000f, 0.000f, 360.0f, 0.500f) );
+    animation.push_back( SDisplayableEffectFrame( 0.500f, 0.000f, 0.000f, 0.000f, 0.6f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 90.0f,  0.7f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f, 0.8f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 270.0f, 0.9f  ) );
+    animation.push_back( SDisplayableEffectFrame( 0.000f, 1.000f, 1.000f, 360.0f, 1.0f) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 0.0f,   1.0f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 90.0f,  0.9f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f, 0.8f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 270.0f, 0.7f  ) );
+    animation.push_back( SDisplayableEffectFrame( 0.000f, 0.000f, 0.000f, 360.0f, 0.6f) );
 	
-    animation.push_back( SDisplayableEffectFrame( 0.500f, 0.000f, 0.000f, 0.000f, 0.5f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 90.0f,  0.375f ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f, 0.250f  ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 270.0f, 0.125f  ) );
-    animation.push_back( SDisplayableEffectFrame( 0.000f, 1.000f, 1.000f, 360.0f, 0.000f) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 0.0f,   0.000f  ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 90.0f,  0.125f  ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f, 0.250f  ) );
-    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 270.0f, 0.375f  ) );
-    animation.push_back( SDisplayableEffectFrame( 0.000f, 0.000f, 0.000f, 360.0f, 0.500f) );
+    animation.push_back( SDisplayableEffectFrame( 0.500f, 0.000f, 0.000f, 0.000f, 0.6f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 90.0f,  0.5f ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f, 0.4f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 270.0f, 0.3f  ) );
+    animation.push_back( SDisplayableEffectFrame( 0.000f, 1.000f, 1.000f, 360.0f, 0.2f) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 1.000f, 1.000f, 0.0f,   0.2f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.900f, 0.900f, 90.0f,  0.3f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.800f, 0.800f, 180.0f, 0.4f  ) );
+    animation.push_back( SDisplayableEffectFrame( 1.000f, 0.500f, 0.500f, 270.0f, 0.5f  ) );
+    animation.push_back( SDisplayableEffectFrame( 0.000f, 0.000f, 0.000f, 360.0f, 0.6f) );
 
     gsAnimations[ "loot-circle" ] = animation;
 	
