@@ -1,0 +1,9 @@
+<!-- ponizej type musi miec wartosc playlist -->
+<root random="true" type="playlist" >
+	<!-- lista piosenek -->
+  <song name="data/music/Lugaro/music1desert.ogg" /> 
+  <song name="data/music/Lugaro/music1grass.ogg" /> 
+  <song name="data/music/Lugaro/music1snow.ogg" /> 
+  <song name="data/music/Lugaro/music3.ogg" /> 
+  <song name="data/music/wg_magicstream.ogg" /> 
+</root>
