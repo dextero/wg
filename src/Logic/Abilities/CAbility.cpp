@@ -312,10 +312,17 @@ const std::string CAbility::GetManaCostString(CActor* performer)
     ExecutionContextPtr context = performer->GetAbilityPerformer().GetContext(abiIndex);
     context->abilityPower = mPower.Evaluate(context);
 
-    std::string ret = StringUtils::FloatToString(mManaCost.Evaluate(context), 2);
+	float manaCost = mManaCost.Evaluate(context);
+
+	std::string ret = StringUtils::FloatToString(manaCost, 2);
 
     if (isFocus)
-        ret += " + " + StringUtils::FloatToString(focusManaCost.Evaluate(context), 2) + "/s";
+	{
+		if(manaCost == 0)
+			ret = StringUtils::FloatToString(focusManaCost.Evaluate(context), 2) + "/s";
+		else
+			ret += " + " + StringUtils::FloatToString(focusManaCost.Evaluate(context), 2) + "/s";
+	}
 
     return ret;
 }
