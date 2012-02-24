@@ -534,14 +534,15 @@ void CLogic::SaveMapState(std::ostream & out)
 
 void CLogic::SaveMapStateToFile(const std::string& file)
 {
-    std::ofstream f(file.c_str());
-    if (f.is_open())
-    {
-        SaveMapState(f);
-        f.close();
-    }
-    else
+	FILE *outfile = fopen(file.c_str(), "w");
+	if (!outfile) {
         fprintf(stderr, "Error: couldn't save map state to file \"%s\"\n", file.c_str());
+		return;
+	}
+	std::stringstream ss;
+	SaveMapState(ss);
+	fputs(ss.str().c_str(), outfile); 
+	fclose(outfile);
 }
 
 void CLogic::SaveGame(const std::string & name, bool thumbnail, bool savePlayerPos){
