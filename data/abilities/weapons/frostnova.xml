@@ -7,8 +7,8 @@ When this projectile hits the target a magic cold spreads over the vicinity caus
   <icon>data/abilities/weapons/frostnova.png</icon>
   <stats desc="area of $1-$2 ice damage
 freezes for 1.0-2.5 seconds
-slows down to $3 base speed for 4.35 seconds
-drains additional 10 mana points over time">
+$3 base speed for 4.35 seconds
+drains 10 mana">
     <param name="1" calc="22 * (1 + power)" />
     <param name="2" calc="47 * (1 + power)" />
     <param name="3" calc="0.76 - (0.005 * power)" />

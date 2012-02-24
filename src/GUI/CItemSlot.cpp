@@ -239,14 +239,14 @@ std::wstring CItemSlot::CreateWeaponDescription(CAbility * abi, CItem * selected
         if (verbosity >= LOW_VERBOSITY) {
             if (player)
                 tooltipText += L"\n" + StringUtils::ConvertToWString(abi->GetEffectDescription(player))
-                            + CTextArea::GetNextColorString(sf::Color(100, 100, 255)) + L"\nMana cost: " + StringUtils::ConvertToWString(abi->GetManaCostString(player)) + L"\n"
+                            + CTextArea::GetNextColorString(sf::Color(100, 100, 255)) + L"\nMana cost: " + StringUtils::ConvertToWString(abi->GetManaCostString(player))
                             + CTextArea::GetNextColorString(sf::Color::White);
         }
 
         if (verbosity >= MID_VERBOSITY) {
             tooltipText += L"\n" + abi->runesDescription;
         }
-        tooltipText += L"\n" + gLocalizator.GetText("CURRENT_ITEM_POWER") + L"\n";
+        tooltipText += L"\n" + gLocalizator.GetText("CURRENT_ITEM_POWER") + L" ";
 
         if (!player)
             tooltipText += L"\nError, player not set :(";

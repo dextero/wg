@@ -76,20 +76,13 @@
     <level item="7" player="15"/>
     <level item="8" player="16"/>
     <level item="9" player="17"/>
-    <level item="10" player="18"/>
-    <level item="11" player="19"/>
-    <level item="12" player="20"/>
-    <level item="13" player="21"/>
-    <level item="14" player="22"/>
-    <level item="15" player="23"/>
-    <level item="16" player="24"/>
-    <level item="17" player="25"/>
-    <level item="18" player="26"/>
-    <level item="19" player="27"/>
-    <level item="20" player="28"/>
-    <level item="21" player="29"/>
-    <level item="22" player="30"/>
-    <level item="23" player="31"/>
+    <level item="11" player="18"/>
+    <level item="13" player="19"/>
+    <level item="15" player="20"/>
+    <level item="18" player="21"/>
+    <level item="21" player="22"/>
+    <level item="23" player="23"/>
+    <level item="24" player="24"/>
   </level-translation-table>
 </root>
 

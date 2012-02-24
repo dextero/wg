@@ -6,7 +6,7 @@ Powers of the nature entangle enemy. Talented caster is able to entangle multipl
   </description>
   <icon>data/abilities/weapons/entangle.png</icon>
   <stats desc="immobilize $1 opponents for $2 seconds">
-    <param name="1" calc="6 * ln(1 + (0.33 * power))" />
+    <param name="1" calc="rint(6 * ln(1 + (0.33 * power)))" />
     <param name="2" calc="3.0 * (1 + 0.5 * ln(1 + power))" />
   </stats>
                   
