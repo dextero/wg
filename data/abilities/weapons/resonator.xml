@@ -20,7 +20,7 @@ It&apos;s quite simple spell - the more monsters are near the caster, the strong
         <area calc="2.2"  />
         <filter value="player" />
         <effect type="knockback">
-           <amount calc="0.3 * (1 + power)"/>
+           <amount calc="0.5 * (1 + power)"/>
         </effect>
       </effect>
     </effect>
@@ -31,7 +31,7 @@ It&apos;s quite simple spell - the more monsters are near the caster, the strong
         <area calc="2.7"  />
         <filter value="player" />
         <effect type="knockback">
-           <amount calc="0.6 * (1 + power)"/>
+           <amount calc="0.7 * (1 + power)"/>
         </effect>
       </effect>
     </effect>
@@ -42,7 +42,7 @@ It&apos;s quite simple spell - the more monsters are near the caster, the strong
         <area calc="3.2"  />
         <filter value="player" />
         <effect type="knockback">
-           <amount calc="1.2 * (1 + power)"/>
+           <amount calc="1.4 * (1 + power)"/>
         </effect>
       </effect>
     </effect>

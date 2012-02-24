@@ -8,7 +8,7 @@ Fire mages&apos; favourite weapon - a ball of liquid fire that explodes if it hi
   <stats desc="area of $1 fire damage
 $2% chance for setting on fire ($3-$4 fire damage)">
     <param name="1" calc="16.0 * (1 + power)" />
-	<param name="2" calc="0.25 + (0.005 * power)" />
+	<param name="2" calc="0.25 + (0.005 * power) * 100" />
 	<param name="3" calc="2.5 + (0.5 * power)" />
 	<param name="4" calc="4 * (2.5 + (0.5 * power))" />
   </stats>

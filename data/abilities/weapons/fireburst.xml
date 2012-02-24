@@ -6,11 +6,10 @@ The ultimate solution for the &quot;being surrounded by a horde of ferocious mos
   </description>
   <icon>data/abilities/weapons/fireburst.png</icon>
   <stats desc="deals of $1-$2 fire damage
-$3% chance for setting on fire ($4-$5 fire damage)
-$5 shards dealing $6 of fire damage">
+$3% chance for setting on fire ($4-$5 fire damage)">
     <param name="1" calc="35.0 * (1 + power)" />
     <param name="2" calc="(35.0 * (1 + power)) + rint(7 + (3.4 * power)) * 11 + (0.4 * power)" />
-    <param name="3" calc="0.66 + (0.01 * power)" />
+    <param name="3" calc="0.66 + (0.01 * power) * 100" />
     <param name="4" calc="3 + (0.25 * power)" />
     <param name="5" calc="(3 + (0.25 * power)) * 4" />
   </stats>

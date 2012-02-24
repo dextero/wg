@@ -9,7 +9,7 @@ Fire magic taken to the extreme - this spell spreads a wide fan of sparks, deali
 $3% chance for setting on fire ($4 fire damage per second)">
     <param name="1" calc="10.5 + (4.5 * power)" />
 	<param name="2" calc="(12 + (0.16 * power)) * (10.5 + (4.5 * power))" />
-	<param name="3" calc="0.25 + (0.005 * power)" />
+	<param name="3" calc="0.25 + (0.005 * power) * 100" />
 	<param name="4" calc="2 + (0.25 * power)" />
   </stats>
 

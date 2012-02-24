@@ -8,7 +8,7 @@ Basic electricity spell. Inflicts small damage and has a chance to stun the targ
   <stats desc="deals $1 of lightning damage
 $2% chance for stun">
     <param name="1" calc="6.0 * (1 + power)" />
-	<param name="2" calc="0.01 * power" />
+	<param name="2" calc="0.01 * power * 100" />
   </stats>
 
   <!-- power = 1x cho, 4x mel, 2x san, 2x phl -->

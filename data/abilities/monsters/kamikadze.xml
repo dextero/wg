@@ -15,7 +15,7 @@
       <effect type="list">
         <effect type="damage">
           <damage-type value="fire"/>
-          <amount value="30.0" />
+          <amount value="60.0" />
         </effect>
         <effect type="knockback">
           <amount value="8.5"/>
