@@ -5,9 +5,9 @@
 A slow projectile turning into cloud of suffocating gas.
   </description>
   <icon>data/abilities/weapons/poison-cloud.png</icon>
-  <stats desc="area of $1 poison damage per $2 seconds">
-    <param name="1" calc="4.5 + (1.25 * power)" />
-	<param name="2" calc="5.0 + (1.5 * power)" />
+  <stats desc="area of $1-$2 poison damage">
+    <param name="1" calc="4.5 + (2.5 * power)" />
+	<param name="2" calc="(4.5 + (2.5 * power)) * (5.0 + (1.0 * power))" />
   </stats>
 
   <!-- power = 1x cho, 2x mel, 2x san, 3x phl -->
@@ -21,7 +21,7 @@ A slow projectile turning into cloud of suffocating gas.
 
     <effect type="graphical-effect">
       <name value="acid-cloud" />
-      <time calc="3.6" />
+      <time calc="3.6 + (1.0 * power)" />
     </effect>
     <effect type="bullet">
       <emitter>
@@ -37,14 +37,14 @@ A slow projectile turning into cloud of suffocating gas.
           <effect type="list">
             <effect type="graphical-effect">
               <name value="colorize-green" />
-			  <time calc="5.0 + (1.5 * power)" />
+			  <time calc="5.0 + (1.0 * power)" />
             </effect>			
 		    <effect type="non-cumulative">
 		      <effect type="timed">
-		        <time calc="5.0 + (1.5 * power)"/>
+		        <time calc="5.0 + (1.0 * power)"/>
 			    <effect type="damage" tag="poison-cloud-damage-tag">
 			      <damage-type value="poison"/>
-			      <amount calc="4.5 + (1.25 * power)"/>
+			      <amount calc="4.5 + (2.25 * power)"/>
 			    </effect>
 		      </effect>
 	        </effect>	
