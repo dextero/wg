@@ -109,14 +109,16 @@ void CommandExec(size_t argc, const std::vector<std::wstring> &argv)
         }
     }
     std::ifstream ifs(fullPath.c_str(), std::ifstream::in);
-
-    char line[1024];
-    while (!ifs.eof())
-    {
-		ifs.getline(line, 1024);
-        gCommands.ParseCommand( StringUtils::ReinterpretFromUTF8( line ) );
-    }
-    ifs.close();
+	FILE * file = fopen(fullPath.c_str(), "r");
+	if (file != NULL) {
+        char line[1024];
+        while(fgets(line, sizeof(line), file) != NULL) {
+            gCommands.ParseCommand(StringUtils::ReinterpretFromUTF8(line));
+		}
+		fclose(file);
+	} else {
+		fprintf(stderr, "error: couldn't exec %s\n", fullPath.c_str()); 
+	}
 }
 
 void CommandPrintScreen(size_t argc, const std::vector<std::wstring> &argv)
