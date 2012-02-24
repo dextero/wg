@@ -71,7 +71,7 @@
 		    </effect>
 		    <effect type="damage">
 			  <damage-type value="lightning"/>
-			  <amount calc="0.75 * intelligence"/>
+			  <amount calc="1.25 * intelligence"/>
 		    </effect>
 		  </effect>
           <flight-effect type="delayed">

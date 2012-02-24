@@ -225,7 +225,7 @@ std::wstring CItemSlot::CreateWeaponDescription(CAbility * abi, CItem * selected
     std::wstring tooltipText;
     if (abi)
     {
-        tooltipText = abi->name;
+        tooltipText = abi->name + L"\n";
 
         //if (selectedItem != NULL) tooltipText += L" (" + gLocalizator.GetText("ITEM_LEVEL") + L" " + StringUtils::ToWString(selectedItem->mLevel) + L")";
         if (abi->isFocus && verbosity >= MAX_VERBOSITY) {
@@ -246,7 +246,7 @@ std::wstring CItemSlot::CreateWeaponDescription(CAbility * abi, CItem * selected
         if (verbosity >= MID_VERBOSITY) {
             tooltipText += L"\n" + abi->runesDescription;
         }
-        tooltipText += L"\n" + gLocalizator.GetText("CURRENT_ITEM_POWER");
+        tooltipText += L"\n" + gLocalizator.GetText("CURRENT_ITEM_POWER") + L"\n";
 
         if (!player)
             tooltipText += L"\nError, player not set :(";

@@ -5,9 +5,9 @@
 A simple fire arrow, dealing damage and knocking enemies backward. This arrow can fly through enemies, so you can hit a few monsters in a row.
   </description>
   <icon>data/abilities/weapons/firearrow.png</icon>
-  <stats desc="deals $1-$2 fire damage per penetration">
+  <stats desc="deals $1-$2 of fire damage">
     <param name="1" calc="7.0 * (1 + power)" />
-    <param name="2" calc="(1/0.09) * 7.0 * (1 + power)" />
+    <param name="2" calc="4 * 7.0 * (1 + power)" />
   </stats>
 
   <!-- power = 3x cho, 0x mel, 3x san, 2x phl -->

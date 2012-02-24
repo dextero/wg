@@ -9,7 +9,7 @@ The electric potentials between the target and it&apos;s nearest environment cau
 $3% chance for stun">
     <param name="1" calc="7.0 * (1 + power)" />
 	<param name="2" calc="(7.0 * (1 + power)) + (4 * (1 + power) * rint(4 + (0.4 * power)))" />
-	<param name="3" calc="0.01 * power" />
+	<param name="3" calc="0.01 * power * 100" />
   </stats>
 
   <!-- power = 3x cho, 2x mel, 4x san, 1x phl -->

@@ -2,9 +2,17 @@
 
   <name>Fire circle</name>
   <description>
-When you get surrounded, this ability is what you need. Enemies around you are pushed away by a hot wave - you might get a moment to run.
+When you get surrounded, use this spell to push away enemies around you with a hot wave.
   </description>
   <icon>data/abilities/weapons/firecircle.png</icon>
+  <stats desc="deals of $1-$2 fire damage
+$3% chance for setting on fire ($4-$5 fire damage)">
+    <param name="1" calc="2.5 + (1.25 * power)" />
+    <param name="2" calc="37.5 + (18.75 * power)" />
+    <param name="3" calc="0.5 + (0.01 * power) * 100" />
+    <param name="4" calc="2 + (0.25 * power)" />
+    <param name="5" calc="(2 + (0.25 * power)) * 4" />
+  </stats>
 
   <!-- power = 4x cho, 0x mel, 1x san, 3x phl -->
   <power calc="0.2 * dot(4, choleric, 0, melancholic, 1, sanguine, 3, phlegmatic)"/>

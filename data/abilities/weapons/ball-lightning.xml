@@ -1,6 +1,6 @@
 <root type="ability" class="bullet">
 
-  <name>Ball lighning</name>
+  <name>Ball lightning</name>
   <description>
 A sphere that throws lightning bolts at nearby victims.
   </description>
