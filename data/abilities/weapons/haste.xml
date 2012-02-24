@@ -59,9 +59,9 @@ Visibly increases the mage&apos;s speed for a short while.
   </cast-time-effect>
 
   <manacost value="2.0" />
-  <casttime value="0.40" />
+  <casttime value="0.05" />
   <delay value="0.05" />
-  <cooldown calc="3.0" />
+  <cooldown calc="0.05" />
 
   <focus-mana-cost calc="7.0 * (1 + 0.22 * power)" />
   <focus-max-duration calc="999.0" />
