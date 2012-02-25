@@ -39,13 +39,22 @@
                 </effect>
               </effect>
             </effect>
+            <effect type="non-cumulative">
+              <effect type="timed">
+                <time value="0.35" />
+                <effect type="damage">
+                  <damage-type value="ice"/>
+                  <amount calc="5.0 * intelligence" />
+                </effect>
+              </effect>
+            </effect>
             <effect type="graphical-effect">
               <time value="1.75" />
               <name value="colorize-blue" />
             </effect>
             <effect type="damage">
               <damage-type value="ice"/>
-              <amount calc="0.5 * intelligence" />
+              <amount calc="0.01 * intelligence" />
             </effect>
           </effect>      
         </emitter>
