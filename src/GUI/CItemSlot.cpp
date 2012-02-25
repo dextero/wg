@@ -229,24 +229,26 @@ std::wstring CItemSlot::CreateWeaponDescription(CAbility * abi, CItem * selected
 
         //if (selectedItem != NULL) tooltipText += L" (" + gLocalizator.GetText("ITEM_LEVEL") + L" " + StringUtils::ToWString(selectedItem->mLevel) + L")";
         if (abi->isFocus && verbosity >= MAX_VERBOSITY) {
-            tooltipText += CTextArea::GetNextColorString(sf::Color(231, 216, 46)) //Gold
-                    + L"\n" + gLocalizator.GetText("ABILITY_IS_FOCUS_ABILITY")
-                    + CTextArea::GetNextColorString(sf::Color::White);
+            tooltipText += L"\n" + CTextArea::GetNextColorString(sf::Color(231, 216, 46)) //Gold
+                    + gLocalizator.GetText("ABILITY_IS_FOCUS_ABILITY")
+                    + CTextArea::GetNextColorString(sf::Color::White) + L"\n";
         }
         if (verbosity >= MID_VERBOSITY) {
-            tooltipText += L"\n" + abi->description;
-        }
+            tooltipText += abi->description;
+        } 
+        tooltipText += L"\n";
+
         if (verbosity >= LOW_VERBOSITY) {
             if (player)
-                tooltipText += L"\n" + StringUtils::ConvertToWString(abi->GetEffectDescription(player))
-                            + CTextArea::GetNextColorString(sf::Color(100, 100, 255)) + L"\nMana cost: " + StringUtils::ConvertToWString(abi->GetManaCostString(player))
-                            + CTextArea::GetNextColorString(sf::Color::White);
+                tooltipText += StringUtils::ConvertToWString(abi->GetEffectDescription(player)) + L"\n"
+                        + CTextArea::GetNextColorString(sf::Color(100, 100, 255))
+                        + L"Mana cost: " + StringUtils::ConvertToWString(abi->GetManaCostString(player)) + L"\n"
+                        + CTextArea::GetNextColorString(sf::Color::White);
         }
 
         if (verbosity >= MID_VERBOSITY) {
-            tooltipText += L"\n" + abi->runesDescription;
+            tooltipText += L"\n" + abi->runesDescription + L"\n";
         }
-        tooltipText += L"\n" + gLocalizator.GetText("CURRENT_ITEM_POWER") + L" ";
 
         if (!player)
             tooltipText += L"\nError, player not set :(";
@@ -258,7 +260,8 @@ std::wstring CItemSlot::CreateWeaponDescription(CAbility * abi, CItem * selected
             std::vector<CAbility*> abis = player->GetExportedAbilities();
             std::vector<float> powerAfterUpgrade;
 
-            tooltipText += StringUtils::FloatToWString(currPower, PRECISION);
+            tooltipText += gLocalizator.GetText("CURRENT_ITEM_POWER") 
+                    + StringUtils::FloatToWString(currPower, PRECISION) + L"\n";
 
             if (verbosity >= MAX_VERBOSITY) {
                 tooltipText += L"\n" + gLocalizator.GetText("ITEM_POWER_AFTER_UPGRADE") + L"\n";

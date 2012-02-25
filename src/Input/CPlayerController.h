@@ -81,7 +81,7 @@ public:
  
     bool AllowKeyHold();
 
-    CInteractionTooltip * GetInteractionTooltip();
+    static CInteractionTooltip * GetInteractionTooltip();
 };
 
 #endif /*__CPLAYERCONTROLLER_H__*/

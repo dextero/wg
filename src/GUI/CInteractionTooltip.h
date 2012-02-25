@@ -31,21 +31,20 @@ public:
     InteractionHandler * GetHandler();
     void SetHandler(InteractionHandler * handler);
     bool IsVisible();
-    void OptionSelected(size_t selected);
 
     void SetPriority(int priority);
     int GetPriority();
 
+    void Update(float secondsPassed);
+
+    bool IsReceivingActionInput();
 private:
     bool mIsVisible;
-
     InteractionHandler * mHandler;
-
     GUI::CWindow * mCanvas;
-
     int mId;
-
     int mPriority;
+    float mTimeToReceiveInput;
 };
 
 #endif

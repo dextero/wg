@@ -40,6 +40,8 @@ CInputHandler::~CInputHandler()
 
 void CInputHandler::FrameStarted( float secondsPassed ){
 
+    CPlayerController::GetInteractionTooltip()->Update(secondsPassed);
+
 	for ( unsigned i = 0; i < gPlayerManager.GetPlayerCount(); i++ )
 	{
 		if ( CPlayer *p = gPlayerManager.GetPlayerByNumber(i) )
@@ -124,7 +126,9 @@ void CInputHandler::FrameStarted( float secondsPassed ){
 
                 for (MapType::const_iterator it = mapping.begin(); it != mapping.end(); it++) {
                     if (gBindManagerByPlayer(i)->Check(it->first) & keyMask) {
-                        pc->GetInteractionTooltip()->GetHandler()->OptionSelected(it->second);
+                        if (pc->GetInteractionTooltip()->IsReceivingActionInput()) {
+                            pc->GetInteractionTooltip()->GetHandler()->OptionSelected(it->second);
+                        }
                         gBindManagerByPlayer(i)->SetKeyState(it->first, false);
                     }
                 }
