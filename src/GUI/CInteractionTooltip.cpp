@@ -17,7 +17,8 @@ CInteractionTooltip::CInteractionTooltip() :
         mHandler(NULL),
         mCanvas(NULL),
         mId(0),
-        mPriority(0) {
+        mPriority(0),
+        mTimeToReceiveInput(0.0f) {
     fprintf(stderr, "CInteractionTooltip()\n");
     Clear();
 }
@@ -32,12 +33,14 @@ void CInteractionTooltip::Show() {
     if (mIsVisible == true) return;
     mIsVisible = true;
     mCanvas->SetVisible(true);
+    mTimeToReceiveInput = 1.5f;
 }
 
 void CInteractionTooltip::Hide() {
     mIsVisible = false;
     mCanvas->SetVisible(false);
     mPriority = 0;
+    mTimeToReceiveInput = 0.0f;
 }
 
 void CInteractionTooltip::Clear() {
@@ -56,6 +59,7 @@ void CInteractionTooltip::Clear() {
         mHandler = NULL;
     }
     mPriority = 0;
+    mTimeToReceiveInput = 0.0f;
 }
 
 bool CInteractionTooltip::IsVisible() {
@@ -84,4 +88,13 @@ void CInteractionTooltip::SetPriority(int priority) {
 
 int CInteractionTooltip::GetPriority() {
     return mPriority;
+}
+
+void CInteractionTooltip::Update(float secondsPassed) {
+    mTimeToReceiveInput -= secondsPassed;
+    if (mTimeToReceiveInput < 0) mTimeToReceiveInput = 0.0f;
+}
+
+bool CInteractionTooltip::IsReceivingActionInput() {
+    return (mTimeToReceiveInput <= 0.0f);
 }
