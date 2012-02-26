@@ -50,7 +50,9 @@ include("header.php");
 		}
 		print("</p><ul>");
 		foreach (getDownloadsMatching($lang, $platform, null) as $package) {
-			print("<li><a href=\"download.php?lang=".$lang."&platform=".$platform."&title=".$package->title."&from=".$from."\">".$package->title."</a></li>");
+			if(strcmp($package->title, "latest")) {
+				print("<li><a href=\"download.php?lang=".$lang."&platform=".$platform."&title=".$package->title."&from=".$from."\">".$package->title."</a></li>");
+			}
 		}
 		print("</ul>");
 	}
