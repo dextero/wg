@@ -95,11 +95,11 @@ Good luck!</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_MAGIC_SCHOOLS</key>
-		<value>There are four magic disciplines: melancholic, sanguine, choleric and phlegmatic. Training in one of them improves some spells effectiveness, but may decrease other spells power, so be careful!</value>
+		<value>There are four magic disciplines: melancholic, sanguine, choleric and phlegmatic. Training in one of them improves some spells, but may decrease the power of others, so be careful!</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_MAGIC_SCHOOLS2</key>
-		<value>To master a spell one have to develop his four magic elements in exact proportions. However, for each spell these proportion are different so it's not possible to be a master in all.</value>
+		<value>To master a spell one has to develop the four magic elements in exact proportions. However, for each spell these proportion are different so it's not possible to be a master in all.</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_SPELLS</key>
@@ -107,34 +107,34 @@ Good luck!</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_MANACOST</key>
-		<value>When improving your spell mastery you need to remember the casting will cost you more mana. Sometimes it is even a good idea to consciously lower the power of a spell so you can cast it multiple times during heat of the battle.</value>
+		<value>When improving your spell mastery you need to remember that casting will cost you more mana. Sometimes it is a good idea to keep your mastery low, or even consciously lower it, so that you can cast the spell multiple times during the heat of battle. </value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_DRAGON</key>
-		<value>Wanderers spread rumors about a dragon hiding in frozen wastelands east from here. It has always been a dangerous place, but a monster so powerful? If it&apos;s true, we need somebody to get rid of it.</value>
+		<value>Wanderers spread rumors about a dragon hiding in the Frozen Wastelands east of here. It&apos;s always been a dangerous place, but a monster so powerful? If it&apos;s true, we'll need somebody to get rid of it.</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_DRAGON2</key>
-		<value>I've heard there was a green dragon seen east from our town. I wonder what it eats - not much of maidens you can encounter here lately.</value>
+		<value>I've heard a green dragon was seen east of town. I wonder what it eats - you can&apos;t really find many maidens around here lately.</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_FROZEN_WASTELANDS_MONSTERS</key>
-		<value>Frozen Wasteland&apos;s undead beasts are immune to all kinds of poisons. Our greatest mages are trying to find out why, but they have no clue so far.</value>
+		<value>Undead beasts inhabiting the Frozen Wasteland&apos;s are immune to all kinds of poisons. Our greatest sages are trying to find out why, but so far they have no clue.</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_HOSTILE_CREATURES</key>
-		<value>Monsters from Frozen Wastelands have become aggresive lately and started to attack creatures living in Gargant Forest and Forgotten Lands. Be careful if you&apos;re going there - every single person is now considered as a danger, so you&apos;ll face hordes of hostile creatures.</value>
+		<value>Monsters from the Frozen Wastelands have become aggresive lately and started attacking Gargant Forest and Forgotten Lands. Be careful if you&apos;re going there - every single intruder is now considered a threat, so you&apos;ll face hordes of hostile creatures wherever you go.</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_GARGANT_FOREST</key>
-		<value>As a unexperienced mage, you should start by visiting Gargant Forest to the south. There you&apos;ll find many ingredients that could be useful, and monsters are not so tough as in northern territories.</value>
+		<value>As an unexperienced mage, you should start by visiting the Gargant Forest to the south. There you&apos;ll find many ingredients that could be useful, and monsters are not so tough there as in the northern territories.</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_MAP</key>
-		<value>Paths between nearby territories are somewhat strange. You should really get a map to avoid getting lost... Here, take my map. (press F5 whenever you want to check your current location)</value>
+		<value>Paths between nearby territories are somewhat strange. You should really get a map to avoid getting lost... Here, take mine. (press F5 whenever you want to check your current location)</value>
 	</entry>
 	<entry>
 		<key>DLG_NPC_HINT_SHOPS</key>
-		<value>Some of the town folk may have a spell for sale. You should check them each time you are in town - they might have different offer.</value>
+		<value>Some of the town folk may have a spell for sale. You should check with them each time you are in town - they might have something different on offer.</value>
 	</entry>
 </root>
