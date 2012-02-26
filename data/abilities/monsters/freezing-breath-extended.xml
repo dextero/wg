@@ -1,0 +1,125 @@
+<root type="ability" class="self">
+
+  <effect type="list">
+    <effect type="console">
+      <text>[
+        shake-camera 2 0.05 2
+      ]</text>
+    </effect>
+    <effect type="timed">
+      <time value="0.7"/>
+      <effect type="modify">
+        <aspect value="speed" />
+        <amount value="0.05" />
+      </effect>
+      <effect type="modify">
+        <aspect value="turnspeed" />
+        <amount value="0.005" />
+      </effect>
+    </effect>
+    <effect type="recastable">
+      <recast value="0.09"/>
+      <time value="0.6"/>
+      <effect type="list">
+        <effect type="sound">
+          <name value="data/sounds/Lugaro/firestart.ogg" />
+        </effect>
+        <effect type="bullet">
+          <emitter>
+            <extra-offset value="-0.5"/>
+            <range value="12.0" />
+            <speed value="5.0" />
+            <acceleration value="-3.0" />
+            <ttl value="0.9" />
+            <count value="10" />
+            <width value="30" />
+            <spread-type value="shotgun"/>
+            <speed-fuzziness value="1.0" />
+            <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+            <filter value="wall" />
+            <flight-effect type="list">
+              <effect type="recastable" >
+                <recast value="0.25" />
+                <time value="3.0" />
+                <effect type="area">
+                  <area calc="0.4" />
+                  <filter value="player,obstacle" />
+                  <effect type="non-cumulative">
+                    <effect type="list">
+                      <effect type="timed">
+                        <time value="2.25" />
+                        <effect type="modify">
+                          <amount value="0.50" />
+                          <aspect value="speed" />
+                        </effect>
+                      </effect>
+                      <effect type="timed">
+                        <time value="0.25" />
+                        <effect type="damage">
+                          <damage-type value="ice"/>
+                          <amount calc="2 * intelligence" />
+                        </effect>
+                      </effect>
+                      <effect type="graphical-effect">
+                        <time value="2.25" />
+                        <name value="colorize-blue" />
+                      </effect>
+                    </effect>
+                  </effect>
+                </effect>
+              </effect>
+              <effect type="recastable" >
+                <recast value="0.06" />
+                <time value="3.0" />
+                <effect type="bullet">
+                  <emitter>
+                    <speed value="0.0" />
+                    <acceleration value="1.0" />
+                    <ttl value="0.0" />
+                    <count value="1" />
+                    <width value="0" />
+                    <explode-on-fade value="1" />
+                    <bullet value="data/physicals/bullets/invisible-bullet.xml" />
+                    <filter value="none" />    
+                    <explosion type="list"> 
+                      <effect type="graphical-effect">
+                        <name value="blue-explosion-mini" />
+                        <time value="0.6" />
+                      </effect>
+                    </explosion>
+                  </emitter>
+                </effect>
+              </effect>
+            </flight-effect>
+          </emitter>  
+        </effect>  
+      </effect>
+    </effect> 
+  </effect> 
+
+  <cast-time-effect type="list" >
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.4"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.2"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </cast-time-effect>
+
+  <manacost calc="10" />
+  <casttime calc="0.40" />
+  <delay calc="0.90" />
+  <cooldown calc="3.30 + rnd(3, 5)" />
+
+  <ai-hint>
+    <player-distance>5.5</player-distance>
+    <player-angle>10.0</player-angle>
+  </ai-hint>
+
+</root>
