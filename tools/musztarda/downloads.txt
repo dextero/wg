@@ -6,16 +6,31 @@
 #   URL
 #
 
+# latest to sa specjalne przekierowania, niewidoczne na stronie
+# zasadniczo na zewnetrzych stronach wklejamy link do latest,
+# zeby potem za rok nie musiec trzyac starych paczek na serwerach
+en win latest           http://hell.org.pl/~toxic/all/warsztat/snapshots/win32/en/wg_win32_1.3-rc0_2012-02-26_15-01-15
+pl win latest           http://hell.org.pl/~toxic/all/warsztat/snapshots/win32/en/wg_win32_1.3-rc0_2012-02-26_15-01-15
+en lin latest           http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/wg_linux_1.1_en.tar.gz
+pl lin latest           http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/wg_linux_1.1_en.tar.gz
+en mac latest           http://hell.org.pl/~toxic/all/warsztat/snapshots/mac/wg_osx_1.0_en.zip
+pl mac latest           http://hell.org.pl/~toxic/all/warsztat/snapshots/mac/wg_osx_1.0_pl.zip
+
+# 1.3
+en win 1.3-rc0          http://hell.org.pl/~toxic/all/warsztat/snapshots/win32/en/wg_win32_1.3-rc0_2012-02-26_15-01-15
+pl win 1.3-rc0          http://hell.org.pl/~toxic/all/warsztat/snapshots/win32/en/wg_win32_1.3-rc0_2012-02-26_15-01-15
+
 # 1.1
 en lin 1.1              http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/wg_linux_1.1_en.tar.gz
 pl lin 1.1              http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/wg_linux_1.1_en.tar.gz
 en lin 1.1(.deb)        http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/WarlocksGauntlet-1.1.deb
 pl lin 1.1(.deb)        http://hell.org.pl/~toxic/all/warsztat/snapshots/linux/en/WarlocksGauntlet-1.1.deb
+en win 1.1              http://hell.org.pl/~toxic/all/warsztat/snapshots/win32/en/wg_win32_1.1.zip
+pl win 1.1              http://hell.org.pl/~toxic/all/warsztat/snapshots/win32/en/wg_win32_1.1.zip
 
 # 1.0 - lin z r1952, win z r1956, mac z r1957
-en  win 1.0             http://students.mimuw.edu.pl/~sk236086/WG/paczki/WG-VC2008-30-12-2010-r1956-en.zip
-pl  win 1.0             http://students.mimuw.edu.pl/~sk236086/WG/paczki/WG-VC2008-30-12-2010-r1956.zip
-#redirecty do 1.0.1
+#en  win 1.0             http://students.mimuw.edu.pl/~sk236086/WG/paczki/WG-VC2008-30-12-2010-r1956-en.zip
+#pl  win 1.0             http://students.mimuw.edu.pl/~sk236086/WG/paczki/WG-VC2008-30-12-2010-r1956.zip
 en  mac 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/mac/wg_osx_1.0_en.zip
 pl  mac 1.0             http://hell.org.pl/~toxic/all/warsztat/snapshots/mac/wg_osx_1.0_pl.zip
 
