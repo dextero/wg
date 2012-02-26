@@ -1,0 +1,71 @@
+<root type="ability" class="bullet">
+
+  <self-effect type="sound">
+    <name value="data/sounds/Lugaro/jump.ogg" />
+  </self-effect>
+
+  <explosion type="list">
+    <effect type="graphical-effect">
+      <time value="0.8" />
+      <name value="blue-explosion-mini" />
+    </effect>
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/fireend.ogg" />
+    </effect>
+  </explosion>  
+
+  <effect type="list">
+    <effect type="damage">
+      <damage-type value="ice"/>
+      <amount calc="1 * intelligence" />
+    </effect>
+    <effect type="timed">
+      <time value="3.0" /> 
+      <effect type="modify">
+         <amount value="0.50" /> 
+         <aspect value="speed" /> 
+       </effect>
+    </effect>
+    <effect type="graphical-effect">
+      <time value="3.0" /> 
+      <name value="colorize-blue" /> 
+    </effect>
+  </effect>
+
+
+  <cast-time-effect type="list"> 
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.90"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="shield"/>
+      <time value="0.70"/>
+    </effect>
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>  
+  </cast-time-effect>
+
+  <ttl calc="3.0 + rnd(0, 2)" />
+  <speed calc="6.0" />
+  <acceleration value="-8.0" />
+  <explode-on-fade value="1" />
+  <count calc="10 + rnd(0, 10)" />
+  <width calc="50.0 + rnd(0, 20)" />
+  <bullet value="data/physicals/bullets/freezebomb-armed.xml" />
+  <filter value="wall,player,obstacle"/>
+  <spread-type value="shotgun"/>
+  <speed-fuzziness value="1.5" />
+  
+  <manacost value="6" />
+  <casttime value="0.90" />
+  <delay value="0.80" />
+  <cooldown calc="6.5 + rnd(1, 8)" />
+
+  <ai-hint>
+    <player-distance>7.0</player-distance>
+    <player-angle>25</player-angle>
+  </ai-hint>
+</root>

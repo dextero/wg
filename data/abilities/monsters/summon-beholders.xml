@@ -1,0 +1,67 @@
+<root type="ability" class="self">
+
+  <effect type="list">
+
+
+    <effect type="graphical-effect">
+      <name value="magic-circle-5"/>
+      <time value="0.75"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="0.5"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-1"/>
+      <time value="0.25"/>
+    </effect>
+
+
+    <effect type="delayed">
+     <time value="1.0" /> 
+     <effect type="list">
+	
+      <effect type="sound">
+         <name value="data/sounds/Lugaro/break.ogg" /> 
+      </effect>
+      <effect type="summon">
+       <summoner>
+         <ttl value="50.0f"/>
+         <min-radius value="1.0f"/>
+         <count calc="rnd(1, 3)"/>
+         <template value="data/physicals/monsters/defs/beholder.xml"/>
+       </summoner>
+      </effect>
+     </effect>
+    </effect>
+  </effect>
+
+
+
+
+  <cast-time-effect type="list" >
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+    <effect type="modify">
+      <aspect value="turnspeed" />
+      <amount value="0.0" />
+    </effect>
+  </cast-time-effect>
+  
+  <delay-effect type="list">
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </delay-effect>
+  
+  <casttime value="1.0" />
+  <delay value="1.0f" />
+  <cooldown value="40.0f + rnd(0, 10)" />
+  
+  <ai-hint>
+  	<player-distance>8.0</player-distance>
+  </ai-hint>  
+</root>

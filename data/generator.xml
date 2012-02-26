@@ -220,7 +220,7 @@
         <!-- le boss -->
         <boss file="data/physicals/monsters/defs/gargant-boss.xml" minLevel="0" maxLevel="9" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss.xml" />
         <boss file="data/physicals/monsters/defs/baldurian.xml" minLevel="10" maxLevel="17" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss.xml" />
-        <boss file="data/physicals/monsters/defs/frost-lord-boss.xml" minLevel="23" maxLevel="23" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss.xml" />
+        <boss file="data/physicals/monsters/defs/urgoth.xml" minLevel="23" maxLevel="23" trigger-radius="10" trigger-ai="melee-chaser" trigger-playlist="data/music/boss.xml" />
 
         <boss file="data/physicals/monsters/defs/dragon.xml" minLevel="25" maxLevel="25" trigger-radius="10" trigger-ai="ranged-caster" trigger-playlist="data/music/boss.xml" />
       

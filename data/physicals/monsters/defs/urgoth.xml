@@ -1,0 +1,62 @@
+<root type="enemy">
+
+  <bestiary>
+    <name value="Urgoth" />
+    <desc value="Lord of Frozen Landz (blablababla neich ktoœ z lepszym agnielskim coœ wymyœli)." />
+  </bestiary>
+  <genre>Urgoth</genre>
+
+  <maxhp min="4000.0" max="4000.0" />
+  <speed min="1.25" max="1.25" />
+  <turnspeed min="120.0" max="120.0" />
+  <strength min="20.0" max="20.0" />
+  <intelligence min="20.0" max="20.0" />
+  <physresist min="5.0" max="10.0" />
+  <fireresist min="1.0" max="4.0" />
+  <lightningresist min="5.0" max="1.0" />
+  <iceresist min="8.0" max="10.0" />
+  <poisonresist min="3.0" max="4.0" />
+  <maxmana min="200.0" max="200.0" />
+  <manaregen min="10" max="10"/>
+  <xp min="350.0" max="350.0" />
+
+  <mass min="4.5" max="4.5" />
+  <radius min="0.65" max="0.65" />
+  <scale min="1.30" max="1.30" />
+  <shadow-offset min="0.12" max="0.12" />
+  <color r="0.33" g="0.33" b="1.0" a="1.0" />
+
+  <noStun noStun="1"/>
+
+  <animset>
+    <anim name="core/anim/gargant/boss/default" type="default" />
+    <anim name="core/anim/gargant/boss/move" type="move" />
+    <anim name="core/anim/gargant/boss/attack" type="attack" />
+    <anim name="core/anim/gargant/boss/death" type="death" />
+  </animset>
+  <animset>
+    <anim name="core/anim/gargant/boss/wounded/default" type="default" />
+    <anim name="core/anim/gargant/boss/wounded/move" type="move" />
+    <anim name="core/anim/gargant/boss/wounded/attack" type="attack" />
+    <anim name="core/anim/gargant/boss/death" type="death" />
+  </animset>
+
+  <ai name="melee-chaser" />
+
+  <ability name="data/abilities/monsters/melee-boss.xml" default="1" />
+  <ability name="data/abilities/monsters/freezing-breath-extended.xml" />
+  <ability name="data/abilities/monsters/crawling-lightning.xml" />
+  <ability name="data/abilities/monsters/freezing-mines.xml" />
+  <ability name="data/abilities/monsters/mass-haste.xml" /> 
+  <ability name="data/abilities/monsters/charge.xml" /> 
+  <ability name="data/abilities/monsters/devolution.xml" /> 
+  <ability name="data/abilities/monsters/summon-frost-demons.xml" /> 
+  <ability name="data/abilities/monsters/summon-beholders.xml" /> 
+
+  <sound type="attack" filename="data/sounds/EL/monster04.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/monster01.ogg" />
+  <sound type="damaged" filename="data/sounds/EL/monster02.ogg" />
+  <sound type="spawn" filename="data/sounds/EL/dragon02.ogg" />
+  <sound type="death" filename="data/sounds/EL/monster06.ogg" />
+
+</root>

@@ -1,0 +1,91 @@
+<root type="ability" class="self">
+
+  <effect type="list">
+
+
+    <effect type="delayed">
+      <time value="1.2" /> 
+      <effect type="graphical-effect">
+        <name value="magic-circle-5" /> 
+        <time value="0.3" /> 
+      </effect>
+    </effect>
+
+    <effect type="delayed">
+      <time value="0.9" /> 
+      <effect type="graphical-effect">
+        <name value="magic-circle-4" /> 
+        <time value="0.3" /> 
+      </effect>
+    </effect>
+
+    <effect type="delayed">
+      <time value="0.6" /> 
+      <effect type="graphical-effect">
+        <name value="magic-circle-3" /> 
+        <time value="0.3" /> 
+      </effect>
+    </effect>
+
+    <effect type="delayed">
+      <time value="0.3" /> 
+      <effect type="graphical-effect">
+        <name value="magic-circle-2" /> 
+        <time value="0.3" /> 
+      </effect>
+    </effect>
+
+    <effect type="graphical-effect">
+      <name value="magic-circle-1" /> 
+      <time value="0.3" /> 
+    </effect>
+
+
+    <effect type="delayed">
+     <time value="1.2" /> 
+     <effect type="list">
+	
+      <effect type="sound">
+         <name value="data/sounds/Lugaro/break.ogg" /> 
+      </effect>
+      <effect type="summon">
+       <summoner>
+         <ttl value="50.0f"/>
+         <min-radius value="1.0f"/>
+         <count calc="rnd(1, 2)"/>
+         <template value="data/physicals/monsters/defs/frost-demon.xml"/>
+       </summoner>
+      </effect>
+     </effect>
+    </effect>
+  </effect>
+
+
+
+
+  <cast-time-effect type="list" >
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+    <effect type="modify">
+      <aspect value="turnspeed" />
+      <amount value="0.0" />
+    </effect>
+  </cast-time-effect>
+  
+  <delay-effect type="list">
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+  </delay-effect>
+  
+  <casttime value="2.0" />
+  <delay value="1.2f" />
+  <cooldown value="35.0f + rnd(0, 5)" />
+  
+  <ai-hint>
+  	<player-distance>4.0</player-distance>
+  </ai-hint>  
+</root>

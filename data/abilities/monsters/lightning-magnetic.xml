@@ -33,7 +33,7 @@
           <damage-type value="ice"/>
         </effect>
         <effect type="knockback">
-          <amount value="-30.0" />
+          <amount value="-50.0" />
         </effect>
       </effect>
     </effect>
