@@ -26,7 +26,7 @@ Visibly increases the mage&apos;s speed for a short while.
     </effect>
     <effect type="recastable">
       <recast calc="0.25" />
-      <time calc="3.0 * (1 + power)" />
+      <time calc="999.0" />
       <effect type="list">
         <effect type="graphical-effect">
           <name value="shield" />
@@ -39,7 +39,7 @@ Visibly increases the mage&apos;s speed for a short while.
       </effect>
     </effect>
     <effect type="timed">
-      <time calc="3.0 * (1 + power)" />
+      <time calc="999.0" />
       <effect type="modify">
         <aspect value="speed" />
         <amount calc="1.25 + 0.15 * ln(1 + 4 * (power))" />
