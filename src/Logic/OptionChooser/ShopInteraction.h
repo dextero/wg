@@ -64,14 +64,14 @@ class ShopInteraction : public InteractionHandler
 
 //          description->SetText(StringUtils::ConvertToWString(title));
             if (mNpc->GetSellingItem().empty()) {
-                mDescription->SetText(L"Hello, I've already sold you what I had.");
+                mDescription->SetText(L"Hello, I've already sold you all my spells.");
             } else {
                 GUI::CWindow* canvas = tooltip->GetCanvas();
 
                 CAbility * ability = gResourceManager.GetAbility(mNpc->GetSellingItem());
                 int cost = mNpc->GetSellingPrice();
 
-                mDescription->SetText(L"Hello wanderer, Would you like to buy " + ability->name + L" spell for " + StringUtils::ToWString(cost) + L" gold?");
+                mDescription->SetText(L"Hello wanderer, would you like to buy a spell named " + ability->name + L" for " + StringUtils::ToWString(cost) + L" gold?");
 
                 GUI::CImageBox* weaponIcon = tooltip->GetCanvas()->CreateImageBox("weaponIcon");
                 weaponIcon->SetPosition(3.f, 35.f, 9.f, 9.f, GUI::UNIT_PERCENT, true);
