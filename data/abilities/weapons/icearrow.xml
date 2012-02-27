@@ -7,7 +7,7 @@ Basic offensive spell used by Water Mages - an icicle that wounds and slows down
   <icon>data/abilities/weapons/icearrow.png</icon>
   <stats desc="deals $1 of ice damage
 $2% base speed for $3 seconds">
-    <param name="1" calc="6.0 * (1 + power)" />
+    <param name="1" calc="8.0 * (1 + power)" />
 	<param name="2" calc="0.76 - (0.005 * power)" />
     <param name="3" calc="1.75 + (0.02 * power)" />
   </stats>
@@ -41,11 +41,11 @@ $2% base speed for $3 seconds">
     </effect>	
     <effect type="damage">
       <damage-type value="ice"/>
-      <amount calc="6.0 * (1 + power)" />
+      <amount calc="8.0 * (1 + power)" />
     </effect>
   </effect>
   
-  <manacost calc="4.25 * (1 + 0.22 * power)" />
+  <manacost calc="4.0 * (1 + 0.22 * power)" />
   <range value="12.0" />
   <speed value="10.0" />
   <ttl value="0.8" />
