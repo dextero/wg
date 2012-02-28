@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<NodeDefinitionContainer>
+  <NodeDefinitions>
+    <NodeDefinition>
+      <Name>Effect</Name>
+      <NameDefiningType>effect</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType>
+        <NodeDefinitionCountPair>
+          <Definition>Effect</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+      </AllowedNodeType>
+      <Removable>true</Removable>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Definition>type</Definition>
+        </ExternalAttribute>
+        <ExternalAttribute>
+          <Definition>Tag</Definition>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Name</Name>
+      <NameDefiningType>name</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>true</Removable>
+      <Type>string</Type>
+      <AttributeDefinitions />
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Description</Name>
+      <NameDefiningType>description</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>true</Removable>
+      <Type>string</Type>
+      <AttributeDefinitions />
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Icon</Name>
+      <NameDefiningType>icon</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>true</Removable>
+      <Type>path~icon~abilities/weapons/*.png</Type>
+      <AttributeDefinitions />
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+  </NodeDefinitions>
+  <AttributeDefinitions>
+    <AttributeDefinition>
+      <Name>Tag</Name>
+      <NameXml>tag</NameXml>
+      <Type />
+      <Removable>true</Removable>
+    </AttributeDefinition>
+    <AttributeDefinition>
+      <Name>type</Name>
+      <NameXml>type</NameXml>
+      <Type />
+      <Removable>true</Removable>
+    </AttributeDefinition>
+  </AttributeDefinitions>
+</NodeDefinitionContainer>

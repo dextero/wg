@@ -33,6 +33,9 @@ wg_osx*
 osxlib/ff
 osxlib/SFML16
 makelog.*
+.*\.config
+.*\.manifest
+.*\.user
 bladupload
 WGame*
 warsztat_game

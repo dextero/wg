@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <RecentFiles>
+    <string>Lubie placki :D</string>
+    <string>ASD</string>
+  </RecentFiles>
+  <DataDirectory />
+  <WorkingDirectory>D:\WGMerc\gdpl\gdpl\data</WorkingDirectory>
+  <Types>
+    <string>none</string>
+    <string>int</string>
+    <string>float</string>
+    <string>string</string>
+    <string>path~icon~abilities/weapons/*.png</string>
+  </Types>
+</Settings>
