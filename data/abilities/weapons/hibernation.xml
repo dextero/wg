@@ -16,13 +16,13 @@ immobilizes caster">
   <effect type="list">
     <effect type="graphical-effect">
       <name value="hibernate" />
-      <time value="5.0"/>
+      <time value="999.0"/>
   	</effect>
     <effect type="sound">
       <name value="data/sounds/Lugaro/consolesuccess.ogg" />
     </effect>
     <effect type="timed">
-      <time value="5.0" />
+      <time value="999.0" />
       <effect type="list">
         <effect type="heal">
 	      <amount calc="7.5 * (1 + 2 * power)"/>
