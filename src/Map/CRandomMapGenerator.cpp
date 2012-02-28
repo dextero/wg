@@ -889,6 +889,35 @@ bool CRandomMapGenerator::PlaceRegions()
                 << "\t\t<next-map-region>" << entryRegion << "</next-map-region>\n"
                 << "\t</region>\n"
                 << "\t<obj code=\"exit-portal\" x=\"" << bestExit.x + 0.5f << "\" y=\"" << bestExit.y + 0.5f << "\" />\n";
+
+
+		// Strza³eczki przy wejœciach 
+		std::string directionFileName = "data/physicals/walls/dir-left.png";// west
+		float OffsetX = 0.5f, OffsetY = -0.15f;
+
+		if (it->onBorder == "east")
+		{
+			directionFileName = "data/physicals/walls/dir-right.png";
+			OffsetX = 0.5f, OffsetY = 1.5f;
+		}
+		else if(it->onBorder == "north")
+		{
+			directionFileName = "data/physicals/walls/dir-top.png";		
+			OffsetX = -0.1f, OffsetY = 0.5f;
+		}
+		else if (it->onBorder == "south")
+		{
+			directionFileName = "data/physicals/walls/dir-bottom.png";
+			OffsetX = 1.5f, OffsetY = 0.5f;
+		}
+
+		mXmlText << "\t<sprite file=\"" << directionFileName
+                    << "\" x=\"" << bestExit.x + OffsetX
+					<< "\" y=\"" << bestExit.y + OffsetY
+                    << "\" scale=\"" << 1.0f
+                    << "\" rot=\"" << 0.0f
+                    << "\" z=\"" << "background"
+                    << "\" />\n";
     }
     return true;
 }
