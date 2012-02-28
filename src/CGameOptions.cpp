@@ -14,6 +14,7 @@
 #include "Input/CBindManager.h"
 #include "Input/CInputHandler.h"
 #include "Input/CMouseCaster.h"
+#include "Input/CPlayerController.h"
 #include "Logic/Achievements/CAchievementManager.h"
 #include "Logic/Quests/CQuestManager.h"
 #include "Logic/CPlayerManager.h"
@@ -367,7 +368,12 @@ void CGameOptions::SetControls(const std::string &controls,int player)
 	System::Input::CBindManager::SetActualBindManager( StringUtils::ConvertToWString(controls), player );
     // zmiana scheme'a? reset current-itema
     if (gPlayerManager.GetPlayerByNumber(player))
-        gPlayerManager.GetPlayerByNumber(player)->InvalidateCurrentItem();
+    {
+        CPlayer* p = gPlayerManager.GetPlayerByNumber(player);
+        p->InvalidateCurrentItem();
+        if (p->GetController())
+            p->GetController()->SetWalkTarget(false, sf::Vector2f(0.f, 0.f), true);
+    }
 
     // jesli ktos sobie zmienia sterowanie, to usun first_game
     std::remove( (GetUserDir() + "/first_game").c_str() );
