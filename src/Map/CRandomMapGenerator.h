@@ -203,6 +203,10 @@ public:
 
     // sortowanie potworow po levelu
     friend bool VectorCompareFunc(const SPhysical& first, const SPhysical& last);
+
+    // zasadniczo ustawia mDesc.level na jakas wartosc. pozniej mDesc.level jest uzywane przy generowaniu lootow, np
+    // z wypadajacych potworow.
+    void SetGeneratedLootsLevel(int level);
 };
 
 #define gRandomMapGenerator CRandomMapGenerator::GetSingleton()
