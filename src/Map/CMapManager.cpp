@@ -379,4 +379,13 @@ namespace Map{
     {
         return gGameOptions.GetUserDir() + "/world/";
     }
+
+    void CMapManager::SetLevel(int newLevel) {
+        mLevel = newLevel;
+        gRandomMapGenerator.SetGeneratedLootsLevel(newLevel);
+    }
+
+    int CMapManager::GetLevel() {
+        return mLevel;
+    }
 }

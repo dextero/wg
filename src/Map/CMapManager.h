@@ -74,8 +74,8 @@ namespace Map{
 
         void EnterMap(const std::string & mapId, const std::string & region);
         void LoadStartingMap();
-        void SetLevel(int newLevel) { mLevel = newLevel; }
-        int GetLevel() { return mLevel; }
+        void SetLevel(int newLevel);
+        int GetLevel();
 
 		virtual void FrameStarted(float secondsPassed);
         virtual bool FramesDuringPause(EPauseVariant pv) { return pv == pvLogicOnly || pv == pvPauseMenu || pv == pvLoading; };

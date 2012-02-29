@@ -1669,3 +1669,8 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
 
     return true;
 }
+
+void CRandomMapGenerator::SetGeneratedLootsLevel(int level)
+{
+    mDesc.level = level;
+}
