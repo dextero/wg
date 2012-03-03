@@ -18,14 +18,14 @@
         </export>
     </ability>
     <ability code="d">
-        <name>data/abilities/export/choleric-rune.xml</name>
+        <name>data/abilities/export/phlegmatic-rune.xml</name>
         <row>3</row>
         <export>
             <name>choleric</name>
         </export>
     </ability>
     <ability code="e">
-        <name>data/abilities/export/phlegmatic-rune.xml</name>
+        <name>data/abilities/export/choleric-rune.xml</name>
         <row>3</row>
         <export>
             <name>phlegmatic</name>
