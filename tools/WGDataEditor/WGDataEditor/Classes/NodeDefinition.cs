@@ -58,9 +58,44 @@ namespace WGDataEditor
 
     public class XDNodeP
     {
+        public static XDNodeP Get(TreeNode obj)
+        {
+            if (obj != null)
+            {
+                return (XDNodeP)obj.Tag;
+            }
+            else return null;
+        }
+        public static XDNodeP Get(Object obj)
+        {
+            if (obj != null)
+            {
+                return (XDNodeP)obj;
+            }
+            else return null;
+        }
+
         public XDNodeP()
         {
 
+        }
+
+        public static implicit operator XmlNode(XDNodeP Node)
+        {
+            if (Node != null)
+            {
+                return Node.XmlNode;
+            }
+            else return null;
+        }
+
+        public static implicit operator NodeDefinition(XDNodeP Node)
+        {
+            if (Node != null)
+            {
+                return Node.Definition;
+            }
+            else return null;
         }
 
         public XDNodeP(NodeDefinition NewDefinition, System.Xml.XmlNode NewXmlNode)
