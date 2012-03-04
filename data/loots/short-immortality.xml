@@ -1,0 +1,35 @@
+<root type="loot">
+    <name name="Immoratlity_after_entering_map" />
+    <genre>immortality-after-entering-map</genre>
+    <image filename="data/loots/pendant-of-immortality.png" />
+    <effect type="list">
+	    <effect type="non-cumulative">
+		  <effect type="timed">
+			<time value="3.0" />
+			<effect type="list">
+			  <effect type="modify">
+				<aspect value="fireresist"/>
+				<amount value="100.0"/>
+			  </effect>
+			  <effect type="modify">
+				<aspect value="physresist"/>
+				<amount value="100.0"/>
+			  </effect>
+			  <effect type="modify">
+				<aspect value="iceresist"/>
+				<amount value="100.0"/>
+			  </effect>
+			  <effect type="modify">
+				<aspect value="lightningresist"/>
+				<amount value="100.0"/>
+			  </effect>
+			  <effect type="modify">
+				<aspect value="poisonresist"/>
+				<amount value="100.0"/>
+	    	  </effect>
+			</effect>
+		  </effect>
+        </effect>
+    </effect>
+</root>
+ 
