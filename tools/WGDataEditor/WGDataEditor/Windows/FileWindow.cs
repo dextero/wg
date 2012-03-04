@@ -31,7 +31,7 @@ namespace WGDataEditor
         #region Building Tree
         public void PrepareTreeNode(XmlNode Node, TreeNode TreeNode)
         {
-            TreeNode.Text = BuildXmlNodeName(Node);
+            TreeNode.Text = BuildXmlNodeName(Node, XDNodeP.Get(TreeNode));
 
             switch (Node.NodeType)
             {
@@ -41,8 +41,10 @@ namespace WGDataEditor
             }
         }
 
-        public string BuildXmlNodeName(XmlNode Node)
+        public string BuildXmlNodeName(XmlNode Node, NodeDefinition Definition)
         {
+            if (Node == null) return "";
+
             // 3 stepy tworzenia opisu noda
             string Result = "";
 
@@ -76,12 +78,13 @@ namespace WGDataEditor
                                 AttributesLengths.Add(Result.Length - AttributesLength);
                             }
                             Result = Result.Remove(Result.Length - 1, 1);
+
                             Result += ")";
                         }
                     }
                     break;
             }
-            AttributesLength = Result.Length - NameLength;
+            AttributesLength = Result.Length - NameLength - 3;
 
             // Wartość
             switch (Node.NodeType)
@@ -98,6 +101,11 @@ namespace WGDataEditor
                         Result += " " + Node.InnerText;
                     }
                     break;
+            }
+
+            if (String.IsNullOrEmpty(Node.Value) && Definition != null && Definition.Type != "none")
+            {
+                Result += "          ";
             }
 
             return Result;
@@ -185,19 +193,32 @@ namespace WGDataEditor
         {
             if (es.SelectedIndex >= 0 && es.Node != null)
             {
-                int TotalLength = BuildXmlNodeName(((XDNodeP)es.Node.Tag).XmlNode).Length;
+                int TotalLength = BuildXmlNodeName(XDNodeP.Get(es.Node), XDNodeP.Get(es.Node)).Length;
 
                 if (es.SelectedIndex >= NameLength)
                 {
-                    if (es.SelectedIndex < NameLength + AttributesLength) // Edytujemy atrybut
+                    if (es.SelectedIndex < NameLength + AttributesLength + 2) // Edytujemy atrybut {+2 bo ' ('
                     {
-                        int SectionPosition = es.SelectedIndex - NameLength;// Sprawdź który z atrybutów został kliknięty
+                        int SectionPosition = es.SelectedIndex - NameLength + 2;// Sprawdź który z atrybutów został kliknięty
                         int OldSection = 0, NewSection = 0, i = 0;
                         for (i = 0; i < AttributesLengths.Count; i++)
                         {
-                            NewSection = AttributesLengths[i];
+                            NewSection += AttributesLengths[i];
                             if (SectionPosition > OldSection && SectionPosition < NewSection)
                             {
+                                // Sprawdź czy kliknięto przez =
+                                string Attribute = es.Node.Text.Substring(NameLength + 2 + OldSection, NewSection - OldSection - 1);
+                                string AttributeType = Attribute.Substring(0, Attribute.IndexOf('=');
+                                
+                                if (SectionPosition < OldSection + AttributeType.Length) // Jeśli tak, edytujemy typ
+                                {
+                                    StartEditing(es.Node, AttributeType, true);
+                                }
+                                else
+                                {
+                                    StartEditing(es.Node, AttributeType);
+                                }
+
                                 break;
                             }
                             OldSection = NewSection;
@@ -210,6 +231,10 @@ namespace WGDataEditor
                         StartEditing(es.Node, "");
                     }
                 }
+                else
+                {
+                    StartEditing(es.Node, "", true);
+                }
             }
 
         }
@@ -221,13 +246,17 @@ namespace WGDataEditor
         string CurrentlyEditedAttribute = "";
         Control CurrentValueEditor = null;
 
-        public void StartEditing(TreeNode Node, string Attribute)
+        public void StartEditing(TreeNode Node, string Attribute, bool EditingType = false)
         {
+
+
             if (CurentlyEditedNode == null && CurrentValueEditor == null)
             {
+                XDNodeP XDN = XDNodeP.Get(Node);
+                if (XDN == null) return;
+
                 CurentlyEditedNode = Node;
                 CurrentlyEditedAttribute = Attribute;
-                XDNodeP XDN = (XDNodeP)Node.Tag;
 
 
                 if (string.IsNullOrEmpty(Attribute)) // Edytujemy wartość węzła
@@ -321,7 +350,7 @@ namespace WGDataEditor
         public void EndEditing()
         {
 
-            XDNodeP XDN = (XDNodeP)CurentlyEditedNode.Tag;
+            XDNodeP XDN = XDNodeP.Get(CurentlyEditedNode.Tag);
 
             string[] Data = XDN.Definition.Type.Split('~');
             switch (Data[0])
@@ -338,7 +367,7 @@ namespace WGDataEditor
                     break;
 
             }
-            CurentlyEditedNode.Text = BuildXmlNodeName(XDN.XmlNode);
+            CurentlyEditedNode.Text = BuildXmlNodeName(XDN.XmlNode, XDN);
 
             CurrentValueEditor.Hide();
             treeView.Controls.Remove(CurrentValueEditor);

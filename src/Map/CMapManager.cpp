@@ -13,6 +13,7 @@
 #include <SFML/Graphics/RenderWindow.hpp>
 #include "../Logic/CLogic.h"
 #include "../Logic/Boss/CBossManager.h"
+#include "../Logic/Factory/CLootTemplate.h"
 #include "../Commands/CCommands.h"
 #include "../CGameOptions.h"
 #include "../Utils/HRTimer.h"
@@ -232,6 +233,27 @@ namespace Map{
             gDrawableManager.SetAmbient(sf::Color(100, 100, 100));
             gDrawableManager.SetNormalMappingAmbient(sf::Color(150, 150, 150));
             gDrawableManager.SetNormalMappingContrast(1.3f);
+
+			// Daj graczom nieœmiertelnoœæ na 3 sekundy
+			for(int i = 0; i <= (signed)gPlayerManager.GetPlayerCount(); i++)
+			{
+				CPlayer *Player = gPlayerManager.GetPlayerByNumber(i);
+				if(Player != NULL)
+				{
+					CLootTemplate* templ = dynamic_cast<CLootTemplate*>(gResourceManager.GetPhysicalTemplate("data/loots/short-immortality.xml"));
+					if (templ == NULL) {
+						gConsole.Printf(L"Couldn't find template %ls.\n","short-immortality");
+					}
+					else
+					{
+						CLoot * loot = templ->Create();
+						if (loot) {
+							loot->SetPosition(sf::Vector2f(Player->GetPosition().x, Player->GetPosition().y));
+							loot->SetLevel(mLevel);
+						}
+					}
+				}
+			}
 
 			return true;
 		}
