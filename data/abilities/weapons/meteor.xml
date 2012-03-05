@@ -4,7 +4,7 @@
   <description>
 A huge ball of engulfing flames, exploding on any collision.
   </description>
-  <icon>data/abilities/weapons/fireball.png</icon>
+  <icon>data/abilities/weapons/meteor.png</icon>
   <stats desc="deals $1 fire damage
 area of $2-$3 fire damage">
     <param name="1" calc="12.0 * (1 + power)" />
