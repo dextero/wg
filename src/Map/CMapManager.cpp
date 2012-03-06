@@ -237,8 +237,8 @@ namespace Map{
 			// Daj graczom nieœmiertelnoœæ na 3 sekundy
 			for(int i = 0; i <= (signed)gPlayerManager.GetPlayerCount(); i++)
 			{
-				CPlayer *Player = gPlayerManager.GetPlayerByNumber(i);
-				if(Player != NULL)
+				CPlayer * player = gPlayerManager.GetPlayerByNumber(i);
+				if(player != NULL)
 				{
 					CLootTemplate* templ = dynamic_cast<CLootTemplate*>(gResourceManager.GetPhysicalTemplate("data/loots/short-immortality.xml"));
 					if (templ == NULL) {
@@ -248,8 +248,9 @@ namespace Map{
 					{
 						CLoot * loot = templ->Create();
 						if (loot) {
-							loot->SetPosition(sf::Vector2f(Player->GetPosition().x, Player->GetPosition().y));
+							loot->SetPosition(sf::Vector2f(player->GetPosition().x, player->GetPosition().y));
 							loot->SetLevel(mLevel);
+                            loot->HandleCollision(player);
 						}
 					}
 				}
