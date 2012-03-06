@@ -14,13 +14,27 @@ immobilizes caster">
   <power calc="0.2 * dot(2, choleric, 3, melancholic, 1, sanguine, 3, phlegmatic)"/>
   
   <effect type="list">
-    <effect type="graphical-effect">
-      <name value="hibernate" />
-      <time value="999.0"/>
-  	</effect>
     <effect type="sound">
       <name value="data/sounds/Lugaro/consolesuccess.ogg" />
     </effect>
+    <effect type="graphical-effect">
+      <name value="hibernate" />
+      <time value="5.0"/>
+    </effect>
+    <effect type="recastable">
+      <recast calc="5.0" />
+      <time calc="999.0" />
+      <effect type="list">
+        <effect type="graphical-effect">
+          <name value="hibernate" />
+          <time calc="5.0" />
+        </effect>
+        <effect type="sound">
+          <name value="data/sounds/Lugaro/consolesuccess.ogg" />
+        </effect>
+      </effect>
+    </effect>
+	
     <effect type="timed">
       <time value="999.0" />
       <effect type="list">
