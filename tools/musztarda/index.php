@@ -21,8 +21,8 @@ include("header.php");
 			print("<h1>Informacje</h1>"
 					."<p>Warsztat Game to w wielkim skrócie projekt społecznościowy"
 					." Open Source tworzony w zamyśle przez osoby związane z portalem warsztat.gd.</p>"
-					."<p>Demo, do którego linki znajdziesz poniżej, zostało przygotowane tak,"
-					." aby zapewnić około 2 godzin gry i jest uznane za kandydata na wersję \"stabilną\"."
+					."<p>Poniżej możesz pobrać najnowszą stabilną wersję gry, która powinna zapewnić"
+					." około 2 godziny zabawy."
 					." Jeśli jednak lubisz trochę ryzyka, na samym <a href=\"#snapshots\">końcu</a>"
 					." znajdziesz linki do paczek deweloperskich.</p><br>");
 			break;
@@ -34,15 +34,15 @@ include("header.php");
 	include("functions/downloads.php");
 	print("<img src=\"img/s2.jpg\" class=\"pic\" />");
 	print("<h1>Download</h1>");
-	foreach(array("win", "lin", "mac") as $platform) {
+	foreach(array("win", "lin"/*, "mac"*/) as $platform) {
 		print("<p>");
 		switch($platform) {
 			case "win" : print("Windows XP/Vista/7:"); break;
 			case "lin" : 
 				print("Linux");
 				switch($lang) {
-					case "en" : print(" (tested on Ubuntu 10.4)"); break;
-					case "pl" : print(" (testowano na Ubuntu 10.4)"); break;
+					case "en" : print(" (tested on Ubuntu 10.10)"); break;
+					case "pl" : print(" (testowano na Ubuntu 10.10)"); break;
 				}
 				print(":");
 				break;
@@ -61,13 +61,6 @@ include("header.php");
 		case 'pl' :	print("<h1>Kontakt</h1>"); break;
 	}
 	?>
-	<iframe 
-	    src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FWarlocks-Gauntlet%2F111441615600307&amp;width=215&amp;colorscheme=dark&amp;show_faces=true&amp;stream=false&amp;header=true&amp;height=390"
-		scrolling="no"
-		frameborder="0"
-		style="float:right; border:none; overflow:hidden; width:217px; height:392px;"
-		allowTransparency="true">
-	</iframe>
 	<?php
 	switch($lang) {
 		case 'en' :
@@ -91,6 +84,13 @@ include("header.php");
 			break;
 	}
 	?>
+	<iframe 
+	    src="http://www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FWarlocks-Gauntlet%2F111441615600307&amp;width=215&amp;colorscheme=dark&amp;show_faces=true&amp;stream=false&amp;header=true&amp;height=390"
+		scrolling="no"
+		frameborder="0"
+		style="float:right; border:none; overflow:hidden; width:217px; height:392px;"
+		allowTransparency="true">
+	</iframe>
 
 	<form method="post" <?php print("action=\"feedback.php?lang=".$lang."&from=".$from."\">"); ?>
 		<fieldset style="width:600px">
@@ -117,12 +117,11 @@ include("header.php");
 		case 'en' : 
 			print("<h1>Developer Version (unstable)</h1>"
 					."<p>So, you like a bit of risk? Below are the newest packages built from the repository."
-					." They contain new features, but are untested and potentially unstable (please notice"
-					." that they are in polish language for now only):</p>");
+					." They contain new features, but are untested and potentially unstable:</p>");
 			break;
 		case 'pl' :
 			print("<h1>Wersja deweloperska (niestabilna)</h1>"
-					."<p>Hmm lubisz ryzyko? :) Poniżej najnowsze paczki które mogą mieć"
+					."<p>Hmm lubisz ryzyko? :) Poniżej najnowsze paczki, które mogą mieć"
 					." w porównaniu z wersją stabilną dodatkową funkcjonalnośc i"
 					." bajery kosztem stabilności:</p>");
 			break;
@@ -130,7 +129,7 @@ include("header.php");
 	?>
 	<ul>
 	<?php
-	foreach(array("win" => "Windows", "lin" => Linux, "mac" => "MacOS") as $platform => $title) {
+	foreach(array("win" => "Windows", "lin" => Linux/*, "mac" => "MacOS"*/) as $platform => $title) {
 		print("<li><a href=\"snapshot.php?lang=".$lang."&platform=".$platform."&from=".$from."\">".$title."</a></li>");
 	}
 	?>
