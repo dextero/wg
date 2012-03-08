@@ -11,10 +11,11 @@ namespace WGDataEditor
 {
     public partial class OptionsWindow : Form
     {
-        public OptionsWindow(Settings Settings)
+        public OptionsWindow(object obj, string Title)
         {
             InitializeComponent();
-            propertyGrid1.SelectedObject = Settings;
+            propertyGrid1.SelectedObject = obj;
+            Text = Title;
         }
 
         private void closeToolStripMenuItem_Click(object sender, EventArgs e)

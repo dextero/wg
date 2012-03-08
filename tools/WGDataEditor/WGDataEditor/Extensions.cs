@@ -66,14 +66,15 @@ namespace WGDataEditor
             int Y = System.Windows.Forms.Cursor.Position.Y;
             mouse_event((uint)MOUSEEVENTF_LEFTDOWN | (uint)MOUSEEVENTF_LEFTUP, (uint)X, (uint)Y, 0, 0);
         }
+        
 
-        public class ComboboxStringItem
+        public class ComboboxItem <T>
         {
-            public ComboboxStringItem()
+            public ComboboxItem()
             {
 
             }
-            public ComboboxStringItem(string Name, string Data)
+            public ComboboxItem(string Name, T Data)
             {
                 this.Name = Name;
                 this.Data = Data;
@@ -85,7 +86,7 @@ namespace WGDataEditor
             }
 
             public string Name;
-            public string Data;
+            public T Data;
         }
 
     }

@@ -23,7 +23,7 @@ namespace WGDataEditor
         public string DataDirectory { get; set; }
         [Category("Directories"), Description("Warlock's Gauntlet data folder"), EditorAttribute(typeof(System.Windows.Forms.Design.FolderNameEditor), typeof(System.Drawing.Design.UITypeEditor))]
         public string WorkingDirectory { get; set; }
-        
+
         public void Load()
         {
             string ConfigFilePath = Path.Combine(Path.GetDirectoryName(Application.ExecutablePath), "Config.xml");
