@@ -1,28 +1,91 @@
 <?xml version="1.0" encoding="utf-8"?>
-<NodeDefinitionContainer>
+<DefinitionContainer>
   <NodeDefinitions>
     <NodeDefinition>
-      <Name>Effect</Name>
-      <NameDefiningType>effect</NameDefiningType>
-      <AttributesDefiningType />
-      <MaximumSubnodes>0</MaximumSubnodes>
-      <DefaultNodes />
+      <Name>Ability - Root</Name>
+      <NameDefiningType>root</NameDefiningType>
+      <AttributesDefiningType>
+        <AttributeValuePair>
+          <Definition>
+            <Name>Type</Name>
+          </Definition>
+          <Value>ability</Value>
+        </AttributeValuePair>
+      </AttributesDefiningType>
+      <MaximumSubnodes>-1</MaximumSubnodes>
+      <DefaultNodes>
+        <ExternalNode>
+          <Definition>Name</Definition>
+        </ExternalNode>
+        <ExternalNode>
+          <Definition>Description</Definition>
+        </ExternalNode>
+        <ExternalNode>
+          <Definition>Icon</Definition>
+        </ExternalNode>
+      </DefaultNodes>
       <AllowedNodeType>
         <NodeDefinitionCountPair>
-          <Definition>Effect</Definition>
+          <Definition>Name</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+        <NodeDefinitionCountPair>
+          <Definition>Description</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+        <NodeDefinitionCountPair>
+          <Definition>Icon</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+        <NodeDefinitionCountPair>
+          <Definition>Cooldown</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+        <NodeDefinitionCountPair>
+          <Definition>Mana Cost</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+        <NodeDefinitionCountPair>
+          <Definition>Delay</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+        <NodeDefinitionCountPair>
+          <Definition>Explode on fade</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+        <NodeDefinitionCountPair>
+          <Definition>TTL</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+        <NodeDefinitionCountPair>
+          <Definition>Acceleration</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+        <NodeDefinitionCountPair>
+          <Definition>Speed</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+        <NodeDefinitionCountPair>
+          <Definition>Range</Definition>
           <Count>1</Count>
         </NodeDefinitionCountPair>
       </AllowedNodeType>
-      <Removable>true</Removable>
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
       <AttributeDefinitions>
         <ExternalAttribute>
-          <Definition>type</Definition>
-        </ExternalAttribute>
-        <ExternalAttribute>
-          <Definition>Tag</Definition>
+          <Name>Type</Name>
         </ExternalAttribute>
       </AttributeDefinitions>
-      <DefaultAttributeDefinitions />
+      <DefaultAttributeDefinitions>
+        <AttributeValuePair>
+          <Definition>
+            <Name>Type</Name>
+          </Definition>
+          <Value>ability</Value>
+        </AttributeValuePair>
+      </DefaultAttributeDefinitions>
     </NodeDefinition>
     <NodeDefinition>
       <Name>Name</Name>
@@ -31,7 +94,8 @@
       <MaximumSubnodes>0</MaximumSubnodes>
       <DefaultNodes />
       <AllowedNodeType />
-      <Removable>true</Removable>
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
       <Type>string</Type>
       <AttributeDefinitions />
       <DefaultAttributeDefinitions />
@@ -43,8 +107,9 @@
       <MaximumSubnodes>0</MaximumSubnodes>
       <DefaultNodes />
       <AllowedNodeType />
-      <Removable>true</Removable>
-      <Type>string</Type>
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>string~text - long~500</Type>
       <AttributeDefinitions />
       <DefaultAttributeDefinitions />
     </NodeDefinition>
@@ -55,24 +120,407 @@
       <MaximumSubnodes>0</MaximumSubnodes>
       <DefaultNodes />
       <AllowedNodeType />
-      <Removable>true</Removable>
-      <Type>path~icon~abilities/weapons/*.png</Type>
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
       <AttributeDefinitions />
       <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Cooldown</Name>
+      <NameDefiningType>cooldown</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Name>valueF</Name>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Mana Cost</Name>
+      <NameDefiningType>manacost</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Name>calc</Name>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Delay</Name>
+      <NameDefiningType>delay</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Name>calc</Name>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Explode on fade</Name>
+      <NameDefiningType>explode-on-fade</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Name>valueE (TrueFalse)</Name>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>TTL</Name>
+      <NameDefiningType>ttl</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Name>valueF</Name>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Acceleration</Name>
+      <NameDefiningType>acceleration</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Name>valueF</Name>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Speed</Name>
+      <NameDefiningType>speed</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Name>valueF</Name>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Range</Name>
+      <NameDefiningType>range</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Name>calc</Name>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Cast Time</Name>
+      <NameDefiningType>casttime</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Name>calc</Name>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Bullet</Name>
+      <NameDefiningType>bullet</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>true</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Name>valueP (Bullet)</Name>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Effect List</Name>
+      <NameDefiningType>effect</NameDefiningType>
+      <AttributesDefiningType>
+        <AttributeValuePair>
+          <Definition>
+            <Name>TypeE</Name>
+          </Definition>
+          <Value>list</Value>
+        </AttributeValuePair>
+      </AttributesDefiningType>
+      <MaximumSubnodes>-1</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType>
+        <NodeDefinitionCountPair>
+          <Definition>Effect Knockback</Definition>
+          <Count>-1</Count>
+        </NodeDefinitionCountPair>
+        <NodeDefinitionCountPair>
+          <Definition>Effect Damage</Definition>
+          <Count>-1</Count>
+        </NodeDefinitionCountPair>
+      </AllowedNodeType>
+      <Removable>true</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Name>TypeE</Name>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions>
+        <AttributeValuePair>
+          <Definition>
+            <Name>TypeE</Name>
+          </Definition>
+          <Value>list</Value>
+        </AttributeValuePair>
+      </DefaultAttributeDefinitions>
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Comment</Name>
+      <NameDefiningType>#comment</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>true</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>string~text - long~500</Type>
+      <AttributeDefinitions />
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Effect Knockback</Name>
+      <NameDefiningType>effect</NameDefiningType>
+      <AttributesDefiningType>
+        <AttributeValuePair>
+          <Definition>
+            <Name>TypeE</Name>
+          </Definition>
+          <Value>knockback</Value>
+        </AttributeValuePair>
+      </AttributesDefiningType>
+      <MaximumSubnodes>1</MaximumSubnodes>
+      <DefaultNodes>
+        <ExternalNode>
+          <Definition>Amount</Definition>
+        </ExternalNode>
+      </DefaultNodes>
+      <AllowedNodeType>
+        <NodeDefinitionCountPair>
+          <Definition>Amount</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+      </AllowedNodeType>
+      <Removable>true</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions />
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Amount</Name>
+      <NameDefiningType>amount</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>false</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Name>calc</Name>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions>
+        <AttributeValuePair>
+          <Definition>
+            <Name>calc</Name>
+          </Definition>
+          <Value>0.0</Value>
+        </AttributeValuePair>
+      </DefaultAttributeDefinitions>
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Effect Damage</Name>
+      <NameDefiningType>effect</NameDefiningType>
+      <AttributesDefiningType>
+        <AttributeValuePair>
+          <Definition>
+            <Name>TypeE</Name>
+          </Definition>
+          <Value>damage</Value>
+        </AttributeValuePair>
+      </AttributesDefiningType>
+      <MaximumSubnodes>2</MaximumSubnodes>
+      <DefaultNodes>
+        <ExternalNode>
+          <Definition>Damage type</Definition>
+        </ExternalNode>
+        <ExternalNode>
+          <Definition>Amount</Definition>
+        </ExternalNode>
+      </DefaultNodes>
+      <AllowedNodeType>
+        <NodeDefinitionCountPair>
+          <Definition>Amount</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+        <NodeDefinitionCountPair>
+          <Definition>Damage type</Definition>
+          <Count>1</Count>
+        </NodeDefinitionCountPair>
+      </AllowedNodeType>
+      <Removable>true</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions />
+      <DefaultAttributeDefinitions />
+    </NodeDefinition>
+    <NodeDefinition>
+      <Name>Damage type</Name>
+      <NameDefiningType>damage-type</NameDefiningType>
+      <AttributesDefiningType />
+      <MaximumSubnodes>0</MaximumSubnodes>
+      <DefaultNodes />
+      <AllowedNodeType />
+      <Removable>true</Removable>
+      <IsRoot>false</IsRoot>
+      <Type>none</Type>
+      <AttributeDefinitions>
+        <ExternalAttribute>
+          <Name>valueE (DamageType)</Name>
+        </ExternalAttribute>
+      </AttributeDefinitions>
+      <DefaultAttributeDefinitions>
+        <AttributeValuePair>
+          <Definition>
+            <Name>valueE (DamageType)</Name>
+          </Definition>
+          <Value>fire</Value>
+        </AttributeValuePair>
+      </DefaultAttributeDefinitions>
     </NodeDefinition>
   </NodeDefinitions>
   <AttributeDefinitions>
     <AttributeDefinition>
-      <Name>Tag</Name>
-      <NameXml>tag</NameXml>
-      <Type />
+      <Name>Type</Name>
+      <NameXml>type</NameXml>
+      <Type>string~text</Type>
       <Removable>true</Removable>
     </AttributeDefinition>
     <AttributeDefinition>
-      <Name>type</Name>
-      <NameXml>type</NameXml>
-      <Type />
+      <Name>calc</Name>
+      <NameXml>calc</NameXml>
+      <Type>string</Type>
+      <DefaultValue>0.0</DefaultValue>
       <Removable>true</Removable>
     </AttributeDefinition>
+    <AttributeDefinition>
+      <Name>valueF</Name>
+      <NameXml>value</NameXml>
+      <Type>number~float~7~-9999~9999</Type>
+      <Removable>false</Removable>
+    </AttributeDefinition>
+    <AttributeDefinition>
+      <Name>valueE (TrueFalse)</Name>
+      <NameXml>value</NameXml>
+      <Type>enum~true-false~0;1</Type>
+      <DefaultValue>0</DefaultValue>
+      <Removable>false</Removable>
+    </AttributeDefinition>
+    <AttributeDefinition>
+      <Name>valueP (Bullet)</Name>
+      <NameXml>value</NameXml>
+      <Type>path~bullet~physicals/bullets/*.xml</Type>
+      <Removable>true</Removable>
+    </AttributeDefinition>
+    <AttributeDefinition>
+      <Name>TypeE</Name>
+      <NameXml>type</NameXml>
+      <Type>enum~type(effect)~damage;heal;modify;AIState;restore-mana;drain-mana;console;bullet;stun;graphical-effect;noEffect;linked-graphical-effect;knockback;summon;transfer-life;transfer-mana;increase-next-ability-level;heal-target;timed;recastable;area;chance;list;delayed;retarget;non-cumulative;check-level</Type>
+      <Removable>false</Removable>
+    </AttributeDefinition>
+    <AttributeDefinition>
+      <Name>valueE (DamageType)</Name>
+      <NameXml>value</NameXml>
+      <Type>enum~damage-type~fire</Type>
+      <DefaultValue>fire</DefaultValue>
+      <Removable>false</Removable>
+    </AttributeDefinition>
   </AttributeDefinitions>
-</NodeDefinitionContainer>
+  <Types>
+    <string>none</string>
+    <string>number~int~0~-9999~9999</string>
+    <string>number~float~7~-9999~9999</string>
+    <string>string~text</string>
+    <string>string~text - long~500</string>
+    <string>path~icon~abilities/weapons/*.png</string>
+    <string>path~bullet~physicals/bullets/*.xml</string>
+    <string>enum~type(effect)~damage;heal;modify;AIState;restore-mana;drain-mana;console;bullet;stun;graphical-effect;noEffect;linked-graphical-effect;knockback;summon;transfer-life;transfer-mana;increase-next-ability-level;heal-target;timed;recastable;area;chance;list;delayed;retarget;non-cumulative;check-level</string>
+    <string>enum~type(root)~ability</string>
+    <string>enum~true-false~0;1</string>
+    <string>enum~damage-type~fire</string>
+  </Types>
+</DefinitionContainer>

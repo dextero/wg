@@ -39,6 +39,7 @@
             this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.editAttributesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.propertyGrid = new System.Windows.Forms.PropertyGrid();
+            this.editTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,9 +63,10 @@
             this.toolStripSeparator1,
             this.reloadToolStripMenuItem,
             this.toolStripSeparator2,
-            this.editAttributesToolStripMenuItem});
+            this.editAttributesToolStripMenuItem,
+            this.editTypesToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(154, 126);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(154, 170);
             // 
             // addToolStripMenuItem
             // 
@@ -119,6 +121,13 @@
             this.propertyGrid.Size = new System.Drawing.Size(756, 527);
             this.propertyGrid.TabIndex = 1;
             // 
+            // editTypesToolStripMenuItem
+            // 
+            this.editTypesToolStripMenuItem.Name = "editTypesToolStripMenuItem";
+            this.editTypesToolStripMenuItem.Size = new System.Drawing.Size(153, 22);
+            this.editTypesToolStripMenuItem.Text = "Edit types";
+            this.editTypesToolStripMenuItem.Click += new System.EventHandler(this.editTypesToolStripMenuItem_Click);
+            // 
             // DefinitionsWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -149,5 +158,6 @@
         private System.Windows.Forms.ToolStripMenuItem reloadToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
         private System.Windows.Forms.ToolStripMenuItem editAttributesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem editTypesToolStripMenuItem;
     }
 }

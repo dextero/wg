@@ -6,11 +6,4 @@
   </RecentFiles>
   <DataDirectory />
   <WorkingDirectory>D:\WGMerc\gdpl\gdpl\data</WorkingDirectory>
-  <Types>
-    <string>none</string>
-    <string>int</string>
-    <string>float</string>
-    <string>string</string>
-    <string>path~icon~abilities/weapons/*.png</string>
-  </Types>
 </Settings>

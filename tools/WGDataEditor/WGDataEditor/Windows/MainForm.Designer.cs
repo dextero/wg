@@ -60,13 +60,16 @@
             this.item5ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.viewToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.directoriesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nodeDefinitionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.removeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripTextBox1 = new System.Windows.Forms.ToolStripTextBox();
             this.addToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.openDirecory = new System.Windows.Forms.FolderBrowserDialog();
             this.dockPanel = new WeifenLuo.WinFormsUI.Docking.DockPanel();
-            this.nodeDefinitionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatusLabelText = new System.Windows.Forms.ToolStripStatusLabel();
             this.menuStrip1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -205,6 +208,13 @@
             this.directoriesToolStripMenuItem.Text = "Directories";
             this.directoriesToolStripMenuItem.Click += new System.EventHandler(this.directoriesToolStripMenuItem_Click);
             // 
+            // nodeDefinitionsToolStripMenuItem
+            // 
+            this.nodeDefinitionsToolStripMenuItem.Name = "nodeDefinitionsToolStripMenuItem";
+            this.nodeDefinitionsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
+            this.nodeDefinitionsToolStripMenuItem.Text = "Node definitions";
+            this.nodeDefinitionsToolStripMenuItem.Click += new System.EventHandler(this.nodeDefinitionsToolStripMenuItem_Click);
+            // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
@@ -280,18 +290,28 @@
             this.dockPanel.Skin = dockPanelSkin1;
             this.dockPanel.TabIndex = 2;
             // 
-            // nodeDefinitionsToolStripMenuItem
+            // statusStrip1
             // 
-            this.nodeDefinitionsToolStripMenuItem.Name = "nodeDefinitionsToolStripMenuItem";
-            this.nodeDefinitionsToolStripMenuItem.Size = new System.Drawing.Size(162, 22);
-            this.nodeDefinitionsToolStripMenuItem.Text = "Node definitions";
-            this.nodeDefinitionsToolStripMenuItem.Click += new System.EventHandler(this.nodeDefinitionsToolStripMenuItem_Click);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatusLabelText});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 492);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(653, 22);
+            this.statusStrip1.TabIndex = 5;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // toolStripStatusLabelText
+            // 
+            this.toolStripStatusLabelText.Name = "toolStripStatusLabelText";
+            this.toolStripStatusLabelText.Size = new System.Drawing.Size(109, 17);
+            this.toolStripStatusLabelText.Text = "toolStripStatusLabel1";
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(653, 514);
+            this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.dockPanel);
             this.Controls.Add(this.menuStrip1);
             this.IsMdiContainer = true;
@@ -301,6 +321,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.MainForm_FormClosing);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,6 +353,8 @@
         private System.Windows.Forms.ToolStripMenuItem item5ToolStripMenuItem;
         public System.Windows.Forms.ToolStripMenuItem directoriesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nodeDefinitionsToolStripMenuItem;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabelText;
 
     }
 }

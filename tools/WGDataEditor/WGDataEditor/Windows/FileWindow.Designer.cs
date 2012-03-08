@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.itemContextMenuStrip = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.insertToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nodeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.commentToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.smthingElseToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,6 +51,7 @@
             // insertToolStripMenuItem
             // 
             this.insertToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nodeToolStripMenuItem,
             this.commentToolStripMenuItem1,
             this.toolStripSeparator1,
             this.smthingElseToolStripMenuItem});
@@ -57,22 +59,29 @@
             this.insertToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.insertToolStripMenuItem.Text = "Insert";
             // 
+            // nodeToolStripMenuItem
+            // 
+            this.nodeToolStripMenuItem.Name = "nodeToolStripMenuItem";
+            this.nodeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nodeToolStripMenuItem.Text = "Node";
+            this.nodeToolStripMenuItem.Click += new System.EventHandler(this.nodeToolStripMenuItem_Click);
+            // 
             // commentToolStripMenuItem1
             // 
             this.commentToolStripMenuItem1.Name = "commentToolStripMenuItem1";
-            this.commentToolStripMenuItem1.Size = new System.Drawing.Size(145, 22);
+            this.commentToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.commentToolStripMenuItem1.Text = "Comment";
             this.commentToolStripMenuItem1.Click += new System.EventHandler(this.commentToolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(142, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // smthingElseToolStripMenuItem
             // 
             this.smthingElseToolStripMenuItem.Name = "smthingElseToolStripMenuItem";
-            this.smthingElseToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.smthingElseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.smthingElseToolStripMenuItem.Text = "Smthing else";
             // 
             // removeToolStripMenuItem
@@ -115,6 +124,7 @@
         private System.Windows.Forms.ToolStripMenuItem removeToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem commentToolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripMenuItem nodeToolStripMenuItem;
 
     }
 }

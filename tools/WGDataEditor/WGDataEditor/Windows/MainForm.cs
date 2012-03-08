@@ -26,9 +26,9 @@ namespace WGDataEditor
             Settings.Load();
             RefreshRecentItems();
 
-            NodeDefinitions = NodeDefinitionContainer.Load();
+            NodeDefinitions = DefinitionContainer.Load();
             if (NodeDefinitions == null)
-                NodeDefinitions = new NodeDefinitionContainer();
+                NodeDefinitions = new DefinitionContainer();
 
             SetupWindows();
         }
@@ -44,7 +44,7 @@ namespace WGDataEditor
         }
 
         public Settings Settings;
-        public NodeDefinitionContainer NodeDefinitions;
+        public DefinitionContainer NodeDefinitions;
 
         public bool EditorClosing = false;
         public string OpenedDocument = "";
@@ -102,6 +102,11 @@ namespace WGDataEditor
             }
             item5ToolStripMenuItem.Visible = (Settings.RecentFiles.Count == 1);
 
+        }
+
+        public static void SetStatusBarText(string Message)
+        {
+            MainForm.Instance.toolStripStatusLabelText.Text = Message;
         }
 
 
@@ -193,7 +198,7 @@ namespace WGDataEditor
 
         private void optionsToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            OptionsWindow OptionsWindow = new OptionsWindow(Settings);
+            OptionsWindow OptionsWindow = new OptionsWindow(Settings, "Settings");
             OptionsWindow.ShowDialog();
         }
 

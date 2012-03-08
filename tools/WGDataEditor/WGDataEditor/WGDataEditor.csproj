@@ -66,8 +66,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classes\AttributeDefinition.cs" />
+    <Compile Include="Classes\Node Definitions\AttributeDefinition.cs" />
+    <Compile Include="Classes\Node Definitions\XDNodeP.cs" />
     <Compile Include="Classes\Settings.cs" />
+    <Compile Include="Classes\Node Definitions\DefinitionContainer.cs" />
     <Compile Include="Windows\DefinitionsWindow.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -81,7 +83,7 @@
       <DependentUpon>EditableTreeView.cs</DependentUpon>
     </Compile>
     <Compile Include="Extensions.cs" />
-    <Compile Include="Classes\NodeDefinition.cs" />
+    <Compile Include="Classes\Node Definitions\NodeDefinition.cs" />
     <Compile Include="Windows\FileWindow.cs">
       <SubType>Form</SubType>
     </Compile>

@@ -142,5 +142,10 @@ namespace WGDataEditor
         {
             Reload();
         }
+
+        private void editTypesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            new OptionsWindow(MainForm.Instance.NodeDefinitions, "Node types").Show();
+        }
     }
 }
