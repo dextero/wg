@@ -266,50 +266,57 @@ namespace WGDataEditor
 
         private void treeView_EditingClicked(object sender, EditableTreeView.EditEventArgs es)
         {
-            if (es.SelectedIndex >= 0 && es.Node != null)
+            try
             {
-                int TotalLength = BuildXmlNodeName(XDNodeP.Get(es.Node), XDNodeP.Get(es.Node)).Length;
-
-                if (es.SelectedIndex >= NameLength)
+                if (es.SelectedIndex >= 0 && es.Node != null)
                 {
-                    if (es.SelectedIndex < NameLength + AttributesLength + 2) // Edytujemy atrybut {+2 bo ' ('
+                    int TotalLength = BuildXmlNodeName(XDNodeP.Get(es.Node), XDNodeP.Get(es.Node)).Length;
+
+                    if (es.SelectedIndex >= NameLength)
                     {
-                        int SectionPosition = es.SelectedIndex - (NameLength + 2);// Sprawdź który z atrybutów został kliknięty
-                        int OldSection = 0, NewSection = 0, i = 0;
-                        for (i = 0; i < AttributesLengths.Count; i++)
+                        if (es.SelectedIndex < NameLength + AttributesLength + 2) // Edytujemy atrybut {+2 bo ' ('
                         {
-                            NewSection += AttributesLengths[i];
-                            if (SectionPosition > OldSection && SectionPosition <= NewSection + 1)
+                            int SectionPosition = es.SelectedIndex - (NameLength + 2);// Sprawdź który z atrybutów został kliknięty
+                            int OldSection = 0, NewSection = 0, i = 0;
+                            for (i = 0; i < AttributesLengths.Count; i++)
                             {
-                                // Sprawdź czy kliknięto przez =
-                                string Attribute = es.Node.Text.Substring(NameLength + 2 + OldSection, NewSection - OldSection - 1);
-                                string AttributeType = Attribute.Substring(0, Attribute.IndexOf('=') - 1);
-                                
-                                if (SectionPosition < OldSection + AttributeType.Length + 2) // Jeśli tak, edytujemy typ (+ 2 , bo " =")
+                                NewSection += AttributesLengths[i];
+                                if (SectionPosition > OldSection && SectionPosition <= NewSection + 1)
                                 {
-                                    StartEditing(es.Node, AttributeType, true);
-                                }
-                                else
-                                {
-                                    StartEditing(es.Node, AttributeType);
-                                }
+                                    // Sprawdź czy kliknięto przez =
+                                    string Attribute = es.Node.Text.Substring(NameLength + 2 + OldSection, NewSection - OldSection - 1);
+                                    string AttributeType = Attribute.Substring(0, Attribute.IndexOf('=') - 1);
 
-                                break;
+                                    if (SectionPosition < OldSection + AttributeType.Length + 2) // Jeśli tak, edytujemy typ (+ 2 , bo " =")
+                                    {
+                                        StartEditing(es.Node, AttributeType, true);
+                                    }
+                                    else
+                                    {
+                                        StartEditing(es.Node, AttributeType);
+                                    }
+
+                                    break;
+                                }
+                                OldSection = NewSection;
                             }
-                            OldSection = NewSection;
+
+
                         }
-
-
+                        else // Edytujemy wartość
+                        {
+                            StartEditing(es.Node, "");
+                        }
                     }
-                    else // Edytujemy wartość
+                    else
                     {
-                        StartEditing(es.Node, "");
+                        StartEditing(es.Node, "", true);
                     }
                 }
-                else
-                {
-                    StartEditing(es.Node, "", true);
-                }
+            }
+            catch (Exception Ex)
+            {
+
             }
 
         }
@@ -380,7 +387,7 @@ namespace WGDataEditor
                         }
                         else
                         {
-                            MainForm.SetStatusBarText(string.Format("Editing type of attribute {1}, node {2}", XDN.Definition.Name, ADef.Name));
+                            MainForm.SetStatusBarText(string.Format("Editing type of attribute {1}, node {0}", XDN.Definition.Name, ADef.Name));
 
                             StartEditingType(ADef.Name, NodePosition);
                         }
@@ -760,5 +767,51 @@ namespace WGDataEditor
 
         #endregion
 
+        private void treeView_ItemDrag(object sender, ItemDragEventArgs e)
+        {
+            DoDragDrop(e.Item, DragDropEffects.Scroll | DragDropEffects.Move);
+            MainForm.SetStatusBarText("Drag and drop item, hold Ctrl to insert node as childnode.");
+        }
+
+        private void treeView_DragDrop(object sender, DragEventArgs e)
+        {
+        }
+
+        private void treeView_DragOver(object sender, DragEventArgs e)
+        {
+            Point TreePos = treeView.PointToClient(Cursor.Position);
+            bool InsertAsChild = (e.KeyState & (1 << 3)) == 3;
+            TreeNode HoverNode = treeView.GetNodeAt(TreePos.X, TreePos.Y);
+            TreeNode ParentNode = (InsertAsChild) ? HoverNode : HoverNode.Parent;
+            
+            TreeNode MovingNode = (TreeNode)e.Data.GetData(typeof(TreeNode));
+            XDNodeP SourceXND = XDNodeP.Get(MovingNode);
+            if (HoverNode != null)
+            {
+                XDNodeP XND = XDNodeP.Get(HoverNode);
+                
+                if (XND == null || XND.XmlNode == null)
+                {
+                    e.Effect = DragDropEffects.None;
+                }
+                else if (XND.Definition == null || SourceXND == null || SourceXND.Definition == null)
+                {
+                    e.Effect = DragDropEffects.Move;
+                }
+                else if (CheckIfNodeCanContainNodeOfType(HoverNode, SourceXND.Definition) == true)
+                {
+                    e.Effect = DragDropEffects.Move;
+                }
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void treeView_DragEnter(object sender, DragEventArgs e)
+        {
+
+        }
     }
 }

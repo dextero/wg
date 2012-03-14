@@ -46,7 +46,7 @@
             this.insertToolStripMenuItem,
             this.removeToolStripMenuItem});
             this.itemContextMenuStrip.Name = "contextMenuStrip1";
-            this.itemContextMenuStrip.Size = new System.Drawing.Size(153, 70);
+            this.itemContextMenuStrip.Size = new System.Drawing.Size(125, 48);
             // 
             // insertToolStripMenuItem
             // 
@@ -56,49 +56,53 @@
             this.toolStripSeparator1,
             this.smthingElseToolStripMenuItem});
             this.insertToolStripMenuItem.Name = "insertToolStripMenuItem";
-            this.insertToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.insertToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.insertToolStripMenuItem.Text = "Insert";
             // 
             // nodeToolStripMenuItem
             // 
             this.nodeToolStripMenuItem.Name = "nodeToolStripMenuItem";
-            this.nodeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.nodeToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.nodeToolStripMenuItem.Text = "Node";
             this.nodeToolStripMenuItem.Click += new System.EventHandler(this.nodeToolStripMenuItem_Click);
             // 
             // commentToolStripMenuItem1
             // 
             this.commentToolStripMenuItem1.Name = "commentToolStripMenuItem1";
-            this.commentToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.commentToolStripMenuItem1.Size = new System.Drawing.Size(145, 22);
             this.commentToolStripMenuItem1.Text = "Comment";
             this.commentToolStripMenuItem1.Click += new System.EventHandler(this.commentToolStripMenuItem1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(142, 6);
             // 
             // smthingElseToolStripMenuItem
             // 
             this.smthingElseToolStripMenuItem.Name = "smthingElseToolStripMenuItem";
-            this.smthingElseToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.smthingElseToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
             this.smthingElseToolStripMenuItem.Text = "Smthing else";
             // 
             // removeToolStripMenuItem
             // 
             this.removeToolStripMenuItem.Name = "removeToolStripMenuItem";
-            this.removeToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.removeToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.removeToolStripMenuItem.Text = "Remove";
             this.removeToolStripMenuItem.Click += new System.EventHandler(this.removeToolStripMenuItem_Click);
             // 
             // treeView
             // 
+            this.treeView.AllowDrop = true;
             this.treeView.Dock = System.Windows.Forms.DockStyle.Fill;
             this.treeView.Location = new System.Drawing.Point(0, 0);
             this.treeView.Name = "treeView";
             this.treeView.Size = new System.Drawing.Size(292, 266);
             this.treeView.TabIndex = 0;
             this.treeView.EditingClicked += new WGDataEditor.EditableTreeView.EditEventHandler(this.treeView_EditingClicked);
+            this.treeView.ItemDrag += new System.Windows.Forms.ItemDragEventHandler(this.treeView_ItemDrag);
+            this.treeView.DragDrop += new System.Windows.Forms.DragEventHandler(this.treeView_DragDrop);
+            this.treeView.DragOver += new System.Windows.Forms.DragEventHandler(this.treeView_DragOver);
             this.treeView.MouseUp += new System.Windows.Forms.MouseEventHandler(this.treeView_MouseUp);
             // 
             // FileWindow
