@@ -314,7 +314,8 @@ void CDrawableManager::DrawWithNormalMapping(sf::RenderWindow* wnd, CDisplayable
 		gShaderManager.setUniformArray(id, "lradius", radius, 3);
 		gShaderManager.setUniform(id, "ambient", mNormalMappingAmbient);
 		gShaderManager.setUniform(id, "nmcontrast", mNormalMappingContrast);
-		gShaderManager.bindTexture(id, "normalmap", normalmap);
+		gShaderManager.bindTexture0(id, "tex");
+		gShaderManager.bindTexture1(id, "normalmap", normalmap);
 	}
 	displayable->Draw(wnd);
 	gShaderManager.clearBoundTextures();
@@ -353,6 +354,7 @@ void CDrawableManager::DrawWithPerPixelLighting(sf::RenderWindow *wnd, CDisplaya
 		gShaderManager.setUniform4fArray(id, "lcolor", (float*) color, 5);
 		gShaderManager.setUniformArray(id, "lradius", radius, 5);
 		gShaderManager.setUniform(id, "ambient", mAmbient);
+		gShaderManager.bindTexture0(id, "tex");
 	}
 	displayable->Draw(wnd);
 }

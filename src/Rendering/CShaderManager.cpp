@@ -200,7 +200,18 @@ bool CShaderManager::setUniform4fArray(int programId, const std::string& name, f
 }
 
 // program must be active!
-bool CShaderManager::bindTexture(int programId, const std::string & name, sf::Image const * image)
+bool CShaderManager::bindTexture0(int programId, const std::string & name)
+{
+	GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
+	if (location < 0) {
+		fprintf(stderr, "shader ERROR: couldn't get uniform location: %s\n", name.c_str());
+		return false;
+	}
+	GLCheck(glUniform1i(location, 0));
+	return true;
+}
+
+bool CShaderManager::bindTexture1(int programId, const std::string & name, sf::Image const * image)
 {
 	GLint location = glGetUniformLocation(this->programs[programId], name.c_str());
 	if (location < 0) {

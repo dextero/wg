@@ -47,7 +47,8 @@ public:
 	bool setUniform4fArray(int programId, const std::string& name, float* value, unsigned n);
 	// program must be active!
 	// remember to call clearBoundTextures() later on
-	bool bindTexture(int programId, const std::string & name, sf::Image const * image);
+	bool bindTexture0(int programId, const std::string & name); // texture unit 0
+	bool bindTexture1(int programId, const std::string & name, sf::Image const * image); // texture unit 1
 	void clearBoundTextures();
 	
     virtual void KeyPressed( const sf::Event::KeyEvent &e ) {};
