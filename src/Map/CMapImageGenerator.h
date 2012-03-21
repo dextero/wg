@@ -56,8 +56,8 @@ class CWorldGraphEx {
     std::string startingMap;
     std::string startingRegion;
     std::map<std::string, CWorldGraphMapEx> maps;
-	std::map<std::string, std::vector<std::string>> schemes;
-	std::map<std::string, std::vector<std::string>> schemeConvexHulls;
+	std::map<std::string, std::vector<std::string> > schemes;
+	std::map<std::string, std::vector<std::string> > schemeConvexHulls;
 	CWorldGraphEx() { };
     void BuildFromWorldGraph();
 };
