@@ -31,6 +31,7 @@
 #include "Localization/GeneralKeys.h"
 #include "../Map/CWorldGraph.h"
 #include "../Map/CMapManager.h"
+#include "../Map/CMapImageGenerator.h"
 #include "../CGameOptions.h"
 #include <algorithm>
 #undef CreateWindow
@@ -235,8 +236,13 @@ void CGameScreens::InitMap()
     close->SetText(L"X");
     close->SetCenter(true);
 
+	// Generowanie mapy
+	// TODO - przenieść tam gdzie powinno być
+
     CImageBox* content = wnd->CreateImageBox("content");
     content->SetPosition(0.0f,7.0f,100.0f,86.0f);
+
+	gMapImageGenerator.GenerateMapImage();
     content->AddImageToSequence("data/maps/world-map.png");
 
     CImageBox* marker = content->CreateImageBox("marker");

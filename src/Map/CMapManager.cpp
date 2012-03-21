@@ -397,7 +397,7 @@ namespace Map{
     {
         return gGameOptions.GetUserDir() + "/world/" + mWorld + "/";
     }
-    
+
     const std::string CMapManager::GetWorldsDirPath()
     {
         return gGameOptions.GetUserDir() + "/world/";

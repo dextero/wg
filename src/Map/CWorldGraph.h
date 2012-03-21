@@ -12,6 +12,7 @@ struct CWorldGraphExit {
     std::string onBorder;
     std::string toEntry;
     bool blocked;
+
 };
 
 struct CWorldGraphMap {
