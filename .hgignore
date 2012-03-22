@@ -42,3 +42,4 @@ warsztat_game
 xmailbody
 Thumbs.db
 tools/WGDataEditor/WGDataEditor/obj/*
+bin/check_fullscreen

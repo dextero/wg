@@ -43,6 +43,7 @@
         <weapon file="data/abilities/weapons/ball-lightning.xml" minLevel="10" maxLevel="99" frequency="10" price="1250" />
         <weapon file="data/abilities/weapons/icecircle.xml" minLevel="11" maxLevel="99" frequency="11" price="1400" />
         <weapon file="data/abilities/weapons/blades.xml" minLevel="12" maxLevel="99" frequency="12" price="1250" />
+        <weapon file="data/abilities/weapons/lightning-shield.xml" minLevel="13" maxLevel="99" frequency="12" price="1350" />
         <weapon file="data/abilities/weapons/dragonbreath.xml" minLevel="14" maxLevel="99" frequency="14" price="1250" />
         <weapon file="data/abilities/weapons/acidcircus.xml" minLevel="15" maxLevel="99" frequency="15" price="1500" />
         <weapon file="data/abilities/weapons/blizzard.xml" minLevel="15" maxLevel="99" frequency="15" price="1300" />
