@@ -1,5 +1,6 @@
 #include "CMapImageGenerator.h"
 #include "CMapManager.h"
+#include "../CGame.h"
 #include <math.h>
 #include <stack>
 
@@ -56,7 +57,6 @@ int turning_direction(stack<CWorldGraphMapEx,vector<CWorldGraphMapEx> >&  S, Vec
 		return 0;
 	if (Det < 0) // Po prawej
 		return 1;
-    //warning: control reaches end of non-void function
 }
 
 bool PositionAlphaStructComparator (PositionAlphaStruct* i,PositionAlphaStruct* j) 
@@ -100,7 +100,7 @@ void CWorldGraphEx::BuildFromWorldGraph()
 	}
 
 	// Posortuj mapy dla algorytmu generowania otoczki
-	map<string, vector<std::string> >::iterator j = schemes.begin();
+	map<string, vector<std::string>>::iterator j = schemes.begin();
 	for(; j != schemes.end(); j++)
 	{
 		std::vector<std::string>& Maps = j->second;
@@ -141,7 +141,7 @@ void CWorldGraphEx::BuildFromWorldGraph()
 			PositionAlphaStruct* Data = DataStructs[i];
 			Data->Position = Data->Position - CenterVector;
 			Vector2f& P = Data->Position;
-			float D = fabs(P.x) + fabs(P.y);
+			float D = abs(P.x) + abs(P.y);
 
 			if ((P.x >= 0) && ( P.y >= 0))
 				Data->Alpha = P.y/D;
@@ -150,10 +150,10 @@ void CWorldGraphEx::BuildFromWorldGraph()
 				Data->Alpha = 2 - P.y/D;
 			else 
 			if ((P.x < 0) && (P.y < 0))
-				Data->Alpha = 2 + fabs(P.y)/D;
+				Data->Alpha = 2 + abs(P.y)/D;
 			else
 			if ((P.x >= 0) && (P.y < 0))
-				Data->Alpha = 4 - fabs(P.y)/D;
+				Data->Alpha = 4 - abs(P.y)/D;
 
 		}
 		
@@ -319,7 +319,7 @@ CMapImageGenerator::~CMapImageGenerator(void)
 
 
 // Funkcje pomocnicze
-float DistanceSquared(const Vector2f& Point1, const Vector2f& Point2)
+float DistanceSquared(Vector2f& Point1, Vector2f& Point2)
 {
 	return  (Point1.x - Point2.x)*(Point1.x - Point2.x) + (Point1.y - Point2.y)*(Point1.y - Point2.y);
 }
@@ -510,9 +510,7 @@ calculate_positions:
 
 void CMapImageGenerator::GeneratePaths(CWorldGraphExitEx &Exit)
 {		
-	Vector2f from(Exit.FirstParent->mapPos.x * Proportion.x, Exit.FirstParent->mapPos.y * Proportion.y);
-    Vector2f to(Exit.SecondParent->mapPos.x * Proportion.x, Exit.SecondParent->mapPos.y * Proportion.y);
-	GeneratePathBetweenTwoExits(from, to, Exit);
+	GeneratePathBetweenTwoExits(Vector2f(Exit.FirstParent->mapPos.x * Proportion.x, Exit.FirstParent->mapPos.y * Proportion.y), Vector2f(Exit.SecondParent->mapPos.x * Proportion.x, Exit.SecondParent->mapPos.y * Proportion.y), Exit);
 	Exit.PathCreated = true;
 }
 
@@ -669,6 +667,13 @@ void CMapImageGenerator::GenerateMapImage()
 	ResultImage = RenderWindow->Capture();
 	
 	RenderWindow->Close();
+    delete RenderWindow;
+    RenderWindow = NULL;
+
+    // dex: przy zamykaniu jakiegokolwiek RenderWindow SFML radosnie robi
+    // sobie wglMakeCurrent(NULL, NULL), wiec zeby sie GL nie zesral to
+    // trzeba wlaczyc jakikolwiek kontekst, np. tak:
+    gGame.GetRenderWindow()->SetActive(true);
 
 	ResultImage.SaveToFile("data/maps/world-map.png");
 }
