@@ -32,6 +32,8 @@ struct CWorldGraph {
         
 	CWorldGraph();
     void LoadFromFile(const std::string & filename);
+
+    void Generate(unsigned nodes);
 };
 
 #endif
