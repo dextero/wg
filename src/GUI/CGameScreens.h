@@ -32,7 +32,7 @@ namespace GUI
 
 		void InitHud();
 		void UpdateHud(float dt);
-        void InitMap();
+        void InitMap(bool forceReload = false);
         void UpdateMap();
 
 		void InitAbilities( unsigned playerNumber );

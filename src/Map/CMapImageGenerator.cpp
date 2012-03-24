@@ -1,6 +1,7 @@
 #include "CMapImageGenerator.h"
 #include "CMapManager.h"
 #include "../CGame.h"
+#include "../ResourceManager/CResourceManager.h"
 #include <math.h>
 #include <stack>
 
@@ -675,6 +676,9 @@ void CMapImageGenerator::GenerateMapImage()
     // trzeba wlaczyc jakikolwiek kontekst, np. tak:
     gGame.GetRenderWindow()->SetActive(true);
 
-	ResultImage.SaveToFile("data/maps/world-map.png");
+	if (!ResultImage.SaveToFile("data/maps/world-map.png"))
+        fprintf(stderr, "error: couldn't save world map image\n");
+    else // wymusza przeladowanie uaktualnionej mapy z dysku
+        gResourceManager.DropResource("data/maps/world-map.png");
 }
 }

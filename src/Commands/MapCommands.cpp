@@ -12,6 +12,7 @@
 #include "../Logic/CLair.h"
 #include "../Logic/CEnemy.h"
 
+#include <SFML/System/Clock.hpp>
 #include <boost/filesystem.hpp>
 
 class CPhysical;
@@ -40,6 +41,7 @@ CCommands::SCommandPair MapCommands [] =
 	{L"save-empty-map"					, "$MAN_SAVE_EMPTY_MAP"     , CommandSaveEmptyMap},
     {L"delete-region"                   , "$MAN_DELETE_REGION"      , CommandDeleteRegion},
     {L"generate-random-map"             , "$MAN_GENERATE_RANDOM_MAP", CommandGenerateRandomMap},
+    {L"generate-random-world"           , "$MAN_GENERATE_RANDOM_WORLD", CommandGenerateRandomWorld},
     {L"register-monster-at-lair"        , "$MAN_REGISTER_MONSTER_AT_LAIR", CommandRegisterMonsterAtLair},
     {L"set-current-map-id"              , "$MAN_SET_CURRENT_MAP_ID" , CommandSetCurrentMapId },
     {0,0,0}
@@ -281,6 +283,27 @@ void CommandGenerateRandomMap(size_t argc, const std::vector<std::wstring> &argv
 
     bool result = gRandomMapGenerator.GenerateRandomMap(StringUtils::ConvertToString(argv[1]), desc);
     gConsole.Printf(L"Generating map %ls: %ls", argv[1].c_str(), (result ? L"OK!" : L"FAILED!"));
+}
+
+void CommandGenerateRandomWorld(size_t argc, const std::vector<std::wstring> &argv)
+{
+    if (argc < 2)
+    {
+        gConsole.Printf(L"usage: %ls numNodes", argv[0].c_str());
+        return;
+    }
+
+    sf::Clock clock;
+    // dex: wiem, co robie... chyba. siedz cicho, kompilatorze
+    const_cast<CWorldGraph&>(gMapManager.GetWorldGraph()).Generate(StringUtils::Parse<unsigned>(argv[1]));
+    float graphTime = clock.GetElapsedTime();
+
+    // odswiezanie mapy
+    gLogic.GetGameScreens()->Hide(L"map");
+    gLogic.GetGameScreens()->InitMap(true);
+
+    float totalTime = clock.GetElapsedTime();
+    gConsole.Printf(L"world generated: %fs (graph: %fs, map image: %fs)", totalTime, graphTime, totalTime - graphTime);
 }
 
 void CommandLoadStartingMap(size_t argc, const std::vector<std::wstring> &argv)

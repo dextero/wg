@@ -217,8 +217,11 @@ void CGameScreens::UpdateHud(float dt)
     marker->SetSequenceState(markerState >= 1.0f ? 2.0f - markerState : markerState);
 }
 
-void CGameScreens::InitMap()
+void CGameScreens::InitMap(bool forceReload)
 {
+    if (mMap && !forceReload)
+        mMap->Remove();
+
     CWindow* wnd = gGUI.CreateWindow("map", true, Z_GUI3);
     wnd->SetPosition(0.f, 0.f, 100.f, 100.f);
 
@@ -249,6 +252,7 @@ void CGameScreens::InitMap()
     marker->AddImageToSequence("data/GUI/transparent.png");
     marker->AddImageToSequence("data/maps/world-map-mark.png");
 
+    wnd->SetVisible(false);
     mMap = wnd;
 }
 
