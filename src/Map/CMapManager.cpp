@@ -47,8 +47,13 @@ namespace Map{
         mWorldGraph = new CWorldGraph();
         mWorldGraph->LoadFromFile("data/maps/world-graph.xml");
 
-        if (!boost::filesystem::exists(mWorld))
-            boost::filesystem::create_directories(mWorld);
+        if (!boost::filesystem::exists(mWorld)) {
+            try {
+                boost::filesystem::create_directories(mWorld);
+            } catch (const std::exception & e) {
+                fprintf(stderr, "ERROR: failed to create %s directories, what: %s\n", mWorld.c_str(), e.what());
+            }
+        }
 	}
 
 	CMapManager::~CMapManager()
