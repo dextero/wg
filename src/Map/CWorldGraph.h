@@ -16,6 +16,10 @@ struct CWorldGraphExit {
 };
 
 struct CWorldGraphMap {
+    enum {
+        MAP_LEVEL_CITY = 0
+    };
+
     std::string id;
     std::string scheme;
     int level;
@@ -32,6 +36,7 @@ struct CWorldGraph {
         
 	CWorldGraph();
     void LoadFromFile(const std::string & filename);
+    void SaveToFile(const std::string & filename);
 
     void Generate(unsigned nodes);
 };

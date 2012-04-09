@@ -44,8 +44,15 @@ namespace Map{
 		fprintf( stderr, "CMapManager::CMapManager()\n");
 		gGame.AddFrameListener(this);
 		m_visitedMaps.clear();
-        mWorldGraph = new CWorldGraph();
-        mWorldGraph->LoadFromFile("data/maps/world-graph.xml");
+
+        if (FileUtils::FileExists(GetWorldPath() + "world-graph.xml"))
+            mWorldGraph->LoadFromFile(GetWorldPath() + "world-graph.xml");
+        else
+        {
+            mWorldGraph = new CWorldGraph();
+            mWorldGraph->Generate(25);
+            mWorldGraph->SaveToFile(GetWorldPath() + "world-graph.xml");
+        }
 
         if (!boost::filesystem::exists(mWorld))
             boost::filesystem::create_directories(mWorld);
@@ -384,7 +391,14 @@ namespace Map{
         desc.minMonsterDist = 10.f;
         desc.narrowPathsPercent = (float)gRand.Rnd(40, 60);
         
-        desc.mapType = mapDef.final ? SRandomMapDesc::MAP_FINAL_BOSS : mapDef.boss.empty() ? SRandomMapDesc::MAP_NORMAL : SRandomMapDesc::MAP_BOSS;
+        if (mapDef.level == CWorldGraphMap::MAP_LEVEL_CITY)
+            desc.mapType = SRandomMapDesc::MAP_CITY;
+        else if (mapDef.final)
+            desc.mapType = SRandomMapDesc::MAP_FINAL_BOSS;
+        else if (mapDef.boss.empty())
+            desc.mapType = SRandomMapDesc::MAP_NORMAL;
+        else
+            desc.mapType = SRandomMapDesc::MAP_FINAL_BOSS;
 
         bool result = gRandomMapGenerator.GenerateRandomMap(realFilename, desc);
         fprintf(stderr, "Generating map %s: %s", realFilename.c_str(), (result ? "OK!" : "FAILED!"));

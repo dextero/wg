@@ -26,6 +26,7 @@ struct SRandomMapDesc
     float minMonsterDist;   // jak daleko potwory maja sie spawnowac od wejscia
     float narrowPathsPercent; // ile % sciezek bedzie waskich w "grafowych" mapach (2x2), reszta 3x3 [0.f - 100.f]
     enum EMapType {
+        MAP_CITY,       // miasto - paru npc, jakies budynki, etc
         MAP_NORMAL,     // zwykla mapa, bez udziwnien
         MAP_BOSS,       // arena z bossem
         MAP_FINAL_BOSS  // finalowa arena z bossem - po jego zabiciu wyswietla sie ekran victory
@@ -48,6 +49,7 @@ private:
     static const unsigned int LOOT    = 1 << 3;
     static const unsigned int DOOR    = 1 << 4;
     static const unsigned int DOODAH_ON_GROUND  = 1 << 5; // doodahy lezace pod nogami, przez ktore mozna przejsc
+    static const unsigned int NPC     = 1 << 6;
 
 	enum DoodahZ{
 		FOREGROUND = 87, BACKGROUND, ONGROUND
@@ -166,6 +168,7 @@ private:
                             // i poniewaz PlaceRegions "kopie" przejscie naokolo teleportu, to musi byc wywolane przed PlaceWalls
     bool PlaceDoodahs();
     bool PlaceLights();
+    bool PlaceNPCs();
     bool PlaceBossDoors();  // drzwi otwierajace sie po zabiciu bossa. opcjonalne, ale jesli wywolywac, to najlepiej przed potworami/gniazdami/itemami
     bool PlaceLairs();
     bool PlaceMonsters();
