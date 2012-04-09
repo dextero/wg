@@ -227,6 +227,11 @@
       
         <!-- drzwi. todo: rozwazyc przeniesienie do <set> -->
         <door file="data/physicals/doors/gate.xml" />
+
+        <npc file="data/physicals/npcs/blue-with-knife.xml" minLevel="0" maxLevel="99" frequency="0.25" />
+        <npc file="data/physicals/npcs/green.xml" minLevel="0" maxLevel="99" frequency="0.25" />
+        <npc file="data/physicals/npcs/red-with-axe.xml" minLevel="0" maxLevel="99" frequency="0.25" />
+        <npc file="data/physicals/npcs/yellow-with-staff.xml" minLevel="0" maxLevel="99" frequency="0.25" />
       
     </physicals>
     <tile-masks>

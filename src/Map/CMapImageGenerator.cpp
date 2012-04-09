@@ -571,7 +571,7 @@ void CMapImageGenerator::GenerateMapImage()
 	}
 	
 	// Dodaj marginesy
-	const int Margin = 10;
+	const int Margin = 25;
 
 	TopMapBound -= Margin;
 	BottomMapBound += Margin;
@@ -647,6 +647,23 @@ void CMapImageGenerator::GenerateMapImage()
 	//		}
 	//	}
 	//}
+
+    map<string, vector<string>>::iterator j = WorldGraph.schemeConvexHulls.begin();
+    for(; j != WorldGraph.schemeConvexHulls.end(); j++)
+    {
+	    std::vector<string>& Maps = j->second;
+
+	    Shape ConvexHull;
+	    for(unsigned int i = 0; i < Maps.size(); i++)
+	    {
+		    CWorldGraphMapEx& CurrentMap = WorldGraph.maps[Maps[i]];
+
+		    ConvexHull.AddPoint(CurrentMap.mapPos.x * Proportion.x, CurrentMap.mapPos.y * Proportion.y);
+	    }
+
+	    ConvexHull.SetColor(sf::Color(rand() % 255, rand() % 255, rand() % 255 ));
+	    RenderWindow->Draw(ConvexHull);
+    }
 
 	// Rysuj œcie¿ki
 	i = WorldGraph.maps.begin();

@@ -48,6 +48,50 @@ void CWorldGraph::LoadFromFile(const std::string & filename) {
     }
 }
 
+void CWorldGraph::SaveToFile( const std::string & filename )
+{
+    std::ofstream file(filename.c_str(), std::ios::out);
+    if (!file.is_open())
+    {
+        fprintf(stderr, "error: couldn't open file %s for writing (CWorldGraph::SaveToFile)\n", filename.c_str());
+        return;
+    }
+
+    file << "<root type=\"worldGraph\">\n"
+         << "    <startingMap>" << startingMap.c_str() << "</startingMap>\n"
+         << "    <startingRegion>" << startingRegion.c_str() << "</startingRegion>\n";
+
+    for (std::map<std::string, CWorldGraphMap>::iterator it = maps.begin(); it != maps.end(); ++it)
+    {
+        file << "    <map id=\"" << it->second.id.c_str()
+                   << "\" scheme=\"" << it->second.scheme.c_str()
+                   << "\" level=\"" << it->second.level
+                   << "\" posx=\"" << it->second.mapPos.x
+                   << "\" posy=\"" << it->second.mapPos.y << "\" ";
+
+        if (it->second.boss.size() > 0)
+            file << "boss=\"" << it->second.boss.c_str() << "\" ";
+        if (it->second.final)
+            file << "final=\"1\" ";
+
+        file << "\">\n";
+
+        for (std::vector<CWorldGraphExit>::iterator exit = it->second.exits.begin(); exit != it->second.exits.end(); ++exit)
+        {
+            file << "        <exit toMap=\"" << exit->toMap.c_str() << "\" ";
+            if (exit->toEntry.size() > 0)
+                file << "toEntry=\"" << exit->toEntry.c_str() << "\" ";
+            if (exit->blocked)
+                file << "blocked=\"true\" ";
+            file << "onBorder=\"" << exit->onBorder.c_str() << "/>\n";
+        }
+
+        file << "    </map>\n";
+    }
+    file << "</root>";
+}
+
+
 // struktury - generowanie swiata
 class WorldGraphGenerator
 {
@@ -57,6 +101,7 @@ public:
         std::vector<size_t> edges;  // indeksy w wektorze nodes
         unsigned borders;           // zajete sciany
         std::string scheme;
+        bool isTown;
 
         enum Border {
             BorderWest = 1 << 0,
@@ -65,7 +110,7 @@ public:
             BorderSouth = 1 << 3
         };
 
-        Node(sf::Vector2f pos): pos(pos), borders(0) {}
+        Node(sf::Vector2f pos): pos(pos), borders(0), isTown(false) {}
 
         bool BorderBlocked(unsigned index) { return (borders & (1 << index)) != 0; }
         void BlockBorder(unsigned index) { borders |= (1 << index); }
@@ -386,6 +431,26 @@ private:
         return true;
     }
 
+    bool ChooseCityPos()
+    {
+        assert(nodes.size() && "There should be at least 1 node!");
+
+        // dobiera wezel o najwiekszej mozliwej liczbie polaczen
+        // drugim kryterium jest odleglosc od srodka mapy
+        unsigned best = 0;
+        for (unsigned i = 1; i < nodes.size(); ++i)
+            if (nodes[i].edges.size() > nodes[best].edges.size())
+                best = i;
+            else if (nodes[i].edges.size() == nodes[best].edges.size())
+            {
+                if (Maths::LengthSQ(nodes[i].pos - sf::Vector2f(50.f, 50.f)) < Maths::LengthSQ(nodes[best].pos - sf::Vector2f(50.f, 50.f)))
+                    best = i;
+            }
+
+        nodes[best].isTown = true;
+        return true;
+    }
+
 public:
     WorldGraphGenerator(float borderSize = 15.f): borderSize(borderSize) {}
 
@@ -419,6 +484,9 @@ public:
         for (size_t i = 0; i < nodes.size(); ++i)
             nodes[i].scheme = GetBestScheme(nodes[i].pos);
 
+        // jeszcze wybierzmy pozycje miasta
+        ChooseCityPos();
+
         return nodes;
     }
 };
@@ -437,14 +505,23 @@ void CWorldGraph::Generate(unsigned numNodes)
     for (size_t i = 1; i < nodes.size(); ++i)
         codes.push_back(StringUtils::GetNextCode_AZ(codes[i - 1]));
 
+    // trzeba podmienic nazwy mapy 'town', wyciagamy jego id
+    size_t townId = (size_t)-1;
+    for (size_t i = 0; i < nodes.size(); ++i)
+        if (nodes[i].isTown)
+        {
+            townId = i;
+            break;
+        }
+
     for (size_t node = 0; node < nodes.size(); ++node)
     {
         const WorldGraphGenerator::Node& n = nodes[node];
 
         CWorldGraphMap map;
-        map.id = codes[node];
+        map.id = n.isTown ? "town" : codes[node];
         map.scheme = n.scheme;
-        map.level = 1;  // TODO
+        map.level = n.isTown ? CWorldGraphMap::MAP_LEVEL_CITY : 1;  // TODO
         map.boss = "";  // TODO
         map.final = false;  // TODO
         map.mapPos = n.pos;
@@ -454,7 +531,7 @@ void CWorldGraph::Generate(unsigned numNodes)
             const WorldGraphGenerator::Node& dst = nodes[n.edges[edge]];
 
             CWorldGraphExit exit;
-            exit.toMap = codes[n.edges[edge]];
+            exit.toMap = n.edges[edge] == townId ? "town" : codes[n.edges[edge]];
             exit.onBorder = WorldGraphGenerator::GetBorderName(n.pos, dst.pos);
             exit.toEntry = WorldGraphGenerator::GetBorderName(dst.pos, n.pos);
             exit.blocked = false; // TODO
@@ -463,5 +540,11 @@ void CWorldGraph::Generate(unsigned numNodes)
         }
 
         maps.insert(std::make_pair(map.id, map));
-   }
+
+        if (n.isTown)
+        {
+            startingMap = map.id;
+            startingRegion = "north";
+        }
+    }
 }

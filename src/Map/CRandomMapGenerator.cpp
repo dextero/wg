@@ -1082,6 +1082,38 @@ bool CRandomMapGenerator::PlaceLights()
     return true;
 }
 
+bool CRandomMapGenerator::PlaceNPCs()
+{
+    // powiedzmy, ze w miescie bedzie 8-10 npcow, w tym 4-6 sklepow
+    unsigned maxNpcs = 8 + rand() % 3;
+    unsigned shopsLeft = 4 + rand() % 3;
+    PhysicalsVector npcs = FilterByLevel(FilterByType(mPhysicals, "npc"), mDesc.level);
+
+    for (unsigned i = 0; i < maxNpcs; ++i)
+    {
+        sf::Vector2i pos;
+        unsigned guard = 0;
+        do 
+        {
+            pos = sf::Vector2i(rand() % mDesc.sizeX, rand() % mDesc.sizeY);
+            if (++guard > 100)
+                return false; // nie ma miejsca, albo nie mamy szczescia. niedobrze.
+        } while (mCurrent[pos.x][pos.y] != FREE);
+
+        SPhysical npc = ChooseRandomlyRegardingFrequency(npcs);
+        mXmlText << "\t<obj templateFile=\"" << npc.file
+            << "\" x=\"" << pos.x + ((float)rand() / RAND_MAX + 0.5f) / 2.f
+            << "\" y=\"" << pos.y + ((float)rand() / RAND_MAX + 0.5f) / 2.f
+            << "\" rot=\"" << rand() % 360
+            << "\">\n";
+        if ((maxNpcs - i <= shopsLeft) || (rand() % 2))
+            mXmlText << "\t\t<shop>1</shop>\n";
+        mXmlText << "\t</obj>";
+    }
+
+    return true;
+}
+
 bool CRandomMapGenerator::PlaceBossDoors()
 {
     CTimer timer("- boss doors: ");
@@ -1646,10 +1678,19 @@ bool CRandomMapGenerator::GenerateRandomMap(const std::string& filename, const S
     if (!PlaceWalls())          return false;
     if (!PlaceDoodahs())        return false;
     if (!PlaceLights())         return false;
-    if (!PlaceBossDoors())      return false;   // zwraca true, jesli nie ma bossa na mapie
-    if (!PlaceLoots())          return false;
-    if (!PlaceMonsters())       return false;
-    if (!PlaceLairs())          return false;
+
+    if (mDesc.mapType == SRandomMapDesc::MAP_CITY)
+    {
+        if (!PlaceNPCs())       return false;
+    }
+    else // nie chcemy potworow w miescie, prawda?
+    {
+        if (!PlaceBossDoors())      return false;   // zwraca true, jesli nie ma bossa na mapie
+        if (!PlaceLoots())          return false;
+        if (!PlaceMonsters())       return false;
+        if (!PlaceLairs())          return false;
+    }
+
     if (!PlaceMiscEffects())    return false;
 
     // koniec
