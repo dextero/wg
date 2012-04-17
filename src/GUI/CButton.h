@@ -34,6 +34,7 @@ namespace GUI
 		void SetColor( const sf::Color color );
 		void SetText( const std::wstring& text );
         void SetText(const std::wstring& text, int playerNumber, int buttonNo);
+        void SetLocalization(const std::string & localization);
         //@Deprecated:
 		void SetText( const SLocalizedText& text, std::string font );
 		void SetCenter( bool center );
@@ -61,6 +62,7 @@ namespace GUI
 		CHudSprite* mMouseOverSprite;
         CHudSprite* mMouseClickSprite;
 		CHudStaticText* mTextSprite;
+        std::string mLocalization;
 
 		float mFontSize[UNIT_COUNT];
         GUI::EventCallback mClickCallback;

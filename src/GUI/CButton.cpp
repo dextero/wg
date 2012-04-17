@@ -12,6 +12,7 @@
 #include "../Utils/KeyStrings.h"
 #include "../Logic/CPlayerManager.h"
 #include "../Logic/CPlayer.h"
+#include "Localization/CLocalizator.h"
 
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/Graphics/Sprite.hpp>
@@ -72,6 +73,11 @@ void CButton::SetColor( const sf::Color color )
 		mTextSprite = gDrawableManager.CreateHudStaticText( mZIndex - 1 );
 
 	mTextSprite->GetSFString()->SetColor( color );
+}
+
+void CButton::SetLocalization(const std::string & localization)
+{
+    mLocalization = localization;
 }
 
 void CButton::SetText( const std::wstring& text )
@@ -147,11 +153,6 @@ static void ForceReleaseMouseButton()
     for (int i = 0 ; i <= 1; i++) {
         System::Input::CBindManager::GetActualBindManager(i)->ForceMouseLeftReleased();
         gBindManagerByPlayer(i)->SetKeyState("PointNClick", false);
-        if (CPlayer *p = gPlayerManager.GetPlayerByNumber(i)) {
-            if (CPlayerController *pc = p->GetController()) {
-//                pc->SetWalkTarget(false, p->GetPosition(), true);
-            }
-        }
     }
 }
 
@@ -245,6 +246,10 @@ void CButton::UpdateSprites( float secondsPassed )
 				pos.x = ( mInternalRect.Left + mInternalRect.Right - txt.GetWidth() ) * 0.5f;
 
 			mTextSprite->SetPosition( pos.x, pos.y );
+
+            if (!mLocalization.empty()) {
+                mTextSprite->GetSFString()->SetText(gLocalizator.GetText(mLocalization.c_str()));
+            }
 		}
 	}
 }
