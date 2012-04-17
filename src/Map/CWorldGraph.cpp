@@ -3,10 +3,12 @@
 #include "../Utils/Maths.h"
 #include "../Utils/StringUtils.h"
 
+#include <SFML/Graphics/Image.hpp>
+
 #include <algorithm>
 #include <queue>
+#include <string.h>
 
-#include <SFML/Graphics/Image.hpp>
 
 CWorldGraph::CWorldGraph()	
 {

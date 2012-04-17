@@ -2,6 +2,7 @@
 #include "CMapManager.h"
 #include "../CGame.h"
 #include "../ResourceManager/CResourceManager.h"
+#include "../Utils/Maths.h"
 #include <math.h>
 #include <stack>
 
@@ -56,7 +57,7 @@ int turning_direction(stack<CWorldGraphMapEx,vector<CWorldGraphMapEx> >&  S, Vec
 	int Det = det(p1,p2,p3);
 	if (Det > 0)
 		return 0;
-	if (Det < 0) // Po prawej
+    else  // po prawej
 		return 1;
 }
 
@@ -101,7 +102,7 @@ void CWorldGraphEx::BuildFromWorldGraph()
 	}
 
 	// Posortuj mapy dla algorytmu generowania otoczki
-	map<string, vector<std::string>>::iterator j = schemes.begin();
+	map<string, vector<std::string> >::iterator j = schemes.begin();
 	for(; j != schemes.end(); j++)
 	{
 		std::vector<std::string>& Maps = j->second;
@@ -142,7 +143,7 @@ void CWorldGraphEx::BuildFromWorldGraph()
 			PositionAlphaStruct* Data = DataStructs[i];
 			Data->Position = Data->Position - CenterVector;
 			Vector2f& P = Data->Position;
-			float D = abs(P.x) + abs(P.y);
+			float D = fabs(P.x) + fabs(P.y);
 
 			if ((P.x >= 0) && ( P.y >= 0))
 				Data->Alpha = P.y/D;
@@ -151,10 +152,10 @@ void CWorldGraphEx::BuildFromWorldGraph()
 				Data->Alpha = 2 - P.y/D;
 			else 
 			if ((P.x < 0) && (P.y < 0))
-				Data->Alpha = 2 + abs(P.y)/D;
+				Data->Alpha = 2 + fabs(P.y)/D;
 			else
 			if ((P.x >= 0) && (P.y < 0))
-				Data->Alpha = 4 - abs(P.y)/D;
+				Data->Alpha = 4 - fabs(P.y)/D;
 
 		}
 		
@@ -204,7 +205,7 @@ void CWorldGraphEx::BuildFromWorldGraph()
 		}
 		else
 		{
-			int J = 1;
+//			int J = 1; //<--wtf?
 		}
 	}
 
@@ -319,13 +320,6 @@ CMapImageGenerator::~CMapImageGenerator(void)
 //Quad tree
 
 
-// Funkcje pomocnicze
-float DistanceSquared(Vector2f& Point1, Vector2f& Point2)
-{
-	return  (Point1.x - Point2.x)*(Point1.x - Point2.x) + (Point1.y - Point2.y)*(Point1.y - Point2.y);
-}
-
-
 
 float RandomPercent(int Min, int Max)
 {
@@ -349,16 +343,9 @@ Vector2f CMapImageGenerator::GetBezierPoint(int numberOfSegments, int segmentInd
 	return GetBezierPoint((segmentIndex * 1.0f ) / (numberOfSegments + 1), Start, Point1, Point2, End);
 }
 
-
-void CMapImageGenerator::GeneratePathBetweenTwoExits(Vector2f& Location1, Vector2f& Location2, CWorldGraphExitEx &Exit)
+void CMapImageGenerator::GeneratePathBetweenTwoExits(Vector2f & Location1, Vector2f& Location2, CWorldGraphExitEx &Exit)
 {
-	if(Exit.FirstParent->id == "f01")
-	{
-		int i = 4;
-	}
-
-
-	float Distance = sqrt(DistanceSquared(Location1, Location2));
+	float Distance = Maths::Length(Location2 - Location1);
 	float HalfDistance = Distance/2.0f;
 	int NofSegments = (int)(Distance/15.0f);
 	Vector2f Point1, Point2;
@@ -367,11 +354,8 @@ void CMapImageGenerator::GeneratePathBetweenTwoExits(Vector2f& Location1, Vector
 	// ZnajdŸ punkty na prostej ³¹cz¹cej pocz¹tek i koniec - na bok od nich bêd¹ punkty kontrolne
 	Vector2f StartToEndVector = Location2 - Location1; // Location1, location 2 delta
 
-	float 
-		temp = RandomPercent(50, 75) * Distance, temp2 = RandomPercent(0, 5) * Distance;
+	float temp = RandomPercent(50, 75) * Distance, temp2 = RandomPercent(0, 5) * Distance;
 
-
-	short int Direction1 = rand() % 2;
 	bool ContinueRoad = false;
 	CWorldGraphExitEx OldExit;
 
@@ -404,7 +388,7 @@ void CMapImageGenerator::GeneratePathBetweenTwoExits(Vector2f& Location1, Vector
 		float Rand = RandomPercent(25, 75);
 
 		// Jeœli punkt wygenerowa³ siê blisko koñca daj mu 15 d³ugoœci
-		float OldLengthSquared = DistanceSquared(OldVector, Vector2f(0, 0));
+		float OldLengthSquared = Maths::DistanceSQ(OldVector, Vector2f(0, 0));
 		float QuaterLength = HalfDistance/2;
 		if(OldLengthSquared < QuaterLength * QuaterLength)
 		{
@@ -478,7 +462,6 @@ void CMapImageGenerator::GeneratePathBetweenTwoExits(Vector2f& Location1, Vector
 	Vector2f NewPosition;;
 	Vector2f CurrentPosition = GetBezierPoint(NofSegments, 1, Location1, Point1, Point2, Location2);
 
-	int NofImages = 8;
 	for(int i = 2; i <= NofSegments + 1; i++)
 	{
 		NewPosition = GetBezierPoint(NofSegments, i, Location1, Point1, Point2, Location2);
@@ -486,11 +469,11 @@ void CMapImageGenerator::GeneratePathBetweenTwoExits(Vector2f& Location1, Vector
 		// SprawdŸ dystans, aby nie malowaæ po mapy
 		if(i <= 5)
 		{
-			if(DistanceSquared(CurrentPosition, Location1) < 150) goto calculate_positions; // Pomiñ rysowanie i przeskocz na koniec funkcji
+			if(Maths::DistanceSQ(CurrentPosition, Location1) < 150) goto calculate_positions; // Pomiñ rysowanie i przeskocz na koniec funkcji
 		}
 		else if(NofSegments - i < 3)
 		{
-			if(DistanceSquared(CurrentPosition, Location2) < 150) goto calculate_positions; // Pomiñ rysowanie i przeskocz na koniec funkcji
+			if(Maths::DistanceSQ(CurrentPosition, Location2) < 150) goto calculate_positions; // Pomiñ rysowanie i przeskocz na koniec funkcji
 		}
 
 		// Oblicz nachylenie wektora do OX		
@@ -511,7 +494,9 @@ calculate_positions:
 
 void CMapImageGenerator::GeneratePaths(CWorldGraphExitEx &Exit)
 {		
-	GeneratePathBetweenTwoExits(Vector2f(Exit.FirstParent->mapPos.x * Proportion.x, Exit.FirstParent->mapPos.y * Proportion.y), Vector2f(Exit.SecondParent->mapPos.x * Proportion.x, Exit.SecondParent->mapPos.y * Proportion.y), Exit);
+    Vector2f from(Exit.FirstParent->mapPos.x * Proportion.x, Exit.FirstParent->mapPos.y * Proportion.y);
+    Vector2f to(Exit.SecondParent->mapPos.x * Proportion.x, Exit.SecondParent->mapPos.y * Proportion.y);
+	GeneratePathBetweenTwoExits(from, to, Exit);
 	Exit.PathCreated = true;
 }
 
@@ -648,7 +633,7 @@ void CMapImageGenerator::GenerateMapImage()
 	//	}
 	//}
 
-    map<string, vector<string>>::iterator j = WorldGraph.schemeConvexHulls.begin();
+    map<string, vector<string> >::iterator j = WorldGraph.schemeConvexHulls.begin();
     for(; j != WorldGraph.schemeConvexHulls.end(); j++)
     {
 	    std::vector<string>& Maps = j->second;
