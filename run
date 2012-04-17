@@ -8,4 +8,7 @@ else
 fi
 
 export LD_LIBRARY_PATH=libs$ARCH
+
+rm ~/.WarlocksGauntlet/world/current/world-graph.xml
+
 ./WarlocksGauntlet.bin$ARCH --show-console --editor $*
