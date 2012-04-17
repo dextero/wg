@@ -14,6 +14,7 @@
 #include "../Utils/Maths.h"
 #include "../ResourceManager/CResourceManager.h"
 #include "../ResourceManager/CImage.h"
+#include "../CGameOptions.h"
 
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/System/Vector3.hpp>
@@ -152,7 +153,7 @@ void CDrawableManager::DrawFrame(sf::RenderWindow* wnd)
 	if (wnd == NULL)
 		wnd = gGame.GetRenderWindow();
 
-	bool shaderLighting = mLightingEnabled && gShaderManager.shadersAvailable();
+	bool shaderLighting = mLightingEnabled && gShaderManager.shadersAvailable() && gGameOptions.GetShaders();
 	bool fixedPipelineLighting = mLightingEnabled && !shaderLighting;
 
 	if (fixedPipelineLighting)
