@@ -65,21 +65,27 @@ namespace Maths
     }
 
 	// iloczyn skalarny
-	inline float Dot( sf::Vector2f vector1, sf::Vector2f vector2 ) {
+	inline float Dot(const sf::Vector2f & vector1, const sf::Vector2f & vector2 ) {
 		return vector1.x * vector2.x + vector1.y * vector2.y;
 	}
 
-	inline int Dot( sf::Vector2i vector1, sf::Vector2i vector2 ) {
+	inline int Dot(const sf::Vector2i & vector1, const sf::Vector2i & vector2 ) {
 		return vector1.x * vector2.x + vector1.y * vector2.y;
 	}
 
-	inline float Length( sf::Vector2f vector ) {
+	inline float Length(const sf::Vector2f & vector ) {
 		return sqrtf( vector.x * vector.x + vector.y * vector.y );
 	}
 	
-    inline float LengthSQ( sf::Vector2f vector ) {
+    inline float LengthSQ(const sf::Vector2f & vector ) {
 		return ( vector.x * vector.x + vector.y * vector.y );
 	}
+
+    // what does this function do?
+    inline float DistanceSQ(const sf::Vector2f& point1, const sf::Vector2f& point2)
+    {
+        return (point1.x - point2.x) * (point1.x - point2.x) + (point1.y - point2.y) * (point1.y - point2.y);
+    }
 
 	inline sf::Vector2f Normalize( sf::Vector2f vector ) {
 		float vectorLength = Length( vector );
