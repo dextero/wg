@@ -378,6 +378,10 @@ F11 - console window</value>
 		<value>Fullscreen: </value>
 	</entry>
 	<entry>
+		<key>OPT_SHADERS</key>
+		<value>Shaders: </value>
+	</entry>
+	<entry>
 		<key>OPT_MUSIC_LEVEL</key>
 		<value>Music volume:</value>
 	</entry>
