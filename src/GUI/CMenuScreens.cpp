@@ -504,36 +504,45 @@ void CMenuScreens::InitOptions()
 		CTextArea * fullscreenTxt = options->CreateTextArea( "fullscreen-txt" );
 		fullscreenTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
         fullscreenTxt->SetText( gLocalizator.GetText("OPT_FULLSCREEN"));
-		fullscreenTxt->SetPosition( 19.0f, 23.0f, 30.0f, 5.0f );
+		fullscreenTxt->SetPosition( 19.0f, 22.0f, 30.0f, 5.0f );
 
 		CCheckBox * fullscreen = options->CreateCheckBox( "fullscreen" );
 		fullscreen->SetImage( "data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png" );
-		fullscreen->SetPosition( 51.0f, 23.0f, 3.25f, 4.0f );
+		fullscreen->SetPosition( 51.0f, 22.0f, 3.25f, 4.0f );
+		
+        CTextArea * shadersTxt = options->CreateTextArea("shaders-txt");
+		shadersTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
+        shadersTxt->SetText(gLocalizator.GetText("OPT_SHADERS"));
+		shadersTxt->SetPosition(19.0f, 29.0f, 30.0f, 5.0f);
+
+		CCheckBox * shaders = options->CreateCheckBox("shaders");
+		shaders->SetImage("data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png");
+		shaders->SetPosition(51.0f, 29.0f, 3.25f, 4.0f);
 
 		CTextArea * vsyncTxt = options->CreateTextArea( "vsync-txt" );
 		vsyncTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
 		vsyncTxt->SetText( gLocalizator.GetText("OPT_VSYNC") );
-		vsyncTxt->SetPosition( 19.0f, 31.0f, 30.0f, 5.0f );
+		vsyncTxt->SetPosition( 19.0f, 36.0f, 30.0f, 5.0f );
 
 		CCheckBox * vsync = options->CreateCheckBox( "vsync" );
 		vsync->SetImage( "data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png" );
-		vsync->SetPosition( 51.0f, 31.0f, 3.25f, 4.0f );
+		vsync->SetPosition( 51.0f, 36.0f, 3.25f, 4.0f );
 
 		CTextArea * soundTxt = options->CreateTextArea( "sound-txt" );
 		soundTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
 		soundTxt->SetText(  gLocalizator.GetText("OPT_SOUND_LEVEL") );
-		soundTxt->SetPosition( 19.0f, 41.0f, 30.0f, 5.0f );
+		soundTxt->SetPosition( 19.0f, 43.0f, 30.0f, 5.0f );
 
         CScrollBar *sound = options->CreateScrollBar( "sound-volume" );
         sound->SetHandleImage("data/GUI/scrollbar-handle.png");
         sound->SetBackgroundImage("data/GUI/scrollbar.png" );
-        sound->SetPosition( 51.0f, 41.0f, 20.0f, 4.0f);
+        sound->SetPosition( 51.0f, 43.0f, 20.0f, 4.0f);
         sound->SetHandleSize(16.0f);
 
 		CTextArea * musicTxt = options->CreateTextArea( "music-txt" );
 		musicTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
 		musicTxt->SetText(  gLocalizator.GetText("OPT_MUSIC_LEVEL") );
-		musicTxt->SetPosition( 19.0f, 49.0f, 30.0f, 5.0f );
+		musicTxt->SetPosition( 19.0f, 50.0f, 30.0f, 5.0f );
 
         CScrollBar * music = options->CreateScrollBar( "music-volume" );
         music->SetHandleImage("data/GUI/scrollbar-handle.png");
@@ -679,6 +688,9 @@ void CMenuScreens::UpdateOptions()
 		CCheckBox * fullscreen = (CCheckBox*) mOptions->FindObject( "fullscreen" );
 		fullscreen->SetState( gGameOptions.IsFullscreen() );
 
+        CCheckBox * shaders = (CCheckBox*) mOptions->FindObject("shaders");
+        shaders->SetState(gGameOptions.GetShaders());
+
 		CCheckBox * vsync = (CCheckBox*) mOptions->FindObject( "vsync" );
 		vsync->SetState( gGameOptions.IsVSync() );
 
@@ -717,6 +729,9 @@ void CMenuScreens::RestoreOptions()
     CCheckBox * fullscreen = (CCheckBox*) mOptions->FindObject( "fullscreen" );
     fullscreen->SetState( tmpIsFullscreen );
 
+    CCheckBox * shaders = (CCheckBox*) mOptions->FindObject("shaders");
+    shaders->SetState(tmpShaders);
+
     CCheckBox * vsync = (CCheckBox*) mOptions->FindObject( "vsync" );
     vsync->SetState( tmpIsVSync );
 
@@ -746,6 +761,9 @@ void CMenuScreens::StoreOptions()
 
     CCheckBox * fullscreen = (CCheckBox*) mOptions->FindObject( "fullscreen" );
     tmpIsFullscreen = fullscreen->GetState();
+
+    CCheckBox * shaders = (CCheckBox*) mOptions->FindObject( "shaders" );
+    tmpShaders = shaders->GetState();
 
     CCheckBox * vsync = (CCheckBox*) mOptions->FindObject( "vsync" );
     tmpIsVSync = vsync->GetState();
@@ -795,6 +813,7 @@ void CMenuScreens::SaveOptions()
 	{
 		CDropList * resolution = (CDropList*) mOptions->FindObject( "resolution" );
 		CCheckBox * fullscreen = (CCheckBox*) mOptions->FindObject( "fullscreen" );
+        CCheckBox * shaders = (CCheckBox*) mOptions->FindObject("shaders");
 		CCheckBox * vsync = (CCheckBox*) mOptions->FindObject( "vsync" );
         CScrollBar * music = (CScrollBar*) mOptions->FindObject( "music-volume");
         CScrollBar * sound = (CScrollBar*) mOptions->FindObject( "sound-volume");
@@ -806,6 +825,7 @@ void CMenuScreens::SaveOptions()
         gGameOptions.SetMusicVolume( music->GetState() );
         gGameOptions.SetSoundVolume( sound->GetState() );
         gGameOptions.Set3DSound( stereo->GetState() );
+        gGameOptions.SetShaders(shaders->GetState());
 
         // ify, zeby sie nie zrobilo kuku first_game'owi, jesli nie trzeba
         if (StringUtils::ConvertToString(controls0->GetSelectedOption()) != gGameOptions.GetControls(0))

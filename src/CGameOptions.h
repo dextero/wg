@@ -27,7 +27,7 @@ private:
 
 	unsigned int mVersion;
     unsigned int mWidth, mHeight, mBPP;
-    bool mFullscreen, mVSync, m3DSound, mSmooth;
+    bool mFullscreen, mVSync, m3DSound, mSmooth, mShaders;
     float mSoundVolume;
     float mMusicVolume;
 	std::string mLocaleLang;
@@ -132,6 +132,9 @@ public:
 
     inline bool Get3DSound() { return m3DSound; }
     void Set3DSound(bool sound) { m3DSound = sound; }
+
+    inline bool GetShaders() { return mShaders; }
+    void SetShaders(bool shaders) { mShaders = shaders; }
     
     inline const std::string & GetControls(int player=0) { return mControls[player]; };
     void SetControls(const std::string & controls, int player=0);
