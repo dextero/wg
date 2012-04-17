@@ -90,48 +90,9 @@ bool CGameOptions::LoadOptions()
 
 	CXml xml( configVer > userConfigVer ? "data/config.xml" : FileUtils::GetUserDir() + "/config.xml", "root" );
 
-    // poczatek ladowania locale
+    // locale
     mLocaleLang = xml.GetString("locale","lang");
-    std::string localeDir = "data/locale/";
-    boost::filesystem::directory_iterator di(localeDir), di_end;
-
-    // wszystko z data/locale
-    for (; di != di_end; ++di)
-    {
-		if (di->leaf() == ".svn")
-			continue;
-
-        std::string file = localeDir + di->leaf();
-        if (!boost::filesystem::is_directory(file))
-            gLocalizator.Load(file);
-    }
-
-    // wszystko z data/locale/[jezyk], rekurencyjnie
-    std::vector<std::string> dirs;
-	dirs.push_back(localeDir + mLocaleLang);
-	while (dirs.size() > 0)
-    {
-		std::string dir = dirs[dirs.size()-1];
-		dirs.pop_back();
-
-		boost::filesystem::directory_iterator di(dir),dir_end;
-		for (; di != dir_end; di++){
-			if (di->leaf() == ".svn")
-				continue;
-			std::string file = dir + "/" + di->leaf();
-			if (boost::filesystem::is_directory(file))
-				dirs.push_back(file);
-			else
-            {
-                if (file.rfind(".xml") != file.length() - 4) {
-                    fprintf(stderr, "Localizator: found some non .xml file in locale, %s\n", file.c_str());
-                } else {
-    				gLocalizator.Load(file);
-                }
-            }
-		}
-	}
-    // koniec ladowania locale
+    gLocalizator.SetLocale(mLocaleLang);
 
     // ladowanie achievementow
     if (FileUtils::FileExists(FileUtils::GetUserDir() + "/achievements.xml"))
@@ -140,7 +101,7 @@ bool CGameOptions::LoadOptions()
         gAchievementManager.Load("data/achievements.xml");
 
     // achievementy - questy
-    dirs.clear();
+    std::vector<std::string> dirs;
     dirs.push_back("data/plot/achievements");
 	while (dirs.size() > 0)
     {
