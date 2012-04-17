@@ -121,6 +121,7 @@ namespace GUI
         int tmpHeight;
         int tmpBitsPerPixel;
         bool tmpIsFullscreen;
+        bool tmpShaders;
         bool tmpIsVSync;
         bool tmp3DSound;
         float tmpSoundVolume;

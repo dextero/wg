@@ -182,6 +182,7 @@ bool CGameOptions::LoadOptions()
     SetSoundVolume( xml.GetFloat("audio","sound",1.0f) );
     SetMusicVolume( xml.GetFloat("audio","music",1.0f) );
     m3DSound = (xml.GetInt("audio", "stereo", 1) != 0);
+    mShaders = (xml.GetInt("video", "shaders", 1) != 0);
 
     // domyslne schematy sterowania
     for ( xml_node<>* node=xml.GetChild(NULL, "controlsScheme"); node; node=xml.GetSibl(node, "controlsScheme") )
@@ -295,6 +296,7 @@ CGameOptions::CGameOptions():
     mVSync(true),
     m3DSound(true),
 	mSmooth(true),
+    mShaders(true),
     mSoundVolume(100.f),
     mMusicVolume(100.f)
 {
@@ -323,7 +325,7 @@ void CGameOptions::SaveOptions()
     // TODO: dopisac inne opcje ponizej:
     fprintf(file, "<root type=\"config\" version=\"%d\">\n", mVersion);
 	fprintf(file, "\t<!-- VideoMode Config -->\n");
-	fprintf(file, "\t<video width=\"%d\" height=\"%d\" fs=\"%d\" bpp=\"%d\" vsync=\"%d\" />\n", mWidth, mHeight, mFullscreen, mBPP, mVSync);
+	fprintf(file, "\t<video width=\"%d\" height=\"%d\" fs=\"%d\" bpp=\"%d\" vsync=\"%d\" shaders=\"%d\" />\n", mWidth, mHeight, mFullscreen, mBPP, mVSync, mShaders);
     fprintf(file, "\t<smooth on=\"%d\" />\n", (int) mSmooth);
 	fprintf(file, "\t<audio sound=\"%f\" music=\"%f\" stereo=\"%d\" />\n", mSoundVolume, mMusicVolume, m3DSound);
 	fprintf(file, "\t<locale lang=\"%s\" />\n\n", mLocaleLang.c_str());
