@@ -404,6 +404,10 @@ F11 - konsola</value>
 		<value>Pełny ekran: </value>
 	</entry>
 	<entry>
+		<key>OPT_SHADERS</key>
+		<value>Szejdery: </value>
+	</entry>
+	<entry>
 		<key>OPT_MUSIC_LEVEL</key>
 		<value>Poziom muzyki:</value>
 	</entry>

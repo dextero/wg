@@ -503,7 +503,7 @@ void CMenuScreens::InitOptions()
 
 		CTextArea * fullscreenTxt = options->CreateTextArea( "fullscreen-txt" );
 		fullscreenTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
-        fullscreenTxt->SetText( gLocalizator.GetText("OPT_FULLSCREEN"));
+        fullscreenTxt->SetLocalization("OPT_FULLSCREEN");
 		fullscreenTxt->SetPosition( 19.0f, 22.0f, 30.0f, 5.0f );
 
 		CCheckBox * fullscreen = options->CreateCheckBox( "fullscreen" );
@@ -512,7 +512,7 @@ void CMenuScreens::InitOptions()
 		
         CTextArea * shadersTxt = options->CreateTextArea("shaders-txt");
 		shadersTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
-        shadersTxt->SetText(gLocalizator.GetText("OPT_SHADERS"));
+        shadersTxt->SetLocalization("OPT_SHADERS");
 		shadersTxt->SetPosition(19.0f, 29.0f, 30.0f, 5.0f);
 
 		CCheckBox * shaders = options->CreateCheckBox("shaders");
@@ -521,7 +521,7 @@ void CMenuScreens::InitOptions()
 
 		CTextArea * vsyncTxt = options->CreateTextArea( "vsync-txt" );
 		vsyncTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
-		vsyncTxt->SetText( gLocalizator.GetText("OPT_VSYNC") );
+		vsyncTxt->SetLocalization("OPT_VSYNC");
 		vsyncTxt->SetPosition( 19.0f, 36.0f, 30.0f, 5.0f );
 
 		CCheckBox * vsync = options->CreateCheckBox( "vsync" );
@@ -530,7 +530,7 @@ void CMenuScreens::InitOptions()
 
 		CTextArea * soundTxt = options->CreateTextArea( "sound-txt" );
 		soundTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
-		soundTxt->SetText(  gLocalizator.GetText("OPT_SOUND_LEVEL") );
+		soundTxt->SetLocalization("OPT_SOUND_LEVEL");
 		soundTxt->SetPosition( 19.0f, 43.0f, 30.0f, 5.0f );
 
         CScrollBar *sound = options->CreateScrollBar( "sound-volume" );
@@ -541,7 +541,7 @@ void CMenuScreens::InitOptions()
 
 		CTextArea * musicTxt = options->CreateTextArea( "music-txt" );
 		musicTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
-		musicTxt->SetText(  gLocalizator.GetText("OPT_MUSIC_LEVEL") );
+		musicTxt->SetLocalization("OPT_MUSIC_LEVEL");
 		musicTxt->SetPosition( 19.0f, 50.0f, 30.0f, 5.0f );
 
         CScrollBar * music = options->CreateScrollBar( "music-volume" );
@@ -552,7 +552,7 @@ void CMenuScreens::InitOptions()
         
 		CTextArea * stereoTxt = options->CreateTextArea( "3d-sound-txt" );
 		stereoTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
-        stereoTxt->SetText( gLocalizator.GetText("OPT_3D_SOUND"));
+        stereoTxt->SetLocalization("OPT_3D_SOUND");
 		stereoTxt->SetPosition( 19.0f, 57.0f, 30.0f, 5.0f );
 
 		CCheckBox * stereo = options->CreateCheckBox( "3d-sound" );
@@ -561,7 +561,7 @@ void CMenuScreens::InitOptions()
 
         CTextArea * controlsTxt0 = options->CreateTextArea( "controls-txt0" );
         controlsTxt0->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
-        controlsTxt0->SetText(  gLocalizator.GetText("OPT_CONTROLS1") );
+        controlsTxt0->SetLocalization("OPT_CONTROLS1");
         controlsTxt0->SetPosition( 19.0f, 64.0f, 30.0f, 5.0f );
 
 		CDropList * controls0 = options->CreateDropList( "controls0" );
@@ -609,7 +609,7 @@ void CMenuScreens::InitOptions()
 
 		CTextArea * controlsTxt1 = options->CreateTextArea( "controls-txt1" );
         controlsTxt1->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
-        controlsTxt1->SetText(  gLocalizator.GetText("OPT_CONTROLS2") );
+        controlsTxt1->SetLocalization("OPT_CONTROLS2");
         controlsTxt1->SetPosition( 19.0f, 71.0f, 30.0f, 5.0f );
 
 		CDropList * controls1 = options->CreateDropList( "controls1" );

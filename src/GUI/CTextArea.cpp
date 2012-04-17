@@ -8,6 +8,7 @@
 #include "../CGameOptions.h"
 #include "../ResourceManager/CImage.h"
 #include "../Utils/Maths.h"
+#include "Localization/CLocalizator.h"
 
 #include <SFML/Graphics/Image.hpp>
 #include <SFML/Graphics/Sprite.hpp>
@@ -54,6 +55,12 @@ void CTextArea::SetText(const std::wstring &text)
 	mUpdateText = true;
 }
 
+void CTextArea::SetLocalization(const std::string &localization)
+{
+	mLocalization = localization;
+	mUpdateText = true;
+}
+
 void CTextArea::SetAutoHeight( bool autoHeight )
 {
 	mAutoHeight = true;
@@ -67,7 +74,7 @@ void CTextArea::SetCenter( bool center )
 
 void CTextArea::UpdateText()
 {
-	std::wstring txt	( mText );
+	std::wstring txt	( mLocalization.empty() ? mText : gLocalizator.GetText(mLocalization.c_str()));
 	float textAreaWidth	( mInternalRect.GetWidth() );
 	float curLineWidth	( 0.0f );
 	float curWordWidth	( 0.0f );
