@@ -27,11 +27,13 @@ namespace GUI
 		void SetFont( const std::string& name, float size, guiUnit u = UNIT_PIXEL );
 		void SetColor(const sf::Color color);
 		void SetText( const std::wstring& text );
+		void SetLocalization( const std::string& localization );
 		void SetAutoHeight( bool autoHeight );
 		void SetCenter( bool center );
 		void UpdateText();
 
 		inline std::wstring GetText()			{ return mText; }
+		inline std::string GetLocalization()	{ return mLocalization; }
 		inline float		GetTotalFontSize()	{ return mFontSize[UNIT_PERCENT] * mInternalRect.GetHeight() + mFontSize[UNIT_PIXEL]; }
         sf::String *		GetSFString();
 
@@ -47,6 +49,7 @@ namespace GUI
 		CHudStaticText* mTextSprite;
 
 		std::wstring	mText;
+		std::string	    mLocalization;
 		float			mFontSize[UNIT_COUNT];
 		bool			mAutoHeight;
 		bool			mUpdateText;
