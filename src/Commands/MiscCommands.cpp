@@ -34,6 +34,7 @@ void CommandClearLogic(size_t argc, const std::vector<std::wstring> &argv)
 void CommandSetLogicState(size_t argc, const std::vector<std::wstring> &argv);
 void CommandStartNewGame(size_t argc, const std::vector<std::wstring> &argv);
 void CommandExitToMainMenu(size_t argc, const std::vector<std::wstring> &argv);
+void CommandSetLocale(size_t argc, const std::vector<std::wstring> &argv);
 
 // na koncu musi byc {0,0,0}, bo sie wszystko ***
 CCommands::SCommandPair MiscCommands [] =
@@ -76,6 +77,7 @@ CCommands::SCommandPair MiscCommands [] =
     {L"vfs-contains"                , "$MAN_VFS_CONTAINS"           , CommandVFSContains             },
     {L"vfs-clear"                   , "$MAN_VFS_CLEAR"              , CommandVFSClear                },
     {L"gui-show-menu"               , "$MAN_GUI_SHOW_MENU"          , CommandGuiShowMenu             },
+    {L"set-locale"                  , "$MAN_SET_LOCALE"             , CommandSetLocale               },
     {0,0,0}
 };
 
@@ -754,8 +756,18 @@ void CommandVFSClear(size_t argc, const std::vector<std::wstring> &argv)
 void CommandGuiShowMenu(size_t argc, const std::vector<std::wstring> &argv)
 {
     if (argc < 2)
-        gConsole.Printf(L"usage: %s menu-name", argv[0].c_str());
+        gConsole.Printf(L"usage: %ls menu-name", argv[0].c_str());
     else
         gLogic.GetMenuScreens()->Show(argv[1]);
+}
+
+void CommandSetLocale(size_t argc, const std::vector<std::wstring> &argv)
+{
+    if (argc < 2)
+    {
+        gConsole.Printf(L"usage: %ls locale", argv[0].c_str());
+        return;
+    }
+    gLocalizator.SetLocale(StringUtils::ConvertToString(argv[1]));
 }
 

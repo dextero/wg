@@ -13,8 +13,10 @@ class CLocalizator : public CSingleton<CLocalizator> {
 private:
 	CLocale	*mCurrent;
 public:
+    void SetLocale(const std::string & localePrefix);
+
 	void Load(const std::string &filename);
-    void Unload() { if (mCurrent) delete mCurrent; }
+    void Unload() { if (mCurrent) delete mCurrent; mCurrent = NULL; }
 
     const SLocalizedText Get(hash_t id);
     const SLocalizedText Get(const char* id);
