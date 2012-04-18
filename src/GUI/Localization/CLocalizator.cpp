@@ -12,6 +12,9 @@ const std::wstring emptyString = L"";
 const std::string  emptyFont   =  "";
 
 void CLocalizator::SetLocale(const std::string & localePrefix){
+    if (mCurrent && StringUtils::ConvertToString(mCurrent->GetCode()) == localePrefix)
+        return;
+
     Unload();
 
     std::string localeDir = "data/locale/";

@@ -70,6 +70,9 @@ CLogic::CLogic() :
 	gBestiary.Load(gGameOptions.GetUserDir() + "/bestiary.save");
 
 	mMenuScreens.Show( L"main-menu" );
+    if (FileUtils::FileExists(gGameOptions.GetUserDir() + "/first_game"))
+        mMenuScreens.Show( L"choose-language-menu" );
+
 	mGameScreens.HideAll();
 
     mCond = new CCondition();

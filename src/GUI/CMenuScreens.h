@@ -37,6 +37,9 @@ namespace GUI
 
 		void InitNewGameOptions();
         void InitChooseControlsMenu();
+        void InitChooseLanguageMenu();
+        void SetLanguage(const std::wstring& lang);
+        void SetLanguageAndLeave(const std::wstring& lang);
 
 		void InitSaveScreen();
 		void UpdateSaveScreen(bool save);
@@ -91,6 +94,7 @@ namespace GUI
         CGUIObject * mPauseMenu;
 		CGUIObject * mNewGameOptions;
         CGUIObject * mChooseControlsMenu;
+        CGUIObject * mChooseLanguageMenu;
 		CGUIObject * mOptions;
 		CGUIObject * mBindingOptions[PLAYERS_CNT];
         CGUIObject * mReadmeScreen;
@@ -129,7 +133,8 @@ namespace GUI
         std::wstring tmpControls0;
         std::wstring tmpControls1;
 
-
+        // hardkodowana tablica jezykow
+        static const std::string mAvailableLanguages[];
 	};
 };
 

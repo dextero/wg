@@ -43,6 +43,11 @@
 
 using namespace GUI;
 
+
+const std::string GUI::CMenuScreens::mAvailableLanguages[] = {
+    "en", "pl"
+};
+
 bool enteredOptionsFromChooseControlsScheme = false;
 
 void CMenuScreens::Show(const std::wstring &menu)
@@ -68,6 +73,7 @@ void CMenuScreens::Show(const std::wstring &menu)
     mPauseMenu->SetVisible( menu == L"pause-menu" );
 	mNewGameOptions->SetVisible( menu == L"new-game-options" );
     mChooseControlsMenu->SetVisible( menu == L"choose-controls-menu" );
+    mChooseLanguageMenu->SetVisible( menu == L"choose-language-menu" );
 	mOptions->SetVisible( menu == L"options" );
     if (menu == L"options-from-choose-controls") {
 	    mOptions->SetVisible(true);
@@ -117,6 +123,7 @@ void CMenuScreens::HideAll()
     mPauseMenu->SetVisible( false );
 	mNewGameOptions->SetVisible( false );
     mChooseControlsMenu->SetVisible( false );
+    mChooseLanguageMenu->SetVisible( false );
 	mOptions->SetVisible( false );
     mReadmeScreen->SetVisible( false );
 	mSaveScreen->SetVisible( false );
@@ -132,6 +139,7 @@ void CMenuScreens::InitAll()
     InitPauseMenu();
 	InitNewGameOptions();
     InitChooseControlsMenu();
+    InitChooseLanguageMenu();
 	InitOptions();
 	UpdateOptions();
 	InitBindingOptions();
@@ -410,7 +418,7 @@ void GUI::CMenuScreens::InitChooseControlsMenu()
                 tooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
                 tooltip->SetBackgroundImage("data/GUI/transparent-black.png");
                 tooltip->SetVisible(false);
-                //tooltip->SetCenter(true); // �eeee�oooo�eeee�oooo bug alert, nie centrowac
+                //tooltip->SetCenter(true); // bug alert, nie centrowac
                 tooltip->SetAutoHeight(true);
                 tooltip->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
                 tooltip->SetText(System::Input::CBindManager::GetBindManagerAt(i)->GetControlsMenuDescription()
@@ -429,12 +437,12 @@ void GUI::CMenuScreens::InitChooseControlsMenu()
 
         CTextArea* moreSchemesTxt = controls->CreateTextArea("more-schemes-txt");
         moreSchemesTxt->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
-        moreSchemesTxt->SetText(gLocalizator.GetText("MORE_CONTROL_SCHEMES"));
+        moreSchemesTxt->SetLocalization("MORE_CONTROL_SCHEMES");
         moreSchemesTxt->SetPosition(15.f, 63.f, 55.f, 11.f);
 
         CButton* options = controls->CreateButton("options");
         options->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
-        options->SetText(gLocalizator.GetText("MENU_OPTIONS"));
+        options->SetLocalization("MENU_OPTIONS");
 		options->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
         options->SetPosition(69.f, 63.f, 13.f, 6.f);
         options->SetCenter(true);
@@ -443,7 +451,7 @@ void GUI::CMenuScreens::InitChooseControlsMenu()
 
         CButton* ret = controls->CreateButton("return");
         ret->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON"));
-        ret->SetText(gLocalizator.GetText("MENU_RETURN"));
+        ret->SetLocalization("MENU_RETURN");
 		ret->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
         ret->SetPosition(30.f, 80.f, 40.f, 10.f);
         ret->SetCenter(true);
@@ -453,15 +461,61 @@ void GUI::CMenuScreens::InitChooseControlsMenu()
     }
 }
 
+void GUI::CMenuScreens::InitChooseLanguageMenu()
+{
+    if (!mChooseLanguageMenu)
+    {
+        CWindow* langMenu = gGUI.CreateWindow("choose-lang-menu");
+        langMenu->SetPosition(0.f, 0.f, 100.f, 100.f);
+        langMenu->SetBackgroundImage("data/GUI/bg-options.jpg");
+        langMenu->SetVisible(false);
+
+        CTextArea* header = langMenu->CreateTextArea("header");
+        header->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON", (30.f/38.f)));
+        header->SetLocalization("CHOOSE_LANGUAGE");
+        header->SetPosition(0.f, 10.f, 100.f, 10.f);
+        header->SetCenter(true);
+
+        for (size_t i = 0; i < sizeof(mAvailableLanguages) / sizeof(mAvailableLanguages[0]); ++i)
+        {
+            CButton* btn = langMenu->CreateButton("lang" + StringUtils::ToString(i));
+            btn->SetFont(gGUI.GetFontSetting("FONT_MENU_BUTTON", (0.20f/0.38f)));
+            btn->SetLocalization(std::string("LANG_" + StringUtils::ToUpper(mAvailableLanguages[i])).c_str());
+            btn->SetImage("data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png");
+            btn->SetPosition(10.f + (i % 2) * 40.f, 30.f + (int)(i / 2) * 15.f, 40.0f, 10.0f);
+            btn->SetCenter(true);
+            // a co tam, niech po hoverze tez sie zmienia
+#undef MOUSE_MOVED
+            btn->GetEventWStringCallback(MOUSE_MOVED)->bind(this, &CMenuScreens::SetLanguage);
+            btn->SetEventWStringParam(MOUSE_MOVED, StringUtils::ConvertToWString(mAvailableLanguages[i]));
+            btn->GetClickParamCallback()->bind(this, &CMenuScreens::SetLanguageAndLeave);
+            btn->SetClickCallbackParams(StringUtils::ConvertToWString(mAvailableLanguages[i]));
+        }
+
+        mChooseLanguageMenu = langMenu;
+    }
+}
+
 void GUI::CMenuScreens::InitSaveScreen()
 {
-	if (!mSaveScreen)
+    if (!mSaveScreen)
         mSaveScreen = new CSaveScreen(this);
 }
 
 void GUI::CMenuScreens::UpdateSaveScreen(bool save)
 {
     mSaveScreen->UpdateSlots(save);
+}
+
+void GUI::CMenuScreens::SetLanguage( const std::wstring& lang )
+{
+    gCommands.ParseCommand(L"set-locale " + lang);
+}
+
+void GUI::CMenuScreens::SetLanguageAndLeave( const std::wstring& lang )
+{
+    gCommands.ParseCommand(L"set-locale " + lang);
+    ShowPrevious();
 }
 
 void CMenuScreens::InitOptions()
@@ -1618,6 +1672,7 @@ CMenuScreens::CMenuScreens()
     mPauseMenu( NULL ),
 	mNewGameOptions( NULL ),
     mChooseControlsMenu( NULL ),
+    mChooseLanguageMenu( NULL ),
 	mOptions( NULL ),
     mReadmeScreen( NULL ),
 	mSaveScreen( NULL ),
