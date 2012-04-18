@@ -45,11 +45,11 @@ namespace Map{
 		gGame.AddFrameListener(this);
 		m_visitedMaps.clear();
 
+        mWorldGraph = new CWorldGraph();
         if (FileUtils::FileExists(GetWorldPath() + "world-graph.xml"))
             mWorldGraph->LoadFromFile(GetWorldPath() + "world-graph.xml");
         else
         {
-            mWorldGraph = new CWorldGraph();
             mWorldGraph->Generate(25);
             mWorldGraph->SaveToFile(GetWorldPath() + "world-graph.xml");
         }

@@ -603,4 +603,16 @@ Specjalne podziękowania dla:
 		<key>OPT_LANGUAGE</key>
 		<value>Język:</value>
 	</entry>
+	<entry>
+		<key>LANG_EN</key>
+		<value>English</value>
+	</entry>
+	<entry>
+		<key>LANG_PL</key>
+		<value>Polski</value>
+	</entry>
+	<entry>
+		<key>CHOOSE_LANGUAGE</key>
+		<value>Wybierz język:</value>
+	</entry>
 </root>

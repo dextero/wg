@@ -517,4 +517,16 @@ Anonim, borys94, BrutalComputer, ciVis, Fiolek, Kenji-dev,
 		<key>ITEM_LEVEL</key>
 		<value>level</value>
 	</entry>
+	<entry>
+		<key>CHOOSE_LANGUAGE</key>
+		<value>Choose language:</value>
+	</entry>
+	<entry>
+		<key>LANG_PL</key>
+		<value>Polski</value>
+	</entry>
+	<entry>
+		<key>LANG_EN</key>
+		<value>English</value>
+	</entry>
 </root>

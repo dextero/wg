@@ -44,6 +44,8 @@ public:
     const SLocalizedText Get(hash_t id);
 	const std::wstring &GetText(hash_t id);
     STextPadding GetPadding(hash_t id);
+
+    const std::wstring& GetCode() { return mCode; }
 	
 	void Load(std::string filename);
 
