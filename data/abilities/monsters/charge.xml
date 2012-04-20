@@ -75,7 +75,7 @@
             </effect>
             <effect type="damage">
               <damage-type value="physical"/>                        
-              <amount calc="1.0 * strength"/>
+              <amount calc="0.5 * strength"/>
             </effect>
           </effect>
         </effect>
@@ -101,7 +101,7 @@
   <manacost value="0.0" />
   <casttime value="0.65" />
   <delay value="1.25" />
-  <cooldown value="4.0" />
+  <cooldown calc="4.5 + rnd(1, 4.5)" />
     
   <ai-hint>
     <player-distance>5.0</player-distance>

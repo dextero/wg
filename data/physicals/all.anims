@@ -836,121 +836,166 @@ core/anim/warlock/death
 	0.1  "data/physicals/monsters/warlock-die.png"                192  128  256  192
 }
 
-core/anim/shaggy/default
+########################
+# ugonoth
+########################
+
+core/anim/ugonoth/default
 {
-    0.2 "data/physicals/monsters/shaggy_attack.png" 0 0 64 64
-    0.2 "data/physicals/monsters/shaggy_attack.png" 64 0 128 64
-    0.2 "data/physicals/monsters/shaggy_attack.png" 128 0 192 64
-    0.2 "data/physicals/monsters/shaggy_attack.png" 192 0 256 64
-    0.2 "data/physicals/monsters/shaggy_attack.png" 0 64 64 128
-    0.2 "data/physicals/monsters/shaggy_attack.png" 64 64 128 128
-    0.2 "data/physicals/monsters/shaggy_attack.png" 128 64 192 128
-    0.2 "data/physicals/monsters/shaggy_attack.png" 192 64 256 128
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack.png" 0 0 64 64
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack.png" 64 0 128 64
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack.png" 128 0 192 64
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack.png" 192 0 256 64
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack.png" 0 64 64 128
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack.png" 64 64 128 128
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack.png" 128 64 192 128
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack.png" 192 64 256 128
 }
 
-######################3
-
-core/anim/shaggy/move
+core/anim/ugonoth/move
 {
-    0.05 "data/physicals/monsters/shaggy_walk.png" 0 0 64 64
-    0.05 "data/physicals/monsters/shaggy_walk.png" 64 0 128 64
-    0.05 "data/physicals/monsters/shaggy_walk.png" 128 0 192 64
-    0.05 "data/physicals/monsters/shaggy_walk.png" 192 0 256 64
-    0.05 "data/physicals/monsters/shaggy_walk.png" 0 64 64 128
-    0.05 "data/physicals/monsters/shaggy_walk.png" 64 64 128 128
-    0.05 "data/physicals/monsters/shaggy_walk.png" 128 64 192 128
-    0.05 "data/physicals/monsters/shaggy_walk.png" 192 64 256 128
-    0.05 "data/physicals/monsters/shaggy_walk.png" 0 128 64 192
-    0.05 "data/physicals/monsters/shaggy_walk.png" 64 128 128 192
-    0.05 "data/physicals/monsters/shaggy_walk.png" 128 128 192 192
-    0.05 "data/physicals/monsters/shaggy_walk.png" 192 128 256 192
-    0.05 "data/physicals/monsters/shaggy_walk.png" 0 192 64 256
-    0.05 "data/physicals/monsters/shaggy_walk.png" 64 192 128 256
-    0.05 "data/physicals/monsters/shaggy_walk.png" 128 192 192 256
-    0.05 "data/physicals/monsters/shaggy_walk.png" 192 192 256 256
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 0 0 64 64
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 64 0 128 64
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 128 0 192 64
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 192 0 256 64
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 0 64 64 128
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 64 64 128 128
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 128 64 192 128
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 192 64 256 128
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 0 128 64 192
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 64 128 128 192
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 128 128 192 192
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 192 128 256 192
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 0 192 64 256
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 64 192 128 256
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 128 192 192 256
+    0.15 "data/physicals/monsters/gfx/ugonoth-move.png" 192 192 256 256
 }
 
-core/anim/shaggy/attack
+core/anim/ugonoth/charge
 {
-	0.1 "data/physicals/monsters/shaggy_attack.png" 192 64 256 128
-    0.1 "data/physicals/monsters/shaggy_attack.png" 128 128 192 192
-    0.2 "data/physicals/monsters/shaggy_attack.png" 64 192 128 256
-    0.1 "data/physicals/monsters/shaggy_attack.png" 128 192 192 256
-    0.1 "data/physicals/monsters/shaggy_attack.png" 0 0 64 64
-    0.3 "data/physicals/monsters/shaggy_attack.png" 64 0 128 64
-    0.2 "data/physicals/monsters/shaggy_attack.png" 128 0 192 64
-    0.2 "data/physicals/monsters/shaggy_attack.png" 192 0 256 64
-    0.1 "data/physicals/monsters/shaggy_attack.png" 0 64 64 128
-    0.1 "data/physicals/monsters/shaggy_attack.png" 64 64 128 128
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 0 0 64 64
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 64 0 128 64
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 128 0 192 64
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 192 0 256 64
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 0 64 64 128
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 64 64 128 128
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 128 64 192 128
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 192 64 256 128
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 0 128 64 192
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 64 128 128 192
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 128 128 192 192
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 192 128 256 192
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 0 192 64 256
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 64 192 128 256
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 128 192 192 256
+    0.05 "data/physicals/monsters/gfx/ugonoth-move.png" 192 192 256 256
 }
 
-core/anim/shaggy/death
+core/anim/ugonoth/attack
 {
-    0.5 "data/physicals/monsters/shaggy_death.png" 0 0 64 64
-    0.2 "data/physicals/monsters/shaggy_death.png" 64 0 128 64
-    0.1 "data/physicals/monsters/shaggy_death.png" 128 0 192 64
-    0.1 "data/physicals/monsters/shaggy_death.png" 192 0 256 64
-    0.1 "data/physicals/monsters/shaggy_death.png" 0 64 64 128
-    0.1 "data/physicals/monsters/shaggy_death.png" 0 128 64 192
-    0.1 "data/physicals/monsters/shaggy_death.png" 0 192 64 256
-    0.1 "data/physicals/monsters/shaggy_death.png" 0 256 64 320
-    0.1 "data/physicals/monsters/shaggy_death.png" 0 320 64 384
-    0.2 "data/physicals/monsters/shaggy_death.png" 64 320 128 384
-    0.3 "data/physicals/monsters/shaggy_death.png" 128 320 192 384
-    0.4 "data/physicals/monsters/shaggy_death.png" 0 384 64 448
-    0.8 "data/physicals/monsters/shaggy_death.png" 64 384 128 448
-    2.5 "data/physicals/monsters/shaggy_death.png" 128 384 192 448
-    2.8 "data/physicals/monsters/shaggy_death.png" 192 384 256 448
-    0.4 "data/physicals/monsters/shaggy_death.png" 0 448 64 512
-    0.3 "data/physicals/monsters/shaggy_death.png" 64 448 128 512
-    0.2 "data/physicals/monsters/shaggy_death.png" 128 448 192 512
-    0.2 "data/physicals/monsters/shaggy_death.png" 192 448 256 512
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack.png"   0  64  64 128
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack.png"  64  64 128 128
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack.png" 128  64 192 128
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack.png" 192  64 256 128
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack.png"   0   0  64  64
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack.png"  64   0 128  64
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack.png" 128   0 192  64
+    0.5 "data/physicals/monsters/gfx/ugonoth-attack.png" 192   0 256  64
 }
 
-core/anim/shaggy-winged/default
+core/anim/ugonoth/death
 {
-    0.2 "data/physicals/monsters/shaggy_attack_winged.png" 0 0 64 64
-    0.2 "data/physicals/monsters/shaggy_attack_winged.png" 64 0 128 64
-    0.2 "data/physicals/monsters/shaggy_attack_winged.png" 128 0 192 64
-    0.2 "data/physicals/monsters/shaggy_attack_winged.png" 192 0 256 64
-    0.2 "data/physicals/monsters/shaggy_attack_winged.png" 0 64 64 128
-    0.2 "data/physicals/monsters/shaggy_attack_winged.png" 64 64 128 128
-    0.2 "data/physicals/monsters/shaggy_attack_winged.png" 128 64 192 128
-    0.2 "data/physicals/monsters/shaggy_attack_winged.png" 192 64 256 128
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png"   0   0  64  64
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png"  64   0 128  64
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png" 128   0 192  64
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png" 192   0 256  64
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png"   0  64  64 128
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png"  64  64 128 128
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png" 128  64 192 128
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png" 192  64 256 128
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png"   0 128  64 192
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png"  64 128 128 192
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png" 128 128 192 192
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png" 192 128 256 192
+    2.5 "data/physicals/monsters/gfx/ugonoth-death.png"   0 192  64 256
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png"   0 256  64 320
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png"   0 320  64 384
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png"  64 320 128 384
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png" 128 320 192 384
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png" 192 320 256 384
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png"   0 384  64 448
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png"  64 384 128 448
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png" 128 384 192 448
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png" 192 384 256 448
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png"   0 448  64 512
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png"  64 448 128 512
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png" 128 448 192 512
+    0.1 "data/physicals/monsters/gfx/ugonoth-death.png" 192 448 256 512
 }
 
-core/anim/shaggy-winged/move
+core/anim/ugonoth/wounded/default
 {
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 0 0 64 64
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 64 0 128 64
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 128 0 192 64
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 192 0 256 64
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 0 64 64 128
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 64 64 128 128
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 128 64 192 128
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 192 64 256 128
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 0 128 64 192
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 64 128 128 192
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 128 128 192 192
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 192 128 256 192
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 0 192 64 256
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 64 192 128 256
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 128 192 192 256
-    0.05 "data/physicals/monsters/shaggy_walk_winged.png" 192 192 256 256
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png" 0 0 64 64
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png" 64 0 128 64
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png" 128 0 192 64
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png" 192 0 256 64
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png" 0 64 64 128
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png" 64 64 128 128
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png" 128 64 192 128
+    0.2 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png" 192 64 256 128
 }
 
-core/anim/shaggy-winged/attack
+core/anim/ugonoth/wounded/move
 {
-	0.1 "data/physicals/monsters/shaggy_attack_winged.png" 192 64 256 128
-    0.1 "data/physicals/monsters/shaggy_attack_winged.png" 128 128 192 192
-    0.2 "data/physicals/monsters/shaggy_attack_winged.png" 64 192 128 256
-    0.1 "data/physicals/monsters/shaggy_attack_winged.png" 128 192 192 256
-    0.1 "data/physicals/monsters/shaggy_attack_winged.png" 0 0 64 64
-    0.3 "data/physicals/monsters/shaggy_attack_winged.png" 64 0 128 64
-    0.2 "data/physicals/monsters/shaggy_attack_winged.png" 128 0 192 64
-    0.2 "data/physicals/monsters/shaggy_attack_winged.png" 192 0 256 64
-    0.1 "data/physicals/monsters/shaggy_attack_winged.png" 0 64 64 128
-    0.1 "data/physicals/monsters/shaggy_attack_winged.png" 64 64 128 128
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 0 0 64 64
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 64 0 128 64
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 128 0 192 64
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 192 0 256 64
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 0 64 64 128
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 64 64 128 128
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 128 64 192 128
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 192 64 256 128
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 0 128 64 192
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 64 128 128 192
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 128 128 192 192
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 192 128 256 192
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 0 192 64 256
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 64 192 128 256
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 128 192 192 256
+    0.15 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 192 192 256 256
+}
+
+core/anim/ugonoth/wounded/charge
+{
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 0 0 64 64
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 64 0 128 64
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 128 0 192 64
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 192 0 256 64
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 0 64 64 128
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 64 64 128 128
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 128 64 192 128
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 192 64 256 128
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 0 128 64 192
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 64 128 128 192
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 128 128 192 192
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 192 128 256 192
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 0 192 64 256
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 64 192 128 256
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 128 192 192 256
+    0.05 "data/physicals/monsters/gfx/ugonoth-move-wounded.png" 192 192 256 256
+}
+
+core/anim/ugonoth/wounded/attack
+{
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png"   0  64  64 128
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png"  64  64 128 128
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png" 128  64 192 128
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png" 192  64 256 128
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png"   0   0  64  64
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png"  64   0 128  64
+    0.1 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png" 128   0 192  64
+    0.5 "data/physicals/monsters/gfx/ugonoth-attack-wounded.png" 192   0 256  64
 }
 
 #####################
