@@ -133,7 +133,7 @@
         <monster file="data/physicals/monsters/defs/wolfbeast.xml" minLevel="9" maxLevel="15" frequency="0.4" />
 
         <lair    file="data/physicals/lairs/gargant-lair.xml" minLevel="10" maxLevel="11" frequency="0.1" />
-        <monster file="data/physicals/monsters/defs/troll.xml" minLevel="10" maxLevel="12" frequency="0.5" />
+        <monster file="data/physicals/monsters/defs/troll.xml" minLevel="10" maxLevel="12" frequency="0.25" />
         <lair    file="data/physicals/lairs/troll-lair.xml" minLevel="10" maxLevel="12" frequency="0.2" />
         <monster file="data/physicals/monsters/defs/gargant.xml" minLevel="10" maxLevel="12" frequency="0.15"/>
         <monster file="data/physicals/monsters/defs/gargant-lord.xml" minLevel="10" maxLevel="12" frequency="0.05" />
@@ -148,6 +148,11 @@
         <monster file="data/physicals/monsters/defs/ogre.xml" minLevel="13" maxLevel="18" />
         <monster file="data/physicals/monsters/defs/fafmycel.xml" minLevel="13" maxLevel="18" frequency="0.1" />
         <monster file="data/physicals/monsters/defs/scorpion.xml" minLevel="13" maxLevel="99" frequency="0.06" />
+        <monster file="data/physicals/monsters/defs/troll.xml" minLevel="13" maxLevel="14" frequency="0.125" />
+        <monster file="data/physicals/monsters/defs/ugonoth.xml" minLevel="13" maxLevel="14" frequency="0.125" />
+
+        <monster file="data/physicals/monsters/defs/ugonoth.xml" minLevel="15" maxLevel="18" frequency="0.25" />
+        <lair    file="data/physicals/lairs/ugonoth-lair.xml" minLevel="16" maxLevel="18" frequency="0.1" />
 		
 		<!-- -->
 
