@@ -1,9 +1,17 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_SUPERSPEED</name>
-  <description>$ABI_WEAPONS_SUPERSPEED_DESC</description>
-  <icon>data/abilities/weapons/superspeed-0.png</icon>
-  <unavailable-icon>data/abilities/weapons/superspeed-1.png</unavailable-icon>
+  <name>Haste</name>
+  <description>
+Visibly increases the mage&apos;s speed for a short while.
+
+Bonus for this spell depends:
+  barely on choleric rune
+  barely on melancholic rune
+  totally on sanguine rune
+  mildly on phlegmatic rune  
+  </description>
+  <icon>data/abilities/weapons/haste-0.png</icon>
+  <unavailable-icon>data/abilities/weapons/haste-1.png</unavailable-icon>
 
   <!-- power = 1x cho, 1x mel, 5x san, 2x phl -->
   <power calc="0.2 * dot(1, choleric, 1, melancholic, 5, sanguine, 2, phlegmatic)"/>

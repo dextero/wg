@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_ICEARROW</name>
-  <description>$ABI_WEAPONS_ICEARROW_DESC</description>
+  <name>Ice arrow</name>
+  <description>
+Basic offensive spell used by Water Mages - an icicle that wounds and slows down enemy.  
+  
+Bonus for this spell depends:
+  mildly on choleric rune
+  extremely on melancholic rune
+  not at all on sanguine rune
+  heavily on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/icearrow-0.png</icon>
   <unavailable-icon>data/abilities/weapons/icearrow-0.png</unavailable-icon>
 

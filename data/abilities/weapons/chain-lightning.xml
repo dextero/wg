@@ -1,7 +1,15 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_CHAIN_LIGHTNING</name>
-  <description>$ABI_WEAPONS_CHAIN_LIGHTNING_DESC</description>
+  <name>Chain lightning</name>
+  <description>
+A lightning that jumps between enemies, dealing less damage with each jump.
+
+Bonus for this spell depends:
+  heavily on choleric rune
+  mildly all on melancholic rune
+  heavily on sanguine rune
+  mildly on phlegmatic rune
+  </description>
   <icon>data/abilities/weapons/chain-lightning-0.png</icon>
   <unavailable-icon>data/abilities/weapons/chain-lightning-1.png</unavailable-icon>
 

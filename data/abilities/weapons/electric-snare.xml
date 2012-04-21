@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_ELECTRIC_SNARE</name>
-  <description>$ABI_WEAPONS_ELECTRIC_SNARE_DESC</description>
+  <name>Electric snare</name>
+  <description>
+Sends a bomb that draws nearby enemies into a vortex of electricity, dealing damage and keeping them in check.
+
+Bonus for this spell depends:
+  heavily on choleric rune
+  barely on melancholic rune
+  extremely on sanguine rune
+  barely on phlegmatic rune
+  </description>
   <icon>data/abilities/weapons/electric-snare-0.png</icon>
   <unavailable-icon>data/abilities/weapons/electric-snare-1.png</unavailable-icon>
 

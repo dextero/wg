@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_POISON_CLOUD</name>
-  <description>$ABI_NATURE_POISON_DESC</description>
+  <name>Poison cloud</name>
+  <description>
+A slow projectile turning into cloud of suffocating gas.
+
+Bonus for this spell depends:
+  barely on choleric rune
+  mildly on melancholic rune
+  mildly on sanguine rune
+  heavily on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/poison-cloud-0.png</icon>
   <unavailable-icon>data/abilities/weapons/poison-cloud-1.png</unavailable-icon>
 
@@ -32,14 +40,14 @@
           <effect type="list">
             <effect type="graphical-effect">
               <name value="colorize-green" />
-			  <time calc="2.0 + (0.5 * power)" />
+			  <time calc="5.0 + (1.5 * power)" />
             </effect>			
 		    <effect type="non-cumulative">
 		      <effect type="timed">
-		        <time calc="2.0 + (0.5 * power)"/>
+		        <time calc="5.0 + (1.5 * power)"/>
 			    <effect type="damage" tag="poison-cloud-damage-tag">
 			      <damage-type value="poison"/>
-			      <amount calc="5.0 + (0.25 + power)"/>
+			      <amount calc="3.5 + (0.25 + power)"/>
 			    </effect>
 		      </effect>
 	        </effect>	

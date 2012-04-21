@@ -1,7 +1,15 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_TRANSFUSION</name>
-  <description>$ABI_WEAPONS_TRANSFUSION_DESC</description>
+  <name>Transfusion</name>
+  <description>
+Chain of vampyric bolts draining life from enemies.
+
+Bonus for this spell depends:
+  mildly on choleric rune
+  heavily on melancholic rune
+  barely on sanguine rune
+  mildly on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/transfusion-0.png</icon>
   <unavailable-icon>data/abilities/weapons/transfusion-0.png</unavailable-icon>
 

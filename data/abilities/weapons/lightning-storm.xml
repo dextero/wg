@@ -1,9 +1,17 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_LIGHTNING-STORM</name>
+  <name>Lightning storm</name>
+  <description>
+The battlemage summons a magical storm, creating an unstoppable mass of lightning bolts. Even if someone manages to dogde the storm, they will be catched by wandering electrons.
+
+Bonus for this spell depends:
+  extremely on choleric rune
+  barely on melancholic rune
+  heavily on sanguine rune
+  barely on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/lightning-storm-0.png</icon>
   <unavailable-icon>data/abilities/weapons/lightning-storm-1.png</unavailable-icon>
-  <description>$ABI_WEAPONS_LIGHTNING-STORM_DESC</description>
 
   <!-- power = 4x cho, 1x mel, 3x san, 1x phl -->
   <power calc="0.2 * do(4, choleric, 1, melancholic, 3, sanguine, 1, phlegmatic)"/>

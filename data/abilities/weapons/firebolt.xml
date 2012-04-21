@@ -9,7 +9,7 @@ Bonus for this spell depends:
   barely on melancholic rune
   mildly on sanguine rune
   not at all on phlegmatic rune     
-</description>
+ </description>
   <trigger></trigger>
   <icon>data/abilities/weapons/firebolt-0.png</icon>
   <unavailable-icon>data/abilities/weapons/firebolt-1.png</unavailable-icon>

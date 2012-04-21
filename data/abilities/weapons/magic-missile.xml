@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_MAGIC_MISSILE</name>
-  <description>$ABI_WEAPONS_FREEZING_BLAST_DESC</description>
+  <name>Magic missile</name>
+  <description>
+Just a casual Magic Missile. Causes physical damages.
+
+Bonus for this spell depends:
+  mildly on choleric rune
+  barely on melancholic rune
+  heavily on sanguine rune
+  mildly on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/magic-missile-0.png</icon>
   <unavailable-icon>data/abilities/weapons/magic-missile-1.png</unavailable-icon>
 

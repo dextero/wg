@@ -1,7 +1,15 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_LAZOOR</name>
-  <description>$ABI_WEAPONS_LAZOOR_DESC</description>
+  <name>Lazoor</name>
+  <description>
+A thin beam with very long range and superior penetration, burning everything on its way.
+
+Bonus for this spell depends:
+  barely on choleric rune
+  brealy on melancholic rune
+  mildly on sanguine rune
+  mildly on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/lazoor-0.png</icon>
   <unavailable-icon>data/abilities/weapons/lazoor-1.png</unavailable-icon>
 

@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_STING</name>
-  <description>$ABI_WEAPONS_STING_DESC</description>
+  <name>Sting</name>
+  <description>
+A poisonous thorn injuring enemy.
+  
+Bonus for this spell depends:
+  barely on choleric rune
+  extremely on melancholic rune
+  mildly on sanguine rune
+  barely on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/sting-0.png</icon>
   <unavailable-icon>data/abilities/weapons/sting-1.png</unavailable-icon>
 

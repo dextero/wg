@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_HELLFIRE</name>
-  <description>$ABI_WEAPONS_HELLFIRE_DESC</description>
+  <name>Hellfire</name>
+  <description>
+Shoots two auto-aiming fireballs that will explode into ten firebolts upon contact.
+
+Bonus for this spell depends:
+  totally on choleric rune
+  not at all on melancholic rune
+  extremely on sanguine rune
+  barely on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/hellfire-0.png</icon>
   <unavailable-icon>data/abilities/weapons/hellfire-1.png</unavailable-icon>
 

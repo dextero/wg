@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_FREEZING_MINE</name>
-  <description>$ABI_WEAPONS_FREEZING_MINE_DESC</description>
+  <name>Freezing mine</name>
+  <description>
+Quite strong mine which is able to freeze opponents being close enough. If the mine hits something before arming itself the mine will disappear. 
+
+Bonus for this spell depends:
+  mildly on choleric rune
+  heavily on melancholic rune
+  mildly on sanguine rune
+  barely on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/freezing-mine-0.png</icon>
   <unavailable-icon>data/abilities/weapons/freezing-mine-1.png</unavailable-icon>
 

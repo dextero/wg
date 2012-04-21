@@ -22,7 +22,7 @@
         <weapon file="data/abilities/weapons/firearrow-lvl2.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/meditation.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/firestream.xml" minLevel="5" maxLevel="99" />
-        <weapon file="data/abilities/weapons/superspeed.xml" minLevel="5" maxLevel="99" />
+        <weapon file="data/abilities/weapons/haste.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/freezing-mine.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/freezing-blast.xml" minLevel="5" maxLevel="99" />
         <weapon file="data/abilities/weapons/magic-missile-lvl2.xml" minLevel="6" maxLevel="99" frequency="0.5" />

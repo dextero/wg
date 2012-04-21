@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_SPARKRAIN</name>
-  <description>$ABI_WEAPONS_SPARKRAIN_DESC</description>
+  <name>Spark rain</name>
+  <description>
+Fire magic taken to the extreme - this spell spreads a wide fan of sparks, dealing damage to any monsters within it&apos;s limited range.
+
+Bonus for this spell depends:
+  extremely on choleric rune
+  not at all on melancholic rune
+  extremely on sanguine rune
+  barely on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/sparkrain-0.png</icon>
   <unavailable-icon>data/abilities/weapons/sparkrain-1.png</unavailable-icon>
 

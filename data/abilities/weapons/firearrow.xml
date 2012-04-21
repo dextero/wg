@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_FIREARROW</name>
-  <description>$ABI_WEAPONS_FIREARROW_DESC</description>
+  <name>Fire arrow</name>
+  <description>
+A simple fire arrow, dealing damage and knocking enemies backward. This arrow can fly through enemies, so you can hit a few monsters in a row.
+
+Bonus for this spell depends:
+  heavily on choleric rune
+  not at all on melancholic rune
+  heavily on sanguine rune
+  mildly on phlegmatic rune
+  </description>
   <icon>data/abilities/weapons/firearrow-0.png</icon>
   <unavailable-icon>data/abilities/weapons/firearrow-1.png</unavailable-icon>
 

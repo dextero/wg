@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_DRAGONBREATH</name>
-  <description>$ABI_WEAPONS_DRAGONBREATH_DESC</description>
+  <name>Dragonbreath</name>
+  <description>
+Creates a small projectile that explodes on impact snd shoots flames in random directions.
+
+Bonus for this spell depends:
+  heavily on choleric rune
+  barely on melancholic rune
+  mildly on sanguine rune
+  mildly on phlegmatic rune
+  </description>
   <icon>data/abilities/weapons/dragonbreath-0.png</icon>
   <unavailable-icon>data/abilities/weapons/dragonbreath-1.png</unavailable-icon>
 

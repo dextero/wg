@@ -1,7 +1,15 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_FIRESTREAM</name>
-  <description>$ABI_WEAPONS_FIRESTREAM_DESC</description>
+  <name>Fire stream</name>
+  <description>
+A continuous stream of tiny sparks. Good against nests and single opponents, but you risk getting surrounded easily.
+
+Bonus for this spell depends:
+  barely on choleric rune
+  not at all on melancholic rune
+  totally on sanguine rune
+  mildly on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/firestream-0.png</icon>
   <unavailable-icon>data/abilities/weapons/firestream-1.png</unavailable-icon>
 

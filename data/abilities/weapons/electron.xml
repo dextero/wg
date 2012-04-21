@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_ELECTRON</name>
-  <description>$ABI_WEAPONS_ELECTRON_DESC</description>
+  <name>Electron</name>
+  <description>
+Basic electricity spell. Inflicts small damage and has a chance to stun the target.
+
+Bonus for this spell depends:
+  barely on choleric rune
+  extremely on melancholic rune
+  mildly on sanguine rune
+  mildly on phlegmatic rune
+  </description>
   <icon>data/abilities/weapons/electron-0.png</icon>
   <unavailable-icon>data/abilities/weapons/electron-1.png</unavailable-icon>
 
