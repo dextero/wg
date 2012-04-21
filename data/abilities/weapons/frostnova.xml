@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_FROSTNOVA</name>
-  <description>$ABI_WEAPONS_FROSTNOVA_DESC</description>
+  <name>Frostnova</name>
+  <description>
+When this projectile hits the target a magic cold spreads over the vicinity causing damage and freezing enemies.
+
+Bonus for this spell depends:
+  mildly on choleric rune
+  mildly on melancholic rune
+  heavily on sanguine rune
+  heavily on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/frostnova-0.png</icon>
   <unavailable-icon>data/abilities/weapons/frostnova-1.png</unavailable-icon>
 

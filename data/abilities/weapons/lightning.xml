@@ -1,7 +1,15 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_LIGHTNING</name>
-  <description>$ABI_WEAPONS_LIGHTNING_DESC</description>
+  <name>Lightning</name>
+  <description>
+A single lightning bolt which deals massive damage to a single enemy.
+
+Bonus for this spell depends:
+  mildly on choleric rune
+  mildly on melancholic rune
+  heavily on sanguine rune
+  heavily on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/lightning-0.png</icon>
   <unavailable-icon>data/abilities/weapons/lightning-1.png</unavailable-icon>
 

@@ -1,7 +1,15 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_HIBERNATION</name>
-  <description>$ABI_WEAPONS_HIBERNATION_DESC</description>
+  <name>Hibernation</name>
+  <description>
+For a short period of time you can't move nor cast spell, but your body quickly regenerates. Use with care.
+
+Bonus for this spell depends:
+  mildly on choleric rune
+  heavily on melancholic rune
+  barely on sanguine rune
+  heavily on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/hibernation-0.png</icon>
   <unavailable-icon>data/abilities/weapons/hibernation-1.png</unavailable-icon>
 

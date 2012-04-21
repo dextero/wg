@@ -1,7 +1,15 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_MEDITATION</name>
-  <description>$ABI_WEAPONS_MEDITATION_DESC</description>
+  <name>Meditation</name>
+  <description>
+For a short period of time you can't move nor cast spell, but your mana quickly regenerates.
+
+Bonus for this spell depends:
+  not at all on choleric rune
+  extremely on melancholic rune
+  not at all on sanguine rune
+  totally on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/meditation-0.png</icon>
   <unavailable-icon>data/abilities/weapons/meditation-1.png</unavailable-icon>
 

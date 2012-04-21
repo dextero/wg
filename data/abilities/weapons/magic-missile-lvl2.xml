@@ -1,12 +1,20 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_MAGIC_MISSILE</name>
-  <description>$ABI_WEAPONS_FREEZING_BLAST_DESC</description>
+  <name>Magic missile (MkII)</name>
+  <description>
+Just a casual Magic Missile. Shoots five projectiles that cause physical damages.
+
+Bonus for this spell depends:
+  mildly on choleric rune
+  barely on melancholic rune
+  extremely on sanguine rune
+  heavily on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/magic-missile-0.png</icon>
   <unavailable-icon>data/abilities/weapons/magic-missile-1.png</unavailable-icon>
 
   <!-- power = 2x cho, 1x mel, 4x san, 3x phl -->
-  <power calc="0.2*((2*choleric+1*melancholic+4*sanguine+3*phlegmatic)/sqrt(2^2 + 1^2 + 4^2 + 3^2))*(((2*choleric+1*melancholic+4*sanguine+3*phlegmatic)/(sqrt(2^2+1^2+4^2+3^2)*sqrt(max(1,choleric^2+melancholic^2+sanguine^2+phlegmatic^2))))^10)"/>
+  <power calc="0.2 * dot(2, choleric, 1, melancholic, 4, sanguine, 3, phlegmatic)"/>
 
   <effect type="damage">
     <amount calc="10.0 * (1 + power)" />

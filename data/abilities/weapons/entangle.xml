@@ -1,7 +1,15 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_ENTANGLE</name>
-  <description>$ABI_WEAPONS_ENTANGLE_DESC</description>
+  <name>Entangle</name>
+  <description>
+Powers of the nature entangle enemy. Talented caster is able to entangle multiple enemies at once.
+
+Bonus for this spell depends:
+  barely on choleric rune
+  extremely on melancholic rune
+  mildly on sanguine rune
+  heavily on phlegmatic rune
+  </description>
   <icon>data/abilities/weapons/entangle-0.png</icon>
   <unavailable-icon>data/abilities/weapons/entangle-1.png</unavailable-icon>
 

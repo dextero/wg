@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_FIREWALL</name>
-  <description>$ABI_WEAPONS_FIREWALL_DESC</description>
+  <name>Fire wall</name>
+  <description>
+This spell creates a barrier of impenetrable flame, which hurts monsters (and careless battlemages), preventing them from passing through. Only the most desperated enemies can make it to the other side, but they will pay dearly for it.
+
+Bonus for this spell depends:
+  heavily on choleric rune
+  barely on melancholic rune
+  mildly on sanguine rune
+  mildly on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/firewall-0.png</icon>
   <unavailable-icon>data/abilities/weapons/firewall-1.png</unavailable-icon>
 

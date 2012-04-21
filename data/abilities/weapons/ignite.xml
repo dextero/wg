@@ -1,7 +1,15 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_IGNITE</name>
-  <description>$ABI_WEAPONS_IGNITE_DESC</description>
+  <name>Ignite</name>
+  <description>
+Targeted enemy is instantly incinerated causing constant injuries over time. The fire spreads over enemies.
+
+Bonus for this spell depends:
+  barely on choleric rune
+  not at all on melancholic rune
+  totally on sanguine rune
+  heavily on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/ignite-0.png</icon>
   <unavailable-icon>data/abilities/weapons/ignite-1.png</unavailable-icon>
 

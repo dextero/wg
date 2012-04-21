@@ -1,7 +1,15 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_FLAMING_MANTLE</name>
-  <description>$ABI_WEAPONS_FLAMING_MANTLE_DESC</description>
+  <name>Flaming mantle</name>
+  <description>
+A powerful defensive spell, increasing fire and physical resistance while also burning any monsters closing up to the caster. Additionally, the mage is surrounded by a cloud of sparks, further separating the mage from his enemies.
+
+Bonus for this spell depends:
+  mildly on choleric rune
+  barely on melancholic rune
+  extremely on sanguine rune
+  barely on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/flaming-mantle-0.png</icon>
   <unavailable-icon>data/abilities/weapons/flaming-mantle-1.png</unavailable-icon>
 

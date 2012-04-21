@@ -1,7 +1,15 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_DEVOLUTION</name>
-  <description>$ABI_WEAPONS_DEVOLUTION_DESC</description>
+  <name>Devolution</name>
+  <description>
+An intimidating set of lightning bolts targetting many enemies at once.
+
+Bonus for this spell depends:
+  not at all on choleric rune
+  extremely on melancholic rune
+  mildly on sanguine rune
+  mildly on phlegmatic rune
+  </description>
   <icon>data/abilities/weapons/devolution-0.png</icon>
   <unavailable-icon>data/abilities/weapons/devolution-1.png</unavailable-icon>
 

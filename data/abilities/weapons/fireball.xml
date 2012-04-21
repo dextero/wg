@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_FIREBALL</name>
-  <description>$ABI_WEAPONS_FIREBALL_DESC</description>
+  <name>Fireball</name>
+  <description>
+Fire mages&apos; favourite weapon - a ball of liquid fire that explodes if it hits an enemy. Just remember - move away or you might be burnt...
+	
+Bonus for this spell depends:
+  totally on choleric rune
+  not at all on melancholic rune
+  heavily on sanguine rune
+  barely on phlegmatic rune
+  </description>
   <icon>data/abilities/weapons/fireball-0.png</icon>
   <unavailable-icon>data/abilities/weapons/fireball-0.png</unavailable-icon>
 

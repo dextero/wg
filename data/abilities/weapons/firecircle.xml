@@ -1,7 +1,15 @@
 <root type="ability" class="self">
 
-  <name>$ABI_WEAPONS_FIRECIRCLE</name>
-  <description>$ABI_WEAPONS_FIRECIRCLE_DESC</description>
+  <name>Fire circle</name>
+  <description>
+When you get surrounded, this ability is what you need. Enemies around you are pushed away by a hot wave - you might get a moment to run.
+
+Bonus for this spell depends:
+  extremely on choleric rune
+  not at all on melancholic rune
+  barely on sanguine rune
+  heavily on phlegmatic rune     
+  </description>
   <icon>data/abilities/weapons/firecircle-0.png</icon>
   <unavailable-icon>data/abilities/weapons/firecircle-1.png</unavailable-icon>
 

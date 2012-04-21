@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_ELECTROSTATICS</name>
-  <description>$ABI_WEAPONS_ELECTROSTATICS_DESC</description>
+  <name>Electrostatics</name>
+  <description>
+A direct extension of the &quot;Wandering electron&quot; spell. The difference in the electric potentials between the target and it&apos;s nearest environment causes a temporary transition of electric charges.
+
+Bonus for this spell depends:
+  heavily on choleric rune
+  mildly on melancholic rune
+  extremely on sanguine rune
+  barely on phlegmatic rune
+  </description>
   <icon>data/abilities/weapons/electrostatics-0.png</icon>
   <unavailable-icon>data/abilities/weapons/electrostatics-1.png</unavailable-icon>
 

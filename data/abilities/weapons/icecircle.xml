@@ -1,7 +1,15 @@
 <root type="ability" class="bullet">
 
-  <name>$ABI_WEAPONS_ICECIRCLE</name>
-  <description>$ABI_WEAPONS_ICECIRCLE_DESC</description>
+  <name>Ice circle</name>
+  <description>
+An ice missile scattering into ring of sharp icicles.
+
+Bonus for this spell depends:
+  mildly on choleric rune
+  mildly on melancholic rune
+  mildly on sanguine rune
+  mildly on phlegmatic rune  
+  </description>
   <icon>data/abilities/weapons/icecircle-0.png</icon>
   <unavailable-icon>data/abilities/weapons/icecircle-1.png</unavailable-icon>
 
