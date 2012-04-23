@@ -6,7 +6,7 @@
   </bestiary>
   <genre>final-boss</genre>
 
-  <maxhp min="2500.0" max="2500.0" />
+  <maxhp min="3000.0" max="3000.0" />
   <speed min="1.25" max="1.25" />
   <turnspeed min="90.0" max="120.0" />
   <strength min="40.0" max="40.0" />

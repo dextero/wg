@@ -42,6 +42,7 @@ Bonus for this spell depends:
   
   <range value="1.2" />
   <width value="80.0" />
+  <filter value="hostiles" />
 
   <manacost calc="3.0 * (1 + 0.66 * power)" />
   <casttime value="0.09" />
