@@ -234,12 +234,15 @@ namespace Map{
         desc.monsters = gRand.Rnd(15, 30);
         desc.lairs = gRand.Rnd(0, 2);
         desc.loots = gRand.Rnd(4, 8);
-        desc.level = mLevel; // todo: inkrementowac
+        desc.level = mLevel;
         desc.minMonsterDist = 10.f;
         desc.narrowPathsPercent = (float)gRand.Rnd(40, 60);
 
-        if (mLevel % 10 == 0) // co 10 leveli boss
+		if (mLevel == 9) {
             desc.mapType = SRandomMapDesc::MAP_BOSS;
+            desc.monsters = gRand.Rnd(5, 10);
+            desc.lairs = gRand.Rnd(1, 4);
+		}
 
         bool result = gRandomMapGenerator.GenerateRandomMap(filename, desc);
         fprintf(stderr, "Generating map %s: %s", filename.c_str(), (result ? "OK!" : "FAILED!"));

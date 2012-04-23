@@ -564,7 +564,7 @@ rrrr la oa fa fa oa gggg gggg gggg gggg gggg gggg gggg gggg ha ga lb rrrr rrrr r
 <obj code="collision"	 x="8.11213"	 y="16.7519" rot="0" />
 <obj code="collision"	 x="8.33088"	 y="16.5644" rot="0" />
 
-<obj code="final-boss" x="10.5" y="10.0" rot="0.0" name="final-boss" trigger-radius="10.0" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-final.xml" />
+<obj code="final-boss" x="10.5" y="10.0" rot="0.0" name="boss" trigger-radius="10.0" trigger-ai="melee-chaser" trigger-playlist="data/music/boss-final.xml" />
 <obj code="door" x="-5" y="-5">
   <cond check="once">
 	  <type>killed</type>

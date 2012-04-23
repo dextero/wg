@@ -18,5 +18,5 @@
   <anim name="test/anim/lair/spawn" type="attack" />
   <anim name="test/anim/lair/death" type="death" />
   
-  <monster filename="data/physicals/monsters/troll.xml" />
+  <monster filename="data/physicals/monsters/defs/wolfbeast.xml" />
 </root>

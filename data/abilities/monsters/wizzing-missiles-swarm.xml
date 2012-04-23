@@ -1,0 +1,144 @@
+<root type="ability" class="self">
+
+  <effect type="list" >
+    <effect type="sound">
+      <name value="data/sounds/Lugaro/jump.ogg" />
+    </effect>
+    <effect type="non-cumulative">
+      <effect type="list">
+        <effect type="graphical-effect">
+          <name value="shield" />
+          <time calc="0.25" />
+        </effect>
+        <effect type="recastable">
+          <recast calc="0.25" />
+          <time calc="1.3" />
+          <effect type="graphical-effect">
+            <name value="shield" />
+            <time calc="0.25" />
+          </effect>
+        </effect>
+      </effect>
+    </effect>
+    <effect type="delayed">
+      <time value="1.35"/>
+      <effect type="list">
+        <effect type="graphical-effect">
+          <name value="magic-circle-5"/>
+          <time value="0.3"/>
+        </effect>
+        <effect type="sound">
+          <name value="data/sounds/Lugaro/break.ogg" />
+        </effect>
+      </effect>
+    </effect>
+    <effect type="recastable">
+      <recast value="0.05"/>
+      <time value="0.16"/>
+      <effect type="bullet">
+        <emitter>
+          <speed value="5.5" />
+          <acceleration value="0" />
+          <ttl value="1.5"  />
+          <count calc="0.33 * intelligence" />
+          <width value="360" />
+          <explode-on-fade value="0" />
+          <bullet value="data/physicals/bullets/wizzing-missile.xml" />
+          <filter value="player,wall" />
+          <time-for-tracking calc="12.0"/>
+          <turning-speed calc="720.0"/>
+          <speed-fuzziness value="1.20"/>
+          <spread-type value="shotgun"/>
+          <target-chooser>
+            <filter value="monster"/>
+            <range calc="2.5"/>
+            <angle value="180.0"/>
+          </target-chooser>
+        
+          <flight-effect type="delayed">
+            <time calc="1.3 + rnd(0, 0.1)"/>
+            <effect type="bullet">
+              <emitter>
+                <speed value="6.5" />
+                <acceleration value="3.0" />
+                <ttl value="2.0" />
+                <count value="1" />
+                <width value="360" />
+                <explode-on-fade value="0" />
+                <bullet value="data/physicals/bullets/wizzing-missile.xml" />
+                <filter value="player,wall" />
+                <speed-fuzziness value="1.25"/>
+                <target-chooser>
+                  <filter value="player"/>
+                  <range calc="50.0"/>
+                  <angle value="360.0"/>
+                </target-chooser>
+                <time-for-tracking calc="0.15"/>
+                <turning-speed calc="960.0"/>
+                <explosion type="list" tag="wizzing-spark-explosion">
+                  <effect type="sound">
+                    <name value="data/sounds/sparks.ogg" /> 
+                  </effect>
+                  <effect type="graphical-effect">
+                    <name value="shield" />
+                    <time calc="0.1"/>
+                  </effect>
+                </explosion>
+                <effect type="list" tag="wizzing-spark-hit">
+                  <effect type="graphical-effect">
+                    <name value="shield" />
+                    <time value="0.1" />          
+                  </effect>
+                  <effect type="damage">
+                    <damage-type value="lightning"/>
+                    <amount calc="0.75 * intelligence"/>
+                  </effect>
+                </effect>
+              </emitter>  
+            </effect>
+          </flight-effect>
+          <explosion type="jump">
+            <jump value="wizzing-spark-explosion"/>
+          </explosion>
+          <effect type="jump">
+            <jump value="wizzing-spark-hit"/>
+          </effect>
+        </emitter>
+      </effect>
+    </effect>
+  </effect>
+
+  <cast-time-effect type="list" >
+    <effect type="modify">
+      <aspect value="speed" />
+      <amount value="0.0" />
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-3"/>
+      <time value="1.4"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-4"/>
+      <time value="0.7"/>
+    </effect>
+    <effect type="graphical-effect">
+      <name value="magic-circle-1"/>
+      <time value="1.4"/>
+    </effect>
+  </cast-time-effect>
+
+  <delay-effect type="modify">
+    <aspect value="speed" />
+    <amount value="0.0" />
+  </delay-effect>
+
+  <manacost calc="15" />
+  <casttime calc="1.2" />
+  <delay calc="1.65" />
+  <cooldown calc="5 + rnd(0, 5)" />
+
+  <ai-hint>
+    <player-distance>6.5</player-distance>
+  </ai-hint>
+
+</root>
