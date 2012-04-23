@@ -525,3 +525,524 @@ These files could not be found and will not be loaded.
 1>WarsztatGame - 0 error(s), 78 warning(s)
 ========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
 
+1>------ Build started: Project: WarsztatGame, Configuration: Release Win32 ------
+1>Compiling...
+1>PlatformWin32.cpp
+1>PlatformOSX.cpp
+1>PlatformLinux.cpp
+1>main.cpp
+1>CTimeManipulator.cpp
+1>CGameOptions.cpp
+1>CGame.cpp
+1>CTests.cpp
+1>IEditorResource.cpp
+1>CTileResource.cpp
+1>CPhysicalResource.cpp
+1>CEditorResourceSet.cpp
+1>CEditor.cpp
+1>CDoodahResource.cpp
+1>vfs.cpp
+1>..\..\src\VFS\vfs.cpp(76) : warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+1>..\..\src\VFS\vfs.cpp(205) : warning C4267: 'argument' : conversion from 'size_t' to 'boost::int32_t', possible loss of data
+1>..\..\src\VFS\vfs.cpp(208) : warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+1>..\..\src\VFS\vfs.cpp(243) : warning C4267: 'initializing' : conversion from 'size_t' to 'boost::uint32_t', possible loss of data
+1>..\..\src\VFS\vfs.cpp(246) : warning C4267: 'initializing' : conversion from 'size_t' to 'boost::uint32_t', possible loss of data
+1>muParserTokenReader.cpp
+1>muParserTest.cpp
+1>muParserInt.cpp
+1>muParserError.cpp
+1>muParserDLL.cpp
+1>Compiling...
+1>muParserComplex.cpp
+1>muParserCallback.cpp
+1>muParserBytecode.cpp
+1>muParserBase.cpp
+1>muParser.cpp
+1>MemoryTests.cpp
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\utils\memory\CPool.h(137) : warning C4244: 'initializing' : conversion from '__w64 int' to 'int', possible loss of data
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\utils\memory\CPool.h(132) : while compiling class template member function 'void Memory::CPool<T>::Dealloc(T *)'
+1>        with
+1>        [
+1>            T=PoolTest
+1>        ]
+1>        ..\..\src\Utils\Memory\MemoryTests.cpp(73) : see reference to class template instantiation 'Memory::CPool<T>' being compiled
+1>        with
+1>        [
+1>            T=PoolTest
+1>        ]
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\utils\memory\CPool.h(137) : warning C4244: 'initializing' : conversion from '__w64 int' to 'int', possible loss of data
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\utils\memory\CPool.h(132) : while compiling class template member function 'void Memory::CPool<T,blockSize>::Dealloc(T *)'
+1>        with
+1>        [
+1>            T=PoolTest,
+1>            blockSize=4
+1>        ]
+1>        ..\..\src\Utils\Memory\MemoryTests.cpp(106) : see reference to class template instantiation 'Memory::CPool<T,blockSize>' being compiled
+1>        with
+1>        [
+1>            T=PoolTest,
+1>            blockSize=4
+1>        ]
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\utils\memory\CSafePtrable.h(18) : warning C4355: 'this' : used in base member initializer list
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\utils\memory\CSafePtrable.h(18) : while compiling class template member function 'Memory::CSafePtrable<T>::CSafePtrable(void)'
+1>        with
+1>        [
+1>            T=SPFoo
+1>        ]
+1>        ..\..\src\Utils\Memory\MemoryTests.cpp(203) : see reference to class template instantiation 'Memory::CSafePtrable<T>' being compiled
+1>        with
+1>        [
+1>            T=SPFoo
+1>        ]
+1>CRefPoolable.cpp
+1>CPoolable.cpp
+1>CPool.cpp
+1>operations.cpp
+1>error_code.cpp
+1>ToxicUtils.cpp
+1>StringUtils.cpp
+1>..\..\src\Utils\StringUtils.cpp(252) : warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+1>..\..\src\Utils\StringUtils.cpp(258) : warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+1>SafeFunctions.cpp
+1>Maths.cpp
+1>KeyStrings.cpp
+1>FileUtils.cpp
+1>Directions.cpp
+1>CXml.cpp
+1>CUtilsTests.cpp
+1>Compiling...
+1>CSingletonCleaner.cpp
+1>CRand.cpp
+1>CLocaleIntegrityChecker.cpp
+1>..\..\src\Utils\CLocaleIntegrityChecker.cpp(51) : warning C4267: '=' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>..\..\src\Utils\CLocaleIntegrityChecker.cpp(57) : warning C4267: '=' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CClock.cpp
+1>CSound.cpp
+1>CResourceManager.cpp
+1>CMusic.cpp
+1>CImageAtlas.cpp
+1>CImage.cpp
+1>CFont.cpp
+1>CPrimitivesDrawer.cpp
+1>CPrimitiveClass.cpp
+1>CPostProcessing.cpp
+1>CPostFX.cpp
+1>CSpriteRender.cpp
+1>CEmiter.cpp
+1>CParticleSystem.cpp
+1>CParticlePool.cpp
+1>CParticleManager.cpp
+1>ILinearEffect.cpp
+1>Compiling...
+1>CStraightLightning.cpp
+1>CLightning.cpp
+1>SEffectParamSet.cpp
+1>CGraphicalEffects.cpp
+1>C:\Program Files\Microsoft Visual Studio 8\VC\include\xutility(2949) : warning C4267: '=' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>        C:\Program Files\Microsoft Visual Studio 8\VC\include\xutility(2977) : see reference to function template instantiation 'void std::_Fill<unsigned int*,_Ty>(_FwdIt,_FwdIt,const _Ty &)' being compiled
+1>        with
+1>        [
+1>            _Ty=size_t,
+1>            _FwdIt=unsigned int *
+1>        ]
+1>        C:\Program Files\Microsoft Visual Studio 8\VC\include\vector(1187) : see reference to function template instantiation 'void std::fill<unsigned int*,_Ty>(_FwdIt,_FwdIt,const _Ty &)' being compiled
+1>        with
+1>        [
+1>            _Ty=size_t,
+1>            _FwdIt=unsigned int *
+1>        ]
+1>        C:\Program Files\Microsoft Visual Studio 8\VC\include\vector(1117) : while compiling class template member function 'void std::vector<_Ty>::_Insert_n(std::_Vector_iterator<_Ty,_Alloc>,__w64 unsigned int,const _Ty &)'
+1>        with
+1>        [
+1>            _Ty=size_t,
+1>            _Alloc=std::allocator<sf::Uint32>
+1>        ]
+1>        ..\..\src\Rendering\Effects\CGraphicalEffects.cpp(267) : see reference to class template instantiation 'std::vector<_Ty>' being compiled
+1>        with
+1>        [
+1>            _Ty=size_t
+1>        ]
+1>C:\Program Files\Microsoft Visual Studio 8\VC\include\xutility(2988) : warning C4267: '=' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>        C:\Program Files\Microsoft Visual Studio 8\VC\include\xutility(3044) : see reference to function template instantiation 'void std::_Fill_n<unsigned int*,_Diff,_Ty>(_OutIt,_Diff,const _Ty &,std::_Range_checked_iterator_tag)' being compiled
+1>        with
+1>        [
+1>            _Diff=__w64 unsigned int,
+1>            _Ty=size_t,
+1>            _OutIt=unsigned int *
+1>        ]
+1>        C:\Program Files\Microsoft Visual Studio 8\VC\include\xutility(3524) : see reference to function template instantiation 'void std::_Fill_n<_OutIt,_Diff,_Ty>(_OutIt,_Diff,const _Ty &,std::random_access_iterator_tag,std::_Range_checked_iterator_tag)' being compiled
+1>        with
+1>        [
+1>            _OutIt=unsigned int *,
+1>            _Diff=__w64 unsigned int,
+1>            _Ty=size_t
+1>        ]
+1>        C:\Program Files\Microsoft Visual Studio 8\VC\include\memory(416) : see reference to function template instantiation 'void stdext::unchecked_fill_n<_FwdIt,_Diff,_Tval>(_OutIt,_Diff,const _Ty &)' being compiled
+1>        with
+1>        [
+1>            _FwdIt=unsigned int *,
+1>            _Diff=__w64 unsigned int,
+1>            _Tval=size_t,
+1>            _OutIt=unsigned int *,
+1>            _Ty=size_t
+1>        ]
+1>        C:\Program Files\Microsoft Visual Studio 8\VC\include\memory(916) : see reference to function template instantiation 'void std::_Uninit_fill_n<_FwdIt,_Diff,_Tval,_Alloc>(_FwdIt,_Diff,const _Tval &,_Alloc &,std::_Scalar_ptr_iterator_tag,std::_Range_checked_iterator_tag)' being compiled
+1>        with
+1>        [
+1>            _FwdIt=unsigned int *,
+1>            _Diff=__w64 unsigned int,
+1>            _Tval=size_t,
+1>            _Alloc=std::allocator<sf::Uint32>
+1>        ]
+1>        C:\Program Files\Microsoft Visual Studio 8\VC\include\vector(1208) : see reference to function template instantiation 'void stdext::unchecked_uninitialized_fill_n<unsigned int*,__w64 unsigned int,_Ty,std::allocator<_Ty>>(_FwdIt,_Diff,const _Tval &,_Alloc &)' being compiled
+1>        with
+1>        [
+1>            _Ty=size_t,
+1>            _FwdIt=unsigned int *,
+1>            _Diff=__w64 unsigned int,
+1>            _Tval=size_t,
+1>            _Alloc=std::allocator<sf::Uint32>
+1>        ]
+1>        C:\Program Files\Microsoft Visual Studio 8\VC\include\vector(1207) : while compiling class template member function 'unsigned int *std::vector<_Ty>::_Ufill(unsigned int *,__w64 unsigned int,const _Ty &)'
+1>        with
+1>        [
+1>            _Ty=size_t
+1>        ]
+1>SAnimationState.cpp
+1>SAnimationFrame.cpp
+1>SAnimation.cpp
+1>CAnimSet.cpp
+1>CAnimationManager.cpp
+1>IDrawable.cpp
+1>CWGSprite.cpp
+1>CMultiColorString.cpp
+1>CHudStaticText.cpp
+1>CHudSprite.cpp
+1>CDrawableManager.cpp
+1>CDisplayable.cpp
+1>CCamera.cpp
+1>..\..\src\Rendering\CCamera.cpp(209) : warning C4267: 'initializing' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CWaypointRegion.cpp
+1>CWaypointCell.cpp
+1>CTravelAgentRegion.cpp
+1>Compiling...
+1>CTravelAgentCell.cpp
+1>CPathFinder.cpp
+1>CPath.cpp
+1>CAStarSearch.cpp
+1>CSceneNode.cpp
+1>CQuadTreeSceneManager.cpp
+1>..\..\src\Map\SceneManager\CQuadTreeSceneManager.cpp(290) : warning C4267: 'initializing' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>..\..\src\Map\SceneManager\CQuadTreeSceneManager.cpp(314) : warning C4267: 'initializing' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>..\..\src\Map\SceneManager\CQuadTreeSceneManager.cpp(320) : warning C4267: 'initializing' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CQuadTreeNode.cpp
+1>CTile.cpp
+1>CRegionDescriptor.cpp
+1>CRandomMapGenerator.cpp
+1>..\..\src\Map\CRandomMapGenerator.cpp(300) : warning C4267: '=' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>..\..\src\Map\CRandomMapGenerator.cpp(546) : warning C4267: '=' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>..\..\src\Map\CRandomMapGenerator.cpp(628) : warning C4267: '=' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>..\..\src\Map\CRandomMapGenerator.cpp(645) : warning C4267: 'argument' : conversion from 'size_t' to 'char', possible loss of data
+1>C:\Program Files\Microsoft Visual Studio 8\VC\include\utility(44) : warning C4267: 'initializing' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>        ..\..\src\Map\CRandomMapGenerator.cpp(629) : see reference to function template instantiation 'std::pair<_Ty1,_Ty2>::pair<std::string,__w64 unsigned int>(const std::pair<std::string,_Ty2> &)' being compiled
+1>        with
+1>        [
+1>            _Ty1=const std::string,
+1>            _Ty2=unsigned int
+1>        ]
+1>CMapObjectDescriptor.cpp
+1>..\..\src\Map\CMapObjectDescriptor.cpp(40) : warning C4244: 'argument' : conversion from 'int' to 'float', possible loss of data
+1>CMapManager.cpp
+1>CMap.cpp
+1>CDynamicRegionsGenerator.cpp
+1>CDoodahDescriptor.cpp
+1>CCollisionMap.cpp
+1>CCell.cpp
+1>CLootManager.cpp
+1>CLoot.cpp
+1>CAchievementManager.cpp
+1>Compiling...
+1>CBossManager.cpp
+1>..\..\src\Logic\Boss\CBossManager.cpp(81) : warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+1>EDamageType.cpp
+1>EAspect.cpp
+1>CStats.cpp
+1>CRPGCalc.cpp
+1>CBleeder.cpp
+1>..\..\src\Logic\Stats\CBleeder.cpp(40) : warning C4267: 'initializing' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CAspectBatch.cpp
+1>CQuestNodeRequirement.cpp
+1>CQuestManager.cpp
+1>CQuestEvent.cpp
+1>CQuest.cpp
+1>CWall.cpp
+1>CRegion.cpp
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\../Utils/Memory/CSafePtrable.h(18) : warning C4355: 'this' : used in base member initializer list
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\../Utils/Memory/CSafePtrable.h(18) : while compiling class template member function 'Memory::CSafePtrable<T>::CSafePtrable(void)'
+1>        with
+1>        [
+1>            T=CDynamicRegion
+1>        ]
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\mapobjects\CRegion.h(14) : see reference to class template instantiation 'Memory::CSafePtrable<T>' being compiled
+1>        with
+1>        [
+1>            T=CDynamicRegion
+1>        ]
+1>CObstacle.cpp
+1>..\..\src\Logic\MapObjects\CObstacle.cpp(15) : warning C4355: 'this' : used in base member initializer list
+1>CHook.cpp
+1>..\..\src\Logic\MapObjects\CHook.cpp(6) : warning C4355: 'this' : used in base member initializer list
+1>CDoor.cpp
+1>CItem.cpp
+1>CWallTemplate.cpp
+1>CTemplateParam.cpp
+1>CPlayerTemplate.cpp
+1>Compiling...
+1>CPhysicalTemplate.cpp
+1>CObstacleTemplate.cpp
+1>CNPCTemplate.cpp
+1>CLootTemplate.cpp
+1>CLairTemplate.cpp
+1>..\..\src\Logic\Factory\CLairTemplate.cpp(81) : warning C4312: 'type cast' : conversion from 'int' to 'void *' of greater size
+1>..\..\src\Logic\Factory\CLairTemplate.cpp(88) : warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+1>..\..\src\Logic\Factory\CLairTemplate.cpp(96) : warning C4267: 'initializing' : conversion from 'size_t' to 'int', possible loss of data
+1>CHookTemplate.cpp
+1>CEnemyTemplate.cpp
+1>CDoorTemplate.cpp
+1>CBulletTemplate.cpp
+1>CActorTemplate.cpp
+1>EEffectType.cpp
+1>CFocusObject.cpp
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\effects\../../Utils/Memory/CPool.h(137) : warning C4244: 'initializing' : conversion from '__w64 int' to 'int', possible loss of data
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\effects\../../Utils/Memory/CPool.h(132) : while compiling class template member function 'void Memory::CPool<T>::Dealloc(T *)'
+1>        with
+1>        [
+1>            T=CFocusObject
+1>        ]
+1>        ..\..\src\Logic\Effects\CFocusObject.cpp(6) : see reference to class template instantiation 'Memory::CPool<T>' being compiled
+1>        with
+1>        [
+1>            T=CFocusObject
+1>        ]
+1>CExprParser.cpp
+1>CExecutionContext.cpp
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\../Utils/Memory/CSafePtrable.h(18) : warning C4355: 'this' : used in base member initializer list
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\../Utils/Memory/CSafePtrable.h(18) : while compiling class template member function 'Memory::CSafePtrable<T>::CSafePtrable(void)'
+1>        with
+1>        [
+1>            T=CActor
+1>        ]
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\effects\CExecutionContext.h(26) : see reference to class template instantiation 'Memory::CSafePtrable<T>' being compiled
+1>        with
+1>        [
+1>            T=CActor
+1>        ]
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\effects\../../Utils/Memory/CPool.h(137) : warning C4244: 'initializing' : conversion from '__w64 int' to 'int', possible loss of data
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\effects\../../Utils/Memory/CPool.h(132) : while compiling class template member function 'void Memory::CPool<T>::Dealloc(T *)'
+1>        with
+1>        [
+1>            T=CExecutionContext
+1>        ]
+1>        ..\..\src\Logic\Effects\CExecutionContext.cpp(11) : see reference to class template instantiation 'Memory::CPool<T>' being compiled
+1>        with
+1>        [
+1>            T=CExecutionContext
+1>        ]
+1>CEffectSource.cpp
+1>CEffectManager.cpp
+1>..\..\src\Logic\Effects\CEffectManager.cpp(687) : warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+1>CEffectHandle.cpp
+1>CComputedValue.cpp
+1>CAppliedEffectContainer.cpp
+1>CAppliedEffect.cpp
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\effects\../../Utils/Memory/CPool.h(137) : warning C4244: 'initializing' : conversion from '__w64 int' to 'int', possible loss of data
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\effects\../../Utils/Memory/CPool.h(132) : while compiling class template member function 'void Memory::CPool<T>::Dealloc(T *)'
+1>        with
+1>        [
+1>            T=CAppliedEffect
+1>        ]
+1>        ..\..\src\Logic\Effects\CAppliedEffect.cpp(7) : see reference to class template instantiation 'Memory::CPool<T>' being compiled
+1>        with
+1>        [
+1>            T=CAppliedEffect
+1>        ]
+1>Compiling...
+1>CConditionManager.cpp
+1>CCondition.cpp
+1>CWandererScheme.cpp
+1>CTurningScheme.cpp
+1>CStupidChaserScheme.cpp
+1>CShortestPaths.cpp
+1>CRangedCasterScheme.cpp
+1>CQuickChaserScheme.cpp
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\ai\CActorFlock.h(41) : warning C4267: 'return' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CMeleeChaserScheme.cpp
+1>CLairGuardianScheme.cpp
+1>CIdleMovementScheme.cpp
+1>CGenericCombatScheme.cpp
+1>..\..\src\Logic\AI\CGenericCombatScheme.cpp(28) : warning C4267: 'initializing' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CBoidsScheme.cpp
+1>CBoidChaserScheme.cpp
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\ai\CActorFlock.h(41) : warning C4267: 'return' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CAISchemeManager.cpp
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\ai\CActorFlock.h(41) : warning C4267: 'return' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CAIAbilityHint.cpp
+1>CActorFlock.cpp
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\ai\CActorFlock.h(41) : warning C4267: 'return' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CActorAI.cpp
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\ai\CActorFlock.h(41) : warning C4267: 'return' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>..\..\src\Logic\AI\CActorAI.cpp(84) : warning C4355: 'this' : used in base member initializer list
+1>..\..\src\Logic\AI\CActorAI.cpp(205) : warning C4267: 'initializing' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>..\..\src\Logic\AI\CActorAI.cpp(213) : warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\ai\../../Utils/Memory/CSafePtrable.h(18) : warning C4355: 'this' : used in base member initializer list
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\ai\../../Utils/Memory/CSafePtrable.h(18) : while compiling class template member function 'Memory::CSafePtrable<T>::CSafePtrable(void)'
+1>        with
+1>        [
+1>            T=CActorAI
+1>        ]
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\ai\CActorAI.h(130) : see reference to class template instantiation 'Memory::CSafePtrable<T>' being compiled
+1>        with
+1>        [
+1>            T=CActorAI
+1>        ]
+1>CTriggerEffects.cpp
+1>CTargetChooser.cpp
+1>..\..\src\Logic\Abilities\CTargetChooser.cpp(154) : warning C4244: 'initializing' : conversion from 'double' to 'float', possible loss of data
+1>Compiling...
+1>CSummoner.cpp
+1>CSummonContainer.cpp
+1>CPinnedAbilityBatch.cpp
+1>CBulletEmitter.cpp
+1>CAbilityTree.cpp
+1>CAbilityPerformer.cpp
+1>..\..\src\Logic\Abilities\CAbilityPerformer.cpp(66) : warning C4267: 'return' : conversion from 'size_t' to 'int', possible loss of data
+1>..\..\src\Logic\Abilities\CAbilityPerformer.cpp(314) : warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CAbility.cpp
+1>PhysicalCategories.cpp
+1>CPlayerManager.cpp
+1>CPlayer.cpp
+1>..\..\src\Logic\CPlayer.cpp(44) : warning C4355: 'this' : used in base member initializer list
+1>..\..\src\Logic\CPlayer.cpp(86) : warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+1>..\..\src\Logic\CPlayer.cpp(103) : warning C4267: 'initializing' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>..\..\src\Logic\CPlayer.cpp(202) : warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>..\..\src\Logic\CPlayer.cpp(203) : warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CPhysicalManager.cpp
+1>CPhysical.cpp
+1>Collisions.cpp
+1>CNPC.cpp
+1>CLogic.cpp
+1>..\..\src\Logic\CLogic.cpp(382) : warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+1>..\..\src\Logic\CLogic.cpp(485) : warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+1>..\..\src\Logic\CLogic.cpp(485) : warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+1>CLair.cpp
+1>..\..\src\Logic\CLair.cpp(135) : warning C4267: 'initializing' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CEquipment.cpp
+1>CEnemy.cpp
+1>CDialogGraph.cpp
+1>CDetector.cpp
+1>..\..\src\Logic\CDetector.cpp(32) : warning C4355: 'this' : used in base member initializer list
+1>Compiling...
+1>CCallbackDispatcher.cpp
+1>CBullet.cpp
+1>..\..\src\Logic\CBullet.cpp(15) : warning C4355: 'this' : used in base member initializer list
+1>CBestiary.cpp
+1>CActorController.cpp
+1>CActor.cpp
+1>..\..\src\Logic\CActor.cpp(42) : warning C4355: 'this' : used in base member initializer list
+1>..\..\src\Logic\CActor.cpp(43) : warning C4355: 'this' : used in base member initializer list
+1>..\..\src\Logic\CActor.cpp(44) : warning C4355: 'this' : used in base member initializer list
+1>..\..\src\Logic\CActor.cpp(47) : warning C4355: 'this' : used in base member initializer list
+1>..\..\src\Logic\CActor.cpp(48) : warning C4355: 'this' : used in base member initializer list
+1>..\..\src\Logic\CActor.cpp(50) : warning C4355: 'this' : used in base member initializer list
+1>..\..\src\Logic\CActor.cpp(186) : warning C4267: 'initializing' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\../Utils/Memory/CSafePtrable.h(18) : warning C4355: 'this' : used in base member initializer list
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\../Utils/Memory/CSafePtrable.h(18) : while compiling class template member function 'Memory::CSafePtrable<T>::CSafePtrable(void)'
+1>        with
+1>        [
+1>            T=CActor
+1>        ]
+1>        d:\toxic\hg\tools\windows\cygwin-autobuild\workdir\src\logic\abilities\../Effects/CExecutionContext.h(26) : see reference to class template instantiation 'Memory::CSafePtrable<T>' being compiled
+1>        with
+1>        [
+1>            T=CActor
+1>        ]
+1>CPlayerController.cpp
+1>CMouseCaster.cpp
+1>CInputHandler.cpp
+1>..\..\src\Input\CInputHandler.cpp(122) : warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+1>CBindManager.cpp
+1>CNotepad.cpp
+1>CEditorScreens.cpp
+1>CEditorResourcePanel.cpp
+1>CMessageSystem.cpp
+1>CLocalizator.cpp
+1>CLocale.cpp
+1>..\..\src\GUI\Localization\CLocale.cpp(17) : warning C4267: '=' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CDialogDisplayer.cpp
+1>CCutscenePlayer.cpp
+1>CWindow.cpp
+1>CTextArea.cpp
+1>CScrollPanel.cpp
+1>Compiling...
+1>CScrollBar.cpp
+1>CSaveScreen.cpp
+1>CRoot.cpp
+1>CProgressBar.cpp
+1>CMultipanel.cpp
+1>CMenuScreens.cpp
+1>CLoadingScreen.cpp
+1>CKeyReader.cpp
+1>CItemSlotsBar.cpp
+1>CItemSlot.cpp
+1>CInventoryDisplayer.cpp
+1>..\..\src\GUI\CInventoryDisplayer.cpp(65) : warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>..\..\src\GUI\CInventoryDisplayer.cpp(131) : warning C4267: 'argument' : conversion from 'size_t' to 'unsigned int', possible loss of data
+1>CInGameOptionChooser.cpp
+1>..\..\src\GUI\CInGameOptionChooser.cpp(126) : warning C4267: 'argument' : conversion from 'size_t' to 'int', possible loss of data
+1>CImageBox.cpp
+1>CHud.cpp
+1>CGUIObject.cpp
+1>CGameScreens.cpp
+1>CDropList.cpp
+1>CCompass.cpp
+1>CCheckBox.cpp
+1>CButton.cpp
+1>Compiling...
+1>CBossHud.cpp
+1>CAnimatedImage.cpp
+1>CAbiSlotsBar.cpp
+1>..\..\src\GUI\CAbiSlotsBar.cpp(78) : warning C4267: '=' : conversion from 'size_t' to 'int', possible loss of data
+1>CAbilityTreeDisplayer.cpp
+1>CAbilitySlot.cpp
+1>CConsole.cpp
+1>MiscCommands.cpp
+1>..\..\src\Commands\MiscCommands.cpp(651) : warning C4267: 'argument' : conversion from 'size_t' to 'std::streamsize', possible loss of data
+1>..\..\src\Commands\MiscCommands.cpp(654) : warning C4267: 'argument' : conversion from 'size_t' to 'boost::int32_t', possible loss of data
+1>MapCommands.cpp
+1>LogicCommands.cpp
+1>EffectsCommands.cpp
+1>CCommands.cpp
+1>CameraCommands.cpp
+1>AnimCommands.cpp
+1>CSoundPlayer.cpp
+1>CPlayList.cpp
+1>CMusicPlayer.cpp
+1>..\..\src\Audio\CMusicPlayer.cpp(42) : warning C4267: 'argument' : conversion from 'size_t' to 'const int', possible loss of data
+1>CAudioManager.cpp
+1>Compiling...
+1>CWaypointPriorityQueue.cpp
+1>Compiling...
+1>CWaypoint.cpp
+1>Compiling...
+1>CTravelAgent.cpp
+1>Compiling...
+1>CDynamicRegion.cpp
+1>Compiling resources...
+1>Linking...
+1>Generating code
+1>Finished generating code
+1>Embedding manifest...
+1>Build log was saved at "file://d:\toxic\hg\tools\windows\cygwin-autobuild\workDir\build\vs2005\Release\BuildLog.htm"
+1>WarsztatGame - 0 error(s), 78 warning(s)
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
+
