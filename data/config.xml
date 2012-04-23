@@ -4,7 +4,7 @@
 	<!-- audio config -->
 	<audio sound="1.0" music="1.0" />
 	<!-- language config -->
-	<locale lang="pl"/>
+	<locale lang="en"/>
   
   <!-- player1 -->
   <controlsScheme player="0" name="$CTRL_SET_MOUSE" desc="$CTRL_SET_MOUSE_DESC" menuDesc="$CTRL_SET_MOUSE_MENU_DESC" flags="5">

@@ -16,3 +16,5 @@ build/vs2005/.*\.user$
 WarlocksGauntlet.bin*
 .*\.exe$
 .*\.aps$
+tools/windows/cygwin-autobuild/workDir/.*
+tools/windows/cygwin-autobuild/WG-VC2005.*
