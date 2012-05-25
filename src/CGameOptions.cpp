@@ -91,7 +91,7 @@ bool CGameOptions::LoadOptions()
 	CXml xml( configVer > userConfigVer ? "data/config.xml" : FileUtils::GetUserDir() + "/config.xml", "root" );
 
     // locale
-    mLocaleLang = xml.GetString("locale","lang");
+    mLocaleLang = xml.GetString("locale", "lang");
     gLocalizator.SetLocale(mLocaleLang);
 
     // ladowanie achievementow
@@ -506,6 +506,12 @@ void CGameOptions::AddControlSchemeBind( int player, size_t id, const std::strin
     kb.lock = lock;
     kb.overrides = overrides;
     mDefControlSchemes[player][id].bindings.push_back(kb);
+}
+
+void CGameOptions::SetLanguage( const std::string& langCode )
+{
+    mLocaleLang = langCode;
+    gLocalizator.SetLocale(langCode);
 }
 
 std::string CGameOptions::mModDir;

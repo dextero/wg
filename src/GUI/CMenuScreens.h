@@ -132,6 +132,7 @@ namespace GUI
         float tmpMusicVolume;
         std::wstring tmpControls0;
         std::wstring tmpControls1;
+        std::wstring tmpLanguage;
 
         // hardkodowana tablica jezykow
         static const std::string mAvailableLanguages[];
