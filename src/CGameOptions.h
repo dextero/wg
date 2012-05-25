@@ -153,6 +153,9 @@ public:
 	static inline const std::string& GetModDir() { return mModDir; }
     inline const std::string& GetUserDir() const { return mUserDir; }
     inline const std::vector<controlScheme>& GetDefControlSchemes(int player) const { return mDefControlSchemes[player]; }
+
+    const std::string& GetLanguage() { return mLocaleLang; }
+    void SetLanguage(const std::string& langCode);
 };
 
 #endif

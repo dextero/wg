@@ -509,12 +509,12 @@ void GUI::CMenuScreens::UpdateSaveScreen(bool save)
 
 void GUI::CMenuScreens::SetLanguage( const std::wstring& lang )
 {
-    gCommands.ParseCommand(L"set-locale " + lang);
+    gGameOptions.SetLanguage(StringUtils::ConvertToString(lang));
 }
 
 void GUI::CMenuScreens::SetLanguageAndLeave( const std::wstring& lang )
 {
-    gCommands.ParseCommand(L"set-locale " + lang);
+    gGameOptions.SetLanguage(StringUtils::ConvertToString(lang));
     ShowPrevious();
 }
 
@@ -529,7 +529,7 @@ void CMenuScreens::InitOptions()
 		CTextArea * resolutionTxt = options->CreateTextArea( "resolution-txt" );
 		resolutionTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
 		resolutionTxt->SetText( gLocalizator.GetText("OPT_RESOLUTION") );
-		resolutionTxt->SetPosition( 19.0f, 15.0f, 30.0f, 5.0f );
+		resolutionTxt->SetPosition( 19.0f, 14.0f, 30.0f, 5.0f );
 
 		CDropList * resolution = options->CreateDropList( "resolution" );
 		resolution->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
@@ -538,7 +538,7 @@ void CMenuScreens::InitOptions()
 		resolution->SetOptionFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
 		resolution->SetOptionImage( "data/GUI/droplist-option.png", "data/GUI/droplist-optiond.png" );
 		resolution->SetOptionCenter( true );
-		resolution->SetPosition( 51.0f, 15.0f, 20.0f, 4.0f );
+		resolution->SetPosition( 51.0f, 14.0f, 20.0f, 4.0f );
 
 		/* listowanie rozdzielczosci */
 
@@ -558,65 +558,65 @@ void CMenuScreens::InitOptions()
 		CTextArea * fullscreenTxt = options->CreateTextArea( "fullscreen-txt" );
 		fullscreenTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
         fullscreenTxt->SetLocalization("OPT_FULLSCREEN");
-		fullscreenTxt->SetPosition( 19.0f, 22.0f, 30.0f, 5.0f );
+		fullscreenTxt->SetPosition( 19.0f, 20.0f, 30.0f, 5.0f );
 
 		CCheckBox * fullscreen = options->CreateCheckBox( "fullscreen" );
 		fullscreen->SetImage( "data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png" );
-		fullscreen->SetPosition( 51.0f, 22.0f, 3.25f, 4.0f );
+		fullscreen->SetPosition( 51.0f, 20.0f, 3.25f, 4.0f );
 		
         CTextArea * shadersTxt = options->CreateTextArea("shaders-txt");
 		shadersTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
         shadersTxt->SetLocalization("OPT_SHADERS");
-		shadersTxt->SetPosition(19.0f, 29.0f, 30.0f, 5.0f);
+		shadersTxt->SetPosition(19.0f, 26.0f, 30.0f, 5.0f);
 
 		CCheckBox * shaders = options->CreateCheckBox("shaders");
 		shaders->SetImage("data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png");
-		shaders->SetPosition(51.0f, 29.0f, 3.25f, 4.0f);
+		shaders->SetPosition(51.0f, 26.0f, 3.25f, 4.0f);
 
 		CTextArea * vsyncTxt = options->CreateTextArea( "vsync-txt" );
 		vsyncTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
 		vsyncTxt->SetLocalization("OPT_VSYNC");
-		vsyncTxt->SetPosition( 19.0f, 36.0f, 30.0f, 5.0f );
+		vsyncTxt->SetPosition( 19.0f, 32.0f, 30.0f, 5.0f );
 
 		CCheckBox * vsync = options->CreateCheckBox( "vsync" );
 		vsync->SetImage( "data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png" );
-		vsync->SetPosition( 51.0f, 36.0f, 3.25f, 4.0f );
+		vsync->SetPosition( 51.0f, 32.0f, 3.25f, 4.0f );
 
 		CTextArea * soundTxt = options->CreateTextArea( "sound-txt" );
 		soundTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
 		soundTxt->SetLocalization("OPT_SOUND_LEVEL");
-		soundTxt->SetPosition( 19.0f, 43.0f, 30.0f, 5.0f );
+		soundTxt->SetPosition( 19.0f, 38.0f, 30.0f, 5.0f );
 
         CScrollBar *sound = options->CreateScrollBar( "sound-volume" );
         sound->SetHandleImage("data/GUI/scrollbar-handle.png");
         sound->SetBackgroundImage("data/GUI/scrollbar.png" );
-        sound->SetPosition( 51.0f, 43.0f, 20.0f, 4.0f);
+        sound->SetPosition( 51.0f, 38.0f, 20.0f, 4.0f);
         sound->SetHandleSize(16.0f);
 
 		CTextArea * musicTxt = options->CreateTextArea( "music-txt" );
 		musicTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
 		musicTxt->SetLocalization("OPT_MUSIC_LEVEL");
-		musicTxt->SetPosition( 19.0f, 50.0f, 30.0f, 5.0f );
+		musicTxt->SetPosition( 19.0f, 44.0f, 30.0f, 5.0f );
 
         CScrollBar * music = options->CreateScrollBar( "music-volume" );
         music->SetHandleImage("data/GUI/scrollbar-handle.png");
         music->SetBackgroundImage("data/GUI/scrollbar.png" );
-        music->SetPosition( 51.0f, 50.0f, 20.0f, 4.0f);
+        music->SetPosition( 51.0f, 44.0f, 20.0f, 4.0f);
         music->SetHandleSize(16.0f);
         
 		CTextArea * stereoTxt = options->CreateTextArea( "3d-sound-txt" );
 		stereoTxt->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
         stereoTxt->SetLocalization("OPT_3D_SOUND");
-		stereoTxt->SetPosition( 19.0f, 57.0f, 30.0f, 5.0f );
+		stereoTxt->SetPosition( 19.0f, 50.0f, 30.0f, 5.0f );
 
 		CCheckBox * stereo = options->CreateCheckBox( "3d-sound" );
 		stereo->SetImage( "data/GUI/checkbox-true.png", "data/GUI/checkbox-false.png" );
-		stereo->SetPosition( 51.0f, 57.0f, 3.25f, 4.0f );
+		stereo->SetPosition( 51.0f, 50.0f, 3.25f, 4.0f );
 
         CTextArea * controlsTxt0 = options->CreateTextArea( "controls-txt0" );
         controlsTxt0->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
         controlsTxt0->SetLocalization("OPT_CONTROLS1");
-        controlsTxt0->SetPosition( 19.0f, 64.0f, 30.0f, 5.0f );
+        controlsTxt0->SetPosition( 19.0f, 56.0f, 30.0f, 5.0f );
 
 		CDropList * controls0 = options->CreateDropList( "controls0" );
 		controls0->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
@@ -625,7 +625,7 @@ void CMenuScreens::InitOptions()
 		controls0->SetOptionFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
 		controls0->SetOptionImage( "data/GUI/droplist-option.png", "data/GUI/droplist-optiond.png" );
 		controls0->SetOptionCenter( true );
-		controls0->SetPosition( 51.0f, 64.0f, 20.0f, 4.0f );
+		controls0->SetPosition( 51.0f, 56.0f, 20.0f, 4.0f );
         size_t count = System::Input::CBindManager::GetBindManagersCount(0);
         for ( size_t i = 0 ; i < count ; i++ )
         {
@@ -640,7 +640,7 @@ void CMenuScreens::InitOptions()
                 tooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
                 tooltip->SetBackgroundImage("data/GUI/transparent-black.png");
                 tooltip->SetVisible(false);
-                //tooltip->SetCenter(true); // �eeee�oooo�eeee�oooo bug alert, nie centrowac
+                //tooltip->SetCenter(true); // bug alert, nie centrowac
                 tooltip->SetAutoHeight(true);
                 tooltip->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
                 tooltip->SetText(System::Input::CBindManager::GetBindManagerAt(i, 0)->GetControlsMenuDescription()
@@ -653,7 +653,7 @@ void CMenuScreens::InitOptions()
         }
 
 		CButton * binding0 = options->CreateButton( "binding-btn0" );
-		binding0->SetPosition( 75.0f, 64.0f, 10.0f, 4.0f );
+		binding0->SetPosition( 75.0f, 56.0f, 10.0f, 4.0f );
 		binding0->SetCenter( true );
 		binding0->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
         binding0->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
@@ -664,7 +664,7 @@ void CMenuScreens::InitOptions()
 		CTextArea * controlsTxt1 = options->CreateTextArea( "controls-txt1" );
         controlsTxt1->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
         controlsTxt1->SetLocalization("OPT_CONTROLS2");
-        controlsTxt1->SetPosition( 19.0f, 71.0f, 30.0f, 5.0f );
+        controlsTxt1->SetPosition( 19.0f, 62.0f, 30.0f, 5.0f );
 
 		CDropList * controls1 = options->CreateDropList( "controls1" );
         controls1->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
@@ -673,7 +673,7 @@ void CMenuScreens::InitOptions()
 		controls1->SetOptionFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
 		controls1->SetOptionImage( "data/GUI/droplist-option.png", "data/GUI/droplist-optiond.png" );
 		controls1->SetOptionCenter( true );
-		controls1->SetPosition( 51.0f, 71.0f, 20.0f, 4.0f );
+		controls1->SetPosition( 51.0f, 62.0f, 20.0f, 4.0f );
         count = System::Input::CBindManager::GetBindManagersCount(1);
         for ( size_t i = 0 ; i < count ; i++ )
         {
@@ -688,7 +688,7 @@ void CMenuScreens::InitOptions()
                 tooltip->SetPosition(0.f, 0.f, 400.f, 0.f, UNIT_PIXEL);
                 tooltip->SetBackgroundImage("data/GUI/transparent-black.png");
                 tooltip->SetVisible(false);
-                //tooltip->SetCenter(true); // �eeee�oooo�eeee�oooo bug alert, nie centrowac
+                //tooltip->SetCenter(true); // bug alert, nie centrowac
                 tooltip->SetAutoHeight(true);
                 tooltip->SetFont(gGUI.GetFontSetting("FONT_DEFAULT"));
                 tooltip->SetText(System::Input::CBindManager::GetBindManagerAt(i, 1)->GetControlsMenuDescription()
@@ -701,13 +701,37 @@ void CMenuScreens::InitOptions()
         }
 
 		CButton * binding1 = options->CreateButton( "binding-btn1" );
-		binding1->SetPosition( 75.0f, 71.0f, 10.0f, 4.0f );
+		binding1->SetPosition( 75.0f, 62.0f, 10.0f, 4.0f );
 		binding1->SetCenter( true );
 		binding1->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
         binding1->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
 		binding1->SetLocalization("OPT_DEFINE");
 		binding1->GetClickParamCallback()->bind( this, &CMenuScreens::ShowBindingOptions );
 		binding1->SetClickCallbackParams( L"binding-options1" );
+
+        CTextArea * langText = options->CreateTextArea( "lang-text" );
+        langText->SetFont(gGUI.GetFontSetting("FONT_MENU_LABEL"));
+        langText->SetLocalization("OPT_LANGUAGE");
+        langText->SetPosition( 19.0f, 68.0f, 30.0f, 5.0f );
+
+        CDropList * langDropDown = options->CreateDropList( "langDropDown" );
+        langDropDown->SetFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
+        langDropDown->SetImage( "data/GUI/droplist.png", "data/GUI/droplistd.png" );
+        langDropDown->SetCenter( true );
+        langDropDown->SetOptionFont(gGUI.GetFontSetting("FONT_DEFAULT_CONTROL"));
+        langDropDown->SetOptionImage( "data/GUI/droplist-option.png", "data/GUI/droplist-optiond.png" );
+        langDropDown->SetOptionCenter( true );
+        langDropDown->SetPosition( 51.0f, 68.0f, 20.0f, 4.0f );
+        for ( size_t i = 0 ; i < sizeof(mAvailableLanguages) / sizeof(mAvailableLanguages[0]) ; i++ )
+        {
+            langDropDown->AddOption(StringUtils::ConvertToWString(mAvailableLanguages[i]));
+
+            /*
+            GUI::CButton* opt = dynamic_cast<CButton*>(langDropDown->FindObject("langDropDown" + StringUtils::ToString(i)));
+            opt->GetClickParamCallback()->bind(this, &CMenuScreens::SetLanguage);
+            opt->SetClickCallbackParams(StringUtils::ConvertToWString(mAvailableLanguages[i]));
+            */
+        }
 
 		CButton * saveOptions = options->CreateButton( "save-options-button" );
 		saveOptions->SetImage( "data/GUI/btn-up.png", "data/GUI/btn-hover.png", "data/GUI/btn-down.png" );
@@ -762,6 +786,9 @@ void CMenuScreens::UpdateOptions()
 
 		CDropList * controls1 = (CDropList*) mOptions->FindObject( "controls1" );
         controls1->SetSelectedOption( gBindManager1->GetName() );
+
+        CDropList * language = (CDropList*) mOptions->FindObject( "langDropDown" );
+        language->SetSelectedOption(StringUtils::ConvertToWString(gGameOptions.GetLanguage()));
 	}
 }
 
@@ -804,6 +831,8 @@ void CMenuScreens::RestoreOptions()
     CDropList * controls1 = (CDropList*) mOptions->FindObject( "controls1" );
     controls1->SetSelectedOption( tmpControls1 );
 
+    CDropList * language = (CDropList*) mOptions->FindObject( "langDropDown" );
+    language->SetSelectedOption( tmpLanguage );
 }
 
 void CMenuScreens::StoreOptions()
@@ -857,6 +886,9 @@ void CMenuScreens::StoreOptions()
             if (System::Input::CBindManager::GetBindManagerAt(b, i)->GetName() == (i == 0 ? tmpControls0 : tmpControls1))
                 separateSeq->SetState(!!(CGameOptions::cfSeparateSeq & gGameOptions.GetDefControlSchemes(i)[b].flags));
     }
+
+    CDropList * language = (CDropList*) mOptions->FindObject( "langDropDown" );
+    tmpLanguage = language->GetSelectedOption();
 }
 
 #include "../Console/CConsole.h"
@@ -874,6 +906,7 @@ void CMenuScreens::SaveOptions()
         CCheckBox * stereo = (CCheckBox*) mOptions->FindObject( "3d-sound" );
 		CDropList * controls0 = (CDropList*) mOptions->FindObject( "controls0" );
 		CDropList * controls1 = (CDropList*) mOptions->FindObject( "controls1" );
+        CDropList * language = (CDropList*) mOptions->FindObject( "langDropDown" );
 
 
         gGameOptions.SetMusicVolume( music->GetState() );
@@ -909,6 +942,7 @@ void CMenuScreens::SaveOptions()
    		gGameOptions.SetFullscreen( fullscreen->GetState() );
    		gGameOptions.SetVSync( vsync->GetState() );
 		gGameOptions.SaveOptions();
+        gGameOptions.SetLanguage(StringUtils::ConvertToString(language->GetSelectedOption()));
 
         if ( w != videoMode.Width || h != videoMode.Height || bpp != videoMode.BitsPerPixel || fs != fullscreen->GetState() ) {
   		    gGameOptions.UpdateWindow();
