@@ -33,12 +33,22 @@ struct CWorldGraph {
     std::string startingMap;
     std::string startingRegion;
     std::map<std::string, CWorldGraphMap> maps;
+
+    struct WorldScheme {
+        sf::Vector2f center;
+        std::string name;
+
+        WorldScheme(const sf::Vector2f& pos, const std::string& name): center(pos), name(name) {}
+    };
+    std::vector<WorldScheme> schemes;
         
 	CWorldGraph();
     void LoadFromFile(const std::string & filename);
     void SaveToFile(const std::string & filename);
 
     void Generate(unsigned nodes);
+
+    const std::string GetSchemeFromPos(const sf::Vector2f& pos);
 };
 
 #endif

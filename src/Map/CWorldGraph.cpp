@@ -27,6 +27,18 @@ void CWorldGraph::LoadFromFile(const std::string & filename) {
     startingMap = xml.GetString(root, "startingMap");
     startingRegion = xml.GetString(root, "startingRegion");
 
+    rapidxml::xml_node<>* schemes = xml.GetChild(root, "schemes");
+    if (schemes)
+    {
+        for (rapidxml::xml_node<>* node = xml.GetChild(schemes, "scheme"); node; node = xml.GetSibl(node, "scheme"))
+        {
+            sf::Vector2f pos;
+            pos.x = xml.GetFloat(node, "x");
+            pos.y = xml.GetFloat(node, "y");
+            this->schemes.push_back(CWorldGraph::WorldScheme(pos, xml.GetString(node, "name")));
+        }
+    }
+
     maps.clear();
     for (rapidxml::xml_node<>* map = xml.GetChild(root, "map"); map; map = xml.GetSibl(map, "map")) {
         CWorldGraphMap graphMap;
@@ -63,6 +75,11 @@ void CWorldGraph::SaveToFile( const std::string & filename )
          << "    <startingMap>" << startingMap.c_str() << "</startingMap>\n"
          << "    <startingRegion>" << startingRegion.c_str() << "</startingRegion>\n";
 
+    for (std::vector<WorldScheme>::iterator it = schemes.begin(); it != schemes.end(); ++it)
+    {
+        file << "    <scheme name=\"" << it->name.c_str() << "\" x=\"" << it->center.x << "\" y=\"" << it->center.y << "\" />\n";
+    }
+
     for (std::map<std::string, CWorldGraphMap>::iterator it = maps.begin(); it != maps.end(); ++it)
     {
         file << "    <map id=\"" << it->second.id.c_str()
@@ -91,6 +108,26 @@ void CWorldGraph::SaveToFile( const std::string & filename )
         file << "    </map>\n";
     }
     file << "</root>";
+}
+
+const std::string& SchemeFromPos(const std::vector<CWorldGraph::WorldScheme>& schemes, const sf::Vector2f& point)
+{
+    assert(schemes.size() && "no schemes specified");
+
+    float min = Maths::LengthSQ(schemes[0].center - point);
+    size_t minIdx = 0;
+
+    for (size_t scheme = 1; scheme < schemes.size(); ++scheme)
+    {
+        float curr = Maths::LengthSQ(schemes[scheme].center - point);
+        if (curr < min)
+        {
+            min = curr;
+            minIdx = scheme;
+        }
+    }
+
+    return schemes[minIdx].name;
 }
 
 
@@ -123,13 +160,6 @@ public:
         size_t from, to;
 
         Edge(float weight, size_t from, size_t to): weight(weight), from(from), to(to) {}
-    };
-
-    struct Scheme {
-        sf::Vector2f center;
-        std::string name;
-
-        Scheme(const sf::Vector2f& pos, const std::string& name): center(pos), name(name) {}
     };
 
     // porownywarka do Edge
@@ -167,7 +197,7 @@ public:
 private:
     std::vector<Node> nodes;
     std::vector<Edge> edges;
-    std::vector<Scheme> schemes;
+    std::vector<CWorldGraph::WorldScheme> schemes;
     unsigned char collisionMap[200][200];
 
     // szerokosc 'ramki', w ktorej nie bedzie wezlow, w %
@@ -184,24 +214,9 @@ private:
     }
 
     // dobiera scheme taki, do ktorego "centrum" jest najblizej
-    const std::string& GetBestScheme(const sf::Vector2f& point)
+    const std::string& GetBestWorldScheme(const sf::Vector2f& point)
     {
-        assert(schemes.size() && "no schemes specified");
-
-        float min = Maths::LengthSQ(schemes[0].center - point);
-        size_t minIdx = 0;
-
-        for (size_t scheme = 1; scheme < schemes.size(); ++scheme)
-        {
-            float curr = Maths::LengthSQ(schemes[scheme].center - point);
-            if (curr < min)
-            {
-                min = curr;
-                minIdx = scheme;
-            }
-        }
-
-        return schemes[minIdx].name;
+        return SchemeFromPos(schemes, point);
     }
 
     void CollisionMarkNode(const sf::Vector2f& node)
@@ -410,7 +425,7 @@ private:
         return true;
     }
 
-    bool GenerateSchemes(float borderSize)
+    bool GenerateWorldSchemes(float borderSize)
     {
         schemes.clear();
 
@@ -420,14 +435,14 @@ private:
         std::string schemeNames[] = {
             "forest", "desert", "arctic"
         };
-        unsigned numSchemes = sizeof(schemeNames) / sizeof(schemeNames[0]);
-        schemes.reserve(numSchemes);
+        unsigned numWorldSchemes = sizeof(schemeNames) / sizeof(schemeNames[0]);
+        schemes.reserve(numWorldSchemes);
 
         // generujemy pare 'punktow centralnych'
-        for (unsigned i = 0; i < numSchemes; ++i)
+        for (unsigned i = 0; i < numWorldSchemes; ++i)
         {
             sf::Vector2f pos(borderSize + (float)(rand() % moduloFactor), borderSize + (float)(rand() % moduloFactor));
-            schemes.push_back(Scheme(pos, schemeNames[i]));
+            schemes.push_back(CWorldGraph::WorldScheme(pos, schemeNames[i]));
         }
 
         return true;
@@ -479,17 +494,22 @@ public:
         GenerateRedundantEdges();
 
         // generowanie scheme'ow
-        GenerateSchemes(borderSize);
+        GenerateWorldSchemes(borderSize);
         // teraz przy przepisywaniu do CWorldGraph dla kazdego punktu znajdziemy scheme, ktory jest najblizej
-        // (wg jakiejs tam funkcji, patrz GetBestScheme) i przypiszemy do tego
+        // (wg jakiejs tam funkcji, patrz GetBestWorldScheme) i przypiszemy do tego
 
         for (size_t i = 0; i < nodes.size(); ++i)
-            nodes[i].scheme = GetBestScheme(nodes[i].pos);
+            nodes[i].scheme = GetBestWorldScheme(nodes[i].pos);
 
         // jeszcze wybierzmy pozycje miasta
         ChooseCityPos();
 
         return nodes;
+    }
+
+    const std::vector<CWorldGraph::WorldScheme>& GetWorldSchemeCenters()
+    {
+        return schemes;
     }
 };
 
@@ -497,6 +517,7 @@ void CWorldGraph::Generate(unsigned numNodes)
 {
     WorldGraphGenerator gen(15.f);
     const std::vector<WorldGraphGenerator::Node>& nodes = gen.Generate(numNodes);
+    schemes = gen.GetWorldSchemeCenters();
     
     // przepisywanie wezlow do wlasciwego CWorldGraph
     maps.clear();
@@ -549,4 +570,9 @@ void CWorldGraph::Generate(unsigned numNodes)
             startingRegion = "north";
         }
     }
+}
+
+const std::string CWorldGraph::GetSchemeFromPos(const sf::Vector2f& pos)
+{
+    return SchemeFromPos(schemes, pos);
 }
